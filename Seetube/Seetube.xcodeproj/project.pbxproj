@@ -23,6 +23,7 @@
 		041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCC296EF2FB0053AC9C /* CircleView.swift */; };
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
 		047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */; };
+		047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */; };
 		04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B78C2970514B000F0859 /* SceneListView.xib */; };
 		04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B78E2970524E000F0859 /* SceneListView.swift */; };
 		04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */; };
@@ -48,6 +49,7 @@
 		041ECBCC296EF2FB0053AC9C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
+		047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultViewController.swift; sourceTree = "<group>"; };
 		04E8B78C2970514B000F0859 /* SceneListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListView.xib; sourceTree = "<group>"; };
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
 		04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListTableViewCell.swift; sourceTree = "<group>"; };
@@ -75,10 +77,11 @@
 		04159925296F3DA800EEB699 /* Youtuber */ = {
 			isa = PBXGroup;
 			children = (
-				047A5F3829707587007CDBC4 /* Result */,
+				047A5F3829707587007CDBC4 /* Common */,
 				04159928296F3DD400EEB699 /* ResultMenu */,
 				04159929296F428A00EEB699 /* ConcentrationResult */,
 				047A5F372970755E007CDBC4 /* EmotionResult */,
+				047A5F3C297076E6007CDBC4 /* SceneStealerResult */,
 			);
 			path = Youtuber;
 			sourceTree = "<group>";
@@ -177,15 +180,15 @@
 			path = EmotionResult;
 			sourceTree = "<group>";
 		};
-		047A5F3829707587007CDBC4 /* Result */ = {
+		047A5F3829707587007CDBC4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				047A5F3929707599007CDBC4 /* CommonView */,
+				047A5F3929707599007CDBC4 /* View */,
 			);
-			path = Result;
+			path = Common;
 			sourceTree = "<group>";
 		};
-		047A5F3929707599007CDBC4 /* CommonView */ = {
+		047A5F3929707599007CDBC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				04E8B78C2970514B000F0859 /* SceneListView.xib */,
@@ -194,7 +197,15 @@
 				04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */,
 				0412EEFB29705C5900256579 /* CircularProgressBar.swift */,
 			);
-			path = CommonView;
+			path = View;
+			sourceTree = "<group>";
+		};
+		047A5F3C297076E6007CDBC4 /* SceneStealerResult */ = {
+			isa = PBXGroup;
+			children = (
+				047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */,
+			);
+			path = SceneStealerResult;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
 				0415992F296F477600EEB699 /* NibLoadable.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
+				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
 				04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */,
 				04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */,
 				041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */,

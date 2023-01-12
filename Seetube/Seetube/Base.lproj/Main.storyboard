@@ -184,14 +184,32 @@
         <!--씬스틸러 분석 결과-->
         <scene sceneID="dkR-Rl-aRY">
             <objects>
-                <viewController id="1ya-ib-F2j" sceneMemberID="viewController">
+                <viewController id="1ya-ib-F2j" customClass="SceneStealerResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fpJ-tn-dns">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Duk-Kq-M28" customClass="SceneListView" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="265" width="375" height="402"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="장면별 씬스틸러"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VVT-UG-kPT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VVT-UG-kPT" firstAttribute="bottom" secondItem="Duk-Kq-M28" secondAttribute="bottom" id="Qlm-Hv-ol7"/>
+                            <constraint firstItem="Duk-Kq-M28" firstAttribute="leading" secondItem="VVT-UG-kPT" secondAttribute="leading" id="SMK-5F-T8K"/>
+                            <constraint firstItem="VVT-UG-kPT" firstAttribute="trailing" secondItem="Duk-Kq-M28" secondAttribute="trailing" id="c4W-KY-YUd"/>
+                            <constraint firstItem="Duk-Kq-M28" firstAttribute="top" secondItem="VVT-UG-kPT" secondAttribute="top" constant="221" id="wq6-A3-Qys"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="씬스틸러 분석 결과" largeTitleDisplayMode="never" id="YYa-5e-Ti6"/>
+                    <connections>
+                        <outlet property="sceneListView" destination="Duk-Kq-M28" id="sU4-lb-7Je"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXC-5y-G8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
