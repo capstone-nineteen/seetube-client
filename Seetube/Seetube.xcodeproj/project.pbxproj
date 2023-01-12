@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412EEFB29705C5900256579 /* CircularProgressBar.swift */; };
 		04159921296F155400EEB699 /* ResultMenuButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04159920296F155400EEB699 /* ResultMenuButton.xib */; };
 		04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04159923296F3DA100EEB699 /* ResultMenuViewController.swift */; };
 		0415992C296F42C100EEB699 /* ConcentrationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415992B296F42C100EEB699 /* ConcentrationResultViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0412EEFB29705C5900256579 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		04159920296F155400EEB699 /* ResultMenuButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultMenuButton.xib; sourceTree = "<group>"; };
 		04159923296F3DA100EEB699 /* ResultMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMenuViewController.swift; sourceTree = "<group>"; };
 		0415992B296F42C100EEB699 /* ConcentrationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationResultViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 				04E8B78C2970514B000F0859 /* SceneListView.xib */,
 				04E8B78E2970524E000F0859 /* SceneListView.swift */,
 				04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */,
-				04E8B793297053B5000F0859 /* SceneListTableViewCell.xib */,
+				0412EEFB29705C5900256579 /* CircularProgressBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,6 +263,7 @@
 				041ECBCB296EF0C80053AC9C /* UIView+Extension.swift in Sources */,
 				0415992C296F42C100EEB699 /* ConcentrationResultViewController.swift in Sources */,
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
+				0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
