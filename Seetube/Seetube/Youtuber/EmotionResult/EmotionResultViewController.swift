@@ -1,13 +1,13 @@
 //
-//  ConcentrationResultViewController.swift
+//  EmotionResultViewController.swift
 //  Seetube
 //
-//  Created by 최수정 on 2023/01/12.
+//  Created by 최수정 on 2023/01/13.
 //
 
 import UIKit
 
-class ConcentrationResultViewController: UIViewController {
+class EmotionResultViewController: UIViewController {
     @IBOutlet weak var sceneListView: SceneListView!
     
     override func viewDidLoad() {
@@ -16,20 +16,20 @@ class ConcentrationResultViewController: UIViewController {
     }
 }
 
-extension ConcentrationResultViewController {
+extension EmotionResultViewController {
     private func configureTableView() {
         self.sceneListView.tableView.delegate = self
         self.sceneListView.tableView.dataSource = self
     }
 }
 
-extension ConcentrationResultViewController: UITableViewDelegate {
+extension EmotionResultViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return SceneListTableViewCell.cellHeight + SceneListTableViewCell.cellSpacing
     }
 }
 
-extension ConcentrationResultViewController: UITableViewDataSource {
+extension EmotionResultViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }

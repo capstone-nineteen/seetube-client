@@ -232,14 +232,32 @@
         <!--감정 분석 결과-->
         <scene sceneID="Aoy-pb-qz3">
             <objects>
-                <viewController id="df8-XY-7vc" sceneMemberID="viewController">
+                <viewController id="df8-XY-7vc" customClass="EmotionResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C9n-uA-3mp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Mz-nb-z2Y" customClass="SceneListView" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="265" width="375" height="402"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="감정이 감지된 장면"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ccz-p9-aYs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Mz-nb-z2Y" firstAttribute="leading" secondItem="ccz-p9-aYs" secondAttribute="leading" id="CqE-X6-Z8E"/>
+                            <constraint firstItem="ccz-p9-aYs" firstAttribute="bottom" secondItem="4Mz-nb-z2Y" secondAttribute="bottom" id="awM-Hl-hpH"/>
+                            <constraint firstItem="ccz-p9-aYs" firstAttribute="trailing" secondItem="4Mz-nb-z2Y" secondAttribute="trailing" id="laK-MH-jBR"/>
+                            <constraint firstItem="4Mz-nb-z2Y" firstAttribute="top" secondItem="ccz-p9-aYs" secondAttribute="top" constant="221" id="njs-tp-ELz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="감정 분석 결과" largeTitleDisplayMode="never" id="RCN-WF-17t"/>
+                    <connections>
+                        <outlet property="sceneListView" destination="4Mz-nb-z2Y" id="wSN-m1-IU5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqF-Fe-1eY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
