@@ -148,8 +148,23 @@
                     <view key="view" contentMode="scaleToFill" id="BmP-4Q-D2C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yi2-Wf-1Ic" customClass="SceneListView" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="265" width="375" height="402"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="집중도가 높은 장면"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8a4-Xm-axN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yi2-Wf-1Ic" firstAttribute="leading" secondItem="8a4-Xm-axN" secondAttribute="leading" id="E4s-vK-KGj"/>
+                            <constraint firstItem="yi2-Wf-1Ic" firstAttribute="top" secondItem="8a4-Xm-axN" secondAttribute="top" constant="221" id="HO7-IF-fMp"/>
+                            <constraint firstItem="8a4-Xm-axN" firstAttribute="bottom" secondItem="yi2-Wf-1Ic" secondAttribute="bottom" id="O6v-N8-Yuk"/>
+                            <constraint firstItem="8a4-Xm-axN" firstAttribute="trailing" secondItem="yi2-Wf-1Ic" secondAttribute="trailing" id="yfO-EB-cUf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="집중도 분석 결과" largeTitleDisplayMode="never" id="mG7-vC-okV">
                         <userDefinedRuntimeAttributes>
@@ -158,6 +173,9 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sceneListView" destination="yi2-Wf-1Ic" id="59o-Pw-Lv2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XuT-RF-y83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
