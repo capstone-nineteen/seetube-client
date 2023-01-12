@@ -109,6 +109,7 @@
 			children = (
 				04E8B78C2970514B000F0859 /* SceneListView.xib */,
 				04E8B78E2970524E000F0859 /* SceneListView.swift */,
+				04E8B793297053B5000F0859 /* SceneListTableViewCell.xib */,
 				04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */,
 				0412EEFB29705C5900256579 /* CircularProgressBar.swift */,
 			);

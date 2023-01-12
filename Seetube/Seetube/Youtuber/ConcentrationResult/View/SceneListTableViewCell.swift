@@ -11,6 +11,7 @@ class SceneListTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var timeIntervalLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var progressBar: CircularProgressBar!
     
     override func awakeFromNib() {
         super.awakeFromNib()
