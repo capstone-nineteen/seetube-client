@@ -1,24 +1,276 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hpm-25-l6h">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--분석 결과-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultMenuViewController" id="BYZ-38-t0r" customClass="ResultMenuViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtb-6Z-wbj" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="17" y="111" width="341" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="LlZ-Va-co7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="집중도"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconImageName" value="brain.head.profile"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.94509803921568625" green="0.23921568627450979" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Nz8-60-9D4" kind="show" id="VSS-KL-p2k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vh-OX-17S" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="17" y="216" width="341" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="zN9-pV-YyE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="감정"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconImageName" value="face.smiling"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.99607843137254903" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="df8-XY-7vc" kind="show" id="AqT-Iq-3hG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc5-i8-hgR" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="17" y="321" width="341" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="U93-9R-cVl"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="씬스틸러"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconImageName" value="person.fill"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="1" green="0.41176470588235292" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="1ya-ib-F2j" kind="show" id="SDU-pa-n1b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9L-Rb-zAs" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="17" y="426" width="341" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="wYL-MO-DcT"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="쇼츠"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconImageName" value="iphone.gen1.badge.play"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="1" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="pOq-Pj-3lr" kind="show" id="NtK-ux-J0Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9A-c5-fHa" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="17" y="531" width="341" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="74E-qe-2ed"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="하이라이트"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconImageName" value="play.rectangle.fill"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.94509803920000002" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="9aP-so-7zN" kind="show" id="jHC-oQ-AoW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bc5-i8-hgR" firstAttribute="leading" secondItem="1vh-OX-17S" secondAttribute="leading" id="Ea9-wm-kYo"/>
+                            <constraint firstItem="bc5-i8-hgR" firstAttribute="trailing" secondItem="1vh-OX-17S" secondAttribute="trailing" id="EjD-vW-lGv"/>
+                            <constraint firstItem="k9L-Rb-zAs" firstAttribute="top" secondItem="bc5-i8-hgR" secondAttribute="bottom" constant="15" id="IEg-tD-2nd"/>
+                            <constraint firstItem="Vtb-6Z-wbj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="LHU-mr-lZo"/>
+                            <constraint firstItem="1vh-OX-17S" firstAttribute="top" secondItem="Vtb-6Z-wbj" secondAttribute="bottom" constant="15" id="PAc-VH-Up5"/>
+                            <constraint firstItem="Vtb-6Z-wbj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="TAr-Rg-lfl"/>
+                            <constraint firstItem="u9A-c5-fHa" firstAttribute="trailing" secondItem="k9L-Rb-zAs" secondAttribute="trailing" id="XeY-cn-uY8"/>
+                            <constraint firstItem="u9A-c5-fHa" firstAttribute="top" secondItem="k9L-Rb-zAs" secondAttribute="bottom" constant="15" id="Ytd-aI-BzK"/>
+                            <constraint firstItem="u9A-c5-fHa" firstAttribute="leading" secondItem="k9L-Rb-zAs" secondAttribute="leading" id="dni-tD-yEo"/>
+                            <constraint firstItem="k9L-Rb-zAs" firstAttribute="leading" secondItem="bc5-i8-hgR" secondAttribute="leading" id="eyf-r3-5EV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vtb-6Z-wbj" secondAttribute="trailing" constant="17" id="igd-Hn-mUu"/>
+                            <constraint firstItem="1vh-OX-17S" firstAttribute="leading" secondItem="Vtb-6Z-wbj" secondAttribute="leading" id="sTd-cg-0Xm"/>
+                            <constraint firstItem="bc5-i8-hgR" firstAttribute="top" secondItem="1vh-OX-17S" secondAttribute="bottom" constant="15" id="tef-ah-ar6"/>
+                            <constraint firstItem="k9L-Rb-zAs" firstAttribute="trailing" secondItem="bc5-i8-hgR" secondAttribute="trailing" id="vby-Qd-WXL"/>
+                            <constraint firstItem="1vh-OX-17S" firstAttribute="trailing" secondItem="Vtb-6Z-wbj" secondAttribute="trailing" id="zLX-9z-brX"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
+                    <navigationItem key="navigationItem" title="분석 결과" largeTitleDisplayMode="always" id="jsI-Pb-OcR">
+                        <barButtonItem key="backBarButtonItem" title="back" id="4bL-RR-cou"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2628" y="-704.79760119940033"/>
+        </scene>
+        <!--집중도 분석 결과-->
+        <scene sceneID="hNh-Al-XEv">
+            <objects>
+                <viewController storyboardIdentifier="ConcentrationResultViewController" id="Nz8-60-9D4" customClass="ConcentrationResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BmP-4Q-D2C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8a4-Xm-axN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="집중도 분석 결과" largeTitleDisplayMode="never" id="mG7-vC-okV">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" name="AccentColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XuT-RF-y83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1367" y="99"/>
+        </scene>
+        <!--씬스틸러 분석 결과-->
+        <scene sceneID="dkR-Rl-aRY">
+            <objects>
+                <viewController id="1ya-ib-F2j" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fpJ-tn-dns">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VVT-UG-kPT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="씬스틸러 분석 결과" largeTitleDisplayMode="never" id="YYa-5e-Ti6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXC-5y-G8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2628" y="99"/>
+        </scene>
+        <!--쇼츠 추천 결과-->
+        <scene sceneID="c7G-Rv-Mp6">
+            <objects>
+                <viewController id="pOq-Pj-3lr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZbO-fC-n9h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="epK-d2-2el"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="쇼츠 추천 결과" largeTitleDisplayMode="never" id="Pqr-Fp-wTd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IgP-t5-Bpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3255" y="99"/>
+        </scene>
+        <!--하이라이트 생성 결과-->
+        <scene sceneID="UCh-y9-xOZ">
+            <objects>
+                <viewController id="9aP-so-7zN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nhu-JM-thM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Fx0-A3-7A3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="하이라이트 생성 결과" largeTitleDisplayMode="never" id="uQe-gO-WA9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTU-cS-567" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3878" y="99"/>
+        </scene>
+        <!--감정 분석 결과-->
+        <scene sceneID="Aoy-pb-qz3">
+            <objects>
+                <viewController id="df8-XY-7vc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C9n-uA-3mp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ccz-p9-aYs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="감정 분석 결과" largeTitleDisplayMode="never" id="RCN-WF-17t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqF-Fe-1eY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1999" y="99"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RQ3-cV-2wS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hpm-25-l6h" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SIv-YQ-koT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="AccentColor"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bhv-bb-ttK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y4v-zB-94L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1701.5267175572519" y="-704.22535211267609"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="1vh-OX-17S">
+            <size key="intrinsicContentSize" width="24" height="14"/>
+        </designable>
+        <designable name="Vtb-6Z-wbj">
+            <size key="intrinsicContentSize" width="24" height="14"/>
+        </designable>
+        <designable name="bc5-i8-hgR">
+            <size key="intrinsicContentSize" width="24" height="14"/>
+        </designable>
+        <designable name="k9L-Rb-zAs">
+            <size key="intrinsicContentSize" width="24" height="14"/>
+        </designable>
+        <designable name="u9A-c5-fHa">
+            <size key="intrinsicContentSize" width="24" height="14"/>
+        </designable>
+    </designables>
+    <color key="tintColor" red="0.94509803921568625" green="0.23921568627450979" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.94509803921568625" green="0.23921568627450979" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
