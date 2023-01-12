@@ -29,7 +29,7 @@ class SceneListView: UIView, NibLoadable {
         self.configureTableView()
     }
     
-    private func configureTableView() {
+    func configureTableView() {
         let sceneListTableViewCellNib = UINib.init(nibName: SceneListTableViewCell.identifier, bundle: nil)
         self.tableView.register(sceneListTableViewCellNib, forCellReuseIdentifier: SceneListTableViewCell.identifier)
     }

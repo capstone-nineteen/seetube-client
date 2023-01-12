@@ -24,6 +24,10 @@
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
 		047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */; };
 		047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */; };
+		047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */; };
+		047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4929707D2B007CDBC4 /* HighlightResultViewController.swift */; };
+		047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */; };
+		047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */; };
 		04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B78C2970514B000F0859 /* SceneListView.xib */; };
 		04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B78E2970524E000F0859 /* SceneListView.swift */; };
 		04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */; };
@@ -50,6 +54,10 @@
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
 		047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultViewController.swift; sourceTree = "<group>"; };
+		047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeView.swift; sourceTree = "<group>"; };
+		047A5F4929707D2B007CDBC4 /* HighlightResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightResultViewController.swift; sourceTree = "<group>"; };
+		047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeTableViewCell.swift; sourceTree = "<group>"; };
+		047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListLargeTableViewCell.xib; sourceTree = "<group>"; };
 		04E8B78C2970514B000F0859 /* SceneListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListView.xib; sourceTree = "<group>"; };
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
 		04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,6 +90,7 @@
 				04159929296F428A00EEB699 /* ConcentrationResult */,
 				047A5F372970755E007CDBC4 /* EmotionResult */,
 				047A5F3C297076E6007CDBC4 /* SceneStealerResult */,
+				047A5F3F297077EC007CDBC4 /* HighlightResult */,
 			);
 			path = Youtuber;
 			sourceTree = "<group>";
@@ -208,6 +217,25 @@
 			path = SceneStealerResult;
 			sourceTree = "<group>";
 		};
+		047A5F3F297077EC007CDBC4 /* HighlightResult */ = {
+			isa = PBXGroup;
+			children = (
+				047A5F40297077FB007CDBC4 /* View */,
+				047A5F4929707D2B007CDBC4 /* HighlightResultViewController.swift */,
+			);
+			path = HighlightResult;
+			sourceTree = "<group>";
+		};
+		047A5F40297077FB007CDBC4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */,
+				047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */,
+				047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,6 +300,7 @@
 				041ECBB8296ED84E0053AC9C /* Assets.xcassets in Resources */,
 				041ECBB6296ED84C0053AC9C /* Main.storyboard in Resources */,
 				04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */,
+				047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,12 +315,15 @@
 				047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */,
 				041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */,
 				041ECBB3296ED84C0053AC9C /* ViewController.swift in Sources */,
+				047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */,
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
 				0415992F296F477600EEB699 /* NibLoadable.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
 				04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */,
 				04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */,
+				047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */,
+				047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */,
 				041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */,
 				041ECBCB296EF0C80053AC9C /* UIView+Extension.swift in Sources */,
 				0415992C296F42C100EEB699 /* ConcentrationResultViewController.swift in Sources */,
