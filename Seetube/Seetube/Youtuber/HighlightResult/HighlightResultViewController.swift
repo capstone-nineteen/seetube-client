@@ -12,14 +12,7 @@ class HighlightResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureTableView()
-    }
-}
-
-extension HighlightResultViewController {
-    private func configureTableView() {
-        self.sceneListView.tableView.delegate = self
-        self.sceneListView.tableView.dataSource = self
+        // TODO: largeView 더 큰 뷰로 수정, 테이블뷰 델리게이트 설정
     }
 }
 
@@ -35,7 +28,7 @@ extension HighlightResultViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SceneListLargeTableViewCell.identifier, for: indexPath) as? SceneListLargeTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SceneListLargeTableViewCell.cellReuseIdentifier, for: indexPath) as? SceneListLargeTableViewCell else { return UITableViewCell() }
         return cell
     }
 }

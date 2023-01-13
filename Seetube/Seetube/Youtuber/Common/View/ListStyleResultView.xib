@@ -8,7 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListStyleResultView" customModule="Seetube" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListStyleResultView" customModule="Seetube" customModuleProvider="target">
+            <connections>
+                <outlet property="sceneListView" destination="GK7-AZ-G48" id="CUp-az-PJ9"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="439" height="852"/>
@@ -27,7 +31,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK7-AZ-G48" customClass="SceneListView" customModule="Seetube" customModuleProvider="target">
-                    <rect key="frame" x="5" y="259.66666666666669" width="433" height="592.33333333333326"/>
+                    <rect key="frame" x="5" y="257.66666666666669" width="433" height="594.33333333333326"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="집중도가 높은 장면"/>
@@ -40,7 +44,7 @@
                 <constraint firstAttribute="trailing" secondItem="zeZ-5u-n8G" secondAttribute="trailing" constant="17" id="8a4-WY-kGE"/>
                 <constraint firstItem="GK7-AZ-G48" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="C7u-Us-Gzo"/>
                 <constraint firstItem="zeZ-5u-n8G" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="17" id="JV3-11-b1z"/>
-                <constraint firstItem="GK7-AZ-G48" firstAttribute="top" secondItem="zeZ-5u-n8G" secondAttribute="bottom" constant="15" id="olR-jI-EJ6"/>
+                <constraint firstItem="GK7-AZ-G48" firstAttribute="top" secondItem="zeZ-5u-n8G" secondAttribute="bottom" constant="13" id="olR-jI-EJ6"/>
                 <constraint firstItem="zeZ-5u-n8G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="17" id="tJn-Lt-tv9"/>
                 <constraint firstAttribute="bottom" secondItem="GK7-AZ-G48" secondAttribute="bottom" id="yUi-zs-nEa"/>
             </constraints>

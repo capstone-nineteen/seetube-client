@@ -9,13 +9,10 @@ import UIKit
 
 @IBDesignable
 class SceneListView: UIView, NibLoadable {
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    @IBInspectable var title: String? {
-        set { self.titleLabel.text = newValue }
-        get { return self.titleLabel.text }
-    }
+    var title: String? { return self.titleLabel.text }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,7 +27,16 @@ class SceneListView: UIView, NibLoadable {
     }
     
     func configureTableView() {
-        let sceneListTableViewCellNib = UINib.init(nibName: SceneListTableViewCell.identifier, bundle: nil)
-        self.tableView.register(sceneListTableViewCellNib, forCellReuseIdentifier: SceneListTableViewCell.identifier)
+        let sceneListTableViewCellNib = UINib.init(nibName: SceneListTableViewCell.cellReuseIdentifier, bundle: nil)
+        self.tableView.register(sceneListTableViewCellNib, forCellReuseIdentifier: SceneListTableViewCell.cellReuseIdentifier)
+    }
+    
+    func configureDelegate(_ delegate: UITableViewDelegate & UITableViewDataSource) {
+        self.tableView.delegate = delegate
+        self.tableView.dataSource = delegate
+    }
+    
+    func updateTitle(with title: String?) {
+        self.titleLabel.text = title
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class SceneListLargeView: SceneListView {
     override func configureTableView() {
-        let sceneListLargeTableViewCellNib = UINib.init(nibName: SceneListLargeTableViewCell.identifier, bundle: nil)
-        self.tableView.register(sceneListLargeTableViewCellNib, forCellReuseIdentifier: SceneListLargeTableViewCell.identifier)
+        let sceneListLargeTableViewCellNib = UINib.init(nibName: SceneListLargeTableViewCell.cellReuseIdentifier, bundle: nil)
+        self.tableView.register(sceneListLargeTableViewCellNib, forCellReuseIdentifier: SceneListLargeTableViewCell.cellReuseIdentifier)
     }
 }

@@ -8,7 +8,13 @@
 import UIKit
 
 class ListStyleResultView: UIView, NibLoadable {
-
+    @IBOutlet weak var sceneListView: SceneListView!
+    
+    @IBInspectable var title: String? {
+        set { self.sceneListView.updateTitle(with: newValue) }
+        get { return self.sceneListView.title }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.loadFromNib(owner: self)
@@ -19,4 +25,7 @@ class ListStyleResultView: UIView, NibLoadable {
         self.loadFromNib(owner: self)
     }
 
+    func configureDelegate(_ delegate: UITableViewDelegate & UITableViewDataSource) {
+        self.sceneListView.configureDelegate(delegate)
+    }
 }

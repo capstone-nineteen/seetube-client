@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		040E3CBC2971AF290057B25E /* ListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CBB2971AF290057B25E /* ListStyleResultView.xib */; };
 		040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CBD2971B0130057B25E /* ListStyleResultView.swift */; };
+		040E3CC32971BA7B0057B25E /* CellReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CC22971BA7B0057B25E /* CellReuseIdentifiable.swift */; };
 		0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412EEFB29705C5900256579 /* CircularProgressBar.swift */; };
 		04159921296F155400EEB699 /* ResultMenuButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04159920296F155400EEB699 /* ResultMenuButton.xib */; };
 		04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04159923296F3DA100EEB699 /* ResultMenuViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		040E3CBB2971AF290057B25E /* ListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStyleResultView.xib; sourceTree = "<group>"; };
 		040E3CBD2971B0130057B25E /* ListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyleResultView.swift; sourceTree = "<group>"; };
+		040E3CC22971BA7B0057B25E /* CellReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuseIdentifiable.swift; sourceTree = "<group>"; };
 		0412EEFB29705C5900256579 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		04159920296F155400EEB699 /* ResultMenuButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultMenuButton.xib; sourceTree = "<group>"; };
 		04159923296F3DA100EEB699 /* ResultMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMenuViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040E3CC42971BAFA0057B25E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0415992E296F477500EEB699 /* NibLoadable.swift */,
+				040E3CC22971BA7B0057B25E /* CellReuseIdentifiable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		04159922296F2CB600EEB699 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +139,6 @@
 			children = (
 				041ECBCC296EF2FB0053AC9C /* CircleView.swift */,
 				041ECBCE296EFEF40053AC9C /* GradientView.swift */,
-				0415992E296F477500EEB699 /* NibLoadable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -153,6 +163,7 @@
 		041ECBAD296ED84C0053AC9C /* Seetube */ = {
 			isa = PBXGroup;
 			children = (
+				040E3CC42971BAFA0057B25E /* Protocol */,
 				0415992D296F475600EEB699 /* View */,
 				041ECBC9296EF0B80053AC9C /* Extension */,
 				04159926296F3DB100EEB699 /* Reviewer */,
@@ -336,6 +347,7 @@
 				041ECBCB296EF0C80053AC9C /* UIView+Extension.swift in Sources */,
 				0415992C296F42C100EEB699 /* ConcentrationResultViewController.swift in Sources */,
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
+				040E3CC32971BA7B0057B25E /* CellReuseIdentifiable.swift in Sources */,
 				0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

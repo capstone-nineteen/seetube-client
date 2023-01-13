@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SceneListTableViewCell: UITableViewCell {
-    static let identifier = "SceneListTableViewCell"
+class SceneListTableViewCell: UITableViewCell, CellReuseIdentifiable {
+    static let cellReuseIdentifier: String = "SceneListTableViewCell"
     static let cellHeight: CGFloat = 80
     static let cellSpacing: CGFloat = 10
     

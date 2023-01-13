@@ -8,18 +8,11 @@
 import UIKit
 
 class SceneStealerResultViewController: UIViewController {
-    @IBOutlet weak var sceneListView: SceneListView!
+    @IBOutlet weak var resultView: ListStyleResultView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureTableView()
-    }
-}
-
-extension SceneStealerResultViewController {
-    private func configureTableView() {
-        self.sceneListView.tableView.delegate = self
-        self.sceneListView.tableView.dataSource = self
+        self.resultView.configureDelegate(self)
     }
 }
 
@@ -35,7 +28,7 @@ extension SceneStealerResultViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SceneListTableViewCell.identifier, for: indexPath) as? SceneListTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SceneListTableViewCell.cellReuseIdentifier, for: indexPath) as? SceneListTableViewCell else { return UITableViewCell() }
         cell.setProgress(value: Double((indexPath.row+1))*0.1,
                          text: "\((indexPath.row+1)*10)%",
                          color: UIColor(named: "AccentColor"))
