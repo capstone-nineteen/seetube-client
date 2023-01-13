@@ -8,11 +8,11 @@
 import UIKit
 
 class HighlightResultViewController: UIViewController {
-    @IBOutlet weak var sceneListView: SceneListLargeView!
+    @IBOutlet weak var sceneListView: LargeListStyleResultView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: largeView 더 큰 뷰로 수정, 테이블뷰 델리게이트 설정
+        self.sceneListView.configureDelegate(self)
     }
 }
 

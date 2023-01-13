@@ -10,6 +10,8 @@
 		040E3CBC2971AF290057B25E /* ListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CBB2971AF290057B25E /* ListStyleResultView.xib */; };
 		040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CBD2971B0130057B25E /* ListStyleResultView.swift */; };
 		040E3CC32971BA7B0057B25E /* CellReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CC22971BA7B0057B25E /* CellReuseIdentifiable.swift */; };
+		040E3CCB2971C8AC0057B25E /* LargeListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */; };
+		040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CCC2971C8C20057B25E /* LargeListStyleResultView.swift */; };
 		0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412EEFB29705C5900256579 /* CircularProgressBar.swift */; };
 		04159921296F155400EEB699 /* ResultMenuButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04159920296F155400EEB699 /* ResultMenuButton.xib */; };
 		04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04159923296F3DA100EEB699 /* ResultMenuViewController.swift */; };
@@ -41,6 +43,8 @@
 		040E3CBB2971AF290057B25E /* ListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStyleResultView.xib; sourceTree = "<group>"; };
 		040E3CBD2971B0130057B25E /* ListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyleResultView.swift; sourceTree = "<group>"; };
 		040E3CC22971BA7B0057B25E /* CellReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuseIdentifiable.swift; sourceTree = "<group>"; };
+		040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeListStyleResultView.xib; sourceTree = "<group>"; };
+		040E3CCC2971C8C20057B25E /* LargeListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeListStyleResultView.swift; sourceTree = "<group>"; };
 		0412EEFB29705C5900256579 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		04159920296F155400EEB699 /* ResultMenuButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultMenuButton.xib; sourceTree = "<group>"; };
 		04159923296F3DA100EEB699 /* ResultMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMenuViewController.swift; sourceTree = "<group>"; };
@@ -237,8 +241,8 @@
 		047A5F3F297077EC007CDBC4 /* HighlightResult */ = {
 			isa = PBXGroup;
 			children = (
-				047A5F40297077FB007CDBC4 /* View */,
 				047A5F4929707D2B007CDBC4 /* HighlightResultViewController.swift */,
+				047A5F40297077FB007CDBC4 /* View */,
 			);
 			path = HighlightResult;
 			sourceTree = "<group>";
@@ -247,8 +251,10 @@
 			isa = PBXGroup;
 			children = (
 				047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */,
-				047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */,
 				047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */,
+				047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */,
+				040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */,
+				040E3CCC2971C8C20057B25E /* LargeListStyleResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				041ECBB8296ED84E0053AC9C /* Assets.xcassets in Resources */,
 				041ECBB6296ED84C0053AC9C /* Main.storyboard in Resources */,
 				04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */,
+				040E3CCB2971C8AC0057B25E /* LargeListStyleResultView.xib in Resources */,
 				047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */,
 				040E3CBC2971AF290057B25E /* ListStyleResultView.xib in Resources */,
 			);
@@ -342,6 +349,7 @@
 				04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */,
 				04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */,
 				047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */,
+				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,
 				047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */,
 				041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */,
 				041ECBCB296EF0C80053AC9C /* UIView+Extension.swift in Sources */,
