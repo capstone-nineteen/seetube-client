@@ -17,17 +17,6 @@ class SceneListTableViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var progressBar: CircularProgressBar!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 0,

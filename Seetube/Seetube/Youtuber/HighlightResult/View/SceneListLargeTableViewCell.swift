@@ -12,17 +12,6 @@ class SceneListLargeTableViewCell: UITableViewCell {
     static let cellHeight: CGFloat = 95
     static let cellSpacing: CGFloat = 10
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 0,

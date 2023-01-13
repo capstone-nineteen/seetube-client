@@ -8,8 +8,6 @@
 import UIKit
 
 class ResultMenuViewController: UIViewController {
-    static let storyboardID = "ResultMenuViewController"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -31,10 +31,6 @@ class ResultMenuButton: UIButton, NibLoadable {
         configureShadow()
     }
     
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-    }
-    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
