@@ -150,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yi2-Wf-1Ic" customClass="SceneListView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="5" y="265" width="369" height="402"/>
+                                <rect key="frame" x="5" y="268" width="369" height="399"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="집중도가 높은 장면"/>
@@ -161,9 +161,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yi2-Wf-1Ic" firstAttribute="leading" secondItem="8a4-Xm-axN" secondAttribute="leading" constant="5" id="E4s-vK-KGj"/>
-                            <constraint firstItem="yi2-Wf-1Ic" firstAttribute="top" secondItem="8a4-Xm-axN" secondAttribute="top" constant="221" id="HO7-IF-fMp"/>
                             <constraint firstItem="8a4-Xm-axN" firstAttribute="bottom" secondItem="yi2-Wf-1Ic" secondAttribute="bottom" id="O6v-N8-Yuk"/>
                             <constraint firstItem="8a4-Xm-axN" firstAttribute="trailing" secondItem="yi2-Wf-1Ic" secondAttribute="trailing" constant="1" id="yfO-EB-cUf"/>
+                            <constraint firstItem="yi2-Wf-1Ic" firstAttribute="top" secondItem="8a4-Xm-axN" secondAttribute="top" constant="224" id="zmq-kY-C7p"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="집중도 분석 결과" largeTitleDisplayMode="never" id="mG7-vC-okV">
