@@ -9,11 +9,16 @@ import UIKit
 
 class HighlightResultViewController: UIViewController {
     @IBOutlet weak var sceneListView: LargeListStyleResultView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sceneListView.configureDelegate(self)
     }
+    
+    @IBAction func saveButtonTouched(_ sender: BottomButton) {
+        print("DEBUG: save button touched")
+    }
+    
 }
 
 extension HighlightResultViewController: UITableViewDelegate {
