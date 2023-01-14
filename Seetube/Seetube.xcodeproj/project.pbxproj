@@ -32,6 +32,8 @@
 		046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD0FB2972A53C00602F89 /* ShortsResultViewController.swift */; };
 		046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD0FE2972D1B000602F89 /* ShortsCollectionViewCell.swift */; };
 		046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD1002972D7A900602F89 /* AlertDisplaying.swift */; };
+		046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD1032972E54F00602F89 /* LoginViewController.swift */; };
+		046AD1092972FCC200602F89 /* SigninButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD1082972FCC200602F89 /* SigninButton.swift */; };
 		047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */; };
 		047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */; };
 		047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */; };
@@ -72,6 +74,8 @@
 		046AD0FB2972A53C00602F89 /* ShortsResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsResultViewController.swift; sourceTree = "<group>"; };
 		046AD0FE2972D1B000602F89 /* ShortsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsCollectionViewCell.swift; sourceTree = "<group>"; };
 		046AD1002972D7A900602F89 /* AlertDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplaying.swift; sourceTree = "<group>"; };
+		046AD1032972E54F00602F89 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		046AD1082972FCC200602F89 /* SigninButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninButton.swift; sourceTree = "<group>"; };
 		047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
 		047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeView.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		04159926296F3DB100EEB699 /* Reviewer */ = {
 			isa = PBXGroup;
 			children = (
+				046AD1022972E51200602F89 /* Login */,
 			);
 			path = Reviewer;
 			sourceTree = "<group>";
@@ -227,6 +232,23 @@
 			isa = PBXGroup;
 			children = (
 				046AD0FE2972D1B000602F89 /* ShortsCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		046AD1022972E51200602F89 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				046AD1032972E54F00602F89 /* LoginViewController.swift */,
+				046AD1052972FB3C00602F89 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		046AD1052972FB3C00602F89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				046AD1082972FCC200602F89 /* SigninButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,6 +397,7 @@
 				046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */,
 				041ECBB3296ED84C0053AC9C /* ViewController.swift in Sources */,
 				047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */,
+				046AD1092972FCC200602F89 /* SigninButton.swift in Sources */,
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
 				0415992F296F477600EEB699 /* NibLoadable.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
@@ -392,6 +415,7 @@
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
 				040E3CC32971BA7B0057B25E /* CellReuseIdentifiable.swift in Sources */,
 				0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */,
+				046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */,
 				046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

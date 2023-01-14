@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hpm-25-l6h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nrl-LI-RRj">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -10,6 +10,93 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="ako-uc-OBY">
+            <objects>
+                <viewController id="nrl-LI-RRj" customClass="LoginViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YjO-5F-4MT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i2J-Bd-mRl">
+                                <rect key="frame" x="47.5" y="119" width="280" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="pxn-e1-LjH"/>
+                                    <constraint firstAttribute="width" constant="280" id="qyg-m7-ipQ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="리뷰어"/>
+                                    <segment title="유튜버"/>
+                                </segments>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="segmentedValueChanged:" destination="nrl-LI-RRj" eventType="valueChanged" id="YdQ-7T-ag2"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCQ-rt-twn">
+                                <rect key="frame" x="152.5" y="62" width="70" height="28"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L25-aS-26h">
+                                <rect key="frame" x="77.5" y="194" width="220" height="220"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="L25-aS-26h" secondAttribute="height" multiplier="1:1" id="CGO-Xz-Haf"/>
+                                    <constraint firstAttribute="height" constant="220" id="vJl-0a-R16"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원하는 컨텐츠를 시청하고 리워드를 적립해보세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4a-lA-LJb">
+                                <rect key="frame" x="117.5" y="429" width="140.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quT-LC-Tcc">
+                                <rect key="frame" x="73.5" y="502" width="228" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="quT-LC-Tcc" secondAttribute="height" multiplier="382:92" id="E3H-D7-20F"/>
+                                    <constraint firstAttribute="height" constant="55" id="p0z-Pl-egb"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="GoogleSignin"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="googleSigninButton:" destination="nrl-LI-RRj" eventType="touchUpInside" id="iNv-Jm-BKQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lag-I3-LYf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I4a-lA-LJb" firstAttribute="centerX" secondItem="L25-aS-26h" secondAttribute="centerX" id="4Mh-3i-OlV"/>
+                            <constraint firstItem="I4a-lA-LJb" firstAttribute="top" secondItem="L25-aS-26h" secondAttribute="bottom" constant="15" id="7A0-gf-3ca"/>
+                            <constraint firstItem="XCQ-rt-twn" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="CZa-GU-LDV"/>
+                            <constraint firstItem="XCQ-rt-twn" firstAttribute="top" secondItem="Lag-I3-LYf" secondAttribute="top" constant="62" id="EYk-vZ-Och"/>
+                            <constraint firstItem="i2J-Bd-mRl" firstAttribute="top" secondItem="XCQ-rt-twn" secondAttribute="bottom" constant="29" id="Jk8-3g-gEo"/>
+                            <constraint firstItem="quT-LC-Tcc" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="PJf-7T-db3"/>
+                            <constraint firstItem="quT-LC-Tcc" firstAttribute="top" secondItem="I4a-lA-LJb" secondAttribute="bottom" priority="250" constant="50" id="WIE-Hu-rOh"/>
+                            <constraint firstItem="i2J-Bd-mRl" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="YuY-NZ-Obd"/>
+                            <constraint firstItem="L25-aS-26h" firstAttribute="top" secondItem="i2J-Bd-mRl" secondAttribute="bottom" constant="30" id="bFg-cU-AUL"/>
+                            <constraint firstItem="Lag-I3-LYf" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="quT-LC-Tcc" secondAttribute="bottom" priority="750" constant="110" id="etg-mn-lgC"/>
+                            <constraint firstItem="L25-aS-26h" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="ywQ-Xx-dei"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="guidanceLabel" destination="I4a-lA-LJb" id="xzj-t5-jq4"/>
+                        <outlet property="segmentedControl" destination="i2J-Bd-mRl" id="G9W-E9-lu0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWA-Ag-C1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="-1402.8485757121441"/>
+        </scene>
         <!--분석 결과-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -319,10 +406,17 @@
                             <constraint firstItem="epK-d2-2el" firstAttribute="bottom" secondItem="MIt-RP-vXU" secondAttribute="bottom" constant="7" id="s8I-A2-ydj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="쇼츠 추천 결과" largeTitleDisplayMode="never" id="Pqr-Fp-wTd"/>
+                    <navigationItem key="navigationItem" title="쇼츠 추천 결과" largeTitleDisplayMode="never" id="Pqr-Fp-wTd">
+                        <barButtonItem key="rightBarButtonItem" title="선택" id="1zx-Yz-CXH">
+                            <connections>
+                                <action selector="rightBarButtonItemTouched:" destination="pOq-Pj-3lr" id="jsh-jM-dpT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="KbU-EA-ae5" id="hY2-wH-Ztb"/>
                         <outlet property="collectionViewBottomConstraint" destination="3lg-nt-Xow" id="zNG-KY-9JE"/>
+                        <outlet property="rightBarButtonItem" destination="1zx-Yz-CXH" id="v7o-3F-kYa"/>
                         <outlet property="saveButton" destination="MIt-RP-vXU" id="H0t-aG-PEs"/>
                     </connections>
                 </viewController>
@@ -459,10 +553,14 @@
     </designables>
     <color key="tintColor" red="0.94509803921568625" green="0.23921568627450979" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
+        <image name="GoogleSignin" width="191" height="46"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.94499999284744263" green="0.23899999260902405" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
