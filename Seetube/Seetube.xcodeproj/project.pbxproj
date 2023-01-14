@@ -31,6 +31,7 @@
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
 		046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD0FB2972A53C00602F89 /* ShortsResultViewController.swift */; };
 		046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD0FE2972D1B000602F89 /* ShortsCollectionViewCell.swift */; };
+		046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD1002972D7A900602F89 /* AlertDisplaying.swift */; };
 		047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */; };
 		047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */; };
 		047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */; };
@@ -70,6 +71,7 @@
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		046AD0FB2972A53C00602F89 /* ShortsResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsResultViewController.swift; sourceTree = "<group>"; };
 		046AD0FE2972D1B000602F89 /* ShortsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsCollectionViewCell.swift; sourceTree = "<group>"; };
+		046AD1002972D7A900602F89 /* AlertDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplaying.swift; sourceTree = "<group>"; };
 		047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
 		047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				0415992E296F477500EEB699 /* NibLoadable.swift */,
 				040E3CC22971BA7B0057B25E /* CellReuseIdentifiable.swift */,
+				046AD1002972D7A900602F89 /* AlertDisplaying.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
 				040E3CC32971BA7B0057B25E /* CellReuseIdentifiable.swift in Sources */,
 				0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */,
+				046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
