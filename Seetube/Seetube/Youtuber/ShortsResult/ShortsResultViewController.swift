@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ShortsResultViewController: UIViewController {
+class ShortsResultViewController: UIViewController, AlertDisplaying {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var saveButton: BottomButton!
+    @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
     private lazy var rightBarButtonItem: UIBarButtonItem = {
        let item = UIBarButtonItem(title: "선택",
                                   style: .plain,
@@ -15,9 +19,7 @@ class ShortsResultViewController: UIViewController {
                                   action: #selector(changeToSelectionMode(_:)))
         return item
     }()
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var saveButton: BottomButton!
-    @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
+    
     private let collectionViewItemSpacing: CGFloat = 5
     private let collectionViewHorizontalInset: CGFloat = 17
     private let collectionViewVerticalInset: CGFloat = 5
@@ -29,9 +31,9 @@ class ShortsResultViewController: UIViewController {
     }
     
     @IBAction func saveButtonTouched(_ sender: Any) {
-        // 저장
-        self.changeToNormalMode()
-        // TODO: 얼럿
+        self.displayOKAlert(title: "저장 완료",
+                            message: "쇼츠를 저장했습니다.",
+                            action: { [weak self] _ in self?.changeToNormalMode() })
     }
 }
 
