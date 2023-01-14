@@ -6,6 +6,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -218,18 +219,116 @@
         <!--쇼츠 추천 결과-->
         <scene sceneID="c7G-Rv-Mp6">
             <objects>
-                <viewController id="pOq-Pj-3lr" sceneMemberID="viewController">
+                <viewController id="pOq-Pj-3lr" customClass="ShortsResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZbO-fC-n9h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-EA-ae5">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wk5-gc-oEN">
+                                    <size key="itemSize" width="152" height="264"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="17" minY="5" maxX="17" maxY="5"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShortsCollectionViewCell" id="yvK-A6-ETX" customClass="ShortsCollectionViewCell" customModule="Seetube" customModuleProvider="target">
+                                        <rect key="frame" x="17" y="5" width="152" height="264"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4lH-gZ-nC4">
+                                            <rect key="frame" x="0.0" y="0.0" width="152" height="264"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="집중도 70% 행복 65%" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZw-ER-mhg">
+                                                    <rect key="frame" x="12" y="220.5" width="65.5" height="31.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🕔 00:12-31:42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JK2-es-D03">
+                                                    <rect key="frame" x="10" y="201.5" width="90" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oXa-v2-GJh">
+                                                    <rect key="frame" x="8" y="8.5" width="30" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="G2I-tI-Rs5"/>
+                                                        <constraint firstAttribute="width" constant="30" id="tBh-nN-Co3"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WZw-ER-mhg" firstAttribute="top" secondItem="JK2-es-D03" secondAttribute="bottom" constant="4" id="G8n-sQ-Ngt"/>
+                                                <constraint firstItem="JK2-es-D03" firstAttribute="leading" secondItem="WZw-ER-mhg" secondAttribute="leading" constant="-2" id="I6f-r5-aQo"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WZw-ER-mhg" secondAttribute="trailing" constant="12" id="be9-Z0-7FI"/>
+                                                <constraint firstAttribute="bottom" secondItem="WZw-ER-mhg" secondAttribute="bottom" constant="12" id="dGY-jS-9ID"/>
+                                                <constraint firstItem="WZw-ER-mhg" firstAttribute="leading" secondItem="4lH-gZ-nC4" secondAttribute="leading" constant="12" id="dXP-Qs-c9E"/>
+                                                <constraint firstItem="oXa-v2-GJh" firstAttribute="leading" secondItem="4lH-gZ-nC4" secondAttribute="leading" constant="8" id="fho-Np-nb9"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JK2-es-D03" secondAttribute="trailing" constant="12" id="pml-16-yVX"/>
+                                                <constraint firstItem="oXa-v2-GJh" firstAttribute="top" secondItem="4lH-gZ-nC4" secondAttribute="top" constant="8" id="yeF-La-fSi"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="152" height="264"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="checkIconImageView" destination="oXa-v2-GJh" id="L7i-yn-2lt"/>
+                                            <outlet property="contentLabel" destination="WZw-ER-mhg" id="tb3-W8-k28"/>
+                                            <outlet property="timeIntervalLabel" destination="JK2-es-D03" id="PCG-qd-1n8"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="pOq-Pj-3lr" id="Tr0-Hl-A2y"/>
+                                    <outlet property="delegate" destination="pOq-Pj-3lr" id="5Ws-Az-cQh"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIt-RP-vXU" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="17" y="610" width="341" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9Cg-11-dcm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="총 3개의 쇼츠 저장하기"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonTouched:" destination="9aP-so-7zN" eventType="touchUpInside" id="Lt6-Na-nbV"/>
+                                    <action selector="saveButtonTouched:" destination="pOq-Pj-3lr" eventType="touchUpInside" id="cyW-F6-k33"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="epK-d2-2el"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="epK-d2-2el" firstAttribute="bottom" secondItem="KbU-EA-ae5" secondAttribute="bottom" id="3lg-nt-Xow"/>
+                            <constraint firstItem="MIt-RP-vXU" firstAttribute="leading" secondItem="epK-d2-2el" secondAttribute="leading" constant="17" id="6z6-hl-oPi"/>
+                            <constraint firstItem="epK-d2-2el" firstAttribute="trailing" secondItem="MIt-RP-vXU" secondAttribute="trailing" constant="17" id="9wm-iD-8WZ"/>
+                            <constraint firstItem="KbU-EA-ae5" firstAttribute="top" secondItem="epK-d2-2el" secondAttribute="top" id="Gml-Lm-po6"/>
+                            <constraint firstItem="epK-d2-2el" firstAttribute="trailing" secondItem="KbU-EA-ae5" secondAttribute="trailing" id="Qlf-Qf-h6N"/>
+                            <constraint firstItem="KbU-EA-ae5" firstAttribute="leading" secondItem="epK-d2-2el" secondAttribute="leading" id="Zv6-y0-5Uw"/>
+                            <constraint firstItem="epK-d2-2el" firstAttribute="bottom" secondItem="MIt-RP-vXU" secondAttribute="bottom" constant="7" id="s8I-A2-ydj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="쇼츠 추천 결과" largeTitleDisplayMode="never" id="Pqr-Fp-wTd"/>
+                    <connections>
+                        <outlet property="collectionView" destination="KbU-EA-ae5" id="hY2-wH-Ztb"/>
+                        <outlet property="collectionViewBottomConstraint" destination="3lg-nt-Xow" id="zNG-KY-9JE"/>
+                        <outlet property="saveButton" destination="MIt-RP-vXU" id="H0t-aG-PEs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgP-t5-Bpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3255" y="99"/>
+            <point key="canvasLocation" x="3253.5999999999999" y="98.50074962518741"/>
         </scene>
         <!--하이라이트 생성 결과-->
         <scene sceneID="UCh-y9-xOZ">
@@ -324,7 +423,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SIv-YQ-koT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="AccentColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -343,6 +441,9 @@
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="24" height="14"/>
         </designable>
+        <designable name="MIt-RP-vXU">
+            <size key="intrinsicContentSize" width="24" height="14"/>
+        </designable>
         <designable name="Vtb-6Z-wbj">
             <size key="intrinsicContentSize" width="24" height="14"/>
         </designable>
@@ -358,6 +459,7 @@
     </designables>
     <color key="tintColor" red="0.94509803921568625" green="0.23921568627450979" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.94499999284744263" green="0.23899999260902405" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
