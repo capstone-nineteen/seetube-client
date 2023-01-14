@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HighlightResultViewController: UIViewController {
+class HighlightResultViewController: UIViewController, AlertDisplaying {
     @IBOutlet weak var sceneListView: LargeListStyleResultView!
 
     override func viewDidLoad() {
@@ -16,7 +16,8 @@ class HighlightResultViewController: UIViewController {
     }
     
     @IBAction func saveButtonTouched(_ sender: BottomButton) {
-        print("DEBUG: save button touched")
+        self.displayOKAlert(title: "저장 완료",
+                            message: "하이라이트를 저장했습니다.")
     }
     
 }

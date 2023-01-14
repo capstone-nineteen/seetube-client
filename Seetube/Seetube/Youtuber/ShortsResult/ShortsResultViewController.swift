@@ -72,9 +72,8 @@ extension ShortsResultViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShortsCollectionViewCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShortsCollectionViewCell", for: indexPath) as? ShortsCollectionViewCell else { return UICollectionViewCell() }
         return cell
-        // TODO: 커스텀 cell 클래스 작성 후 as?로 캐스팅 추가
     }
 }
 
