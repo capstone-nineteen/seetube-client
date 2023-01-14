@@ -12,13 +12,7 @@ class ShortsResultViewController: UIViewController, AlertDisplaying {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var saveButton: BottomButton!
     @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
-    private lazy var rightBarButtonItem: UIBarButtonItem = {
-       let item = UIBarButtonItem(title: "선택",
-                                  style: .plain,
-                                  target: self,
-                                  action: #selector(changeToSelectionMode(_:)))
-        return item
-    }()
+    @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     
     private let collectionViewItemSpacing: CGFloat = 5
     private let collectionViewHorizontalInset: CGFloat = 17
@@ -26,7 +20,6 @@ class ShortsResultViewController: UIViewController, AlertDisplaying {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureRightBarButtonItem()
         self.changeToNormalMode()
     }
     
@@ -35,16 +28,14 @@ class ShortsResultViewController: UIViewController, AlertDisplaying {
                             message: "쇼츠를 저장했습니다.",
                             action: { [weak self] _ in self?.changeToNormalMode() })
     }
-}
-
-extension ShortsResultViewController {
-    private func configureRightBarButtonItem() {
-        self.navigationItem.setRightBarButton(self.rightBarButtonItem, animated: true)
+    
+    @IBAction func rightBarButtonItemTouched(_ sender: UIBarButtonItem) {
+        self.changeToSelectionMode()
     }
 }
 
 extension ShortsResultViewController {
-    @objc private func changeToSelectionMode(_ sender: Any) {
+    private func changeToSelectionMode() {
         self.rightBarButtonItem.isHidden = true
         self.saveButton.isHidden = false
         self.collectionViewBottomConstraint.constant = 50 + 7 + 5
