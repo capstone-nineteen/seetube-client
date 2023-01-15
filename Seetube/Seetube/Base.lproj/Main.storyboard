@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hpm-25-l6h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FJw-le-mwV">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -107,7 +107,94 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWA-Ag-C1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1700" y="-1402.8485757121441"/>
+            <point key="canvasLocation" x="4396" y="-1270"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3TP-4u-6a1">
+            <objects>
+                <viewController id="quN-X9-YwD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4wo-qX-sKI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4vL-Y9-aWe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="play.square.stack" catalog="system" id="J53-Gh-dMM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Iv-cJ-h7S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5690" y="268"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uaV-Xj-eDb">
+            <objects>
+                <viewController id="f3K-Ce-FTf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HWG-50-iGe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BPv-07-sCz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="wonsign.circle" catalog="system" id="klA-py-tx8"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ty7-Of-sCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6402" y="268"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rV7-WF-HYG">
+            <objects>
+                <viewController id="Ggt-Ua-V6l" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aJ6-j1-ifh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Uyi-AL-xYh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="nca-Nd-j91"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJR-fC-ESx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7106" y="268"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sqn-YP-W4c">
+            <objects>
+                <viewController id="VEc-rS-N8D" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sai-3X-arf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Hs4-YG-w94"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="eZe-cF-WvV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJX-2Z-iUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4986" y="268"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MdY-Wu-kyL">
+            <objects>
+                <tabBarController id="FJw-le-mwV" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cbf-FU-OfE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="selectedImageTintColor" name="AccentColor"/>
+                        <tabBarAppearance key="standardAppearance"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="VEc-rS-N8D" kind="relationship" relationship="viewControllers" id="DS2-m6-geR"/>
+                        <segue destination="quN-X9-YwD" kind="relationship" relationship="viewControllers" id="lWQ-Jc-v72"/>
+                        <segue destination="f3K-Ce-FTf" kind="relationship" relationship="viewControllers" id="cID-F7-ufU"/>
+                        <segue destination="Ggt-Ua-V6l" kind="relationship" relationship="viewControllers" id="Ogn-KG-qze"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKM-9F-fmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6066" y="-506"/>
         </scene>
         <!--분석 결과-->
         <scene sceneID="tne-QT-ifu">
@@ -234,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628" y="-704.79760119940033"/>
+            <point key="canvasLocation" x="2703" y="-536"/>
         </scene>
         <!--집중도 분석 결과-->
         <scene sceneID="hNh-Al-XEv">
@@ -274,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XuT-RF-y83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1365.5999999999999" y="98.50074962518741"/>
+            <point key="canvasLocation" x="1441" y="268"/>
         </scene>
         <!--씬스틸러 분석 결과-->
         <scene sceneID="dkR-Rl-aRY">
@@ -308,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXC-5y-G8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628" y="99"/>
+            <point key="canvasLocation" x="2703" y="268"/>
         </scene>
         <!--쇼츠 추천 결과-->
         <scene sceneID="c7G-Rv-Mp6">
@@ -429,7 +516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgP-t5-Bpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3253.5999999999999" y="98.50074962518741"/>
+            <point key="canvasLocation" x="3329" y="268"/>
         </scene>
         <!--하이라이트 생성 결과-->
         <scene sceneID="UCh-y9-xOZ">
@@ -480,7 +567,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTU-cS-567" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3877.5999999999999" y="98.50074962518741"/>
+            <point key="canvasLocation" x="3953" y="268"/>
         </scene>
         <!--감정 분석 결과-->
         <scene sceneID="Aoy-pb-qz3">
@@ -514,7 +601,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqF-Fe-1eY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1999" y="99"/>
+            <point key="canvasLocation" x="2073" y="268"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RQ3-cV-2wS">
@@ -532,7 +619,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4v-zB-94L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1701.5267175572519" y="-704.22535211267609"/>
+            <point key="canvasLocation" x="1775" y="-536"/>
         </scene>
     </scenes>
     <designables>
@@ -563,6 +650,10 @@
         <image name="AppleSignIn" width="351.5" height="62.5"/>
         <image name="GoogleSignIn" width="351.5" height="62.5"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="person" catalog="system" width="128" height="121"/>
+        <image name="play.square.stack" catalog="system" width="112" height="128"/>
+        <image name="wonsign.circle" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.94499999284744263" green="0.23899999260902405" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
