@@ -119,7 +119,7 @@
 		04159925296F3DA800EEB699 /* Youtuber */ = {
 			isa = PBXGroup;
 			children = (
-				047A5F3829707587007CDBC4 /* Common */,
+				047A5F3829707587007CDBC4 /* Reusable */,
 				04159928296F3DD400EEB699 /* ResultMenu */,
 				04159929296F428A00EEB699 /* ConcentrationResult */,
 				047A5F372970755E007CDBC4 /* EmotionResult */,
@@ -133,7 +133,7 @@
 		04159926296F3DB100EEB699 /* Reviewer */ = {
 			isa = PBXGroup;
 			children = (
-				046AD1022972E51200602F89 /* Login */,
+				04FA5D612974669E0015D91B /* Shop */,
 			);
 			path = Reviewer;
 			sourceTree = "<group>";
@@ -189,6 +189,7 @@
 				040E3CC42971BAFA0057B25E /* Protocol */,
 				0415992D296F475600EEB699 /* View */,
 				041ECBC9296EF0B80053AC9C /* Extension */,
+				04FA5D602974668D0015D91B /* Common */,
 				04159926296F3DB100EEB699 /* Reviewer */,
 				04159925296F3DA800EEB699 /* Youtuber */,
 				041ECBAE296ED84C0053AC9C /* AppDelegate.swift */,
@@ -261,12 +262,12 @@
 			path = EmotionResult;
 			sourceTree = "<group>";
 		};
-		047A5F3829707587007CDBC4 /* Common */ = {
+		047A5F3829707587007CDBC4 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
 				047A5F3929707599007CDBC4 /* View */,
 			);
-			path = Common;
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		047A5F3929707599007CDBC4 /* View */ = {
@@ -310,6 +311,21 @@
 				040E3CCC2971C8C20057B25E /* LargeListStyleResultView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04FA5D602974668D0015D91B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				046AD1022972E51200602F89 /* Login */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		04FA5D612974669E0015D91B /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shop;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
