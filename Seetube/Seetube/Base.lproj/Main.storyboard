@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nrl-LI-RRj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hpm-25-l6h">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i2J-Bd-mRl">
-                                <rect key="frame" x="47.5" y="119" width="280" height="46"/>
+                                <rect key="frame" x="52.5" y="112" width="270" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="pxn-e1-LjH"/>
-                                    <constraint firstAttribute="width" constant="280" id="qyg-m7-ipQ"/>
+                                    <constraint firstAttribute="height" constant="42" id="pxn-e1-LjH"/>
+                                    <constraint firstAttribute="width" priority="750" constant="270" id="qyg-m7-ipQ"/>
                                 </constraints>
                                 <segments>
                                     <segment title="리뷰어"/>
@@ -38,37 +38,43 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCQ-rt-twn">
-                                <rect key="frame" x="152.5" y="62" width="70" height="28"/>
+                                <rect key="frame" x="152.5" y="55" width="70" height="28"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L25-aS-26h">
-                                <rect key="frame" x="77.5" y="194" width="220" height="220"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <rect key="frame" x="77.5" y="179" width="220" height="220"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="L25-aS-26h" secondAttribute="height" multiplier="1:1" id="CGO-Xz-Haf"/>
                                     <constraint firstAttribute="height" constant="220" id="vJl-0a-R16"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원하는 컨텐츠를 시청하고 리워드를 적립해보세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4a-lA-LJb">
-                                <rect key="frame" x="117.5" y="429" width="140.5" height="33.5"/>
+                                <rect key="frame" x="117.5" y="414" width="140.5" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quT-LC-Tcc">
-                                <rect key="frame" x="73.5" y="502" width="228" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quT-LC-Tcc">
+                                <rect key="frame" x="48" y="497" width="279" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="quT-LC-Tcc" secondAttribute="height" multiplier="382:92" id="E3H-D7-20F"/>
-                                    <constraint firstAttribute="height" constant="55" id="p0z-Pl-egb"/>
+                                    <constraint firstAttribute="width" secondItem="quT-LC-Tcc" secondAttribute="height" multiplier="352:63" id="E3H-D7-20F"/>
+                                    <constraint firstAttribute="height" constant="50" id="p0z-Pl-egb"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="GoogleSignin"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="GoogleSignIn"/>
                                 <connections>
-                                    <action selector="googleSigninButton:" destination="nrl-LI-RRj" eventType="touchUpInside" id="iNv-Jm-BKQ"/>
+                                    <action selector="googleSignInButtonTouched:" destination="nrl-LI-RRj" eventType="touchUpInside" id="scG-EU-noY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4z1-1v-gcM">
+                                <rect key="frame" x="48" y="555" width="279" height="50"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="AppleSignIn"/>
+                                <connections>
+                                    <action selector="appleSignInButtonTouched:" destination="nrl-LI-RRj" eventType="touchUpInside" id="Hg1-PZ-br0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,13 +84,19 @@
                             <constraint firstItem="I4a-lA-LJb" firstAttribute="centerX" secondItem="L25-aS-26h" secondAttribute="centerX" id="4Mh-3i-OlV"/>
                             <constraint firstItem="I4a-lA-LJb" firstAttribute="top" secondItem="L25-aS-26h" secondAttribute="bottom" constant="15" id="7A0-gf-3ca"/>
                             <constraint firstItem="XCQ-rt-twn" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="CZa-GU-LDV"/>
-                            <constraint firstItem="XCQ-rt-twn" firstAttribute="top" secondItem="Lag-I3-LYf" secondAttribute="top" constant="62" id="EYk-vZ-Och"/>
+                            <constraint firstItem="XCQ-rt-twn" firstAttribute="top" secondItem="Lag-I3-LYf" secondAttribute="top" constant="55" id="EYk-vZ-Och"/>
                             <constraint firstItem="i2J-Bd-mRl" firstAttribute="top" secondItem="XCQ-rt-twn" secondAttribute="bottom" constant="29" id="Jk8-3g-gEo"/>
+                            <constraint firstItem="4z1-1v-gcM" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="KMh-e7-AJX"/>
                             <constraint firstItem="quT-LC-Tcc" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="PJf-7T-db3"/>
-                            <constraint firstItem="quT-LC-Tcc" firstAttribute="top" secondItem="I4a-lA-LJb" secondAttribute="bottom" priority="250" constant="50" id="WIE-Hu-rOh"/>
+                            <constraint firstItem="quT-LC-Tcc" firstAttribute="top" secondItem="L25-aS-26h" secondAttribute="bottom" priority="250" constant="98.5" id="WIE-Hu-rOh"/>
                             <constraint firstItem="i2J-Bd-mRl" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="YuY-NZ-Obd"/>
-                            <constraint firstItem="L25-aS-26h" firstAttribute="top" secondItem="i2J-Bd-mRl" secondAttribute="bottom" constant="30" id="bFg-cU-AUL"/>
-                            <constraint firstItem="Lag-I3-LYf" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="quT-LC-Tcc" secondAttribute="bottom" priority="750" constant="110" id="etg-mn-lgC"/>
+                            <constraint firstItem="4z1-1v-gcM" firstAttribute="height" secondItem="quT-LC-Tcc" secondAttribute="height" id="ZJw-DN-3Jd"/>
+                            <constraint firstItem="Lag-I3-LYf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i2J-Bd-mRl" secondAttribute="trailing" constant="52.5" id="a7w-o5-Mqg"/>
+                            <constraint firstItem="L25-aS-26h" firstAttribute="top" secondItem="i2J-Bd-mRl" secondAttribute="bottom" constant="25" id="bFg-cU-AUL"/>
+                            <constraint firstItem="Lag-I3-LYf" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="quT-LC-Tcc" secondAttribute="bottom" priority="750" constant="120" id="etg-mn-lgC"/>
+                            <constraint firstItem="4z1-1v-gcM" firstAttribute="top" secondItem="quT-LC-Tcc" secondAttribute="bottom" constant="8" id="f8B-qk-0gI"/>
+                            <constraint firstItem="i2J-Bd-mRl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lag-I3-LYf" secondAttribute="leading" constant="52.5" id="fzN-JH-3C0"/>
+                            <constraint firstItem="4z1-1v-gcM" firstAttribute="width" secondItem="quT-LC-Tcc" secondAttribute="width" id="hT7-QC-3Gt"/>
                             <constraint firstItem="L25-aS-26h" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="ywQ-Xx-dei"/>
                         </constraints>
                     </view>
@@ -110,8 +122,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="LlZ-Va-co7"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="집중도"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="iconImageName" value="brain.head.profile"/>
@@ -128,8 +139,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="zN9-pV-YyE"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="감정"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="iconImageName" value="face.smiling"/>
@@ -146,8 +156,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="U93-9R-cVl"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="씬스틸러"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="iconImageName" value="person.fill"/>
@@ -164,8 +173,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="wYL-MO-DcT"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="쇼츠"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="iconImageName" value="iphone.gen1.badge.play"/>
@@ -182,8 +190,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="74E-qe-2ed"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="하이라이트"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="iconImageName" value="play.rectangle.fill"/>
@@ -530,7 +537,7 @@
     </scenes>
     <designables>
         <designable name="1vh-OX-17S">
-            <size key="intrinsicContentSize" width="24" height="14"/>
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="24" height="14"/>
@@ -539,28 +546,26 @@
             <size key="intrinsicContentSize" width="24" height="14"/>
         </designable>
         <designable name="Vtb-6Z-wbj">
-            <size key="intrinsicContentSize" width="24" height="14"/>
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="bc5-i8-hgR">
-            <size key="intrinsicContentSize" width="24" height="14"/>
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="k9L-Rb-zAs">
-            <size key="intrinsicContentSize" width="24" height="14"/>
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="u9A-c5-fHa">
-            <size key="intrinsicContentSize" width="24" height="14"/>
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
     <color key="tintColor" red="0.94509803921568625" green="0.23921568627450979" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
-        <image name="GoogleSignin" width="191" height="46"/>
+        <image name="AppleSignIn" width="351.5" height="62.5"/>
+        <image name="GoogleSignIn" width="351.5" height="62.5"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.94499999284744263" green="0.23899999260902405" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

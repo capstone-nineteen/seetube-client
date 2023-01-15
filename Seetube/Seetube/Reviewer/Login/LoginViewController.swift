@@ -17,9 +17,14 @@ class LoginViewController: UIViewController {
         self.changeToReviewerMode()
     }
 
-    @IBAction func googleSigninButton(_ sender: UIButton) {
+    @IBAction func googleSignInButtonTouched(_ sender: UIButton) {
         // 구글 로그인
-        print("DEBUG: google signin button touched")
+        print("DEBUG: google sign in button touched")
+    }
+    
+    @IBAction func appleSignInButtonTouched(_ sender: UIButton) {
+        // 애플 로그인
+        print("DEBUG: apple sign in button touched")
     }
     
     @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
