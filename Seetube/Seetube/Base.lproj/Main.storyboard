@@ -125,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="5690" y="268"/>
         </scene>
-        <!--View Controller-->
+        <!--Shop View Controller-->
         <scene sceneID="uaV-Xj-eDb">
             <objects>
-                <viewController id="f3K-Ce-FTf" sceneMemberID="viewController">
+                <viewController id="f3K-Ce-FTf" customClass="ShopViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HWG-50-iGe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
