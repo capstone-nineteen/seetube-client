@@ -30,6 +30,12 @@ class BottomButton: UIButton, NibLoadable {
         self.nameLabel.text = self.name
     }
     
+    override var isHighlighted: Bool {
+        didSet {
+            self.alpha = isHighlighted ? 0.7 : 1.0
+        }
+    }
+    
     private func configure() {
         self.configureShadow()
     }

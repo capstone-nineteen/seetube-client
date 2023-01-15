@@ -7,8 +7,6 @@
 
 import UIKit
 
-class CustomButton: UIButton { }
-
 @IBDesignable
 class ResultMenuButton: UIButton, NibLoadable {
     @IBOutlet weak var gradientView: GradientView!
@@ -42,6 +40,12 @@ class ResultMenuButton: UIButton, NibLoadable {
             self.iconImageView.image = UIImage(systemName: iconImage)
         } else {
             self.iconImageView.image = nil
+        }
+    }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            self.alpha = isHighlighted ? 0.7 : 1.0
         }
     }
     
