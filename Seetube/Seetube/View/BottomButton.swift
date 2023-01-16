@@ -10,7 +10,6 @@ import UIKit
 @IBDesignable
 class BottomButton: UIButton, NibLoadable {
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBInspectable var name: String?
     
     override init(frame: CGRect) {
@@ -38,12 +37,5 @@ class BottomButton: UIButton, NibLoadable {
     
     private func configure() {
         self.configureShadow()
-    }
-
-    private func configureShadow() {
-        self.layer.shadowOpacity = 0.25
-        self.layer.shadowOffset = CGSize(width: 0, height: 4)
-        self.layer.shadowRadius = 3
-        self.layer.masksToBounds = false
     }
 }

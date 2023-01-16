@@ -20,13 +20,13 @@ class ResultMenuButton: UIButton, NibLoadable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.loadFromNib(owner: self)
-        self.configureShadow()
+        self.configureShadow(x: 2, y: 4)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.loadFromNib(owner: self)
-        self.configureShadow()
+        self.configureShadow(x: 2, y: 4)
     }
     
     override func draw(_ rect: CGRect) {
@@ -47,12 +47,5 @@ class ResultMenuButton: UIButton, NibLoadable {
         didSet {
             self.alpha = isHighlighted ? 0.7 : 1.0
         }
-    }
-    
-    private func configureShadow() {
-        self.layer.shadowOpacity = 0.25
-        self.layer.shadowOffset = CGSize(width: 2, height: 4)
-        self.layer.shadowRadius = 3
-        self.layer.masksToBounds = false
     }
 }
