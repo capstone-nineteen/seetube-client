@@ -13,7 +13,14 @@ class ShopViewController: UIViewController {
         let label = AdaptiveFontSizeLabel()
         label.setWeight(.bold)
         label.textAlignment = .right
-        label.text = "12,500"
+        label.text = "112,500"
+        return label
+    }()
+    private lazy var balanceCoinLabel: AdaptiveFontSizeLabel = {
+        let label = AdaptiveFontSizeLabel()
+        label.setWeight(.medium)
+        label.textAlignment = .right
+        label.text = "2,500"
         return label
     }()
     
@@ -44,7 +51,7 @@ extension ShopViewController {
                                relatedBy: .equal,
                                toItem: self.receiptView,
                                attribute: .trailing,
-                               multiplier: 0.75,
+                               multiplier: 0.8,
                                constant: 0),
             NSLayoutConstraint(item: self.totalCoinLabel,
                                attribute: .leading,
@@ -61,6 +68,33 @@ extension ShopViewController {
                                multiplier: 0.44,
                                constant: 0),
             self.totalCoinLabel.heightAnchor.constraint(equalTo: self.receiptView.heightAnchor, multiplier: 0.1)
+        ])
+        
+        self.receiptView.addSubview(self.balanceCoinLabel)
+        self.balanceCoinLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: self.balanceCoinLabel,
+                               attribute: .trailing,
+                               relatedBy: .equal,
+                               toItem: self.receiptView,
+                               attribute: .trailing,
+                               multiplier: 0.83,
+                               constant: 0),
+            NSLayoutConstraint(item: self.balanceCoinLabel,
+                               attribute: .leading,
+                               relatedBy: .equal,
+                               toItem: self.receiptView,
+                               attribute: .trailing,
+                               multiplier: 0.63,
+                               constant: 0),
+            NSLayoutConstraint(item: self.balanceCoinLabel as Any,
+                               attribute: .centerY,
+                               relatedBy: .equal,
+                               toItem: self.receiptView,
+                               attribute: .bottom,
+                               multiplier: 0.74,
+                               constant: 0),
+            self.balanceCoinLabel.heightAnchor.constraint(equalTo: self.receiptView.heightAnchor, multiplier: 0.035)
         ])
     }
 }
