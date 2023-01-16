@@ -139,7 +139,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BPv-07-sCz"/>
-                        <color key="backgroundColor" name="AccentColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="wonsign.circle" catalog="system" id="klA-py-tx8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
