@@ -141,9 +141,7 @@
                         <viewLayoutGuide key="safeArea" id="BPv-07-sCz"/>
                         <color key="backgroundColor" name="AccentColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="wonsign.circle" catalog="system" id="klA-py-tx8">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="wonsign.circle" catalog="system" id="klA-py-tx8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ty7-Of-sCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -183,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="4986" y="268"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Reviewer Tab Bar Controller-->
         <scene sceneID="MdY-Wu-kyL">
             <objects>
-                <tabBarController id="FJw-le-mwV" sceneMemberID="viewController">
+                <tabBarController id="FJw-le-mwV" customClass="ReviewerTabBarController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cbf-FU-OfE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
