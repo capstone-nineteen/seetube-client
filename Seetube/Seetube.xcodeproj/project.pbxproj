@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0402BA602971D39500B79935 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402BA5F2971D39500B79935 /* BottomButton.swift */; };
 		0402BA622971D53C00B79935 /* BottomButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0402BA612971D53C00B79935 /* BottomButton.xib */; };
+		040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */; };
 		040E3CBC2971AF290057B25E /* ListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CBB2971AF290057B25E /* ListStyleResultView.xib */; };
 		040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CBD2971B0130057B25E /* ListStyleResultView.swift */; };
 		040E3CC32971BA7B0057B25E /* CellReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CC22971BA7B0057B25E /* CellReuseIdentifiable.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		0402BA5F2971D39500B79935 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		0402BA612971D53C00B79935 /* BottomButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomButton.xib; sourceTree = "<group>"; };
+		040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveFontSizeLabel.swift; sourceTree = "<group>"; };
 		040E3CBB2971AF290057B25E /* ListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStyleResultView.xib; sourceTree = "<group>"; };
 		040E3CBD2971B0130057B25E /* ListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyleResultView.swift; sourceTree = "<group>"; };
 		040E3CC22971BA7B0057B25E /* CellReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuseIdentifiable.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				041ECBCE296EFEF40053AC9C /* GradientView.swift */,
 				0402BA612971D53C00B79935 /* BottomButton.xib */,
 				0402BA5F2971D39500B79935 /* BottomButton.swift */,
+				040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */,
+				040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */,
 				047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */,
 				040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */,
 				041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */,

@@ -9,15 +9,11 @@ import UIKit
 
 class ShopViewController: UIViewController {
     @IBOutlet weak var receiptView: UIImageView!
-    private lazy var totalCoinLabel: UILabel = {
-        let label = UILabel()
-        label.text = "12,500"
-        label.font = UIFont.systemFont(ofSize: 100, weight: .bold)
+    private lazy var totalCoinLabel: AdaptiveFontSizeLabel = {
+        let label = AdaptiveFontSizeLabel()
+        label.setWeight(.bold)
         label.textAlignment = .right
-        label.minimumScaleFactor = 0.01
-        label.adjustsFontSizeToFitWidth = true
-        label.lineBreakMode = .byClipping
-        label.numberOfLines = 0
+        label.text = "12,500"
         return label
     }()
     
