@@ -16,14 +16,11 @@ class ShopViewController: UIViewController {
 
 extension ShopViewController {
     private func configureGradientBackground() {
-        guard let accentColor = UIColor(named: "AccentColor") else { return }
-        
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.colors = [accentColor.cgColor, UIColor.white.cgColor]
-        gradient.locations = [0.0 , 1.0]
-        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
-        gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
-        gradient.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradient, at: 0)
+        guard let accentColor = UIColor(named: "AccentColor")?.cgColor else { return }
+        self.view.layer.makeGradientBackground(colors: [accentColor, UIColor.white.cgColor],
+                                               locations: [0.0, 1.0],
+                                               startPoint: CGPoint(x: 0.0, y: 0.0),
+                                               endPoint: CGPoint(x: 0.0, y: 1.0),
+                                               type: .axial)
     }
 }

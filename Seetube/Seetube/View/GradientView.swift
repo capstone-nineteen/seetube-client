@@ -26,13 +26,10 @@ class GradientView: UIView {
         guard let startColor = self.startColor,
               let endColor = self.endColor else { return }
         
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.colors = [startColor.cgColor, endColor.cgColor]
-        gradient.locations = [0.0 , 1.0]
-        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
-        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        gradient.frame = bounds
-        gradient.cornerRadius = layer.cornerRadius
-        layer.addSublayer(gradient)
+        self.layer.makeGradientBackground(colors: [startColor.cgColor, endColor.cgColor],
+                                          locations: [0.0 , 1.0],
+                                          startPoint: CGPoint(x: 0.0, y: 1.0),
+                                          endPoint: CGPoint(x: 1.0, y: 1.0),
+                                          type: .axial)
     }
 }

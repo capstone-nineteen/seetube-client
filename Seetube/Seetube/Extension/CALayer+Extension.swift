@@ -15,4 +15,18 @@ extension CALayer {
         self.shadowRadius = radius
         self.masksToBounds = false
     }
+    
+    func makeGradientBackground(colors: [CGColor]?, locations: [NSNumber]?, startPoint: CGPoint, endPoint: CGPoint, type: CAGradientLayerType){
+        let gradient = CAGradientLayer()
+        gradient.colors = colors
+        gradient.locations = locations
+        gradient.startPoint = startPoint
+        gradient.endPoint = endPoint
+        gradient.type = type
+        gradient.frame = self.bounds
+        gradient.cornerRadius = self.cornerRadius
+        gradient.masksToBounds = true
+        
+        self.insertSublayer(gradient, at: 0)
+    }
 }
