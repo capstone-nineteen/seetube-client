@@ -13,7 +13,7 @@ class ShopViewController: UIViewController {
         let label = AdaptiveFontSizeLabel()
         label.setWeight(.bold)
         label.textAlignment = .right
-        label.text = "112,500"
+        label.text = "12,500"
         return label
     }()
     private lazy var balanceCoinLabel: AdaptiveFontSizeLabel = {
@@ -23,11 +23,22 @@ class ShopViewController: UIViewController {
         label.text = "2,500"
         return label
     }()
+    private lazy var withdrawCoinTextField: UnderLineTextField = {
+        let textField = UnderLineTextField()
+        textField.textAlignment = .right
+        textField.clearsOnBeginEditing = true
+        textField.keyboardType = .numberPad
+        textField.text = "12,500"
+        // TODO: balance랑 폰트 사이즈 같게
+        // TODO: 액션 비활성화
+        return textField
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureGradientBackground()
         self.configureSubviews()
+        self.configureTextField()
     }
 }
 
@@ -85,7 +96,7 @@ extension ShopViewController {
                                relatedBy: .equal,
                                toItem: self.receiptView,
                                attribute: .trailing,
-                               multiplier: 0.63,
+                               multiplier: 0.62,
                                constant: 0),
             NSLayoutConstraint(item: self.balanceCoinLabel as Any,
                                attribute: .centerY,
@@ -96,5 +107,48 @@ extension ShopViewController {
                                constant: 0),
             self.balanceCoinLabel.heightAnchor.constraint(equalTo: self.receiptView.heightAnchor, multiplier: 0.035)
         ])
+        
+        self.receiptView.addSubview(withdrawCoinTextField)
+        self.withdrawCoinTextField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: self.withdrawCoinTextField as Any,
+                               attribute: .centerY,
+                               relatedBy: .equal,
+                               toItem: self.receiptView,
+                               attribute: .bottom,
+                               multiplier: 0.67,
+                               constant: 0),
+            self.withdrawCoinTextField.leadingAnchor.constraint(equalTo: self.balanceCoinLabel.leadingAnchor),
+            self.withdrawCoinTextField.trailingAnchor.constraint(equalTo: self.balanceCoinLabel.trailingAnchor),
+            self.withdrawCoinTextField.heightAnchor.constraint(equalTo: self.balanceCoinLabel.heightAnchor, multiplier: 1.3)
+        ])
+    }
+}
+
+extension ShopViewController {
+    private func configureTextField() {
+        self.withdrawCoinTextField.delegate = self
+        self.withdrawCoinTextField.addTarget(self,
+                                             action: #selector(textFieldEditingChanged(_:)),
+                                             for: .editingChanged)
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
+        guard let textWithoutSeparator = textField.text?.replacingOccurrences(of: ",", with: "") else { return }
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        if let numberWithSeparator = formatter.number(from: textWithoutSeparator) {
+            textField.text = formatter.string(from: numberWithSeparator)
+        }
+    }
+}
+
+extension ShopViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.text = textField.text == "" ? "0" : textField.text
     }
 }
