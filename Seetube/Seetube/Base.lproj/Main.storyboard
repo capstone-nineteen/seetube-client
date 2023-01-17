@@ -134,18 +134,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Receipt" translatesAutoresizingMaskIntoConstraints="NO" id="in2-eD-s6l">
-                                <rect key="frame" x="48" y="40" width="279" height="538"/>
+                                <rect key="frame" x="43" y="30" width="289" height="558"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="in2-eD-s6l" secondAttribute="height" multiplier="698:1346" id="1Xt-uF-PoA"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVn-04-hVn" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="62" y="522.5" width="251" height="40.5"/>
+                                <rect key="frame" x="57.5" y="531" width="260" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="name" value="환급 받기"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Ulq-P9-i8g" kind="show" id="rSy-K4-zrs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BPv-07-sCz"/>
@@ -153,7 +156,7 @@
                         <constraints>
                             <constraint firstItem="ZVn-04-hVn" firstAttribute="width" secondItem="in2-eD-s6l" secondAttribute="width" multiplier="0.9" id="6YR-7M-dKY"/>
                             <constraint firstItem="ZVn-04-hVn" firstAttribute="height" secondItem="in2-eD-s6l" secondAttribute="height" multiplier="0.075" id="9cX-xX-hen"/>
-                            <constraint firstItem="in2-eD-s6l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="BPv-07-sCz" secondAttribute="top" constant="40" id="BMX-R7-EmK"/>
+                            <constraint firstItem="in2-eD-s6l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="BPv-07-sCz" secondAttribute="top" constant="30" id="BMX-R7-EmK"/>
                             <constraint firstItem="in2-eD-s6l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BPv-07-sCz" secondAttribute="leading" constant="20" id="dum-FY-OoC"/>
                             <constraint firstItem="ZVn-04-hVn" firstAttribute="bottom" secondItem="in2-eD-s6l" secondAttribute="bottom" constant="-15" id="e3M-M6-t6n"/>
                             <constraint firstItem="in2-eD-s6l" firstAttribute="centerX" secondItem="BPv-07-sCz" secondAttribute="centerX" id="nO9-rM-ZVe"/>
@@ -161,7 +164,7 @@
                             <constraint firstItem="in2-eD-s6l" firstAttribute="centerY" secondItem="BPv-07-sCz" secondAttribute="centerY" id="xzV-bW-6EC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="wonsign.circle" catalog="system" id="klA-py-tx8"/>
+                    <navigationItem key="navigationItem" id="7WW-KC-BYu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="receiptView" destination="in2-eD-s6l" id="g8P-nb-wa8"/>
@@ -169,7 +172,123 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ty7-Of-sCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6400.8000000000002" y="267.61619190404798"/>
+            <point key="canvasLocation" x="6401" y="963"/>
+        </scene>
+        <!--환급 신청-->
+        <scene sceneID="Xsn-LH-UQ9">
+            <objects>
+                <viewController id="Ulq-P9-i8g" customClass="WithdrawalInformationViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lLY-nO-YS3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmX-Da-P0M" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="17" y="548" width="341" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RtL-OQ-zDM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="환급 신청하기"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 위 개인정보는 오직 환급을 위한 용도로만 쓰이며, 환급 이후에는 폐기됩니다. 환급 신청 이후에는 신청 취소 불가합니다." textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nd-W4-Uw3">
+                                <rect key="frame" x="27" y="496.5" width="321" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌 정보 입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfL-T6-Jhn">
+                                <rect key="frame" x="25" y="50" width="113" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="은행명을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iqx-xv-HFK" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="26" y="121" width="150" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="4oj-DA-6GL"/>
+                                    <constraint firstAttribute="height" constant="22" id="KKa-gB-PL6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="은행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00u-3D-mgO">
+                                <rect key="frame" x="26" y="99" width="24.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예금주를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6sF-QO-ZI6" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="26" y="190" width="150" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Faz-ov-90c"/>
+                                    <constraint firstAttribute="height" constant="22" id="cor-Ow-Ocz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예금주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77p-tc-O2S">
+                                <rect key="frame" x="26" y="168" width="37" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="계좌번호를 입력하세요. (-제외)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AjX-df-afO" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="26" y="259" width="250" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="PbT-uZ-Lkx"/>
+                                    <constraint firstAttribute="width" constant="250" id="h4w-Wi-wTp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="accountNumberEditingChanged:" destination="Ulq-P9-i8g" eventType="editingChanged" id="6tH-ra-4fs"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjE-IJ-STd">
+                                <rect key="frame" x="26" y="237" width="49" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Ov-EQ-zKH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gmX-Da-P0M" firstAttribute="top" secondItem="5Nd-W4-Uw3" secondAttribute="bottom" constant="20" id="2hk-RG-OVG"/>
+                            <constraint firstItem="AjX-df-afO" firstAttribute="top" secondItem="RjE-IJ-STd" secondAttribute="bottom" constant="5" id="3XH-8A-2FD"/>
+                            <constraint firstItem="77p-tc-O2S" firstAttribute="top" secondItem="Iqx-xv-HFK" secondAttribute="bottom" constant="25" id="4xY-vS-fLG"/>
+                            <constraint firstItem="jfL-T6-Jhn" firstAttribute="leading" secondItem="9Ov-EQ-zKH" secondAttribute="leading" constant="25" id="7Ig-15-835"/>
+                            <constraint firstItem="00u-3D-mgO" firstAttribute="top" secondItem="jfL-T6-Jhn" secondAttribute="bottom" constant="25" id="8aE-Jw-b2A"/>
+                            <constraint firstItem="jfL-T6-Jhn" firstAttribute="top" secondItem="9Ov-EQ-zKH" secondAttribute="top" constant="50" id="ETU-ZP-IHf"/>
+                            <constraint firstItem="gmX-Da-P0M" firstAttribute="centerX" secondItem="9Ov-EQ-zKH" secondAttribute="centerX" id="Hcx-La-V42"/>
+                            <constraint firstItem="RjE-IJ-STd" firstAttribute="leading" secondItem="77p-tc-O2S" secondAttribute="leading" id="ICb-8x-UcI"/>
+                            <constraint firstItem="gmX-Da-P0M" firstAttribute="leading" secondItem="9Ov-EQ-zKH" secondAttribute="leading" constant="17" id="J0r-7e-jlb"/>
+                            <constraint firstItem="77p-tc-O2S" firstAttribute="leading" secondItem="00u-3D-mgO" secondAttribute="leading" id="Rfb-aq-bHj"/>
+                            <constraint firstItem="AjX-df-afO" firstAttribute="leading" secondItem="RjE-IJ-STd" secondAttribute="leading" id="ZHx-lC-TaL"/>
+                            <constraint firstItem="Iqx-xv-HFK" firstAttribute="top" secondItem="00u-3D-mgO" secondAttribute="bottom" constant="5" id="aTe-Kb-7Cf"/>
+                            <constraint firstItem="00u-3D-mgO" firstAttribute="leading" secondItem="jfL-T6-Jhn" secondAttribute="leading" constant="1" id="bd5-vt-aLR"/>
+                            <constraint firstItem="Iqx-xv-HFK" firstAttribute="leading" secondItem="00u-3D-mgO" secondAttribute="leading" id="c4C-7m-kUV"/>
+                            <constraint firstItem="9Ov-EQ-zKH" firstAttribute="bottom" secondItem="gmX-Da-P0M" secondAttribute="bottom" constant="20" id="eNS-Ni-naK"/>
+                            <constraint firstItem="RjE-IJ-STd" firstAttribute="top" secondItem="6sF-QO-ZI6" secondAttribute="bottom" constant="25" id="iOr-Ld-Xma"/>
+                            <constraint firstItem="5Nd-W4-Uw3" firstAttribute="centerX" secondItem="9Ov-EQ-zKH" secondAttribute="centerX" id="mud-Bd-FUg"/>
+                            <constraint firstItem="5Nd-W4-Uw3" firstAttribute="leading" secondItem="gmX-Da-P0M" secondAttribute="leading" constant="10" id="ply-me-1WG"/>
+                            <constraint firstItem="6sF-QO-ZI6" firstAttribute="leading" secondItem="77p-tc-O2S" secondAttribute="leading" id="vmF-xs-MFd"/>
+                            <constraint firstItem="6sF-QO-ZI6" firstAttribute="top" secondItem="77p-tc-O2S" secondAttribute="bottom" constant="5" id="wZb-90-99D"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="환급 신청" largeTitleDisplayMode="never" id="szt-Tk-1jV"/>
+                    <connections>
+                        <outlet property="accountHolderTextField" destination="6sF-QO-ZI6" id="Lxw-HJ-FHv"/>
+                        <outlet property="accountNumberTextField" destination="AjX-df-afO" id="dcG-KH-yBy"/>
+                        <outlet property="bankNameTextField" destination="Iqx-xv-HFK" id="29h-LX-6qF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNg-dj-YWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6400.8000000000002" y="1648.4257871064469"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rV7-WF-HYG">
@@ -186,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJR-fC-ESx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7106" y="268"/>
+            <point key="canvasLocation" x="7114" y="268"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sqn-YP-W4c">
@@ -217,7 +336,7 @@
                     <connections>
                         <segue destination="VEc-rS-N8D" kind="relationship" relationship="viewControllers" id="DS2-m6-geR"/>
                         <segue destination="quN-X9-YwD" kind="relationship" relationship="viewControllers" id="lWQ-Jc-v72"/>
-                        <segue destination="f3K-Ce-FTf" kind="relationship" relationship="viewControllers" id="cID-F7-ufU"/>
+                        <segue destination="Zmp-1m-jtF" kind="relationship" relationship="viewControllers" id="cID-F7-ufU"/>
                         <segue destination="Ggt-Ua-V6l" kind="relationship" relationship="viewControllers" id="Ogn-KG-qze"/>
                     </connections>
                 </tabBarController>
@@ -650,13 +769,40 @@
             </objects>
             <point key="canvasLocation" x="1775" y="-536"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QmJ-v3-rS8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Zmp-1m-jtF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="wonsign.circle" catalog="system" id="klA-py-tx8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wNR-g0-JXj">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f3K-Ce-FTf" kind="relationship" relationship="rootViewController" id="bmU-oq-Gzb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OgM-uJ-4zr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6400.8000000000002" y="267.61619190404798"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="1vh-OX-17S">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
+        <designable name="6sF-QO-ZI6">
+            <size key="intrinsicContentSize" width="128.5" height="20"/>
+        </designable>
+        <designable name="AjX-df-afO">
+            <size key="intrinsicContentSize" width="191" height="20"/>
+        </designable>
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="24" height="14"/>
+        </designable>
+        <designable name="Iqx-xv-HFK">
+            <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="MIt-RP-vXU">
             <size key="intrinsicContentSize" width="24" height="14"/>
@@ -692,6 +838,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

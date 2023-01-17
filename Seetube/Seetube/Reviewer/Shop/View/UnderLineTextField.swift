@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class UnderLineTextField: ActionDisabledTextField {
     private let inactiveColor: UIColor = .systemGray4
     private let activeColor: UIColor = UIColor(named: "AccentColor") ?? .darkGray

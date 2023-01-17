@@ -39,6 +39,11 @@ class ShopViewController: UIViewController {
         self.configureSubviews()
         self.configureTextField()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
 }
 
 extension ShopViewController {

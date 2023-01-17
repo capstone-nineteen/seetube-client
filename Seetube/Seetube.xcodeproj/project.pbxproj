@@ -33,6 +33,7 @@
 		045E56432976ADB400E47C77 /* ActionDisabledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56422976ADB400E47C77 /* ActionDisabledTextField.swift */; };
 		045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56452976B54400E47C77 /* UnderLineTextField.swift */; };
 		045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56472976E70700E47C77 /* UIFont+Extension.swift */; };
+		045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */; };
 		0465604E29754E6D00C4CACD /* ReviewerTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465604D29754E6D00C4CACD /* ReviewerTabBarController.swift */; };
 		046560502975591300C4CACD /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465604F2975591300C4CACD /* CALayer+Extension.swift */; };
 		046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD0FB2972A53C00602F89 /* ShortsResultViewController.swift */; };
@@ -82,6 +83,7 @@
 		045E56422976ADB400E47C77 /* ActionDisabledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDisabledTextField.swift; sourceTree = "<group>"; };
 		045E56452976B54400E47C77 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		045E56472976E70700E47C77 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewController.swift; sourceTree = "<group>"; };
 		0465604D29754E6D00C4CACD /* ReviewerTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerTabBarController.swift; sourceTree = "<group>"; };
 		0465604F2975591300C4CACD /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		046AD0FB2972A53C00602F89 /* ShortsResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsResultViewController.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				04FA5D62297466D30015D91B /* ShopViewController.swift */,
+				045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */,
 				045E56442976B52000E47C77 /* View */,
 			);
 			path = Shop;
@@ -440,6 +443,7 @@
 				047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */,
 				040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */,
 				041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */,
+				045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */,
 				046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */,
 				041ECBB3296ED84C0053AC9C /* ViewController.swift in Sources */,
 				047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */,
