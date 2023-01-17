@@ -23,8 +23,8 @@ class ShopViewController: UIViewController {
         label.text = "2,500"
         return label
     }()
-    private lazy var withdrawCoinTextField: UnderLineTextField = {
-        let textField = UnderLineTextField()
+    private lazy var withdrawCoinTextField: WithdrawlCoinTextField = {
+        let textField = WithdrawlCoinTextField()
         textField.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         textField.textAlignment = .right
         textField.clearsOnBeginEditing = true

@@ -30,10 +30,10 @@
 		041ECBCB296EF0C80053AC9C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCA296EF0C80053AC9C /* UIView+Extension.swift */; };
 		041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCC296EF2FB0053AC9C /* CircleView.swift */; };
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
-		045E56432976ADB400E47C77 /* ActionDisabledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56422976ADB400E47C77 /* ActionDisabledTextField.swift */; };
 		045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56452976B54400E47C77 /* UnderLineTextField.swift */; };
 		045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56472976E70700E47C77 /* UIFont+Extension.swift */; };
 		045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */; };
+		045E564E2977068400E47C77 /* WithdrawlCoinTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E564D2977068400E47C77 /* WithdrawlCoinTextField.swift */; };
 		0465604E29754E6D00C4CACD /* ReviewerTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465604D29754E6D00C4CACD /* ReviewerTabBarController.swift */; };
 		046560502975591300C4CACD /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465604F2975591300C4CACD /* CALayer+Extension.swift */; };
 		046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD0FB2972A53C00602F89 /* ShortsResultViewController.swift */; };
@@ -80,10 +80,10 @@
 		041ECBCA296EF0C80053AC9C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		041ECBCC296EF2FB0053AC9C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		045E56422976ADB400E47C77 /* ActionDisabledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDisabledTextField.swift; sourceTree = "<group>"; };
 		045E56452976B54400E47C77 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		045E56472976E70700E47C77 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewController.swift; sourceTree = "<group>"; };
+		045E564D2977068400E47C77 /* WithdrawlCoinTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawlCoinTextField.swift; sourceTree = "<group>"; };
 		0465604D29754E6D00C4CACD /* ReviewerTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerTabBarController.swift; sourceTree = "<group>"; };
 		0465604F2975591300C4CACD /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		046AD0FB2972A53C00602F89 /* ShortsResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsResultViewController.swift; sourceTree = "<group>"; };
@@ -180,7 +180,6 @@
 				0402BA612971D53C00B79935 /* BottomButton.xib */,
 				0402BA5F2971D39500B79935 /* BottomButton.swift */,
 				040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */,
-				045E56422976ADB400E47C77 /* ActionDisabledTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				045E56452976B54400E47C77 /* UnderLineTextField.swift */,
+				045E564D2977068400E47C77 /* WithdrawlCoinTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,6 +445,7 @@
 				041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */,
 				045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */,
 				046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */,
+				045E564E2977068400E47C77 /* WithdrawlCoinTextField.swift in Sources */,
 				041ECBB3296ED84C0053AC9C /* ViewController.swift in Sources */,
 				047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */,
 				046AD1092972FCC200602F89 /* SigninButton.swift in Sources */,
@@ -463,7 +464,6 @@
 				041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */,
 				041ECBCB296EF0C80053AC9C /* UIView+Extension.swift in Sources */,
 				0415992C296F42C100EEB699 /* ConcentrationResultViewController.swift in Sources */,
-				045E56432976ADB400E47C77 /* ActionDisabledTextField.swift in Sources */,
 				0402BA602971D39500B79935 /* BottomButton.swift in Sources */,
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
