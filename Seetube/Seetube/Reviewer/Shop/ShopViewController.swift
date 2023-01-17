@@ -38,6 +38,7 @@ class ShopViewController: UIViewController {
         self.configureGradientBackground()
         self.configureSubviews()
         self.configureTextField()
+        self.configureKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,19 +128,24 @@ extension ShopViewController {
             self.withdrawCoinTextField.heightAnchor.constraint(equalTo: self.balanceCoinLabel.heightAnchor)
         ])
     }
-}
-
-extension ShopViewController {
+    
     private func configureTextField() {
         self.withdrawCoinTextField.delegate = self
         self.withdrawCoinTextField.addTarget(self,
                                              action: #selector(textFieldEditingChanged(_:)),
                                              for: .editingChanged)
-        
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-        self.view.addGestureRecognizer(tap)
     }
     
+    private func configureKeyboard() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        self.view.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+}
+
+extension ShopViewController {
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
         guard let textWithoutSeparator = textField.text?.replacingOccurrences(of: ",", with: "") else { return }
         
@@ -148,6 +154,14 @@ extension ShopViewController {
         if let numberWithSeparator = formatter.number(from: textWithoutSeparator) {
             textField.text = formatter.string(from: numberWithSeparator)
         }
+    }
+    
+    @objc private func keyboardWillShow(_ sender: Notification) {
+        self.view.frame.origin.y = -150
+    }
+    
+    @objc private func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y = 0
     }
 }
 

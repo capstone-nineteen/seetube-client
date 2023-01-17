@@ -134,13 +134,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Receipt" translatesAutoresizingMaskIntoConstraints="NO" id="in2-eD-s6l">
-                                <rect key="frame" x="43" y="30" width="289" height="558"/>
+                                <rect key="frame" x="40.5" y="25.5" width="294" height="567"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="in2-eD-s6l" secondAttribute="height" multiplier="698:1346" id="1Xt-uF-PoA"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVn-04-hVn" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="57.5" y="531" width="260" height="42"/>
+                                <rect key="frame" x="55" y="535" width="265" height="42.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <userDefinedRuntimeAttributes>
@@ -154,10 +154,10 @@
                         <viewLayoutGuide key="safeArea" id="BPv-07-sCz"/>
                         <color key="backgroundColor" name="AccentColor"/>
                         <constraints>
+                            <constraint firstItem="in2-eD-s6l" firstAttribute="height" relation="lessThanOrEqual" secondItem="HWG-50-iGe" secondAttribute="height" multiplier="0.85" id="4nN-MT-llS"/>
                             <constraint firstItem="ZVn-04-hVn" firstAttribute="width" secondItem="in2-eD-s6l" secondAttribute="width" multiplier="0.9" id="6YR-7M-dKY"/>
                             <constraint firstItem="ZVn-04-hVn" firstAttribute="height" secondItem="in2-eD-s6l" secondAttribute="height" multiplier="0.075" id="9cX-xX-hen"/>
-                            <constraint firstItem="in2-eD-s6l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="BPv-07-sCz" secondAttribute="top" constant="30" id="BMX-R7-EmK"/>
-                            <constraint firstItem="in2-eD-s6l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BPv-07-sCz" secondAttribute="leading" constant="20" id="dum-FY-OoC"/>
+                            <constraint firstItem="in2-eD-s6l" firstAttribute="width" relation="lessThanOrEqual" secondItem="HWG-50-iGe" secondAttribute="width" multiplier="0.85" id="EdQ-6Y-AVq"/>
                             <constraint firstItem="ZVn-04-hVn" firstAttribute="bottom" secondItem="in2-eD-s6l" secondAttribute="bottom" constant="-15" id="e3M-M6-t6n"/>
                             <constraint firstItem="in2-eD-s6l" firstAttribute="centerX" secondItem="BPv-07-sCz" secondAttribute="centerX" id="nO9-rM-ZVe"/>
                             <constraint firstItem="ZVn-04-hVn" firstAttribute="centerX" secondItem="in2-eD-s6l" secondAttribute="centerX" id="q8y-V4-SqL"/>
@@ -803,16 +803,16 @@
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="6sF-QO-ZI6">
-            <size key="intrinsicContentSize" width="128.5" height="20"/>
+            <size key="intrinsicContentSize" width="117" height="18.5"/>
         </designable>
         <designable name="AjX-df-afO">
-            <size key="intrinsicContentSize" width="191" height="20"/>
+            <size key="intrinsicContentSize" width="174" height="18.5"/>
         </designable>
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="24" height="14"/>
         </designable>
         <designable name="Iqx-xv-HFK">
-            <size key="intrinsicContentSize" width="128.5" height="20"/>
+            <size key="intrinsicContentSize" width="117" height="18.5"/>
         </designable>
         <designable name="MIt-RP-vXU">
             <size key="intrinsicContentSize" width="24" height="14"/>
@@ -825,6 +825,9 @@
         </designable>
         <designable name="bc5-i8-hgR">
             <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="gmX-Da-P0M">
+            <size key="intrinsicContentSize" width="24" height="14"/>
         </designable>
         <designable name="k9L-Rb-zAs">
             <size key="intrinsicContentSize" width="30" height="34"/>
