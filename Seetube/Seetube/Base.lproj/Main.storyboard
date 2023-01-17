@@ -139,13 +139,25 @@
                                     <constraint firstAttribute="width" secondItem="in2-eD-s6l" secondAttribute="height" multiplier="698:1346" id="1Xt-uF-PoA"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVn-04-hVn" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="62" y="522.5" width="251" height="40.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="환급 받기"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BPv-07-sCz"/>
                         <color key="backgroundColor" name="AccentColor"/>
                         <constraints>
+                            <constraint firstItem="ZVn-04-hVn" firstAttribute="width" secondItem="in2-eD-s6l" secondAttribute="width" multiplier="0.9" id="6YR-7M-dKY"/>
+                            <constraint firstItem="ZVn-04-hVn" firstAttribute="height" secondItem="in2-eD-s6l" secondAttribute="height" multiplier="0.075" id="9cX-xX-hen"/>
                             <constraint firstItem="in2-eD-s6l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="BPv-07-sCz" secondAttribute="top" constant="40" id="BMX-R7-EmK"/>
                             <constraint firstItem="in2-eD-s6l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BPv-07-sCz" secondAttribute="leading" constant="20" id="dum-FY-OoC"/>
+                            <constraint firstItem="ZVn-04-hVn" firstAttribute="bottom" secondItem="in2-eD-s6l" secondAttribute="bottom" constant="-15" id="e3M-M6-t6n"/>
                             <constraint firstItem="in2-eD-s6l" firstAttribute="centerX" secondItem="BPv-07-sCz" secondAttribute="centerX" id="nO9-rM-ZVe"/>
+                            <constraint firstItem="ZVn-04-hVn" firstAttribute="centerX" secondItem="in2-eD-s6l" secondAttribute="centerX" id="q8y-V4-SqL"/>
                             <constraint firstItem="in2-eD-s6l" firstAttribute="centerY" secondItem="BPv-07-sCz" secondAttribute="centerY" id="xzV-bW-6EC"/>
                         </constraints>
                     </view>
@@ -651,6 +663,9 @@
         </designable>
         <designable name="Vtb-6Z-wbj">
             <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="ZVn-04-hVn">
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="bc5-i8-hgR">
             <size key="intrinsicContentSize" width="30" height="34"/>
