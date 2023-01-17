@@ -7,9 +7,9 @@
 
 import UIKit
 
-class UnderLineTextField: UITextField {
+class UnderLineTextField: ActionDisabledTextField {
     private let inactiveColor: UIColor = .systemGray4
-    private let activeColor: UIColor = .darkGray
+    private let activeColor: UIColor = UIColor(named: "AccentColor") ?? .darkGray
     
     private lazy var underLineView: UIView = {
         let view = UIView()
@@ -26,14 +26,19 @@ class UnderLineTextField: UITextField {
         super.init(coder: aDecoder)
         self.configureUnderLineView()
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.font = self.font?.withSize(self.bounds.height * 0.7)
+    }
 
     private func configureUnderLineView() {
         self.addSubview(self.underLineView)
         self.underLineView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.underLineView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            self.underLineView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 2),
             self.underLineView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.underLineView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.underLineView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 3),
             self.underLineView.heightAnchor.constraint(equalToConstant: 1.5)
         ])
         
@@ -41,11 +46,11 @@ class UnderLineTextField: UITextField {
         self.addTarget(self, action: #selector(changeColorToInactive), for: .editingDidEnd)
     }
     
-    @objc func changeColorToActive() {
+    @objc private func changeColorToActive() {
         self.underLineView.backgroundColor = self.activeColor
     }
     
-    @objc func changeColorToInactive() {
+    @objc private func changeColorToInactive() {
         self.underLineView.backgroundColor = self.inactiveColor
     }
 }

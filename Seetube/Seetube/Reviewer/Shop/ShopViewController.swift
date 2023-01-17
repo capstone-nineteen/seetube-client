@@ -11,26 +11,25 @@ class ShopViewController: UIViewController {
     @IBOutlet weak var receiptView: UIImageView!
     private lazy var totalCoinLabel: AdaptiveFontSizeLabel = {
         let label = AdaptiveFontSizeLabel()
-        label.setWeight(.bold)
+        label.font = label.font.withWeight(.bold)
         label.textAlignment = .right
         label.text = "12,500"
         return label
     }()
     private lazy var balanceCoinLabel: AdaptiveFontSizeLabel = {
         let label = AdaptiveFontSizeLabel()
-        label.setWeight(.medium)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         label.textAlignment = .right
         label.text = "2,500"
         return label
     }()
     private lazy var withdrawCoinTextField: UnderLineTextField = {
         let textField = UnderLineTextField()
+        textField.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         textField.textAlignment = .right
         textField.clearsOnBeginEditing = true
         textField.keyboardType = .numberPad
-        textField.text = "12,500"
-        // TODO: balance랑 폰트 사이즈 같게
-        // TODO: 액션 비활성화
+        textField.text = "10,000"
         return textField
     }()
     
@@ -78,7 +77,7 @@ extension ShopViewController {
                                attribute: .bottom,
                                multiplier: 0.44,
                                constant: 0),
-            self.totalCoinLabel.heightAnchor.constraint(equalTo: self.receiptView.heightAnchor, multiplier: 0.1)
+            self.totalCoinLabel.heightAnchor.constraint(equalTo: self.receiptView.heightAnchor, multiplier: 0.08)
         ])
         
         self.receiptView.addSubview(self.balanceCoinLabel)
@@ -105,7 +104,7 @@ extension ShopViewController {
                                attribute: .bottom,
                                multiplier: 0.74,
                                constant: 0),
-            self.balanceCoinLabel.heightAnchor.constraint(equalTo: self.receiptView.heightAnchor, multiplier: 0.035)
+            self.balanceCoinLabel.heightAnchor.constraint(equalTo: self.receiptView.heightAnchor, multiplier: 0.038)
         ])
         
         self.receiptView.addSubview(withdrawCoinTextField)
@@ -120,7 +119,7 @@ extension ShopViewController {
                                constant: 0),
             self.withdrawCoinTextField.leadingAnchor.constraint(equalTo: self.balanceCoinLabel.leadingAnchor),
             self.withdrawCoinTextField.trailingAnchor.constraint(equalTo: self.balanceCoinLabel.trailingAnchor),
-            self.withdrawCoinTextField.heightAnchor.constraint(equalTo: self.balanceCoinLabel.heightAnchor, multiplier: 1.3)
+            self.withdrawCoinTextField.heightAnchor.constraint(equalTo: self.balanceCoinLabel.heightAnchor)
         ])
     }
 }
