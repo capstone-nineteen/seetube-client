@@ -192,6 +192,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="name" value="환급 신청하기"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="applyButtonTouched:" destination="Ulq-P9-i8g" eventType="touchUpInside" id="qL5-zJ-YMw"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 위 개인정보는 오직 환급을 위한 용도로만 쓰이며, 환급 이후에는 폐기됩니다. 환급 신청 이후에는 신청 취소 불가합니다." textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nd-W4-Uw3">
                                 <rect key="frame" x="27" y="496.5" width="321" height="31.5"/>

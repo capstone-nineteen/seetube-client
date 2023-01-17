@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WithdrawalInformationViewController: UIViewController {
+class WithdrawalInformationViewController: UIViewController, AlertDisplaying {
     @IBOutlet weak var bankNameTextField: UnderLineTextField!
     @IBOutlet weak var accountHolderTextField: UnderLineTextField!
     @IBOutlet weak var accountNumberTextField: UnderLineTextField!
@@ -24,6 +24,12 @@ class WithdrawalInformationViewController: UIViewController {
     
     @IBAction func accountNumberEditingChanged(_ sender: UITextField) {
         sender.text = sender.text?.filter { $0.isNumber }
+    }
+    
+    @IBAction func applyButtonTouched(_ sender: UIButton) {
+        self.displayAlertWithAction(title: "환급 신청", message: "입력하신 정보가 올바른지 확인하십시오. 해당 정보로 환급을 신청하시겠습니까?", action: { [weak self] _ in
+            self?.displayApplicationCompeleteAlert()
+        })
     }
 }
 
@@ -47,5 +53,15 @@ extension WithdrawalInformationViewController: UITextFieldDelegate {
         }
         
         return false
+    }
+}
+
+extension WithdrawalInformationViewController {
+    private func displayApplicationCompeleteAlert() {
+        self.displayAlertWithAction(title: "신청 완료",
+                                    message: "환급 신청이 완료되었습니다.",
+                                    action: { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+        })
     }
 }
