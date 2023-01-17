@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FJw-le-mwV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hpm-25-l6h">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -28,6 +28,7 @@
                                     <segment title="리뷰어"/>
                                     <segment title="유튜버"/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="0.0"/>
@@ -45,7 +46,6 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L25-aS-26h">
                                 <rect key="frame" x="77.5" y="179" width="220" height="220"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="L25-aS-26h" secondAttribute="height" multiplier="1:1" id="CGO-Xz-Haf"/>
                                     <constraint firstAttribute="height" constant="220" id="vJl-0a-R16"/>
@@ -79,7 +79,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lag-I3-LYf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="I4a-lA-LJb" firstAttribute="centerX" secondItem="L25-aS-26h" secondAttribute="centerX" id="4Mh-3i-OlV"/>
                             <constraint firstItem="I4a-lA-LJb" firstAttribute="top" secondItem="L25-aS-26h" secondAttribute="bottom" constant="15" id="7A0-gf-3ca"/>
@@ -117,7 +117,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="4vL-Y9-aWe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="play.square.stack" catalog="system" id="J53-Gh-dMM"/>
                 </viewController>
@@ -258,7 +258,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Ov-EQ-zKH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gmX-Da-P0M" firstAttribute="top" secondItem="5Nd-W4-Uw3" secondAttribute="bottom" constant="20" id="2hk-RG-OVG"/>
                             <constraint firstItem="AjX-df-afO" firstAttribute="top" secondItem="RjE-IJ-STd" secondAttribute="bottom" constant="5" id="3XH-8A-2FD"/>
@@ -308,7 +308,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Uyi-AL-xYh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="nca-Nd-j91"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -325,7 +325,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Hs4-YG-w94"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="eZe-cF-WvV"/>
                 </viewController>
@@ -449,7 +449,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bc5-i8-hgR" firstAttribute="leading" secondItem="1vh-OX-17S" secondAttribute="leading" id="Ea9-wm-kYo"/>
                             <constraint firstItem="bc5-i8-hgR" firstAttribute="trailing" secondItem="1vh-OX-17S" secondAttribute="trailing" id="EjD-vW-lGv"/>
@@ -498,7 +498,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8a4-Xm-axN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JKS-b8-qHx" firstAttribute="top" secondItem="8a4-Xm-axN" secondAttribute="top" id="CGW-3D-SCB"/>
                             <constraint firstItem="8a4-Xm-axN" firstAttribute="bottom" secondItem="JKS-b8-qHx" secondAttribute="bottom" id="NvA-Mf-Eg5"/>
@@ -538,7 +538,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VVT-UG-kPT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="H97-xV-dlU" firstAttribute="top" secondItem="VVT-UG-kPT" secondAttribute="top" id="7ux-Hj-QRR"/>
                             <constraint firstItem="VVT-UG-kPT" firstAttribute="bottom" secondItem="H97-xV-dlU" secondAttribute="bottom" id="UBw-3w-0au"/>
@@ -565,7 +565,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-EA-ae5">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wk5-gc-oEN">
                                     <size key="itemSize" width="152" height="264"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -647,7 +647,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="epK-d2-2el"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="epK-d2-2el" firstAttribute="bottom" secondItem="KbU-EA-ae5" secondAttribute="bottom" id="3lg-nt-Xow"/>
                             <constraint firstItem="MIt-RP-vXU" firstAttribute="leading" secondItem="epK-d2-2el" secondAttribute="leading" constant="17" id="6z6-hl-oPi"/>
@@ -707,7 +707,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fx0-A3-7A3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Fx0-A3-7A3" firstAttribute="trailing" secondItem="B6y-IO-SE1" secondAttribute="trailing" constant="17" id="KHD-44-71w"/>
                             <constraint firstItem="Lfp-Eb-NHl" firstAttribute="top" secondItem="Fx0-A3-7A3" secondAttribute="top" id="OfM-0b-uC4"/>
@@ -744,7 +744,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ccz-p9-aYs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ccz-p9-aYs" firstAttribute="bottom" secondItem="z89-4V-KfX" secondAttribute="bottom" id="UQP-W4-EJL"/>
                             <constraint firstItem="z89-4V-KfX" firstAttribute="top" secondItem="ccz-p9-aYs" secondAttribute="top" id="oby-sc-DtF"/>
@@ -848,6 +848,9 @@
         <image name="wonsign.circle" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.94499999284744263" green="0.23899999260902405" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackgroundColor">
+            <color red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
