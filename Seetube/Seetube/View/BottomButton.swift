@@ -9,8 +9,14 @@ import UIKit
 
 @IBDesignable
 class BottomButton: UIButton, NibLoadable {
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameLabel: AdaptiveFontSizeLabel!
     @IBInspectable var name: String?
+    
+    override var isHighlighted: Bool {
+        didSet {
+            self.alpha = isHighlighted ? 0.7 : 1.0
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,12 +33,6 @@ class BottomButton: UIButton, NibLoadable {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         self.nameLabel.text = self.name
-    }
-    
-    override var isHighlighted: Bool {
-        didSet {
-            self.alpha = isHighlighted ? 0.7 : 1.0
-        }
     }
     
     private func configure() {
