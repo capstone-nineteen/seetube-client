@@ -211,7 +211,7 @@
                             <textField opaque="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="은행명을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iqx-xv-HFK" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="26" y="121" width="150" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="4oj-DA-6GL"/>
+                                    <constraint firstAttribute="width" priority="750" constant="150" id="4oj-DA-6GL"/>
                                     <constraint firstAttribute="height" constant="22" id="KKa-gB-PL6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -226,14 +226,14 @@
                             <textField opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예금주를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6sF-QO-ZI6" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="26" y="190" width="150" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Faz-ov-90c"/>
+                                    <constraint firstAttribute="width" priority="750" constant="150" id="Faz-ov-90c"/>
                                     <constraint firstAttribute="height" constant="22" id="cor-Ow-Ocz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예금주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77p-tc-O2S">
-                                <rect key="frame" x="26" y="168" width="37" height="17"/>
+                                <rect key="frame" x="26" y="168" width="36.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -242,7 +242,7 @@
                                 <rect key="frame" x="26" y="259" width="250" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="PbT-uZ-Lkx"/>
-                                    <constraint firstAttribute="width" constant="250" id="h4w-Wi-wTp"/>
+                                    <constraint firstAttribute="width" priority="750" constant="250" id="h4w-Wi-wTp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -262,22 +262,29 @@
                         <constraints>
                             <constraint firstItem="gmX-Da-P0M" firstAttribute="top" secondItem="5Nd-W4-Uw3" secondAttribute="bottom" constant="20" id="2hk-RG-OVG"/>
                             <constraint firstItem="AjX-df-afO" firstAttribute="top" secondItem="RjE-IJ-STd" secondAttribute="bottom" constant="5" id="3XH-8A-2FD"/>
+                            <constraint firstItem="9Ov-EQ-zKH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jfL-T6-Jhn" secondAttribute="trailing" constant="10" id="42m-k1-KS8"/>
                             <constraint firstItem="77p-tc-O2S" firstAttribute="top" secondItem="Iqx-xv-HFK" secondAttribute="bottom" constant="25" id="4xY-vS-fLG"/>
                             <constraint firstItem="jfL-T6-Jhn" firstAttribute="leading" secondItem="9Ov-EQ-zKH" secondAttribute="leading" constant="25" id="7Ig-15-835"/>
                             <constraint firstItem="00u-3D-mgO" firstAttribute="top" secondItem="jfL-T6-Jhn" secondAttribute="bottom" constant="25" id="8aE-Jw-b2A"/>
+                            <constraint firstItem="9Ov-EQ-zKH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6sF-QO-ZI6" secondAttribute="trailing" constant="199" id="AFE-Nq-ODk"/>
                             <constraint firstItem="jfL-T6-Jhn" firstAttribute="top" secondItem="9Ov-EQ-zKH" secondAttribute="top" constant="50" id="ETU-ZP-IHf"/>
                             <constraint firstItem="gmX-Da-P0M" firstAttribute="centerX" secondItem="9Ov-EQ-zKH" secondAttribute="centerX" id="Hcx-La-V42"/>
                             <constraint firstItem="RjE-IJ-STd" firstAttribute="leading" secondItem="77p-tc-O2S" secondAttribute="leading" id="ICb-8x-UcI"/>
                             <constraint firstItem="gmX-Da-P0M" firstAttribute="leading" secondItem="9Ov-EQ-zKH" secondAttribute="leading" constant="17" id="J0r-7e-jlb"/>
+                            <constraint firstItem="9Ov-EQ-zKH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="77p-tc-O2S" secondAttribute="trailing" constant="10" id="OBj-Yh-521"/>
+                            <constraint firstItem="9Ov-EQ-zKH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RjE-IJ-STd" secondAttribute="trailing" constant="10" id="RBp-c7-Vzn"/>
                             <constraint firstItem="77p-tc-O2S" firstAttribute="leading" secondItem="00u-3D-mgO" secondAttribute="leading" id="Rfb-aq-bHj"/>
                             <constraint firstItem="AjX-df-afO" firstAttribute="leading" secondItem="RjE-IJ-STd" secondAttribute="leading" id="ZHx-lC-TaL"/>
                             <constraint firstItem="Iqx-xv-HFK" firstAttribute="top" secondItem="00u-3D-mgO" secondAttribute="bottom" constant="5" id="aTe-Kb-7Cf"/>
+                            <constraint firstItem="9Ov-EQ-zKH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AjX-df-afO" secondAttribute="trailing" constant="10" id="abf-Om-Lda"/>
                             <constraint firstItem="00u-3D-mgO" firstAttribute="leading" secondItem="jfL-T6-Jhn" secondAttribute="leading" constant="1" id="bd5-vt-aLR"/>
                             <constraint firstItem="Iqx-xv-HFK" firstAttribute="leading" secondItem="00u-3D-mgO" secondAttribute="leading" id="c4C-7m-kUV"/>
                             <constraint firstItem="9Ov-EQ-zKH" firstAttribute="bottom" secondItem="gmX-Da-P0M" secondAttribute="bottom" constant="20" id="eNS-Ni-naK"/>
                             <constraint firstItem="RjE-IJ-STd" firstAttribute="top" secondItem="6sF-QO-ZI6" secondAttribute="bottom" constant="25" id="iOr-Ld-Xma"/>
+                            <constraint firstItem="9Ov-EQ-zKH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="00u-3D-mgO" secondAttribute="trailing" constant="10" id="ih0-oP-pvZ"/>
                             <constraint firstItem="5Nd-W4-Uw3" firstAttribute="centerX" secondItem="9Ov-EQ-zKH" secondAttribute="centerX" id="mud-Bd-FUg"/>
                             <constraint firstItem="5Nd-W4-Uw3" firstAttribute="leading" secondItem="gmX-Da-P0M" secondAttribute="leading" constant="10" id="ply-me-1WG"/>
+                            <constraint firstItem="9Ov-EQ-zKH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Iqx-xv-HFK" secondAttribute="trailing" constant="10" id="r6Q-r1-hjA"/>
                             <constraint firstItem="6sF-QO-ZI6" firstAttribute="leading" secondItem="77p-tc-O2S" secondAttribute="leading" id="vmF-xs-MFd"/>
                             <constraint firstItem="6sF-QO-ZI6" firstAttribute="top" secondItem="77p-tc-O2S" secondAttribute="bottom" constant="5" id="wZb-90-99D"/>
                         </constraints>
