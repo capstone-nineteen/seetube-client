@@ -12,7 +12,6 @@
 		040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */; };
 		040E3CBC2971AF290057B25E /* ListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CBB2971AF290057B25E /* ListStyleResultView.xib */; };
 		040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CBD2971B0130057B25E /* ListStyleResultView.swift */; };
-		040E3CC32971BA7B0057B25E /* CellReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CC22971BA7B0057B25E /* CellReuseIdentifiable.swift */; };
 		040E3CCB2971C8AC0057B25E /* LargeListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */; };
 		040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CCC2971C8C20057B25E /* LargeListStyleResultView.swift */; };
 		0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412EEFB29705C5900256579 /* CircularProgressBar.swift */; };
@@ -61,7 +60,6 @@
 		040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveFontSizeLabel.swift; sourceTree = "<group>"; };
 		040E3CBB2971AF290057B25E /* ListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStyleResultView.xib; sourceTree = "<group>"; };
 		040E3CBD2971B0130057B25E /* ListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyleResultView.swift; sourceTree = "<group>"; };
-		040E3CC22971BA7B0057B25E /* CellReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuseIdentifiable.swift; sourceTree = "<group>"; };
 		040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeListStyleResultView.xib; sourceTree = "<group>"; };
 		040E3CCC2971C8C20057B25E /* LargeListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeListStyleResultView.swift; sourceTree = "<group>"; };
 		0412EEFB29705C5900256579 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				0415992E296F477500EEB699 /* NibLoadable.swift */,
-				040E3CC22971BA7B0057B25E /* CellReuseIdentifiable.swift */,
 				046AD1002972D7A900602F89 /* AlertDisplaying.swift */,
 			);
 			path = Protocol;
@@ -486,7 +483,6 @@
 				0402BA602971D39500B79935 /* BottomButton.swift in Sources */,
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
-				040E3CC32971BA7B0057B25E /* CellReuseIdentifiable.swift in Sources */,
 				0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */,
 				04A94F062978129200BF5F4B /* MyPageViewController.swift in Sources */,
 				0465604E29754E6D00C4CACD /* ReviewerTabBarController.swift in Sources */,
