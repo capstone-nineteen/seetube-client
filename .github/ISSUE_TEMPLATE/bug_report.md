@@ -16,4 +16,4 @@ assignees: sujeong000
 
 ## 스크린샷
 
-## 기타
+## 해결
