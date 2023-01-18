@@ -375,7 +375,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinHistoryTableViewCell" id="tKe-rQ-Xha">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinHistoryTableViewCell" id="tKe-rQ-Xha" customClass="CoinHistoryTableViewCell" customModule="Seetube" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="323" height="47"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tKe-rQ-Xha" id="qjZ-Vp-h9D">
@@ -403,7 +403,7 @@
                                                                 <constraint firstAttribute="width" constant="60" id="PhK-iH-Ol5"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="AccentColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -418,6 +418,11 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="coinAmountLabel" destination="qf8-e9-E7Z" id="TAn-5w-CxB"/>
+                                                    <outlet property="dateLabel" destination="OuG-SC-cr2" id="CBl-6W-omv"/>
+                                                    <outlet property="videoTitleLabel" destination="gqs-kc-iSR" id="tKv-B7-6IS"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>

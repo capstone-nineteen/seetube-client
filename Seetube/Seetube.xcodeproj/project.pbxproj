@@ -47,6 +47,7 @@
 		047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */; };
 		047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */; };
 		04A94F062978129200BF5F4B /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A94F052978129200BF5F4B /* MyPageViewController.swift */; };
+		04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A94F0A2978318B00BF5F4B /* CoinHistoryTableViewCell.swift */; };
 		04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B78C2970514B000F0859 /* SceneListView.xib */; };
 		04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B78E2970524E000F0859 /* SceneListView.swift */; };
 		04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */; };
@@ -97,6 +98,7 @@
 		047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeTableViewCell.swift; sourceTree = "<group>"; };
 		047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListLargeTableViewCell.xib; sourceTree = "<group>"; };
 		04A94F052978129200BF5F4B /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		04A94F0A2978318B00BF5F4B /* CoinHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		04E8B78C2970514B000F0859 /* SceneListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListView.xib; sourceTree = "<group>"; };
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
 		04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListTableViewCell.swift; sourceTree = "<group>"; };
@@ -346,8 +348,17 @@
 			isa = PBXGroup;
 			children = (
 				04A94F052978129200BF5F4B /* MyPageViewController.swift */,
+				04A94F092978316E00BF5F4B /* View */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		04A94F092978316E00BF5F4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04A94F0A2978318B00BF5F4B /* CoinHistoryTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		04FA5D602974668D0015D91B /* Common */ = {
@@ -465,6 +476,7 @@
 				046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */,
 				04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */,
 				04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */,
+				04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */,
 				047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */,
 				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,
 				047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */,

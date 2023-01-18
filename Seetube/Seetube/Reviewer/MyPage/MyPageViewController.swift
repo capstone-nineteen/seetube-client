@@ -39,9 +39,7 @@ extension MyPageViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CoinHistoryTableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CoinHistoryTableViewCell.cellReuseIdentifier, for: indexPath) as? CoinHistoryTableViewCell else { return UITableViewCell() }
         return cell
     }
-    
-    
 }
