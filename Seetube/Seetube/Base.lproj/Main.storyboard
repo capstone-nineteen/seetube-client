@@ -133,41 +133,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Receipt" translatesAutoresizingMaskIntoConstraints="NO" id="in2-eD-s6l">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-JJ-YQe" customClass="ReceiptView" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="40.5" y="25.5" width="294" height="567"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="in2-eD-s6l" secondAttribute="height" multiplier="698:1346" id="1Xt-uF-PoA"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVn-04-hVn" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="55" y="535" width="265" height="42.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="환급 받기"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="Ulq-P9-i8g" kind="show" id="rSy-K4-zrs"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BPv-07-sCz"/>
                         <color key="backgroundColor" name="AccentColor"/>
                         <constraints>
-                            <constraint firstItem="in2-eD-s6l" firstAttribute="height" relation="lessThanOrEqual" secondItem="HWG-50-iGe" secondAttribute="height" multiplier="0.85" id="4nN-MT-llS"/>
-                            <constraint firstItem="ZVn-04-hVn" firstAttribute="width" secondItem="in2-eD-s6l" secondAttribute="width" multiplier="0.9" id="6YR-7M-dKY"/>
-                            <constraint firstItem="ZVn-04-hVn" firstAttribute="height" secondItem="in2-eD-s6l" secondAttribute="height" multiplier="0.075" id="9cX-xX-hen"/>
-                            <constraint firstItem="in2-eD-s6l" firstAttribute="width" relation="lessThanOrEqual" secondItem="HWG-50-iGe" secondAttribute="width" multiplier="0.85" id="EdQ-6Y-AVq"/>
-                            <constraint firstItem="ZVn-04-hVn" firstAttribute="bottom" secondItem="in2-eD-s6l" secondAttribute="bottom" constant="-15" id="e3M-M6-t6n"/>
-                            <constraint firstItem="in2-eD-s6l" firstAttribute="centerX" secondItem="BPv-07-sCz" secondAttribute="centerX" id="nO9-rM-ZVe"/>
-                            <constraint firstItem="ZVn-04-hVn" firstAttribute="centerX" secondItem="in2-eD-s6l" secondAttribute="centerX" id="q8y-V4-SqL"/>
-                            <constraint firstItem="in2-eD-s6l" firstAttribute="centerY" secondItem="BPv-07-sCz" secondAttribute="centerY" id="xzV-bW-6EC"/>
+                            <constraint firstItem="4B7-JJ-YQe" firstAttribute="width" relation="lessThanOrEqual" secondItem="HWG-50-iGe" secondAttribute="width" multiplier="0.85" id="aTk-FZ-u1b"/>
+                            <constraint firstItem="4B7-JJ-YQe" firstAttribute="centerX" secondItem="BPv-07-sCz" secondAttribute="centerX" id="d5g-4f-7xy"/>
+                            <constraint firstItem="4B7-JJ-YQe" firstAttribute="height" relation="lessThanOrEqual" secondItem="HWG-50-iGe" secondAttribute="height" multiplier="0.85" id="rR0-CH-hqr"/>
+                            <constraint firstItem="4B7-JJ-YQe" firstAttribute="centerY" secondItem="BPv-07-sCz" secondAttribute="centerY" id="su4-gO-xHO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7WW-KC-BYu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="receiptView" destination="in2-eD-s6l" id="g8P-nb-wa8"/>
+                        <outlet property="receiptView" destination="4B7-JJ-YQe" id="9ZN-is-e4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ty7-Of-sCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -177,13 +160,13 @@
         <!--환급 신청-->
         <scene sceneID="Xsn-LH-UQ9">
             <objects>
-                <viewController id="Ulq-P9-i8g" customClass="WithdrawalInformationViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WithdrawalInformationViewController" id="Ulq-P9-i8g" customClass="WithdrawalInformationViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lLY-nO-YS3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmX-Da-P0M" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="548" width="341" height="50"/>
+                                <rect key="frame" x="17" y="597" width="341" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RtL-OQ-zDM"/>
                                 </constraints>
@@ -197,7 +180,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 위 개인정보는 오직 환급을 위한 용도로만 쓰이며, 환급 이후에는 폐기됩니다. 환급 신청 이후에는 신청 취소 불가합니다." textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nd-W4-Uw3">
-                                <rect key="frame" x="27" y="496.5" width="321" height="31.5"/>
+                                <rect key="frame" x="27" y="545.5" width="321" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
@@ -1020,9 +1003,6 @@
         <designable name="Vtb-6Z-wbj">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
-        <designable name="ZVn-04-hVn">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
         <designable name="bc5-i8-hgR">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
@@ -1040,7 +1020,6 @@
     <resources>
         <image name="AppleSignIn" width="351.5" height="62.5"/>
         <image name="GoogleSignIn" width="351.5" height="62.5"/>
-        <image name="Receipt" width="465" height="897"/>
         <image name="centsign.circle.fill" catalog="system" width="128" height="123"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>

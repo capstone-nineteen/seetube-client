@@ -13,10 +13,11 @@ protocol WithdrawButtonDelegate {
 
 class ReceiptView: UIView, NibLoadable {
     @IBOutlet weak var totalCoinLabel: AdaptiveFontSizeLabel!
-    @IBOutlet weak var withdrawlCoinLabel: WithdrawlCoinTextField!
+    @IBOutlet weak var withdrawlCoinTextField: WithdrawlCoinTextField!
     @IBOutlet weak var balanceCoinLabel: AdaptiveFontSizeLabel!
     
-    private var delegate: WithdrawButtonDelegate?
+    private var buttonDelegate: WithdrawButtonDelegate?
+    private var textFieldDelegate: UITextFieldDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,11 +29,15 @@ class ReceiptView: UIView, NibLoadable {
         self.loadFromNib(owner: self)
     }
     
-    func configureDelegate(_ delegate: WithdrawButtonDelegate) {
-        self.delegate = delegate
+    func configureButtonDelegate(_ delegate: WithdrawButtonDelegate) {
+        self.buttonDelegate = delegate
+    }
+    
+    func configureTextFieldDelegate(_ delegate: UITextFieldDelegate) {
+        self.withdrawlCoinTextField.delegate = delegate
     }
     
     @IBAction func withDrawButtonTouched(_ sender: BottomButton) {
-        self.delegate?.withdrawButtonTouched(sender)
+        self.buttonDelegate?.withdrawButtonTouched(sender)
     }
 }
