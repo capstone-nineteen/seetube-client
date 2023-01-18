@@ -14,18 +14,12 @@ class MyPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureBackgroundView()
-        self.configureTableView()
     }
 }
 
 extension MyPageViewController {
     private func configureBackgroundView() {
         self.backgroundView.configureShadow(alpha: 0.5, radius: 5)
-    }
-    
-    private func configureTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
     }
 }
 

@@ -424,6 +424,10 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Ggt-Ua-V6l" id="HYa-fc-sqK"/>
+                                            <outlet property="delegate" destination="Ggt-Ua-V6l" id="VTs-Wt-M8l"/>
+                                        </connections>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시청한 영상" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pih-FB-TgT">
                                         <rect key="frame" x="98" y="68" width="56" height="15"/>
