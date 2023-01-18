@@ -33,6 +33,7 @@ class ShopViewController: UIViewController {
         return textField
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureGradientBackground()

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class AdaptiveFontSizeLabel: UILabel {
     override func layoutSubviews() {
         super.layoutSubviews()

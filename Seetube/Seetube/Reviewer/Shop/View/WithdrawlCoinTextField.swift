@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class WithdrawlCoinTextField: UnderLineTextField {
     override init(frame: CGRect) {
         super.init(frame: frame)

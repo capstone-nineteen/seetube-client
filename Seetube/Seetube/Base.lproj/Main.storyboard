@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ty7-Of-sCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6401" y="963"/>
+            <point key="canvasLocation" x="6400.8000000000002" y="962.96851574212906"/>
         </scene>
         <!--환급 신청-->
         <scene sceneID="Xsn-LH-UQ9">
@@ -1040,7 +1040,7 @@
     <resources>
         <image name="AppleSignIn" width="351.5" height="62.5"/>
         <image name="GoogleSignIn" width="351.5" height="62.5"/>
-        <image name="Receipt" width="523.5" height="1009.5"/>
+        <image name="Receipt" width="465" height="897"/>
         <image name="centsign.circle.fill" catalog="system" width="128" height="123"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
