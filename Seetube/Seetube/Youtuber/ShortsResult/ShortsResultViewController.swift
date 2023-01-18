@@ -8,7 +8,6 @@
 import UIKit
 
 class ShortsResultViewController: UIViewController, AlertDisplaying {
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var saveButton: BottomButton!
     @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
@@ -36,7 +35,7 @@ class ShortsResultViewController: UIViewController, AlertDisplaying {
 
 extension ShortsResultViewController {
     private func changeToSelectionMode() {
-        self.rightBarButtonItem.isHidden = true
+        self.navigationItem.setRightBarButton(nil, animated: false)
         self.saveButton.isHidden = false
         self.collectionViewBottomConstraint.constant = 50 + 7 + 5
         self.collectionView.allowsSelection = true
@@ -44,7 +43,7 @@ extension ShortsResultViewController {
     }
     
     private func changeToNormalMode() {
-        self.rightBarButtonItem.isHidden = false
+        self.navigationItem.setRightBarButton(self.rightBarButtonItem, animated: false)
         self.saveButton.isHidden = true
         self.collectionViewBottomConstraint.constant = 0
         self.collectionView.allowsSelection = false
