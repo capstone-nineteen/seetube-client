@@ -11,8 +11,8 @@ import UIKit
 extension UIView {
     @IBInspectable
     var cornerRadius: CGFloat {
-        set { layer.cornerRadius = newValue }
-        get { return layer.cornerRadius }
+        set { self.layer.cornerRadius = newValue }
+        get { return self.layer.cornerRadius }
     }
     
     func configureShadow (

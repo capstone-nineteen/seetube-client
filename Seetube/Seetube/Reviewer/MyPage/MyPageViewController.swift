@@ -8,22 +8,40 @@
 import UIKit
 
 class MyPageViewController: UIViewController {
-
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureBackgroundView()
+        self.configureTableView()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension MyPageViewController {
+    private func configureBackgroundView() {
+        self.backgroundView.configureShadow(alpha: 0.5, radius: 5)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configureTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
-    */
+}
 
+extension MyPageViewController: UITableViewDelegate {
+    
+}
+
+extension MyPageViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CoinHistoryTableViewCell", for: indexPath)
+        return cell
+    }
+    
+    
 }
