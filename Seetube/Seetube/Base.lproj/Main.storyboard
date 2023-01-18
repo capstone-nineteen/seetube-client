@@ -300,10 +300,10 @@
             </objects>
             <point key="canvasLocation" x="6400.8000000000002" y="1648.4257871064469"/>
         </scene>
-        <!--View Controller-->
+        <!--My Page View Controller-->
         <scene sceneID="rV7-WF-HYG">
             <objects>
-                <viewController id="Ggt-Ua-V6l" sceneMemberID="viewController">
+                <viewController id="Ggt-Ua-V6l" customClass="MyPageViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aJ6-j1-ifh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -803,16 +803,16 @@
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="6sF-QO-ZI6">
-            <size key="intrinsicContentSize" width="117" height="18.5"/>
+            <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="AjX-df-afO">
-            <size key="intrinsicContentSize" width="174" height="18.5"/>
+            <size key="intrinsicContentSize" width="191" height="20"/>
         </designable>
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="24" height="14"/>
         </designable>
         <designable name="Iqx-xv-HFK">
-            <size key="intrinsicContentSize" width="117" height="18.5"/>
+            <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="MIt-RP-vXU">
             <size key="intrinsicContentSize" width="24" height="14"/>
@@ -850,7 +850,7 @@
             <color red="0.94499999284744263" green="0.23899999260902405" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
-            <color red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
