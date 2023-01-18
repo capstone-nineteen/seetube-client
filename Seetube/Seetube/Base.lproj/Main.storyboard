@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FJw-le-mwV">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -170,8 +171,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RtL-OQ-zDM"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="name" value="환급 신청하기"/>
                                 </userDefinedRuntimeAttributes>
@@ -793,8 +793,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9Cg-11-dcm"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="name" value="총 3개의 쇼츠 저장하기"/>
                                 </userDefinedRuntimeAttributes>
@@ -854,8 +853,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dBG-9f-jMh"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="name" value="저장하기"/>
                                 </userDefinedRuntimeAttributes>
@@ -967,13 +965,13 @@
             <size key="intrinsicContentSize" width="191" height="20"/>
         </designable>
         <designable name="B6y-IO-SE1">
-            <size key="intrinsicContentSize" width="24" height="14"/>
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="Iqx-xv-HFK">
             <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="MIt-RP-vXU">
-            <size key="intrinsicContentSize" width="24" height="14"/>
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="Vtb-6Z-wbj">
             <size key="intrinsicContentSize" width="30" height="34"/>
@@ -982,7 +980,7 @@
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="gmX-Da-P0M">
-            <size key="intrinsicContentSize" width="24" height="14"/>
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="k9L-Rb-zAs">
             <size key="intrinsicContentSize" width="30" height="34"/>
