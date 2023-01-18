@@ -21,11 +21,13 @@ class UnderLineTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureUnderLineView()
+        self.configureFontSize()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.configureUnderLineView()
+        self.configureFontSize()
     }
     
     override func layoutSubviews() {
@@ -45,6 +47,11 @@ class UnderLineTextField: UITextField {
         
         self.addTarget(self, action: #selector(changeColorToActive), for: .editingDidBegin)
         self.addTarget(self, action: #selector(changeColorToInactive), for: .editingDidEnd)
+    }
+    
+    private func configureFontSize() {
+        self.adjustsFontSizeToFitWidth = false
+        self.minimumFontSize = 1
     }
     
     @objc private func changeColorToActive() {
