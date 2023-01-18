@@ -67,17 +67,17 @@
                         <constraint firstAttribute="width" secondItem="9jY-fd-HgU" secondAttribute="height" multiplier="1:1" id="xdk-Ta-l3S"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="10,000" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a3L-0K-XN5" customClass="WithdrawlCoinTextField" customModule="Seetube" customModuleProvider="target">
-                    <rect key="frame" x="216.33333333333334" y="434" width="73.333333333333343" height="25.666666666666686"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="10,000" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a3L-0K-XN5" customClass="NotPastableUnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                    <rect key="frame" x="209.33333333333334" y="434" width="80.333333333333343" height="25.666666666666686"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isPasteEnabled" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,500" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mU5-iw-S49" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                    <rect key="frame" x="216.33333333333334" y="484" width="73.333333333333343" height="25.333333333333314"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="209.33333333333334" y="484" width="80.333333333333343" height="25.333333333333314"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -119,7 +119,7 @@
                 <constraint firstItem="a3L-0K-XN5" firstAttribute="trailing" secondItem="mU5-iw-S49" secondAttribute="trailing" id="vQA-23-aGW"/>
                 <constraint firstItem="mU5-iw-S49" firstAttribute="centerY" secondItem="9jY-fd-HgU" secondAttribute="centerY" id="weL-kX-fyF"/>
                 <constraint firstItem="9jY-fd-HgU" firstAttribute="width" secondItem="sNI-ej-ngl" secondAttribute="width" id="xyi-nB-y6S"/>
-                <constraint firstItem="mU5-iw-S49" firstAttribute="leading" secondItem="XfC-2c-4hl" secondAttribute="trailing" multiplier="0.62" id="zGA-YM-CBJ"/>
+                <constraint firstItem="mU5-iw-S49" firstAttribute="leading" secondItem="XfC-2c-4hl" secondAttribute="trailing" multiplier="0.6" id="zGA-YM-CBJ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="208.3969465648855" y="1.7605633802816902"/>
@@ -127,7 +127,7 @@
     </objects>
     <designables>
         <designable name="a3L-0K-XN5">
-            <size key="intrinsicContentSize" width="55" height="23.333333333333332"/>
+            <size key="intrinsicContentSize" width="58.333333333333336" height="23.333333333333332"/>
         </designable>
         <designable name="cE0-Cf-Smi">
             <size key="intrinsicContentSize" width="124.66666666666667" height="45"/>

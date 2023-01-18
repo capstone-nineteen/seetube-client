@@ -13,7 +13,7 @@ protocol WithdrawButtonDelegate {
 
 class ReceiptView: UIView, NibLoadable {
     @IBOutlet weak var totalCoinLabel: AdaptiveFontSizeLabel!
-    @IBOutlet weak var withdrawlCoinTextField: WithdrawlCoinTextField!
+    @IBOutlet weak var withdrawlCoinTextField: NotPastableUnderLineTextField!
     @IBOutlet weak var balanceCoinLabel: AdaptiveFontSizeLabel!
     
     private var buttonDelegate: WithdrawButtonDelegate?
