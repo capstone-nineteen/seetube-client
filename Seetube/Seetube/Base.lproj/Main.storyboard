@@ -501,7 +501,7 @@
         <!--Reviewer Tab Bar Controller-->
         <scene sceneID="MdY-Wu-kyL">
             <objects>
-                <tabBarController id="FJw-le-mwV" customClass="ReviewerTabBarController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ReviewerTabBarController" id="FJw-le-mwV" customClass="ReviewerTabBarController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cbf-FU-OfE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1060,7 +1060,7 @@
         <!--Navigation Controller-->
         <scene sceneID="RQ3-cV-2wS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hpm-25-l6h" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="YoutuberNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Hpm-25-l6h" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SIv-YQ-koT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
