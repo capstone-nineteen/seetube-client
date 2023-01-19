@@ -37,16 +37,18 @@ extension ShortsResultViewController {
     private func changeToSelectionMode() {
         self.navigationItem.setRightBarButton(nil, animated: false)
         self.saveButton.isHidden = false
-        self.collectionViewBottomConstraint.constant = 50 + 7 + 5
         self.collectionView.allowsSelection = true
         self.collectionView.allowsMultipleSelection = true
+        self.collectionViewBottomConstraint.constant = 50 + 7 + 5
+        self.collectionView.layoutIfNeeded()
     }
     
     private func changeToNormalMode() {
         self.navigationItem.setRightBarButton(self.rightBarButtonItem, animated: false)
         self.saveButton.isHidden = true
-        self.collectionViewBottomConstraint.constant = 0
         self.collectionView.allowsSelection = false
+        self.collectionViewBottomConstraint.constant = 0
+        self.collectionView.layoutIfNeeded()
     }
 }
 
