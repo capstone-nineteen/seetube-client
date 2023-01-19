@@ -53,6 +53,8 @@
 		04A94F132978495700BF5F4B /* ReceiptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A94F122978495700BF5F4B /* ReceiptView.xib */; };
 		04AF39AC29795ACF00BF058B /* YoutuberHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39AB29795ACF00BF058B /* YoutuberHomeViewController.swift */; };
 		04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */; };
+		04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */; };
+		04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */; };
 		04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B78C2970514B000F0859 /* SceneListView.xib */; };
 		04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B78E2970524E000F0859 /* SceneListView.swift */; };
 		04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */; };
@@ -109,6 +111,8 @@
 		04A94F122978495700BF5F4B /* ReceiptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiptView.xib; sourceTree = "<group>"; };
 		04AF39AB29795ACF00BF058B /* YoutuberHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberHomeViewController.swift; sourceTree = "<group>"; };
 		04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
+		04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedReviewsTableViewController.swift; sourceTree = "<group>"; };
+		04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsInProgressTableViewController.swift; sourceTree = "<group>"; };
 		04E8B78C2970514B000F0859 /* SceneListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListView.xib; sourceTree = "<group>"; };
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
 		04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListTableViewCell.swift; sourceTree = "<group>"; };
@@ -379,6 +383,8 @@
 			isa = PBXGroup;
 			children = (
 				04AF39AB29795ACF00BF058B /* YoutuberHomeViewController.swift */,
+				04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */,
+				04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */,
 				04AF39AD29795BE800BF058B /* View */,
 			);
 			path = Home;
@@ -511,6 +517,7 @@
 				04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */,
 				04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */,
 				04AF39AC29795ACF00BF058B /* YoutuberHomeViewController.swift in Sources */,
+				04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */,
 				04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */,
 				047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */,
 				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,
@@ -526,6 +533,7 @@
 				04A94F062978129200BF5F4B /* MyPageViewController.swift in Sources */,
 				0465604E29754E6D00C4CACD /* ReviewerTabBarController.swift in Sources */,
 				045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */,
+				04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */,
 				04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */,
 				046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */,
 				046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */,
