@@ -11,11 +11,6 @@ class UnderlineSegmentedControl: UISegmentedControl {
     private lazy var underline: UIView = UIView()
     private lazy var selectedUnderline: UIView = UIView()
     
-    @IBInspectable var normalColor: UIColor? {
-        didSet {
-            self.setNormalColor(color: self.normalColor)
-        }
-    }
     @IBInspectable var selectedColor: UIColor? {
         didSet {
             self.setSelectedColor(color: self.selectedColor)
@@ -69,6 +64,7 @@ class UnderlineSegmentedControl: UISegmentedControl {
     private func configureSegmentedControl() {
         self.removeDefaultDivider()
         self.removeDefaultBackground()
+        self.setNormalColor()
     }
     
     private func removeDefaultBackground() {
@@ -83,16 +79,14 @@ class UnderlineSegmentedControl: UISegmentedControl {
         self.setDividerImage(image, forLeftSegmentState: .selected, rightSegmentState: .normal, barMetrics: .default)
     }
     
-    private func setNormalColor(color: UIColor?) {
-        self.underline.backgroundColor = color
-        self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: normalColor ?? UIColor.systemGray2],
-                                    for: .normal)
+    private func setNormalColor() {
+        self.underline.backgroundColor = UIColor.systemGray5
+        self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemGray2], for: .normal)
     }
     
     private func setSelectedColor(color: UIColor?) {
         self.selectedUnderline.backgroundColor = color
-        self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: selectedColor ?? UIColor.label,
-                                                           .font: UIFont.systemFont(ofSize: 13, weight: .semibold)],
+        self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: selectedColor ?? UIColor.label],
                                     for: .selected)
     }
 }
