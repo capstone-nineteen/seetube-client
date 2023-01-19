@@ -526,10 +526,11 @@
                         <viewLayoutGuide key="safeArea" id="1JB-pn-N5C"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gCa-xr-43b"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnN-vD-0iN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2679" y="-1271"/>
+            <point key="canvasLocation" x="2702" y="-1223"/>
         </scene>
         <!--분석 결과-->
         <scene sceneID="tne-QT-ifu">
@@ -540,7 +541,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtb-6Z-wbj" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="111" width="341" height="90"/>
+                                <rect key="frame" x="17" y="15" width="341" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="LlZ-Va-co7"/>
                                 </constraints>
@@ -557,7 +558,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vh-OX-17S" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="216" width="341" height="90"/>
+                                <rect key="frame" x="17" y="120" width="341" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="zN9-pV-YyE"/>
                                 </constraints>
@@ -574,7 +575,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc5-i8-hgR" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="321" width="341" height="90"/>
+                                <rect key="frame" x="17" y="225" width="341" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="U93-9R-cVl"/>
                                 </constraints>
@@ -591,7 +592,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9L-Rb-zAs" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="426" width="341" height="90"/>
+                                <rect key="frame" x="17" y="330" width="341" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="wYL-MO-DcT"/>
                                 </constraints>
@@ -608,7 +609,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9A-c5-fHa" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="531" width="341" height="90"/>
+                                <rect key="frame" x="17" y="435" width="341" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="74E-qe-2ed"/>
                                 </constraints>
@@ -663,11 +664,11 @@
             <objects>
                 <viewController storyboardIdentifier="ConcentrationResultViewController" id="Nz8-60-9D4" customClass="ConcentrationResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BmP-4Q-D2C">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKS-b8-qHx" customClass="ListStyleResultView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="집중도가 높은 장면"/>
@@ -703,11 +704,11 @@
             <objects>
                 <viewController id="1ya-ib-F2j" customClass="SceneStealerResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fpJ-tn-dns">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H97-xV-dlU" customClass="ListStyleResultView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="씬스틸러"/>
@@ -737,11 +738,11 @@
             <objects>
                 <viewController id="pOq-Pj-3lr" customClass="ShortsResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZbO-fC-n9h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-EA-ae5">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wk5-gc-oEN">
                                     <size key="itemSize" width="152" height="264"/>
@@ -808,7 +809,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIt-RP-vXU" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="610" width="341" height="50"/>
+                                <rect key="frame" x="17" y="590" width="341" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9Cg-11-dcm"/>
                                 </constraints>
@@ -857,18 +858,18 @@
             <objects>
                 <viewController id="9aP-so-7zN" customClass="HighlightResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nhu-JM-thM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfp-Eb-NHl" customClass="LargeListStyleResultView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="0.69635101963746227" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="하이라이트에 사용된 장면"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6y-IO-SE1" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="610" width="341" height="50"/>
+                                <rect key="frame" x="17" y="590" width="341" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dBG-9f-jMh"/>
                                 </constraints>
@@ -907,11 +908,11 @@
             <objects>
                 <viewController id="df8-XY-7vc" customClass="EmotionResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C9n-uA-3mp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z89-4V-KfX" customClass="ListStyleResultView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="감정이 감지된 장면"/>
@@ -947,12 +948,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bhv-bb-ttK"/>
+                        <segue destination="nwb-gv-s5q" kind="relationship" relationship="rootViewController" id="bXl-Ep-RMk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4v-zB-94L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="-536"/>
+            <point key="canvasLocation" x="2039" y="-1224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QmJ-v3-rS8">
