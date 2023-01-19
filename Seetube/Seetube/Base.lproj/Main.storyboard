@@ -135,8 +135,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-JJ-YQe" customClass="ReceiptView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="40.5" y="25.5" width="294" height="567"/>
+                                <rect key="frame" x="28" y="25.5" width="319" height="567"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="9999" id="HgX-Bc-Sbg"/>
+                                    <constraint firstAttribute="height" priority="750" constant="9999" id="agL-uC-7qY"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BPv-07-sCz"/>
@@ -974,16 +978,16 @@
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="6sF-QO-ZI6">
-            <size key="intrinsicContentSize" width="128.5" height="20"/>
+            <size key="intrinsicContentSize" width="117" height="18.5"/>
         </designable>
         <designable name="AjX-df-afO">
-            <size key="intrinsicContentSize" width="191" height="20"/>
+            <size key="intrinsicContentSize" width="174" height="18.5"/>
         </designable>
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="Iqx-xv-HFK">
-            <size key="intrinsicContentSize" width="128.5" height="20"/>
+            <size key="intrinsicContentSize" width="117" height="18.5"/>
         </designable>
         <designable name="MIt-RP-vXU">
             <size key="intrinsicContentSize" width="30" height="34"/>
