@@ -7,10 +7,8 @@
 
 import UIKit
 
-class FinishedReviewsTableViewCell: UITableViewCell {
+class FinishedReviewsTableViewCell: YoutuberHomeTableViewCell {
     static let cellReuseIdentifier = "FinishedReviewsTableViewCell"
-    
-    @IBOutlet weak var videoInfoCardView: VideoInfoCardView!
     
     private lazy var progressLabel: AdaptiveFontSizeLabel = {
         let label = AdaptiveFontSizeLabel()
@@ -21,16 +19,13 @@ class FinishedReviewsTableViewCell: UITableViewCell {
         return label
     }()
     
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        if highlighted {
-            self.videoInfoCardView.alpha = 0.5
-        } else {
-            self.videoInfoCardView.alpha = 1.0
-        }
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.configureAccessoryView()
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         self.configureAccessoryView()
     }
     

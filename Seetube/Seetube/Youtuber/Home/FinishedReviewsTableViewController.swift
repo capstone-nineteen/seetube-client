@@ -34,8 +34,7 @@ class FinishedReviewsTableViewController: UITableViewController {
 
 extension FinishedReviewsTableViewController {
     private func registerCell() {
-        self.tableView.register(UINib(nibName: FinishedReviewsTableViewCell.cellReuseIdentifier, bundle: nil),
-                                forCellReuseIdentifier: FinishedReviewsTableViewCell.cellReuseIdentifier)
+        self.tableView.register(FinishedReviewsTableViewCell.self, forCellReuseIdentifier: FinishedReviewsTableViewCell.cellReuseIdentifier)
     }
     
     private func configureContentInset() {
