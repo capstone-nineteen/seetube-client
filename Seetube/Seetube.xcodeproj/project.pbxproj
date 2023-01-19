@@ -235,10 +235,8 @@
 		041ECBAD296ED84C0053AC9C /* Seetube */ = {
 			isa = PBXGroup;
 			children = (
-				040E3CC42971BAFA0057B25E /* Protocol */,
-				0415992D296F475600EEB699 /* View */,
-				041ECBC9296EF0B80053AC9C /* Extension */,
-				04FA5D602974668D0015D91B /* Common */,
+				047D867B2979CF99003EBC16 /* Global */,
+				046AD1022972E51200602F89 /* Login */,
 				04159926296F3DB100EEB699 /* Reviewer */,
 				04159925296F3DA800EEB699 /* Youtuber */,
 				041ECBAE296ED84C0053AC9C /* AppDelegate.swift */,
@@ -304,7 +302,8 @@
 				046AD1032972E54F00602F89 /* LoginViewController.swift */,
 				046AD1052972FB3C00602F89 /* View */,
 			);
-			path = Login;
+			name = Login;
+			path = Common/Login;
 			sourceTree = "<group>";
 		};
 		046AD1052972FB3C00602F89 /* View */ = {
@@ -374,6 +373,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		047D867B2979CF99003EBC16 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				047D867D2979D096003EBC16 /* ViewController */,
+				0415992D296F475600EEB699 /* View */,
+				040E3CC42971BAFA0057B25E /* Protocol */,
+				041ECBC9296EF0B80053AC9C /* Extension */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		047D867D2979D096003EBC16 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		04A94F072978129800BF5F4B /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,14 +431,6 @@
 				0470727F2979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		04FA5D602974668D0015D91B /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				046AD1022972E51200602F89 /* Login */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		04FA5D612974669E0015D91B /* Shop */ = {
