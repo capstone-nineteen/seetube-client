@@ -43,7 +43,6 @@ class YoutuberHomeTableViewCell: UITableViewCell {
         self.videoInfoCardView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.videoInfoCardView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.videoInfoCardView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             self.videoInfoCardView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.93),
             self.videoInfoCardView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
             self.videoInfoCardView.bottomAnchor.constraint(equalTo: self.bottomAnchor)

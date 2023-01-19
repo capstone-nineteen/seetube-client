@@ -43,6 +43,8 @@
 		0470726E29798FAB008D6CC0 /* VideoInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470726D29798FAB008D6CC0 /* VideoInfoCardView.swift */; };
 		047072782979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047072772979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift */; };
 		0470727B2979ACD9008D6CC0 /* YoutuberHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047072792979ACD9008D6CC0 /* YoutuberHomeTableViewCell.swift */; };
+		0470727E2979B23B008D6CC0 /* YoutuberHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470727D2979B23B008D6CC0 /* YoutuberHomeTableViewController.swift */; };
+		047072802979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470727F2979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift */; };
 		047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */; };
 		047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */; };
 		047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */; };
@@ -105,6 +107,8 @@
 		0470726D29798FAB008D6CC0 /* VideoInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoCardView.swift; sourceTree = "<group>"; };
 		047072772979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedReviewsTableViewCell.swift; sourceTree = "<group>"; };
 		047072792979ACD9008D6CC0 /* YoutuberHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberHomeTableViewCell.swift; sourceTree = "<group>"; };
+		0470727D2979B23B008D6CC0 /* YoutuberHomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberHomeTableViewController.swift; sourceTree = "<group>"; };
+		0470727F2979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsInProgressTableViewCell.swift; sourceTree = "<group>"; };
 		047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
 		047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeView.swift; sourceTree = "<group>"; };
@@ -393,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				04AF39AB29795ACF00BF058B /* YoutuberHomeViewController.swift */,
+				0470727D2979B23B008D6CC0 /* YoutuberHomeTableViewController.swift */,
 				04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */,
 				04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */,
 				04AF39AD29795BE800BF058B /* View */,
@@ -406,6 +411,7 @@
 				04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */,
 				047072792979ACD9008D6CC0 /* YoutuberHomeTableViewCell.swift */,
 				047072772979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift */,
+				0470727F2979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -510,7 +516,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */,
+				0470727E2979B23B008D6CC0 /* YoutuberHomeTableViewController.swift in Sources */,
 				040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */,
+				047072802979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift in Sources */,
 				047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */,
 				040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */,
 				041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */,
