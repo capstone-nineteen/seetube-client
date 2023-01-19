@@ -7,7 +7,7 @@
 
 import UIKit
 
-class YoutuberHomeTableViewCell: UITableViewCell {
+class VideoInfoCardTableViewCell: UITableViewCell {
     lazy var videoInfoCardView: VideoInfoCardView = {
         let view = VideoInfoCardView()
         return view

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class YoutuberHomeTableViewController: UITableViewController {
+class VideoInfoCardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
@@ -15,7 +15,7 @@ class YoutuberHomeTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

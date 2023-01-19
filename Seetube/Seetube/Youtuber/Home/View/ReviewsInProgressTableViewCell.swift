@@ -7,6 +7,6 @@
 
 import UIKit
 
-class ReviewsInProgressTableViewCell: YoutuberHomeTableViewCell {
+class ReviewsInProgressTableViewCell: VideoInfoCardTableViewCell {
     static let cellReuseIdentifier = "ReviewsInProgressTableViewCell"
 }

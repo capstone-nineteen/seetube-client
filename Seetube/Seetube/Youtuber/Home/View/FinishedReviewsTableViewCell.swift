@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FinishedReviewsTableViewCell: YoutuberHomeTableViewCell {
+class FinishedReviewsTableViewCell: VideoInfoCardTableViewCell {
     static let cellReuseIdentifier = "FinishedReviewsTableViewCell"
     
     private lazy var progressLabel: AdaptiveFontSizeLabel = {
