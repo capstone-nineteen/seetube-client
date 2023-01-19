@@ -39,6 +39,10 @@
 		046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD1002972D7A900602F89 /* AlertDisplaying.swift */; };
 		046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD1032972E54F00602F89 /* LoginViewController.swift */; };
 		046AD1092972FCC200602F89 /* SigninButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD1082972FCC200602F89 /* SigninButton.swift */; };
+		0470726C29798F96008D6CC0 /* VideoInfoCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0470726B29798F96008D6CC0 /* VideoInfoCardView.xib */; };
+		0470726E29798FAB008D6CC0 /* VideoInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470726D29798FAB008D6CC0 /* VideoInfoCardView.swift */; };
+		04707271297998B8008D6CC0 /* FinishedReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470726F297998B8008D6CC0 /* FinishedReviewsTableViewCell.swift */; };
+		04707272297998B8008D6CC0 /* FinishedReviewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04707270297998B8008D6CC0 /* FinishedReviewsTableViewCell.xib */; };
 		047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */; };
 		047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */; };
 		047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */; };
@@ -97,6 +101,10 @@
 		046AD1002972D7A900602F89 /* AlertDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplaying.swift; sourceTree = "<group>"; };
 		046AD1032972E54F00602F89 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		046AD1082972FCC200602F89 /* SigninButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninButton.swift; sourceTree = "<group>"; };
+		0470726B29798F96008D6CC0 /* VideoInfoCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoInfoCardView.xib; sourceTree = "<group>"; };
+		0470726D29798FAB008D6CC0 /* VideoInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoCardView.swift; sourceTree = "<group>"; };
+		0470726F297998B8008D6CC0 /* FinishedReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedReviewsTableViewCell.swift; sourceTree = "<group>"; };
+		04707270297998B8008D6CC0 /* FinishedReviewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishedReviewsTableViewCell.xib; sourceTree = "<group>"; };
 		047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
 		047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeView.swift; sourceTree = "<group>"; };
@@ -197,6 +205,8 @@
 				0402BA612971D53C00B79935 /* BottomButton.xib */,
 				0402BA5F2971D39500B79935 /* BottomButton.swift */,
 				040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */,
+				0470726B29798F96008D6CC0 /* VideoInfoCardView.xib */,
+				0470726D29798FAB008D6CC0 /* VideoInfoCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -394,6 +404,8 @@
 			isa = PBXGroup;
 			children = (
 				04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */,
+				0470726F297998B8008D6CC0 /* FinishedReviewsTableViewCell.swift */,
+				04707270297998B8008D6CC0 /* FinishedReviewsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -476,6 +488,7 @@
 			files = (
 				041ECBBB296ED84E0053AC9C /* LaunchScreen.storyboard in Resources */,
 				04159921296F155400EEB699 /* ResultMenuButton.xib in Resources */,
+				04707272297998B8008D6CC0 /* FinishedReviewsTableViewCell.xib in Resources */,
 				049F585129786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib in Resources */,
 				0402BA622971D53C00B79935 /* BottomButton.xib in Resources */,
 				04E8B795297053B5000F0859 /* SceneListTableViewCell.xib in Resources */,
@@ -484,6 +497,7 @@
 				04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */,
 				040E3CCB2971C8AC0057B25E /* LargeListStyleResultView.xib in Resources */,
 				047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */,
+				0470726C29798F96008D6CC0 /* VideoInfoCardView.xib in Resources */,
 				04A94F132978495700BF5F4B /* ReceiptView.xib in Resources */,
 				040E3CBC2971AF290057B25E /* ListStyleResultView.xib in Resources */,
 			);
@@ -520,6 +534,7 @@
 				04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */,
 				04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */,
 				047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */,
+				0470726E29798FAB008D6CC0 /* VideoInfoCardView.swift in Sources */,
 				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,
 				047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */,
 				041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */,
@@ -527,6 +542,7 @@
 				0415992C296F42C100EEB699 /* ConcentrationResultViewController.swift in Sources */,
 				0402BA602971D39500B79935 /* BottomButton.swift in Sources */,
 				049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */,
+				04707271297998B8008D6CC0 /* FinishedReviewsTableViewCell.swift in Sources */,
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
 				0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */,
