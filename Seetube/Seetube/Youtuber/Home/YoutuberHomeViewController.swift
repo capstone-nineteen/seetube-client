@@ -20,6 +20,11 @@ class YoutuberHomeViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     @IBAction func segmentedControlValueChanged(_ sender: UnderlineSegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:

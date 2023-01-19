@@ -28,4 +28,15 @@ class FinishedReviewsTableViewController: YoutuberHomeTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FinishedReviewsTableViewCell.cellReuseIdentifier, for: indexPath) as? FinishedReviewsTableViewCell else { return UITableViewCell() }
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.pushResultMenu()
+    }
+}
+
+extension FinishedReviewsTableViewController {
+    private func pushResultMenu() {
+        guard let resultMenuViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultMenuViewController") else { return }
+        self.navigationController?.pushViewController(resultMenuViewController, animated: true)
+    }
 }
