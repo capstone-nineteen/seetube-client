@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol WithdrawButtonDelegate {
+protocol WithdrawButtonDelegate: AnyObject {
     func withdrawButtonTouched(_ sender: BottomButton)
 }
 
@@ -16,8 +16,8 @@ class ReceiptView: UIView, NibLoadable {
     @IBOutlet weak var withdrawlCoinTextField: NotPastableUnderLineTextField!
     @IBOutlet weak var balanceCoinLabel: AdaptiveFontSizeLabel!
     
-    private var buttonDelegate: WithdrawButtonDelegate?
-    private var textFieldDelegate: UITextFieldDelegate?
+    private weak var buttonDelegate: WithdrawButtonDelegate?
+    private weak var textFieldDelegate: UITextFieldDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
