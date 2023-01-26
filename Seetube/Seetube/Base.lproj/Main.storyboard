@@ -127,26 +127,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN">
-                                <rect key="frame" x="25" y="68" width="334" height="40"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN">
+                                <rect key="frame" x="25" y="68" width="334" height="27"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McM-EG-bEK">
-                                        <rect key="frame" x="67" y="0.0" width="200" height="40"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="McM-EG-bEK">
+                                        <rect key="frame" x="67" y="0.0" width="200" height="27"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="McM-EG-bEK" firstAttribute="height" secondItem="jDn-dd-U6f" secondAttribute="height" id="6Yk-4y-7W4"/>
                                     <constraint firstItem="McM-EG-bEK" firstAttribute="trailing" secondItem="KZR-lk-YWX" secondAttribute="trailing" id="7DG-Ne-8ae"/>
                                     <constraint firstItem="McM-EG-bEK" firstAttribute="bottom" secondItem="KZR-lk-YWX" secondAttribute="bottom" id="8Hs-hE-uGn"/>
                                     <constraint firstItem="McM-EG-bEK" firstAttribute="leading" secondItem="KZR-lk-YWX" secondAttribute="leading" id="SBp-6P-EWX"/>
-                                    <constraint firstAttribute="height" constant="40" id="SUW-4c-p8J"/>
+                                    <constraint firstAttribute="height" constant="27" id="SUW-4c-p8J"/>
                                     <constraint firstItem="McM-EG-bEK" firstAttribute="top" secondItem="KZR-lk-YWX" secondAttribute="top" id="xqE-Vq-Zou"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="KZR-lk-YWX"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="jDn-dd-U6f"/>
                             </scrollView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyC-n0-43X">
-                                <rect key="frame" x="0.0" y="118" width="375" height="500"/>
+                                <rect key="frame" x="0.0" y="105" width="375" height="513"/>
                                 <connections>
                                     <segue destination="TWd-3r-3Jq" kind="embed" id="gqL-lX-UoI"/>
                                 </connections>
@@ -168,6 +170,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="play.square.stack" catalog="system" id="J53-Gh-dMM"/>
+                    <connections>
+                        <outlet property="categoryStackView" destination="McM-EG-bEK" id="dcy-cf-EvW"/>
+                        <outlet property="scrollView" destination="EhV-8O-ehN" id="0qi-Ue-UaQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Iv-cJ-h7S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -547,7 +553,7 @@
             <objects>
                 <tableViewController id="TWd-3r-3Jq" customClass="CategoryFilteredTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Zmx-rL-bwN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -634,6 +640,13 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvD-VS-U9K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리 명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HPT-17-Rrl">
+                    <rect key="frame" x="0.0" y="0.0" width="157" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="AccentColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </objects>
             <point key="canvasLocation" x="4985" y="2293"/>
         </scene>

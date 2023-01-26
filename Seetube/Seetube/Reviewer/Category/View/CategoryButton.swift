@@ -9,6 +9,7 @@ import UIKit
 
 @IBDesignable
 class CategoryButton: UIButton, NibLoadable {
+    var category: Category?
     @IBOutlet weak var categoryNameLabel: UILabel!
     
     override init(frame: CGRect) {
@@ -21,6 +22,12 @@ class CategoryButton: UIButton, NibLoadable {
         super.init(coder: coder)
         self.loadFromNib(owner: self)
         self.configureStyle()
+    }
+    
+    convenience init(category: Category) {
+        self.init(frame: CGRect())
+        self.category = category
+        self.categoryNameLabel.text = category.rawValue
     }
     
     override func layoutSubviews() {
@@ -36,9 +43,5 @@ class CategoryButton: UIButton, NibLoadable {
     private func configureStyle() {
         self.clipsToBounds = true
         self.backgroundColor = .white
-    }
-    
-    func configureCategoryName(name: String?) {
-        self.categoryNameLabel.text = name
     }
 }
