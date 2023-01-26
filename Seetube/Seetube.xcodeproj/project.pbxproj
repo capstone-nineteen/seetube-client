@@ -60,6 +60,7 @@
 		049960F92982BA57000EE539 /* SeetubeSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960F82982BA57000EE539 /* SeetubeSearchBarView.swift */; };
 		049960FC2982DC83000EE539 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960FB2982DC83000EE539 /* CategoryViewController.swift */; };
 		049961002982DDCF000EE539 /* ReviewerVideoInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960FF2982DDCF000EE539 /* ReviewerVideoInfoTableViewController.swift */; };
+		049961022982DEA2000EE539 /* CategoryFilteredTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049961012982DEA2000EE539 /* CategoryFilteredTableViewController.swift */; };
 		049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F584C29784FFD002EC2F7 /* ReceiptView.swift */; };
 		049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F584E29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift */; };
 		049F585129786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F584F29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib */; };
@@ -133,6 +134,7 @@
 		049960F82982BA57000EE539 /* SeetubeSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeetubeSearchBarView.swift; sourceTree = "<group>"; };
 		049960FB2982DC83000EE539 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		049960FF2982DDCF000EE539 /* ReviewerVideoInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoInfoTableViewController.swift; sourceTree = "<group>"; };
+		049961012982DEA2000EE539 /* CategoryFilteredTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilteredTableViewController.swift; sourceTree = "<group>"; };
 		049F584C29784FFD002EC2F7 /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
 		049F584E29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		049F584F29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinHistoryTableViewHeaderCell.xib; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				049960FB2982DC83000EE539 /* CategoryViewController.swift */,
+				049961012982DEA2000EE539 /* CategoryFilteredTableViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */,
 				046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */,
 				046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */,
+				049961022982DEA2000EE539 /* CategoryFilteredTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
