@@ -56,6 +56,8 @@
 		049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EE298289D6000EE539 /* PriceAccessoryView.swift */; };
 		049960F129828D95000EE539 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960F029828D95000EE539 /* SearchResultViewController.swift */; };
 		049960F329829C67000EE539 /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960F229829C67000EE539 /* SearchResultTableViewController.swift */; };
+		049960F52982A068000EE539 /* SeetubeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960F42982A068000EE539 /* SeetubeSearchBar.swift */; };
+		049960F92982BA57000EE539 /* SeetubeSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960F82982BA57000EE539 /* SeetubeSearchBarView.swift */; };
 		049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F584C29784FFD002EC2F7 /* ReceiptView.swift */; };
 		049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F584E29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift */; };
 		049F585129786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F584F29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib */; };
@@ -125,6 +127,8 @@
 		049960EE298289D6000EE539 /* PriceAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAccessoryView.swift; sourceTree = "<group>"; };
 		049960F029828D95000EE539 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		049960F229829C67000EE539 /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
+		049960F42982A068000EE539 /* SeetubeSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeetubeSearchBar.swift; sourceTree = "<group>"; };
+		049960F82982BA57000EE539 /* SeetubeSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeetubeSearchBarView.swift; sourceTree = "<group>"; };
 		049F584C29784FFD002EC2F7 /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
 		049F584E29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		049F584F29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinHistoryTableViewHeaderCell.xib; sourceTree = "<group>"; };
@@ -420,6 +424,8 @@
 				049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */,
 				049960EC298289C0000EE539 /* PriceAccessoryView.xib */,
 				049960EE298289D6000EE539 /* PriceAccessoryView.swift */,
+				049960F42982A068000EE539 /* SeetubeSearchBar.swift */,
+				049960F82982BA57000EE539 /* SeetubeSearchBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -577,6 +583,7 @@
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
 				04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */,
+				049960F52982A068000EE539 /* SeetubeSearchBar.swift in Sources */,
 				046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */,
 				04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */,
 				04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */,
@@ -587,6 +594,7 @@
 				047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */,
 				0470726E29798FAB008D6CC0 /* VideoInfoCardView.swift in Sources */,
 				049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */,
+				049960F92982BA57000EE539 /* SeetubeSearchBarView.swift in Sources */,
 				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,
 				047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */,
 				041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */,

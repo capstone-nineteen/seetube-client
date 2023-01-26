@@ -507,29 +507,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYo-Kk-LeD">
-                                <rect key="frame" x="0.0" y="79" width="375" height="588"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <connections>
                                     <segue destination="p9f-ul-AyB" kind="embed" id="Tuv-xF-s9D"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rhq-I0-ABK">
-                                <rect key="frame" x="19" y="15" width="337.5" height="49"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTt-R7-D1F" customClass="SeetubeSearchBarView" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="19" y="10" width="337.5" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="LfB-sZ-poM"/>
+                                    <constraint firstAttribute="height" constant="40" id="zNU-1g-9lP"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DQM-pL-feQ"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rhq-I0-ABK" firstAttribute="width" secondItem="3Gd-5r-Fnx" secondAttribute="width" multiplier="0.9" id="09c-Oe-VK1"/>
-                            <constraint firstItem="nYo-Kk-LeD" firstAttribute="top" secondItem="rhq-I0-ABK" secondAttribute="bottom" constant="15" id="4oJ-Jl-GzH"/>
+                            <constraint firstItem="NTt-R7-D1F" firstAttribute="top" secondItem="DQM-pL-feQ" secondAttribute="top" constant="10" id="K2f-Lc-oY0"/>
                             <constraint firstItem="DQM-pL-feQ" firstAttribute="bottom" secondItem="nYo-Kk-LeD" secondAttribute="bottom" id="Kg4-oH-Nta"/>
                             <constraint firstItem="DQM-pL-feQ" firstAttribute="trailing" secondItem="nYo-Kk-LeD" secondAttribute="trailing" id="QXT-rB-npG"/>
                             <constraint firstItem="nYo-Kk-LeD" firstAttribute="leading" secondItem="DQM-pL-feQ" secondAttribute="leading" id="SX1-qy-Yoo"/>
-                            <constraint firstItem="rhq-I0-ABK" firstAttribute="top" secondItem="DQM-pL-feQ" secondAttribute="top" constant="15" id="YRy-OQ-F3a"/>
-                            <constraint firstItem="rhq-I0-ABK" firstAttribute="centerX" secondItem="DQM-pL-feQ" secondAttribute="centerX" id="rrL-0m-Z9g"/>
+                            <constraint firstItem="nYo-Kk-LeD" firstAttribute="top" secondItem="NTt-R7-D1F" secondAttribute="bottom" constant="10" id="kYS-yF-RLF"/>
+                            <constraint firstItem="NTt-R7-D1F" firstAttribute="width" secondItem="3Gd-5r-Fnx" secondAttribute="width" multiplier="0.9" id="px5-3R-NbA"/>
+                            <constraint firstItem="NTt-R7-D1F" firstAttribute="centerX" secondItem="DQM-pL-feQ" secondAttribute="centerX" id="ryv-tE-0bR"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -542,7 +542,7 @@
             <objects>
                 <tableViewController id="p9f-ul-AyB" customClass="SearchResultTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dIe-lv-tJW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
