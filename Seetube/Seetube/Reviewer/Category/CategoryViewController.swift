@@ -21,26 +21,10 @@ enum Category: String, CaseIterable {
 class CategoryViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var categoryStackView: UIStackView!
-    private lazy var categoryButtons: [CategoryButton] = {
-        Category.allCases.map { category in
-            let button = CategoryButton(category: category)
-            button.addAction(UIAction(handler: { [weak self] _ in self?.selectedCategory = category }),
-                             for: .touchUpInside)
-            return button
-        }
-    }()
+    private var categoryButtons: [CategoryButton] = []
     
     private var selectedCategory: Category = .all {
-        didSet {
-            self.categoryButtons.forEach { button in
-                if button.category == self.selectedCategory {
-                    button.backgroundColor = .systemGray5
-                    self.centerCategoryButtonInScrollView(button)
-                } else {
-                    button.backgroundColor = .white
-                }
-            }
-        }
+        didSet { self.highlightCategory(self.selectedCategory) }
     }
     
     override func viewDidLoad() {
@@ -49,12 +33,29 @@ class CategoryViewController: UIViewController {
     }
     
     private func configureCategoryStackView() {
-        self.selectedCategory = .all
+        self.categoryButtons = Category.allCases.map { category in
+            let button = CategoryButton(category: category)
+            button.addAction(UIAction(handler: { [weak self] _ in self?.selectedCategory = category }),
+                             for: .touchUpInside)
+            return button
+        }
         self.categoryButtons.forEach { self.categoryStackView.addArrangedSubview($0) }
+        self.selectedCategory = .all
     }
 }
 
 extension CategoryViewController {
+    private func highlightCategory(_ category: Category) {
+        for button in self.categoryButtons {
+            if button.category == category {
+                button.backgroundColor = .systemGray5
+                self.centerCategoryButtonInScrollView(button)
+            } else {
+                button.backgroundColor = .white
+            }
+        }
+    }
+    
     private func centerCategoryButtonInScrollView(_ button: CategoryButton) {
         let maximumXOffset = self.categoryStackView.bounds.width - self.scrollView.bounds.width
         let buttonCenterXOffset = button.frame.midX - self.scrollView.bounds.width / 2
