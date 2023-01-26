@@ -11,7 +11,7 @@ class VideoInfoCardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
-        self.configureContentInset()
+        self.configureStyle()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,7 +28,9 @@ class VideoInfoCardTableViewController: UITableViewController {
     
     func registerCell() { }
     
-    func configureContentInset() {
+    func configureStyle() {
+        self.tableView.backgroundColor = .clear
+        self.tableView.separatorStyle = .none
         self.tableView.contentInset.bottom = 15
     }
 }
