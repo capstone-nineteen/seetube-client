@@ -51,6 +51,9 @@
 		047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4929707D2B007CDBC4 /* HighlightResultViewController.swift */; };
 		047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */; };
 		047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */; };
+		049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */; };
+		049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049960EC298289C0000EE539 /* PriceAccessoryView.xib */; };
+		049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EE298289D6000EE539 /* PriceAccessoryView.swift */; };
 		049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F584C29784FFD002EC2F7 /* ReceiptView.swift */; };
 		049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F584E29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift */; };
 		049F585129786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F584F29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib */; };
@@ -115,6 +118,9 @@
 		047A5F4929707D2B007CDBC4 /* HighlightResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeTableViewCell.swift; sourceTree = "<group>"; };
 		047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListLargeTableViewCell.xib; sourceTree = "<group>"; };
+		049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
+		049960EC298289C0000EE539 /* PriceAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceAccessoryView.xib; sourceTree = "<group>"; };
+		049960EE298289D6000EE539 /* PriceAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAccessoryView.swift; sourceTree = "<group>"; };
 		049F584C29784FFD002EC2F7 /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
 		049F584E29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		049F584F29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinHistoryTableViewHeaderCell.xib; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				0465604D29754E6D00C4CACD /* ReviewerTabBarController.swift */,
+				049960E8298288CE000EE539 /* Home */,
 				04FA5D612974669E0015D91B /* Shop */,
 				04A94F072978129800BF5F4B /* MyPage */,
 			);
@@ -393,6 +400,24 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		049960E8298288CE000EE539 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				049960E9298288D7000EE539 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		049960E9298288D7000EE539 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */,
+				049960EC298289C0000EE539 /* PriceAccessoryView.xib */,
+				049960EE298289D6000EE539 /* PriceAccessoryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04A94F072978129800BF5F4B /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +535,7 @@
 				041ECBB6296ED84C0053AC9C /* Main.storyboard in Resources */,
 				04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */,
 				040E3CCB2971C8AC0057B25E /* LargeListStyleResultView.xib in Resources */,
+				049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */,
 				047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */,
 				0470726C29798F96008D6CC0 /* VideoInfoCardView.xib in Resources */,
 				04A94F132978495700BF5F4B /* ReceiptView.xib in Resources */,
@@ -553,6 +579,7 @@
 				04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */,
 				047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */,
 				0470726E29798FAB008D6CC0 /* VideoInfoCardView.swift in Sources */,
+				049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */,
 				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,
 				047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */,
 				041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */,
@@ -568,6 +595,7 @@
 				045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */,
 				04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */,
 				04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */,
+				049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */,
 				046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */,
 				046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */,
 			);

@@ -37,19 +37,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유튜버 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVL-S8-9lN" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                            <rect key="frame" x="12.666666666666668" y="23.666666666666657" width="46.333333333333329" height="12.333333333333336"/>
+                            <rect key="frame" x="12.666666666666664" y="23.666666666666657" width="40.000000000000007" height="12.333333333333336"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" name="AccentColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🕔 남은 기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMa-Jr-9Ab" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                            <rect key="frame" x="12.666666666666664" y="41.666666666666657" width="65.333333333333343" height="15.666666666666664"/>
+                            <rect key="frame" x="12.666666666666668" y="41.666666666666657" width="60.333333333333329" height="15.666666666666664"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👤 00명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oz-7A-aqi" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                            <rect key="frame" x="88" y="41.666666666666657" width="46" height="15.666666666666664"/>
+                            <rect key="frame" x="83" y="41.666666666666657" width="42.666666666666657" height="15.666666666666664"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -103,6 +103,20 @@
             <point key="canvasLocation" x="-229.00763358778624" y="-103.52112676056339"/>
         </view>
     </objects>
+    <designables>
+        <designable name="2oz-7A-aqi">
+            <size key="intrinsicContentSize" width="42.666666666666664" height="13.333333333333334"/>
+        </designable>
+        <designable name="Z2R-kd-eMz">
+            <size key="intrinsicContentSize" width="174" height="13.333333333333334"/>
+        </designable>
+        <designable name="qMa-Jr-9Ab">
+            <size key="intrinsicContentSize" width="60.333333333333336" height="13.333333333333334"/>
+        </designable>
+        <designable name="qVL-S8-9lN">
+            <size key="intrinsicContentSize" width="40" height="10.333333333333334"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.94499999284744263" green="0.23899999260902405" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
