@@ -31,34 +31,34 @@
                     <rect key="frame" x="0.0" y="117" width="250" height="63"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영상 제목 영상 제목 영상 제목 영상 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2R-kd-eMz" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                            <rect key="frame" x="12.666666666666671" y="4.6666666666666705" width="225" height="15.666666666666664"/>
+                            <rect key="frame" x="8.6666666666666714" y="4.6666666666666705" width="232.66666666666663" height="15.666666666666664"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유튜버 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVL-S8-9lN" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                            <rect key="frame" x="12.666666666666664" y="23.666666666666657" width="40.000000000000007" height="12.333333333333336"/>
+                            <rect key="frame" x="8.6666666666666643" y="23.666666666666657" width="40" height="12.333333333333336"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" name="AccentColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🕔 남은 기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMa-Jr-9Ab" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                            <rect key="frame" x="12.666666666666668" y="41.666666666666657" width="60.333333333333329" height="15.666666666666664"/>
+                            <rect key="frame" x="8.6666666666666679" y="41.666666666666657" width="60.333333333333329" height="15.666666666666664"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👤 00명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oz-7A-aqi" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                            <rect key="frame" x="83" y="41.666666666666657" width="42.666666666666657" height="15.666666666666664"/>
+                            <rect key="frame" x="79" y="41.666666666666657" width="42.666666666666657" height="15.666666666666664"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Dg-7m-B5G">
-                            <rect key="frame" x="193.33333333333334" y="35.333333333333343" width="44.333333333333343" height="22"/>
+                            <rect key="frame" x="186" y="34.666666666666657" width="55.333333333333343" height="22"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="4Dg-7m-B5G" secondAttribute="height" multiplier="2:1" id="3So-Hy-DnR"/>
+                                <constraint firstAttribute="width" secondItem="4Dg-7m-B5G" secondAttribute="height" multiplier="2.5:1" id="3So-Hy-DnR"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -68,9 +68,9 @@
                         <constraint firstItem="Z2R-kd-eMz" firstAttribute="height" secondItem="y79-CS-2T5" secondAttribute="height" multiplier="0.25" id="CE8-ox-27x"/>
                         <constraint firstItem="2oz-7A-aqi" firstAttribute="centerY" secondItem="qMa-Jr-9Ab" secondAttribute="centerY" id="FA5-B6-Az8"/>
                         <constraint firstItem="qVL-S8-9lN" firstAttribute="leading" secondItem="Z2R-kd-eMz" secondAttribute="leading" id="G94-l3-XbR"/>
-                        <constraint firstItem="4Dg-7m-B5G" firstAttribute="bottom" secondItem="qMa-Jr-9Ab" secondAttribute="bottom" id="HSO-gz-XF5"/>
+                        <constraint firstItem="4Dg-7m-B5G" firstAttribute="bottom" secondItem="y79-CS-2T5" secondAttribute="bottom" multiplier="0.9" id="HSO-gz-XF5"/>
                         <constraint firstItem="2oz-7A-aqi" firstAttribute="height" secondItem="qMa-Jr-9Ab" secondAttribute="height" id="N4s-Wa-udo"/>
-                        <constraint firstItem="Z2R-kd-eMz" firstAttribute="width" secondItem="y79-CS-2T5" secondAttribute="width" multiplier="0.9" id="PAF-ND-0nR"/>
+                        <constraint firstItem="Z2R-kd-eMz" firstAttribute="width" secondItem="y79-CS-2T5" secondAttribute="width" multiplier="0.93" id="PAF-ND-0nR"/>
                         <constraint firstItem="Z2R-kd-eMz" firstAttribute="centerX" secondItem="y79-CS-2T5" secondAttribute="centerX" id="RMJ-r2-4Uc"/>
                         <constraint firstItem="qMa-Jr-9Ab" firstAttribute="leading" secondItem="Z2R-kd-eMz" secondAttribute="leading" id="SwN-Fq-1yN"/>
                         <constraint firstItem="4Dg-7m-B5G" firstAttribute="height" secondItem="y79-CS-2T5" secondAttribute="height" multiplier="0.35" id="UFk-oO-kxr"/>
