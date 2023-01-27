@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Os8-nK-jQI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FJw-le-mwV">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -127,8 +127,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN" customClass="CategoryButtonScrollView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="25" y="68" width="334" height="27"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN" customClass="CategoryButtonScrollView" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="19" y="68" width="337.5" height="27"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="SUW-4c-p8J"/>
@@ -158,14 +158,14 @@
                             <constraint firstItem="Yvf-3c-w7I" firstAttribute="leading" secondItem="EhV-8O-ehN" secondAttribute="leading" id="qwN-pa-hLR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="play.square.stack" catalog="system" id="J53-Gh-dMM"/>
+                    <navigationItem key="navigationItem" id="53m-l4-7Xh"/>
                     <connections>
                         <outlet property="categoryButtons" destination="EhV-8O-ehN" id="0qi-Ue-UaQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Iv-cJ-h7S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5696.8000000000002" y="267.61619190404798"/>
+            <point key="canvasLocation" x="5697" y="963"/>
         </scene>
         <!--Shop View Controller-->
         <scene sceneID="uaV-Xj-eDb">
@@ -206,18 +206,18 @@
         <!--Reviewer Video Detail View Controller-->
         <scene sceneID="0ya-ya-Iqh">
             <objects>
-                <viewController id="Os8-nK-jQI" customClass="ReviewerVideoDetailViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewerVideoDetailViewController" id="Os8-nK-jQI" customClass="ReviewerVideoDetailViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ody-xg-IbE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eH-sS-DAf">
-                                <rect key="frame" x="17" y="222" width="341" height="430"/>
+                                <rect key="frame" x="17" y="212" width="341" height="440"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onl-Ss-m3O" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="375" width="311" height="45"/>
+                                        <rect key="frame" x="15" y="390" width="311" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="Z8G-d1-8Km"/>
+                                            <constraint firstAttribute="height" constant="40" id="Z8G-d1-8Km"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <userDefinedRuntimeAttributes>
@@ -225,7 +225,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvK-bh-gNU">
-                                        <rect key="frame" x="15" y="15" width="311" height="350"/>
+                                        <rect key="frame" x="15" y="15" width="311" height="365"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4k8-zn-Src">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="351.5"/>
@@ -366,7 +366,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZI-Gy-KSm" customClass="VideoThumbnailButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="15" width="341" height="192"/>
+                                <rect key="frame" x="17" y="5" width="341" height="192"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5ZI-Gy-KSm" secondAttribute="height" multiplier="16:9" id="rpQ-fr-fz7"/>
@@ -379,7 +379,7 @@
                         <constraints>
                             <constraint firstItem="5ZI-Gy-KSm" firstAttribute="centerX" secondItem="h1r-g7-HcZ" secondAttribute="centerX" id="0eU-UJ-RO7"/>
                             <constraint firstItem="1eH-sS-DAf" firstAttribute="trailing" secondItem="5ZI-Gy-KSm" secondAttribute="trailing" id="KGz-1w-wZr"/>
-                            <constraint firstItem="5ZI-Gy-KSm" firstAttribute="top" secondItem="h1r-g7-HcZ" secondAttribute="top" constant="15" id="TS3-pF-ALP"/>
+                            <constraint firstItem="5ZI-Gy-KSm" firstAttribute="top" secondItem="h1r-g7-HcZ" secondAttribute="top" constant="5" id="TS3-pF-ALP"/>
                             <constraint firstItem="5ZI-Gy-KSm" firstAttribute="leading" secondItem="h1r-g7-HcZ" secondAttribute="leading" constant="17" id="Z78-Br-FCi"/>
                             <constraint firstItem="1eH-sS-DAf" firstAttribute="leading" secondItem="5ZI-Gy-KSm" secondAttribute="leading" id="fcV-bc-Kng"/>
                             <constraint firstItem="1eH-sS-DAf" firstAttribute="top" secondItem="5ZI-Gy-KSm" secondAttribute="bottom" constant="15" id="uQI-7M-9xG"/>
@@ -389,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKN-Sx-tys" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5696.8000000000002" y="1478.4107946026988"/>
+            <point key="canvasLocation" x="5697" y="2319"/>
         </scene>
         <!--환급 신청-->
         <scene sceneID="Xsn-LH-UQ9">
@@ -706,7 +706,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJR-fC-ESx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7114" y="268"/>
+            <point key="canvasLocation" x="7100" y="268"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sqn-YP-W4c">
@@ -750,7 +750,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0Z-V6-JbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5697" y="888"/>
+            <point key="canvasLocation" x="5697" y="1558"/>
         </scene>
         <!--검색 결과-->
         <scene sceneID="aXL-nh-29M">
@@ -838,7 +838,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Uf0-iF-cfZ" kind="relationship" relationship="viewControllers" id="DS2-m6-geR"/>
-                        <segue destination="quN-X9-YwD" kind="relationship" relationship="viewControllers" id="lWQ-Jc-v72"/>
+                        <segue destination="ukB-MO-kaZ" kind="relationship" relationship="viewControllers" id="lWQ-Jc-v72"/>
                         <segue destination="Zmp-1m-jtF" kind="relationship" relationship="viewControllers" id="cID-F7-ufU"/>
                         <segue destination="Ggt-Ua-V6l" kind="relationship" relationship="viewControllers" id="Ogn-KG-qze"/>
                     </connections>
@@ -1438,6 +1438,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yD-7C-Slh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4984.8000000000002" y="267.61619190404798"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N7v-69-WBw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ukB-MO-kaZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="play.square.stack" catalog="system" id="J53-Gh-dMM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qUw-7Y-xyp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="quN-X9-YwD" kind="relationship" relationship="rootViewController" id="7F3-8S-jRd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y3o-l7-1PM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5696.8000000000002" y="267.61619190404798"/>
         </scene>
     </scenes>
     <designables>
