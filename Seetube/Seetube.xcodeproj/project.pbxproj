@@ -36,6 +36,9 @@
 		044D256D2983D58B003F4071 /* VideoThumbnailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D256C2983D58B003F4071 /* VideoThumbnailButton.swift */; };
 		044D256F2983D59A003F4071 /* VideoThumbnailButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D256E2983D59A003F4071 /* VideoThumbnailButton.xib */; };
 		044D25722983F86A003F4071 /* YoutuberVideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25712983F86A003F4071 /* YoutuberVideoDetailViewController.swift */; };
+		044D25742983F969003F4071 /* VideoDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D25732983F969003F4071 /* VideoDetailView.xib */; };
+		044D25762983F97B003F4071 /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25752983F97B003F4071 /* VideoDetailView.swift */; };
+		044D25792983FFBE003F4071 /* ReviewerVideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25782983FFBE003F4071 /* ReviewerVideoDetailView.swift */; };
 		045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56452976B54400E47C77 /* UnderLineTextField.swift */; };
 		045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56472976E70700E47C77 /* UIFont+Extension.swift */; };
 		045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */; };
@@ -120,6 +123,9 @@
 		044D256C2983D58B003F4071 /* VideoThumbnailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailButton.swift; sourceTree = "<group>"; };
 		044D256E2983D59A003F4071 /* VideoThumbnailButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoThumbnailButton.xib; sourceTree = "<group>"; };
 		044D25712983F86A003F4071 /* YoutuberVideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberVideoDetailViewController.swift; sourceTree = "<group>"; };
+		044D25732983F969003F4071 /* VideoDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoDetailView.xib; sourceTree = "<group>"; };
+		044D25752983F97B003F4071 /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
+		044D25782983FFBE003F4071 /* ReviewerVideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailView.swift; sourceTree = "<group>"; };
 		045E56452976B54400E47C77 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		045E56472976E70700E47C77 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +267,8 @@
 				044D25682983C6F0003F4071 /* ReviewProgressView.swift */,
 				044D256E2983D59A003F4071 /* VideoThumbnailButton.xib */,
 				044D256C2983D58B003F4071 /* VideoThumbnailButton.swift */,
+				044D25732983F969003F4071 /* VideoDetailView.xib */,
+				044D25752983F97B003F4071 /* VideoDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */,
+				044D25772983FFAA003F4071 /* View */,
 			);
 			path = VideoDetail;
 			sourceTree = "<group>";
@@ -332,6 +341,14 @@
 				044D25712983F86A003F4071 /* YoutuberVideoDetailViewController.swift */,
 			);
 			path = VideoDetail;
+			sourceTree = "<group>";
+		};
+		044D25772983FFAA003F4071 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				044D25782983FFBE003F4071 /* ReviewerVideoDetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		045E56442976B52000E47C77 /* View */ = {
@@ -628,6 +645,7 @@
 				041ECBBB296ED84E0053AC9C /* LaunchScreen.storyboard in Resources */,
 				04159921296F155400EEB699 /* ResultMenuButton.xib in Resources */,
 				049F585129786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib in Resources */,
+				044D25742983F969003F4071 /* VideoDetailView.xib in Resources */,
 				0402BA622971D53C00B79935 /* BottomButton.xib in Resources */,
 				04E8B795297053B5000F0859 /* SceneListTableViewCell.xib in Resources */,
 				044D256F2983D59A003F4071 /* VideoThumbnailButton.xib in Resources */,
@@ -690,6 +708,7 @@
 				0470726E29798FAB008D6CC0 /* VideoInfoCardView.swift in Sources */,
 				049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */,
 				049960F92982BA57000EE539 /* SeetubeSearchBarView.swift in Sources */,
+				044D25792983FFBE003F4071 /* ReviewerVideoDetailView.swift in Sources */,
 				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,
 				044D25672983BCFD003F4071 /* ReviewerVideoDetailViewController.swift in Sources */,
 				047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */,
@@ -701,6 +720,7 @@
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
 				0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */,
+				044D25762983F97B003F4071 /* VideoDetailView.swift in Sources */,
 				04A94F062978129200BF5F4B /* MyPageViewController.swift in Sources */,
 				0465604E29754E6D00C4CACD /* ReviewerTabBarController.swift in Sources */,
 				044D256D2983D58B003F4071 /* VideoThumbnailButton.swift in Sources */,
