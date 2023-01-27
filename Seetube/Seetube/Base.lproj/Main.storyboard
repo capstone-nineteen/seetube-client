@@ -211,18 +211,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNx-M4-s9V">
-                                <rect key="frame" x="17" y="15" width="341" height="192"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="CNx-M4-s9V" secondAttribute="height" multiplier="16:9" id="aAY-F7-OTm"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eH-sS-DAf">
                                 <rect key="frame" x="17" y="222" width="341" height="430"/>
                                 <subviews>
@@ -377,16 +365,24 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZI-Gy-KSm" customClass="VideoThumbnailButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="17" y="15" width="341" height="192"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5ZI-Gy-KSm" secondAttribute="height" multiplier="16:9" id="rpQ-fr-fz7"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h1r-g7-HcZ"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CNx-M4-s9V" firstAttribute="top" secondItem="h1r-g7-HcZ" secondAttribute="top" constant="15" id="3LU-G7-CVo"/>
-                            <constraint firstItem="CNx-M4-s9V" firstAttribute="centerX" secondItem="h1r-g7-HcZ" secondAttribute="centerX" id="CMf-3O-fvV"/>
-                            <constraint firstItem="CNx-M4-s9V" firstAttribute="leading" secondItem="h1r-g7-HcZ" secondAttribute="leading" constant="17" id="H1l-D9-v1V"/>
-                            <constraint firstItem="1eH-sS-DAf" firstAttribute="leading" secondItem="CNx-M4-s9V" secondAttribute="leading" id="Hzg-aE-EH7"/>
-                            <constraint firstItem="1eH-sS-DAf" firstAttribute="trailing" secondItem="CNx-M4-s9V" secondAttribute="trailing" id="aHo-Pz-3Xj"/>
-                            <constraint firstItem="1eH-sS-DAf" firstAttribute="top" secondItem="CNx-M4-s9V" secondAttribute="bottom" constant="15" id="oGF-Fa-oQc"/>
+                            <constraint firstItem="5ZI-Gy-KSm" firstAttribute="centerX" secondItem="h1r-g7-HcZ" secondAttribute="centerX" id="0eU-UJ-RO7"/>
+                            <constraint firstItem="1eH-sS-DAf" firstAttribute="trailing" secondItem="5ZI-Gy-KSm" secondAttribute="trailing" id="KGz-1w-wZr"/>
+                            <constraint firstItem="5ZI-Gy-KSm" firstAttribute="top" secondItem="h1r-g7-HcZ" secondAttribute="top" constant="15" id="TS3-pF-ALP"/>
+                            <constraint firstItem="5ZI-Gy-KSm" firstAttribute="leading" secondItem="h1r-g7-HcZ" secondAttribute="leading" constant="17" id="Z78-Br-FCi"/>
+                            <constraint firstItem="1eH-sS-DAf" firstAttribute="leading" secondItem="5ZI-Gy-KSm" secondAttribute="leading" id="fcV-bc-Kng"/>
+                            <constraint firstItem="1eH-sS-DAf" firstAttribute="top" secondItem="5ZI-Gy-KSm" secondAttribute="bottom" constant="15" id="uQI-7M-9xG"/>
                             <constraint firstItem="h1r-g7-HcZ" firstAttribute="bottom" secondItem="1eH-sS-DAf" secondAttribute="bottom" constant="15" id="vNH-wA-hgm"/>
                         </constraints>
                     </view>
@@ -1448,6 +1444,9 @@
         <designable name="1vh-OX-17S">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
+        <designable name="5ZI-Gy-KSm">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
         <designable name="6sF-QO-ZI6">
             <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
@@ -1461,6 +1460,9 @@
             <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="MIt-RP-vXU">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="Onl-Ss-m3O">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="Vtb-6Z-wbj">
@@ -1501,9 +1503,6 @@
         <namedColor name="BackgroundColor">
             <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

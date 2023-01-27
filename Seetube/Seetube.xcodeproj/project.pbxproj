@@ -33,6 +33,8 @@
 		044D25672983BCFD003F4071 /* ReviewerVideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */; };
 		044D25692983C6F0003F4071 /* ReviewProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25682983C6F0003F4071 /* ReviewProgressView.swift */; };
 		044D256B2983C70F003F4071 /* ReviewProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D256A2983C70F003F4071 /* ReviewProgressView.xib */; };
+		044D256D2983D58B003F4071 /* VideoThumbnailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D256C2983D58B003F4071 /* VideoThumbnailButton.swift */; };
+		044D256F2983D59A003F4071 /* VideoThumbnailButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D256E2983D59A003F4071 /* VideoThumbnailButton.xib */; };
 		045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56452976B54400E47C77 /* UnderLineTextField.swift */; };
 		045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56472976E70700E47C77 /* UIFont+Extension.swift */; };
 		045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */; };
@@ -114,6 +116,8 @@
 		044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailViewController.swift; sourceTree = "<group>"; };
 		044D25682983C6F0003F4071 /* ReviewProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProgressView.swift; sourceTree = "<group>"; };
 		044D256A2983C70F003F4071 /* ReviewProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewProgressView.xib; sourceTree = "<group>"; };
+		044D256C2983D58B003F4071 /* VideoThumbnailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailButton.swift; sourceTree = "<group>"; };
+		044D256E2983D59A003F4071 /* VideoThumbnailButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoThumbnailButton.xib; sourceTree = "<group>"; };
 		045E56452976B54400E47C77 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		045E56472976E70700E47C77 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewController.swift; sourceTree = "<group>"; };
@@ -250,8 +254,10 @@
 				040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */,
 				0470726B29798F96008D6CC0 /* VideoInfoCardView.xib */,
 				0470726D29798FAB008D6CC0 /* VideoInfoCardView.swift */,
-				044D25682983C6F0003F4071 /* ReviewProgressView.swift */,
 				044D256A2983C70F003F4071 /* ReviewProgressView.xib */,
+				044D25682983C6F0003F4071 /* ReviewProgressView.swift */,
+				044D256E2983D59A003F4071 /* VideoThumbnailButton.xib */,
+				044D256C2983D58B003F4071 /* VideoThumbnailButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -613,6 +619,7 @@
 				049F585129786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib in Resources */,
 				0402BA622971D53C00B79935 /* BottomButton.xib in Resources */,
 				04E8B795297053B5000F0859 /* SceneListTableViewCell.xib in Resources */,
+				044D256F2983D59A003F4071 /* VideoThumbnailButton.xib in Resources */,
 				041ECBB8296ED84E0053AC9C /* Assets.xcassets in Resources */,
 				049961072982DFFC000EE539 /* CategoryButton.xib in Resources */,
 				041ECBB6296ED84C0053AC9C /* Main.storyboard in Resources */,
@@ -684,6 +691,7 @@
 				0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */,
 				04A94F062978129200BF5F4B /* MyPageViewController.swift in Sources */,
 				0465604E29754E6D00C4CACD /* ReviewerTabBarController.swift in Sources */,
+				044D256D2983D58B003F4071 /* VideoThumbnailButton.swift in Sources */,
 				045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */,
 				049960F329829C67000EE539 /* SearchResultTableViewController.swift in Sources */,
 				04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */,
