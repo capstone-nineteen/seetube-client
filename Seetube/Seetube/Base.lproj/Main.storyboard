@@ -1105,7 +1105,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2263" y="774"/>
+            <point key="canvasLocation" x="2238" y="750"/>
+        </scene>
+        <!--Youtuber Home View Controller-->
+        <scene sceneID="F23-Ok-t5O">
+            <objects>
+                <viewController id="WYK-c7-ne9" customClass="YoutuberHomeViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LtM-cS-uX6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="MZu-Zh-cgh"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F81-S2-dsk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2889" y="750"/>
         </scene>
         <!--집중도 분석 결과-->
         <scene sceneID="hNh-Al-XEv">
@@ -1145,7 +1160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XuT-RF-y83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="1578"/>
+            <point key="canvasLocation" x="977" y="1554"/>
         </scene>
         <!--씬스틸러 분석 결과-->
         <scene sceneID="dkR-Rl-aRY">
@@ -1179,7 +1194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXC-5y-G8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2263" y="1578"/>
+            <point key="canvasLocation" x="2238" y="1554"/>
         </scene>
         <!--쇼츠 추천 결과-->
         <scene sceneID="c7G-Rv-Mp6">
@@ -1299,7 +1314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgP-t5-Bpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2890" y="1578"/>
+            <point key="canvasLocation" x="2865" y="1554"/>
         </scene>
         <!--하이라이트 생성 결과-->
         <scene sceneID="UCh-y9-xOZ">
@@ -1349,7 +1364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTU-cS-567" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3514" y="1578"/>
+            <point key="canvasLocation" x="3489" y="1554"/>
         </scene>
         <!--감정 분석 결과-->
         <scene sceneID="Aoy-pb-qz3">
@@ -1383,7 +1398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqF-Fe-1eY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="1578"/>
+            <point key="canvasLocation" x="1609" y="1554"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RQ3-cV-2wS">
