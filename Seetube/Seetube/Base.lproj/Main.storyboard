@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -576,13 +577,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kNH-zI-Ivb">
                                     <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="otx-FM-Yeg">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="50" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FRW-wF-eNy">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -590,6 +591,45 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ReviewerHomeSectionHeader" id="aEZ-6J-usU" customClass="ReviewerHomeSectionHeader" customModule="Seetube" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="337.5" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="섹션 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xb-Kl-08K">
+                                            <rect key="frame" x="0.0" y="15.5" width="59.5" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5n-7j-hbv">
+                                            <rect key="frame" x="274.5" y="15" width="62.5" height="20"/>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="전체 보기" image="chevron.right" catalog="system"/>
+                                            <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="전체 보기" imagePadding="2">
+                                                <imageReference key="image" image="chevron.right" catalog="system" symbolScale="small"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                                <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="5"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="seeAllButtonTouched:" destination="aEZ-6J-usU" eventType="touchUpInside" id="6mK-e2-nkW"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="W5n-7j-hbv" firstAttribute="centerY" secondItem="aEZ-6J-usU" secondAttribute="centerY" id="7LN-9t-LAU"/>
+                                        <constraint firstAttribute="trailing" secondItem="W5n-7j-hbv" secondAttribute="trailing" constant="0.5" id="KKd-dU-6tw"/>
+                                        <constraint firstItem="6Xb-Kl-08K" firstAttribute="centerY" secondItem="aEZ-6J-usU" secondAttribute="centerY" id="NSA-az-jgu"/>
+                                        <constraint firstItem="6Xb-Kl-08K" firstAttribute="leading" secondItem="aEZ-6J-usU" secondAttribute="leading" id="eJX-ub-IUi"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="sectionTitleLabel" destination="6Xb-Kl-08K" id="VzG-Q5-4dY"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="VEc-rS-N8D" id="ljO-7n-Vdi"/>
+                                    <outlet property="delegate" destination="VEc-rS-N8D" id="45b-eg-LKp"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hs4-YG-w94"/>
@@ -1432,6 +1472,7 @@
         <image name="GoogleSignIn" width="351.5" height="62.5"/>
         <image name="centsign.circle.fill" catalog="system" width="128" height="123"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="play.square.stack" catalog="system" width="112" height="128"/>

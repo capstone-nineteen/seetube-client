@@ -43,6 +43,7 @@
 		044D257E2984243A003F4071 /* ReviewerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D257D2984243A003F4071 /* ReviewerHomeViewController.swift */; };
 		044D25802984319D003F4071 /* KeyboardDismissibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D257F2984319D003F4071 /* KeyboardDismissibleViewController.swift */; };
 		044D258229843403003F4071 /* ReviewerHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258129843403003F4071 /* ReviewerHomeCollectionViewCell.swift */; };
+		044D258529843988003F4071 /* ReviewerHomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258429843988003F4071 /* ReviewerHomeSectionHeader.swift */; };
 		045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56452976B54400E47C77 /* UnderLineTextField.swift */; };
 		045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56472976E70700E47C77 /* UIFont+Extension.swift */; };
 		045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */; };
@@ -134,6 +135,7 @@
 		044D257D2984243A003F4071 /* ReviewerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeViewController.swift; sourceTree = "<group>"; };
 		044D257F2984319D003F4071 /* KeyboardDismissibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissibleViewController.swift; sourceTree = "<group>"; };
 		044D258129843403003F4071 /* ReviewerHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		044D258429843988003F4071 /* ReviewerHomeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeSectionHeader.swift; sourceTree = "<group>"; };
 		045E56452976B54400E47C77 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		045E56472976E70700E47C77 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewController.swift; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 				049960F42982A068000EE539 /* SeetubeSearchBar.swift */,
 				049960F82982BA57000EE539 /* SeetubeSearchBarView.swift */,
 				044D258129843403003F4071 /* ReviewerHomeCollectionViewCell.swift */,
+				044D258429843988003F4071 /* ReviewerHomeSectionHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				049960F129828D95000EE539 /* SearchResultViewController.swift in Sources */,
 				0415992F296F477600EEB699 /* NibLoadable.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
+				044D258529843988003F4071 /* ReviewerHomeSectionHeader.swift in Sources */,
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,
 				044D257C298401AE003F4071 /* YoutuberVideoDetailView.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,

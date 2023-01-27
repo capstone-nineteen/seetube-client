@@ -14,6 +14,7 @@ class ReviewerHomeViewController: KeyboardDismissibleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureSearchBar()
+        self.configureCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +32,11 @@ extension ReviewerHomeViewController {
     private func configureSearchBar() {
         self.searchBarView.configureSearchBarDelegate(self)
     }
+    
+    private func configureCollectionView() {
+        self.collectionView.register(ReviewerHomeCollectionViewCell.self,
+                                     forCellWithReuseIdentifier: ReviewerHomeCollectionViewCell.cellReuseIdentifier)
+    }
 }
 
 extension ReviewerHomeViewController: UISearchBarDelegate {
@@ -45,5 +51,35 @@ extension ReviewerHomeViewController: UISearchBarDelegate {
         guard let searchResultViewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultViewController") as? SearchResultViewController else { return }
         searchResultViewController.searchKeyword = searchKeyword
         self.navigationController?.pushViewController(searchResultViewController, animated: true)
+    }
+}
+
+extension ReviewerHomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        5
+    }
+}
+
+extension ReviewerHomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReviewerHomeCollectionViewCell.cellReuseIdentifier, for: indexPath) as? ReviewerHomeCollectionViewCell else { return UICollectionViewCell() }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ReviewerHomeSectionHeader.reuseIdentifier, for: indexPath) as? ReviewerHomeSectionHeader else { return UICollectionReusableView() }
+        header.configure(title: "카테고리 \(indexPath.section)",
+                         delegate: self)
+        return header
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        5
+    }
+}
+
+extension ReviewerHomeViewController: SeeAllButtonDelegate {
+    func seeAllButtonTouched(_ sender: UIButton) {
+        // 카테고리 뷰로 전환
     }
 }
