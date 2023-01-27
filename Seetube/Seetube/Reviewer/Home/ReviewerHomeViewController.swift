@@ -7,14 +7,13 @@
 
 import UIKit
 
-class ReviewerHomeViewController: UIViewController {
+class ReviewerHomeViewController: KeyboardDismissibleViewController {
     @IBOutlet weak var searchBarView: SeetubeSearchBarView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureSearchBar()
-        self.configureTapGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,11 +30,6 @@ class ReviewerHomeViewController: UIViewController {
 extension ReviewerHomeViewController {
     private func configureSearchBar() {
         self.searchBarView.configureSearchBarDelegate(self)
-    }
-    
-    private func configureTapGesture() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-        self.view.addGestureRecognizer(tap)
     }
 }
 
