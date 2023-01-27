@@ -31,6 +31,8 @@
 		044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */; };
 		044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25622983B510003F4071 /* CategoryButtonScrollView.swift */; };
 		044D25672983BCFD003F4071 /* ReviewerVideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */; };
+		044D25692983C6F0003F4071 /* ReviewProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25682983C6F0003F4071 /* ReviewProgressView.swift */; };
+		044D256B2983C70F003F4071 /* ReviewProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D256A2983C70F003F4071 /* ReviewProgressView.xib */; };
 		045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56452976B54400E47C77 /* UnderLineTextField.swift */; };
 		045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56472976E70700E47C77 /* UIFont+Extension.swift */; };
 		045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */; };
@@ -110,6 +112,8 @@
 		044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonStackView.swift; sourceTree = "<group>"; };
 		044D25622983B510003F4071 /* CategoryButtonScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonScrollView.swift; sourceTree = "<group>"; };
 		044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailViewController.swift; sourceTree = "<group>"; };
+		044D25682983C6F0003F4071 /* ReviewProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProgressView.swift; sourceTree = "<group>"; };
+		044D256A2983C70F003F4071 /* ReviewProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewProgressView.xib; sourceTree = "<group>"; };
 		045E56452976B54400E47C77 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		045E56472976E70700E47C77 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 				040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */,
 				0470726B29798F96008D6CC0 /* VideoInfoCardView.xib */,
 				0470726D29798FAB008D6CC0 /* VideoInfoCardView.swift */,
+				044D25682983C6F0003F4071 /* ReviewProgressView.swift */,
+				044D256A2983C70F003F4071 /* ReviewProgressView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -611,6 +617,7 @@
 				049961072982DFFC000EE539 /* CategoryButton.xib in Resources */,
 				041ECBB6296ED84C0053AC9C /* Main.storyboard in Resources */,
 				04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */,
+				044D256B2983C70F003F4071 /* ReviewProgressView.xib in Resources */,
 				040E3CCB2971C8AC0057B25E /* LargeListStyleResultView.xib in Resources */,
 				049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */,
 				047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */,
@@ -652,6 +659,7 @@
 				044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */,
 				049960F52982A068000EE539 /* SeetubeSearchBar.swift in Sources */,
 				046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */,
+				044D25692983C6F0003F4071 /* ReviewProgressView.swift in Sources */,
 				04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */,
 				049961052982DFF3000EE539 /* CategoryButton.swift in Sources */,
 				04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */,
