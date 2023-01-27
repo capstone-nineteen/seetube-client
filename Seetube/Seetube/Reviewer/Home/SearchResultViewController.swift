@@ -8,22 +8,24 @@
 import UIKit
 
 class SearchResultViewController: UIViewController {
-
+    var searchKeyword: String?
+    @IBOutlet weak var searchBarView: SeetubeSearchBarView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.configureSearchBar()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configureSearchBar() {
+        self.searchBarView.configureSearchBarDelegate(self)
+        self.searchBarView.updateSearchBarText(with: self.searchKeyword)
     }
-    */
+}
 
+extension SearchResultViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        self.searchKeyword = searchBar.text
+        // TODO: reload tableview
+    }
 }

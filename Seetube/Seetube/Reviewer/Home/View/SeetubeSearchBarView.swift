@@ -43,4 +43,12 @@ class SeetubeSearchBarView: UIView {
     private func configureStyle() {
         self.backgroundColor = .clear
     }
+    
+    func configureSearchBarDelegate(_ delegate: UISearchBarDelegate) {
+        self.searchBar.delegate = delegate
+    }
+    
+    func updateSearchBarText(with text: String?) {
+        self.searchBar.text = text
+    }
 }
