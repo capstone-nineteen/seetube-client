@@ -16,4 +16,15 @@ class ReviewerVideoInfoTableViewController: VideoInfoCardTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewerVideoInfoTableViewCell.cellReuseIdentifier, for: indexPath) as? ReviewerVideoInfoTableViewCell else { return UITableViewCell() }
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.moveToVideoDetail()
+    }
+}
+
+extension ReviewerVideoInfoTableViewController {
+    private func moveToVideoDetail() {
+        guard let reviewerVideoDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ReviewerVideoDetailViewController") else { return }
+        self.navigationController?.pushViewController(reviewerVideoDetailViewController, animated: true)
+    }
 }

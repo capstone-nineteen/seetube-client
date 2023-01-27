@@ -30,6 +30,11 @@ class CategoryViewController: UIViewController {
         self.configureCategoryButtons()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     private func configureCategoryButtons() {
         self.categoryButtons.configureButtonDelegate(self)
         self.selectedCategory = .all
