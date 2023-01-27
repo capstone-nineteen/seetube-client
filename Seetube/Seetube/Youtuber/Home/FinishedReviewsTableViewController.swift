@@ -26,12 +26,12 @@ class FinishedReviewsTableViewController: VideoInfoCardTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.pushResultMenu()
+        self.moveToResultMenu()
     }
 }
 
 extension FinishedReviewsTableViewController {
-    private func pushResultMenu() {
+    private func moveToResultMenu() {
         guard let resultMenuViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultMenuViewController") else { return }
         self.navigationController?.pushViewController(resultMenuViewController, animated: true)
     }

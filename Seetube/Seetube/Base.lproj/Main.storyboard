@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FJw-le-mwV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nrl-LI-RRj">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -946,15 +946,27 @@
             </objects>
             <point key="canvasLocation" x="2238" y="750"/>
         </scene>
-        <!--Youtuber Home View Controller-->
+        <!--Youtuber Video Detail View Controller-->
         <scene sceneID="F23-Ok-t5O">
             <objects>
-                <viewController id="WYK-c7-ne9" customClass="YoutuberHomeViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YoutuberVideoDetailViewController" id="WYK-c7-ne9" customClass="YoutuberVideoDetailViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LtM-cS-uX6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mu2-sl-AbI" customClass="YoutuberVideoDetailView" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MZu-Zh-cgh"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mu2-sl-AbI" firstAttribute="top" secondItem="MZu-Zh-cgh" secondAttribute="top" id="LkZ-V9-ZwD"/>
+                            <constraint firstItem="MZu-Zh-cgh" firstAttribute="bottom" secondItem="mu2-sl-AbI" secondAttribute="bottom" id="add-Uv-1ap"/>
+                            <constraint firstItem="mu2-sl-AbI" firstAttribute="leading" secondItem="MZu-Zh-cgh" secondAttribute="leading" id="izz-Jb-cgf"/>
+                            <constraint firstItem="MZu-Zh-cgh" firstAttribute="trailing" secondItem="mu2-sl-AbI" secondAttribute="trailing" id="j7Z-zQ-LgR"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F81-S2-dsk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

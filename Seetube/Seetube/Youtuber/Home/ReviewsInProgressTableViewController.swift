@@ -24,4 +24,15 @@ class ReviewsInProgressTableViewController: VideoInfoCardTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewsInProgressTableViewCell.cellReuseIdentifier, for: indexPath) as? ReviewsInProgressTableViewCell else { return UITableViewCell() }
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.moveToVideoDetail()
+    }
+}
+
+extension ReviewsInProgressTableViewController {
+    private func moveToVideoDetail() {
+        guard let videoDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "YoutuberVideoDetailViewController") else { return }
+        self.navigationController?.pushViewController(videoDetailViewController, animated: true)
+    }
 }
