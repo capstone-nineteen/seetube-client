@@ -19,49 +19,26 @@ enum Category: String, CaseIterable {
 }
 
 class CategoryViewController: UIViewController {
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var categoryStackView: UIStackView!
-    private var categoryButtons: [CategoryButton] = []
+    @IBOutlet weak var categoryButtons: CategoryButtonScrollView!
     
     private var selectedCategory: Category = .all {
-        didSet { self.highlightCategory(self.selectedCategory) }
+        didSet { self.categoryButtons.highlightCategory(category: self.selectedCategory) }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureCategoryStackView()
+        self.configureCategoryButtons()
     }
     
-    private func configureCategoryStackView() {
-        self.categoryButtons = Category.allCases.map { category in
-            let button = CategoryButton(category: category)
-            button.addAction(UIAction(handler: { [weak self] _ in self?.selectedCategory = category }),
-                             for: .touchUpInside)
-            return button
-        }
-        self.categoryButtons.forEach { self.categoryStackView.addArrangedSubview($0) }
+    private func configureCategoryButtons() {
+        self.categoryButtons.configureButtonDelegate(self)
         self.selectedCategory = .all
     }
 }
 
-extension CategoryViewController {
-    private func highlightCategory(_ category: Category) {
-        for button in self.categoryButtons {
-            if button.category == category {
-                button.backgroundColor = .systemGray5
-                self.centerCategoryButtonInScrollView(button)
-            } else {
-                button.backgroundColor = .white
-            }
-        }
-    }
-    
-    private func centerCategoryButtonInScrollView(_ button: CategoryButton) {
-        let maximumXOffset = self.categoryStackView.bounds.width - self.scrollView.bounds.width
-        let buttonCenterXOffset = button.frame.midX - self.scrollView.bounds.width / 2
-        
-        UIView.animate(withDuration: 0.1, delay: 0) {
-            self.scrollView.contentOffset = CGPoint(x: min(maximumXOffset, max(0, buttonCenterXOffset)), y: 0)
-        }
+extension CategoryViewController: CategoryButtonDelegate {
+    func categoryButtonTouched(_ sender: CategoryButton) {
+        guard let buttonCategory = sender.category else { return }
+        self.selectedCategory = buttonCategory
     }
 }

@@ -28,6 +28,8 @@
 		041ECBCB296EF0C80053AC9C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCA296EF0C80053AC9C /* UIView+Extension.swift */; };
 		041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCC296EF2FB0053AC9C /* CircleView.swift */; };
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
+		044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */; };
+		044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25622983B510003F4071 /* CategoryButtonScrollView.swift */; };
 		045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56452976B54400E47C77 /* UnderLineTextField.swift */; };
 		045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56472976E70700E47C77 /* UIFont+Extension.swift */; };
 		045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */; };
@@ -104,6 +106,8 @@
 		041ECBCA296EF0C80053AC9C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		041ECBCC296EF2FB0053AC9C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonStackView.swift; sourceTree = "<group>"; };
+		044D25622983B510003F4071 /* CategoryButtonScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonScrollView.swift; sourceTree = "<group>"; };
 		045E56452976B54400E47C77 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		045E56472976E70700E47C77 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewController.swift; sourceTree = "<group>"; };
@@ -473,6 +477,8 @@
 			children = (
 				049961042982DFF3000EE539 /* CategoryButton.swift */,
 				049961062982DFFC000EE539 /* CategoryButton.xib */,
+				044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */,
+				044D25622983B510003F4071 /* CategoryButtonScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -632,6 +638,7 @@
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
 				04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */,
+				044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */,
 				049960F52982A068000EE539 /* SeetubeSearchBar.swift in Sources */,
 				046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */,
 				04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */,
@@ -660,6 +667,7 @@
 				045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */,
 				049960F329829C67000EE539 /* SearchResultTableViewController.swift in Sources */,
 				04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */,
+				044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */,
 				049960FC2982DC83000EE539 /* CategoryViewController.swift in Sources */,
 				04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */,
 				049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */,
