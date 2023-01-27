@@ -14,6 +14,7 @@ class ReviewerHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureSearchBar()
+        self.configureTapGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,9 +26,16 @@ class ReviewerHomeViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
     }
-    
+}
+
+extension ReviewerHomeViewController {
     private func configureSearchBar() {
         self.searchBarView.configureSearchBarDelegate(self)
+    }
+    
+    private func configureTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        self.view.addGestureRecognizer(tap)
     }
 }
 
