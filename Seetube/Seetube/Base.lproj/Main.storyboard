@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i2J-Bd-mRl" customClass="UnderlineSegmentedControl" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="52.5" y="112" width="270" height="43"/>
+                                <rect key="frame" x="37.5" y="98" width="300" height="43"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="300" id="i1o-X0-9Ja"/>
                                     <constraint firstAttribute="height" constant="42" id="pxn-e1-LjH"/>
-                                    <constraint firstAttribute="width" priority="750" constant="270" id="qyg-m7-ipQ"/>
                                 </constraints>
                                 <segments>
                                     <segment title="리뷰어"/>
@@ -49,20 +49,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L25-aS-26h">
-                                <rect key="frame" x="77.5" y="179" width="220" height="220"/>
+                                <rect key="frame" x="77.5" y="165" width="220" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="L25-aS-26h" secondAttribute="height" multiplier="1:1" id="CGO-Xz-Haf"/>
                                     <constraint firstAttribute="height" constant="220" id="vJl-0a-R16"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원하는 컨텐츠를 시청하고 리워드를 적립해보세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4a-lA-LJb">
-                                <rect key="frame" x="117.5" y="414" width="140.5" height="33.5"/>
+                                <rect key="frame" x="117.5" y="400" width="140.5" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quT-LC-Tcc">
-                                <rect key="frame" x="48" y="497" width="279" height="50"/>
+                                <rect key="frame" x="48" y="483.5" width="279" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="quT-LC-Tcc" secondAttribute="height" multiplier="352:63" id="E3H-D7-20F"/>
                                     <constraint firstAttribute="height" constant="50" id="p0z-Pl-egb"/>
@@ -74,7 +74,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4z1-1v-gcM">
-                                <rect key="frame" x="48" y="555" width="279" height="50"/>
+                                <rect key="frame" x="48" y="541.5" width="279" height="50"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" backgroundImage="AppleSignIn"/>
                                 <connections>
@@ -89,17 +89,16 @@
                             <constraint firstItem="I4a-lA-LJb" firstAttribute="top" secondItem="L25-aS-26h" secondAttribute="bottom" constant="15" id="7A0-gf-3ca"/>
                             <constraint firstItem="XCQ-rt-twn" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="CZa-GU-LDV"/>
                             <constraint firstItem="XCQ-rt-twn" firstAttribute="top" secondItem="Lag-I3-LYf" secondAttribute="top" constant="55" id="EYk-vZ-Och"/>
-                            <constraint firstItem="i2J-Bd-mRl" firstAttribute="top" secondItem="XCQ-rt-twn" secondAttribute="bottom" constant="29" id="Jk8-3g-gEo"/>
+                            <constraint firstItem="i2J-Bd-mRl" firstAttribute="top" secondItem="XCQ-rt-twn" secondAttribute="bottom" constant="15" id="Jk8-3g-gEo"/>
                             <constraint firstItem="4z1-1v-gcM" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="KMh-e7-AJX"/>
                             <constraint firstItem="quT-LC-Tcc" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="PJf-7T-db3"/>
                             <constraint firstItem="quT-LC-Tcc" firstAttribute="top" secondItem="L25-aS-26h" secondAttribute="bottom" priority="250" constant="98.5" id="WIE-Hu-rOh"/>
                             <constraint firstItem="i2J-Bd-mRl" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="YuY-NZ-Obd"/>
                             <constraint firstItem="4z1-1v-gcM" firstAttribute="height" secondItem="quT-LC-Tcc" secondAttribute="height" id="ZJw-DN-3Jd"/>
-                            <constraint firstItem="Lag-I3-LYf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i2J-Bd-mRl" secondAttribute="trailing" constant="52.5" id="a7w-o5-Mqg"/>
                             <constraint firstItem="L25-aS-26h" firstAttribute="top" secondItem="i2J-Bd-mRl" secondAttribute="bottom" constant="25" id="bFg-cU-AUL"/>
                             <constraint firstItem="Lag-I3-LYf" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="quT-LC-Tcc" secondAttribute="bottom" priority="750" constant="120" id="etg-mn-lgC"/>
                             <constraint firstItem="4z1-1v-gcM" firstAttribute="top" secondItem="quT-LC-Tcc" secondAttribute="bottom" constant="8" id="f8B-qk-0gI"/>
-                            <constraint firstItem="i2J-Bd-mRl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lag-I3-LYf" secondAttribute="leading" constant="52.5" id="fzN-JH-3C0"/>
+                            <constraint firstItem="i2J-Bd-mRl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lag-I3-LYf" secondAttribute="leading" constant="25" id="fzN-JH-3C0"/>
                             <constraint firstItem="4z1-1v-gcM" firstAttribute="width" secondItem="quT-LC-Tcc" secondAttribute="width" id="hT7-QC-3Gt"/>
                             <constraint firstItem="L25-aS-26h" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="ywQ-Xx-dei"/>
                         </constraints>
