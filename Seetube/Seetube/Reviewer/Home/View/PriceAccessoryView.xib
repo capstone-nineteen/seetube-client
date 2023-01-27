@@ -19,20 +19,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="centsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jXt-du-Ics">
-                    <rect key="frame" x="17.666666666666671" y="4.3333333333333321" width="20.333333333333329" height="19"/>
+                    <rect key="frame" x="21.333333333333336" y="4.3333333333333321" width="20.333333333333336" height="19"/>
                     <color key="tintColor" systemColor="systemYellowColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="jXt-du-Ics" secondAttribute="height" multiplier="1:1" id="q1S-gx-86U"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFC-cR-zva" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                    <rect key="frame" x="43" y="0.0" width="36" height="27"/>
+                    <rect key="frame" x="46.666666666666657" y="0.0" width="32.333333333333343" height="27"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="eFC-cR-zva" secondAttribute="trailing" id="6HR-2g-nmR"/>
                 <constraint firstItem="eFC-cR-zva" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Bzj-Pa-01m"/>
@@ -47,14 +47,11 @@
     </objects>
     <designables>
         <designable name="eFC-cR-zva">
-            <size key="intrinsicContentSize" width="36" height="22.666666666666668"/>
+            <size key="intrinsicContentSize" width="32.333333333333336" height="20.333333333333332"/>
         </designable>
     </designables>
     <resources>
         <image name="centsign.circle.fill" catalog="system" width="128" height="123"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
