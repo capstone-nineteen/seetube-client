@@ -7,17 +7,6 @@
 
 import UIKit
 
-enum Category: String, CaseIterable {
-    case all = "전체"
-    case game = "게임"
-    case entertainment = "엔터테인먼트"
-    case beauty = "뷰티"
-    case sports = "스포츠"
-    case daily = "일상"
-    case music = "음악"
-    case etc = "기타"
-}
-
 class CategoryViewController: UIViewController {
     @IBOutlet weak var categoryButtons: CategoryButtonScrollView!
     

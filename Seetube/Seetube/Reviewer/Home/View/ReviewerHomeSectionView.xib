@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewerHomeSectionView" customModule="Seetube" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="sTE-Vq-nxZ" id="Mty-pk-t2j"/>
+                <outlet property="titleLabel" destination="iXa-YH-kIy" id="8LK-3r-Bmk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="491" height="194"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="섹션명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXa-YH-kIy">
+                    <rect key="frame" x="24.666666666666671" y="4.3333333333333321" width="39" height="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sTE-Vq-nxZ" customClass="ReviewerHomeCollectionView" customModule="Seetube" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="31.333333333333329" width="491" height="162.66666666666669"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LCc-VC-uzI">
+                        <size key="itemSize" width="220" height="150"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXF-np-dsz">
+                    <rect key="frame" x="409.66666666666669" y="0.0" width="56.666666666666686" height="26.333333333333332"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="tintColor" systemColor="systemGrayColor"/>
+                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="0.0" maxY="5"/>
+                    <state key="normal" title="전체보기">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <imageReference key="image" image="chevron.right" catalog="system" symbolScale="small"/>
+                    </state>
+                    <connections>
+                        <action selector="seeAllButtonTouched:" destination="-1" eventType="touchUpInside" id="QYS-5b-eO4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="iXa-YH-kIy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="trailing" multiplier="0.05" id="BHH-LA-3yo"/>
+                <constraint firstItem="sTE-Vq-nxZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BPT-QR-1zo"/>
+                <constraint firstItem="sTE-Vq-nxZ" firstAttribute="top" secondItem="gXF-np-dsz" secondAttribute="bottom" constant="5" id="MzE-8v-pBO"/>
+                <constraint firstItem="iXa-YH-kIy" firstAttribute="centerY" secondItem="gXF-np-dsz" secondAttribute="centerY" id="Mza-9F-lcX"/>
+                <constraint firstItem="gXF-np-dsz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Tcz-VO-Rl3"/>
+                <constraint firstAttribute="trailing" secondItem="sTE-Vq-nxZ" secondAttribute="trailing" id="VRr-VF-pzQ"/>
+                <constraint firstAttribute="bottom" secondItem="sTE-Vq-nxZ" secondAttribute="bottom" id="Y0p-ed-gAM"/>
+                <constraint firstItem="gXF-np-dsz" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" multiplier="0.95" id="dp6-d4-W8q"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="185.49618320610685" y="-242.95774647887325"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

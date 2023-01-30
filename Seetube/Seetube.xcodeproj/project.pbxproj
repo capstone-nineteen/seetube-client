@@ -43,7 +43,10 @@
 		044D257E2984243A003F4071 /* ReviewerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D257D2984243A003F4071 /* ReviewerHomeViewController.swift */; };
 		044D25802984319D003F4071 /* KeyboardDismissibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D257F2984319D003F4071 /* KeyboardDismissibleViewController.swift */; };
 		044D258229843403003F4071 /* ReviewerHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258129843403003F4071 /* ReviewerHomeCollectionViewCell.swift */; };
-		044D258529843988003F4071 /* ReviewerHomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258429843988003F4071 /* ReviewerHomeSectionHeader.swift */; };
+		044D258C29878BD0003F4071 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258B29878BD0003F4071 /* Category.swift */; };
+		044D258E29878E7C003F4071 /* ReviewerHomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258D29878E7B003F4071 /* ReviewerHomeCollectionView.swift */; };
+		044D259429879F6A003F4071 /* ReviewerHomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D259329879F6A003F4071 /* ReviewerHomeSectionView.swift */; };
+		044D259629879F77003F4071 /* ReviewerHomeSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D259529879F77003F4071 /* ReviewerHomeSectionView.xib */; };
 		045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56452976B54400E47C77 /* UnderLineTextField.swift */; };
 		045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56472976E70700E47C77 /* UIFont+Extension.swift */; };
 		045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */; };
@@ -135,7 +138,10 @@
 		044D257D2984243A003F4071 /* ReviewerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeViewController.swift; sourceTree = "<group>"; };
 		044D257F2984319D003F4071 /* KeyboardDismissibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissibleViewController.swift; sourceTree = "<group>"; };
 		044D258129843403003F4071 /* ReviewerHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		044D258429843988003F4071 /* ReviewerHomeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeSectionHeader.swift; sourceTree = "<group>"; };
+		044D258B29878BD0003F4071 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		044D258D29878E7B003F4071 /* ReviewerHomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeCollectionView.swift; sourceTree = "<group>"; };
+		044D259329879F6A003F4071 /* ReviewerHomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeSectionView.swift; sourceTree = "<group>"; };
+		044D259529879F77003F4071 /* ReviewerHomeSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewerHomeSectionView.xib; sourceTree = "<group>"; };
 		045E56452976B54400E47C77 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		045E56472976E70700E47C77 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewController.swift; sourceTree = "<group>"; };
@@ -378,6 +384,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		044D258A29878BC6003F4071 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				044D258B29878BD0003F4071 /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		045E56442976B52000E47C77 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +500,7 @@
 		047D867B2979CF99003EBC16 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				044D258A29878BC6003F4071 /* Model */,
 				047D867D2979D096003EBC16 /* ViewController */,
 				0415992D296F475600EEB699 /* View */,
 				040E3CC42971BAFA0057B25E /* Protocol */,
@@ -521,7 +536,9 @@
 				049960F42982A068000EE539 /* SeetubeSearchBar.swift */,
 				049960F82982BA57000EE539 /* SeetubeSearchBarView.swift */,
 				044D258129843403003F4071 /* ReviewerHomeCollectionViewCell.swift */,
-				044D258429843988003F4071 /* ReviewerHomeSectionHeader.swift */,
+				044D258D29878E7B003F4071 /* ReviewerHomeCollectionView.swift */,
+				044D259529879F77003F4071 /* ReviewerHomeSectionView.xib */,
+				044D259329879F6A003F4071 /* ReviewerHomeSectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -689,6 +706,7 @@
 				049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */,
 				047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */,
 				0470726C29798F96008D6CC0 /* VideoInfoCardView.xib in Resources */,
+				044D259629879F77003F4071 /* ReviewerHomeSectionView.xib in Resources */,
 				04A94F132978495700BF5F4B /* ReceiptView.xib in Resources */,
 				040E3CBC2971AF290057B25E /* ListStyleResultView.xib in Resources */,
 			);
@@ -723,9 +741,9 @@
 				049960F129828D95000EE539 /* SearchResultViewController.swift in Sources */,
 				0415992F296F477600EEB699 /* NibLoadable.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
-				044D258529843988003F4071 /* ReviewerHomeSectionHeader.swift in Sources */,
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,
 				044D257C298401AE003F4071 /* YoutuberVideoDetailView.swift in Sources */,
+				044D258E29878E7C003F4071 /* ReviewerHomeCollectionView.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
 				04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */,
 				044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */,
@@ -739,9 +757,11 @@
 				04AF39AC29795ACF00BF058B /* YoutuberHomeViewController.swift in Sources */,
 				04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */,
 				04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */,
+				044D259429879F6A003F4071 /* ReviewerHomeSectionView.swift in Sources */,
 				047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */,
 				0470726E29798FAB008D6CC0 /* VideoInfoCardView.swift in Sources */,
 				049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */,
+				044D258C29878BD0003F4071 /* Category.swift in Sources */,
 				049960F92982BA57000EE539 /* SeetubeSearchBarView.swift in Sources */,
 				044D25792983FFBE003F4071 /* ReviewerVideoDetailView.swift in Sources */,
 				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,
