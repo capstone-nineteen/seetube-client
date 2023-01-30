@@ -66,6 +66,11 @@ extension ReviewerHomeViewController: UICollectionViewDelegate {
         print(numberOfVideos)
         return numberOfVideos
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let reviewerVideoDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ReviewerVideoDetailViewController") as? ReviewerVideoDetailViewController else { return }
+        self.navigationController?.pushViewController(reviewerVideoDetailViewController, animated: true)
+    }
 }
 
 extension ReviewerHomeViewController: UICollectionViewDataSource {
