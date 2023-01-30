@@ -26,13 +26,17 @@ class CategoryViewController: UIViewController {
     
     private func configureCategoryButtons() {
         self.categoryButtons.configureButtonDelegate(self)
-        self.selectedCategory = .all
+        self.selectCategory(.all)
     }
 }
 
 extension CategoryViewController: CategoryButtonDelegate {
     func categoryButtonTouched(_ sender: CategoryButton) {
         guard let buttonCategory = sender.category else { return }
-        self.selectedCategory = buttonCategory
+        self.selectCategory(buttonCategory)
+    }
+    
+    func selectCategory(_ category: Category) {
+        self.selectedCategory = category
     }
 }

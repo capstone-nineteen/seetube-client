@@ -78,6 +78,12 @@ extension ReviewerHomeViewController: UICollectionViewDataSource {
 
 extension ReviewerHomeViewController: SeeAllButtonDelegate {
     func seeAllButtonTouched(category: Category) {
-        // TODO: 카테고리 탭으로 전환
+        guard let tabBarController = self.navigationController?.tabBarController,
+              let categoryNavigationController = tabBarController.viewControllers?[1] as? UINavigationController,
+              let categoryViewController = categoryNavigationController.topViewController as? CategoryViewController else { return }
+        
+        let _ = categoryViewController.view // CategoryViewController 강제 로드
+        categoryViewController.selectCategory(category)
+        tabBarController.selectedIndex = 1
     }
 }
