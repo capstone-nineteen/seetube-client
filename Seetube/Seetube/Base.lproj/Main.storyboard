@@ -126,7 +126,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN" customClass="CategoryButtonScrollView" customModule="Seetube" customModuleProvider="target">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN" customClass="CategoryButtonScrollView" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="19" y="68" width="337.5" height="27"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-JJ-YQe" customClass="ReceiptView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="40.5" y="25.5" width="294" height="567"/>
+                                <rect key="frame" x="28" y="25.5" width="319" height="567"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="9999" id="HgX-Bc-Sbg"/>
@@ -613,6 +613,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -625,6 +626,9 @@
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="J3r-aG-td1"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="6e7-fT-aZn"/>
+                                <connections>
+                                    <outlet property="delegate" destination="VEc-rS-N8D" id="pjA-5e-zGP"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hs4-YG-w94"/>
@@ -636,7 +640,7 @@
                             <constraint firstItem="MN6-Ke-7gz" firstAttribute="trailing" secondItem="Hs4-YG-w94" secondAttribute="trailing" id="AqG-KB-k1l"/>
                             <constraint firstItem="UES-HQ-UGd" firstAttribute="centerY" secondItem="8rP-DK-C5g" secondAttribute="centerY" id="HMf-vI-RqJ"/>
                             <constraint firstItem="UES-HQ-UGd" firstAttribute="leading" secondItem="8rP-DK-C5g" secondAttribute="trailing" constant="10" id="Kyr-Wd-9Ej"/>
-                            <constraint firstItem="MN6-Ke-7gz" firstAttribute="top" secondItem="D2k-Xx-VOf" secondAttribute="bottom" constant="15" id="TxL-Fj-ffJ"/>
+                            <constraint firstItem="MN6-Ke-7gz" firstAttribute="top" secondItem="8rP-DK-C5g" secondAttribute="bottom" constant="70" id="TxL-Fj-ffJ"/>
                             <constraint firstItem="MN6-Ke-7gz" firstAttribute="leading" secondItem="Hs4-YG-w94" secondAttribute="leading" id="XLz-mu-4VC"/>
                             <constraint firstItem="D2k-Xx-VOf" firstAttribute="centerX" secondItem="Hs4-YG-w94" secondAttribute="centerX" id="c3B-yw-lbd"/>
                             <constraint firstItem="8rP-DK-C5g" firstAttribute="top" secondItem="Hs4-YG-w94" secondAttribute="top" constant="20" id="jZX-EN-3CK"/>
@@ -647,6 +651,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="EES-Fz-zDY"/>
                     <connections>
+                        <outlet property="scrollView" destination="MN6-Ke-7gz" id="8OV-xL-OdW"/>
+                        <outlet property="scrollViewTop" destination="TxL-Fj-ffJ" id="z6Y-b3-75O"/>
                         <outlet property="searchBarView" destination="D2k-Xx-VOf" id="81r-Cd-j0A"/>
                         <outletCollection property="sectionViews" destination="s1f-9g-pA8" collectionClass="NSMutableArray" id="djH-D0-ReF"/>
                         <outletCollection property="sectionViews" destination="Nlg-hW-7tY" collectionClass="NSMutableArray" id="lPt-ak-xfP"/>

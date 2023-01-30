@@ -10,6 +10,8 @@ import UIKit
 class ReviewerHomeViewController: KeyboardDismissibleViewController {
     @IBOutlet weak var searchBarView: SeetubeSearchBarView!
     @IBOutlet var sectionViews: [ReviewerHomeSectionView]!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollViewTop: NSLayoutConstraint!
     
     private var categories: [Category] = [.all, .beauty, .entertainment, .game]
     private var numberOfVideos: [Category: Int] = [.all:6, .beauty:3, .entertainment:7, .game:10]
@@ -90,5 +92,21 @@ extension ReviewerHomeViewController: SeeAllButtonDelegate {
         let _ = categoryViewController.view // CategoryViewController 강제 로드
         categoryViewController.selectCategory(category)
         tabBarController.selectedIndex = 1
+    }
+}
+
+extension ReviewerHomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yOffset = scrollView.contentOffset.y
+        let maxScrollViewTop: CGFloat = 70
+        let minScrollViewTop: CGFloat = 15
+        let disappearRate: CGFloat = 0.05
+        
+        if yOffset < 0 {
+            self.scrollViewTop.constant = min(maxScrollViewTop, self.scrollViewTop.constant - yOffset)
+        } else {
+            self.scrollViewTop.constant = max(minScrollViewTop, self.scrollViewTop.constant - yOffset * disappearRate)
+        }
+        self.scrollView.layoutIfNeeded()
     }
 }
