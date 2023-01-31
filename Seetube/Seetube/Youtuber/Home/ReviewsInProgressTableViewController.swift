@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewsInProgressTableViewController: VideoInfoCardTableViewController {
+class ReviewsInProgressTableViewController: VideoInfoCardTableViewController, ViewControllerPushable {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -32,7 +32,6 @@ class ReviewsInProgressTableViewController: VideoInfoCardTableViewController {
 
 extension ReviewsInProgressTableViewController {
     private func moveToVideoDetail() {
-        guard let videoDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "YoutuberVideoDetailViewController") else { return }
-        self.navigationController?.pushViewController(videoDetailViewController, animated: true)
+        self.push(viewControllerType: YoutuberVideoDetailViewController.self)
     }
 }

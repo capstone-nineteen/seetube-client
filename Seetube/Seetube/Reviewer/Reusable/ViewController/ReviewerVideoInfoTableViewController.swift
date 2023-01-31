@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewerVideoInfoTableViewController: VideoInfoCardTableViewController {
+class ReviewerVideoInfoTableViewController: VideoInfoCardTableViewController, ViewControllerPushable {
     override func registerCell() {
         self.tableView.register(ReviewerVideoInfoTableViewCell.self, forCellReuseIdentifier: ReviewerVideoInfoTableViewCell.cellReuseIdentifier)
     }
@@ -24,7 +24,6 @@ class ReviewerVideoInfoTableViewController: VideoInfoCardTableViewController {
 
 extension ReviewerVideoInfoTableViewController {
     private func moveToVideoDetail() {
-        guard let reviewerVideoDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ReviewerVideoDetailViewController") else { return }
-        self.navigationController?.pushViewController(reviewerVideoDetailViewController, animated: true)
+        self.push(viewControllerType: ReviewerVideoDetailViewController.self)
     }
 }

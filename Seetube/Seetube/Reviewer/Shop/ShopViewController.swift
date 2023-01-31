@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ShopViewController: UIViewController {
+class ShopViewController: UIViewController, ViewControllerPushable {
     @IBOutlet weak var receiptView: ReceiptView!
     
     override func viewDidLoad() {
@@ -73,7 +73,6 @@ extension ShopViewController: UITextFieldDelegate {
 
 extension ShopViewController: WithdrawButtonDelegate {
     func withdrawButtonTouched(_ sender: BottomButton) {
-        guard let withdrawlInformationViewController = self.storyboard?.instantiateViewController(withIdentifier: "WithdrawalInformationViewController") else { return }
-        self.navigationController?.pushViewController(withdrawlInformationViewController, animated: true)
+        self.push(viewControllerType: WithdrawalInformationViewController.self)
     }
 }

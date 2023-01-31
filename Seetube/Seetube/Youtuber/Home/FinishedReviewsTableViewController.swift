@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FinishedReviewsTableViewController: VideoInfoCardTableViewController {
+class FinishedReviewsTableViewController: VideoInfoCardTableViewController, ViewControllerPushable {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -32,7 +32,6 @@ class FinishedReviewsTableViewController: VideoInfoCardTableViewController {
 
 extension FinishedReviewsTableViewController {
     private func moveToResultMenu() {
-        guard let resultMenuViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultMenuViewController") else { return }
-        self.navigationController?.pushViewController(resultMenuViewController, animated: true)
+        self.push(viewControllerType: ResultMenuViewController.self)
     }
 }

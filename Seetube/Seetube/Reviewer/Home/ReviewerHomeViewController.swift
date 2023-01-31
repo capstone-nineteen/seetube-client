@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewerHomeViewController: KeyboardDismissibleViewController {
+class ReviewerHomeViewController: KeyboardDismissibleViewController, ViewControllerPushable {
     @IBOutlet weak var searchBarView: SeetubeSearchBarView!
     @IBOutlet var sectionViews: [ReviewerHomeSectionView]!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -55,9 +55,9 @@ extension ReviewerHomeViewController: UISearchBarDelegate {
     }
     
     func moveToSearchResult(searchKeyword: String?) {
-        guard let searchResultViewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultViewController") as? SearchResultViewController else { return }
-        searchResultViewController.searchKeyword = searchKeyword
-        self.navigationController?.pushViewController(searchResultViewController, animated: true)
+        self.push(viewControllerType: SearchResultViewController.self) { viewController in
+            viewController.searchKeyword = searchKeyword
+        }
     }
 }
 
@@ -70,8 +70,9 @@ extension ReviewerHomeViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let reviewerVideoDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ReviewerVideoDetailViewController") as? ReviewerVideoDetailViewController else { return }
-        self.navigationController?.pushViewController(reviewerVideoDetailViewController, animated: true)
+        self.push(viewControllerType: ReviewerVideoDetailViewController.self) { viewController in
+            // TODO: pass video id
+        }
     }
 }
 
