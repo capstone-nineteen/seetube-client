@@ -162,6 +162,7 @@
                                 <constraint firstItem="Pai-eK-GcF" firstAttribute="leading" secondItem="Jpv-PO-TEg" secondAttribute="leading" id="pYq-Yl-QdH"/>
                                 <constraint firstItem="Pai-eK-GcF" firstAttribute="width" secondItem="wOI-dc-Em3" secondAttribute="width" id="xBi-La-R5U"/>
                             </constraints>
+                            <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-5" maxY="0.0"/>
                             <viewLayoutGuide key="contentLayoutGuide" id="Jpv-PO-TEg"/>
                             <viewLayoutGuide key="frameLayoutGuide" id="wOI-dc-Em3"/>
                         </scrollView>
@@ -199,6 +200,9 @@
     </objects>
     <designables>
         <designable name="3AG-5q-fID">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="de5-sS-Fz0">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
