@@ -8,7 +8,7 @@
 import UIKit
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, ViewControllerPresentable {
     @IBOutlet weak var guidanceLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
@@ -65,15 +65,11 @@ extension LoginViewController {
     }
     
     private func startAsReviewer() {
-        guard let reviewerTabBarController = self.storyboard?.instantiateViewController(withIdentifier: "ReviewerTabBarController") else { return }
-        reviewerTabBarController.modalPresentationStyle = .fullScreen
-        self.present(reviewerTabBarController, animated: false)
+        self.present(viewControllerType: ReviewerTabBarController.self)
     }
     
     private func startAsYoutuber() {
-        guard let youtuberNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "YoutuberNavigationController") else { return }
-        youtuberNavigationController.modalPresentationStyle = .fullScreen
-        self.present(youtuberNavigationController, animated: false)
+        self.present(viewControllerIdentifier: "YoutuberNavigationController")
     }
 }
 

@@ -5,4 +5,39 @@
 //  Created by 최수정 on 2023/01/31.
 //
 
-import Foundation
+import UIKit
+
+protocol ViewControllerPresentable: UIViewController {
+    func present<T: UIViewController>(viewControllerType: T.Type,
+                                      modalPresentationStyle: UIModalPresentationStyle,
+                                      animated: Bool,
+                                      setUp: ((T)->Void)?)
+    func present<T: UIViewController>(viewControllerIdentifier: String,
+                                      modalPresentationStyle: UIModalPresentationStyle,
+                                      animated: Bool,
+                                      setUp: ((T)->Void)?)
+}
+
+extension ViewControllerPresentable {
+    func present<T: UIViewController>(viewControllerType: T.Type,
+                                      modalPresentationStyle: UIModalPresentationStyle = .fullScreen,
+                                      animated: Bool = false,
+                                      setUp: ((T)->Void)? = nil
+    ) {
+        self.present(viewControllerIdentifier: String(describing: viewControllerType),
+                     modalPresentationStyle: modalPresentationStyle,
+                     animated: animated,
+                     setUp: setUp)
+    }
+    
+    func present<T: UIViewController>(viewControllerIdentifier: String,
+                                      modalPresentationStyle: UIModalPresentationStyle = .fullScreen,
+                                      animated: Bool = false,
+                                      setUp: ((T)->Void)? = nil
+    ) {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: viewControllerIdentifier) as? T else { return }
+        setUp?(viewController)
+        viewController.modalPresentationStyle = modalPresentationStyle
+        self.present(viewController, animated: animated)
+    }
+}
