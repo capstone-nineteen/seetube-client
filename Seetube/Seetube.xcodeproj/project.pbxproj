@@ -188,6 +188,7 @@
 		04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
 		04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedReviewsTableViewController.swift; sourceTree = "<group>"; };
 		04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsInProgressTableViewController.swift; sourceTree = "<group>"; };
+		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		04E8B78C2970514B000F0859 /* SceneListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListView.xib; sourceTree = "<group>"; };
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
 		04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListTableViewCell.swift; sourceTree = "<group>"; };
@@ -294,6 +295,7 @@
 		041ECBA2296ED84C0053AC9C = {
 			isa = PBXGroup;
 			children = (
+				04E6FC5C2988FE690052496A /* APIKeys.xcconfig */,
 				041ECBAD296ED84C0053AC9C /* Seetube */,
 				041ECBAC296ED84C0053AC9C /* Products */,
 				04159922296F2CB600EEB699 /* Frameworks */,
@@ -939,6 +941,7 @@
 		};
 		041ECBC0296ED84E0053AC9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04E6FC5C2988FE690052496A /* APIKeys.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -968,6 +971,7 @@
 		};
 		041ECBC1296ED84E0053AC9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04E6FC5C2988FE690052496A /* APIKeys.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
