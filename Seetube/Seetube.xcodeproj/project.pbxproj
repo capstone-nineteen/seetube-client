@@ -41,7 +41,6 @@
 		044D25792983FFBE003F4071 /* ReviewerVideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25782983FFBE003F4071 /* ReviewerVideoDetailView.swift */; };
 		044D257C298401AE003F4071 /* YoutuberVideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D257B298401AE003F4071 /* YoutuberVideoDetailView.swift */; };
 		044D257E2984243A003F4071 /* ReviewerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D257D2984243A003F4071 /* ReviewerHomeViewController.swift */; };
-		044D25802984319D003F4071 /* KeyboardDismissibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D257F2984319D003F4071 /* KeyboardDismissibleViewController.swift */; };
 		044D258229843403003F4071 /* ReviewerHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258129843403003F4071 /* ReviewerHomeCollectionViewCell.swift */; };
 		044D258C29878BD0003F4071 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258B29878BD0003F4071 /* Category.swift */; };
 		044D258E29878E7C003F4071 /* ReviewerHomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258D29878E7B003F4071 /* ReviewerHomeCollectionView.swift */; };
@@ -96,6 +95,7 @@
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
 		04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */; };
+		04E6FC66298971F30052496A /* KeyboardDismissible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC65298971F30052496A /* KeyboardDismissible.swift */; };
 		04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B78C2970514B000F0859 /* SceneListView.xib */; };
 		04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B78E2970524E000F0859 /* SceneListView.swift */; };
 		04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */; };
@@ -140,7 +140,6 @@
 		044D25782983FFBE003F4071 /* ReviewerVideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailView.swift; sourceTree = "<group>"; };
 		044D257B298401AE003F4071 /* YoutuberVideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberVideoDetailView.swift; sourceTree = "<group>"; };
 		044D257D2984243A003F4071 /* ReviewerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeViewController.swift; sourceTree = "<group>"; };
-		044D257F2984319D003F4071 /* KeyboardDismissibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissibleViewController.swift; sourceTree = "<group>"; };
 		044D258129843403003F4071 /* ReviewerHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		044D258B29878BD0003F4071 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		044D258D29878E7B003F4071 /* ReviewerHomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeCollectionView.swift; sourceTree = "<group>"; };
@@ -195,6 +194,7 @@
 		04E6FC5E29893A400052496A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		04E6FC6029895C400052496A /* ViewControllerPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPushable.swift; sourceTree = "<group>"; };
 		04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresentable.swift; sourceTree = "<group>"; };
+		04E6FC65298971F30052496A /* KeyboardDismissible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissible.swift; sourceTree = "<group>"; };
 		04E8B78C2970514B000F0859 /* SceneListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListView.xib; sourceTree = "<group>"; };
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
 		04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListTableViewCell.swift; sourceTree = "<group>"; };
@@ -221,6 +221,7 @@
 				046AD1002972D7A900602F89 /* AlertDisplaying.swift */,
 				04E6FC6029895C400052496A /* ViewControllerPushable.swift */,
 				04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */,
+				04E6FC65298971F30052496A /* KeyboardDismissible.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -322,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				047D867B2979CF99003EBC16 /* Global */,
-				046AD1022972E51200602F89 /* Login */,
 				04159926296F3DB100EEB699 /* Reviewer */,
 				04159925296F3DA800EEB699 /* Youtuber */,
 				041ECBAE296ED84C0053AC9C /* AppDelegate.swift */,
@@ -438,8 +438,7 @@
 				046AD1032972E54F00602F89 /* LoginViewController.swift */,
 				046AD1052972FB3C00602F89 /* View */,
 			);
-			name = Login;
-			path = Common/Login;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		046AD1052972FB3C00602F89 /* View */ = {
@@ -512,12 +511,12 @@
 		047D867B2979CF99003EBC16 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				04E6FC642989711B0052496A /* Resuable */,
 				04E6FC5D298939F60052496A /* Constant */,
 				044D258A29878BC6003F4071 /* Model */,
-				047D867D2979D096003EBC16 /* ViewController */,
-				0415992D296F475600EEB699 /* View */,
 				040E3CC42971BAFA0057B25E /* Protocol */,
 				041ECBC9296EF0B80053AC9C /* Extension */,
+				046AD1022972E51200602F89 /* Login */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -579,7 +578,6 @@
 			isa = PBXGroup;
 			children = (
 				049960FF2982DDCF000EE539 /* ReviewerVideoInfoTableViewController.swift */,
-				044D257F2984319D003F4071 /* KeyboardDismissibleViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -641,6 +639,15 @@
 				04E6FC5E29893A400052496A /* Colors.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		04E6FC642989711B0052496A /* Resuable */ = {
+			isa = PBXGroup;
+			children = (
+				047D867D2979D096003EBC16 /* ViewController */,
+				0415992D296F475600EEB699 /* View */,
+			);
+			path = Resuable;
 			sourceTree = "<group>";
 		};
 		04FA5D612974669E0015D91B /* Shop */ = {
@@ -746,7 +753,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044D25802984319D003F4071 /* KeyboardDismissibleViewController.swift in Sources */,
 				04E6FC5F29893A400052496A /* Colors.swift in Sources */,
 				04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */,
 				0470727E2979B23B008D6CC0 /* VideoInfoCardTableViewController.swift in Sources */,
@@ -803,6 +809,7 @@
 				0402BA602971D39500B79935 /* BottomButton.swift in Sources */,
 				049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */,
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
+				04E6FC66298971F30052496A /* KeyboardDismissible.swift in Sources */,
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
 				0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */,
 				044D25762983F97B003F4071 /* VideoDetailView.swift in Sources */,

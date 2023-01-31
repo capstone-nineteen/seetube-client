@@ -7,17 +7,19 @@
 
 import UIKit
 
-class ReviewerHomeViewController: KeyboardDismissibleViewController, ViewControllerPushable {
+class ReviewerHomeViewController: UIViewController, KeyboardDismissible, ViewControllerPushable {
     @IBOutlet weak var searchBarView: SeetubeSearchBarView!
     @IBOutlet var sectionViews: [ReviewerHomeSectionView]!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollViewTop: NSLayoutConstraint!
+    var coverView = UIView()
     
     private var categories: [Category] = [.all, .beauty, .entertainment, .game]
     private var numberOfVideos: [Category: Int] = [.all:6, .beauty:3, .entertainment:7, .game:10]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.enableKeyboardDismissing()
         self.configureSearchBar()
         self.configureCollectionView()
     }

@@ -7,12 +7,15 @@
 
 import UIKit
 
-class SearchResultViewController: KeyboardDismissibleViewController {
-    var searchKeyword: String?
+class SearchResultViewController: UIViewController, KeyboardDismissible {
     @IBOutlet weak var searchBarView: SeetubeSearchBarView!
+    var coverView = UIView()
+    
+    var searchKeyword: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.enableKeyboardDismissing()
         self.configureSearchBar()
     }
 }
