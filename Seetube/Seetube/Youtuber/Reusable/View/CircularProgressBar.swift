@@ -26,7 +26,7 @@ class CircularProgressBar: UIView {
                           endAngle: .pi * 2,
                           clockwise: true)
         bezierPath.lineWidth = self.lineWidth
-        UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 1.0).set()
+        Colors.progressBarGray.set()
         bezierPath.stroke()
     }
     

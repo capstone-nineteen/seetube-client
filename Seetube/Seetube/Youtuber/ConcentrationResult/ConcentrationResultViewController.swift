@@ -31,7 +31,7 @@ extension ConcentrationResultViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SceneListTableViewCell.cellReuseIdentifier, for: indexPath) as? SceneListTableViewCell else { return UITableViewCell() }
         cell.setProgress(value: Double((indexPath.row+1))*0.1,
                          text: "\((indexPath.row+1)*10)%",
-                         color: UIColor(named: "AccentColor"))
+                         color: Colors.seetubePink)
         return cell
     }
 }

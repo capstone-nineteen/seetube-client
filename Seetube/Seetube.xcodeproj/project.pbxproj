@@ -93,6 +93,7 @@
 		04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */; };
 		04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */; };
 		04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 04E6FC542988EE7C0052496A /* GoogleSignIn */; };
+		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B78C2970514B000F0859 /* SceneListView.xib */; };
 		04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B78E2970524E000F0859 /* SceneListView.swift */; };
 		04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */; };
@@ -189,6 +190,7 @@
 		04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedReviewsTableViewController.swift; sourceTree = "<group>"; };
 		04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsInProgressTableViewController.swift; sourceTree = "<group>"; };
 		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
+		04E6FC5E29893A400052496A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		04E8B78C2970514B000F0859 /* SceneListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListView.xib; sourceTree = "<group>"; };
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
 		04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListTableViewCell.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 		047D867B2979CF99003EBC16 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				04E6FC5D298939F60052496A /* Constant */,
 				044D258A29878BC6003F4071 /* Model */,
 				047D867D2979D096003EBC16 /* ViewController */,
 				0415992D296F475600EEB699 /* View */,
@@ -626,6 +629,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		04E6FC5D298939F60052496A /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				04E6FC5E29893A400052496A /* Colors.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		04FA5D612974669E0015D91B /* Shop */ = {
 			isa = PBXGroup;
 			children = (
@@ -730,6 +741,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044D25802984319D003F4071 /* KeyboardDismissibleViewController.swift in Sources */,
+				04E6FC5F29893A400052496A /* Colors.swift in Sources */,
 				04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */,
 				0470727E2979B23B008D6CC0 /* VideoInfoCardTableViewController.swift in Sources */,
 				040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */,

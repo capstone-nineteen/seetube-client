@@ -10,7 +10,7 @@ import UIKit
 @IBDesignable
 class UnderLineTextField: UITextField {
     private let inactiveColor: UIColor = .systemGray4
-    private let activeColor: UIColor = UIColor(named: "AccentColor") ?? .darkGray
+    private let activeColor: UIColor = Colors.seetubePink ?? .darkGray
     
     private lazy var underLineView: UIView = {
         let view = UIView()

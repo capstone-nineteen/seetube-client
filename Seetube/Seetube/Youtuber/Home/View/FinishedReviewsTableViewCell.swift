@@ -12,7 +12,7 @@ class FinishedReviewsTableViewCell: VideoInfoCardTableViewCell {
     
     private lazy var progressLabel: AdaptiveFontSizeLabel = {
         let label = AdaptiveFontSizeLabel()
-        label.textColor = UIColor(named: "AccentColor")
+        label.textColor = Colors.seetubePink
         label.text = "20%"
         label.font = label.font.withWeight(.semibold)
         label.textAlignment = .right
