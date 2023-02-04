@@ -91,6 +91,8 @@
 		04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */; };
 		04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */; };
 		04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */; };
+		04CAF964298E63F700D5BABC /* Reviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAF963298E63F700D5BABC /* Reviewer.swift */; };
+		04CAF968298E699500D5BABC /* CoinHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAF967298E699500D5BABC /* CoinHistory.swift */; };
 		04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 04E6FC542988EE7C0052496A /* GoogleSignIn */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
@@ -190,6 +192,8 @@
 		04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
 		04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedReviewsTableViewController.swift; sourceTree = "<group>"; };
 		04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsInProgressTableViewController.swift; sourceTree = "<group>"; };
+		04CAF963298E63F700D5BABC /* Reviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviewer.swift; sourceTree = "<group>"; };
+		04CAF967298E699500D5BABC /* CoinHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistory.swift; sourceTree = "<group>"; };
 		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		04E6FC5E29893A400052496A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		04E6FC6029895C400052496A /* ViewControllerPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPushable.swift; sourceTree = "<group>"; };
@@ -598,6 +602,7 @@
 			children = (
 				04A94F052978129200BF5F4B /* MyPageViewController.swift */,
 				04A94F092978316E00BF5F4B /* View */,
+				04CAF962298E63E100D5BABC /* Model */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -631,6 +636,15 @@
 				0470727F2979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04CAF962298E63E100D5BABC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04CAF963298E63F700D5BABC /* Reviewer.swift */,
+				04CAF967298E699500D5BABC /* CoinHistory.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		04E6FC5D298939F60052496A /* Constant */ = {
@@ -799,6 +813,7 @@
 				044D258C29878BD0003F4071 /* Category.swift in Sources */,
 				049960F92982BA57000EE539 /* SeetubeSearchBarView.swift in Sources */,
 				044D25792983FFBE003F4071 /* ReviewerVideoDetailView.swift in Sources */,
+				04CAF964298E63F700D5BABC /* Reviewer.swift in Sources */,
 				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,
 				04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */,
 				044D25672983BCFD003F4071 /* ReviewerVideoDetailViewController.swift in Sources */,
@@ -815,6 +830,7 @@
 				044D25762983F97B003F4071 /* VideoDetailView.swift in Sources */,
 				04A94F062978129200BF5F4B /* MyPageViewController.swift in Sources */,
 				0465604E29754E6D00C4CACD /* ReviewerTabBarController.swift in Sources */,
+				04CAF968298E699500D5BABC /* CoinHistory.swift in Sources */,
 				044D257E2984243A003F4071 /* ReviewerHomeViewController.swift in Sources */,
 				044D256D2983D58B003F4071 /* VideoThumbnailButton.swift in Sources */,
 				045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */,
