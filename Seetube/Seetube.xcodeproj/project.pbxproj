@@ -93,6 +93,7 @@
 		04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */; };
 		04CAF964298E63F700D5BABC /* Reviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAF963298E63F700D5BABC /* Reviewer.swift */; };
 		04CAF968298E699500D5BABC /* CoinHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAF967298E699500D5BABC /* CoinHistory.swift */; };
+		04CAF96D298E6D0100D5BABC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04CAF96C298E6D0100D5BABC /* Alamofire */; };
 		04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 04E6FC542988EE7C0052496A /* GoogleSignIn */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
@@ -212,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */,
+				04CAF96D298E6D0100D5BABC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +694,7 @@
 			name = Seetube;
 			packageProductDependencies = (
 				04E6FC542988EE7C0052496A /* GoogleSignIn */,
+				04CAF96C298E6D0100D5BABC /* Alamofire */,
 			);
 			productName = Seetube;
 			productReference = 041ECBAB296ED84C0053AC9C /* Seetube.app */;
@@ -723,6 +726,7 @@
 			mainGroup = 041ECBA2296ED84C0053AC9C;
 			packageReferences = (
 				04E6FC532988EE7C0052496A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				04CAF96B298E6D0100D5BABC /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 041ECBAC296ED84C0053AC9C /* Products */;
 			projectDirPath = "";
@@ -1066,6 +1070,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		04CAF96B298E6D0100D5BABC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		04E6FC532988EE7C0052496A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -1077,6 +1089,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		04CAF96C298E6D0100D5BABC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04CAF96B298E6D0100D5BABC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		04E6FC542988EE7C0052496A /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04E6FC532988EE7C0052496A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
