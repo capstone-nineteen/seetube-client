@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Reviewer: Decodable {
+struct Reviewer {
     var name: String
     var coin: Int
     var histories: [CoinHistory]

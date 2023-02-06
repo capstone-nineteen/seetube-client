@@ -63,6 +63,7 @@
 		0470727B2979ACD9008D6CC0 /* VideoInfoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047072792979ACD9008D6CC0 /* VideoInfoCardTableViewCell.swift */; };
 		0470727E2979B23B008D6CC0 /* VideoInfoCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470727D2979B23B008D6CC0 /* VideoInfoCardTableViewController.swift */; };
 		047072802979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470727F2979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift */; };
+		0470C9BE2990E78E00D4743B /* MyPageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9BD2990E78E00D4743B /* MyPageDTO.swift */; };
 		047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */; };
 		047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */; };
 		047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */; };
@@ -165,6 +166,7 @@
 		047072792979ACD9008D6CC0 /* VideoInfoCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoCardTableViewCell.swift; sourceTree = "<group>"; };
 		0470727D2979B23B008D6CC0 /* VideoInfoCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoCardTableViewController.swift; sourceTree = "<group>"; };
 		0470727F2979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsInProgressTableViewCell.swift; sourceTree = "<group>"; };
+		0470C9BD2990E78E00D4743B /* MyPageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDTO.swift; sourceTree = "<group>"; };
 		047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
 		047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeView.swift; sourceTree = "<group>"; };
@@ -455,6 +457,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0470C9BB2990E75300D4743B /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				0470C9BC2990E76E00D4743B /* Reviewer */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		0470C9BC2990E76E00D4743B /* Reviewer */ = {
+			isa = PBXGroup;
+			children = (
+				0470C9BD2990E78E00D4743B /* MyPageDTO.swift */,
+			);
+			path = Reviewer;
+			sourceTree = "<group>";
+		};
 		047A5F372970755E007CDBC4 /* EmotionResult */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +535,7 @@
 		047D867B2979CF99003EBC16 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				0470C9BB2990E75300D4743B /* DTO */,
 				04E6FC642989711B0052496A /* Resuable */,
 				04E6FC5D298939F60052496A /* Constant */,
 				044D258A29878BC6003F4071 /* Model */,
@@ -828,6 +847,7 @@
 				0402BA602971D39500B79935 /* BottomButton.swift in Sources */,
 				049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */,
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
+				0470C9BE2990E78E00D4743B /* MyPageDTO.swift in Sources */,
 				04E6FC66298971F30052496A /* KeyboardDismissible.swift in Sources */,
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
 				0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */,

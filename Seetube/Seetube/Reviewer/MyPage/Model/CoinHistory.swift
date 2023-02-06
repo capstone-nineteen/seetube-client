@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CoinHistory: Decodable {
-    enum UsageType: Decodable {
+struct CoinHistory {
+    enum UsageType {
         case use
         case earn
     }
