@@ -14,6 +14,6 @@ struct ReviewerHomeSectionDTO: Decodable {
 
 struct ReviewerHomeDTO: Decodable {
     let userName: String
-    let coint: Int
+    let coin: Int
     let sections: [ReviewerHomeSectionDTO]
 }

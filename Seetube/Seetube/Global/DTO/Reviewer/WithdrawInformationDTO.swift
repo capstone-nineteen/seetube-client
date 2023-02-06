@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WithDrawoInformationDTO: Codable {
+struct WithDrawInformationDTO: Codable {
     let amount: Int
     let bankName: String
     let accountHolder: String

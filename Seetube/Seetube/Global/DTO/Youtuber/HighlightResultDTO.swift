@@ -18,5 +18,5 @@ struct HighlightSceneDTO: Decodable {
 }
 
 struct HighlightResultDTO: Decodable {
-    let scenes: [HighlightResultDTO]
+    let scenes: [HighlightSceneDTO]
 }

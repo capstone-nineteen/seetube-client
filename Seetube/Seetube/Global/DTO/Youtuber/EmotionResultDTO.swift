@@ -18,5 +18,5 @@ struct EmotionSceneDTO: Decodable {
 
 struct EmotionResultDTO: Decodable {
     let originalVideoURL: String
-    let scenes: [ConcentrationSceneDTO]
+    let scenes: [EmotionSceneDTO]
 }
