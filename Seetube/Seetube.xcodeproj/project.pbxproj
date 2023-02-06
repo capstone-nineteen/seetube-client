@@ -72,6 +72,8 @@
 		0470C9CC2990EE8D00D4743B /* ReviewerHomeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9CB2990EE8D00D4743B /* ReviewerHomeDTO.swift */; };
 		0470C9CF2990F1D400D4743B /* YoutuberHomeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9CE2990F1D400D4743B /* YoutuberHomeDTO.swift */; };
 		0470C9D42990F57200D4743B /* ConcentrationResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9D32990F57200D4743B /* ConcentrationResultDTO.swift */; };
+		0470C9D62990F76600D4743B /* EmotionResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9D52990F76600D4743B /* EmotionResultDTO.swift */; };
+		0470C9D82990F7D400D4743B /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9D72990F7D400D4743B /* Emotion.swift */; };
 		047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */; };
 		047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */; };
 		047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */; };
@@ -183,6 +185,8 @@
 		0470C9CB2990EE8D00D4743B /* ReviewerHomeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeDTO.swift; sourceTree = "<group>"; };
 		0470C9CE2990F1D400D4743B /* YoutuberHomeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberHomeDTO.swift; sourceTree = "<group>"; };
 		0470C9D32990F57200D4743B /* ConcentrationResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationResultDTO.swift; sourceTree = "<group>"; };
+		0470C9D52990F76600D4743B /* EmotionResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultDTO.swift; sourceTree = "<group>"; };
+		0470C9D72990F7D400D4743B /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
 		047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeView.swift; sourceTree = "<group>"; };
@@ -424,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				044D258B29878BD0003F4071 /* Category.swift */,
+				0470C9D72990F7D400D4743B /* Emotion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -501,6 +506,7 @@
 			children = (
 				0470C9CE2990F1D400D4743B /* YoutuberHomeDTO.swift */,
 				0470C9D32990F57200D4743B /* ConcentrationResultDTO.swift */,
+				0470C9D52990F76600D4743B /* EmotionResultDTO.swift */,
 			);
 			path = Youtuber;
 			sourceTree = "<group>";
@@ -832,6 +838,7 @@
 			files = (
 				04E6FC5F29893A400052496A /* Colors.swift in Sources */,
 				04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */,
+				0470C9D82990F7D400D4743B /* Emotion.swift in Sources */,
 				0470C9CA2990EE3C00D4743B /* SearchResultDTO.swift in Sources */,
 				0470727E2979B23B008D6CC0 /* VideoInfoCardTableViewController.swift in Sources */,
 				040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */,
@@ -860,6 +867,7 @@
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,
 				044D257C298401AE003F4071 /* YoutuberVideoDetailView.swift in Sources */,
 				044D258E29878E7C003F4071 /* ReviewerHomeCollectionView.swift in Sources */,
+				0470C9D62990F76600D4743B /* EmotionResultDTO.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
 				04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */,
 				044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */,
