@@ -75,6 +75,7 @@
 		0470C9D62990F76600D4743B /* EmotionResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9D52990F76600D4743B /* EmotionResultDTO.swift */; };
 		0470C9D82990F7D400D4743B /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9D72990F7D400D4743B /* Emotion.swift */; };
 		0470C9DD2990F96D00D4743B /* SceneStealerResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9DC2990F96D00D4743B /* SceneStealerResultDTO.swift */; };
+		0470C9DF2990FA4E00D4743B /* ShortsResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9DE2990FA4E00D4743B /* ShortsResultDTO.swift */; };
 		047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */; };
 		047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */; };
 		047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */; };
@@ -189,6 +190,7 @@
 		0470C9D52990F76600D4743B /* EmotionResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultDTO.swift; sourceTree = "<group>"; };
 		0470C9D72990F7D400D4743B /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		0470C9DC2990F96D00D4743B /* SceneStealerResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultDTO.swift; sourceTree = "<group>"; };
+		0470C9DE2990FA4E00D4743B /* ShortsResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsResultDTO.swift; sourceTree = "<group>"; };
 		047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
 		047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeView.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 				0470C9D32990F57200D4743B /* ConcentrationResultDTO.swift */,
 				0470C9D52990F76600D4743B /* EmotionResultDTO.swift */,
 				0470C9DC2990F96D00D4743B /* SceneStealerResultDTO.swift */,
+				0470C9DE2990FA4E00D4743B /* ShortsResultDTO.swift */,
 			);
 			path = Youtuber;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */,
 				049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */,
 				046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */,
+				0470C9DF2990FA4E00D4743B /* ShortsResultDTO.swift in Sources */,
 				046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */,
 				049961022982DEA2000EE539 /* CategoryFilteredTableViewController.swift in Sources */,
 			);
