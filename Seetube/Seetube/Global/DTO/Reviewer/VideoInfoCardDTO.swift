@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VideoInfoCardDTO: Decodable {
+struct ReviewerVideoInfoCardDTO: Decodable {
     let title: String
     let youtuberName: String
     let remainingPeriod: String
