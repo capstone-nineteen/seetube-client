@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct ReviewerHomeSectionDTO {
+struct ReviewerHomeSectionDTO: Decodable {
     let title: String
     let videos: [VideoInfoDTO]
 }
 
-struct ReviewerHomeDTO {
+struct ReviewerHomeDTO: Decodable {
     let userName: String
     let coint: Int
     let sections: [ReviewerHomeSectionDTO]
