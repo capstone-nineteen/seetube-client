@@ -8,7 +8,7 @@
 import Foundation
 
 struct CoinHistoryDTO: Decodable {
-    let date: String
+    let date: Date
     let content: String
     let amount: Int
 }

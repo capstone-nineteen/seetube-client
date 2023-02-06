@@ -8,5 +8,5 @@
 import Foundation
 
 struct CategoryDTO: Decodable {
-    let videos: [VideoInfoCardDTO]
+    let videos: [VideoInfoDTO]
 }

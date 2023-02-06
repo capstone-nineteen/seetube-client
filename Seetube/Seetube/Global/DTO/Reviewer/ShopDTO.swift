@@ -8,5 +8,5 @@
 import Foundation
 
 struct ShopDTO: Decodable {
-    let totalAmountOfCoins: Int
+    let totalCoinAmount: Int
 }

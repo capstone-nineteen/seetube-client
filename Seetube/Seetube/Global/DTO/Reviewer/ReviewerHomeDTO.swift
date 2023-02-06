@@ -9,7 +9,7 @@ import Foundation
 
 struct ReviewerHomeSectionDTO {
     let title: String
-    let videos: [VideoInfoCardDTO]
+    let videos: [VideoInfoDTO]
 }
 
 struct ReviewerHomeDTO {

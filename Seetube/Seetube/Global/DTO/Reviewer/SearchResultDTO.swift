@@ -8,5 +8,5 @@
 import Foundation
 
 struct SearchResultDTO: Decodable {
-    let videos: [VideoInfoCardDTO]
+    let videos: [VideoInfoDTO]
 }
