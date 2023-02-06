@@ -68,6 +68,7 @@
 		0470C9C22990EA0B00D4743B /* WithdrawInformationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9C12990EA0B00D4743B /* WithdrawInformationDTO.swift */; };
 		0470C9C42990EA9800D4743B /* CategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9C32990EA9800D4743B /* CategoryDTO.swift */; };
 		0470C9C62990ECFB00D4743B /* VideoInfoCardDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9C52990ECFB00D4743B /* VideoInfoCardDTO.swift */; };
+		0470C9C82990ED3900D4743B /* ReviewerVideoDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9C72990ED3900D4743B /* ReviewerVideoDetailDTO.swift */; };
 		047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */; };
 		047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */; };
 		047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */; };
@@ -175,6 +176,7 @@
 		0470C9C12990EA0B00D4743B /* WithdrawInformationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawInformationDTO.swift; sourceTree = "<group>"; };
 		0470C9C32990EA9800D4743B /* CategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDTO.swift; sourceTree = "<group>"; };
 		0470C9C52990ECFB00D4743B /* VideoInfoCardDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoCardDTO.swift; sourceTree = "<group>"; };
+		0470C9C72990ED3900D4743B /* ReviewerVideoDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailDTO.swift; sourceTree = "<group>"; };
 		047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
 		047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeView.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 				0470C9C12990EA0B00D4743B /* WithdrawInformationDTO.swift */,
 				0470C9C52990ECFB00D4743B /* VideoInfoCardDTO.swift */,
 				0470C9C32990EA9800D4743B /* CategoryDTO.swift */,
+				0470C9C72990ED3900D4743B /* ReviewerVideoDetailDTO.swift */,
 			);
 			path = Reviewer;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 				049960F52982A068000EE539 /* SeetubeSearchBar.swift in Sources */,
 				046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */,
 				044D25692983C6F0003F4071 /* ReviewProgressView.swift in Sources */,
+				0470C9C82990ED3900D4743B /* ReviewerVideoDetailDTO.swift in Sources */,
 				04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */,
 				049961052982DFF3000EE539 /* CategoryButton.swift in Sources */,
 				04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */,
