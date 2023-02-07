@@ -540,7 +540,9 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backgroundView" destination="o2u-JD-Ah0" id="dTH-Kq-CNb"/>
+                        <outlet property="coinLabel" destination="P2m-3o-hRU" id="cQd-3v-G6X"/>
                         <outlet property="tableView" destination="h7g-jr-5ZQ" id="0Bd-XQ-qVd"/>
+                        <outlet property="userNameLabel" destination="5sl-zb-JOx" id="48c-xT-yWf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJR-fC-ESx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1435,16 +1437,16 @@
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="6sF-QO-ZI6">
-            <size key="intrinsicContentSize" width="117" height="18.5"/>
+            <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="AjX-df-afO">
-            <size key="intrinsicContentSize" width="174" height="18.5"/>
+            <size key="intrinsicContentSize" width="191" height="20"/>
         </designable>
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="Iqx-xv-HFK">
-            <size key="intrinsicContentSize" width="117" height="18.5"/>
+            <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="MIt-RP-vXU">
             <size key="intrinsicContentSize" width="30" height="34"/>
