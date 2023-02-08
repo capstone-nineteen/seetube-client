@@ -28,6 +28,8 @@
 		041ECBCB296EF0C80053AC9C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCA296EF0C80053AC9C /* UIView+Extension.swift */; };
 		041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCC296EF2FB0053AC9C /* CircleView.swift */; };
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
+		043636DB29938AB300EF6458 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043636DA29938AB300EF6458 /* NetworkService.swift */; };
+		043636E129938B0700EF6458 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 043636E029938B0700EF6458 /* RxAlamofire */; };
 		044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */; };
 		044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25622983B510003F4071 /* CategoryButtonScrollView.swift */; };
 		044D25672983BCFD003F4071 /* ReviewerVideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */; };
@@ -83,6 +85,8 @@
 		047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4929707D2B007CDBC4 /* HighlightResultViewController.swift */; };
 		047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */; };
 		047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */; };
+		0490DA3F29938C50000BBF73 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA3E29938C50000BBF73 /* RxCocoa */; };
+		0490DA4129938C50000BBF73 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA4029938C50000BBF73 /* RxSwift */; };
 		049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */; };
 		049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049960EC298289C0000EE539 /* PriceAccessoryView.xib */; };
 		049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EE298289D6000EE539 /* PriceAccessoryView.swift */; };
@@ -105,7 +109,6 @@
 		04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */; };
 		04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */; };
 		04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */; };
-		04CAF96D298E6D0100D5BABC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04CAF96C298E6D0100D5BABC /* Alamofire */; };
 		04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 04E6FC542988EE7C0052496A /* GoogleSignIn */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
@@ -116,8 +119,6 @@
 		04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */; };
 		04E8B795297053B5000F0859 /* SceneListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B793297053B5000F0859 /* SceneListTableViewCell.xib */; };
 		04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA5D62297466D30015D91B /* ShopViewController.swift */; };
-		04FE824729924635003B17EB /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 04FE824629924635003B17EB /* RxCocoa-Dynamic */; };
-		04FE824929924636003B17EB /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 04FE824829924635003B17EB /* RxSwift-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +145,7 @@
 		041ECBCA296EF0C80053AC9C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		041ECBCC296EF2FB0053AC9C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		043636DA29938AB300EF6458 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonStackView.swift; sourceTree = "<group>"; };
 		044D25622983B510003F4071 /* CategoryButtonScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonScrollView.swift; sourceTree = "<group>"; };
 		044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailViewController.swift; sourceTree = "<group>"; };
@@ -238,10 +240,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04FE824929924636003B17EB /* RxSwift-Dynamic in Frameworks */,
+				0490DA3F29938C50000BBF73 /* RxCocoa in Frameworks */,
+				043636E129938B0700EF6458 /* RxAlamofire in Frameworks */,
+				0490DA4129938C50000BBF73 /* RxSwift in Frameworks */,
 				04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */,
-				04FE824729924635003B17EB /* RxCocoa-Dynamic in Frameworks */,
-				04CAF96D298E6D0100D5BABC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +394,7 @@
 			children = (
 				043636AB2993876100EF6458 /* Repository */,
 				043636AA2993875900EF6458 /* DataSource */,
-				043636A92993875100EF6458 /* API Service */,
+				043636A92993875100EF6458 /* NetworkService */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -437,12 +439,13 @@
 			path = Aplication;
 			sourceTree = "<group>";
 		};
-		043636A92993875100EF6458 /* API Service */ = {
+		043636A92993875100EF6458 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
 				0470C9BB2990E75300D4743B /* DTO */,
+				043636DA29938AB300EF6458 /* NetworkService.swift */,
 			);
-			path = "API Service";
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		043636AA2993875900EF6458 /* DataSource */ = {
@@ -1119,9 +1122,9 @@
 			name = Seetube;
 			packageProductDependencies = (
 				04E6FC542988EE7C0052496A /* GoogleSignIn */,
-				04CAF96C298E6D0100D5BABC /* Alamofire */,
-				04FE824629924635003B17EB /* RxCocoa-Dynamic */,
-				04FE824829924635003B17EB /* RxSwift-Dynamic */,
+				043636E029938B0700EF6458 /* RxAlamofire */,
+				0490DA3E29938C50000BBF73 /* RxCocoa */,
+				0490DA4029938C50000BBF73 /* RxSwift */,
 			);
 			productName = Seetube;
 			productReference = 041ECBAB296ED84C0053AC9C /* Seetube.app */;
@@ -1153,8 +1156,8 @@
 			mainGroup = 041ECBA2296ED84C0053AC9C;
 			packageReferences = (
 				04E6FC532988EE7C0052496A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				04CAF96B298E6D0100D5BABC /* XCRemoteSwiftPackageReference "Alamofire" */,
-				04FE824529924635003B17EB /* XCRemoteSwiftPackageReference "RxSwift" */,
+				043636DF29938B0700EF6458 /* XCRemoteSwiftPackageReference "RxAlamofire" */,
+				0490DA3D29938C50000BBF73 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 041ECBAC296ED84C0053AC9C /* Products */;
 			projectDirPath = "";
@@ -1229,6 +1232,7 @@
 				049960F129828D95000EE539 /* SearchResultViewController.swift in Sources */,
 				0415992F296F477600EEB699 /* NibLoadable.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
+				043636DB29938AB300EF6458 /* NetworkService.swift in Sources */,
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,
 				044D257C298401AE003F4071 /* YoutuberVideoDetailView.swift in Sources */,
 				044D258E29878E7C003F4071 /* ReviewerHomeCollectionView.swift in Sources */,
@@ -1436,7 +1440,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22RJP8YV7Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Seetube/Info.plist;
+				INFOPLIST_FILE = Seetube/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1466,7 +1470,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22RJP8YV7Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Seetube/Info.plist;
+				INFOPLIST_FILE = Seetube/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1510,12 +1514,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		04CAF96B298E6D0100D5BABC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		043636DF29938B0700EF6458 /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				branch = main;
+				kind = branch;
+			};
+		};
+		0490DA3D29938C50000BBF73 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 		04E6FC532988EE7C0052496A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
@@ -1526,36 +1538,28 @@
 				kind = branch;
 			};
 		};
-		04FE824529924635003B17EB /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		04CAF96C298E6D0100D5BABC /* Alamofire */ = {
+		043636E029938B0700EF6458 /* RxAlamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 04CAF96B298E6D0100D5BABC /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = 043636DF29938B0700EF6458 /* XCRemoteSwiftPackageReference "RxAlamofire" */;
+			productName = RxAlamofire;
+		};
+		0490DA3E29938C50000BBF73 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0490DA3D29938C50000BBF73 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		0490DA4029938C50000BBF73 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0490DA3D29938C50000BBF73 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 		04E6FC542988EE7C0052496A /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04E6FC532988EE7C0052496A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
-		};
-		04FE824629924635003B17EB /* RxCocoa-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 04FE824529924635003B17EB /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxCocoa-Dynamic";
-		};
-		04FE824829924635003B17EB /* RxSwift-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 04FE824529924635003B17EB /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxSwift-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
