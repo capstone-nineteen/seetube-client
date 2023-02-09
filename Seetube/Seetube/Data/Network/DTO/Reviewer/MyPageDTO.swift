@@ -11,6 +11,13 @@ struct CoinHistoryDTO: Decodable {
     let date: Date
     let content: String
     let amount: Int
+    
+    func toDomain(coinHistoryType: CoinHistoryType) -> CoinHistory {
+        return CoinHistory(date: self.date,
+                           content: self.content,
+                           type: coinHistoryType,
+                           amount: self.amount)
+    }
 }
 
 struct MyPageDTO: Decodable {
@@ -21,7 +28,15 @@ struct MyPageDTO: Decodable {
 }
 
 extension MyPageDTO: DomainConvertible {
+    private func combineAllHistories() -> [CoinHistory] {
+        let usageHistories = self.withdrawHistories.map { $0.toDomain(coinHistoryType: .use) }
+        let earningHistories = self.reviewHistories.map { $0.toDomain(coinHistoryType: .earn) }
+        return usageHistories + earningHistories
+    }
+    
     func toDomain() -> MyPage {
-        return MyPage()
+        return MyPage(name: self.name,
+                      coin: self.coin,
+                      coinHistories: self.combineAllHistories())
     }
 }
