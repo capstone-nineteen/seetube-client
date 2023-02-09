@@ -18,4 +18,8 @@ struct MyPageDTO: Decodable {
     let coin: Int
     let withdrawHistories: [CoinHistoryDTO]
     let reviewHistories: [CoinHistoryDTO]
+    
+    func toDomain() -> MyPage {
+        return MyPage()
+    }
 }

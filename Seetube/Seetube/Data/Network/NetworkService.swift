@@ -10,17 +10,6 @@ import RxAlamofire
 import RxSwift
 import Alamofire
 
-struct Endpoint<T: Decodable> {
-    enum HttpMethod: String {
-        case get = "GET"
-        case post = "POST"
-    }
-    
-    var method: HttpMethod
-    var url: String
-    var parameters: [String: Any]? = nil
-}
-
 class NetworkService {
     static func request<T>(_ endpoint: Endpoint<T>) -> Observable<T> {
         return RxAlamofire
