@@ -64,12 +64,30 @@
       }
     },
     {
+      "identity" : "rxexpect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devxoul/RxExpect.git",
+      "state" : {
+        "revision" : "c3a3bb3d46ee831582c6619ecc48cda1cdbff890",
+        "version" : "2.0.0"
+      }
+    },
+    {
       "identity" : "rxswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReactiveX/RxSwift.git",
       "state" : {
         "branch" : "main",
         "revision" : "91a36920b1ec069004fef9dc41b7c5dbcaa5fffe"
+      }
+    },
+    {
+      "identity" : "rxviewcontroller",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devxoul/RxViewController.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "072b223dc9e39764fbc5574b2c9a3a7792e2185b"
       }
     }
   ],
