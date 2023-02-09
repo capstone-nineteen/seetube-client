@@ -9,10 +9,10 @@ import UIKit
 
 class CoinHistoryTableViewHeaderCell: UITableViewHeaderFooterView {
     static let headerReuseIdentifier = "CoinHistoryTableViewHeaderCell"
+    static let height: CGFloat = 35.0
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.automaticallyUpdatesBackgroundConfiguration = false
     }
-    
 }

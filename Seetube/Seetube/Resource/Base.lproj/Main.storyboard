@@ -483,13 +483,12 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="coinAmountLabel" destination="qf8-e9-E7Z" id="TAn-5w-CxB"/>
+                                                    <outlet property="contentLabel" destination="gqs-kc-iSR" id="tKv-B7-6IS"/>
                                                     <outlet property="dateLabel" destination="OuG-SC-cr2" id="CBl-6W-omv"/>
-                                                    <outlet property="videoTitleLabel" destination="gqs-kc-iSR" id="tKv-B7-6IS"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
-                                            <outlet property="dataSource" destination="Ggt-Ua-V6l" id="HYa-fc-sqK"/>
                                             <outlet property="delegate" destination="Ggt-Ua-V6l" id="VTs-Wt-M8l"/>
                                         </connections>
                                     </tableView>
@@ -540,9 +539,9 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backgroundView" destination="o2u-JD-Ah0" id="dTH-Kq-CNb"/>
-                        <outlet property="coinLabel" destination="P2m-3o-hRU" id="cQd-3v-G6X"/>
+                        <outlet property="coinLabel" destination="P2m-3o-hRU" id="aWv-JG-pzA"/>
+                        <outlet property="nameLabel" destination="5sl-zb-JOx" id="NNJ-S5-Twd"/>
                         <outlet property="tableView" destination="h7g-jr-5ZQ" id="0Bd-XQ-qVd"/>
-                        <outlet property="userNameLabel" destination="5sl-zb-JOx" id="48c-xT-yWf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJR-fC-ESx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -875,7 +874,7 @@
             <objects>
                 <tableViewController id="D55-m3-f4R" customClass="ReviewsInProgressTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XYT-Jz-xqS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="474.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
