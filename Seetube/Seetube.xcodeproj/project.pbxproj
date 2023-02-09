@@ -125,6 +125,8 @@
 		0490DAAA29953A44000BBF73 /* DefaultSceneStealerResultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAA929953A44000BBF73 /* DefaultSceneStealerResultRepository.swift */; };
 		0490DAAC29953A7B000BBF73 /* DefaultShortsResultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAAB29953A7B000BBF73 /* DefaultShortsResultRepository.swift */; };
 		0490DAAE29953AB2000BBF73 /* DefaultHighlightResultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAAD29953AB2000BBF73 /* DefaultHighlightResultRepository.swift */; };
+		0490DAB229953B8B000BBF73 /* FetchMyPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAB129953B8B000BBF73 /* FetchMyPageUseCase.swift */; };
+		0490DAB529953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAB429953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift */; };
 		049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */; };
 		049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049960EC298289C0000EE539 /* PriceAccessoryView.xib */; };
 		049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EE298289D6000EE539 /* PriceAccessoryView.swift */; };
@@ -277,6 +279,8 @@
 		0490DAA929953A44000BBF73 /* DefaultSceneStealerResultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSceneStealerResultRepository.swift; sourceTree = "<group>"; };
 		0490DAAB29953A7B000BBF73 /* DefaultShortsResultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultShortsResultRepository.swift; sourceTree = "<group>"; };
 		0490DAAD29953AB2000BBF73 /* DefaultHighlightResultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHighlightResultRepository.swift; sourceTree = "<group>"; };
+		0490DAB129953B8B000BBF73 /* FetchMyPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMyPageUseCase.swift; sourceTree = "<group>"; };
+		0490DAB429953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchMyPageUseCase.swift; sourceTree = "<group>"; };
 		049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
 		049960EC298289C0000EE539 /* PriceAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceAccessoryView.xib; sourceTree = "<group>"; };
 		049960EE298289D6000EE539 /* PriceAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAccessoryView.swift; sourceTree = "<group>"; };
@@ -539,6 +543,8 @@
 		043636AC2993879D00EF6458 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				0490DAB329953B9E000BBF73 /* Protocol */,
+				0490DAB429953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1176,6 +1182,14 @@
 			path = Youtuber;
 			sourceTree = "<group>";
 		};
+		0490DAB329953B9E000BBF73 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0490DAB129953B8B000BBF73 /* FetchMyPageUseCase.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		049960E8298288CE000EE539 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -1498,6 +1512,7 @@
 				0490DA6D29950A3A000BBF73 /* VideoList.swift in Sources */,
 				044D256D2983D58B003F4071 /* VideoThumbnailButton.swift in Sources */,
 				045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */,
+				0490DAB229953B8B000BBF73 /* FetchMyPageUseCase.swift in Sources */,
 				0490DA7F2995116C000BBF73 /* ShopRepository.swift in Sources */,
 				0470C9D42990F57200D4743B /* ConcentrationResultDTO.swift in Sources */,
 				049960F329829C67000EE539 /* SearchResultTableViewController.swift in Sources */,
@@ -1509,6 +1524,7 @@
 				049960FC2982DC83000EE539 /* VideosByCategoryViewController.swift in Sources */,
 				04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */,
 				049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */,
+				0490DAB529953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift in Sources */,
 				046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */,
 				0490DA7B29950BB0000BBF73 /* ShortsResult.swift in Sources */,
 				0470C9DF2990FA4E00D4743B /* ShortsResultDTO.swift in Sources */,
