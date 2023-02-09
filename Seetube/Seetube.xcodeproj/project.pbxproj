@@ -87,7 +87,10 @@
 		047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */; };
 		0490DA3F29938C50000BBF73 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA3E29938C50000BBF73 /* RxCocoa */; };
 		0490DA4129938C50000BBF73 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA4029938C50000BBF73 /* RxSwift */; };
+		0490DA4E29940B7E000BBF73 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA4D29940B7E000BBF73 /* MyPage.swift */; };
 		0490DA5229940CC9000BBF73 /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA5129940CC9000BBF73 /* APIUrls.swift */; };
+		0490DA542994C26A000BBF73 /* DefaultMyPageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA532994C26A000BBF73 /* DefaultMyPageRepository.swift */; };
+		0490DA572994C2A1000BBF73 /* MyPageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA562994C2A1000BBF73 /* MyPageRepository.swift */; };
 		0490DA592994C2E5000BBF73 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA582994C2E5000BBF73 /* Endpoint.swift */; };
 		0490DA5B2994C9AF000BBF73 /* EndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA5A2994C9AF000BBF73 /* EndpointFactory.swift */; };
 		049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */; };
@@ -204,7 +207,10 @@
 		047A5F4929707D2B007CDBC4 /* HighlightResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeTableViewCell.swift; sourceTree = "<group>"; };
 		047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListLargeTableViewCell.xib; sourceTree = "<group>"; };
+		0490DA4D29940B7E000BBF73 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
 		0490DA5129940CC9000BBF73 /* APIUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
+		0490DA532994C26A000BBF73 /* DefaultMyPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMyPageRepository.swift; sourceTree = "<group>"; };
+		0490DA562994C2A1000BBF73 /* MyPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRepository.swift; sourceTree = "<group>"; };
 		0490DA582994C2E5000BBF73 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		0490DA5A2994C9AF000BBF73 /* EndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointFactory.swift; sourceTree = "<group>"; };
 		049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -458,6 +464,8 @@
 		043636AB2993876100EF6458 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				0490DA552994C295000BBF73 /* Protocol */,
+				0490DA532994C26A000BBF73 /* DefaultMyPageRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -474,6 +482,7 @@
 			children = (
 				0470C9D72990F7D400D4743B /* Emotion.swift */,
 				044D258B29878BD0003F4071 /* Category.swift */,
+				0490DA4D29940B7E000BBF73 /* MyPage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -991,6 +1000,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		0490DA552994C295000BBF73 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0490DA562994C2A1000BBF73 /* MyPageRepository.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		049960E8298288CE000EE539 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -1223,6 +1240,7 @@
 				047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */,
 				046AD1092972FCC200602F89 /* SigninButton.swift in Sources */,
 				0470C9DD2990F96D00D4743B /* SceneStealerResultDTO.swift in Sources */,
+				0490DA4E29940B7E000BBF73 /* MyPage.swift in Sources */,
 				04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */,
 				0470C9C42990EA9800D4743B /* CategoryDTO.swift in Sources */,
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
@@ -1230,11 +1248,13 @@
 				0470C9CC2990EE8D00D4743B /* ReviewerHomeDTO.swift in Sources */,
 				045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */,
 				044D25722983F86A003F4071 /* YoutuberVideoDetailViewController.swift in Sources */,
+				0490DA542994C26A000BBF73 /* DefaultMyPageRepository.swift in Sources */,
 				049960F129828D95000EE539 /* SearchResultViewController.swift in Sources */,
 				0415992F296F477600EEB699 /* NibLoadable.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
 				043636DB29938AB300EF6458 /* NetworkService.swift in Sources */,
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,
+				0490DA572994C2A1000BBF73 /* MyPageRepository.swift in Sources */,
 				044D257C298401AE003F4071 /* YoutuberVideoDetailView.swift in Sources */,
 				044D258E29878E7C003F4071 /* ReviewerHomeCollectionView.swift in Sources */,
 				0470C9D62990F76600D4743B /* EmotionResultDTO.swift in Sources */,
