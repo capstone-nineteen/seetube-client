@@ -8,6 +8,8 @@
 import Foundation
 import RxSwift
 
+typealias DTO = DomainConvertible & Decodable
+
 protocol NetworkRequestable {
     func getResource<T: DTO>(endpoint: Endpoint, decodingType: T.Type) -> Observable<T.DomainModel>
 }

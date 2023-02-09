@@ -20,3 +20,9 @@ struct HighlightSceneDTO: Decodable {
 struct HighlightResultDTO: Decodable {
     let scenes: [HighlightSceneDTO]
 }
+ 
+extension HighlightResultDTO: DomainConvertible {
+    func toDomain() -> HighlightResult {
+        return HighlightResult()
+    }
+}

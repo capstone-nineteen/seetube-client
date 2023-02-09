@@ -10,3 +10,9 @@ import Foundation
 struct SearchResultDTO: Decodable {
     let videos: [VideoInfoDTO]
 }
+
+extension SearchResultDTO: DomainConvertible {
+    func toDomain() -> SearchResult {
+        return SearchResult()
+    }
+}

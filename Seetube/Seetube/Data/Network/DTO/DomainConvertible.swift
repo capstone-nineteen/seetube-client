@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DTO: Decodable {
+protocol DomainConvertible {
     associatedtype DomainModel
     func toDomain() -> DomainModel
 }

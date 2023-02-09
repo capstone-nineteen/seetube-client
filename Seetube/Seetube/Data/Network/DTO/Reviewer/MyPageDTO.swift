@@ -13,12 +13,14 @@ struct CoinHistoryDTO: Decodable {
     let amount: Int
 }
 
-struct MyPageDTO: DTO {
+struct MyPageDTO: Decodable {
     let name: String
     let coin: Int
     let withdrawHistories: [CoinHistoryDTO]
     let reviewHistories: [CoinHistoryDTO]
-    
+}
+
+extension MyPageDTO: DomainConvertible {
     func toDomain() -> MyPage {
         return MyPage()
     }

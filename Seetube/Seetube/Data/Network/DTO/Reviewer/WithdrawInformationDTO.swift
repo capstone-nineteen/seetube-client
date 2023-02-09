@@ -13,3 +13,9 @@ struct WithDrawInformationDTO: Codable {
     let accountHolder: String
     let accountNumber: String
 }
+ 
+extension WithDrawInformationDTO: DomainConvertible {
+    func toDomain() -> WithdrawInformation {
+        return WithdrawInformation()
+    }
+}

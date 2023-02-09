@@ -17,3 +17,9 @@ struct ReviewerHomeDTO: Decodable {
     let coin: Int
     let sections: [ReviewerHomeSectionDTO]
 }
+
+extension ReviewerHomeDTO: DomainConvertible {
+    func toDomain() -> ReviewerHome {
+        return ReviewerHome()
+    }
+}

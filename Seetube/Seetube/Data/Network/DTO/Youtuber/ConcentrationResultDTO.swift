@@ -19,3 +19,9 @@ struct ConcentrationResultDTO: Decodable {
     let originalVideoURL: String
     let scenes: [ConcentrationSceneDTO]
 }
+
+extension ConcentrationResultDTO: DomainConvertible {
+    func toDomain() -> ConcentrationResult {
+        return ConcentrationResult()
+    }
+}

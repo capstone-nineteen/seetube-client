@@ -19,3 +19,9 @@ struct ShortsSceneDTO: Decodable {
 struct ShortsResultDTO: Decodable {
     let scenes: [ShortsSceneDTO]
 }
+
+extension ShortsResultDTO: DomainConvertible {
+    func toDomain() -> ShortsResult {
+        return ShortsResult()
+    }
+}

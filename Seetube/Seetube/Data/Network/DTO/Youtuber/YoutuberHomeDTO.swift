@@ -12,3 +12,9 @@ struct YoutuberHomeDTO: Decodable {
     let finishedReviews: [VideoInfoDTO]
     let reviewsInProgress: [VideoInfoDTO]
 }
+
+extension YoutuberHomeDTO: DomainConvertible {
+    func toDomain() -> YoutuberHome {
+        return YoutuberHome()
+    }
+}

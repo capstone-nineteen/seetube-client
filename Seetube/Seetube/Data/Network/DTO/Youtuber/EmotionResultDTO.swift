@@ -20,3 +20,9 @@ struct EmotionResultDTO: Decodable {
     let originalVideoURL: String
     let scenes: [EmotionSceneDTO]
 }
+ 
+extension EmotionResultDTO: DomainConvertible {
+    func toDomain() -> EmotionResult {
+        return EmotionResult()
+    }
+}

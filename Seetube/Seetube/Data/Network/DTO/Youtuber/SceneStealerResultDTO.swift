@@ -18,3 +18,9 @@ struct SceneStealerResultDTO: Decodable {
     let originalVideoURL: String
     let scenes: [SceneStealerSceneDTO]
 }
+ 
+extension SceneStealerResultDTO: DomainConvertible {
+    func toDomain() -> SceneStealerResult {
+        return SceneStealerResult()
+    }
+}

@@ -17,3 +17,9 @@ struct VideoInfoDTO: Decodable {
     let reviewEndDate: Date
     let videoDescription: String
 }
+
+extension VideoInfoDTO: DomainConvertible {
+    func toDomain() -> VideoInfo {
+        return VideoInfo()
+    }
+}

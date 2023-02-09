@@ -10,3 +10,9 @@ import Foundation
 struct ShopDTO: Decodable {
     let totalCoinAmount: Int
 }
+ 
+extension ShopDTO: DomainConvertible {
+    func toDomain() -> Shop {
+        return Shop()
+    }
+}

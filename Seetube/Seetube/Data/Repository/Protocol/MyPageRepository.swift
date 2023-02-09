@@ -11,8 +11,3 @@ import RxSwift
 protocol MyPageRepository {
     func getMyPage() -> Observable<MyPage>
 }
-
-enum MyPageRepositoryError: Error {
-    case failedToDecode
-    case failedToConvertToDomain
-}
