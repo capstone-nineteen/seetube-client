@@ -68,7 +68,7 @@ extension MyPageViewController {
             .drive(
                 self.tableView.rx.items(cellIdentifier: CoinHistoryTableViewCell.cellReuseIdentifier,
                                         cellType: CoinHistoryTableViewCell.self)
-            ) { index, viewModel, cell in
+            ) { row, viewModel, cell in
                 cell.bind(viewModel)
             }
             .disposed(by: self.disposeBag)
