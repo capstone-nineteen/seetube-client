@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: 버그와 해결 과정을 기록합니다.
 title: "[화면]"
 labels: bug
 assignees: sujeong000

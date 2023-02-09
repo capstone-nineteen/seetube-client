@@ -1,6 +1,6 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: Feature
+about: 기능 구현 내용을 기록합니다.
 title: "[화면명]"
 labels: feature
 assignees: sujeong000
