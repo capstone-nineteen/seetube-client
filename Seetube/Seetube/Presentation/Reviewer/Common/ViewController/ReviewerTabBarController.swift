@@ -12,9 +12,11 @@ class ReviewerTabBarController: UITabBarController {
         super.viewDidLoad()
         self.configureTabBar()
         self.configureTabBarItems()
+        self.configureChildViewControllers()
     }
 }
 
+// MARK: - Configuration
 extension ReviewerTabBarController {
     private func configureTabBar() {
         self.tabBar.layer.borderWidth = 0.2
@@ -26,6 +28,36 @@ extension ReviewerTabBarController {
         self.viewControllers?.forEach { viewController in
             let tabBarItem = viewController.tabBarItem
             tabBarItem?.image = tabBarItem?.image?.withBaselineOffset(fromBottom: 12.0)
+        }
+    }
+    
+    private func configureChildViewControllers() {
+        guard let viewControllers = self.viewControllers else { return }
+        
+        for viewController in viewControllers {
+            var childViewController: UIViewController?
+
+            if let navigationController = viewController as? UINavigationController {
+                childViewController = navigationController.viewControllers.first
+            } else {
+                childViewController = viewController
+            }
+
+            switch childViewController {
+            case let reviewerHomeViewController as ReviewerHomeViewController:
+                break
+            case let videosByCategoryViewController as VideosByCategoryViewController:
+                break
+            case let shopViewController as ShopViewController:
+                break
+            case let myPageViewController as MyPageViewController:
+                let repository = DefaultMyPageRepository()
+                let fetchMyPageUseCase = DefaultFetchMyCaseUseCase(repository: repository)
+                let viewModel = MyPageViewModel(fetchMyPageUseCase: fetchMyPageUseCase)
+                myPageViewController.viewModel = viewModel
+            default:
+                break
+            }
         }
     }
 }
