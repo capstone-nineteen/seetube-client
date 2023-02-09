@@ -117,6 +117,7 @@
 		0490DA9029951317000BBF73 /* SceneStealerResultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA8F29951317000BBF73 /* SceneStealerResultRepository.swift */; };
 		0490DA922995132F000BBF73 /* ShortsResultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA912995132F000BBF73 /* ShortsResultRepository.swift */; };
 		0490DA9429951347000BBF73 /* HighlightResultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA9329951347000BBF73 /* HighlightResultRepository.swift */; };
+		0490DA9A2995143B000BBF73 /* DefaultVideoInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA992995143B000BBF73 /* DefaultVideoInfoRepository.swift */; };
 		049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */; };
 		049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049960EC298289C0000EE539 /* PriceAccessoryView.xib */; };
 		049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EE298289D6000EE539 /* PriceAccessoryView.swift */; };
@@ -261,6 +262,7 @@
 		0490DA8F29951317000BBF73 /* SceneStealerResultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultRepository.swift; sourceTree = "<group>"; };
 		0490DA912995132F000BBF73 /* ShortsResultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsResultRepository.swift; sourceTree = "<group>"; };
 		0490DA9329951347000BBF73 /* HighlightResultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightResultRepository.swift; sourceTree = "<group>"; };
+		0490DA992995143B000BBF73 /* DefaultVideoInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultVideoInfoRepository.swift; sourceTree = "<group>"; };
 		049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
 		049960EC298289C0000EE539 /* PriceAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceAccessoryView.xib; sourceTree = "<group>"; };
 		049960EE298289D6000EE539 /* PriceAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAccessoryView.swift; sourceTree = "<group>"; };
@@ -1131,6 +1133,7 @@
 		0490DA952995137B000BBF73 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0490DA992995143B000BBF73 /* DefaultVideoInfoRepository.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1410,6 +1413,7 @@
 				049960F129828D95000EE539 /* SearchResultViewController.swift in Sources */,
 				0415992F296F477600EEB699 /* NibLoadable.swift in Sources */,
 				0490DA8829951268000BBF73 /* VideosByCategoryRepository.swift in Sources */,
+				0490DA9A2995143B000BBF73 /* DefaultVideoInfoRepository.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
 				043636DB29938AB300EF6458 /* NetworkService.swift in Sources */,
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,

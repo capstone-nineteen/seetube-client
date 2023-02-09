@@ -10,25 +10,26 @@ import Foundation
 class APIEndpointFactory {
     enum EndpointType {
         case getMyPage
+        case getVideoInfo
         
         var method: HttpMethod {
             switch self {
-            case .getMyPage:
-                return .get
+            case .getMyPage : return .get
+            case .getVideoInfo: return .get
             }
         }
         
         var url: String {
             switch self {
-            case .getMyPage:
-                return APIUrls.myPage
+            case .getMyPage: return ""
+            case .getVideoInfo: return ""
             }
         }
         
         var parameters: [String: Any]? {
             switch self {
-            case .getMyPage:
-                return nil
+            case .getMyPage: return nil
+            case .getVideoInfo: return nil
             }
         }
     }
