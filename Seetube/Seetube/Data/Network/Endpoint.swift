@@ -12,7 +12,7 @@ enum HttpMethod: String {
     case post = "POST"
 }
 
-struct Endpoint<T: Decodable> {
+struct Endpoint {
     var method: HttpMethod
     var url: String
     var parameters: [String: Any]? = nil

@@ -10,15 +10,23 @@ import RxAlamofire
 import RxSwift
 import Alamofire
 
+enum NetworkServiceError: Error {
+    case invalidResponse
+}
+
 class NetworkService {
-    static func request<T>(_ endpoint: Endpoint<T>) -> Observable<T> {
+    static func request(_ endpoint: Endpoint) -> Observable<Data> {
         return RxAlamofire
             .requestData(HTTPMethod(rawValue: endpoint.method.rawValue),
                          endpoint.url,
                          parameters: endpoint.parameters)
-            .map({ (response, data) -> T in
-                let decoder = JSONDecoder()
-                return try decoder.decode(T.self, from: data)
-            })
+            .map { (response, data) in
+                switch response.statusCode {
+                case 200..<300:
+                    return data
+                default:
+                    throw NetworkServiceError.invalidResponse
+                }
+            }
     }
 }

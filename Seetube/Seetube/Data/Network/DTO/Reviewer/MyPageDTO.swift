@@ -13,7 +13,7 @@ struct CoinHistoryDTO: Decodable {
     let amount: Int
 }
 
-struct MyPageDTO: Decodable {
+struct MyPageDTO: DTO {
     let name: String
     let coin: Int
     let withdrawHistories: [CoinHistoryDTO]

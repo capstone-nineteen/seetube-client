@@ -33,8 +33,8 @@ class EndpointFactory {
         }
     }
     
-    static func makeEndpoint<T: Decodable>(for type: EndpointType) -> Endpoint<T> {
-        return Endpoint<T>(method: type.method,
+    static func makeEndpoint(for type: EndpointType) -> Endpoint {
+        return Endpoint(method: type.method,
                         url: type.url,
                         parameters: type.parameters)
     }
