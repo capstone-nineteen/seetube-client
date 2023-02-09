@@ -125,8 +125,11 @@
 		0490DAAA29953A44000BBF73 /* DefaultSceneStealerResultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAA929953A44000BBF73 /* DefaultSceneStealerResultRepository.swift */; };
 		0490DAAC29953A7B000BBF73 /* DefaultShortsResultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAAB29953A7B000BBF73 /* DefaultShortsResultRepository.swift */; };
 		0490DAAE29953AB2000BBF73 /* DefaultHighlightResultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAAD29953AB2000BBF73 /* DefaultHighlightResultRepository.swift */; };
+		0490DAB029953B39000BBF73 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAAF29953B39000BBF73 /* MyPageViewModel.swift */; };
 		0490DAB229953B8B000BBF73 /* FetchMyPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAB129953B8B000BBF73 /* FetchMyPageUseCase.swift */; };
 		0490DAB529953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAB429953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift */; };
+		0490DAB729953F2B000BBF73 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAB629953F2B000BBF73 /* Int+Extension.swift */; };
+		0490DAB9299543B8000BBF73 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAB8299543B8000BBF73 /* Date+Extension.swift */; };
 		049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */; };
 		049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049960EC298289C0000EE539 /* PriceAccessoryView.xib */; };
 		049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EE298289D6000EE539 /* PriceAccessoryView.swift */; };
@@ -279,8 +282,11 @@
 		0490DAA929953A44000BBF73 /* DefaultSceneStealerResultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSceneStealerResultRepository.swift; sourceTree = "<group>"; };
 		0490DAAB29953A7B000BBF73 /* DefaultShortsResultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultShortsResultRepository.swift; sourceTree = "<group>"; };
 		0490DAAD29953AB2000BBF73 /* DefaultHighlightResultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHighlightResultRepository.swift; sourceTree = "<group>"; };
+		0490DAAF29953B39000BBF73 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		0490DAB129953B8B000BBF73 /* FetchMyPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMyPageUseCase.swift; sourceTree = "<group>"; };
 		0490DAB429953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchMyPageUseCase.swift; sourceTree = "<group>"; };
+		0490DAB629953F2B000BBF73 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		0490DAB8299543B8000BBF73 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
 		049960EC298289C0000EE539 /* PriceAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceAccessoryView.xib; sourceTree = "<group>"; };
 		049960EE298289D6000EE539 /* PriceAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAccessoryView.swift; sourceTree = "<group>"; };
@@ -465,6 +471,8 @@
 				041ECBCA296EF0C80053AC9C /* UIView+Extension.swift */,
 				0465604F2975591300C4CACD /* CALayer+Extension.swift */,
 				045E56472976E70700E47C77 /* UIFont+Extension.swift */,
+				0490DAB629953F2B000BBF73 /* Int+Extension.swift */,
+				0490DAB8299543B8000BBF73 /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -684,6 +692,7 @@
 		043636C02993896D00EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0490DAAF29953B39000BBF73 /* MyPageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1465,11 +1474,13 @@
 				04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */,
 				0470727B2979ACD9008D6CC0 /* VideoInfoCardTableViewCell.swift in Sources */,
 				04AF39AC29795ACF00BF058B /* YoutuberHomeViewController.swift in Sources */,
+				0490DAB029953B39000BBF73 /* MyPageViewModel.swift in Sources */,
 				04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */,
 				04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */,
 				0490DAAA29953A44000BBF73 /* DefaultSceneStealerResultRepository.swift in Sources */,
 				044D259429879F6A003F4071 /* ReviewerHomeSectionView.swift in Sources */,
 				047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */,
+				0490DAB729953F2B000BBF73 /* Int+Extension.swift in Sources */,
 				0470726E29798FAB008D6CC0 /* VideoInfoCardView.swift in Sources */,
 				049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */,
 				0490DA9029951317000BBF73 /* SceneStealerResultRepository.swift in Sources */,
@@ -1489,6 +1500,7 @@
 				0415992C296F42C100EEB699 /* ConcentrationResultViewController.swift in Sources */,
 				0402BA602971D39500B79935 /* BottomButton.swift in Sources */,
 				0490DA69299509CD000BBF73 /* Shop.swift in Sources */,
+				0490DAB9299543B8000BBF73 /* Date+Extension.swift in Sources */,
 				0490DA6729950958000BBF73 /* VideoInfo.swift in Sources */,
 				049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */,
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
