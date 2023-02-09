@@ -8,11 +8,10 @@
 import Foundation
 import RxSwift
 
-class DefaultMyPageRepository: MyPageRepository {
+class DefaultMyPageRepository: MyPageRepository, NetworkRequestable {
     func getMyPage() -> Observable<MyPage> {
-        let endpoint: Endpoint<MyPageDTO> = EndpointFactory.makeEndpoint(for: .getMyPage)
-        return NetworkService
-            .request(endpoint)
-            .map { $0.toDomain() }
+        let endpoint = EndpointFactory.makeEndpoint(for: .getMyPage)
+        return self.getResource(endpoint: endpoint,
+                                decodingType: MyPageDTO.self)
     }
 }
