@@ -16,7 +16,7 @@ class CoinHistoryViewModel {
     let amount: String
     
     init(with coinHistory: CoinHistory) {
-        self.date = coinHistory.date.toyyyyMMddStyle()
+        self.date = coinHistory.date.toyyMMddStyleWithDot()
         self.content = coinHistory.content
         self.type = coinHistory.type
         
@@ -41,7 +41,19 @@ class MyPageViewModel {
         let myPage = input.viewWillAppear
             .flatMap { _ in
                 self.fetchMyPageUseCase.execute()
-                    .asDriver(onErrorJustReturn: MyPage())
+                    .asDriver(onErrorJustReturn:
+                        MyPage(name: "아무개",
+                               coin: 12345,
+                               coinHistories: [CoinHistory(date: Date(timeIntervalSinceNow: .zero),
+                                                           content: "실패",
+                                                           type: .earn,
+                                                           amount: 99999),
+                                               CoinHistory(date: Date(timeIntervalSinceNow: .zero),
+                                                                           content: "실패",
+                                                                           type: .use,
+                                                                           amount: 12345)]
+                        )
+                    )
             }
         
         let name = myPage.map { $0.name + "님" }

@@ -8,9 +8,9 @@
 import Foundation
 
 extension Date {
-    func toyyyyMMddStyle() -> String {
+    func toyyMMddStyleWithDot() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yy.MM.dd"
         return dateFormatter.string(from: self)
     }
 }

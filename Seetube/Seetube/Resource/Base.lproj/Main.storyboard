@@ -445,17 +445,17 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="동해물과 백두산이 마르고 닳도록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqs-kc-iSR">
-                                                            <rect key="frame" x="72" y="15.5" width="173" height="16"/>
+                                                            <rect key="frame" x="72" y="15.5" width="168" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 0,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qf8-e9-E7Z">
-                                                            <rect key="frame" x="253" y="13.5" width="60" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 00,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qf8-e9-E7Z">
+                                                            <rect key="frame" x="248" y="14.5" width="65" height="18"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="60" id="PhK-iH-Ol5"/>
+                                                                <constraint firstAttribute="width" constant="65" id="PhK-iH-Ol5"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                             <color key="textColor" name="AccentColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
