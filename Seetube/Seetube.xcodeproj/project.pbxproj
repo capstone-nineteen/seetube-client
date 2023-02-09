@@ -94,6 +94,7 @@
 		0490DA592994C2E5000BBF73 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA582994C2E5000BBF73 /* Endpoint.swift */; };
 		0490DA5B2994C9AF000BBF73 /* EndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA5A2994C9AF000BBF73 /* EndpointFactory.swift */; };
 		0490DA632994FCE7000BBF73 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA622994FCE7000BBF73 /* DTO.swift */; };
+		0490DA652994FF1E000BBF73 /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA642994FF1E000BBF73 /* NetworkRequestable.swift */; };
 		049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */; };
 		049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049960EC298289C0000EE539 /* PriceAccessoryView.xib */; };
 		049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EE298289D6000EE539 /* PriceAccessoryView.swift */; };
@@ -215,6 +216,7 @@
 		0490DA582994C2E5000BBF73 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		0490DA5A2994C9AF000BBF73 /* EndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointFactory.swift; sourceTree = "<group>"; };
 		0490DA622994FCE7000BBF73 /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
+		0490DA642994FF1E000BBF73 /* NetworkRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
 		049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
 		049960EC298289C0000EE539 /* PriceAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceAccessoryView.xib; sourceTree = "<group>"; };
 		049960EE298289D6000EE539 /* PriceAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAccessoryView.swift; sourceTree = "<group>"; };
@@ -1007,6 +1009,7 @@
 			isa = PBXGroup;
 			children = (
 				0490DA562994C2A1000BBF73 /* MyPageRepository.swift */,
+				0490DA642994FF1E000BBF73 /* NetworkRequestable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1320,6 +1323,7 @@
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
 				0470C9BE2990E78E00D4743B /* MyPageDTO.swift in Sources */,
 				0470C9C22990EA0B00D4743B /* WithdrawInformationDTO.swift in Sources */,
+				0490DA652994FF1E000BBF73 /* NetworkRequestable.swift in Sources */,
 				04E6FC66298971F30052496A /* KeyboardDismissible.swift in Sources */,
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
 				0490DA632994FCE7000BBF73 /* DTO.swift in Sources */,
