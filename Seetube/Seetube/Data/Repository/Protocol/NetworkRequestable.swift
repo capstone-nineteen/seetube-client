@@ -11,11 +11,11 @@ import RxSwift
 typealias DTO = DomainConvertible & Decodable
 
 protocol NetworkRequestable {
-    func getResource<T: DTO>(endpoint: Endpoint, decodingType: T.Type) -> Observable<T.DomainModel>
+    func getResource<T: DTO>(endpoint: APIEndpoint, decodingType: T.Type) -> Observable<T.DomainModel>
 }
 
 extension NetworkRequestable {
-    func getResource<T: DTO>(endpoint: Endpoint, decodingType: T.Type) -> Observable<T.DomainModel> {
+    func getResource<T: DTO>(endpoint: APIEndpoint, decodingType: T.Type) -> Observable<T.DomainModel> {
         NetworkService
             .request(endpoint)
             .retry(3)

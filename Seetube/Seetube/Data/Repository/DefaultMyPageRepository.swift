@@ -10,7 +10,7 @@ import RxSwift
 
 class DefaultMyPageRepository: MyPageRepository, NetworkRequestable {
     func getMyPage() -> Observable<MyPage> {
-        let endpoint = EndpointFactory.makeEndpoint(for: .getMyPage)
+        let endpoint = APIEndpointFactory.makeEndpoint(for: .getMyPage)
         return self.getResource(endpoint: endpoint,
                                 decodingType: MyPageDTO.self)
     }

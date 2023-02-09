@@ -15,7 +15,7 @@ enum NetworkServiceError: Error {
 }
 
 class NetworkService {
-    static func request(_ endpoint: Endpoint) -> Observable<Data> {
+    static func request(_ endpoint: APIEndpoint) -> Observable<Data> {
         return RxAlamofire
             .requestData(HTTPMethod(rawValue: endpoint.method.rawValue),
                          endpoint.url,

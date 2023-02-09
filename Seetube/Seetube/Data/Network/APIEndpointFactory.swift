@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EndpointFactory {
+class APIEndpointFactory {
     enum EndpointType {
         case getMyPage
         
@@ -33,8 +33,8 @@ class EndpointFactory {
         }
     }
     
-    static func makeEndpoint(for type: EndpointType) -> Endpoint {
-        return Endpoint(method: type.method,
+    static func makeEndpoint(for type: EndpointType) -> APIEndpoint {
+        return APIEndpoint(method: type.method,
                         url: type.url,
                         parameters: type.parameters)
     }
