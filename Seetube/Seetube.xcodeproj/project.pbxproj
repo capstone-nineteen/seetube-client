@@ -131,6 +131,7 @@
 		0490DAB729953F2B000BBF73 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAB629953F2B000BBF73 /* Int+Extension.swift */; };
 		0490DAB9299543B8000BBF73 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAB8299543B8000BBF73 /* Date+Extension.swift */; };
 		0490DABC29954B46000BBF73 /* RxViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DABB29954B46000BBF73 /* RxViewController */; };
+		0490DABE299573FC000BBF73 /* CoinHistoryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DABD299573FC000BBF73 /* CoinHistoryItemViewModel.swift */; };
 		049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */; };
 		049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049960EC298289C0000EE539 /* PriceAccessoryView.xib */; };
 		049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EE298289D6000EE539 /* PriceAccessoryView.swift */; };
@@ -288,6 +289,7 @@
 		0490DAB429953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchMyPageUseCase.swift; sourceTree = "<group>"; };
 		0490DAB629953F2B000BBF73 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		0490DAB8299543B8000BBF73 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		0490DABD299573FC000BBF73 /* CoinHistoryItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryItemViewModel.swift; sourceTree = "<group>"; };
 		049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
 		049960EC298289C0000EE539 /* PriceAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceAccessoryView.xib; sourceTree = "<group>"; };
 		049960EE298289D6000EE539 /* PriceAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAccessoryView.swift; sourceTree = "<group>"; };
@@ -695,6 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				0490DAAF29953B39000BBF73 /* MyPageViewModel.swift */,
+				0490DABD299573FC000BBF73 /* CoinHistoryItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1465,6 +1468,7 @@
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
 				04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */,
 				044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */,
+				0490DABE299573FC000BBF73 /* CoinHistoryItemViewModel.swift in Sources */,
 				0490DA5229940CC9000BBF73 /* APIUrls.swift in Sources */,
 				049960F52982A068000EE539 /* SeetubeSearchBar.swift in Sources */,
 				046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */,

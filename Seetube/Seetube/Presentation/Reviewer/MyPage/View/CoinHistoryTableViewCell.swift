@@ -21,7 +21,7 @@ class CoinHistoryTableViewCell: UITableViewCell {
         self.coinAmountLabel.textColor = .black
     }
     
-    func bind(_ viewModel: CoinHistoryViewModel) {
+    func bind(_ viewModel: CoinHistoryItemViewModel) {
         self.dateLabel.text = viewModel.date
         self.contentLabel.text = viewModel.content
         self.coinAmountLabel.text = viewModel.amount
