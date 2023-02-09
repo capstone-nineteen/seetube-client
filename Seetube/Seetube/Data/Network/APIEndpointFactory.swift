@@ -11,6 +11,7 @@ class APIEndpointFactory {
     enum EndpointType {
         case getVideoInfo
         case getReviewerHome
+        case getVideosBySearchKeyword
         case getVideosByCategory
         case getShop
         case getMyPage
@@ -25,6 +26,7 @@ class APIEndpointFactory {
             switch self {
             case .getVideoInfo: return .get
             case .getReviewerHome: return .get
+            case .getVideosBySearchKeyword: return .get
             case .getVideosByCategory: return .get
             case .getShop: return .get
             case .getMyPage: return .get
@@ -41,6 +43,7 @@ class APIEndpointFactory {
             switch self {
             case .getVideoInfo: return ""
             case .getReviewerHome: return ""
+            case .getVideosBySearchKeyword: return ""
             case .getVideosByCategory: return ""
             case .getShop: return ""
             case .getMyPage: return ""
@@ -57,6 +60,7 @@ class APIEndpointFactory {
             switch self {
             case .getVideoInfo: return nil
             case .getReviewerHome: return nil
+            case .getVideosBySearchKeyword: return nil
             case .getVideosByCategory: return nil
             case .getShop: return nil
             case .getMyPage: return nil

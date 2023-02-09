@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class VideosByCategoryViewController: UIViewController {
     @IBOutlet weak var categoryButtons: CategoryButtonScrollView!
     
     private var selectedCategory: Category = .all {
@@ -30,7 +30,7 @@ class CategoryViewController: UIViewController {
     }
 }
 
-extension CategoryViewController: CategoryButtonDelegate {
+extension VideosByCategoryViewController: CategoryButtonDelegate {
     func categoryButtonTouched(_ sender: CategoryButton) {
         guard let buttonCategory = sender.category else { return }
         self.selectCategory(buttonCategory)

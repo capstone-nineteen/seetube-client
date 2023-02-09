@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FJw-le-mwV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nrl-LI-RRj">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="4201" y="-1272"/>
         </scene>
-        <!--Category View Controller-->
+        <!--Videos By Category View Controller-->
         <scene sceneID="3TP-4u-6a1">
             <objects>
-                <viewController id="quN-X9-YwD" customClass="CategoryViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="quN-X9-YwD" customClass="VideosByCategoryViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4wo-qX-sKI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +126,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN" customClass="CategoryButtonScrollView" customModule="Seetube" customModuleProvider="target">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN" customClass="CategoryButtonScrollView" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="19" y="68" width="337.5" height="27"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1437,16 +1437,16 @@
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="6sF-QO-ZI6">
-            <size key="intrinsicContentSize" width="117" height="18.5"/>
+            <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="AjX-df-afO">
-            <size key="intrinsicContentSize" width="174" height="18.5"/>
+            <size key="intrinsicContentSize" width="191" height="20"/>
         </designable>
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="Iqx-xv-HFK">
-            <size key="intrinsicContentSize" width="117" height="18.5"/>
+            <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="MIt-RP-vXU">
             <size key="intrinsicContentSize" width="30" height="34"/>
