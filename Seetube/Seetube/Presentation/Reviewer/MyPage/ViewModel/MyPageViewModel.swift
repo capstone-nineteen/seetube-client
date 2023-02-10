@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class MyPageViewModel {
+class MyPageViewModel: ViewModelType {
     private let fetchMyPageUseCase: FetchMyPageUseCase
     
     init(fetchMyPageUseCase: FetchMyPageUseCase) {

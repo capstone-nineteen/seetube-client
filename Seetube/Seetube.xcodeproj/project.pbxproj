@@ -147,6 +147,7 @@
 		049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F584C29784FFD002EC2F7 /* ReceiptView.swift */; };
 		049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F584E29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift */; };
 		049F585129786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F584F29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib */; };
+		04A678A1299648EA006E29C1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A678A0299648EA006E29C1 /* ViewModelType.swift */; };
 		04A94F062978129200BF5F4B /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A94F052978129200BF5F4B /* MyPageViewController.swift */; };
 		04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A94F0A2978318B00BF5F4B /* CoinHistoryTableViewCell.swift */; };
 		04A94F132978495700BF5F4B /* ReceiptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A94F122978495700BF5F4B /* ReceiptView.xib */; };
@@ -305,6 +306,7 @@
 		049F584C29784FFD002EC2F7 /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
 		049F584E29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		049F584F29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinHistoryTableViewHeaderCell.xib; sourceTree = "<group>"; };
+		04A678A0299648EA006E29C1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		04A94F052978129200BF5F4B /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		04A94F0A2978318B00BF5F4B /* CoinHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		04A94F122978495700BF5F4B /* ReceiptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiptView.xib; sourceTree = "<group>"; };
@@ -633,6 +635,7 @@
 		043636B8299388FC00EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				04A678A0299648EA006E29C1 /* ViewModelType.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1470,6 +1473,7 @@
 				044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */,
 				0490DABE299573FC000BBF73 /* CoinHistoryItemViewModel.swift in Sources */,
 				0490DA5229940CC9000BBF73 /* APIUrls.swift in Sources */,
+				04A678A1299648EA006E29C1 /* ViewModelType.swift in Sources */,
 				049960F52982A068000EE539 /* SeetubeSearchBar.swift in Sources */,
 				046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */,
 				0490DA9C29952D98000BBF73 /* DefaultReviewerHomeRepository.swift in Sources */,
