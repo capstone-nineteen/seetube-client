@@ -147,9 +147,11 @@
 		049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F584C29784FFD002EC2F7 /* ReceiptView.swift */; };
 		049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F584E29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift */; };
 		049F585129786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F584F29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib */; };
+		04A6789F299648A9006E29C1 /* ReviewerHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6789E299648A9006E29C1 /* ReviewerHomeViewModel.swift */; };
 		04A678A1299648EA006E29C1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A678A0299648EA006E29C1 /* ViewModelType.swift */; };
 		04A678A329964A08006E29C1 /* FetchReviewerHomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A678A229964A08006E29C1 /* FetchReviewerHomeUseCase.swift */; };
 		04A678A729964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A678A629964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift */; };
+		04A678A929968645006E29C1 /* ReviewerHomeSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A678A829968645006E29C1 /* ReviewerHomeSectionViewModel.swift */; };
 		04A94F062978129200BF5F4B /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A94F052978129200BF5F4B /* MyPageViewController.swift */; };
 		04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A94F0A2978318B00BF5F4B /* CoinHistoryTableViewCell.swift */; };
 		04A94F132978495700BF5F4B /* ReceiptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A94F122978495700BF5F4B /* ReceiptView.xib */; };
@@ -312,6 +314,7 @@
 		04A678A0299648EA006E29C1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		04A678A229964A08006E29C1 /* FetchReviewerHomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchReviewerHomeUseCase.swift; sourceTree = "<group>"; };
 		04A678A629964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchReviewerHomeUseCase.swift; sourceTree = "<group>"; };
+		04A678A829968645006E29C1 /* ReviewerHomeSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeSectionViewModel.swift; sourceTree = "<group>"; };
 		04A94F052978129200BF5F4B /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		04A94F0A2978318B00BF5F4B /* CoinHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		04A94F122978495700BF5F4B /* ReceiptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiptView.xib; sourceTree = "<group>"; };
@@ -659,6 +662,8 @@
 		043636BA2993891900EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				04A6789E299648A9006E29C1 /* ReviewerHomeViewModel.swift */,
+				04A678A829968645006E29C1 /* ReviewerHomeSectionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -999,11 +1004,11 @@
 		0470C9BC2990E76E00D4743B /* Reviewer */ = {
 			isa = PBXGroup;
 			children = (
-				0470C9BD2990E78E00D4743B /* MyPageDTO.swift */,
+				0470C9CB2990EE8D00D4743B /* ReviewerHomeDTO.swift */,
+				0470C9C32990EA9800D4743B /* VideoListDTO.swift */,
 				0470C9BF2990E8FC00D4743B /* ShopDTO.swift */,
 				0470C9C12990EA0B00D4743B /* WithdrawInformationDTO.swift */,
-				0470C9C32990EA9800D4743B /* VideoListDTO.swift */,
-				0470C9CB2990EE8D00D4743B /* ReviewerHomeDTO.swift */,
+				0470C9BD2990E78E00D4743B /* MyPageDTO.swift */,
 			);
 			path = Reviewer;
 			sourceTree = "<group>";
@@ -1119,11 +1124,11 @@
 		0490DA5E2994CFC1000BBF73 /* Reviewer */ = {
 			isa = PBXGroup;
 			children = (
-				0490DA4D29940B7E000BBF73 /* MyPage.swift */,
+				0490DA7029950B57000BBF73 /* ReviewerHome.swift */,
+				0490DA6C29950A3A000BBF73 /* VideoList.swift */,
 				0490DA68299509CD000BBF73 /* Shop.swift */,
 				0490DA6A299509FA000BBF73 /* WithdrawInformation.swift */,
-				0490DA6C29950A3A000BBF73 /* VideoList.swift */,
-				0490DA7029950B57000BBF73 /* ReviewerHome.swift */,
+				0490DA4D29940B7E000BBF73 /* MyPage.swift */,
 			);
 			path = Reviewer;
 			sourceTree = "<group>";
@@ -1431,6 +1436,7 @@
 				04E6FC5F29893A400052496A /* Colors.swift in Sources */,
 				04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */,
 				0470C9D82990F7D400D4743B /* Emotion.swift in Sources */,
+				04A678A929968645006E29C1 /* ReviewerHomeSectionViewModel.swift in Sources */,
 				0490DA7D29950BB9000BBF73 /* HighlightResult.swift in Sources */,
 				0470727E2979B23B008D6CC0 /* VideoInfoCardTableViewController.swift in Sources */,
 				040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */,
@@ -1457,6 +1463,7 @@
 				04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */,
 				0490DA7729950B9D000BBF73 /* EmotionResult.swift in Sources */,
 				0470C9C42990EA9800D4743B /* VideoListDTO.swift in Sources */,
+				04A6789F299648A9006E29C1 /* ReviewerHomeViewModel.swift in Sources */,
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
 				049961002982DDCF000EE539 /* ReviewerVideoInfoTableViewController.swift in Sources */,
 				0470C9CC2990EE8D00D4743B /* ReviewerHomeDTO.swift in Sources */,

@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct ReviewerHomeSection {
+    let title: String
+    let videos: [VideoInfo]
+}
+
 struct ReviewerHome {
-    
+    let name: String
+    let coin: Int
+    let sections: [ReviewerHomeSection]
 }

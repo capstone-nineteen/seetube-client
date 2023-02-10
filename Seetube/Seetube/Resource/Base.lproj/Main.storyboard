@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-JJ-YQe" customClass="ReceiptView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="28" y="25.5" width="319" height="567"/>
+                                <rect key="frame" x="40.5" y="25.5" width="294" height="567"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="9999" id="HgX-Bc-Sbg"/>

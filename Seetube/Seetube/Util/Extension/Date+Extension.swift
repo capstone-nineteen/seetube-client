@@ -13,4 +13,11 @@ extension Date {
         dateFormatter.dateFormat = "yy.MM.dd"
         return dateFormatter.string(from: self)
     }
+    
+    func dday() -> Int {
+        let now = Date()
+        let difference = self.timeIntervalSince(now)
+        let days = difference / (60 * 60 * 24)
+        return Int(days)
+    }
 }

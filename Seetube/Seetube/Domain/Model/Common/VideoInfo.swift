@@ -8,5 +8,12 @@
 import Foundation
 
 struct VideoInfo {
-    
+    let title: String
+    let youtuberName: String
+    let rewardAmount: Int
+    let currentNumberOfReviewers: Int
+    let targetNumberOfReviewers: Int
+    let reviewStartDate: Date
+    let reviewEndDate: Date
+    let videoDescription: String
 }

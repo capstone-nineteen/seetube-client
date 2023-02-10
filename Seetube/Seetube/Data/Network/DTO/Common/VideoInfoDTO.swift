@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VideoInfoDTO: Decodable {
+struct VideoInfoDTO: Decodable, DomainConvertible {
     let title: String
     let youtuberName: String
     let rewardAmount: Int
@@ -16,10 +16,15 @@ struct VideoInfoDTO: Decodable {
     let reviewStartDate: Date
     let reviewEndDate: Date
     let videoDescription: String
-}
-
-extension VideoInfoDTO: DomainConvertible {
+    
     func toDomain() -> VideoInfo {
-        return VideoInfo()
+        return VideoInfo(title: self.title,
+                         youtuberName: self.youtuberName,
+                         rewardAmount: self.rewardAmount,
+                         currentNumberOfReviewers: self.currentNumberOfReviewers,
+                         targetNumberOfReviewers: self.targetNumberOfReviewers,
+                         reviewStartDate: self.reviewStartDate,
+                         reviewEndDate: self.reviewEndDate,
+                         videoDescription: self.videoDescription)
     }
 }
