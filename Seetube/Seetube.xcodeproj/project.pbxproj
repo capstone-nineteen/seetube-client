@@ -148,6 +148,8 @@
 		049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F584E29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift */; };
 		049F585129786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F584F29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib */; };
 		04A678A1299648EA006E29C1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A678A0299648EA006E29C1 /* ViewModelType.swift */; };
+		04A678A329964A08006E29C1 /* FetchReviewerHomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A678A229964A08006E29C1 /* FetchReviewerHomeUseCase.swift */; };
+		04A678A729964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A678A629964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift */; };
 		04A94F062978129200BF5F4B /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A94F052978129200BF5F4B /* MyPageViewController.swift */; };
 		04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A94F0A2978318B00BF5F4B /* CoinHistoryTableViewCell.swift */; };
 		04A94F132978495700BF5F4B /* ReceiptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A94F122978495700BF5F4B /* ReceiptView.xib */; };
@@ -306,7 +308,10 @@
 		049F584C29784FFD002EC2F7 /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
 		049F584E29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		049F584F29786546002EC2F7 /* CoinHistoryTableViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinHistoryTableViewHeaderCell.xib; sourceTree = "<group>"; };
+		04A6789E299648A9006E29C1 /* ReviewerHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeViewModel.swift; sourceTree = "<group>"; };
 		04A678A0299648EA006E29C1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		04A678A229964A08006E29C1 /* FetchReviewerHomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchReviewerHomeUseCase.swift; sourceTree = "<group>"; };
+		04A678A629964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchReviewerHomeUseCase.swift; sourceTree = "<group>"; };
 		04A94F052978129200BF5F4B /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		04A94F0A2978318B00BF5F4B /* CoinHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		04A94F122978495700BF5F4B /* ReceiptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiptView.xib; sourceTree = "<group>"; };
@@ -559,6 +564,7 @@
 			children = (
 				0490DAB329953B9E000BBF73 /* Protocol */,
 				0490DAB429953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift */,
+				04A678A629964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1203,6 +1209,7 @@
 			isa = PBXGroup;
 			children = (
 				0490DAB129953B8B000BBF73 /* FetchMyPageUseCase.swift */,
+				04A678A229964A08006E29C1 /* FetchReviewerHomeUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1435,6 +1442,7 @@
 				041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */,
 				045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */,
 				046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */,
+				04A678A329964A08006E29C1 /* FetchReviewerHomeUseCase.swift in Sources */,
 				0470C9C02990E8FC00D4743B /* ShopDTO.swift in Sources */,
 				047072782979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift in Sources */,
 				0470C9E12990FAE000D4743B /* HighlightResultDTO.swift in Sources */,
@@ -1478,6 +1486,7 @@
 				046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */,
 				0490DA9C29952D98000BBF73 /* DefaultReviewerHomeRepository.swift in Sources */,
 				044D25692983C6F0003F4071 /* ReviewProgressView.swift in Sources */,
+				04A678A729964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift in Sources */,
 				0490DA922995132F000BBF73 /* ShortsResultRepository.swift in Sources */,
 				0470C9CF2990F1D400D4743B /* YoutuberHomeDTO.swift in Sources */,
 				0470C9C82990ED3900D4743B /* VideoInfoDTO.swift in Sources */,
