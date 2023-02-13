@@ -15,5 +15,6 @@ enum Category: String, CaseIterable {
     case sports = "스포츠"
     case daily = "일상"
     case music = "음악"
+    case trip = "여행"
     case etc = "기타"
 }
