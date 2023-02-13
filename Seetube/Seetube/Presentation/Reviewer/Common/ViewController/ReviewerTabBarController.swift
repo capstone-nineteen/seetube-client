@@ -45,6 +45,10 @@ extension ReviewerTabBarController {
 
             switch childViewController {
             case let reviewerHomeViewController as ReviewerHomeViewController:
+                let repository = DefaultReviewerHomeRepository()
+                let fetchReviewerHomeUseCase = DefaultFetchReviewerHomeUseCase(repository: repository)
+                let viewModel = ReviewerHomeViewModel(fetchReviewerHomeUseCase: fetchReviewerHomeUseCase)
+                reviewerHomeViewController.viewModel = viewModel
                 break
             case let videosByCategoryViewController as VideosByCategoryViewController:
                 break
