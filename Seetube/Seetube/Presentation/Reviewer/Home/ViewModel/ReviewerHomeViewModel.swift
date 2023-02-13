@@ -19,7 +19,6 @@ class ReviewerHomeViewModel: ViewModelType {
         let home = input.viewWillAppear
             .flatMap { _ in
                 self.fetchReviewerHomeUseCase.execute()
-                    .debug()
                     .asDriver(onErrorJustReturn: ReviewerHome())
             }
         let name = home

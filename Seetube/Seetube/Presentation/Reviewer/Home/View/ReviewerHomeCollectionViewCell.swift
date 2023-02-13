@@ -25,6 +25,15 @@ class ReviewerHomeCollectionViewCell: UICollectionViewCell {
         self.configureAccessoryView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.videoInfoCardView.bind(videoTitle: "",
+                                    youtuberName: "",
+                                    date: "",
+                                    personnel: "")
+        self.priceAccessoryView.bind(price: "")
+    }
+    
     private func configureSubviews() {
         self.addSubview(self.videoInfoCardView)
         self.videoInfoCardView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,7 +53,8 @@ class ReviewerHomeCollectionViewCell: UICollectionViewCell {
         self.videoInfoCardView.bind(videoTitle: viewModel.title,
                                     youtuberName: viewModel.youtuberName,
                                     date: viewModel.remainingPeriod,
-                                    personnel: viewModel.progress)
-        self.priceAccessoryView.bind(viewModel.rewardAmount)
+                                    personnel: viewModel.progress,
+                                    thumbnailUrl: viewModel.thumbnailUrl)
+        self.priceAccessoryView.bind(price: viewModel.rewardAmount)
     }
 }

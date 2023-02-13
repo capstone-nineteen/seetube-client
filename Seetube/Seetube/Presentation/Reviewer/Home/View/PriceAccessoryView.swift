@@ -26,7 +26,7 @@ class PriceAccessoryView: UIView, NibLoadable {
         return price.drive(self.priceLabel.rx.text)
     }
 
-    func bind(_ price: String) {
+    func bind(price: String) {
         self.priceLabel.text = price
     }
 }

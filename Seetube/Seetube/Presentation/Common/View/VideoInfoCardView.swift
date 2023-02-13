@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import Kingfisher
 
 @IBDesignable
 class VideoInfoCardView: UIView, NibLoadable {
-    @IBOutlet weak var videoTitleLabel: AdaptiveFontSizeLabel!
-    @IBOutlet weak var youtuberNameTitle: AdaptiveFontSizeLabel!
-    @IBOutlet weak var dateLabel: AdaptiveFontSizeLabel!
-    @IBOutlet weak var personnelLabel: AdaptiveFontSizeLabel!
-    @IBOutlet weak var accesoryView: UIView!
+    @IBOutlet private weak var videoTitleLabel: AdaptiveFontSizeLabel!
+    @IBOutlet private weak var youtuberNameTitle: AdaptiveFontSizeLabel!
+    @IBOutlet private weak var dateLabel: AdaptiveFontSizeLabel!
+    @IBOutlet private weak var personnelLabel: AdaptiveFontSizeLabel!
+    @IBOutlet private weak var accesoryView: UIView!
+    @IBOutlet private weak var thumbnailImageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,11 +42,26 @@ class VideoInfoCardView: UIView, NibLoadable {
         videoTitle: String,
         youtuberName: String,
         date: String,
-        personnel: String
+        personnel: String,
+        thumbnailUrl: String? = nil
     ) {
         self.videoTitleLabel.text = videoTitle
         self.youtuberNameTitle.text = youtuberName
         self.dateLabel.text = date
         self.personnelLabel.text = personnel
+        
+        if let thumbnailUrl = thumbnailUrl {
+            self.thumbnailImageView.kf.indicatorType = .activity
+            self.thumbnailImageView.kf.setImage(
+                with: URL(string: thumbnailUrl),
+                options: [
+                    .cacheOriginalImage,
+                    .processor(DownsamplingImageProcessor(size: self.thumbnailImageView.bounds.size)),
+                    .scaleFactor(UIScreen.main.scale)
+                ]
+            )
+        } else {
+            self.thumbnailImageView.kf.cancelDownloadTask()
+        }
     }
 }

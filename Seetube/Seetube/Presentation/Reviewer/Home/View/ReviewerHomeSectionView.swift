@@ -8,7 +8,6 @@
 import UIKit
 import RxCocoa
 import RxSwift
-import SwiftUI
 
 class ReviewerHomeSectionView: UIView, NibLoadable {
     @IBOutlet private weak var titleLabel: UILabel!
