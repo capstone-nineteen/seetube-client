@@ -133,6 +133,7 @@
 		0490DABC29954B46000BBF73 /* RxViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DABB29954B46000BBF73 /* RxViewController */; };
 		0490DABE299573FC000BBF73 /* CoinHistoryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DABD299573FC000BBF73 /* CoinHistoryItemViewModel.swift */; };
 		04924C0E299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04924C0D299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift */; };
+		04924C11299AC268001E2045 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 04924C10299AC268001E2045 /* Kingfisher */; };
 		049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */; };
 		049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049960EC298289C0000EE539 /* PriceAccessoryView.xib */; };
 		049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EE298289D6000EE539 /* PriceAccessoryView.swift */; };
@@ -341,6 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04924C11299AC268001E2045 /* Kingfisher in Frameworks */,
 				0490DA3F29938C50000BBF73 /* RxCocoa in Frameworks */,
 				043636E129938B0700EF6458 /* RxAlamofire in Frameworks */,
 				0490DA4129938C50000BBF73 /* RxSwift in Frameworks */,
@@ -1358,6 +1360,7 @@
 				0490DA3E29938C50000BBF73 /* RxCocoa */,
 				0490DA4029938C50000BBF73 /* RxSwift */,
 				0490DABB29954B46000BBF73 /* RxViewController */,
+				04924C10299AC268001E2045 /* Kingfisher */,
 			);
 			productName = Seetube;
 			productReference = 041ECBAB296ED84C0053AC9C /* Seetube.app */;
@@ -1392,6 +1395,7 @@
 				043636DF29938B0700EF6458 /* XCRemoteSwiftPackageReference "RxAlamofire" */,
 				0490DA3D29938C50000BBF73 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				0490DABA29954B46000BBF73 /* XCRemoteSwiftPackageReference "RxViewController" */,
+				04924C0F299AC268001E2045 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 041ECBAC296ED84C0053AC9C /* Products */;
 			projectDirPath = "";
@@ -1822,6 +1826,14 @@
 				kind = branch;
 			};
 		};
+		04924C0F299AC268001E2045 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		04E6FC532988EE7C0052496A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -1852,6 +1864,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0490DABA29954B46000BBF73 /* XCRemoteSwiftPackageReference "RxViewController" */;
 			productName = RxViewController;
+		};
+		04924C10299AC268001E2045 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04924C0F299AC268001E2045 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		04E6FC542988EE7C0052496A /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
