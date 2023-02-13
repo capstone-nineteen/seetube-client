@@ -16,4 +16,7 @@ struct VideoInfo {
     let reviewStartDate: Date
     let reviewEndDate: Date
     let videoDescription: String
+    let imagePath: String
+    let videoPath: String
+    let videoId: String
 }

@@ -8,23 +8,29 @@
 import Foundation
 
 struct VideoInfoDTO: Decodable, DomainConvertible {
-    let title: String
-    let youtuberName: String
-    let rewardAmount: Int
-    let currentNumberOfReviewers: Int
-    let targetNumberOfReviewers: Int
-    let reviewStartDate: Date
-    let reviewEndDate: Date
-    let videoDescription: String
+    let videoTitle: String
+    let creator: String
+    let videoCoin: Int
+    let reviewCurrent: Int
+    let reviewGoal: Int
+    let createdAt: Date
+    let reviewDate: Date
+    let videoDetail: String
+    let imagePath: String
+    let videoPath: String
+    let videoId: String?    // FIXME: API 확인 후 옵셔널 제거
     
     func toDomain() -> VideoInfo {
-        return VideoInfo(title: self.title,
-                         youtuberName: self.youtuberName,
-                         rewardAmount: self.rewardAmount,
-                         currentNumberOfReviewers: self.currentNumberOfReviewers,
-                         targetNumberOfReviewers: self.targetNumberOfReviewers,
-                         reviewStartDate: self.reviewStartDate,
-                         reviewEndDate: self.reviewEndDate,
-                         videoDescription: self.videoDescription)
+        return VideoInfo(title: self.videoTitle,
+                         youtuberName: self.creator,
+                         rewardAmount: self.videoCoin,
+                         currentNumberOfReviewers: self.reviewCurrent,
+                         targetNumberOfReviewers: self.reviewGoal,
+                         reviewStartDate: self.createdAt,
+                         reviewEndDate: self.reviewDate,
+                         videoDescription: self.videoDetail,
+                         imagePath: self.imagePath,
+                         videoPath: self.videoPath,
+                         videoId: self.videoId ?? "id")
     }
 }
