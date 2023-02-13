@@ -39,4 +39,12 @@ class ReviewerHomeCollectionViewCell: UICollectionViewCell {
     private func configureAccessoryView() {
         self.videoInfoCardView.configureAccessoryView(self.priceAccessoryView)
     }
+    
+    func bind(_ viewModel: ReviewerHomeVideoItemViewModel) {
+        self.videoInfoCardView.bind(videoTitle: viewModel.title,
+                                    youtuberName: viewModel.youtuberName,
+                                    date: viewModel.remainingPeriod,
+                                    personnel: viewModel.progress)
+        self.priceAccessoryView.bind(viewModel.rewardAmount)
+    }
 }
