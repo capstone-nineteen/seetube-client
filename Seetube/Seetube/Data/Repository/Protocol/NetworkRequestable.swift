@@ -19,7 +19,15 @@ extension NetworkRequestable {
         NetworkService
             .request(endpoint)
             .retry(3)
-            .map { try JSONDecoder().decode(T.self, from: $0) }
+            .map {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                
+                return try decoder.decode(T.self, from: $0)
+            }
             .map { $0.toDomain() }
     }
 }
