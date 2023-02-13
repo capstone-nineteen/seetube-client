@@ -42,11 +42,11 @@ class APIEndpointFactory {
         var url: String {
             switch self {
             case .getVideoInfo: return ""
-            case .getReviewerHome: return ""
+            case .getReviewerHome: return APIUrls.reviewerHome
             case .getVideosBySearchKeyword: return ""
             case .getVideosByCategory: return ""
             case .getShop: return ""
-            case .getMyPage: return ""
+            case .getMyPage: return APIUrls.myPage
             case .getYoutuberHome: return ""
             case .getConcentrationResult: return ""
             case .getEmotionResult: return ""

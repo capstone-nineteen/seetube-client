@@ -8,7 +8,9 @@
 import Foundation
 
 enum APIUrls {
-    private static let base = "http://3.39.99.10:8080"
+    private static let base = "http://3.39.99.10:8001"
+    private static let reviewerBase = base + "/reviewer"
     
-    static let myPage = ""
+    static let reviewerHome = reviewerBase + "/home"
+    static let myPage = reviewerBase + "/mypage"
 }
