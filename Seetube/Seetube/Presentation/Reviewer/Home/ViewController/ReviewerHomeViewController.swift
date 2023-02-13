@@ -144,8 +144,9 @@ extension ReviewerHomeViewController {
     
     private func bindScrollView() {
         self.scrollView.rx.didScroll
-            .asDriver()
-            .drive(with: self, onNext: { (owner, _) in
+            .observe(on:MainScheduler.asyncInstance)    // Reentrancy anomaly was detected 경고 해결
+            .asDriver(onErrorJustReturn: ())
+            .drive(with: self, onNext: { owner, _ in
                 let yOffset = owner.scrollView.contentOffset.y
                 // TODO: Constants Enum으로 관리
                 let maxScrollViewTop: CGFloat = 70
@@ -153,9 +154,11 @@ extension ReviewerHomeViewController {
                 let disappearRate: CGFloat = 0.05
                 
                 if yOffset < 0 {
-                    owner.scrollViewTop.constant = min(maxScrollViewTop, owner.scrollViewTop.constant - yOffset)
+                    owner.scrollViewTop.constant = min(maxScrollViewTop,
+                                                       owner.scrollViewTop.constant - yOffset)
                 } else {
-                    owner.scrollViewTop.constant = max(minScrollViewTop, owner.scrollViewTop.constant - yOffset * disappearRate)
+                    owner.scrollViewTop.constant = max(minScrollViewTop,
+                                                       owner.scrollViewTop.constant - yOffset * disappearRate)
                 }
                 owner.scrollView.layoutIfNeeded()
             })
