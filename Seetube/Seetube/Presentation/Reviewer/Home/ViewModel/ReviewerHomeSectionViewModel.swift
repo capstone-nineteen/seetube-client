@@ -25,7 +25,7 @@ class VideoItemViewModel {
 
 class ReviewerHomeSectionViewModel {
     let title: String
-    let videos: [VideoItemViewModel]
+    let videos: [ReviewerHomeVideoItemViewModel]
     
     init(with section: ReviewerHomeSection) {
         self.title = section.title

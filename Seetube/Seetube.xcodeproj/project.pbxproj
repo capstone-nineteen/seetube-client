@@ -132,6 +132,7 @@
 		0490DAB9299543B8000BBF73 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAB8299543B8000BBF73 /* Date+Extension.swift */; };
 		0490DABC29954B46000BBF73 /* RxViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DABB29954B46000BBF73 /* RxViewController */; };
 		0490DABE299573FC000BBF73 /* CoinHistoryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DABD299573FC000BBF73 /* CoinHistoryItemViewModel.swift */; };
+		04924C0E299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04924C0D299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift */; };
 		049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */; };
 		049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049960EC298289C0000EE539 /* PriceAccessoryView.xib */; };
 		049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EE298289D6000EE539 /* PriceAccessoryView.swift */; };
@@ -295,6 +296,7 @@
 		0490DAB629953F2B000BBF73 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		0490DAB8299543B8000BBF73 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		0490DABD299573FC000BBF73 /* CoinHistoryItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryItemViewModel.swift; sourceTree = "<group>"; };
+		04924C0D299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeVideoItemViewModel.swift; sourceTree = "<group>"; };
 		049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
 		049960EC298289C0000EE539 /* PriceAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceAccessoryView.xib; sourceTree = "<group>"; };
 		049960EE298289D6000EE539 /* PriceAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAccessoryView.swift; sourceTree = "<group>"; };
@@ -664,6 +666,7 @@
 			children = (
 				04A6789E299648A9006E29C1 /* ReviewerHomeViewModel.swift */,
 				04A678A829968645006E29C1 /* ReviewerHomeSectionViewModel.swift */,
+				04924C0D299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1457,6 +1460,7 @@
 				0490DA7529950B96000BBF73 /* ConcentrationResult.swift in Sources */,
 				047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */,
 				046AD1092972FCC200602F89 /* SigninButton.swift in Sources */,
+				04924C0E299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift in Sources */,
 				0470C9DD2990F96D00D4743B /* SceneStealerResultDTO.swift in Sources */,
 				0490DA8A2995129A000BBF73 /* YoutuberHomeRepository.swift in Sources */,
 				0490DA4E29940B7E000BBF73 /* MyPage.swift in Sources */,
