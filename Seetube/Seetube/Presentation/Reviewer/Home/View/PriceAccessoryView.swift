@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class PriceAccessoryView: UIView, NibLoadable {
-    @IBOutlet weak var priceLabel: AdaptiveFontSizeLabel!
+    @IBOutlet private weak var priceLabel: AdaptiveFontSizeLabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,5 +20,13 @@ class PriceAccessoryView: UIView, NibLoadable {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.loadFromNib(owner: self)
+    }
+    
+    func bind(with price: Driver<String>) -> Disposable {
+        return price.drive(self.priceLabel.rx.text)
+    }
+
+    func bind(_ price: String) {
+        self.priceLabel.text = price
     }
 }
