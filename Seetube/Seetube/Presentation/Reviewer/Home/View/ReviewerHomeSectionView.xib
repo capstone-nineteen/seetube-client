@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewerHomeSectionView" customModule="Seetube" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="sTE-Vq-nxZ" id="Mty-pk-t2j"/>
+                <outlet property="seeAllButton" destination="gXF-np-dsz" id="FpQ-T0-ZGR"/>
                 <outlet property="titleLabel" destination="iXa-YH-kIy" id="8LK-3r-Bmk"/>
             </connections>
         </placeholder>
@@ -45,9 +46,6 @@
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <imageReference key="image" image="chevron.right" catalog="system" symbolScale="small"/>
                     </state>
-                    <connections>
-                        <action selector="seeAllButtonTouched:" destination="-1" eventType="touchUpInside" id="QYS-5b-eO4"/>
-                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

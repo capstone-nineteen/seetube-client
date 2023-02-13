@@ -6,47 +6,59 @@
 //
 
 import UIKit
-
-protocol SeeAllButtonDelegate: AnyObject {
-    func seeAllButtonTouched(category: Category)
-}
+import RxCocoa
+import RxSwift
+import SwiftUI
 
 class ReviewerHomeSectionView: UIView, NibLoadable {
-    private(set) var category: Category = .all
-    private weak var delegate: SeeAllButtonDelegate?
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var collectionView: ReviewerHomeCollectionView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet fileprivate weak var seeAllButton: UIButton!
+    @IBOutlet fileprivate weak var collectionView: ReviewerHomeCollectionView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.loadFromNib(owner: self)
-        self.configureCollectionView()
+        self.registerCollectionViewCell()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.loadFromNib(owner: self)
-        self.configureCollectionView()
+        self.registerCollectionViewCell()
     }
     
-    @IBAction func seeAllButtonTouched(_ sender: UIButton) {
-        self.delegate?.seeAllButtonTouched(category: self.category)
+    func registerCollectionViewCell() {
+        self.collectionView.register(
+            ReviewerHomeCollectionViewCell.self,
+            forCellWithReuseIdentifier: ReviewerHomeCollectionViewCell.cellReuseIdentifier
+        )
     }
     
-    private func configureCollectionView() {
-        self.collectionView.register(ReviewerHomeCollectionViewCell.self, forCellWithReuseIdentifier: ReviewerHomeCollectionViewCell.cellReuseIdentifier)
+    func bind(with viewModel: Driver<ReviewerHomeSectionViewModel>) -> Cancelable {
+        return Disposables.create(
+            viewModel
+                .map { $0.title }
+                .drive(self.titleLabel.rx.text),
+            viewModel
+                .map { $0.videos }
+                .drive(
+                    self.collectionView.rx.items(
+                        cellIdentifier: ReviewerHomeCollectionViewCell.cellReuseIdentifier,
+                        cellType: ReviewerHomeCollectionViewCell.self
+                    )
+                ) { row, viewModel, cell in
+                    cell.bind(viewModel)
+                }
+        )
+    }
+}
+
+extension Reactive where Base: ReviewerHomeSectionView {
+    var collectionViewItemSelected: ControlEvent<IndexPath> {
+        return base.collectionView.rx.itemSelected
     }
     
-    func configureDelegate(_ delegate: SeeAllButtonDelegate & UICollectionViewDelegate & UICollectionViewDataSource) {
-        self.delegate = delegate
-        self.collectionView.delegate = delegate
-        self.collectionView.dataSource = delegate
-    }
-    
-    func configureCategory(_ category: Category) {
-        self.collectionView.configureCategory(category)
-        self.category = category
-        self.titleLabel.text = (category == .all) ? "새로운 영상": category.rawValue
+    var seeAllButtonTouched: ControlEvent<Void> {
+        return base.seeAllButton.rx.tap
     }
 }
