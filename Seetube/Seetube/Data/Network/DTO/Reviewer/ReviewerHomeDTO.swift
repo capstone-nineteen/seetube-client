@@ -12,7 +12,8 @@ struct ReviewerHomeSectionDTO: Decodable, DomainConvertible {
     let videos: [VideoInfoDTO]
     
     func toDomain() -> ReviewerHomeSection {
-        return ReviewerHomeSection(title: self.title,
+        let category = Category(rawValue: title) ?? .all
+        return ReviewerHomeSection(category: category,
                                    videos: self.videos.map{ $0.toDomain() })
     }
 }
