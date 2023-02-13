@@ -14,7 +14,7 @@
                 <outlet property="accesoryView" destination="4Dg-7m-B5G" id="NHC-th-HZ2"/>
                 <outlet property="dateLabel" destination="qMa-Jr-9Ab" id="uUR-Bc-oXO"/>
                 <outlet property="personnelLabel" destination="2oz-7A-aqi" id="QhQ-3c-Q8L"/>
-                <outlet property="videoTitleLabel" destination="qVL-S8-9lN" id="Jp6-eb-PJa"/>
+                <outlet property="videoTitleLabel" destination="Z2R-kd-eMz" id="MyA-ct-02F"/>
                 <outlet property="youtuberNameTitle" destination="qVL-S8-9lN" id="AZ6-Zn-gAN"/>
             </connections>
         </placeholder>
@@ -37,19 +37,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유튜버 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVL-S8-9lN" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                            <rect key="frame" x="8.6666666666666643" y="23.666666666666657" width="40" height="12.333333333333336"/>
+                            <rect key="frame" x="8.6666666666666679" y="23.666666666666657" width="46.333333333333329" height="12.333333333333336"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" name="AccentColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🕔 남은 기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMa-Jr-9Ab" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                            <rect key="frame" x="8.6666666666666679" y="41.666666666666657" width="60.333333333333329" height="15.666666666666664"/>
+                            <rect key="frame" x="8.6666666666666643" y="41.666666666666657" width="65.333333333333343" height="15.666666666666664"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👤 00명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oz-7A-aqi" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                            <rect key="frame" x="79" y="41.666666666666657" width="42.666666666666657" height="15.666666666666664"/>
+                            <rect key="frame" x="84" y="41.666666666666657" width="46" height="15.666666666666664"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

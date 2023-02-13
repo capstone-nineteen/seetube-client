@@ -35,4 +35,16 @@ class VideoInfoCardView: UIView, NibLoadable {
             view.trailingAnchor.constraint(equalTo: self.accesoryView.trailingAnchor)
         ])
     }
+    
+    func bind(
+        videoTitle: String,
+        youtuberName: String,
+        date: String,
+        personnel: String
+    ) {
+        self.videoTitleLabel.text = videoTitle
+        self.youtuberNameTitle.text = youtuberName
+        self.dateLabel.text = date
+        self.personnelLabel.text = personnel
+    }
 }
