@@ -12,7 +12,7 @@ import RxSwift
 class ReviewerHomeSectionView: UIView, NibLoadable {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var seeAllButton: UIButton!
-    @IBOutlet fileprivate weak var collectionView: ReviewerHomeCollectionView!
+    @IBOutlet fileprivate weak var collectionView: UICollectionView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

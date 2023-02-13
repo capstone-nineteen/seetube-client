@@ -45,7 +45,6 @@
 		044D257E2984243A003F4071 /* ReviewerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D257D2984243A003F4071 /* ReviewerHomeViewController.swift */; };
 		044D258229843403003F4071 /* ReviewerHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258129843403003F4071 /* ReviewerHomeCollectionViewCell.swift */; };
 		044D258C29878BD0003F4071 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258B29878BD0003F4071 /* Category.swift */; };
-		044D258E29878E7C003F4071 /* ReviewerHomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258D29878E7B003F4071 /* ReviewerHomeCollectionView.swift */; };
 		044D259429879F6A003F4071 /* ReviewerHomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D259329879F6A003F4071 /* ReviewerHomeSectionView.swift */; };
 		044D259629879F77003F4071 /* ReviewerHomeSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D259529879F77003F4071 /* ReviewerHomeSectionView.xib */; };
 		045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56452976B54400E47C77 /* UnderLineTextField.swift */; };
@@ -213,7 +212,6 @@
 		044D257D2984243A003F4071 /* ReviewerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeViewController.swift; sourceTree = "<group>"; };
 		044D258129843403003F4071 /* ReviewerHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		044D258B29878BD0003F4071 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		044D258D29878E7B003F4071 /* ReviewerHomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeCollectionView.swift; sourceTree = "<group>"; };
 		044D259329879F6A003F4071 /* ReviewerHomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeSectionView.swift; sourceTree = "<group>"; };
 		044D259529879F77003F4071 /* ReviewerHomeSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewerHomeSectionView.xib; sourceTree = "<group>"; };
 		045E56452976B54400E47C77 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
@@ -1242,7 +1240,6 @@
 				049960F42982A068000EE539 /* SeetubeSearchBar.swift */,
 				049960F82982BA57000EE539 /* SeetubeSearchBarView.swift */,
 				044D258129843403003F4071 /* ReviewerHomeCollectionViewCell.swift */,
-				044D258D29878E7B003F4071 /* ReviewerHomeCollectionView.swift */,
 				044D259529879F77003F4071 /* ReviewerHomeSectionView.xib */,
 				044D259329879F6A003F4071 /* ReviewerHomeSectionView.swift */,
 			);
@@ -1489,7 +1486,6 @@
 				0490DA572994C2A1000BBF73 /* MyPageRepository.swift in Sources */,
 				044D257C298401AE003F4071 /* YoutuberVideoDetailView.swift in Sources */,
 				0490DA7329950B89000BBF73 /* YoutuberHome.swift in Sources */,
-				044D258E29878E7C003F4071 /* ReviewerHomeCollectionView.swift in Sources */,
 				0470C9D62990F76600D4743B /* EmotionResultDTO.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
 				04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */,
