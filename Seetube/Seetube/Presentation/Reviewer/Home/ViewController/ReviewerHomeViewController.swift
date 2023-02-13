@@ -6,47 +6,182 @@
 //
 
 import UIKit
+import RxSwift
+import RxViewController
+import RxCocoa
 
 class ReviewerHomeViewController: UIViewController, KeyboardDismissible, ViewControllerPushable {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var coinAccessoryView: PriceAccessoryView!
     @IBOutlet weak var searchBarView: SeetubeSearchBarView!
     @IBOutlet var sectionViews: [ReviewerHomeSectionView]!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollViewTop: NSLayoutConstraint!
     var coverView = UIView()
     
-    private var categories: [Category] = [.all, .beauty, .entertainment, .game]
-    private var numberOfVideos: [Category: Int] = [.all:6, .beauty:3, .entertainment:7, .game:10]
+    var viewModel: ReviewerHomeViewModel?
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.enableKeyboardDismissing()
         self.configureSearchBar()
-        self.configureCollectionView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
+        self.bindViewModel()
+        self.bindUIEvents()
     }
 }
+
+// MARK: - Configuration
 
 extension ReviewerHomeViewController {
     private func configureSearchBar() {
         self.searchBarView.configureSearchBarDelegate(self)
     }
+}
+
+// MARK: - ViewModel Binding
+
+extension ReviewerHomeViewController {
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        let viewWillAppear = self.viewWillAppearEvent()
+        let seeAllButtonTouched = self.seeAllButtonTouchedEvent()
+        let itemSelected = self.itemSelectedEvent()
+
+        let input = ReviewerHomeViewModel.Input(viewWillAppear: viewWillAppear,
+                                                seeAllButtonTouched: seeAllButtonTouched,
+                                                itemSelected: itemSelected)
+        let output = viewModel.transform(input: input)
+        
+        self.bindName(output.name)
+        self.bindCoin(output.coin)
+        self.bindSections(output.sections)
+        self.bindSelectedSection(output.selectedSection)
+        self.bindSelectedVideoId(output.selectedVideoId)
+    }
     
-    private func configureCollectionView() {
-        self.sectionViews.enumerated().forEach { (index, sectionView) in
-            sectionView.configureDelegate(self)
-            sectionView.configureCategory(self.categories[index])
-        }
+    // MARK: Input Creation
+    
+    private func viewWillAppearEvent() -> Driver<Bool> {
+        return self.rx.viewWillAppear.asDriver()
+    }
+    
+    private func seeAllButtonTouchedEvent() -> Driver<Int> {
+        return Driver.merge(
+            self.sectionViews
+                .enumerated()
+                .map { index, sectionView in
+                    sectionView.rx.seeAllButtonTouched
+                        .asDriver()
+                        .map { index }
+                }
+        )
+    }
+    
+    private func itemSelectedEvent() -> Driver<IndexPath> {
+        return Driver.merge(
+            self.sectionViews
+                .enumerated()
+                .map { index, sectionView in
+                    sectionView.rx.collectionViewItemSelected
+                        .asDriver()
+                        .map { IndexPath(row: $0.row, section: index) }
+                }
+        )
+    }
+    
+    // MARK: Output Binding
+    
+    private func bindName(_ name: Driver<String>) {
+        name
+            .drive(self.nameLabel.rx.text)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindCoin(_ coin: Driver<String>) {
+        self.coinAccessoryView
+            .bind(with: coin)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindSections(_ sections: Driver<[ReviewerHomeSectionViewModel]>) {
+        self.sectionViews
+            .enumerated()
+            .forEach { [weak self] index, sectionView in
+                guard let self = self else { return }
+                sectionView
+                    .bind(with: sections.map { $0[index] })
+                    .disposed(by: self.disposeBag)
+            }
+    }
+    
+    private func bindSelectedSection(_ selectedSection: Driver<Category>) {
+        selectedSection
+            .drive(with: self) { owner, selectedSection in
+                self.moveToCategoryTab(category: selectedSection)
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindSelectedVideoId(_ selectedVideoId: Driver<String>) {
+        selectedVideoId
+            .drive(with: self) { owner, selectedVideoId in
+                self.moveToVideoDetail(videoId: selectedVideoId)
+            }
+            .disposed(by: self.disposeBag)
     }
 }
+
+// MARK: - UI Events Binding
+
+extension ReviewerHomeViewController {
+    private func bindUIEvents() {
+        self.bindScrollView()
+        self.bindViewWillAppear()
+        self.bindViewWillDisappear()
+    }
+    
+    private func bindScrollView() {
+        self.scrollView.rx.didScroll
+            .asDriver()
+            .drive(with: self, onNext: { (owner, _) in
+                let yOffset = owner.scrollView.contentOffset.y
+                // TODO: Constants Enum으로 관리
+                let maxScrollViewTop: CGFloat = 70
+                let minScrollViewTop: CGFloat = 15
+                let disappearRate: CGFloat = 0.05
+                
+                if yOffset < 0 {
+                    owner.scrollViewTop.constant = min(maxScrollViewTop, owner.scrollViewTop.constant - yOffset)
+                } else {
+                    owner.scrollViewTop.constant = max(minScrollViewTop, owner.scrollViewTop.constant - yOffset * disappearRate)
+                }
+                owner.scrollView.layoutIfNeeded()
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindViewWillAppear() {
+        self.rx.viewWillAppear
+            .asDriver()
+            .drive(with: self, onNext: { owner, _ in
+                owner.navigationController?.isNavigationBarHidden = true
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindViewWillDisappear() {
+        self.rx.viewWillDisappear
+            .asDriver()
+            .drive(with: self, onNext: { owner, _ in
+                owner.navigationController?.isNavigationBarHidden = false
+            })
+            .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: - Seacrh Bar Delegate
 
 extension ReviewerHomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -63,31 +198,16 @@ extension ReviewerHomeViewController: UISearchBarDelegate {
     }
 }
 
-extension ReviewerHomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let reviewerHomeCollectionView = collectionView as? ReviewerHomeCollectionView,
-              let numberOfVideos = numberOfVideos[reviewerHomeCollectionView.category] else { return 0 }
-        print(numberOfVideos)
-        return numberOfVideos
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+// MARK: - Scene Transition
+
+extension ReviewerHomeViewController {
+    func moveToVideoDetail(videoId: String) {
         self.push(viewControllerType: ReviewerVideoDetailViewController.self) { viewController in
             // TODO: pass video id
         }
     }
-}
-
-extension ReviewerHomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReviewerHomeCollectionViewCell.cellReuseIdentifier, for: indexPath) as? ReviewerHomeCollectionViewCell else { return UICollectionViewCell() }
-        // TODO: configure
-        return cell
-    }
-}
-
-extension ReviewerHomeViewController: SeeAllButtonDelegate {
-    func seeAllButtonTouched(category: Category) {
+    
+    func moveToCategoryTab(category: Category) {
         guard let tabBarController = self.navigationController?.tabBarController,
               let categoryNavigationController = tabBarController.viewControllers?[1] as? UINavigationController,
               let categoryViewController = categoryNavigationController.topViewController as? VideosByCategoryViewController else { return }
@@ -95,21 +215,5 @@ extension ReviewerHomeViewController: SeeAllButtonDelegate {
         let _ = categoryViewController.view // CategoryViewController 강제 로드
         categoryViewController.selectCategory(category)
         tabBarController.selectedIndex = 1
-    }
-}
-
-extension ReviewerHomeViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let yOffset = scrollView.contentOffset.y
-        let maxScrollViewTop: CGFloat = 70
-        let minScrollViewTop: CGFloat = 15
-        let disappearRate: CGFloat = 0.05
-        
-        if yOffset < 0 {
-            self.scrollViewTop.constant = min(maxScrollViewTop, self.scrollViewTop.constant - yOffset)
-        } else {
-            self.scrollViewTop.constant = max(minScrollViewTop, self.scrollViewTop.constant - yOffset * disappearRate)
-        }
-        self.scrollView.layoutIfNeeded()
     }
 }
