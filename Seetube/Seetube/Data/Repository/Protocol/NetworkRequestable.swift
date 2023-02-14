@@ -18,6 +18,8 @@ extension NetworkRequestable {
     func getResource<T: DTO>(endpoint: APIEndpoint, decodingType: T.Type) -> Observable<T.DomainModel> {
         NetworkService
             .request(endpoint)
+            .timeout(DispatchTimeInterval.seconds(3),
+                     scheduler: ConcurrentDispatchQueueScheduler(qos: .background))
             .retry(3)
             .map {
                 let dateFormatter = DateFormatter()
