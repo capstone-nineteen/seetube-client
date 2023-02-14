@@ -20,6 +20,7 @@ class SearchResultViewController: UIViewController, KeyboardDismissible {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureUI()
+        self.bindViewModel()
     }
 }
 
