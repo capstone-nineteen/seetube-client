@@ -12,5 +12,6 @@ enum APIUrls {
     private static let reviewerBase = base + "/reviewer"
     
     static let reviewerHome = reviewerBase + "/home"
+    static let getVideosBySearchKeyword = reviewerBase + "/search"
     static let myPage = reviewerBase + "/mypage"
 }

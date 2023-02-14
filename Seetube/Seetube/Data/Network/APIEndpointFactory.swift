@@ -43,7 +43,7 @@ class APIEndpointFactory {
             switch self {
             case .getVideoInfo: return ""
             case .getReviewerHome: return APIUrls.reviewerHome
-            case .getVideosBySearchKeyword: return ""
+            case .getVideosBySearchKeyword: return APIUrls.getVideosBySearchKeyword
             case .getVideosByCategory: return ""
             case .getShop: return ""
             case .getMyPage: return APIUrls.myPage
@@ -55,28 +55,14 @@ class APIEndpointFactory {
             case .getHighlightResult: return ""
             }
         }
-        
-        var parameters: [String: Any]? {
-            switch self {
-            case .getVideoInfo: return nil
-            case .getReviewerHome: return nil
-            case .getVideosBySearchKeyword: return nil
-            case .getVideosByCategory: return nil
-            case .getShop: return nil
-            case .getMyPage: return nil
-            case .getYoutuberHome: return nil
-            case .getConcentrationResult: return nil
-            case .getEmotionResult: return nil
-            case .getSceneStealerResult: return nil
-            case .getShortsResult: return nil
-            case .getHighlightResult: return nil
-            }
-        }
     }
     
-    static func makeEndpoint(for type: EndpointType) -> APIEndpoint {
+    static func makeEndpoint(
+        for type: EndpointType,
+        parameters: [String: Any]? = nil
+    ) -> APIEndpoint {
         return APIEndpoint(method: type.method,
-                        url: type.url,
-                        parameters: type.parameters)
+                           url: type.url,
+                           parameters: parameters)
     }
 }
