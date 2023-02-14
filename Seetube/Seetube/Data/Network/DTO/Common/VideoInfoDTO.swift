@@ -8,6 +8,7 @@
 import Foundation
 
 struct VideoInfoDTO: Decodable, DomainConvertible {
+    let id: String
     let videoTitle: String
     let creator: String
     let videoCoin: Int
@@ -18,7 +19,7 @@ struct VideoInfoDTO: Decodable, DomainConvertible {
     let videoDetail: String
     let imagePath: String
     let videoPath: String
-    let videoId: String?    // FIXME: API 확인 후 옵셔널 제거
+    let isReviewerReviewed: Bool?
     
     func toDomain() -> VideoInfo {
         return VideoInfo(title: self.videoTitle,
@@ -31,6 +32,6 @@ struct VideoInfoDTO: Decodable, DomainConvertible {
                          videoDescription: self.videoDetail,
                          imagePath: self.imagePath,
                          videoPath: self.videoPath,
-                         videoId: self.videoId ?? "id")
+                         videoId: self.id)
     }
 }
