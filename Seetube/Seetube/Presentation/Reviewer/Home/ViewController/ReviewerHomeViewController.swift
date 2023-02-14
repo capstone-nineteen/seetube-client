@@ -10,7 +10,7 @@ import RxSwift
 import RxViewController
 import RxCocoa
 
-class ReviewerHomeViewController: UIViewController, KeyboardDismissible, ViewControllerPushable, UISearchBarDelegate {
+class ReviewerHomeViewController: UIViewController, KeyboardDismissible, ViewControllerPushable {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var coinAccessoryView: PriceAccessoryView!
     @IBOutlet weak var searchBarView: SeetubeSearchBarView!
