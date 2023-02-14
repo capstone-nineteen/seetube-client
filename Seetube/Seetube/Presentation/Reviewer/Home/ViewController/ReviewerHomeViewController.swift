@@ -220,6 +220,11 @@ extension ReviewerHomeViewController {
         self.push(
             viewControllerType: SearchResultViewController.self
         ) { viewController in
+            // TODO: Extension으로 빼기
+            let repository = DefaultReviewerHomeRepository()
+            let searchUseCase = DefaultSearchUseCase(repository: repository)
+            let viewModel = SearchResultViewModel(searchUseCase: searchUseCase)
+            viewController.viewModel = viewModel
             viewController.searchKeyword = searchKeyword
         }
     }
