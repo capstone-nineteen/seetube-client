@@ -72,4 +72,8 @@ extension Reactive where Base: SeetubeSearchBarView {
     var searchButtonClicked: ControlEvent<Void> {
         return base.searchBar.rx.searchButtonClicked
     }
+    
+    var searchKeyword: ControlProperty<String?> {
+        return base.searchBar.rx.text
+    }
 }
