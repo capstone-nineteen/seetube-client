@@ -587,6 +587,7 @@
 		043636AE299387C200EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				04A678A0299648EA006E29C1 /* ViewModelType.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -646,7 +647,6 @@
 		043636B8299388FC00EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				04A678A0299648EA006E29C1 /* ViewModelType.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
