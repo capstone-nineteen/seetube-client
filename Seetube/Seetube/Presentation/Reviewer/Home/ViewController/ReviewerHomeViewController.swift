@@ -10,7 +10,7 @@ import RxSwift
 import RxViewController
 import RxCocoa
 
-class ReviewerHomeViewController: UIViewController, KeyboardDismissible, ViewControllerPushable {
+class ReviewerHomeViewController: UIViewController, KeyboardDismissible, ViewControllerPushable, UISearchBarDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var coinAccessoryView: PriceAccessoryView!
     @IBOutlet weak var searchBarView: SeetubeSearchBarView!
@@ -40,11 +40,19 @@ extension ReviewerHomeViewController {
     }
     
     private func configureSearchBar() {
-        self.searchBarView.configureSearchBarDelegate(self)
+        self.searchBarView.rx.searchButtonClicked
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.searchBarView.dismissKeyboard()
+                if let searchKeyword = obj.searchBarView.searchKeyword {
+                    obj.moveToSearchResult(searchKeyword: searchKeyword)
+                }
+            }
+            .disposed(by: self.disposeBag)
     }
     
     private func configureScrollView() {
-        self.scrollView.rx.didScroll
+        self.scrollView.rx.didScroll    // TODO: contentOffset으로 변경.?
             .observe(on:MainScheduler.asyncInstance)    // Reentrancy anomaly was detected 경고 해결
             .asDriver(onErrorJustReturn: ())
             .drive(with: self, onNext: { owner, _ in
@@ -177,39 +185,34 @@ extension ReviewerHomeViewController {
     }
 }
 
-// MARK: - Seacrh Bar Delegate
-
-extension ReviewerHomeViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        if let searchKeyword = searchBar.text {
-            self.moveToSearchResult(searchKeyword: searchKeyword)
-        }
-    }
-    
-    func moveToSearchResult(searchKeyword: String?) {
-        self.push(viewControllerType: SearchResultViewController.self) { viewController in
-            viewController.searchKeyword = searchKeyword
-        }
-    }
-}
-
 // MARK: - Scene Transition
 
 extension ReviewerHomeViewController {
     func moveToVideoDetail(videoId: String) {
-        self.push(viewControllerType: ReviewerVideoDetailViewController.self) { viewController in
+        self.push(
+            viewControllerType: ReviewerVideoDetailViewController.self
+        ) { viewController in
             // TODO: pass video id
         }
     }
     
     func moveToCategoryTab(category: Category) {
         guard let tabBarController = self.navigationController?.tabBarController,
-              let categoryNavigationController = tabBarController.viewControllers?[1] as? UINavigationController,
-              let categoryViewController = categoryNavigationController.topViewController as? VideosByCategoryViewController else { return }
+              let categoryNavigationController = tabBarController.viewControllers?[1]
+                as? UINavigationController,
+              let categoryViewController = categoryNavigationController.topViewController
+                as? VideosByCategoryViewController else { return }
         
         let _ = categoryViewController.view // CategoryViewController 강제 로드
         categoryViewController.selectCategory(category)
         tabBarController.selectedIndex = 1
+    }
+    
+    func moveToSearchResult(searchKeyword: String?) {
+        self.push(
+            viewControllerType: SearchResultViewController.self
+        ) { viewController in
+            viewController.searchKeyword = searchKeyword
+        }
     }
 }

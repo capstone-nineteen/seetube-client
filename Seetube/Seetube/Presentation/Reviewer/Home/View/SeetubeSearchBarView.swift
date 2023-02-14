@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 @IBDesignable
 class SeetubeSearchBarView: UIView {
-    private lazy var searchBar: SeetubeSearchBar = {
+    fileprivate lazy var searchBar: SeetubeSearchBar = {
         let searchBar = SeetubeSearchBar()
         return searchBar
     }()
+    
+    var searchKeyword: String? {
+        self.searchBar.text
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,5 +56,15 @@ class SeetubeSearchBarView: UIView {
     
     func updateSearchBarText(with text: String?) {
         self.searchBar.text = text
+    }
+    
+    func dismissKeyboard() {
+        self.searchBar.resignFirstResponder()
+    }
+}
+
+extension Reactive where Base: SeetubeSearchBarView {
+    var searchButtonClicked: ControlEvent<Void> {
+        return base.searchBar.rx.searchButtonClicked
     }
 }
