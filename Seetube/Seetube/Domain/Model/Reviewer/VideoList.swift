@@ -8,5 +8,9 @@
 import Foundation
 
 struct VideoList {
+    let videos: [VideoInfo]
     
+    init(videos: [VideoInfo] = []) {
+        self.videos = videos
+    }
 }
