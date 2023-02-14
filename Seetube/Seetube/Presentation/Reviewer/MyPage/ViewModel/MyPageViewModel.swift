@@ -20,26 +20,19 @@ class MyPageViewModel: ViewModelType {
         let myPage = input.viewWillAppear
             .flatMap { _ in
                 self.fetchMyPageUseCase.execute()
-                    .asDriver(onErrorJustReturn:
-                        MyPage(name: "아무개",
-                               coin: 12345,
-                               coinHistories: [CoinHistory(date: Date(timeIntervalSinceNow: .zero),
-                                                           content: "실패",
-                                                           type: .earn,
-                                                           amount: 99999),
-                                               CoinHistory(date: Date(timeIntervalSinceNow: .zero),
-                                                                           content: "실패",
-                                                                           type: .use,
-                                                                           amount: 12345)]
-                        )
-                    )
+                    .asDriver(onErrorJustReturn: MyPage())
             }
         
-        let name = myPage.map { "\($0.name)님" }
-        let coin = myPage.map { $0.coin.toFormattedString() }
-        let coinHistories = myPage.map { myPage in
-            myPage.coinHistories.map { CoinHistoryItemViewModel(with: $0) }
-        }
+        let name = myPage
+            .map { "\($0.name)님" }
+        let coin = myPage
+            .map { $0.coin.toFormattedString() }
+        let coinHistories = myPage
+            .map {
+                $0.coinHistories.map { coinHistory in
+                    return CoinHistoryItemViewModel(with: coinHistory)
+                }
+            }
         
         return Output(name: name,
                       coin: coin,

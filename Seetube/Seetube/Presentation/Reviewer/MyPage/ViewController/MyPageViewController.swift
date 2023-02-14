@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxViewController
+import RxCocoa
 
 class MyPageViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
@@ -20,14 +21,15 @@ class MyPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureViews()
-        self.bind()
+        self.configureUI()
+        self.bindViewModel()
     }
 }
 
 // MARK: - Configuration
+
 extension MyPageViewController {
-    private func configureViews() {
+    private func configureUI() {
         self.configureBackgroundView()
         self.configureTableView()
     }
@@ -40,7 +42,10 @@ extension MyPageViewController {
         if #available(iOS 15.0, *) {
             self.tableView.sectionHeaderTopPadding = 0.0
         } else {
-            self.tableView.contentInset = UIEdgeInsets(top: -35, left: 0, bottom: 0, right: 0)
+            self.tableView.contentInset = UIEdgeInsets(top: -35,
+                                                       left: 0,
+                                                       bottom: 0,
+                                                       right: 0)
         }
         
         self.tableView.register(
@@ -50,24 +55,49 @@ extension MyPageViewController {
     }
 }
 
-// MARK: - Binding
+// MARK: - ViewModel Binding
+
 extension MyPageViewController {
-    private func bind() {
+    private func bindViewModel() {
         guard let viewModel = self.viewModel else { return }
         
-        let input = MyPageViewModel.Input(viewWillAppear: self.rx.viewWillAppear.asDriver())
+        let viewWillAppear = self.viewWillAppearEvent()
+        
+        let input = MyPageViewModel.Input(viewWillAppear: viewWillAppear)
         let output = viewModel.transform(input: input)
         
-        output.name
+        self.bindName(output.name)
+        self.bindCoin(output.coin)
+        self.bindCoinHistories(output.coinHistories)
+    }
+    
+    // MARK: Input Creation
+    
+    private func viewWillAppearEvent() -> Driver<Bool> {
+        return self.rx.viewWillAppear.asDriver()
+    }
+    
+    // MARK: Output Binding
+    
+    private func bindName(_ name: Driver<String>) {
+        name
             .drive(self.nameLabel.rx.text)
             .disposed(by: self.disposeBag)
-        output.coin
+    }
+    
+    private func bindCoin(_ coin: Driver<String>) {
+        coin
             .drive(self.coinLabel.rx.text)
             .disposed(by: self.disposeBag)
-        output.coinHistories
+    }
+    
+    private func bindCoinHistories(_ coinHistories: Driver<[CoinHistoryItemViewModel]>) {
+        coinHistories
             .drive(
-                self.tableView.rx.items(cellIdentifier: CoinHistoryTableViewCell.cellReuseIdentifier,
-                                        cellType: CoinHistoryTableViewCell.self)
+                self.tableView.rx.items(
+                    cellIdentifier: CoinHistoryTableViewCell.cellReuseIdentifier,
+                    cellType: CoinHistoryTableViewCell.self
+                )
             ) { row, viewModel, cell in
                 cell.bind(viewModel)
             }
@@ -76,6 +106,7 @@ extension MyPageViewController {
 }
 
 // MARK: - UITableViewDelegate
+
 extension MyPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         CoinHistoryTableViewHeaderCell.height
