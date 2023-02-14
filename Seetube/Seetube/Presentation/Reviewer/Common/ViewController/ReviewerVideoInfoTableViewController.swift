@@ -9,7 +9,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class ReviewerVideoInfoTableViewController: VideoInfoCardTableViewController, ViewControllerPushable {
+class ReviewerVideoInfoTableViewController: VideoInfoCardTableViewController {
     var viewModels = [ReviewerVideoCardItemViewModel]()
     
     override func viewDidLoad() {
@@ -31,31 +31,19 @@ class ReviewerVideoInfoTableViewController: VideoInfoCardTableViewController, Vi
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewerVideoInfoTableViewCell.cellReuseIdentifier, for: indexPath) as? ReviewerVideoInfoTableViewCell else { return UITableViewCell() }
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: 비디오 id 전달
-        // parent에서 moveTo VideoDetail? 모델이 parent에 있어서..
-        self.moveToVideoDetail()
-    }
 }
 
 // MARK: - Reactive Extension
 
 extension Reactive where Base: ReviewerVideoInfoTableViewController {
-    var shouldReload: ControlProperty<[ReviewerVideoCardItemViewModel]> {
-        let source = PublishRelay<[ReviewerVideoCardItemViewModel]>()
-        let binder = Binder(base) { (base, viewModels) in
+    var viewModels: Binder<[ReviewerVideoCardItemViewModel]> {
+        return Binder(base) { (base, viewModels) in
             base.viewModels = viewModels
             base.tableView.reloadData()
         }
-        return ControlProperty(values: source, valueSink: binder)
     }
-}
-
-// MARK: - Scene Trasition
-
-extension ReviewerVideoInfoTableViewController {
-    private func moveToVideoDetail() {
-        self.push(viewControllerType: ReviewerVideoDetailViewController.self)
+    
+    var itemSelected: ControlEvent<IndexPath> {
+        return base.tableView.rx.itemSelected
     }
 }

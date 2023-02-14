@@ -11,6 +11,9 @@ import RxSwift
 
 class SearchResultViewController: UIViewController, KeyboardDismissible {
     @IBOutlet weak var searchBarView: SeetubeSearchBarView!
+    private var tableViewController: ReviewerVideoInfoTableViewController? {
+        self.children.first as? ReviewerVideoInfoTableViewController
+    }
     var coverView = UIView()
     
     var viewModel: SearchResultViewModel?
@@ -51,18 +54,16 @@ extension SearchResultViewController {
         let viewDidLoad = self.viewDidLoadEvent()
         let searchButtonClicked = self.searchButtonClickedEvent()
         let searchBarText = self.searchBarTextProperty()
+        let itemSelected = self.itemSelectedEvent()
         
         let input = SearchResultViewModel.Input(viewDidLoad: viewDidLoad,
                                                 searchButtonClicked: searchButtonClicked,
-                                                searchBarText: searchBarText)
+                                                searchBarText: searchBarText,
+                                                itemSelected: itemSelected)
         let output = viewModel.transform(input: input)
         
-        // 테이블 뷰컨트롤러에 전달
-        guard let tableViewController = self.children.first
-                as? ReviewerVideoInfoTableViewController else { return }
-        output.videos
-            .drive(tableViewController.rx.shouldReload)
-            .disposed(by: self.disposeBag)
+        self.bindVideos(output.videos)
+        self.bindSelectedVideoId(output.selectedVideoId)
     }
     
     // MARK: - Input Events Creation
@@ -77,5 +78,43 @@ extension SearchResultViewController {
     
     private func searchBarTextProperty() -> Driver<String?> {
         return self.searchBarView.rx.searchKeyword.asDriver()
+    }
+    
+    private func itemSelectedEvent() -> Driver<IndexPath> {
+        guard let tableViewController = self.tableViewController else {
+            return Driver<IndexPath>.just(IndexPath())
+        }
+        
+        return tableViewController.rx.itemSelected.asDriver()
+    }
+    
+    // MARK: - Output Binding
+    
+    private func bindVideos(_ videos: Driver<[ReviewerVideoCardItemViewModel]>) {
+        // 테이블 뷰컨트롤러에 전달
+        guard let tableViewController = self.children.first
+                as? ReviewerVideoInfoTableViewController else { return }
+        
+        videos
+            .drive(tableViewController.rx.viewModels)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindSelectedVideoId(_ selectedVideoId: Driver<String>) {
+        selectedVideoId
+            .drive(with: self) { obj, id in
+                obj.moveToVideoDetail(with: id)
+            }
+            .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: - Scene Trasition
+
+extension SearchResultViewController: ViewControllerPushable {
+    private func moveToVideoDetail(with id: String) {
+        self.push(viewControllerType: ReviewerVideoDetailViewController.self) { viewController in
+            // TODO: id 주입
+        }
     }
 }

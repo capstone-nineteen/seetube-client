@@ -7,9 +7,10 @@
 
 import Foundation
 import RxCocoa
+import RxSwift
 
 class SearchResultViewModel: ViewModelType {
-    private let searchUseCase :SearchUseCase
+    private let searchUseCase: SearchUseCase
     
     init(searchUseCase: SearchUseCase) {
         self.searchUseCase = searchUseCase
@@ -33,8 +34,14 @@ class SearchResultViewModel: ViewModelType {
                     ReviewerVideoCardItemViewModel(with: video)
                 }
             }
+        let selectedVideoId = input.itemSelected
+            .withLatestFrom(searchResult) { index, searchResult in
+                searchResult.videos[index.row].videoId
+            }
+            .asDriver()
         
-        return Output(videos: videos)
+        return Output(videos: videos,
+                      selectedVideoId: selectedVideoId)
     }
 }
 
@@ -43,9 +50,11 @@ extension SearchResultViewModel {
         let viewDidLoad: Driver<Void>
         let searchButtonClicked: Driver<Void>
         let searchBarText: Driver<String?>
+        let itemSelected: Driver<IndexPath>
     }
     
     struct Output {
         let videos: Driver<[ReviewerVideoCardItemViewModel]>
+        let selectedVideoId: Driver<String>
     }
 }
