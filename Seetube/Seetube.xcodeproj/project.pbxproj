@@ -324,6 +324,7 @@
 		04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
 		04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedReviewsTableViewController.swift; sourceTree = "<group>"; };
 		04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsInProgressTableViewController.swift; sourceTree = "<group>"; };
+		04B8AF08299BBB4E0024C897 /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
 		04B8AF0A299BBB8A0024C897 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
 		04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSearchUseCase.swift; sourceTree = "<group>"; };
 		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
@@ -670,6 +671,7 @@
 				04A6789E299648A9006E29C1 /* ReviewerHomeViewModel.swift */,
 				04A678A829968645006E29C1 /* ReviewerHomeSectionViewModel.swift */,
 				04924C0D299ABBFB001E2045 /* ReviewerVideoCardItemViewModel.swift */,
+				04B8AF08299BBB4E0024C897 /* SearchResultViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
