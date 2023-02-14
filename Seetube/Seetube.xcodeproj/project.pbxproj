@@ -137,7 +137,6 @@
 		049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049960EC298289C0000EE539 /* PriceAccessoryView.xib */; };
 		049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EE298289D6000EE539 /* PriceAccessoryView.swift */; };
 		049960F129828D95000EE539 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960F029828D95000EE539 /* SearchResultViewController.swift */; };
-		049960F329829C67000EE539 /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960F229829C67000EE539 /* SearchResultTableViewController.swift */; };
 		049960F52982A068000EE539 /* SeetubeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960F42982A068000EE539 /* SeetubeSearchBar.swift */; };
 		049960F92982BA57000EE539 /* SeetubeSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960F82982BA57000EE539 /* SeetubeSearchBarView.swift */; };
 		049960FC2982DC83000EE539 /* VideosByCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960FB2982DC83000EE539 /* VideosByCategoryViewController.swift */; };
@@ -160,6 +159,7 @@
 		04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */; };
 		04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */; };
 		04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */; };
+		04B8AF09299BBB4E0024C897 /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AF08299BBB4E0024C897 /* SearchResultViewModel.swift */; };
 		04B8AF0B299BBB8A0024C897 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AF0A299BBB8A0024C897 /* SearchUseCase.swift */; };
 		04B8AF0D299BBBDA0024C897 /* DefaultSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */; };
 		04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 04E6FC542988EE7C0052496A /* GoogleSignIn */; };
@@ -302,7 +302,6 @@
 		049960EC298289C0000EE539 /* PriceAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceAccessoryView.xib; sourceTree = "<group>"; };
 		049960EE298289D6000EE539 /* PriceAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAccessoryView.swift; sourceTree = "<group>"; };
 		049960F029828D95000EE539 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
-		049960F229829C67000EE539 /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
 		049960F42982A068000EE539 /* SeetubeSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeetubeSearchBar.swift; sourceTree = "<group>"; };
 		049960F82982BA57000EE539 /* SeetubeSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeetubeSearchBarView.swift; sourceTree = "<group>"; };
 		049960FB2982DC83000EE539 /* VideosByCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosByCategoryViewController.swift; sourceTree = "<group>"; };
@@ -661,7 +660,6 @@
 			children = (
 				044D257D2984243A003F4071 /* ReviewerHomeViewController.swift */,
 				049960F029828D95000EE539 /* SearchResultViewController.swift */,
-				049960F229829C67000EE539 /* SearchResultTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1507,6 +1505,7 @@
 				04A678A729964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift in Sources */,
 				0490DA922995132F000BBF73 /* ShortsResultRepository.swift in Sources */,
 				0470C9CF2990F1D400D4743B /* YoutuberHomeDTO.swift in Sources */,
+				04B8AF09299BBB4E0024C897 /* SearchResultViewModel.swift in Sources */,
 				0470C9C82990ED3900D4743B /* VideoInfoDTO.swift in Sources */,
 				04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */,
 				049961052982DFF3000EE539 /* CategoryButton.swift in Sources */,
@@ -1567,7 +1566,6 @@
 				0490DAB229953B8B000BBF73 /* FetchMyPageUseCase.swift in Sources */,
 				0490DA7F2995116C000BBF73 /* ShopRepository.swift in Sources */,
 				0470C9D42990F57200D4743B /* ConcentrationResultDTO.swift in Sources */,
-				049960F329829C67000EE539 /* SearchResultTableViewController.swift in Sources */,
 				04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */,
 				044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */,
 				0490DA8129951199000BBF73 /* VideoInfoRepository.swift in Sources */,
