@@ -10,7 +10,7 @@ import RxCocoa
 
 class ReviewerHomeSectionViewModel {
     let title: String
-    let videos: [ReviewerHomeVideoItemViewModel]
+    let videos: [ReviewerVideoCardItemViewModel]
     
     init(with section: ReviewerHomeSection) {
         if section.category == .all {
@@ -18,6 +18,6 @@ class ReviewerHomeSectionViewModel {
         } else {
             self.title = section.category.rawValue
         }
-        self.videos = section.videos.map { ReviewerHomeVideoItemViewModel(with: $0) }
+        self.videos = section.videos.map { ReviewerVideoCardItemViewModel(with: $0) }
     }
 }

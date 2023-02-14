@@ -131,7 +131,7 @@
 		0490DAB9299543B8000BBF73 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DAB8299543B8000BBF73 /* Date+Extension.swift */; };
 		0490DABC29954B46000BBF73 /* RxViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DABB29954B46000BBF73 /* RxViewController */; };
 		0490DABE299573FC000BBF73 /* CoinHistoryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DABD299573FC000BBF73 /* CoinHistoryItemViewModel.swift */; };
-		04924C0E299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04924C0D299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift */; };
+		04924C0E299ABBFB001E2045 /* ReviewerVideoCardItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04924C0D299ABBFB001E2045 /* ReviewerVideoCardItemViewModel.swift */; };
 		04924C11299AC268001E2045 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 04924C10299AC268001E2045 /* Kingfisher */; };
 		049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */; };
 		049960ED298289C0000EE539 /* PriceAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049960EC298289C0000EE539 /* PriceAccessoryView.xib */; };
@@ -160,6 +160,8 @@
 		04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */; };
 		04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */; };
 		04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */; };
+		04B8AF0B299BBB8A0024C897 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AF0A299BBB8A0024C897 /* SearchUseCase.swift */; };
+		04B8AF0D299BBBDA0024C897 /* DefaultSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */; };
 		04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 04E6FC542988EE7C0052496A /* GoogleSignIn */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
@@ -295,7 +297,7 @@
 		0490DAB629953F2B000BBF73 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		0490DAB8299543B8000BBF73 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		0490DABD299573FC000BBF73 /* CoinHistoryItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHistoryItemViewModel.swift; sourceTree = "<group>"; };
-		04924C0D299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeVideoItemViewModel.swift; sourceTree = "<group>"; };
+		04924C0D299ABBFB001E2045 /* ReviewerVideoCardItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoCardItemViewModel.swift; sourceTree = "<group>"; };
 		049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
 		049960EC298289C0000EE539 /* PriceAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceAccessoryView.xib; sourceTree = "<group>"; };
 		049960EE298289D6000EE539 /* PriceAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAccessoryView.swift; sourceTree = "<group>"; };
@@ -323,6 +325,8 @@
 		04AF39AE29795C1100BF058B /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
 		04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedReviewsTableViewController.swift; sourceTree = "<group>"; };
 		04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsInProgressTableViewController.swift; sourceTree = "<group>"; };
+		04B8AF0A299BBB8A0024C897 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
+		04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSearchUseCase.swift; sourceTree = "<group>"; };
 		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		04E6FC5E29893A400052496A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		04E6FC6029895C400052496A /* ViewControllerPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPushable.swift; sourceTree = "<group>"; };
@@ -570,6 +574,7 @@
 				0490DAB329953B9E000BBF73 /* Protocol */,
 				0490DAB429953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift */,
 				04A678A629964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift */,
+				04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -666,7 +671,7 @@
 			children = (
 				04A6789E299648A9006E29C1 /* ReviewerHomeViewModel.swift */,
 				04A678A829968645006E29C1 /* ReviewerHomeSectionViewModel.swift */,
-				04924C0D299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift */,
+				04924C0D299ABBFB001E2045 /* ReviewerVideoCardItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1218,6 +1223,7 @@
 			children = (
 				0490DAB129953B8B000BBF73 /* FetchMyPageUseCase.swift */,
 				04A678A229964A08006E29C1 /* FetchReviewerHomeUseCase.swift */,
+				04B8AF0A299BBB8A0024C897 /* SearchUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1450,6 +1456,7 @@
 				0490DAA6299539BF000BBF73 /* DefaultConcentrationResultRepository.swift in Sources */,
 				040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */,
 				041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */,
+				04B8AF0D299BBBDA0024C897 /* DefaultSearchUseCase.swift in Sources */,
 				045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */,
 				046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */,
 				04A678A329964A08006E29C1 /* FetchReviewerHomeUseCase.swift in Sources */,
@@ -1461,7 +1468,7 @@
 				0490DA7529950B96000BBF73 /* ConcentrationResult.swift in Sources */,
 				047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */,
 				046AD1092972FCC200602F89 /* SigninButton.swift in Sources */,
-				04924C0E299ABBFB001E2045 /* ReviewerHomeVideoItemViewModel.swift in Sources */,
+				04924C0E299ABBFB001E2045 /* ReviewerVideoCardItemViewModel.swift in Sources */,
 				0470C9DD2990F96D00D4743B /* SceneStealerResultDTO.swift in Sources */,
 				0490DA8A2995129A000BBF73 /* YoutuberHomeRepository.swift in Sources */,
 				0490DA4E29940B7E000BBF73 /* MyPage.swift in Sources */,
@@ -1537,6 +1544,7 @@
 				049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */,
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
 				0470C9BE2990E78E00D4743B /* MyPageDTO.swift in Sources */,
+				04B8AF0B299BBB8A0024C897 /* SearchUseCase.swift in Sources */,
 				0470C9C22990EA0B00D4743B /* WithdrawInformationDTO.swift in Sources */,
 				0490DA652994FF1E000BBF73 /* NetworkRequestable.swift in Sources */,
 				04E6FC66298971F30052496A /* KeyboardDismissible.swift in Sources */,

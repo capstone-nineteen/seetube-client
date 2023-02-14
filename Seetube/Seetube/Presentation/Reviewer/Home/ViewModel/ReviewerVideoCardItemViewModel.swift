@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ReviewerHomeVideoItemViewModel {
+class ReviewerVideoCardItemViewModel {
     let title: String
     let youtuberName: String
     let remainingPeriod: String

@@ -49,7 +49,7 @@ class ReviewerHomeCollectionViewCell: UICollectionViewCell {
         self.videoInfoCardView.configureAccessoryView(self.priceAccessoryView)
     }
     
-    func bind(_ viewModel: ReviewerHomeVideoItemViewModel) {
+    func bind(_ viewModel: ReviewerVideoCardItemViewModel) {
         self.videoInfoCardView.bind(videoTitle: viewModel.title,
                                     youtuberName: viewModel.youtuberName,
                                     date: viewModel.remainingPeriod,
