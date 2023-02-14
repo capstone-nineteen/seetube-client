@@ -51,13 +51,15 @@ class VideoInfoCardView: UIView, NibLoadable {
         self.personnelLabel.text = personnel
         
         if let thumbnailUrl = thumbnailUrl {
+            let processor = DownsamplingImageProcessor(size: self.thumbnailImageView.bounds.size)
             self.thumbnailImageView.kf.indicatorType = .activity
             self.thumbnailImageView.kf.setImage(
                 with: URL(string: thumbnailUrl),
                 options: [
-                    .cacheOriginalImage,
-                    .processor(DownsamplingImageProcessor(size: self.thumbnailImageView.bounds.size)),
-                    .scaleFactor(UIScreen.main.scale)
+                    .processor(processor),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(0.7)),
+                    .cacheOriginalImage
                 ]
             )
         } else {
