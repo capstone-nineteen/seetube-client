@@ -10,7 +10,7 @@ import Foundation
 struct VideoList {
     let videos: [VideoInfo]
     
-    init(videos: [VideoInfo] = []) {
+    init(videos: [VideoInfo] = [VideoInfo.dummyVideo(), VideoInfo.dummyVideo()]) {
         self.videos = videos
     }
 }

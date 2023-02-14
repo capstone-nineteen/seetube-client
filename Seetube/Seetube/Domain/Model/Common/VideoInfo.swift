@@ -19,4 +19,18 @@ struct VideoInfo {
     let imagePath: String
     let videoPath: String
     let videoId: String
+    
+    static func dummyVideo() -> VideoInfo {
+        VideoInfo(title: "제목",
+                  youtuberName: "dbxb",
+                  rewardAmount: 300,
+                  currentNumberOfReviewers: 20,
+                  targetNumberOfReviewers: 80,
+                  reviewStartDate: Date.distantPast,
+                  reviewEndDate: Date.distantFuture,
+                  videoDescription: "fjiejifwjiej",
+                  imagePath: "",
+                  videoPath: "",
+                  videoId: "123123")
+    }
 }

@@ -14,6 +14,14 @@ struct ReviewerHomeSection {
     subscript (index: Int) -> VideoInfo {
         return self.videos[index]
     }
+    
+    static func dummy() -> [ReviewerHomeSection] {
+        let section = ReviewerHomeSection(category: .beauty,
+                                   videos: [VideoInfo.dummyVideo(),
+                                            VideoInfo.dummyVideo()
+                                           ])
+        return [section, section, section, section]
+    }
 }
 
 struct ReviewerHome {
@@ -23,7 +31,7 @@ struct ReviewerHome {
     
     init(name: String = "",
          coin: Int = 0,
-         sections: [ReviewerHomeSection] = []) {
+         sections: [ReviewerHomeSection] = ReviewerHomeSection.dummy()) {
         self.name = name
         self.coin = coin
         self.sections = sections
