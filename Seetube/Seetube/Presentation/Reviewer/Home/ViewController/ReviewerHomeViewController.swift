@@ -24,18 +24,62 @@ class ReviewerHomeViewController: UIViewController, KeyboardDismissible, ViewCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.enableKeyboardDismissing()
-        self.configureSearchBar()
+        self.configureUI()
         self.bindViewModel()
-        self.bindUIEvents()
     }
 }
 
 // MARK: - Configuration
 
 extension ReviewerHomeViewController {
+    private func configureUI() {
+        self.enableKeyboardDismissing()
+        self.configureSearchBar()
+        self.configureScrollView()
+        self.configureNavigationBar()
+    }
+    
     private func configureSearchBar() {
         self.searchBarView.configureSearchBarDelegate(self)
+    }
+    
+    private func configureScrollView() {
+        self.scrollView.rx.didScroll
+            .observe(on:MainScheduler.asyncInstance)    // Reentrancy anomaly was detected 경고 해결
+            .asDriver(onErrorJustReturn: ())
+            .drive(with: self, onNext: { owner, _ in
+                let yOffset = owner.scrollView.contentOffset.y
+                // TODO: Constants Enum으로 관리
+                let maxScrollViewTop: CGFloat = 70
+                let minScrollViewTop: CGFloat = 15
+                let disappearRate: CGFloat = 0.05
+                
+                if yOffset < 0 {
+                    owner.scrollViewTop.constant = min(maxScrollViewTop,
+                                                       owner.scrollViewTop.constant - yOffset)
+                } else {
+                    owner.scrollViewTop.constant = max(minScrollViewTop,
+                                                       owner.scrollViewTop.constant - yOffset * disappearRate)
+                }
+                owner.scrollView.layoutIfNeeded()
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func configureNavigationBar() {
+        self.rx.viewWillAppear
+            .asDriver()
+            .drive(with: self, onNext: { owner, _ in
+                owner.navigationController?.isNavigationBarHidden = true
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.rx.viewWillDisappear
+            .asDriver()
+            .drive(with: self, onNext: { owner, _ in
+                owner.navigationController?.isNavigationBarHidden = false
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 
@@ -129,57 +173,6 @@ extension ReviewerHomeViewController {
             .drive(with: self) { owner, selectedVideoId in
                 self.moveToVideoDetail(videoId: selectedVideoId)
             }
-            .disposed(by: self.disposeBag)
-    }
-}
-
-// MARK: - UI Events Binding
-
-extension ReviewerHomeViewController {
-    private func bindUIEvents() {
-        self.bindScrollView()
-        self.bindViewWillAppear()
-        self.bindViewWillDisappear()
-    }
-    
-    private func bindScrollView() {
-        self.scrollView.rx.didScroll
-            .observe(on:MainScheduler.asyncInstance)    // Reentrancy anomaly was detected 경고 해결
-            .asDriver(onErrorJustReturn: ())
-            .drive(with: self, onNext: { owner, _ in
-                let yOffset = owner.scrollView.contentOffset.y
-                // TODO: Constants Enum으로 관리
-                let maxScrollViewTop: CGFloat = 70
-                let minScrollViewTop: CGFloat = 15
-                let disappearRate: CGFloat = 0.05
-                
-                if yOffset < 0 {
-                    owner.scrollViewTop.constant = min(maxScrollViewTop,
-                                                       owner.scrollViewTop.constant - yOffset)
-                } else {
-                    owner.scrollViewTop.constant = max(minScrollViewTop,
-                                                       owner.scrollViewTop.constant - yOffset * disappearRate)
-                }
-                owner.scrollView.layoutIfNeeded()
-            })
-            .disposed(by: self.disposeBag)
-    }
-    
-    private func bindViewWillAppear() {
-        self.rx.viewWillAppear
-            .asDriver()
-            .drive(with: self, onNext: { owner, _ in
-                owner.navigationController?.isNavigationBarHidden = true
-            })
-            .disposed(by: self.disposeBag)
-    }
-    
-    private func bindViewWillDisappear() {
-        self.rx.viewWillDisappear
-            .asDriver()
-            .drive(with: self, onNext: { owner, _ in
-                owner.navigationController?.isNavigationBarHidden = false
-            })
             .disposed(by: self.disposeBag)
     }
 }
