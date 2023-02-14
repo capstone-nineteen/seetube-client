@@ -25,4 +25,9 @@ class ReviewerVideoInfoTableViewCell: VideoInfoCardTableViewCell {
     private func configureAccessoryView() {
         self.videoInfoCardView.configureAccessoryView(self.priceAccessoryView)
     }
+    
+    func bind(_ viewModel: ReviewerVideoCardItemViewModel) {
+        self.bind(viewModel)
+        self.priceAccessoryView.bind(price: viewModel.rewardAmount)
+    }
 }
