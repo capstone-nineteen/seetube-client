@@ -49,6 +49,14 @@ extension ReviewerHomeViewController {
                 }
             }
             .disposed(by: self.disposeBag)
+        
+        self.searchBarView
+            .bind(
+                self.rx.viewWillAppear
+                    .asDriver()
+                    .map { _ in nil }
+            )
+            .disposed(by: self.disposeBag)
     }
     
     private func configureScrollView() {

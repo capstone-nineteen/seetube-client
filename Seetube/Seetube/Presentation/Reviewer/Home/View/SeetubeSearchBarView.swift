@@ -61,6 +61,11 @@ class SeetubeSearchBarView: UIView {
     func dismissKeyboard() {
         self.searchBar.resignFirstResponder()
     }
+    
+    func bind(_ text: Driver<String?>) -> Disposable {
+        return text
+            .drive(self.searchBar.rx.text)
+    }
 }
 
 extension Reactive where Base: SeetubeSearchBarView {
