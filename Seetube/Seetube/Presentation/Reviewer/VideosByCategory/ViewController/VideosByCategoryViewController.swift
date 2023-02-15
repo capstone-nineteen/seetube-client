@@ -9,7 +9,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class VideosByCategoryViewController: UIViewController {
+class VideosByCategoryViewController: UIViewController,
+                                      ReviewerVideoDetailPushable
+{
     @IBOutlet weak var categoryButtons: CategoryButtonScrollView!
     private var tableViewController: ReviewerVideoInfoTableViewController? {
         self.children.first as? ReviewerVideoInfoTableViewController
@@ -51,11 +53,16 @@ extension VideosByCategoryViewController {
         guard let viewModel = self.viewModel else { return }
         
         let categoryChanged = self.categoryChanged()
+        let itemSelected = self.itemSelectedEvent()
         
-        let input = VideosByCategoryViewModel.Input(categoryChanged: categoryChanged)
+        let input = VideosByCategoryViewModel.Input(
+            categoryChanged: categoryChanged,
+            itemSelected: itemSelected
+        )
         let output = viewModel.transform(input: input)
         
         self.bindVideos(output.filteredVideos)
+        self.bindSelectedVideoId(output.selectedVideoId)
     }
     
     // MARK: Input Event Creation
@@ -64,6 +71,14 @@ extension VideosByCategoryViewController {
         // TODO: 버튼 바인드
         return self.categoryButtons.rx.selectedIndex
             .asDriver()
+    }
+    
+    private func itemSelectedEvent() -> Driver<IndexPath> {
+        guard let tableViewController = self.tableViewController else {
+            return Driver<IndexPath>.just(IndexPath())
+        }
+        
+        return tableViewController.rx.itemSelected.asDriver()
     }
     
     // MARK: Output Binding
@@ -75,6 +90,14 @@ extension VideosByCategoryViewController {
         
         videos
             .drive(tableViewController.rx.viewModels)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindSelectedVideoId(_ selectedVideoId: Driver<Int>) {
+        selectedVideoId
+            .drive(with: self) { obj, id in
+                obj.pushVideoDetail(videoId: id)
+            }
             .disposed(by: self.disposeBag)
     }
 }

@@ -67,6 +67,7 @@ class VideoDetailView: UIView, NibLoadable {
             viewModel
                 .map { $0.shouldEnableBottomButton }
                 .drive(self.rx.isBottomButtonEnabled),
+            // TODO: thumbnail button도 활성/비활성화
             viewModel
                 .map { $0.buttonTitle }
                 .drive(self.bottomButton.rx.text)
