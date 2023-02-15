@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 
 class ReviewerVideoInfoTableViewController: VideoInfoCardTableViewController {
-    var viewModels = [ReviewerVideoCardItemViewModel]()
+    fileprivate var viewModels = [ReviewerVideoCardItemViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,7 @@ class ReviewerVideoInfoTableViewController: VideoInfoCardTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewerVideoInfoTableViewCell.cellReuseIdentifier, for: indexPath) as? ReviewerVideoInfoTableViewCell else { return UITableViewCell() }
+        cell.bind(self.viewModels[indexPath.row])
         return cell
     }
 }
