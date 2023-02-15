@@ -45,9 +45,9 @@ extension ReviewerVideoDetailViewController {
     private func bindViewModel() {
         guard let viewModel = self.viewModel else { return }
         
-        let viewDidLoad = self.viewDidLoadEvent()
+        let viewWillAppear = self.viewWillAppearEvent()
         
-        let input = ReviewerVideoDetailViewModel.Input(viewDidLoad: viewDidLoad)
+        let input = ReviewerVideoDetailViewModel.Input(viewWillAppear: viewWillAppear)
         let output = viewModel.transform(input: input)
         
         self.bindVideo(output.video)
@@ -55,8 +55,10 @@ extension ReviewerVideoDetailViewController {
     
     // MARK: Input Event Creation
     
-    private func viewDidLoadEvent() -> Driver<Void> {
-        return self.rx.viewDidLoad.asDriver()
+    private func viewWillAppearEvent() -> Driver<Void> {
+        return self.rx.viewWillAppear
+            .asDriver()
+            .map { _ in () }
     }
     
     // MARK: Output Binding

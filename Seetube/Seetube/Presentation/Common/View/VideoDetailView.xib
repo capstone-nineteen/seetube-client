@@ -19,7 +19,7 @@
                 <outlet property="rewardPriceStackView" destination="AK8-bA-rOF" id="UUn-VQ-qv3"/>
                 <outlet property="thumbnailButton" destination="de5-sS-Fz0" id="aMa-gp-tzQ"/>
                 <outlet property="titleLabel" destination="aC4-Uh-QGu" id="qBS-fP-CYE"/>
-                <outlet property="videoDescriptionLabel" destination="fHB-9m-E3g" id="9lG-DZ-qen"/>
+                <outlet property="videoDescriptionLabel" destination="1FO-yW-Yrv" id="HX8-ri-FUd"/>
                 <outlet property="youtuberNameLabel" destination="x0z-yQ-d1I" id="ZzR-5t-IKY"/>
             </connections>
         </placeholder>

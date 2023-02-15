@@ -8,6 +8,6 @@
 import Foundation
 import RxSwift
 
-protocol VideoInfoRepository {
+protocol VideoDetailRepository {
     func getVideoInfo(id: Int) -> Observable<VideoInfo>
 }

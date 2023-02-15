@@ -8,10 +8,10 @@
 import Foundation
 import RxSwift
 
-class DefaultFetchVideoInfoUseCase: FetchVideoInfoUseCase {
-    private let repository: VideoInfoRepository
+class DefaultFetchVideoDetailUseCase: FetchVideoDetailUseCase {
+    private let repository: VideoDetailRepository
     
-    init(repository: VideoInfoRepository) {
+    init(repository: VideoDetailRepository) {
         self.repository = repository
     }
     

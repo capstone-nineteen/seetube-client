@@ -10,11 +10,11 @@ import RxCocoa
 import RxSwift
 
 class ReviewerVideoDetailViewModel: ViewModelType {
-    private let fetchVideoInfoUseCase: FetchVideoInfoUseCase
+    private let fetchVideoInfoUseCase: FetchVideoDetailUseCase
     private let videoId: Int
     
     init(
-        fetchVideoInfoUseCase: FetchVideoInfoUseCase,
+        fetchVideoInfoUseCase: FetchVideoDetailUseCase,
         videoId: Int
     ) {
         self.fetchVideoInfoUseCase = fetchVideoInfoUseCase
@@ -22,10 +22,11 @@ class ReviewerVideoDetailViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        let video = input.viewDidLoad
+        let video = input.viewWillAppear
             .flatMap { _ -> Driver<VideoInfo> in
                 self.fetchVideoInfoUseCase
                     .execute(id: self.videoId)
+                    .debug()
                     .asDriver(onErrorJustReturn: VideoInfo())
             }
             .map { VideoDetailViewModel(with: $0) }
@@ -36,7 +37,7 @@ class ReviewerVideoDetailViewModel: ViewModelType {
 
 extension ReviewerVideoDetailViewModel {
     struct Input {
-        let viewDidLoad: Driver<Void>
+        let viewWillAppear: Driver<Void>
     }
     
     struct Output {

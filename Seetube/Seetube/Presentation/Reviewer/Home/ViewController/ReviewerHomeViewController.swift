@@ -200,7 +200,13 @@ extension ReviewerHomeViewController {
         self.push(
             viewControllerType: ReviewerVideoDetailViewController.self
         ) { viewController in
-            // TODO: pass video id
+            let repository = DefaultVideoDetailRepository()
+            let fetchVideoInfoUseCase = DefaultFetchVideoDetailUseCase(repository: repository)
+            let viewModel = ReviewerVideoDetailViewModel(
+                fetchVideoInfoUseCase: fetchVideoInfoUseCase,
+                videoId: videoId
+            )
+            viewController.viewModel = viewModel
         }
     }
     
