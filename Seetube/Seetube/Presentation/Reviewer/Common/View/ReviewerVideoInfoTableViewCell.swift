@@ -27,7 +27,7 @@ class ReviewerVideoInfoTableViewCell: VideoInfoCardTableViewCell {
     }
     
     func bind(_ viewModel: ReviewerVideoCardItemViewModel) {
-        self.bind(viewModel)
+        // TODO: bind cardview
         self.priceAccessoryView.bind(price: viewModel.rewardAmount)
     }
 }
