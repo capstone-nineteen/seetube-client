@@ -11,50 +11,62 @@ import RxSwift
 
 class SearchResultViewModel: ViewModelType {
     private let searchUseCase: SearchUseCase
+    private var searchKeyword: String?
     
-    init(searchUseCase: SearchUseCase) {
+    init(
+        searchUseCase: SearchUseCase,
+        searchKeyword: String?
+    ) {
         self.searchUseCase = searchUseCase
+        self.searchKeyword = searchKeyword
     }
     
     func transform(input: Input) -> Output {
         let searchResult = Driver
-            .merge(input.viewDidLoad, input.searchButtonClicked)
-            .withLatestFrom(input.searchBarText) { _, text in
+            .merge(
+                input.viewWillAppear,
+                input.searchButtonClicked
+            )
+            .withLatestFrom(
+                input.searchBarText
+            ) { _, text in
                 text
             }
-            .compactMap { $0 }
             .flatMap { keyword in
                 self.searchUseCase
                     .execute(searchKeyword: keyword)
                     .asDriver(onErrorJustReturn: VideoList())
             }
         let videos = searchResult
-            .map {
-                $0.videos.map { video in
-                    ReviewerVideoCardItemViewModel(with: video)
-                }
-            }
+            .map { $0.videos }
+            .map { $0.map { ReviewerVideoCardItemViewModel(with: $0) }}
         let selectedVideoId = input.itemSelected
-            .withLatestFrom(searchResult) { index, searchResult in
+            .asDriver()
+            .withLatestFrom(
+                searchResult
+            ) { index, searchResult in
                 searchResult.videos[index.row].videoId
             }
-            .asDriver()
+        let initialSearchKeyword = Driver
+            .just(self.searchKeyword)
         
         return Output(videos: videos,
-                      selectedVideoId: selectedVideoId)
+                      selectedVideoId: selectedVideoId,
+                      initialSearchKeyword: initialSearchKeyword)
     }
 }
 
 extension SearchResultViewModel {
     struct Input {
-        let viewDidLoad: Driver<Void>
+        let viewWillAppear: Driver<Void>
         let searchButtonClicked: Driver<Void>
-        let searchBarText: Driver<String?>
+        let searchBarText: Driver<String>
         let itemSelected: Driver<IndexPath>
     }
     
     struct Output {
         let videos: Driver<[ReviewerVideoCardItemViewModel]>
         let selectedVideoId: Driver<String>
+        let initialSearchKeyword: Driver<String?>
     }
 }

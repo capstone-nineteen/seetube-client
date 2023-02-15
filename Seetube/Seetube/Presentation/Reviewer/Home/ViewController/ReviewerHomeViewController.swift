@@ -223,9 +223,9 @@ extension ReviewerHomeViewController {
             // TODO: Extension으로 빼기
             let repository = DefaultReviewerHomeRepository()
             let searchUseCase = DefaultSearchUseCase(repository: repository)
-            let viewModel = SearchResultViewModel(searchUseCase: searchUseCase)
+            let viewModel = SearchResultViewModel(searchUseCase: searchUseCase,
+                                                  searchKeyword: searchKeyword)
             viewController.viewModel = viewModel
-            viewController.searchKeyword = searchKeyword
         }
     }
 }

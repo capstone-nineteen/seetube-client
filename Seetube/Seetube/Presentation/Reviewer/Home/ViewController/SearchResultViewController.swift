@@ -18,7 +18,6 @@ class SearchResultViewController: UIViewController, KeyboardDismissible {
     
     var viewModel: SearchResultViewModel?
     private var disposeBag = DisposeBag()
-    var searchKeyword: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +50,12 @@ extension SearchResultViewController {
     private func bindViewModel() {
         guard let viewModel = self.viewModel else { return }
         
-        let viewDidLoad = self.viewDidLoadEvent()
+        let viewWillAppear = self.viewWillAppearEvent()
         let searchButtonClicked = self.searchButtonClickedEvent()
         let searchBarText = self.searchBarTextProperty()
         let itemSelected = self.itemSelectedEvent()
         
-        let input = SearchResultViewModel.Input(viewDidLoad: viewDidLoad,
+        let input = SearchResultViewModel.Input(viewWillAppear: viewWillAppear,
                                                 searchButtonClicked: searchButtonClicked,
                                                 searchBarText: searchBarText,
                                                 itemSelected: itemSelected)
@@ -64,20 +63,23 @@ extension SearchResultViewController {
         
         self.bindVideos(output.videos)
         self.bindSelectedVideoId(output.selectedVideoId)
+        self.bindInitialSearchKeyword(output.initialSearchKeyword)
     }
     
     // MARK: - Input Events Creation
     
-    private func viewDidLoadEvent() -> Driver<Void> {
-        return self.rx.viewDidLoad.asDriver()
+    private func viewWillAppearEvent() -> Driver<Void> {
+        return self.rx.viewWillAppear
+            .asDriver()
+            .map { _ in () }
     }
     
     private func searchButtonClickedEvent() -> Driver<Void> {
         return self.searchBarView.rx.searchButtonClicked.asDriver()
     }
     
-    private func searchBarTextProperty() -> Driver<String?> {
-        return self.searchBarView.rx.searchKeyword.asDriver()
+    private func searchBarTextProperty() -> Driver<String> {
+        return self.searchBarView.rx.searchKeyword.orEmpty.asDriver()
     }
     
     private func itemSelectedEvent() -> Driver<IndexPath> {
@@ -107,13 +109,21 @@ extension SearchResultViewController {
             }
             .disposed(by: self.disposeBag)
     }
+    
+    private func bindInitialSearchKeyword(_ initialSearchKeyword: Driver<String?>) {
+        initialSearchKeyword
+            .drive(self.searchBarView.rx.searchKeyword)
+            .disposed(by: self.disposeBag)
+    }
 }
 
 // MARK: - Scene Trasition
 
 extension SearchResultViewController: ViewControllerPushable {
     private func moveToVideoDetail(with id: String) {
-        self.push(viewControllerType: ReviewerVideoDetailViewController.self) { viewController in
+        self.push(
+            viewControllerType: ReviewerVideoDetailViewController.self
+        ) { viewController in
             // TODO: id 주입
         }
     }
