@@ -13,6 +13,6 @@ enum APIUrls {
     
     static let videoInfo = reviewerBase + "/video"
     static let reviewerHome = reviewerBase + "/home"
-    static let getVideosBySearchKeyword = reviewerBase + "/search"
+    static let getVideosBySearchKeyword = reviewerBase + "/videos/search"
     static let myPage = reviewerBase + "/mypage"
 }
