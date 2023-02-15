@@ -26,7 +26,6 @@ class ReviewerVideoDetailViewModel: ViewModelType {
             .flatMap { _ -> Driver<VideoInfo> in
                 self.fetchVideoInfoUseCase
                     .execute(id: self.videoId)
-                    .debug()
                     .asDriver(onErrorJustReturn: VideoInfo())
             }
             .map { VideoDetailViewModel(with: $0) }
