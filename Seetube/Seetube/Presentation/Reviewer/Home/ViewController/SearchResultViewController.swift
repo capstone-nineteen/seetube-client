@@ -78,8 +78,8 @@ extension SearchResultViewController {
         return self.searchBarView.rx.searchButtonClicked.asDriver()
     }
     
-    private func searchBarTextProperty() -> Driver<String> {
-        return self.searchBarView.rx.searchKeyword.orEmpty.asDriver()
+    private func searchBarTextProperty() -> Driver<String?> {
+        return self.searchBarView.rx.searchKeyword.asDriver()
     }
     
     private func itemSelectedEvent() -> Driver<IndexPath> {

@@ -28,10 +28,15 @@ class SearchResultViewModel: ViewModelType {
                 input.searchButtonClicked
             )
             .withLatestFrom(
-                input.searchBarText
+                Driver.merge(
+                    Driver.just(self.searchKeyword),
+                    input.searchBarText
+                )
             ) { _, text in
                 text
             }
+            .compactMap { $0 }
+            .filter { $0.count > 0 }
             .flatMap { keyword in
                 self.searchUseCase
                     .execute(searchKeyword: keyword)
@@ -60,7 +65,7 @@ extension SearchResultViewModel {
     struct Input {
         let viewWillAppear: Driver<Void>
         let searchButtonClicked: Driver<Void>
-        let searchBarText: Driver<String>
+        let searchBarText: Driver<String?>
         let itemSelected: Driver<IndexPath>
     }
     
