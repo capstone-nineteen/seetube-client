@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewProgressView" customModule="Seetube" customModuleProvider="target">
             <connections>
+                <outlet property="progressDescriptionLabel" destination="gLt-SD-nOX" id="kTy-XC-VnN"/>
                 <outlet property="progressView" destination="EpC-M9-9Zf" id="Vv6-bZ-53E"/>
+                <outlet property="targetNumberLabel" destination="gLt-SD-nOX" id="4NQ-98-alf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

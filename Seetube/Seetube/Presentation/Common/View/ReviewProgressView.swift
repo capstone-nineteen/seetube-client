@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 @IBDesignable
 class ReviewProgressView: UIView, NibLoadable {
-    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet private weak var progressView: UIProgressView!
+    @IBOutlet weak var targetNumberLabel: UILabel!
+    @IBOutlet weak var progressDescriptionLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +33,17 @@ class ReviewProgressView: UIView, NibLoadable {
         }
     }
     
-    func updateProgress(_ progress: Float) {
-        self.progressView.progress = progress
+    func bind(with viewModel: Driver<ReviewProgressViewModel>) -> Cancelable {
+        return Disposables.create(
+            viewModel
+                .map { $0.progressPercentage }
+                .drive(self.progressView.rx.progress),
+            viewModel
+                .map { $0.targetNumberOfReviews }
+                .drive(self.targetNumberLabel.rx.text),
+            viewModel
+                .map { $0.progressDescription }
+                .drive(self.progressDescriptionLabel.rx.text)
+        )
     }
 }
