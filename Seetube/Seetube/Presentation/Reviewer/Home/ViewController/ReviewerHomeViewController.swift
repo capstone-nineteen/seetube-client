@@ -10,7 +10,12 @@ import RxSwift
 import RxViewController
 import RxCocoa
 
-class ReviewerHomeViewController: UIViewController, KeyboardDismissible, ViewControllerPushable {
+class ReviewerHomeViewController: UIViewController,
+                                  KeyboardDismissible,
+                                  ReviewerVideoDetailPushable,
+                                  SearchResultPushable,
+                                  CategoryTabMovable
+{
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var coinAccessoryView: PriceAccessoryView!
     @IBOutlet weak var searchBarView: SeetubeSearchBarView!
@@ -45,7 +50,7 @@ extension ReviewerHomeViewController {
             .drive(with: self) { obj, _ in
                 obj.searchBarView.dismissKeyboard()
                 if let searchKeyword = obj.searchBarView.searchKeyword {
-                    obj.moveToSearchResult(searchKeyword: searchKeyword)
+                    obj.pushSearchResult(searchKeyword: searchKeyword)
                 }
             }
             .disposed(by: self.disposeBag)
@@ -187,51 +192,8 @@ extension ReviewerHomeViewController {
     private func bindSelectedVideoId(_ selectedVideoId: Driver<Int>) {
         selectedVideoId
             .drive(with: self) { owner, selectedVideoId in
-                self.moveToVideoDetail(videoId: selectedVideoId)
+                self.pushVideoDetail(videoId: selectedVideoId)
             }
             .disposed(by: self.disposeBag)
-    }
-}
-
-// MARK: - Scene Transition
-
-extension ReviewerHomeViewController {
-    func moveToVideoDetail(videoId: Int) {
-        self.push(
-            viewControllerType: ReviewerVideoDetailViewController.self
-        ) { viewController in
-            let repository = DefaultVideoDetailRepository()
-            let fetchVideoInfoUseCase = DefaultFetchVideoDetailUseCase(repository: repository)
-            let viewModel = ReviewerVideoDetailViewModel(
-                fetchVideoInfoUseCase: fetchVideoInfoUseCase,
-                videoId: videoId
-            )
-            viewController.viewModel = viewModel
-        }
-    }
-    
-    func moveToCategoryTab(category: Category) {
-        guard let tabBarController = self.navigationController?.tabBarController,
-              let categoryNavigationController = tabBarController.viewControllers?[1]
-                as? UINavigationController,
-              let categoryViewController = categoryNavigationController.topViewController
-                as? VideosByCategoryViewController else { return }
-        
-        let _ = categoryViewController.view // CategoryViewController 강제 로드
-        categoryViewController.selectCategory(category)
-        tabBarController.selectedIndex = 1
-    }
-    
-    func moveToSearchResult(searchKeyword: String?) {
-        self.push(
-            viewControllerType: SearchResultViewController.self
-        ) { viewController in
-            // TODO: Extension으로 빼기
-            let repository = DefaultReviewerHomeRepository()
-            let searchUseCase = DefaultSearchUseCase(repository: repository)
-            let viewModel = SearchResultViewModel(searchUseCase: searchUseCase,
-                                                  searchKeyword: searchKeyword)
-            viewController.viewModel = viewModel
-        }
     }
 }

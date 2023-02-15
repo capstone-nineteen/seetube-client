@@ -89,6 +89,9 @@
 		048A4B05299CE00200719AD0 /* VideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B04299CE00200719AD0 /* VideoDetailViewModel.swift */; };
 		048A4B07299CE02400719AD0 /* ReviewProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B06299CE02400719AD0 /* ReviewProgressViewModel.swift */; };
 		048A4B09299CEA8C00719AD0 /* VideoDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B08299CEA8C00719AD0 /* VideoDetailDTO.swift */; };
+		048A4B0E299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B0D299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift */; };
+		048A4B10299D15C100719AD0 /* SearchResultPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B0F299D15C100719AD0 /* SearchResultPushable.swift */; };
+		048A4B12299D167200719AD0 /* CategoryTabMovable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B11299D167200719AD0 /* CategoryTabMovable.swift */; };
 		0490DA3F29938C50000BBF73 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA3E29938C50000BBF73 /* RxCocoa */; };
 		0490DA4129938C50000BBF73 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA4029938C50000BBF73 /* RxSwift */; };
 		0490DA4E29940B7E000BBF73 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA4D29940B7E000BBF73 /* MyPage.swift */; };
@@ -264,6 +267,9 @@
 		048A4B04299CE00200719AD0 /* VideoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewModel.swift; sourceTree = "<group>"; };
 		048A4B06299CE02400719AD0 /* ReviewProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProgressViewModel.swift; sourceTree = "<group>"; };
 		048A4B08299CEA8C00719AD0 /* VideoDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailDTO.swift; sourceTree = "<group>"; };
+		048A4B0D299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailPushable.swift; sourceTree = "<group>"; };
+		048A4B0F299D15C100719AD0 /* SearchResultPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultPushable.swift; sourceTree = "<group>"; };
+		048A4B11299D167200719AD0 /* CategoryTabMovable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabMovable.swift; sourceTree = "<group>"; };
 		0490DA4D29940B7E000BBF73 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
 		0490DA5129940CC9000BBF73 /* APIUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
 		0490DA532994C26A000BBF73 /* DefaultMyPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMyPageRepository.swift; sourceTree = "<group>"; };
@@ -373,7 +379,10 @@
 			children = (
 				046AD1002972D7A900602F89 /* AlertDisplaying.swift */,
 				04E6FC6029895C400052496A /* ViewControllerPushable.swift */,
+				048A4B0D299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift */,
+				048A4B0F299D15C100719AD0 /* SearchResultPushable.swift */,
 				04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */,
+				048A4B11299D167200719AD0 /* CategoryTabMovable.swift */,
 				04E6FC65298971F30052496A /* KeyboardDismissible.swift */,
 			);
 			path = Protocol;
@@ -1474,6 +1483,7 @@
 				0470C9D82990F7D400D4743B /* Emotion.swift in Sources */,
 				04A678A929968645006E29C1 /* ReviewerHomeSectionViewModel.swift in Sources */,
 				0490DA7D29950BB9000BBF73 /* HighlightResult.swift in Sources */,
+				048A4B12299D167200719AD0 /* CategoryTabMovable.swift in Sources */,
 				0470727E2979B23B008D6CC0 /* VideoInfoCardTableViewController.swift in Sources */,
 				040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */,
 				044D258229843403003F4071 /* ReviewerHomeCollectionViewCell.swift in Sources */,
@@ -1487,6 +1497,7 @@
 				046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */,
 				04A678A329964A08006E29C1 /* FetchReviewerHomeUseCase.swift in Sources */,
 				0470C9C02990E8FC00D4743B /* ShopDTO.swift in Sources */,
+				048A4B10299D15C100719AD0 /* SearchResultPushable.swift in Sources */,
 				047072782979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift in Sources */,
 				0470C9E12990FAE000D4743B /* HighlightResultDTO.swift in Sources */,
 				0490DA8E299512F4000BBF73 /* EmotionResultRepository.swift in Sources */,
@@ -1600,6 +1611,7 @@
 				0470C9D42990F57200D4743B /* ConcentrationResultDTO.swift in Sources */,
 				04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */,
 				044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */,
+				048A4B0E299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift in Sources */,
 				0490DA8129951199000BBF73 /* VideoDetailRepository.swift in Sources */,
 				048A4B07299CE02400719AD0 /* ReviewProgressViewModel.swift in Sources */,
 				0490DA592994C2E5000BBF73 /* APIEndpoint.swift in Sources */,

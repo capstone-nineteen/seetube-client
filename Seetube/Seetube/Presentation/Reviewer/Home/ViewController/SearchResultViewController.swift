@@ -9,7 +9,10 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class SearchResultViewController: UIViewController, KeyboardDismissible {
+class SearchResultViewController: UIViewController,
+                                  KeyboardDismissible,
+                                  ReviewerVideoDetailPushable
+{
     @IBOutlet weak var searchBarView: SeetubeSearchBarView!
     private var tableViewController: ReviewerVideoInfoTableViewController? {
         self.children.first as? ReviewerVideoInfoTableViewController
@@ -105,7 +108,7 @@ extension SearchResultViewController {
     private func bindSelectedVideoId(_ selectedVideoId: Driver<Int>) {
         selectedVideoId
             .drive(with: self) { obj, id in
-                obj.moveToVideoDetail(with: id)
+                obj.pushVideoDetail(videoId: id)
             }
             .disposed(by: self.disposeBag)
     }
@@ -114,17 +117,5 @@ extension SearchResultViewController {
         initialSearchKeyword
             .drive(self.searchBarView.rx.searchKeyword)
             .disposed(by: self.disposeBag)
-    }
-}
-
-// MARK: - Scene Trasition
-
-extension SearchResultViewController: ViewControllerPushable {
-    private func moveToVideoDetail(with id: Int) {
-        self.push(
-            viewControllerType: ReviewerVideoDetailViewController.self
-        ) { viewController in
-            // TODO: id 주입
-        }
     }
 }
