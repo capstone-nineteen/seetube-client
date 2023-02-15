@@ -11,6 +11,7 @@ import RxSwift
 
 class VideosByCategoryViewModel: ViewModelType {
     private let fetchVideosByCategoryUseCase: FetchVideosByCategoryUseCase
+    var selectedIndex = BehaviorRelay<Int>(value: 0)
     
     init(fetchVideosByCategoryUseCase: FetchVideosByCategoryUseCase) {
         self.fetchVideosByCategoryUseCase = fetchVideosByCategoryUseCase
@@ -18,14 +19,16 @@ class VideosByCategoryViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let filteredVideos = input.categoryChanged
-            .flatMap { [weak self] category -> Driver<VideoList> in
+            .map { Category.allCases[$0] }
+            .flatMap { [weak self] category -> Driver<VideoList?> in
                 // TODO: 다른 viewmodel도 weak 처리
-                guard let self = self else { return Driver.just(VideoList()) }
+                guard let self = self else { return .just(nil) }
                 return self.fetchVideosByCategoryUseCase
                     .execute(category: category)
-                    .asDriver(onErrorJustReturn: VideoList())
+                    .asDriver(onErrorJustReturn: nil)
+                // TODO: 응답 오기 전까지는 로더/다 지워놨다가 왔을 때만 보여주게 해야 함, 안그러면 다른 이전 카테고리 영상들이 그대로 남아있음
             }
-            .map { $0.videos }
+            .map { $0?.videos ?? [] }
             .map { $0.map { ReviewerVideoCardItemViewModel(with: $0) }}
         // TODO: 전체를 받아온 다음 클라이언트에서 filter 해주는게 더 효율적이지 않나?
         return Output(filteredVideos: filteredVideos)
@@ -34,7 +37,7 @@ class VideosByCategoryViewModel: ViewModelType {
 
 extension VideosByCategoryViewModel {
     struct Input {
-        let categoryChanged: Driver<Category>
+        let categoryChanged: Driver<Int>
     }
     
     struct Output {

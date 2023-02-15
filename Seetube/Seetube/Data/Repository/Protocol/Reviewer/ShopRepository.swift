@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol ShopRepository {
-    func getShop() -> Observable<Shop>
+    func getShop() -> Observable<Shop?>
 }

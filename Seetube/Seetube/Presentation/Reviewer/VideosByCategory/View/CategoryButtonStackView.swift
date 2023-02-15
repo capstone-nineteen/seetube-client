@@ -6,40 +6,59 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class CategoryButtonStackView: UIStackView {
-    var categoryButtons: [CategoryButton] = Category.allCases.map{ CategoryButton(category: $0) }
+    fileprivate lazy var categoryButtons = Category.allCases.map{
+        CategoryButton(category: $0.rawValue)
+    }
+    
+    fileprivate var selectedIndex: Int = 0
+    private var disposeBag = DisposeBag()
+    
+    subscript (index: Int) -> CategoryButton {
+        return self.categoryButtons[index]
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.configureSubviews()
-        self.configureStyle()
+        self.configureUI()
     }
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
-        self.configureSubviews()
-        self.configureStyle()
+        self.configureUI()
     }
     
-    private func configureSubviews() {
+    private func configureUI() {
         self.categoryButtons.forEach{ self.addArrangedSubview($0) }
-    }
-    
-    private func configureStyle() {
         self.spacing = 8
+        
+        self.rx.selectedIndex
+            .asDriver()
+            .drive(with: self) { obj, index in
+                obj.highlightButton(index: index)
+            }
+            .disposed(by: self.disposeBag)
     }
     
-    func categoryButtonWithCategory(_ category: Category) -> CategoryButton? {
-        return self.categoryButtons.first(where: { $0.category == category })
-    }
-    
-    func highlightButton(category: Category) {
+    private func highlightButton(index: Int) {
         self.categoryButtons.forEach { $0.backgroundColor = .white }
-        self.categoryButtonWithCategory(category)?.backgroundColor = .systemGray5
+        self.categoryButtons[index].backgroundColor = .systemGray5
     }
-    
-    func configureButtonDelegate(_ delegate: CategoryButtonDelegate) {
-        self.categoryButtons.forEach { $0.configureDelegate(delegate) }
+}
+
+extension Reactive where Base: CategoryButtonStackView {
+    var selectedIndex: ControlEvent<Int> {
+        let taps = Observable.merge(
+            base.categoryButtons
+                .enumerated()
+                .map { index, button in
+                    button.rx.tap.map { _ in index }
+                }
+        )
+        
+        return ControlEvent(events: taps)
     }
 }

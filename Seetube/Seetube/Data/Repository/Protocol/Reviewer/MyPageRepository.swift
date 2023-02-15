@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol MyPageRepository {
-    func getMyPage() -> Observable<MyPage>
+    func getMyPage() -> Observable<MyPage?>
 }

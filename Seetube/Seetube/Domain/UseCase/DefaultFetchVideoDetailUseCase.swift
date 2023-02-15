@@ -15,7 +15,7 @@ class DefaultFetchVideoDetailUseCase: FetchVideoDetailUseCase {
         self.repository = repository
     }
     
-    func execute(id: Int) -> Observable<VideoInfo> {
+    func execute(id: Int) -> Observable<VideoInfo?> {
         return self.repository.getVideoInfo(id: id)
     }
 }

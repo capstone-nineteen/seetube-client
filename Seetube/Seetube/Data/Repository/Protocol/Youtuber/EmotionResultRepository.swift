@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol EmotionResultRepository {
-    func getEmotionResult() -> Observable<EmotionResult>
+    func getEmotionResult() -> Observable<EmotionResult?>
 }

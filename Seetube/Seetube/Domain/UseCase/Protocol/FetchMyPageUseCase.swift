@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FetchMyPageUseCase {
-    func execute() -> Observable<MyPage>
+    func execute() -> Observable<MyPage?>
 }

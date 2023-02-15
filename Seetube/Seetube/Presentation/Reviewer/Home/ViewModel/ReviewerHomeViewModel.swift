@@ -19,8 +19,9 @@ class ReviewerHomeViewModel: ViewModelType {
         let home = input.viewWillAppear
             .flatMap { _ in
                 self.fetchReviewerHomeUseCase.execute()
-                    .asDriver(onErrorJustReturn: ReviewerHome())
+                    .asDriver(onErrorJustReturn: nil)
             }
+            .compactMap { $0 }
         let name = home
             .map { "안녕하세요, \($0.name)님" }
         let coin = home

@@ -23,11 +23,12 @@ class ReviewerVideoDetailViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let video = input.viewWillAppear
-            .flatMap { _ -> Driver<VideoInfo> in
+            .flatMap { _ -> Driver<VideoInfo?> in
                 self.fetchVideoInfoUseCase
                     .execute(id: self.videoId)
-                    .asDriver(onErrorJustReturn: VideoInfo())
+                    .asDriver(onErrorJustReturn: nil)
             }
+            .compactMap { $0 }
             .map {
                 let buttonTitle = $0.didReviewed ? "리뷰 완료" : "리뷰 시작하기"
                 return VideoDetailViewModel(with: $0,

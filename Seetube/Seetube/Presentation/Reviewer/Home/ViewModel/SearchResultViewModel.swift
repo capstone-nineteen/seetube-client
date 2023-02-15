@@ -40,8 +40,9 @@ class SearchResultViewModel: ViewModelType {
             .flatMap { keyword in
                 self.searchUseCase
                     .execute(searchKeyword: keyword)
-                    .asDriver(onErrorJustReturn: VideoList())
+                    .asDriver(onErrorJustReturn: nil)
             }
+            .compactMap { $0 }
         let videos = searchResult
             .map { $0.videos }
             .map { $0.map { ReviewerVideoCardItemViewModel(with: $0) }}

@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol VideosByCategoryRepository {
-    func getVideosByCategory(category: String) -> Observable<VideoList>
+    func getVideosByCategory(category: String) -> Observable<VideoList?>
 }

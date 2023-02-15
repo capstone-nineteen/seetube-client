@@ -20,8 +20,9 @@ class MyPageViewModel: ViewModelType {
         let myPage = input.viewWillAppear
             .flatMap { _ in
                 self.fetchMyPageUseCase.execute()
-                    .asDriver(onErrorJustReturn: MyPage())
+                    .asDriver(onErrorJustReturn: nil)
             }
+            .compactMap { $0 }
         
         let name = myPage
             .map { "\($0.name)님" }

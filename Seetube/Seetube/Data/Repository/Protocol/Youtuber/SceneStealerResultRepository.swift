@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol SceneStealerResultRepository {
-    func getSceneStealerResult() -> Observable<SceneStealerResult>
+    func getSceneStealerResult() -> Observable<SceneStealerResult?>
 }

@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol VideoDetailRepository {
-    func getVideoInfo(id: Int) -> Observable<VideoInfo>
+    func getVideoInfo(id: Int) -> Observable<VideoInfo?>
 }

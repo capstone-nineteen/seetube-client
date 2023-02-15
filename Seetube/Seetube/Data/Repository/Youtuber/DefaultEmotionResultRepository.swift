@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 class DefaultEmotionResultRepository: EmotionResultRepository, NetworkRequestable {
-    func getEmotionResult() -> Observable<EmotionResult> {
+    func getEmotionResult() -> Observable<EmotionResult?> {
         let endpoint = APIEndpointFactory.makeEndpoint(for: .getEmotionResult)
         return self.getResource(endpoint: endpoint,
                                 decodingType: EmotionResultDTO.self)

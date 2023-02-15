@@ -60,7 +60,7 @@ class APIEndpointFactory {
             case .getVideosBySearchKeyword:
                 return APIUrls.search
             case .getVideosByCategory(let category):
-                return APIUrls.category + "/\(category)"
+                return APIUrls.category + "/\(category.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)"
             case .getShop:
                 return ""
             case .getMyPage:

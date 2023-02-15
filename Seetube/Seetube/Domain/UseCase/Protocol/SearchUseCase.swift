@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol SearchUseCase {
-    func execute(searchKeyword: String) -> Observable<VideoList>
+    func execute(searchKeyword: String) -> Observable<VideoList?>
 }

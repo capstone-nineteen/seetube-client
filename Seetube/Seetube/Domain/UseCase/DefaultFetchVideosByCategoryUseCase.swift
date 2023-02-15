@@ -15,7 +15,7 @@ class DefaultFetchVideosByCategoryUseCase: FetchVideosByCategoryUseCase {
         self.repository = repository
     }
     
-    func execute(category: Category) -> Observable<VideoList> {
+    func execute(category: Category) -> Observable<VideoList?> {
         return self.repository.getVideosByCategory(category: category.rawValue)
     }
 }

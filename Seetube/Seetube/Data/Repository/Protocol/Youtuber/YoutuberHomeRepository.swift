@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol YoutuberHomeRepository {
-    func getYoutuberHome() -> Observable<MyPage>
+    func getYoutuberHome() -> Observable<MyPage?>
 }

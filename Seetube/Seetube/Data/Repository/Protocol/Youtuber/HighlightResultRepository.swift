@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol HighlightResultRepository {
-    func getHighlightResult() -> Observable<HighlightResult>
+    func getHighlightResult() -> Observable<HighlightResult?>
 }

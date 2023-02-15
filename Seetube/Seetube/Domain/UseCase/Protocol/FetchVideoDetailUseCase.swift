@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FetchVideoDetailUseCase {
-    func execute(id: Int) -> Observable<VideoInfo>
+    func execute(id: Int) -> Observable<VideoInfo?>
 }

@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 class DefaultVideosByCategoryRepository: VideosByCategoryRepository, NetworkRequestable {
-    func getVideosByCategory(category: String) -> RxSwift.Observable<VideoList> {
+    func getVideosByCategory(category: String) -> Observable<VideoList?> {
         let endpoint = APIEndpointFactory.makeEndpoint(
             for: .getVideosByCategory(category: category)
         )

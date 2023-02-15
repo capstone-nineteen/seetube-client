@@ -6,19 +6,24 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 @IBDesignable
 class CategoryButtonScrollView: UIScrollView {
-    private lazy var categoryButtonStackView = CategoryButtonStackView()
+    fileprivate lazy var categoryButtonStackView = CategoryButtonStackView()
+    private var disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureSubviews()
+        self.bindUI()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.configureSubviews()
+        self.bindUI()
     }
     
     private func configureSubviews() {
@@ -33,22 +38,30 @@ class CategoryButtonScrollView: UIScrollView {
         ])
     }
     
-    private func centerCategory(_ category: Category) {
-        guard let button = self.categoryButtonStackView.categoryButtonWithCategory(category) else { return }
-        
+    private func bindUI() {
+        self.rx.selectedIndex
+            .asDriver()
+            .drive(with: self) { obj, index in
+                self.centerButton(index: index)
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func centerButton(index: Int) {
+        let button = self.categoryButtonStackView[index]
         let maximumXOffset = self.categoryButtonStackView.bounds.width - self.bounds.width
         let buttonCenterXOffset = button.frame.midX - self.bounds.width / 2
         UIView.animate(withDuration: 0.1, delay: 0) {
-            self.contentOffset = CGPoint(x: min(maximumXOffset, max(0, buttonCenterXOffset)), y: 0)
+            self.contentOffset = CGPoint(
+                x: min(maximumXOffset, max(0, buttonCenterXOffset)),
+                y: 0
+            )
         }
     }
-    
-    func highlightCategory(category: Category) {
-        self.categoryButtonStackView.highlightButton(category: category)
-        self.centerCategory(category)
-    }
-    
-    func configureButtonDelegate(_ delegate: CategoryButtonDelegate) {
-        self.categoryButtonStackView.configureButtonDelegate(delegate)
+}
+
+extension Reactive where Base: CategoryButtonScrollView {
+    var selectedIndex: ControlEvent<Int> {
+        return base.categoryButtonStackView.rx.selectedIndex
     }
 }

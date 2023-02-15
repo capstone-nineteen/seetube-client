@@ -668,10 +668,10 @@
             </objects>
             <point key="canvasLocation" x="4984.8000000000002" y="962.96851574212906"/>
         </scene>
-        <!--Category Filtered Table View Controller-->
+        <!--Reviewer Video Info Table View Controller-->
         <scene sceneID="vGF-80-cdX">
             <objects>
-                <tableViewController id="TWd-3r-3Jq" customClass="CategoryFilteredTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="TWd-3r-3Jq" customClass="ReviewerVideoInfoTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Zmx-rL-bwN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -876,7 +876,7 @@
             <objects>
                 <tableViewController id="D55-m3-f4R" customClass="ReviewsInProgressTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XYT-Jz-xqS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="474.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>

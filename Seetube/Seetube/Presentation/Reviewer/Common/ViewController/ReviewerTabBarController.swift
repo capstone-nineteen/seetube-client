@@ -51,6 +51,10 @@ extension ReviewerTabBarController {
                 reviewerHomeViewController.viewModel = viewModel
                 break
             case let videosByCategoryViewController as VideosByCategoryViewController:
+                let repository = DefaultVideosByCategoryRepository()
+                let fetchVideosByCategoryUseCase = DefaultFetchVideosByCategoryUseCase(repository: repository)
+                let viewModel = VideosByCategoryViewModel(fetchVideosByCategoryUseCase: fetchVideosByCategoryUseCase)
+                videosByCategoryViewController.viewModel = viewModel
                 break
             case let shopViewController as ShopViewController:
                 break
