@@ -20,16 +20,28 @@ class VideosByCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureUI()
         self.bindViewModel()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        // TODO: bind UI로 변경
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
+    // TODO: 셀 터치 시 화면 전환
+}
+
+// MARK: - Configuration
+
+extension VideosByCategoryViewController {
+    private func configureUI() {
+        self.configureNavigationBar()
     }
     
-    // TODO: 셀 터치 시 화면 전환
+    private func configureNavigationBar() {
+        self.rx.viewWillAppear
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.navigationController?.isNavigationBarHidden = true
+            }
+            .disposed(by: self.disposeBag)
+    }
 }
 
 // MARK: - ViewModel Binding
