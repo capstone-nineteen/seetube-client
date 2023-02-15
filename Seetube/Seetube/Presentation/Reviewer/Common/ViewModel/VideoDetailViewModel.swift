@@ -30,6 +30,6 @@ class VideoDetailViewModel {
         let end = videoInfo.reviewEndDate.toyyMMddStyleWithDot()
         self.reviewPeriod = "\(start) - \(end)"
         self.videoDescription = videoInfo.videoDescription
-        self.hashtags = "#임시해시태그"   // TODO: videoInfo.category로 변경
+        self.hashtags = "#\(videoInfo.category.rawValue)"
     }
 }

@@ -20,6 +20,7 @@ struct VideoInfoDTO: Decodable, DomainConvertible {
     let imagePath: String
     let videoPath: String
     let isReviewerReviewed: Bool
+    let category: String
     
     func toDomain() -> VideoInfo {
         return VideoInfo(videoId: self.id,
@@ -33,6 +34,7 @@ struct VideoInfoDTO: Decodable, DomainConvertible {
                          videoDescription: self.videoDetail,
                          imagePath: self.imagePath,
                          videoPath: self.videoPath,
-                         didReviewed: self.isReviewerReviewed)
+                         didReviewed: self.isReviewerReviewed,
+                         category: Category(rawValue: self.category) ?? .all)
     }
 }

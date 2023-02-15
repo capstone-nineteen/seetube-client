@@ -20,6 +20,7 @@ struct VideoInfo {
     let imagePath: String
     let videoPath: String
     var didReviewed: Bool
+    let category: Category
     
     init(
         videoId: Int = 0,
@@ -33,7 +34,8 @@ struct VideoInfo {
         videoDescription: String = "",
         imagePath: String = "",
         videoPath: String = "",
-        didReviewed: Bool = false
+        didReviewed: Bool = false,
+        category: Category = .all
     ) {
         self.videoId = videoId
         self.title = title
@@ -47,5 +49,6 @@ struct VideoInfo {
         self.imagePath = imagePath
         self.videoPath = videoPath
         self.didReviewed = didReviewed
+        self.category = category
     }
 }
