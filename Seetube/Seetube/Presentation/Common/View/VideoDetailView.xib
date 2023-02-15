@@ -14,7 +14,9 @@
                 <outlet property="bottomButton" destination="3AG-5q-fID" id="pxH-yM-nr4"/>
                 <outlet property="hashtagLabel" destination="fHB-9m-E3g" id="Cae-eK-Zyw"/>
                 <outlet property="reviewPeriodLabel" destination="RhK-fY-i1O" id="gac-PC-4GE"/>
-                <outlet property="rewardPriceStackView" destination="AK8-bA-rOF" id="AAF-mR-PoN"/>
+                <outlet property="reviewProgressView" destination="F2n-hi-ebo" id="SQL-4j-jEt"/>
+                <outlet property="rewardLabel" destination="qa5-7C-xRg" id="3vB-RJ-N2v"/>
+                <outlet property="rewardPriceStackView" destination="AK8-bA-rOF" id="UUn-VQ-qv3"/>
                 <outlet property="thumbnailButton" destination="de5-sS-Fz0" id="aMa-gp-tzQ"/>
                 <outlet property="titleLabel" destination="aC4-Uh-QGu" id="qBS-fP-CYE"/>
                 <outlet property="videoDescriptionLabel" destination="fHB-9m-E3g" id="9lG-DZ-qen"/>
