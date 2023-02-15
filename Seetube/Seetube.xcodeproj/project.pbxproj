@@ -94,6 +94,7 @@
 		048A4B12299D167200719AD0 /* CategoryTabMovable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B11299D167200719AD0 /* CategoryTabMovable.swift */; };
 		048A4B16299D3C7300719AD0 /* FetchVideosByCategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B15299D3C7300719AD0 /* FetchVideosByCategoryUseCase.swift */; };
 		048A4B18299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B17299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift */; };
+		048A4B1A299D3D3000719AD0 /* VideosByCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B19299D3D3000719AD0 /* VideosByCategoryViewModel.swift */; };
 		0490DA3F29938C50000BBF73 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA3E29938C50000BBF73 /* RxCocoa */; };
 		0490DA4129938C50000BBF73 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA4029938C50000BBF73 /* RxSwift */; };
 		0490DA4E29940B7E000BBF73 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA4D29940B7E000BBF73 /* MyPage.swift */; };
@@ -274,6 +275,7 @@
 		048A4B11299D167200719AD0 /* CategoryTabMovable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabMovable.swift; sourceTree = "<group>"; };
 		048A4B15299D3C7300719AD0 /* FetchVideosByCategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVideosByCategoryUseCase.swift; sourceTree = "<group>"; };
 		048A4B17299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchVideosByCategoryUseCase.swift; sourceTree = "<group>"; };
+		048A4B19299D3D3000719AD0 /* VideosByCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosByCategoryViewModel.swift; sourceTree = "<group>"; };
 		0490DA4D29940B7E000BBF73 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
 		0490DA5129940CC9000BBF73 /* APIUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
 		0490DA532994C26A000BBF73 /* DefaultMyPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMyPageRepository.swift; sourceTree = "<group>"; };
@@ -717,6 +719,7 @@
 		043636BC2993892D00EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				048A4B19299D3D3000719AD0 /* VideosByCategoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1621,6 +1624,7 @@
 				044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */,
 				048A4B0E299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift in Sources */,
 				0490DA8129951199000BBF73 /* VideoDetailRepository.swift in Sources */,
+				048A4B1A299D3D3000719AD0 /* VideosByCategoryViewModel.swift in Sources */,
 				048A4B07299CE02400719AD0 /* ReviewProgressViewModel.swift in Sources */,
 				0490DA592994C2E5000BBF73 /* APIEndpoint.swift in Sources */,
 				0490DA8C299512D0000BBF73 /* ConcentrationResultRepository.swift in Sources */,
