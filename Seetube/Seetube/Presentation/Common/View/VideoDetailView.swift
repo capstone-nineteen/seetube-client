@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import Kingfisher
 
 @IBDesignable
 class VideoDetailView: UIView, NibLoadable {
@@ -43,11 +42,9 @@ class VideoDetailView: UIView, NibLoadable {
     func bind(with viewModel: Driver<VideoDetailViewModel>) -> Cancelable {
         return Disposables.create (
             viewModel
-                .map { $0.title }
+                .map { $0.thumbnailImageUrl }
                 .drive(with: self) { obj, url in
-                    obj.thumbnailButton.kf
-                        .setImage(with: URL(string: url),
-                                  for: .normal)
+                    obj.thumbnailButton.setThumbnailImage(url: url)
                 },
             viewModel
                 .map { $0.title }

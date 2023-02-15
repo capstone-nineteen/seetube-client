@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol VideoThumbnailButtonDelegate: AnyObject {
     func videoThumbnailButtonTouched(_ sender: VideoThumbnailButton)
@@ -38,5 +39,9 @@ class VideoThumbnailButton: UIButton, NibLoadable {
             guard let self = self else { return }
             self.delegate?.videoThumbnailButtonTouched(self)
         }), for: .touchUpInside)
+    }
+    
+    func setThumbnailImage(url: String) {
+        self.thumbnailImageView.kf.setImage(with: URL(string: url))
     }
 }
