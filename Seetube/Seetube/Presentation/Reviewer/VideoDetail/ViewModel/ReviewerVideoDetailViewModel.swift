@@ -28,7 +28,12 @@ class ReviewerVideoDetailViewModel: ViewModelType {
                     .execute(id: self.videoId)
                     .asDriver(onErrorJustReturn: VideoInfo())
             }
-            .map { VideoDetailViewModel(with: $0) }
+            .map {
+                let buttonTitle = $0.didReviewed ? "리뷰 완료" : "리뷰 시작하기"
+                return VideoDetailViewModel(with: $0,
+                                            buttonTitle: buttonTitle
+                )
+            }
         
         return Output(video: video)
     }

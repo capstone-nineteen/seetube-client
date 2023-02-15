@@ -11,28 +11,26 @@ import RxCocoa
 
 @IBDesignable
 class VideoDetailView: UIView, NibLoadable {
-    @IBOutlet weak var thumbnailButton: VideoThumbnailButton!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var youtuberNameLabel: UILabel!
-    @IBOutlet weak var rewardLabel: UILabel!
+    @IBOutlet private weak var thumbnailButton: VideoThumbnailButton!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var youtuberNameLabel: UILabel!
+    @IBOutlet private weak var rewardLabel: UILabel!
     @IBOutlet weak var rewardPriceStackView: UIStackView!
-    @IBOutlet weak var reviewProgressView: ReviewProgressView!
-    @IBOutlet weak var reviewPeriodLabel: UILabel!
-    @IBOutlet weak var videoDescriptionLabel: UILabel!
-    @IBOutlet weak var hashtagLabel: UILabel!
-    @IBOutlet weak var bottomButton: BottomButton!
+    @IBOutlet private weak var reviewProgressView: ReviewProgressView!
+    @IBOutlet private weak var reviewPeriodLabel: UILabel!
+    @IBOutlet private weak var videoDescriptionLabel: UILabel!
+    @IBOutlet private weak var hashtagLabel: UILabel!
+    @IBOutlet fileprivate weak var bottomButton: BottomButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.loadFromNib(owner: self)
-        self.configureBottomButtonName()
         self.configureRewardPriceStackView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.loadFromNib(owner: self)
-        self.configureBottomButtonName()
         self.configureRewardPriceStackView()
     }
     
@@ -65,7 +63,21 @@ class VideoDetailView: UIView, NibLoadable {
                 .drive(self.videoDescriptionLabel.rx.text),
             viewModel
                 .map { $0.hashtags }
-                .drive(self.hashtagLabel.rx.text)
+                .drive(self.hashtagLabel.rx.text),
+            viewModel
+                .map { $0.shouldEnableBottomButton }
+                .drive(self.rx.isBottomButtonEnabled),
+            viewModel
+                .map { $0.buttonTitle }
+                .drive(self.bottomButton.rx.text)
         )
+    }
+}
+
+extension Reactive where Base: VideoDetailView {
+    var isBottomButtonEnabled: Binder<Bool> {
+        return Binder(base) { obj, isEnabled in
+            base.bottomButton.isEnabled = isEnabled
+        }
     }
 }

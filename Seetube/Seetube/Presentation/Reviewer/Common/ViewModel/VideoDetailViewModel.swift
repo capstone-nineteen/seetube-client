@@ -16,8 +16,13 @@ class VideoDetailViewModel {
     let reviewPeriod: String
     let videoDescription: String
     let hashtags: String
+    let shouldEnableBottomButton: Bool
+    let buttonTitle: String
     
-    init(with videoInfo: VideoInfo) {
+    init(
+        with videoInfo: VideoInfo,
+        buttonTitle: String
+    ) {
         self.thumbnailImageUrl = videoInfo.imagePath
         self.title = videoInfo.title
         self.youtuber = videoInfo.youtuberName
@@ -31,5 +36,7 @@ class VideoDetailViewModel {
         self.reviewPeriod = "\(start) - \(end)"
         self.videoDescription = videoInfo.videoDescription
         self.hashtags = "#\(videoInfo.category.rawValue)"
+        self.shouldEnableBottomButton = !videoInfo.didReviewed
+        self.buttonTitle = buttonTitle
     }
 }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,9 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
             <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="string" keyPath="name" value="저장하기기"/>
+                <userDefinedRuntimeAttribute type="string" keyPath="name" value="저장하기"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="mlb-Um-XoF"/>
                 <outlet property="nameLabel" destination="mSL-xo-Z8W" id="jTP-QJ-obK"/>
             </connections>
         </placeholder>
@@ -21,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저장하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSL-xo-Z8W" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                    <rect key="frame" x="145.66666666666666" y="12.666666666666664" width="52" height="25"/>
+                    <rect key="frame" x="141.33333333333334" y="12.666666666666664" width="60.666666666666657" height="25"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -42,6 +44,11 @@
             <point key="canvasLocation" x="-55.725190839694655" y="-294.36619718309862"/>
         </view>
     </objects>
+    <designables>
+        <designable name="mSL-xo-Z8W">
+            <size key="intrinsicContentSize" width="60.666666666666664" height="21"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.94499999284744263" green="0.23899999260902405" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -8,10 +8,6 @@
 import UIKit
 
 class YoutuberVideoDetailView: VideoDetailView {
-    override func configureBottomButtonName() {
-        self.bottomButton.name = "결과 확인"
-    }
-    
     override func configureRewardPriceStackView() {
         self.rewardPriceStackView.isHidden = true
     }

@@ -6,15 +6,26 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 @IBDesignable
 class BottomButton: UIButton, NibLoadable {
-    @IBOutlet weak var nameLabel: AdaptiveFontSizeLabel!
+    @IBOutlet private var contentView: UIView!
+    @IBOutlet fileprivate weak var nameLabel: AdaptiveFontSizeLabel!
     @IBInspectable var name: String?
+    private var disposeBag = DisposeBag()
     
     override var isHighlighted: Bool {
         didSet {
             self.alpha = isHighlighted ? 0.7 : 1.0
+        }
+    }
+    override var isEnabled: Bool {
+        didSet {
+            let enabledColor = Colors.seetubePink
+            let disabledColor = UIColor.systemGray3
+            self.contentView.backgroundColor = self.isEnabled ? enabledColor : disabledColor
         }
     }
     
@@ -22,20 +33,19 @@ class BottomButton: UIButton, NibLoadable {
         super.init(frame: frame)
         self.loadFromNib(owner: self)
         self.configureShadow()
+        self.nameLabel.text = self.name
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.loadFromNib(owner: self)
         self.configureShadow()
-    }
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
         self.nameLabel.text = self.name
     }
-    
-    private func configure() {
-        self.configureShadow()
+}
+
+extension Reactive where Base: BottomButton {
+    var text: Binder<String?> {
+        return base.nameLabel.rx.text
     }
 }
