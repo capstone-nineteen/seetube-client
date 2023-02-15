@@ -50,14 +50,6 @@ class SeetubeSearchBarView: UIView {
         self.backgroundColor = .clear
     }
     
-    func configureSearchBarDelegate(_ delegate: UISearchBarDelegate) {
-        self.searchBar.delegate = delegate
-    }
-    
-    func updateSearchBarText(with text: String?) {
-        self.searchBar.text = text
-    }
-    
     func dismissKeyboard() {
         self.searchBar.resignFirstResponder()
     }
