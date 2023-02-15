@@ -6,16 +6,64 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class ReviewerVideoDetailViewController: UIViewController {
+    @IBOutlet weak var videoDetailView: ReviewerVideoDetailView!
+    
+    var viewModel: ReviewerVideoDetailViewModel?
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureUI()
+        self.bindViewModel()
+    }
+}
 
-        // Do any additional setup after loading the view.
+// MARK: - Configuration
+
+extension ReviewerVideoDetailViewController {
+    private func configureUI() {
+        self.configureNavigationBar()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = false
+    private func configureNavigationBar() {
+        self.rx.viewWillAppear
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.navigationController?.isNavigationBarHidden = false
+            }
+            .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: - ViewModel Binding
+
+extension ReviewerVideoDetailViewController {
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        let viewDidLoad = self.viewDidLoadEvent()
+        
+        let input = ReviewerVideoDetailViewModel.Input(viewDidLoad: viewDidLoad)
+        let output = viewModel.transform(input: input)
+        
+        self.bindVideo(output.video)
+    }
+    
+    // MARK: Input Event Creation
+    
+    private func viewDidLoadEvent() -> Driver<Void> {
+        return self.rx.viewDidLoad.asDriver()
+    }
+    
+    // MARK: Output Binding
+    
+    private func bindVideo(_ video: Driver<VideoDetailViewModel>) {
+        self.videoDetailView
+            .bind(with: video)
+            .disposed(by: self.disposeBag)
     }
 }

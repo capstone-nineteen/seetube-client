@@ -224,6 +224,9 @@
                             <constraint firstItem="h1r-g7-HcZ" firstAttribute="bottom" secondItem="A1A-99-DZR" secondAttribute="bottom" id="yiD-Wb-Jaj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="videoDetailView" destination="A1A-99-DZR" id="Po7-Cu-CTB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKN-Sx-tys" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -873,7 +876,7 @@
             <objects>
                 <tableViewController id="D55-m3-f4R" customClass="ReviewsInProgressTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XYT-Jz-xqS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="474.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
