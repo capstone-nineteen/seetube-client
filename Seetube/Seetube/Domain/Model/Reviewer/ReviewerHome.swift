@@ -15,12 +15,12 @@ struct ReviewerHomeSection {
         return self.videos[index]
     }
     
-    static func dummy() -> [ReviewerHomeSection] {
-        let section = ReviewerHomeSection(category: .beauty,
-                                   videos: [VideoInfo.dummyVideo(),
-                                            VideoInfo.dummyVideo()
-                                           ])
-        return [section, section, section, section]
+    init(
+        category: Category = .all,
+        videos: [VideoInfo] = [VideoInfo(), VideoInfo()]
+    ) {
+        self.category = category
+        self.videos = videos
     }
 }
 
@@ -31,7 +31,10 @@ struct ReviewerHome {
     
     init(name: String = "",
          coin: Int = 0,
-         sections: [ReviewerHomeSection] = ReviewerHomeSection.dummy()) {
+         sections: [ReviewerHomeSection] = [ReviewerHomeSection(),
+                                            ReviewerHomeSection(),
+                                            ReviewerHomeSection(),
+                                            ReviewerHomeSection()]) {
         self.name = name
         self.coin = coin
         self.sections = sections

@@ -21,18 +21,31 @@ struct VideoInfo {
     let videoPath: String
     var didReviewed: Bool
     
-    static func dummyVideo() -> VideoInfo {
-        VideoInfo(videoId: 123123,
-                  title: "제목",
-                  youtuberName: "dbxb",
-                  rewardAmount: 300,
-                  currentNumberOfReviewers: 20,
-                  targetNumberOfReviewers: 80,
-                  reviewStartDate: Date.distantPast,
-                  reviewEndDate: Date.distantFuture,
-                  videoDescription: "fjiejifwjiej",
-                  imagePath: "",
-                  videoPath: "",
-                  didReviewed: false)
+    init(
+        videoId: Int = 0,
+        title: String = "",
+        youtuberName: String = "",
+        rewardAmount: Int = 0,
+        currentNumberOfReviewers: Int = 0,
+        targetNumberOfReviewers: Int = 0,
+        reviewStartDate: Date = Date(),
+        reviewEndDate: Date = Date(),
+        videoDescription: String = "",
+        imagePath: String = "",
+        videoPath: String = "",
+        didReviewed: Bool = false
+    ) {
+        self.videoId = videoId
+        self.title = title
+        self.youtuberName = youtuberName
+        self.rewardAmount = rewardAmount
+        self.currentNumberOfReviewers = currentNumberOfReviewers
+        self.targetNumberOfReviewers = targetNumberOfReviewers
+        self.reviewStartDate = reviewStartDate
+        self.reviewEndDate = reviewEndDate
+        self.videoDescription = videoDescription
+        self.imagePath = imagePath
+        self.videoPath = videoPath
+        self.didReviewed = didReviewed
     }
 }
