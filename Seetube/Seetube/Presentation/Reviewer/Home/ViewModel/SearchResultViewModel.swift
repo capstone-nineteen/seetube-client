@@ -66,7 +66,7 @@ extension SearchResultViewModel {
     
     struct Output {
         let videos: Driver<[ReviewerVideoCardItemViewModel]>
-        let selectedVideoId: Driver<String>
+        let selectedVideoId: Driver<Int>
         let initialSearchKeyword: Driver<String?>
     }
 }

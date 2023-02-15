@@ -102,7 +102,7 @@ extension SearchResultViewController {
             .disposed(by: self.disposeBag)
     }
     
-    private func bindSelectedVideoId(_ selectedVideoId: Driver<String>) {
+    private func bindSelectedVideoId(_ selectedVideoId: Driver<Int>) {
         selectedVideoId
             .drive(with: self) { obj, id in
                 obj.moveToVideoDetail(with: id)
@@ -120,7 +120,7 @@ extension SearchResultViewController {
 // MARK: - Scene Trasition
 
 extension SearchResultViewController: ViewControllerPushable {
-    private func moveToVideoDetail(with id: String) {
+    private func moveToVideoDetail(with id: Int) {
         self.push(
             viewControllerType: ReviewerVideoDetailViewController.self
         ) { viewController in

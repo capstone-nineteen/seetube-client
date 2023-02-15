@@ -8,7 +8,7 @@
 import Foundation
 
 struct VideoInfoDTO: Decodable, DomainConvertible {
-    let id: String
+    let id: Int
     let videoTitle: String
     let creator: String
     let videoCoin: Int
@@ -19,7 +19,7 @@ struct VideoInfoDTO: Decodable, DomainConvertible {
     let videoDetail: String
     let imagePath: String
     let videoPath: String
-    let isReviewerReviewed: Bool?
+    let isReviewerReviewed: Bool
     
     func toDomain() -> VideoInfo {
         return VideoInfo(title: self.videoTitle,

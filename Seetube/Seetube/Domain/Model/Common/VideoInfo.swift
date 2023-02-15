@@ -18,7 +18,7 @@ struct VideoInfo {
     let videoDescription: String
     let imagePath: String
     let videoPath: String
-    let videoId: String
+    let videoId: Int
     
     static func dummyVideo() -> VideoInfo {
         VideoInfo(title: "제목",
@@ -31,6 +31,6 @@ struct VideoInfo {
                   videoDescription: "fjiejifwjiej",
                   imagePath: "",
                   videoPath: "",
-                  videoId: "123123")
+                  videoId: 123123)
     }
 }

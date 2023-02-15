@@ -62,6 +62,6 @@ extension ReviewerHomeViewModel {
         let coin: Driver<String>
         let sections: Driver<[ReviewerHomeSectionViewModel]>
         let selectedSection: Driver<Category>
-        let selectedVideoId: Driver<String>
+        let selectedVideoId: Driver<Int>
     }
 }

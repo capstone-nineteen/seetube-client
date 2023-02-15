@@ -184,7 +184,7 @@ extension ReviewerHomeViewController {
             .disposed(by: self.disposeBag)
     }
     
-    private func bindSelectedVideoId(_ selectedVideoId: Driver<String>) {
+    private func bindSelectedVideoId(_ selectedVideoId: Driver<Int>) {
         selectedVideoId
             .drive(with: self) { owner, selectedVideoId in
                 self.moveToVideoDetail(videoId: selectedVideoId)
@@ -196,7 +196,7 @@ extension ReviewerHomeViewController {
 // MARK: - Scene Transition
 
 extension ReviewerHomeViewController {
-    func moveToVideoDetail(videoId: String) {
+    func moveToVideoDetail(videoId: Int) {
         self.push(
             viewControllerType: ReviewerVideoDetailViewController.self
         ) { viewController in
