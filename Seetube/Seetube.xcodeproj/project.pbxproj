@@ -83,6 +83,8 @@
 		047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4929707D2B007CDBC4 /* HighlightResultViewController.swift */; };
 		047A5F4D29708413007CDBC4 /* SceneListLargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */; };
 		047A5F4E29708413007CDBC4 /* SceneListLargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */; };
+		048A4AFF299CD56300719AD0 /* FetchVideoInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4AFE299CD56300719AD0 /* FetchVideoInfoUseCase.swift */; };
+		048A4B01299CD59100719AD0 /* DefaultFetchVideoInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B00299CD59100719AD0 /* DefaultFetchVideoInfoUseCase.swift */; };
 		0490DA3F29938C50000BBF73 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA3E29938C50000BBF73 /* RxCocoa */; };
 		0490DA4129938C50000BBF73 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA4029938C50000BBF73 /* RxSwift */; };
 		0490DA4E29940B7E000BBF73 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA4D29940B7E000BBF73 /* MyPage.swift */; };
@@ -252,6 +254,8 @@
 		047A5F4929707D2B007CDBC4 /* HighlightResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4B29708413007CDBC4 /* SceneListLargeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeTableViewCell.swift; sourceTree = "<group>"; };
 		047A5F4C29708413007CDBC4 /* SceneListLargeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListLargeTableViewCell.xib; sourceTree = "<group>"; };
+		048A4AFE299CD56300719AD0 /* FetchVideoInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVideoInfoUseCase.swift; sourceTree = "<group>"; };
+		048A4B00299CD59100719AD0 /* DefaultFetchVideoInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchVideoInfoUseCase.swift; sourceTree = "<group>"; };
 		0490DA4D29940B7E000BBF73 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
 		0490DA5129940CC9000BBF73 /* APIUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
 		0490DA532994C26A000BBF73 /* DefaultMyPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMyPageRepository.swift; sourceTree = "<group>"; };
@@ -575,6 +579,7 @@
 				0490DAB429953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift */,
 				04A678A629964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift */,
 				04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */,
+				048A4B00299CD59100719AD0 /* DefaultFetchVideoInfoUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1224,6 +1229,7 @@
 				0490DAB129953B8B000BBF73 /* FetchMyPageUseCase.swift */,
 				04A678A229964A08006E29C1 /* FetchReviewerHomeUseCase.swift */,
 				04B8AF0A299BBB8A0024C897 /* SearchUseCase.swift */,
+				048A4AFE299CD56300719AD0 /* FetchVideoInfoUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1507,6 +1513,7 @@
 				04A678A729964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift in Sources */,
 				0490DA922995132F000BBF73 /* ShortsResultRepository.swift in Sources */,
 				0470C9CF2990F1D400D4743B /* YoutuberHomeDTO.swift in Sources */,
+				048A4B01299CD59100719AD0 /* DefaultFetchVideoInfoUseCase.swift in Sources */,
 				04B8AF09299BBB4E0024C897 /* SearchResultViewModel.swift in Sources */,
 				0470C9C82990ED3900D4743B /* VideoInfoDTO.swift in Sources */,
 				04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */,
@@ -1578,6 +1585,7 @@
 				049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */,
 				0490DAB529953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift in Sources */,
 				046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */,
+				048A4AFF299CD56300719AD0 /* FetchVideoInfoUseCase.swift in Sources */,
 				0490DA7B29950BB0000BBF73 /* ShortsResult.swift in Sources */,
 				0470C9DF2990FA4E00D4743B /* ShortsResultDTO.swift in Sources */,
 				046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */,

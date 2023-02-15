@@ -16,7 +16,6 @@ class DefaultSearchUseCase: SearchUseCase {
     }
     
     func execute(searchKeyword: String) -> Observable<VideoList> {
-        return self.repository
-            .getVideos(searchKeyword: searchKeyword)
+        return self.repository.getVideos(searchKeyword: searchKeyword)
     }
 }
