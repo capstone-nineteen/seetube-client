@@ -29,8 +29,8 @@ class SearchResultViewModel: ViewModelType {
             )
             .withLatestFrom(
                 Driver.merge(
-                    Driver.just(self.searchKeyword),
-                    input.searchBarText
+                    input.searchBarText,
+                    Driver.just(self.searchKeyword)
                 )
             ) { _, text in
                 text
