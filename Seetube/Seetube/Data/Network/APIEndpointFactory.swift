@@ -58,7 +58,7 @@ class APIEndpointFactory {
             case .getReviewerHome:
                 return APIUrls.reviewerHome
             case .getVideosBySearchKeyword:
-                return APIUrls.getVideosBySearchKeyword
+                return APIUrls.search
             case .getVideosByCategory:
                 return ""
             case .getShop:
