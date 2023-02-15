@@ -7,12 +7,10 @@
 
 import Foundation
 
-struct VideoListDTO: Decodable {
+struct VideoListDTO: Decodable, DomainConvertible {
     let videos: [VideoInfoDTO]
-}
-
-extension VideoListDTO: DomainConvertible {
+    
     func toDomain() -> VideoList {
-        return VideoList()
+        return VideoList(videos: self.videos.map { $0.toDomain() })
     }
 }
