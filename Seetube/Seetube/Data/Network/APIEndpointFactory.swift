@@ -12,7 +12,7 @@ class APIEndpointFactory {
         case getVideoInfo(id: Int)
         case getReviewerHome
         case getVideosBySearchKeyword(keyword: String)
-        case getVideosByCategory
+        case getVideosByCategory(category: String)
         case getShop
         case getMyPage
         case getYoutuberHome
@@ -59,8 +59,8 @@ class APIEndpointFactory {
                 return APIUrls.reviewerHome
             case .getVideosBySearchKeyword:
                 return APIUrls.search
-            case .getVideosByCategory:
-                return ""
+            case .getVideosByCategory(let category):
+                return APIUrls.category + "/\(category)"
             case .getShop:
                 return ""
             case .getMyPage:
