@@ -22,7 +22,8 @@ struct VideoInfoDTO: Decodable, DomainConvertible {
     let isReviewerReviewed: Bool
     
     func toDomain() -> VideoInfo {
-        return VideoInfo(title: self.videoTitle,
+        return VideoInfo(videoId: self.id,
+                         title: self.videoTitle,
                          youtuberName: self.creator,
                          rewardAmount: self.videoCoin,
                          currentNumberOfReviewers: self.reviewCurrent,
@@ -32,6 +33,6 @@ struct VideoInfoDTO: Decodable, DomainConvertible {
                          videoDescription: self.videoDetail,
                          imagePath: self.imagePath,
                          videoPath: self.videoPath,
-                         videoId: self.id)
+                         didReviewed: self.isReviewerReviewed)
     }
 }

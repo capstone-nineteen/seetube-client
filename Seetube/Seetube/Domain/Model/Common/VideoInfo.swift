@@ -8,6 +8,7 @@
 import Foundation
 
 struct VideoInfo {
+    let videoId: Int
     let title: String
     let youtuberName: String
     let rewardAmount: Int
@@ -18,10 +19,11 @@ struct VideoInfo {
     let videoDescription: String
     let imagePath: String
     let videoPath: String
-    let videoId: Int
+    var didReviewed: Bool
     
     static func dummyVideo() -> VideoInfo {
-        VideoInfo(title: "제목",
+        VideoInfo(videoId: 123123,
+                  title: "제목",
                   youtuberName: "dbxb",
                   rewardAmount: 300,
                   currentNumberOfReviewers: 20,
@@ -31,6 +33,6 @@ struct VideoInfo {
                   videoDescription: "fjiejifwjiej",
                   imagePath: "",
                   videoPath: "",
-                  videoId: 123123)
+                  didReviewed: false)
     }
 }
