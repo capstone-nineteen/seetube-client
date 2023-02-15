@@ -9,8 +9,8 @@ import Foundation
 import RxSwift
 
 class DefaultVideoInfoRepository: VideoInfoRepository, NetworkRequestable {
-    func getVideoInfo() -> Observable<VideoInfo> {
-        let endpoint = APIEndpointFactory.makeEndpoint(for: .getVideoInfo)
+    func getVideoInfo(id: Int) -> Observable<VideoInfo> {
+        let endpoint = APIEndpointFactory.makeEndpoint(for: .getVideoInfo(id: id))
         return self.getResource(endpoint: endpoint,
                                 decodingType: VideoInfoDTO.self)
     }
