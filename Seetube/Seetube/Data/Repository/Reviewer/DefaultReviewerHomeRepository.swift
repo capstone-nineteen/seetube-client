@@ -16,8 +16,9 @@ class DefaultReviewerHomeRepository: ReviewerHomeRepository, NetworkRequestable 
     }
     
     func getVideos(searchKeyword: String) -> Observable<VideoList> {
-        let endpoint = APIEndpointFactory.makeEndpoint(for: .getVideosBySearchKeyword,
-                                                       parameters: ["keyword": searchKeyword])
+        let endpoint = APIEndpointFactory.makeEndpoint(
+            for: .getVideosBySearchKeyword(keyword: searchKeyword)
+        )
         return self.getResource(endpoint: endpoint,
                                 decodingType: VideoListDTO.self)
     }

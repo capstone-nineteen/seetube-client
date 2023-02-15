@@ -11,7 +11,7 @@ class APIEndpointFactory {
     enum EndpointType {
         case getVideoInfo(id: Int)
         case getReviewerHome
-        case getVideosBySearchKeyword
+        case getVideosBySearchKeyword(keyword: String)
         case getVideosByCategory
         case getShop
         case getMyPage
@@ -24,45 +24,95 @@ class APIEndpointFactory {
         
         var method: HttpMethod {
             switch self {
-            case .getVideoInfo: return .get
-            case .getReviewerHome: return .get
-            case .getVideosBySearchKeyword: return .get
-            case .getVideosByCategory: return .get
-            case .getShop: return .get
-            case .getMyPage: return .get
-            case .getYoutuberHome: return .get
-            case .getConcentrationResult: return .get
-            case .getEmotionResult: return .get
-            case .getSceneStealerResult: return .get
-            case .getShortsResult: return .get
-            case .getHighlightResult: return .get
+            case .getVideoInfo:
+                return .get
+            case .getReviewerHome:
+                return .get
+            case .getVideosBySearchKeyword:
+                return .get
+            case .getVideosByCategory:
+                return .get
+            case .getShop:
+                return .get
+            case .getMyPage:
+                return .get
+            case .getYoutuberHome:
+                return .get
+            case .getConcentrationResult:
+                return .get
+            case .getEmotionResult:
+                return .get
+            case .getSceneStealerResult:
+                return .get
+            case .getShortsResult:
+                return .get
+            case .getHighlightResult:
+                return .get
             }
         }
         
         var url: String {
             switch self {
-            case .getVideoInfo(let id): return APIUrls.videoInfo + "/\(id)"
-            case .getReviewerHome: return APIUrls.reviewerHome
-            case .getVideosBySearchKeyword: return APIUrls.getVideosBySearchKeyword
-            case .getVideosByCategory: return ""
-            case .getShop: return ""
-            case .getMyPage: return APIUrls.myPage
-            case .getYoutuberHome: return ""
-            case .getConcentrationResult: return ""
-            case .getEmotionResult: return ""
-            case .getSceneStealerResult: return ""
-            case .getShortsResult: return ""
-            case .getHighlightResult: return ""
+            case .getVideoInfo(let id):
+                return APIUrls.videoInfo + "/\(id)"
+            case .getReviewerHome:
+                return APIUrls.reviewerHome
+            case .getVideosBySearchKeyword:
+                return APIUrls.getVideosBySearchKeyword
+            case .getVideosByCategory:
+                return ""
+            case .getShop:
+                return ""
+            case .getMyPage:
+                return APIUrls.myPage
+            case .getYoutuberHome:
+                return ""
+            case .getConcentrationResult:
+                return ""
+            case .getEmotionResult:
+                return ""
+            case .getSceneStealerResult:
+                return ""
+            case .getShortsResult:
+                return ""
+            case .getHighlightResult:
+                return ""
+            }
+        }
+        
+        var parameters: [String:Any]? {
+            switch self {
+            case .getVideoInfo:
+                return nil
+            case .getReviewerHome:
+                return nil
+            case .getVideosBySearchKeyword(let keyword):
+                return ["keyword": keyword]
+            case .getVideosByCategory:
+                return nil
+            case .getShop:
+                return nil
+            case .getMyPage:
+                return nil
+            case .getYoutuberHome:
+                return nil
+            case .getConcentrationResult:
+                return nil
+            case .getEmotionResult:
+                return nil
+            case .getSceneStealerResult:
+                return nil
+            case .getShortsResult:
+                return nil
+            case .getHighlightResult:
+                return nil
             }
         }
     }
     
-    static func makeEndpoint(
-        for type: EndpointType,
-        parameters: [String: Any]? = nil
-    ) -> APIEndpoint {
+    static func makeEndpoint(for type: EndpointType) -> APIEndpoint {
         return APIEndpoint(method: type.method,
                            url: type.url,
-                           parameters: parameters)
+                           parameters: type.parameters)
     }
 }
