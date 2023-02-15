@@ -605,7 +605,7 @@
 		043636AE299387C200EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				04A678A0299648EA006E29C1 /* ViewModelType.swift */,
+				048A4B0C299D0F7600719AD0 /* Protocol */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1123,6 +1123,14 @@
 				0470727D2979B23B008D6CC0 /* VideoInfoCardTableViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		048A4B0C299D0F7600719AD0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				04A678A0299648EA006E29C1 /* ViewModelType.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		0490DA552994C295000BBF73 /* Protocol */ = {
