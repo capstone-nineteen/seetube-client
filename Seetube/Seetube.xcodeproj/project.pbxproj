@@ -92,6 +92,8 @@
 		048A4B0E299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B0D299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift */; };
 		048A4B10299D15C100719AD0 /* SearchResultPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B0F299D15C100719AD0 /* SearchResultPushable.swift */; };
 		048A4B12299D167200719AD0 /* CategoryTabMovable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B11299D167200719AD0 /* CategoryTabMovable.swift */; };
+		048A4B16299D3C7300719AD0 /* FetchVideosByCategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B15299D3C7300719AD0 /* FetchVideosByCategoryUseCase.swift */; };
+		048A4B18299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B17299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift */; };
 		0490DA3F29938C50000BBF73 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA3E29938C50000BBF73 /* RxCocoa */; };
 		0490DA4129938C50000BBF73 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0490DA4029938C50000BBF73 /* RxSwift */; };
 		0490DA4E29940B7E000BBF73 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490DA4D29940B7E000BBF73 /* MyPage.swift */; };
@@ -270,6 +272,8 @@
 		048A4B0D299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailPushable.swift; sourceTree = "<group>"; };
 		048A4B0F299D15C100719AD0 /* SearchResultPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultPushable.swift; sourceTree = "<group>"; };
 		048A4B11299D167200719AD0 /* CategoryTabMovable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabMovable.swift; sourceTree = "<group>"; };
+		048A4B15299D3C7300719AD0 /* FetchVideosByCategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVideosByCategoryUseCase.swift; sourceTree = "<group>"; };
+		048A4B17299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchVideosByCategoryUseCase.swift; sourceTree = "<group>"; };
 		0490DA4D29940B7E000BBF73 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
 		0490DA5129940CC9000BBF73 /* APIUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
 		0490DA532994C26A000BBF73 /* DefaultMyPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMyPageRepository.swift; sourceTree = "<group>"; };
@@ -597,6 +601,7 @@
 				04A678A629964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift */,
 				04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */,
 				048A4B00299CD59100719AD0 /* DefaultFetchVideoDetailUseCase.swift */,
+				048A4B17299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1259,6 +1264,7 @@
 				04A678A229964A08006E29C1 /* FetchReviewerHomeUseCase.swift */,
 				04B8AF0A299BBB8A0024C897 /* SearchUseCase.swift */,
 				048A4AFE299CD56300719AD0 /* FetchVideoDetailUseCase.swift */,
+				048A4B15299D3C7300719AD0 /* FetchVideosByCategoryUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1481,6 +1487,7 @@
 				04E6FC5F29893A400052496A /* Colors.swift in Sources */,
 				04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */,
 				0470C9D82990F7D400D4743B /* Emotion.swift in Sources */,
+				048A4B16299D3C7300719AD0 /* FetchVideosByCategoryUseCase.swift in Sources */,
 				04A678A929968645006E29C1 /* ReviewerHomeSectionViewModel.swift in Sources */,
 				0490DA7D29950BB9000BBF73 /* HighlightResult.swift in Sources */,
 				048A4B12299D167200719AD0 /* CategoryTabMovable.swift in Sources */,
@@ -1515,6 +1522,7 @@
 				0470C9C42990EA9800D4743B /* VideoListDTO.swift in Sources */,
 				04A6789F299648A9006E29C1 /* ReviewerHomeViewModel.swift in Sources */,
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
+				048A4B18299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift in Sources */,
 				049961002982DDCF000EE539 /* ReviewerVideoInfoTableViewController.swift in Sources */,
 				0470C9CC2990EE8D00D4743B /* ReviewerHomeDTO.swift in Sources */,
 				045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */,
