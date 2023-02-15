@@ -9,7 +9,7 @@ import Foundation
 
 class APIEndpointFactory {
     enum EndpointType {
-        case getVideoInfo
+        case getVideoInfo(id: Int)
         case getReviewerHome
         case getVideosBySearchKeyword
         case getVideosByCategory
@@ -41,7 +41,7 @@ class APIEndpointFactory {
         
         var url: String {
             switch self {
-            case .getVideoInfo: return ""
+            case .getVideoInfo(let id): return APIUrls.videoInfo + "/\(id)"
             case .getReviewerHome: return APIUrls.reviewerHome
             case .getVideosBySearchKeyword: return APIUrls.getVideosBySearchKeyword
             case .getVideosByCategory: return ""
