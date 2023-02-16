@@ -65,6 +65,7 @@ class CategoryButtonScrollView: UIScrollView {
         } completion: { _ in
             // animation이 끝나기 전에 테이블뷰가 리로드되어버리면 애니메이션 겹쳐서 센터링이 안됨
             // animation이 끝나고 방출해주어야 테이블뷰 리로드와 겹치지 않는다
+            // FIXME: 아직도 가끔 센터링 누락됨. 확인필요
             self.selectedIndex.accept(index)
         }
     }

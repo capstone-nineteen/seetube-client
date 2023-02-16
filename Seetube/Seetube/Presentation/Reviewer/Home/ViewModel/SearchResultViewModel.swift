@@ -28,10 +28,7 @@ class SearchResultViewModel: ViewModelType {
                 input.searchButtonClicked
             )
             .withLatestFrom(
-                Driver.merge(
-                    input.searchBarText,
-                    Driver.just(self.searchKeyword)
-                )
+                input.searchBarText
             ) { _, text in
                 text
             }
@@ -53,8 +50,7 @@ class SearchResultViewModel: ViewModelType {
             ) { index, searchResult in
                 searchResult.videos[index.row].videoId
             }
-        let initialSearchKeyword = Driver
-            .just(self.searchKeyword)
+        let initialSearchKeyword = self.searchKeyword
         
         return Output(videos: videos,
                       selectedVideoId: selectedVideoId,
@@ -73,6 +69,6 @@ extension SearchResultViewModel {
     struct Output {
         let videos: Driver<[ReviewerVideoCardItemViewModel]>
         let selectedVideoId: Driver<Int>
-        let initialSearchKeyword: Driver<String?>
+        let initialSearchKeyword: String?
     }
 }

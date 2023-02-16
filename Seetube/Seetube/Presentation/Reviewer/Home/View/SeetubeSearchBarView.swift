@@ -56,9 +56,11 @@ class SeetubeSearchBarView: UIView {
     
     func bind(_ text: Driver<String?>) -> Disposable {
         return text
-            .drive(self.searchBar.rx.text)
+            .drive(self.rx.searchKeyword)
     }
 }
+
+// MARK: - Reactive Extension
 
 extension Reactive where Base: SeetubeSearchBarView {
     var searchButtonClicked: ControlEvent<Void> {
@@ -66,6 +68,14 @@ extension Reactive where Base: SeetubeSearchBarView {
     }
     
     var searchKeyword: ControlProperty<String?> {
-        return base.searchBar.rx.text
+        let source = base.searchBar.searchTextField.rx.text
+        let binder = Binder(base) { obj, text in
+            base.searchBar.searchTextField.text = text
+            // 코드로 주입된 값도 방출하기 위해 이벤트 수동 전송
+            base.searchBar.searchTextField.sendActions(for: .valueChanged)
+        }
+        
+        return ControlProperty(values: source,
+                               valueSink: binder)
     }
 }

@@ -96,7 +96,6 @@ extension SearchResultViewController {
     // MARK: - Output Binding
     
     private func bindVideos(_ videos: Driver<[ReviewerVideoCardItemViewModel]>) {
-        // 테이블 뷰컨트롤러에 전달
         guard let tableViewController = self.children.first
                 as? ReviewerVideoInfoTableViewController else { return }
         
@@ -113,9 +112,8 @@ extension SearchResultViewController {
             .disposed(by: self.disposeBag)
     }
     
-    private func bindInitialSearchKeyword(_ initialSearchKeyword: Driver<String?>) {
-        initialSearchKeyword
-            .drive(self.searchBarView.rx.searchKeyword)
-            .disposed(by: self.disposeBag)
+    private func bindInitialSearchKeyword(_ initialSearchKeyword: String?) {
+        self.searchBarView.rx.searchKeyword
+            .onNext(initialSearchKeyword)
     }
 }
