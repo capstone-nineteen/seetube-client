@@ -82,7 +82,6 @@ extension ReviewerHomeViewController {
                     owner.scrollViewTop.constant = max(minScrollViewTop,
                                                        owner.scrollViewTop.constant - yOffset * disappearRate)
                 }
-                owner.scrollView.layoutIfNeeded()
             })
             .disposed(by: self.disposeBag)
     }

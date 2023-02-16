@@ -72,7 +72,6 @@ extension VideosByCategoryViewController {
     // MARK: Input Event Creation
     
     private func categoryChanged() -> Driver<Int> {
-        // TODO: 버튼 바인드
         return self.categoryButtons.rx.selectedIndex
             .asDriver()
     }
