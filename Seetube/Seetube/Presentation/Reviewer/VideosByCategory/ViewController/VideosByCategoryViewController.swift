@@ -34,6 +34,7 @@ class VideosByCategoryViewController: UIViewController,
 extension VideosByCategoryViewController {
     private func configureUI() {
         self.configureNavigationBar()
+        self.configureCategoryButtons()
     }
     
     private func configureNavigationBar() {
@@ -43,6 +44,10 @@ extension VideosByCategoryViewController {
                 obj.navigationController?.isNavigationBarHidden = true
             }
             .disposed(by: self.disposeBag)
+    }
+    
+    private func configureCategoryButtons() {
+        self.categoryButtons.rx.selectedIndex.onNext(0)
     }
 }
 
@@ -62,6 +67,7 @@ extension VideosByCategoryViewController {
         let output = viewModel.transform(input: input)
         
         self.bindVideos(output.filteredVideos)
+        self.bindSelectedIndex(output.selectedIndex)
         self.bindSelectedVideoId(output.selectedVideoId)
     }
     
@@ -84,12 +90,17 @@ extension VideosByCategoryViewController {
     // MARK: Output Binding
     
     private func bindVideos(_ videos: Driver<[ReviewerVideoCardItemViewModel]>) {
-        // 테이블 뷰컨트롤러에 전달
         guard let tableViewController = self.children.first
                 as? ReviewerVideoInfoTableViewController else { return }
         
         videos
             .drive(tableViewController.rx.viewModels)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindSelectedIndex(_ selectedIndex: Driver<Int>) {
+        selectedIndex
+            .drive(self.categoryButtons.rx.selectedIndex)
             .disposed(by: self.disposeBag)
     }
     

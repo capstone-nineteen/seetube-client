@@ -20,8 +20,7 @@ extension CategoryTabMovable {
                 as? VideosByCategoryViewController else { return }
         
         let _ = categoryViewController.view // CategoryViewController 강제 로드
-//        categoryViewController.setCategory(category: cateogyr)
-        // TODO: 카테고리 선택 설정
+        categoryViewController.viewModel?.selectedCategory.accept(category)
         tabBarController.selectedIndex = 1
     }
 }

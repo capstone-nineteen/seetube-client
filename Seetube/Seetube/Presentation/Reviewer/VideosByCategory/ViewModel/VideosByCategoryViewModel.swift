@@ -11,7 +11,7 @@ import RxSwift
 
 class VideosByCategoryViewModel: ViewModelType {
     private let fetchVideosByCategoryUseCase: FetchVideosByCategoryUseCase
-    var selectedIndex = BehaviorRelay<Int>(value: 0)
+    var selectedCategory = BehaviorRelay<Category>(value: .all)
     
     init(fetchVideosByCategoryUseCase: FetchVideosByCategoryUseCase) {
         self.fetchVideosByCategoryUseCase = fetchVideosByCategoryUseCase
@@ -22,15 +22,22 @@ class VideosByCategoryViewModel: ViewModelType {
             .map { Category.allCases[$0] }
             .flatMap { [weak self] category -> Driver<VideoList?> in
                 // TODO: 다른 viewmodel도 weak 처리
+                // FIXME: 뒤늦게 온 이전 카테고리 응답을 필터링해야 함
                 guard let self = self else { return .just(nil) }
                 return self.fetchVideosByCategoryUseCase
                     .execute(category: category)
                     .asDriver(onErrorJustReturn: nil)
-                // TODO: 응답 오기 전까지는 로더/다 지워놨다가 왔을 때만 보여주게 해야 함, 안그러면 다른 이전 카테고리 영상들이 그대로 남아있음
             }
             .map { $0?.videos ?? [] }
+        
         let videoViewModels = videos
             .map { $0.map { ReviewerVideoCardItemViewModel(with: $0) }}
+        
+        let selectedIndex = self.selectedCategory
+            .asDriver()
+            .map { Category.allCases.firstIndex(of: $0) }
+            .compactMap { $0 }
+        
         let selectedVideoId = input.itemSelected
             .asDriver()
             .withLatestFrom(
@@ -38,9 +45,11 @@ class VideosByCategoryViewModel: ViewModelType {
             ) { index, searchResult in
                 searchResult[index.row].videoId
             }
+        
         // TODO: 전체를 받아온 다음 클라이언트에서 filter 해주는게 더 효율적이지 않나?
         return Output(filteredVideos: videoViewModels,
-        selectedVideoId: selectedVideoId)
+                      selectedIndex: selectedIndex,
+                      selectedVideoId: selectedVideoId)
     }
 }
 
@@ -52,6 +61,7 @@ extension VideosByCategoryViewModel {
     
     struct Output {
         let filteredVideos: Driver<[ReviewerVideoCardItemViewModel]>
+        let selectedIndex: Driver<Int>
         let selectedVideoId: Driver<Int>
     }
 }

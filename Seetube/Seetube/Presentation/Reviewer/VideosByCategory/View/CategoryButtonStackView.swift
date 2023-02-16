@@ -14,7 +14,7 @@ class CategoryButtonStackView: UIStackView {
         CategoryButton(category: $0.rawValue)
     }
     
-    fileprivate var selectedIndex: Int = 0
+    fileprivate let programaticallySelected = PublishRelay<Int>()
     private var disposeBag = DisposeBag()
     
     subscript (index: Int) -> CategoryButton {
@@ -23,15 +23,15 @@ class CategoryButtonStackView: UIStackView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.configureUI()
+        self.bindUI()
     }
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
-        self.configureUI()
+        self.bindUI()
     }
     
-    private func configureUI() {
+    private func bindUI() {
         self.categoryButtons.forEach{ self.addArrangedSubview($0) }
         self.spacing = 8
         
@@ -49,8 +49,10 @@ class CategoryButtonStackView: UIStackView {
     }
 }
 
+// MARK: - Reactive Extension
+
 extension Reactive where Base: CategoryButtonStackView {
-    var selectedIndex: ControlEvent<Int> {
+    var selectedIndex: ControlProperty<Int> {
         let taps = Observable.merge(
             base.categoryButtons
                 .enumerated()
@@ -58,7 +60,17 @@ extension Reactive where Base: CategoryButtonStackView {
                     button.rx.tap.map { _ in index }
                 }
         )
+        // (탭 컨트롤이벤트) + (binder를 통해 코드로 주입한 값)
+        let source = Observable.merge(
+            base.programaticallySelected.asObservable(),
+            taps
+        ).debounce(.milliseconds(5),
+                   scheduler: MainScheduler.asyncInstance)
+        let binder = Binder(base) { obj, index in
+            base.programaticallySelected.accept(index)
+        }
         
-        return ControlEvent(events: taps)
+        return ControlProperty(values: source,
+                               valueSink: binder)
     }
 }
