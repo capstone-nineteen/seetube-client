@@ -40,7 +40,7 @@ extension Reactive where Base: ReviewerVideoInfoTableViewController {
     var viewModels: Binder<[ReviewerVideoCardItemViewModel]> {
         return Binder(base) { (base, viewModels) in
             base.viewModels = viewModels
-            base.tableView.reloadData()
+            base.tableView.reloadSections([0], with: .automatic)
         }
     }
     
