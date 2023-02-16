@@ -14,6 +14,8 @@
 		040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CBD2971B0130057B25E /* ListStyleResultView.swift */; };
 		040E3CCB2971C8AC0057B25E /* LargeListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */; };
 		040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CCC2971C8C20057B25E /* LargeListStyleResultView.swift */; };
+		040F5321299E928600828C00 /* FetchTotalCoinAmountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F5320299E928600828C00 /* FetchTotalCoinAmountUseCase.swift */; };
+		040F5323299E92C500828C00 /* DefaultFetchTotalCoinAmountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F5322299E92C500828C00 /* DefaultFetchTotalCoinAmountUseCase.swift */; };
 		0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412EEFB29705C5900256579 /* CircularProgressBar.swift */; };
 		04159921296F155400EEB699 /* ResultMenuButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04159920296F155400EEB699 /* ResultMenuButton.xib */; };
 		04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04159923296F3DA100EEB699 /* ResultMenuViewController.swift */; };
@@ -193,6 +195,8 @@
 		040E3CBD2971B0130057B25E /* ListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyleResultView.swift; sourceTree = "<group>"; };
 		040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeListStyleResultView.xib; sourceTree = "<group>"; };
 		040E3CCC2971C8C20057B25E /* LargeListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeListStyleResultView.swift; sourceTree = "<group>"; };
+		040F5320299E928600828C00 /* FetchTotalCoinAmountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTotalCoinAmountUseCase.swift; sourceTree = "<group>"; };
+		040F5322299E92C500828C00 /* DefaultFetchTotalCoinAmountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchTotalCoinAmountUseCase.swift; sourceTree = "<group>"; };
 		0412EEFB29705C5900256579 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		04159920296F155400EEB699 /* ResultMenuButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultMenuButton.xib; sourceTree = "<group>"; };
 		04159923296F3DA100EEB699 /* ResultMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMenuViewController.swift; sourceTree = "<group>"; };
@@ -602,6 +606,7 @@
 				04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */,
 				048A4B00299CD59100719AD0 /* DefaultFetchVideoDetailUseCase.swift */,
 				048A4B17299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift */,
+				040F5322299E92C500828C00 /* DefaultFetchTotalCoinAmountUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1265,6 +1270,7 @@
 				04B8AF0A299BBB8A0024C897 /* SearchUseCase.swift */,
 				048A4AFE299CD56300719AD0 /* FetchVideoDetailUseCase.swift */,
 				048A4B15299D3C7300719AD0 /* FetchVideosByCategoryUseCase.swift */,
+				040F5320299E928600828C00 /* FetchTotalCoinAmountUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1532,6 +1538,7 @@
 				049960F129828D95000EE539 /* SearchResultViewController.swift in Sources */,
 				0415992F296F477600EEB699 /* NibLoadable.swift in Sources */,
 				0490DA8829951268000BBF73 /* VideosByCategoryRepository.swift in Sources */,
+				040F5321299E928600828C00 /* FetchTotalCoinAmountUseCase.swift in Sources */,
 				0490DA9A2995143B000BBF73 /* DefaultVideoDetailRepository.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
 				043636DB29938AB300EF6458 /* NetworkService.swift in Sources */,
@@ -1566,6 +1573,7 @@
 				0490DAB029953B39000BBF73 /* MyPageViewModel.swift in Sources */,
 				04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */,
 				04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */,
+				040F5323299E92C500828C00 /* DefaultFetchTotalCoinAmountUseCase.swift in Sources */,
 				0490DAAA29953A44000BBF73 /* DefaultSceneStealerResultRepository.swift in Sources */,
 				044D259429879F6A003F4071 /* ReviewerHomeSectionView.swift in Sources */,
 				047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */,
