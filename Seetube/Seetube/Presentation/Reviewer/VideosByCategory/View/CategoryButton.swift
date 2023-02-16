@@ -29,12 +29,8 @@ class CategoryButton: UIButton, NibLoadable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = self.bounds.height / 2
-    }
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
         self.categoryNameLabel.sizeToFit()
+        self.layer.cornerRadius = self.bounds.height / 2
     }
     
     private func configureStyle() {

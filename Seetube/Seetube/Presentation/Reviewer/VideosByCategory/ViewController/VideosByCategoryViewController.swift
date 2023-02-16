@@ -25,8 +25,6 @@ class VideosByCategoryViewController: UIViewController,
         self.configureUI()
         self.bindViewModel()
     }
-    
-    // TODO: 셀 터치 시 화면 전환
 }
 
 // MARK: - Configuration

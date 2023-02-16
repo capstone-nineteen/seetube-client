@@ -11,7 +11,7 @@ import RxSwift
 
 @IBDesignable
 class CategoryButtonScrollView: UIScrollView {
-    fileprivate lazy var categoryButtonStackView = CategoryButtonStackView()
+    fileprivate var categoryButtonStackView = CategoryButtonStackView()
     
     fileprivate let selectedIndex = PublishRelay<Int>()
     private var disposeBag = DisposeBag()
@@ -50,6 +50,9 @@ class CategoryButtonScrollView: UIScrollView {
     }
     
     private func centerButton(index: Int) {
+        // 정확한 XOffset 계산을 위해
+        self.layoutIfNeeded()
+        
         let button = self.categoryButtonStackView[index]
         let maximumXOffset = self.categoryButtonStackView.bounds.width - self.bounds.width
         let buttonCenterXOffset = button.frame.midX - self.bounds.width / 2
@@ -63,9 +66,6 @@ class CategoryButtonScrollView: UIScrollView {
                 y: 0
             )
         } completion: { _ in
-            // animation이 끝나기 전에 테이블뷰가 리로드되어버리면 애니메이션 겹쳐서 센터링이 안됨
-            // animation이 끝나고 방출해주어야 테이블뷰 리로드와 겹치지 않는다
-            // FIXME: 아직도 가끔 센터링 누락됨. 확인필요
             self.selectedIndex.accept(index)
         }
     }

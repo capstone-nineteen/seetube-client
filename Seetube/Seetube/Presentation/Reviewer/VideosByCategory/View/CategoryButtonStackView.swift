@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 
 class CategoryButtonStackView: UIStackView {
-    fileprivate lazy var categoryButtons = Category.allCases.map{
+    fileprivate var categoryButtons = Category.allCases.map{
         CategoryButton(category: $0.rawValue)
     }
     
