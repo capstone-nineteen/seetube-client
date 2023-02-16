@@ -40,9 +40,11 @@ class SearchResultViewModel: ViewModelType {
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }
+        
         let videos = searchResult
             .map { $0.videos }
             .map { $0.map { ReviewerVideoCardItemViewModel(with: $0) }}
+        
         let selectedVideoId = input.itemSelected
             .asDriver()
             .withLatestFrom(
@@ -50,6 +52,7 @@ class SearchResultViewModel: ViewModelType {
             ) { index, searchResult in
                 searchResult.videos[index.row].videoId
             }
+        
         let initialSearchKeyword = self.searchKeyword
         
         return Output(videos: videos,

@@ -22,21 +22,26 @@ class ReviewerHomeViewModel: ViewModelType {
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }
+        
         let name = home
             .map { "안녕하세요, \($0.name)님" }
+        
         let coin = home
             .map { $0.coin.toFormattedString() }
+        
         let sections = home
             .map {
                 $0.sections.map { section in
                     return ReviewerHomeSectionViewModel(with: section)
                 }
             }
+        
         let selectedSection = input.seeAllButtonTouched
             .withLatestFrom(home) { index, home in
                 home.sections[index].category
             }
             .asDriver()
+        
         let selectedVideoId = input.itemSelected
             .withLatestFrom(home) { index, home in
                 home.sections[index.section][index.row].videoId

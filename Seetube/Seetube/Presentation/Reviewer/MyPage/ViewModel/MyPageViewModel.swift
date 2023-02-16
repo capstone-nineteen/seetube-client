@@ -26,8 +26,10 @@ class MyPageViewModel: ViewModelType {
         
         let name = myPage
             .map { "\($0.name)님" }
+        
         let coin = myPage
             .map { $0.coin.toFormattedString() }
+        
         let coinHistories = myPage
             .map {
                 $0.coinHistories.map { coinHistory in
