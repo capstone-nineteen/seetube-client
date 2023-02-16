@@ -8,5 +8,5 @@
 import Foundation
 
 struct Shop {
-    
+    let totalCoinAmount: Int
 }

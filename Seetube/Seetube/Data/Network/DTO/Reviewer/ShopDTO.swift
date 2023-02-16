@@ -7,12 +7,10 @@
 
 import Foundation
 
-struct ShopDTO: Decodable {
+struct ShopDTO: Decodable, DomainConvertible {
     let totalCoinAmount: Int
-}
- 
-extension ShopDTO: DomainConvertible {
+    
     func toDomain() -> Shop {
-        return Shop()
+        return Shop(totalCoinAmount: self.totalCoinAmount)
     }
 }
