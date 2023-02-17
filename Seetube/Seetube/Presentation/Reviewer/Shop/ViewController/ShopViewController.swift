@@ -89,6 +89,7 @@ extension ShopViewController {
         self.bindWithdrawal(output.withdrawal)
         self.bindRemaining(output.remaining)
         self.bindAmountExceedError(output.amountExceedError)
+        self.bindZeroAmountError(output.zeroAmountError)
         self.bindShouldMoveToWithdrawalInfo(output.shouldMoveToWithdrawalInfo)
     }
     
@@ -142,6 +143,16 @@ extension ShopViewController {
         shouldMoveToWithdrawalInfo
             .drive(with: self) { obj, amount in
                 obj.pushWithdrawalInfromation(withdrawlAmount: amount)
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindZeroAmountError(_ error: Driver<Void>) {
+        error
+            .drive(with: self) { obj, _ in
+                obj.displayFailureAlert(
+                    message: "1원 미만은 출금할 수 없습니다."
+                )
             }
             .disposed(by: self.disposeBag)
     }

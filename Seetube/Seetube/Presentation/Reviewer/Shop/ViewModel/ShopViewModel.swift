@@ -65,15 +65,22 @@ class ShopViewModel: ViewModelType {
             .filter { $0.withdrawal > $0.total }
             .map { _ in () }
         
+        let zeroAmountError = input.withdrawalButtonTouched
+            .withLatestFrom(recalculatedWithdrawal) { $1 }
+            .filter { $0 == 0 }
+            .map { _ in () }
+        
         let shouldMoveToWithdrawalInfo = input.withdrawalButtonTouched
             .withLatestFrom(
                 recalculatedWithdrawal
             ) { $1 }
+            .filter { $0 > 0 }
         
         return Output(total: formattedTotal,
                       withdrawal: formattedWithdrawal,
                       remaining: formattedRemaining,
                       amountExceedError: amountExceedError,
+                      zeroAmountError: zeroAmountError,
                       shouldMoveToWithdrawalInfo: shouldMoveToWithdrawalInfo)
     }
 }
@@ -90,6 +97,7 @@ extension ShopViewModel {
         let withdrawal: Driver<String>
         let remaining: Driver<String>
         let amountExceedError: Driver<Void>
+        let zeroAmountError: Driver<Void>
         let shouldMoveToWithdrawalInfo: Driver<Int>
     }
 }
