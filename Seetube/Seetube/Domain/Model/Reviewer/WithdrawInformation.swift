@@ -7,6 +7,16 @@
 
 import Foundation
 
-struct WithdrawInformation {
+struct WithdrawInformation: DTOConvertible {
+    let amount: Int
+    let bankName: String
+    let accountHolder: String
+    let accountNumber: String
     
+    func toDTO() -> WithDrawalInformationDTO {
+        return WithDrawalInformationDTO(amount: self.amount,
+                                      bankName: self.bankName,
+                                      accountHolder: self.accountHolder,
+                                      accountNumber: self.accountNumber)
+    }
 }

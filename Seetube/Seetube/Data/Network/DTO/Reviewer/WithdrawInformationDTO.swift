@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WithDrawInformationDTO: Encodable {
+struct WithDrawalInformationDTO: Encodable {
     let amount: Int
     let bankName: String
     let accountHolder: String

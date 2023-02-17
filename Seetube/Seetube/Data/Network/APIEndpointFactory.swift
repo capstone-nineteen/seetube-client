@@ -14,7 +14,7 @@ class APIEndpointFactory {
         case getVideosBySearchKeyword(keyword: String)
         case getVideosByCategory(category: String)
         case getShop
-        case registerWithdrawal(info: WithDrawInformationDTO)
+        case registerWithdrawal(info: WithDrawalInformationDTO)
         case getMyPage
         case getYoutuberHome
         case getConcentrationResult
