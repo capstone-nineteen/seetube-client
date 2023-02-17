@@ -15,7 +15,7 @@ class DefaultShopRepository: ShopRepository, NetworkRequestable {
                                 decodingType: ShopDTO.self)
     }
     
-    func registerWithdrawal(info: WithdrawInformation) -> Observable<WithdrawalResult?> {
+    func registerWithdrawal(info: WithdrawalInformation) -> Observable<WithdrawalResult?> {
         let infoDTO = info.toDTO()
         let endpoint = APIEndpointFactory.makeEndpoint(
             for: .registerWithdrawal(info: infoDTO)

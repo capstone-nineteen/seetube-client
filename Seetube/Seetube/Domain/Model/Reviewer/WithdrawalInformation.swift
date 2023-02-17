@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WithdrawInformation: DTOConvertible {
+struct WithdrawalInformation: DTOConvertible {
     let amount: Int
     let bankName: String
     let accountHolder: String

@@ -13,6 +13,6 @@ struct WithdrawalResultDTO: Decodable, DomainConvertible {
     
     func toDomain() -> WithdrawalResult {
         return WithdrawalResult(message: self.message,
-                              didSucceed: self.status == 201)
+                                status: self.status)
     }
 }

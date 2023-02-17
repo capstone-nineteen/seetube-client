@@ -9,5 +9,5 @@ import Foundation
 
 struct WithdrawalResult {
     let message: String
-    let didSucceed: Bool
+    let status: Int
 }
