@@ -64,8 +64,7 @@ class APIEndpointFactory {
             case .getVideosBySearchKeyword:
                 return APIUrls.search
             case .getVideosByCategory(let category):
-                // TODO: url encoding 함수 분리, 강제언래핑 제거
-                return APIUrls.category + "/\(category.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)"
+                return APIUrls.category + "/\(category.urlPathAllowedEncoded)"
             case .getShop:
                 return APIUrls.shop
             case .registerWithdrawal:
