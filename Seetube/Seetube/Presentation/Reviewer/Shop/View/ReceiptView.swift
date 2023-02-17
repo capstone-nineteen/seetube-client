@@ -9,18 +9,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol WithdrawButtonDelegate: AnyObject {
-    func withdrawButtonTouched(_ sender: BottomButton)
-}
-
 class ReceiptView: UIView, NibLoadable {
     @IBOutlet fileprivate weak var totalCoinLabel: AdaptiveFontSizeLabel!
     @IBOutlet fileprivate weak var withdrawlCoinTextField: NotPastableUnderLineTextField!
     @IBOutlet fileprivate weak var balanceCoinLabel: AdaptiveFontSizeLabel!
-    
-    private var disposeBag = DisposeBag()
-    private weak var buttonDelegate: WithdrawButtonDelegate?
-    private weak var textFieldDelegate: UITextFieldDelegate?
+    @IBOutlet weak var withdrawalButton: BottomButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,18 +23,6 @@ class ReceiptView: UIView, NibLoadable {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.loadFromNib(owner: self)
-    }
-    
-    func configureButtonDelegate(_ delegate: WithdrawButtonDelegate) {
-        self.buttonDelegate = delegate
-    }
-    
-    func configureTextFieldDelegate(_ delegate: UITextFieldDelegate) {
-        self.withdrawlCoinTextField.delegate = delegate
-    }
-    
-    @IBAction func withDrawButtonTouched(_ sender: BottomButton) {
-        self.buttonDelegate?.withdrawButtonTouched(sender)
     }
 }
 
@@ -65,5 +46,9 @@ extension Reactive where Base: ReceiptView {
     
     var remainingText: Binder<String?> {
         return base.balanceCoinLabel.rx.text
+    }
+    
+    var withdrawalButtonTap: ControlEvent<Void> {
+        return base.withdrawalButton.rx.tap
     }
 }

@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="balanceCoinLabel" destination="mU5-iw-S49" id="9AR-bY-dXm"/>
                 <outlet property="totalCoinLabel" destination="cE0-Cf-Smi" id="mHF-AJ-KKh"/>
+                <outlet property="withdrawalButton" destination="LXA-lf-WPJ" id="hOH-sb-PP9"/>
                 <outlet property="withdrawlCoinTextField" destination="a3L-0K-XN5" id="Lko-SV-otN"/>
             </connections>
         </placeholder>
@@ -88,9 +89,6 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="name" value="환급 받기"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="withDrawButtonTouched:" destination="-1" eventType="touchUpInside" id="VhK-LH-weD"/>
-                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

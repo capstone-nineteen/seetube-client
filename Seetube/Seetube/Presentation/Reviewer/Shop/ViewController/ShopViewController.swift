@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 
 class ShopViewController: UIViewController,
-                          ViewControllerPushable,
+                          WithdrawalInformationPushable,
                           AlertDisplaying,
                           KeyboardDismissible
 {
@@ -32,7 +32,6 @@ class ShopViewController: UIViewController,
 extension ShopViewController {
     private func configureUI() {
         self.configureNavigationBar()
-        self.configureDelegate()
         self.configureKeyboard()
         self.enableKeyboardDismissing()
     }
@@ -44,10 +43,6 @@ extension ShopViewController {
                 obj.navigationController?.isNavigationBarHidden = true
             }
             .disposed(by: self.disposeBag)
-    }
-    
-    private func configureDelegate() {
-        self.receiptView.configureButtonDelegate(self)
     }
     
     private func configureKeyboard() {
@@ -81,10 +76,12 @@ extension ShopViewController {
         
         let viewWillAppear = self.viewWillAppearEvent()
         let withdrawalAmountChanged = self.withdrawalAmountChangedEvent()
+        let withdrawalButtonTouched = self.withdrawalButtonTouchedEvent()
         
         let input = ShopViewModel.Input(
             viewWillAppear: viewWillAppear,
-            withdrawalAmountChanged: withdrawalAmountChanged
+            withdrawalAmountChanged: withdrawalAmountChanged,
+            withdrawalButtonTouched: withdrawalButtonTouched
         )
         let output = viewModel.transform(input: input)
         
@@ -92,6 +89,7 @@ extension ShopViewController {
         self.bindWithdrawal(output.withdrawal)
         self.bindRemaining(output.remaining)
         self.bindAmountExceedError(output.amountExceedError)
+        self.bindShouldMoveToWithdrawalInfo(output.shouldMoveToWithdrawalInfo)
     }
     
     // MARK: Input Event Creation
@@ -104,6 +102,10 @@ extension ShopViewController {
         return self.receiptView.rx.withdrawalText
             .orEmpty
             .asDriver()
+    }
+    
+    private func withdrawalButtonTouchedEvent() -> Driver<Void> {
+        return self.receiptView.rx.withdrawalButtonTap.asDriver()
     }
     
     // MARK: Output Binding
@@ -135,10 +137,12 @@ extension ShopViewController {
             }
             .disposed(by: self.disposeBag)
     }
-}
-
-extension ShopViewController: WithdrawButtonDelegate {
-    func withdrawButtonTouched(_ sender: BottomButton) {
-        self.push(viewControllerType: WithdrawalInformationViewController.self)
+    
+    private func bindShouldMoveToWithdrawalInfo(_ shouldMoveToWithdrawalInfo: Driver<Int>) {
+        shouldMoveToWithdrawalInfo
+            .drive(with: self) { obj, amount in
+                obj.pushWithdrawalInfromation(withdrawlAmount: amount)
+            }
+            .disposed(by: self.disposeBag)
     }
 }
