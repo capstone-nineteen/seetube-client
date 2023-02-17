@@ -14,6 +14,7 @@ class APIEndpointFactory {
         case getVideosBySearchKeyword(keyword: String)
         case getVideosByCategory(category: String)
         case getShop
+        case registerWithdrawal(info: WithDrawInformationDTO)
         case getMyPage
         case getYoutuberHome
         case getConcentrationResult
@@ -34,6 +35,8 @@ class APIEndpointFactory {
                 return .get
             case .getShop:
                 return .get
+            case .registerWithdrawal:
+                return .post
             case .getMyPage:
                 return .get
             case .getYoutuberHome:
@@ -64,6 +67,8 @@ class APIEndpointFactory {
                 return APIUrls.category + "/\(category.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)"
             case .getShop:
                 return APIUrls.shop
+            case .registerWithdrawal:
+                return APIUrls.withdraw
             case .getMyPage:
                 return APIUrls.myPage
             case .getYoutuberHome:
@@ -93,6 +98,8 @@ class APIEndpointFactory {
                 return nil
             case .getShop:
                 return nil
+            case .registerWithdrawal(let info):
+                return info.dictionary
             case .getMyPage:
                 return nil
             case .getYoutuberHome:

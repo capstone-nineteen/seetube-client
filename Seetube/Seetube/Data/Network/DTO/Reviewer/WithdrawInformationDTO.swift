@@ -7,15 +7,9 @@
 
 import Foundation
 
-struct WithDrawInformationDTO: Codable {
+struct WithDrawInformationDTO: Encodable {
     let amount: Int
     let bankName: String
     let accountHolder: String
     let accountNumber: String
-}
- 
-extension WithDrawInformationDTO: DomainConvertible {
-    func toDomain() -> WithdrawInformation {
-        return WithdrawInformation()
-    }
 }
