@@ -23,8 +23,9 @@ class ReviewerVideoDetailViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let video = input.viewWillAppear
-            .flatMap { _ -> Driver<VideoInfo?> in
-                self.fetchVideoInfoUseCase
+            .flatMap { [weak self] _ -> Driver<VideoInfo?> in
+                guard let self = self else { return .just(nil) }
+                return self.fetchVideoInfoUseCase
                     .execute(id: self.videoId)
                     .asDriver(onErrorJustReturn: nil)
             }

@@ -90,6 +90,7 @@ extension ShopViewModel {
         let viewWillAppear: Driver<Bool>
         let withdrawalAmountChanged: Driver<String>
         let withdrawalButtonTouched: Driver<Void>
+        // TODO: 다른 화면도 화면 이동을 위한 데이터 처리 뷰모델에서 하는 것으로 변경
     }
     
     struct Output {

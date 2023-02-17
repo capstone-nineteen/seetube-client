@@ -17,8 +17,10 @@ class ReviewerHomeViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let home = input.viewWillAppear
-            .flatMap { _ in
-                self.fetchReviewerHomeUseCase.execute()
+            .flatMap { [weak self] _ -> Driver<ReviewerHome?> in
+                guard let self = self else { return .just(nil) }
+                return self.fetchReviewerHomeUseCase
+                    .execute()
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }

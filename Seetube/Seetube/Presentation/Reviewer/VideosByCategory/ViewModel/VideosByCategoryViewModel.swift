@@ -21,7 +21,6 @@ class VideosByCategoryViewModel: ViewModelType {
         let videos = input.categoryChanged
             .map { Category.allCases[$0] }
             .flatMap { [weak self] category -> Driver<VideoList?> in
-                // TODO: 다른 viewmodel도 weak 처리
                 // FIXME: 뒤늦게 온 이전 카테고리 응답을 필터링해야 함
                 guard let self = self else { return .just(nil) }
                 return self.fetchVideosByCategoryUseCase

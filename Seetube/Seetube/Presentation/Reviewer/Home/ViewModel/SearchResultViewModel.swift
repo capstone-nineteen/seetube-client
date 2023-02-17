@@ -34,8 +34,9 @@ class SearchResultViewModel: ViewModelType {
             }
             .compactMap { $0 }
             .filter { $0.count > 0 }
-            .flatMap { keyword in
-                self.searchUseCase
+            .flatMap { [weak self] keyword -> Driver<VideoList?> in
+                guard let self = self else { return .just(nil) }
+                return self.searchUseCase
                     .execute(searchKeyword: keyword)
                     .asDriver(onErrorJustReturn: nil)
             }
