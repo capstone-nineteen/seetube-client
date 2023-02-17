@@ -11,39 +11,65 @@ import RxSwift
 
 class ShopViewController: UIViewController,
                           ViewControllerPushable,
-                          AlertDisplaying
+                          AlertDisplaying,
+                          KeyboardDismissible
 {
     @IBOutlet weak var receiptView: ReceiptView!
+    lazy var coverView = UIView()
     
     var viewModel: ShopViewModel?
     private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureDelegate()
-        self.configureKeyboard()
+        self.configureUI()
         self.bindViewModel()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
     }
 }
 
 // MARK: - Configuration
 
 extension ShopViewController {
+    private func configureUI() {
+        self.configureNavigationBar()
+        self.configureDelegate()
+        self.configureKeyboard()
+        self.enableKeyboardDismissing()
+    }
+    
+    private func configureNavigationBar() {
+        self.rx.viewWillAppear
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.navigationController?.isNavigationBarHidden = true
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
     private func configureDelegate() {
         self.receiptView.configureButtonDelegate(self)
     }
     
     private func configureKeyboard() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-        self.view.addGestureRecognizer(tap)
+        NotificationCenter.default.rx
+            .notification(UIResponder.keyboardWillShowNotification)
+            .map { _ -> Void? in () }
+            .asDriver(onErrorJustReturn: nil)
+            .compactMap { $0 }
+            .drive(with: self) { obj, _ in
+                obj.view.frame.origin.y = -150
+            }
+            .disposed(by: self.disposeBag)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.rx
+            .notification(UIResponder.keyboardWillHideNotification)
+            .map { _ -> Void? in () }
+            .asDriver(onErrorJustReturn: nil)
+            .compactMap { $0 }
+            .drive(with: self) { obj, _ in
+                obj.view.frame.origin.y = 0
+            }
+            .disposed(by: self.disposeBag)
     }
 }
 
@@ -108,16 +134,6 @@ extension ShopViewController {
                 )
             }
             .disposed(by: self.disposeBag)
-    }
-}
-
-extension ShopViewController {
-    @objc private func keyboardWillShow(_ sender: Notification) {
-        self.view.frame.origin.y = -150
-    }
-    
-    @objc private func keyboardWillHide(_ sender: Notification) {
-        self.view.frame.origin.y = 0
     }
 }
 
