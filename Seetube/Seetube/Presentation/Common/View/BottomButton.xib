@@ -9,9 +9,6 @@
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="string" keyPath="name" value="저장하기"/>
-            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="mlb-Um-XoF"/>
                 <outlet property="nameLabel" destination="mSL-xo-Z8W" id="jTP-QJ-obK"/>

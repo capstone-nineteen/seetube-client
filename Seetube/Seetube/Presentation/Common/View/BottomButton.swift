@@ -33,19 +33,24 @@ class BottomButton: UIButton, NibLoadable {
         super.init(frame: frame)
         self.loadFromNib(owner: self)
         self.configureShadow()
-        self.nameLabel.text = self.name
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.loadFromNib(owner: self)
         self.configureShadow()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
         self.nameLabel.text = self.name
     }
 }
 
 extension Reactive where Base: BottomButton {
     var text: Binder<String?> {
-        return base.nameLabel.rx.text
+        Binder(base) { obj, text in
+            base.name = text
+        }
     }
 }
