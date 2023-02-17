@@ -25,15 +25,19 @@ class WithdrawalInformationViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureRegisterButton()
-        self.enableKeyboardDismissing()
-        self.configureAccountNumberTextField()
+        self.configureUI()
         self.bindViewModel()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = false
+}
+
+// MARK: - Configuration
+
+extension WithdrawalInformationViewController {
+    private func configureUI() {
+        self.enableKeyboardDismissing()
+        self.configureNavigationBar()
+        self.configureRegisterButton()
+        self.configureTextFields()
     }
     
     private func configureRegisterButton() {
@@ -45,14 +49,47 @@ class WithdrawalInformationViewController: UIViewController,
             .disposed(by: self.disposeBag)
     }
     
-    private func configureAccountNumberTextField() {
+    private func configureTextFields() {
+        let textFields = [self.bankNameTextField,
+                          self.accountHolderTextField,
+                          self.accountNumberTextField]
+        let finishedTextFieldTag = textFields
+            .compactMap { $0 }
+            .map { textField in
+                textField.rx
+                    .controlEvent(.editingDidEndOnExit)
+                    .asDriver()
+                    .map { textField.tag }
+            }
+        
+        Driver
+            .merge(finishedTextFieldTag)
+            .drive(with: self) { obj, tag in
+                guard let nextTextField = obj.view.viewWithTag(tag + 1)
+                        as? UITextField else { return }
+                nextTextField.becomeFirstResponder()
+            }
+            .disposed(by: self.disposeBag)
+        
+        // TODO: 검증 조건 추가 + 나머지 필드 검증
         self.accountNumberTextField.rx.text.orEmpty
             .asDriver()
             .map { $0.filter { $0.isNumber } }
             .drive(self.accountNumberTextField.rx.text)
             .disposed(by: self.disposeBag)
     }
+    
+    private func configureNavigationBar() {
+        self.rx.viewWillAppear
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.navigationController?.isNavigationBarHidden = false
+            }
+            .disposed(by: self.disposeBag)
+    }
 }
+
+// MARK: - ViewModel Binding
 
 extension WithdrawalInformationViewController {
     private func bindViewModel() {
@@ -113,18 +150,6 @@ extension WithdrawalInformationViewController {
                 }
             }
             .disposed(by: self.disposeBag)
-    }
-}
-
-extension WithdrawalInformationViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let nextField = self.view.viewWithTag(textField.tag + 1) as? UITextField {
-            nextField.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
-        }
-        
-        return false
     }
 }
 

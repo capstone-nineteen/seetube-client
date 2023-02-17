@@ -26,6 +26,7 @@ class ShopViewModel: ViewModelType {
             }
             .compactMap { $0 }
             .map { $0.totalCoinAmount }
+        // TODO: view will appear 때마다 텍스트필드 초기화
             
         let withdrawal = input.withdrawalAmountChanged
             .distinctUntilChanged()
