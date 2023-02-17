@@ -21,7 +21,7 @@ class WithdrawalInformationViewController: UIViewController,
     
     var viewModel: WithdrawalInformationViewModel?
     private var disposeBag = DisposeBag()
-    private var registerButtonTouched = PublishRelay<Void>()    // confirm alert의 OK 버튼과 연결된 Relay
+    private var confirmButtonTouched = PublishRelay<Void>()    // confirm alert의 OK 버튼과 연결된 Relay
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,17 +36,7 @@ extension WithdrawalInformationViewController {
     private func configureUI() {
         self.enableKeyboardDismissing()
         self.configureNavigationBar()
-        self.configureRegisterButton()
         self.configureTextFields()
-    }
-    
-    private func configureRegisterButton() {
-        self.registerButton.rx.tap
-            .asDriver()
-            .drive(with: self) { obj, _ in
-                obj.displayConfirmAlert()
-            }
-            .disposed(by: self.disposeBag)
     }
     
     private func configureTextFields() {
@@ -71,7 +61,6 @@ extension WithdrawalInformationViewController {
             }
             .disposed(by: self.disposeBag)
         
-        // TODO: 검증 조건 추가 + 나머지 필드 검증
         self.accountNumberTextField.rx.text.orEmpty
             .asDriver()
             .map { $0.filter { $0.isNumber } }
@@ -99,16 +88,19 @@ extension WithdrawalInformationViewController {
         let accountHolder = self.accountHolderText()
         let accountNumber = self.accountNumberText()
         let registerButtonTouched = self.registerButtonTouchedEvent()
+        let confirmButtonTouched = self.confirmButtonTouchedEvent()
         
         let input = WithdrawalInformationViewModel.Input(
             bankName: bankName,
             accountHolder: accountHolder,
             accountNumber: accountNumber,
-            registerButtonTouched: registerButtonTouched
+            registerButtonTouched: registerButtonTouched,
+            confirmButtonTouched: confirmButtonTouched
         )
         let output = viewModel.transform(input: input)
         
         self.bindRegisterResult(output.registerResult)
+        self.bindValidationError(output.validationError)
     }
     
     // MARK: Input Event Creation
@@ -132,7 +124,11 @@ extension WithdrawalInformationViewController {
     }
     
     private func registerButtonTouchedEvent() -> Driver<Void> {
-        return self.registerButtonTouched
+        return self.registerButton.rx.tap.asDriver()
+    }
+    
+    private func confirmButtonTouchedEvent() -> Driver<Void> {
+        return self.confirmButtonTouched
             .map { $0 as Void? }
             .asDriver(onErrorJustReturn: nil)
             .compactMap { $0 }
@@ -151,17 +147,33 @@ extension WithdrawalInformationViewController {
             }
             .disposed(by: self.disposeBag)
     }
+    
+    private func bindValidationError(_ error: Driver<String?>) {
+        error
+            .drive(with: self) { obj, message in
+                if let message = message {
+                    self.displayValidationErrorAlert(message: message)
+                } else {
+                    self.displayConfirmAlert()
+                }
+            }
+            .disposed(by: self.disposeBag)
+    }
 }
 
 // MARK: - Alerts
 
 extension WithdrawalInformationViewController {
+    private func displayValidationErrorAlert(message: String) {
+        self.displayFailureAlert(message: message)
+    }
+    
     private func displayConfirmAlert() {
         self.displayAlertWithAction(
             title: "환급 신청",
             message: "입력하신 정보가 올바른지 확인하십시오.\n해당 정보로 환급을 신청하시겠습니까?"
         ) { _ in
-            self.registerButtonTouched.accept(())
+            self.confirmButtonTouched.accept(())
         }
     }
     
