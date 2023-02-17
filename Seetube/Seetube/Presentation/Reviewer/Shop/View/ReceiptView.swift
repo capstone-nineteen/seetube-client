@@ -32,8 +32,12 @@ extension Reactive where Base: ReceiptView {
     var withdrawalText: ControlProperty<String?> {
         let source = base.withdrawlCoinTextField.rx.text
         let binder = Binder(base) { obj, text in
-            base.withdrawlCoinTextField.text = text
-            base.withdrawlCoinTextField.sendActions(for: .valueChanged)
+            obj.withdrawlCoinTextField.text = text
+            DispatchQueue.main.async {
+                // ⚠️ Reentrancy anomaly was detected 해결
+                // Binder 디폴트가 메인스케줄러에서 실행인데 왜 경고가 뜨는지 모르겠음
+                obj.withdrawlCoinTextField.sendActions(for: .valueChanged)
+            }
         }
         
         return ControlProperty(values: source,
