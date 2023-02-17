@@ -21,8 +21,7 @@ class ShopViewModel: ViewModelType {
             .flatMap { [weak self] _ -> Driver<Shop?> in
                 guard let self = self else { return .just(nil) }
                 return self.fetchTotalCoinAmountUseCase
-                    .execute()  // TODO: API 확인 후 더미값 제거
-                    .map { $0 == nil ? Shop(totalCoinAmount: 33500) : $0 }
+                    .execute()
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }

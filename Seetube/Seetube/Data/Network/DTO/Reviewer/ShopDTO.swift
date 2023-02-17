@@ -8,9 +8,9 @@
 import Foundation
 
 struct ShopDTO: Decodable, DomainConvertible {
-    let totalCoinAmount: Int
+    let reviewerCoin: Int
     
     func toDomain() -> Shop {
-        return Shop(totalCoinAmount: self.totalCoinAmount)
+        return Shop(totalCoinAmount: self.reviewerCoin)
     }
 }
