@@ -6,14 +6,23 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
-class ShopViewController: UIViewController, ViewControllerPushable {
+class ShopViewController: UIViewController,
+                          ViewControllerPushable,
+                          AlertDisplaying
+{
     @IBOutlet weak var receiptView: ReceiptView!
+    
+    var viewModel: ShopViewModel?
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegate()
         self.configureKeyboard()
+        self.bindViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,10 +31,11 @@ class ShopViewController: UIViewController, ViewControllerPushable {
     }
 }
 
+// MARK: - Configuration
+
 extension ShopViewController {
     private func configureDelegate() {
         self.receiptView.configureButtonDelegate(self)
-        self.receiptView.configureTextFieldDelegate(self)
     }
     
     private func configureKeyboard() {
@@ -37,6 +47,70 @@ extension ShopViewController {
     }
 }
 
+// MARK: - ViewModel Binding
+
+extension ShopViewController {
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        let viewWillAppear = self.viewWillAppearEvent()
+        let withdrawalAmountChanged = self.withdrawalAmountChangedEvent()
+        
+        let input = ShopViewModel.Input(
+            viewWillAppear: viewWillAppear,
+            withdrawalAmountChanged: withdrawalAmountChanged
+        )
+        let output = viewModel.transform(input: input)
+        
+        self.bindTotal(output.total)
+        self.bindWithdrawal(output.withdrawal)
+        self.bindRemaining(output.remaining)
+        self.bindAmountExceedError(output.amountExceedError)
+    }
+    
+    // MARK: Input Event Creation
+    
+    private func viewWillAppearEvent() -> Driver<Bool> {
+        return self.rx.viewWillAppear.asDriver()
+    }
+    
+    private func withdrawalAmountChangedEvent() -> Driver<String> {
+        return self.receiptView.rx.withdrawalText
+            .orEmpty
+            .asDriver()
+    }
+    
+    // MARK: Output Binding
+    
+    private func bindTotal(_ total: Driver<String>) {
+        total
+            .drive(self.receiptView.rx.totalText)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindWithdrawal(_ withdrawal: Driver<String>) {
+        withdrawal
+            .drive(self.receiptView.rx.withdrawalText)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindRemaining(_ remaining: Driver<String>) {
+        remaining
+            .drive(self.receiptView.rx.remainingText)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindAmountExceedError(_ error: Driver<Void>) {
+        error
+            .drive(with: self) { obj, _ in
+                obj.displayFailureAlert(
+                    message: "보유 코인량을 초과할 수 없습니다."
+                )
+            }
+            .disposed(by: self.disposeBag)
+    }
+}
+
 extension ShopViewController {
     @objc private func keyboardWillShow(_ sender: Notification) {
         self.view.frame.origin.y = -150
@@ -44,30 +118,6 @@ extension ShopViewController {
     
     @objc private func keyboardWillHide(_ sender: Notification) {
         self.view.frame.origin.y = 0
-    }
-}
-
-extension ShopViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.text = textField.text == "" ? "0" : textField.text
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let oldString = textField.text,
-              let newRange = Range(range, in: oldString) else { return true }
-        
-        let newString = oldString.replacingCharacters(in: newRange, with: string)
-        let textWithoutSeparator = newString.replacingOccurrences(of: ",", with: "")
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        
-        if let numberWithSeparator = formatter.number(from: textWithoutSeparator) {
-            textField.text = formatter.string(from: numberWithSeparator)
-            return false
-        }
-        
-        return true
     }
 }
 

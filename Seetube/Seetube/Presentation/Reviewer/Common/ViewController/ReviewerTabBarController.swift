@@ -49,15 +49,16 @@ extension ReviewerTabBarController {
                 let fetchReviewerHomeUseCase = DefaultFetchReviewerHomeUseCase(repository: repository)
                 let viewModel = ReviewerHomeViewModel(fetchReviewerHomeUseCase: fetchReviewerHomeUseCase)
                 reviewerHomeViewController.viewModel = viewModel
-                break
             case let videosByCategoryViewController as VideosByCategoryViewController:
                 let repository = DefaultVideosByCategoryRepository()
                 let fetchVideosByCategoryUseCase = DefaultFetchVideosByCategoryUseCase(repository: repository)
                 let viewModel = VideosByCategoryViewModel(fetchVideosByCategoryUseCase: fetchVideosByCategoryUseCase)
                 videosByCategoryViewController.viewModel = viewModel
-                break
             case let shopViewController as ShopViewController:
-                break
+                let repository = DefaultShopRepository()
+                let fetchTotalCoinAmountUseCase = DefaultFetchTotalCoinAmountUseCase(repository: repository)
+                let viewModel = ShopViewModel(fetchTotalCoinAmountUseCase: fetchTotalCoinAmountUseCase)
+                shopViewController.viewModel = viewModel
             case let myPageViewController as MyPageViewController:
                 let repository = DefaultMyPageRepository()
                 let fetchMyPageUseCase = DefaultFetchMyCaseUseCase(repository: repository)

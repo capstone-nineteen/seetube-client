@@ -16,6 +16,7 @@
 		040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CCC2971C8C20057B25E /* LargeListStyleResultView.swift */; };
 		040F5321299E928600828C00 /* FetchTotalCoinAmountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F5320299E928600828C00 /* FetchTotalCoinAmountUseCase.swift */; };
 		040F5323299E92C500828C00 /* DefaultFetchTotalCoinAmountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F5322299E92C500828C00 /* DefaultFetchTotalCoinAmountUseCase.swift */; };
+		040F5327299E93BE00828C00 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F5326299E93BE00828C00 /* ShopViewModel.swift */; };
 		0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412EEFB29705C5900256579 /* CircularProgressBar.swift */; };
 		04159921296F155400EEB699 /* ResultMenuButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04159920296F155400EEB699 /* ResultMenuButton.xib */; };
 		04159924296F3DA100EEB699 /* ResultMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04159923296F3DA100EEB699 /* ResultMenuViewController.swift */; };
@@ -197,6 +198,7 @@
 		040E3CCC2971C8C20057B25E /* LargeListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeListStyleResultView.swift; sourceTree = "<group>"; };
 		040F5320299E928600828C00 /* FetchTotalCoinAmountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTotalCoinAmountUseCase.swift; sourceTree = "<group>"; };
 		040F5322299E92C500828C00 /* DefaultFetchTotalCoinAmountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchTotalCoinAmountUseCase.swift; sourceTree = "<group>"; };
+		040F5326299E93BE00828C00 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
 		0412EEFB29705C5900256579 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		04159920296F155400EEB699 /* ResultMenuButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultMenuButton.xib; sourceTree = "<group>"; };
 		04159923296F3DA100EEB699 /* ResultMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMenuViewController.swift; sourceTree = "<group>"; };
@@ -762,8 +764,8 @@
 		043636C12993897C00EF6458 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */,
 				04FA5D62297466D30015D91B /* ShopViewController.swift */,
+				045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -771,6 +773,7 @@
 		043636C22993898800EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				040F5326299E93BE00828C00 /* ShopViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1510,6 +1513,7 @@
 				046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */,
 				04A678A329964A08006E29C1 /* FetchReviewerHomeUseCase.swift in Sources */,
 				0470C9C02990E8FC00D4743B /* ShopDTO.swift in Sources */,
+				040F5327299E93BE00828C00 /* ShopViewModel.swift in Sources */,
 				048A4B10299D15C100719AD0 /* SearchResultPushable.swift in Sources */,
 				047072782979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift in Sources */,
 				0470C9E12990FAE000D4743B /* HighlightResultDTO.swift in Sources */,

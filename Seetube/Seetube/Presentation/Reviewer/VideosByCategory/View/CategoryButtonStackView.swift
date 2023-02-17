@@ -53,18 +53,21 @@ class CategoryButtonStackView: UIStackView {
 
 extension Reactive where Base: CategoryButtonStackView {
     var selectedIndex: ControlProperty<Int> {
-        let taps = Observable.merge(
-            base.categoryButtons
-                .enumerated()
-                .map { index, button in
-                    button.rx.tap.map { _ in index }
-                }
-        )
+        let taps = Observable
+            .merge(
+                base.categoryButtons
+                    .enumerated()
+                    .map { index, button in
+                        button.rx.tap.map { _ in index }
+                    }
+            )
         // (탭 컨트롤이벤트) + (binder를 통해 코드로 주입한 값)
-        let source = Observable.merge(
-            base.programaticallySelected.asObservable(),
-            taps
-        ).debounce(.milliseconds(5),
+        let source = Observable
+            .merge(
+                base.programaticallySelected.asObservable(),
+                taps
+            )
+            .debounce(.milliseconds(5),
                    scheduler: MainScheduler.asyncInstance)
         let binder = Binder(base) { obj, index in
             base.programaticallySelected.accept(index)

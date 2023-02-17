@@ -132,26 +132,28 @@ extension ReviewerHomeViewController {
     }
     
     private func seeAllButtonTouchedEvent() -> Driver<Int> {
-        return Driver.merge(
-            self.sectionViews
-                .enumerated()
-                .map { index, sectionView in
-                    sectionView.rx.seeAllButtonTouched
-                        .asDriver()
-                        .map { index }
-                }
-        )
+        return Driver
+            .merge(
+                self.sectionViews
+                    .enumerated()
+                    .map { index, sectionView in
+                        sectionView.rx.seeAllButtonTouched
+                            .asDriver()
+                            .map { index }
+                    }
+            )
     }
     
     private func itemSelectedEvent() -> Driver<IndexPath> {
-        return Driver.merge(
-            self.sectionViews
-                .enumerated()
-                .map { index, sectionView in
-                    sectionView.rx.collectionViewItemSelected
-                        .asDriver()
-                        .map { IndexPath(row: $0.row, section: index) }
-                }
+        return Driver
+            .merge(
+                self.sectionViews
+                    .enumerated()
+                    .map { index, sectionView in
+                        sectionView.rx.collectionViewItemSelected
+                            .asDriver()
+                            .map { IndexPath(row: $0.row, section: index) }
+            }
         )
     }
     
