@@ -19,7 +19,8 @@ class NetworkService {
         return RxAlamofire
             .requestData(HTTPMethod(rawValue: endpoint.method.rawValue),
                          endpoint.url,
-                         parameters: endpoint.parameters)
+                         parameters: endpoint.parameters,
+                         encoding: endpoint.encoding)
             .map { (response, data) in
                 switch response.statusCode {
                 case 200..<300:

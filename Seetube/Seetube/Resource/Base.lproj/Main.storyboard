@@ -249,9 +249,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="name" value="환급 신청하기"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="applyButtonTouched:" destination="Ulq-P9-i8g" eventType="touchUpInside" id="qL5-zJ-YMw"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 위 개인정보는 오직 환급을 위한 용도로만 쓰이며, 환급 이후에는 폐기됩니다. 환급 신청 이후에는 신청 취소 불가합니다." textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nd-W4-Uw3">
                                 <rect key="frame" x="27" y="545.5" width="321" height="31.5"/>
@@ -303,9 +300,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <action selector="accountNumberEditingChanged:" destination="Ulq-P9-i8g" eventType="editingChanged" id="6tH-ra-4fs"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjE-IJ-STd">
                                 <rect key="frame" x="26" y="237" width="49" height="17"/>
@@ -351,6 +345,7 @@
                         <outlet property="accountHolderTextField" destination="6sF-QO-ZI6" id="Lxw-HJ-FHv"/>
                         <outlet property="accountNumberTextField" destination="AjX-df-afO" id="dcG-KH-yBy"/>
                         <outlet property="bankNameTextField" destination="Iqx-xv-HFK" id="29h-LX-6qF"/>
+                        <outlet property="registerButton" destination="gmX-Da-P0M" id="ERT-hZ-iqT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNg-dj-YWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1478,7 +1473,7 @@
     <resources>
         <image name="AppleSignIn" width="351.5" height="62.5"/>
         <image name="GoogleSignIn" width="351.5" height="62.5"/>
-        <image name="centsign.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="centsign.circle.fill" catalog="system" width="32" height="32"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="person" catalog="system" width="128" height="121"/>

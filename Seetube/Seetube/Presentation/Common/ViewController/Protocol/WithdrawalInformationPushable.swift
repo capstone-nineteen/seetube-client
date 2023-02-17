@@ -17,6 +17,15 @@ extension WithdrawalInformationPushable {
             viewControllerType: WithdrawalInformationViewController.self
         ) { viewController in
             // TODO: 의존성 주입
+            let repository = DefaultShopRepository()
+            let registerWithdrawalUseCase = DefaultRegisterWithdrawalUseCase(
+                repository: repository
+            )
+            let viewModel = WithdrawalInformationViewModel(
+                registerWithdrawalUseCase: registerWithdrawalUseCase,
+                amount: withdrawlAmount
+            )
+            viewController.viewModel = viewModel
         }
     }
 }

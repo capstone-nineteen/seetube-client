@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class APIEndpointFactory {
     enum EndpointType {
@@ -116,11 +117,21 @@ class APIEndpointFactory {
                 return nil
             }
         }
+        
+        var encoding: ParameterEncoding {
+            switch self.method {
+            case .get:
+                return URLEncoding.default
+            case .post:
+                return JSONEncoding.default
+            }
+        }
     }
     
     static func makeEndpoint(for type: EndpointType) -> APIEndpoint {
         return APIEndpoint(method: type.method,
                            url: type.url,
-                           parameters: type.parameters)
+                           parameters: type.parameters,
+                           encoding: type.encoding)
     }
 }
