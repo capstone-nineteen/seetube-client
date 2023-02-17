@@ -66,7 +66,6 @@ extension ReviewerHomeViewController {
     
     private func configureScrollView() {
         self.scrollView.rx.didScroll    // TODO: contentOffset으로 변경.?
-            .observe(on:MainScheduler.asyncInstance)    // Reentrancy anomaly was detected 경고 해결
             .asDriver(onErrorJustReturn: ())
             .drive(with: self, onNext: { owner, _ in
                 let yOffset = owner.scrollView.contentOffset.y
