@@ -36,6 +36,8 @@
 		0447E35329A0CBC5005F0CC9 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35229A0CBC5005F0CC9 /* WatchViewController.swift */; };
 		0447E35529A0CFC2005F0CC9 /* WatchPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */; };
 		0447E35729A0DB7A005F0CC9 /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35629A0DB7A005F0CC9 /* WatchViewModel.swift */; };
+		0447E35A29A1393E005F0CC9 /* SeeSo.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447E35829A1390D005F0CC9 /* SeeSo.xcframework */; };
+		0447E35B29A1393E005F0CC9 /* SeeSo.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0447E35829A1390D005F0CC9 /* SeeSo.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */; };
 		044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25622983B510003F4071 /* CategoryButtonScrollView.swift */; };
 		044D25672983BCFD003F4071 /* ReviewerVideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */; };
@@ -200,6 +202,20 @@
 		04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA5D62297466D30015D91B /* ShopViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0447E35C29A1393E005F0CC9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0447E35B29A1393E005F0CC9 /* SeeSo.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0402BA5F2971D39500B79935 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		0402BA612971D53C00B79935 /* BottomButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomButton.xib; sourceTree = "<group>"; };
@@ -231,6 +247,7 @@
 		0447E35229A0CBC5005F0CC9 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPresentable.swift; sourceTree = "<group>"; };
 		0447E35629A0DB7A005F0CC9 /* WatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewModel.swift; sourceTree = "<group>"; };
+		0447E35829A1390D005F0CC9 /* SeeSo.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SeeSo.xcframework; sourceTree = "<group>"; };
 		044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonStackView.swift; sourceTree = "<group>"; };
 		044D25622983B510003F4071 /* CategoryButtonScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonScrollView.swift; sourceTree = "<group>"; };
 		044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailViewController.swift; sourceTree = "<group>"; };
@@ -401,6 +418,7 @@
 				043636E129938B0700EF6458 /* RxAlamofire in Frameworks */,
 				0490DA4129938C50000BBF73 /* RxSwift in Frameworks */,
 				0490DABC29954B46000BBF73 /* RxViewController in Frameworks */,
+				0447E35A29A1393E005F0CC9 /* SeeSo.xcframework in Frameworks */,
 				04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +542,7 @@
 		041ECBAD296ED84C0053AC9C /* Seetube */ = {
 			isa = PBXGroup;
 			children = (
+				0447E35829A1390D005F0CC9 /* SeeSo.xcframework */,
 				043636A82993873500EF6458 /* Aplication */,
 				043636A72993870600EF6458 /* Resource */,
 				043636B52993888C00EF6458 /* Util */,
@@ -1485,6 +1504,7 @@
 				041ECBA7296ED84C0053AC9C /* Sources */,
 				041ECBA8296ED84C0053AC9C /* Frameworks */,
 				041ECBA9296ED84C0053AC9C /* Resources */,
+				0447E35C29A1393E005F0CC9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
