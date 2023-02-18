@@ -30,6 +30,8 @@ class ReviewerVideoDetailViewModel: ViewModelType {
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }
+        
+        let videoViewModels = video
             .map {
                 let buttonTitle = $0.didReviewed ? "리뷰 완료" : "리뷰 시작하기"
                 return VideoDetailViewModel(with: $0,
@@ -37,16 +39,24 @@ class ReviewerVideoDetailViewModel: ViewModelType {
                 )
             }
         
-        return Output(video: video)
+        let url = input.startButtonTouched
+            .withLatestFrom(
+                video.map { $0.videoPath }
+            ) { $1 }
+        
+        return Output(video: videoViewModels,
+                      shouldMoveToWatch: url)
     }
 }
 
 extension ReviewerVideoDetailViewModel {
     struct Input {
         let viewWillAppear: Driver<Void>
+        let startButtonTouched: Driver<Void>
     }
     
     struct Output {
         let video: Driver<VideoDetailViewModel>
+        let shouldMoveToWatch: Driver<String>
     }
 }

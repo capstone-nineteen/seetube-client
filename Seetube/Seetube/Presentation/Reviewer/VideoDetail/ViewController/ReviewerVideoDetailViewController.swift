@@ -9,7 +9,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class ReviewerVideoDetailViewController: UIViewController {
+class ReviewerVideoDetailViewController: UIViewController,
+                                         WatchPresentable
+{
     @IBOutlet weak var videoDetailView: ReviewerVideoDetailView!
     
     var viewModel: ReviewerVideoDetailViewModel?
@@ -46,11 +48,16 @@ extension ReviewerVideoDetailViewController {
         guard let viewModel = self.viewModel else { return }
         
         let viewWillAppear = self.viewWillAppearEvent()
+        let startButtonTouched = self.startButtonTouchedEvent()
         
-        let input = ReviewerVideoDetailViewModel.Input(viewWillAppear: viewWillAppear)
+        let input = ReviewerVideoDetailViewModel.Input(
+            viewWillAppear: viewWillAppear,
+            startButtonTouched: startButtonTouched
+        )
         let output = viewModel.transform(input: input)
         
         self.bindVideo(output.video)
+        self.bindShouldMoveToWatch(output.shouldMoveToWatch)
     }
     
     // MARK: Input Event Creation
@@ -61,11 +68,24 @@ extension ReviewerVideoDetailViewController {
             .map { _ in () }
     }
     
+    private func startButtonTouchedEvent() -> Driver<Void> {
+        return self.videoDetailView.rx.bottomButtonTap
+            .asDriver()
+    }
+    
     // MARK: Output Binding
     
     private func bindVideo(_ video: Driver<VideoDetailViewModel>) {
         self.videoDetailView
             .bind(with: video)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindShouldMoveToWatch(_ shouldMoveToWatch: Driver<String>) {
+        shouldMoveToWatch
+            .drive(with: self) { obj, url in
+                obj.presentWatch(with: url)
+            }
             .disposed(by: self.disposeBag)
     }
 }

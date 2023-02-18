@@ -33,6 +33,9 @@
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
 		043636DB29938AB300EF6458 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043636DA29938AB300EF6458 /* NetworkService.swift */; };
 		043636E129938B0700EF6458 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 043636E029938B0700EF6458 /* RxAlamofire */; };
+		0447E35329A0CBC5005F0CC9 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35229A0CBC5005F0CC9 /* WatchViewController.swift */; };
+		0447E35529A0CFC2005F0CC9 /* WatchPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */; };
+		0447E35729A0DB7A005F0CC9 /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35629A0DB7A005F0CC9 /* WatchViewModel.swift */; };
 		044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */; };
 		044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25622983B510003F4071 /* CategoryButtonScrollView.swift */; };
 		044D25672983BCFD003F4071 /* ReviewerVideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */; };
@@ -225,6 +228,9 @@
 		041ECBCC296EF2FB0053AC9C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		043636DA29938AB300EF6458 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0447E35229A0CBC5005F0CC9 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
+		0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPresentable.swift; sourceTree = "<group>"; };
+		0447E35629A0DB7A005F0CC9 /* WatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewModel.swift; sourceTree = "<group>"; };
 		044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonStackView.swift; sourceTree = "<group>"; };
 		044D25622983B510003F4071 /* CategoryButtonScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonScrollView.swift; sourceTree = "<group>"; };
 		044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailViewController.swift; sourceTree = "<group>"; };
@@ -410,6 +416,7 @@
 				048A4B0D299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift */,
 				048A4B0F299D15C100719AD0 /* SearchResultPushable.swift */,
 				047B8790299F7D1300F4AA42 /* WithdrawalInformationPushable.swift */,
+				0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */,
 				04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */,
 				048A4B11299D167200719AD0 /* CategoryTabMovable.swift */,
 				04E6FC65298971F30052496A /* KeyboardDismissible.swift */,
@@ -447,6 +454,7 @@
 				049960E8298288CE000EE539 /* Home */,
 				049960FA2982DC6C000EE539 /* VideosByCategory */,
 				044D25652983BCDB003F4071 /* VideoDetail */,
+				0447E34E29A0CB99005F0CC9 /* Watch */,
 				04FA5D612974669E0015D91B /* Shop */,
 				04A94F072978129800BF5F4B /* MyPage */,
 			);
@@ -966,6 +974,39 @@
 				046AD0FB2972A53C00602F89 /* ShortsResultViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0447E34E29A0CB99005F0CC9 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				0447E35129A0CBB4005F0CC9 /* View */,
+				0447E34F29A0CBA5005F0CC9 /* ViewController */,
+				0447E35029A0CBAE005F0CC9 /* ViewModel */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		0447E34F29A0CBA5005F0CC9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0447E35229A0CBC5005F0CC9 /* WatchViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0447E35029A0CBAE005F0CC9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0447E35629A0DB7A005F0CC9 /* WatchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0447E35129A0CBB4005F0CC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		044D25652983BCDB003F4071 /* VideoDetail */ = {
@@ -1574,6 +1615,7 @@
 				04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */,
 				0490DA7729950B9D000BBF73 /* EmotionResult.swift in Sources */,
 				0470C9C42990EA9800D4743B /* VideoListDTO.swift in Sources */,
+				0447E35729A0DB7A005F0CC9 /* WatchViewModel.swift in Sources */,
 				04A6789F299648A9006E29C1 /* ReviewerHomeViewModel.swift in Sources */,
 				047B879F299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift in Sources */,
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
@@ -1598,6 +1640,7 @@
 				0490DA7329950B89000BBF73 /* YoutuberHome.swift in Sources */,
 				0470C9D62990F76600D4743B /* EmotionResultDTO.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
+				0447E35329A0CBC5005F0CC9 /* WatchViewController.swift in Sources */,
 				04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */,
 				044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */,
 				0490DABE299573FC000BBF73 /* CoinHistoryItemViewModel.swift in Sources */,
@@ -1608,6 +1651,7 @@
 				0490DA9C29952D98000BBF73 /* DefaultReviewerHomeRepository.swift in Sources */,
 				044D25692983C6F0003F4071 /* ReviewProgressView.swift in Sources */,
 				04A678A729964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift in Sources */,
+				0447E35529A0CFC2005F0CC9 /* WatchPresentable.swift in Sources */,
 				0490DA922995132F000BBF73 /* ShortsResultRepository.swift in Sources */,
 				0470C9CF2990F1D400D4743B /* YoutuberHomeDTO.swift in Sources */,
 				048A4B01299CD59100719AD0 /* DefaultFetchVideoDetailUseCase.swift in Sources */,

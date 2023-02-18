@@ -81,4 +81,8 @@ extension Reactive where Base: VideoDetailView {
             base.bottomButton.isEnabled = isEnabled
         }
     }
+    
+    var bottomButtonTap: ControlEvent<Void> {
+        return base.bottomButton.rx.tap
+    }
 }
