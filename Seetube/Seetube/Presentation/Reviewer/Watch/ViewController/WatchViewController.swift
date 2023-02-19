@@ -9,11 +9,16 @@ import UIKit
 import SeeSo
 import CoreMedia
 import AVFoundation
+import RxCocoa
+import RxSwift
 
 class WatchViewController: UIViewController {
     @IBOutlet weak var caliPointView: CircularProgressBar!
 
     private var gazeTracker: GazeTracker?
+    
+    var viewModel: WatchViewModel?
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +37,7 @@ class WatchViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if let watchViewController = segue.description as? VideoPlayerViewController {
+        if let videoPlayerViewController = segue.description as? VideoPlayerViewController {
             // TODO: Watch ViewModel 주입
         }
     }

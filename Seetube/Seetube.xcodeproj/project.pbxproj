@@ -40,6 +40,7 @@
 		0447E35B29A1393E005F0CC9 /* SeeSo.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0447E35829A1390D005F0CC9 /* SeeSo.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0447E35E29A13B21005F0CC9 /* SeeSo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35D29A13B21005F0CC9 /* SeeSo.swift */; };
 		044B47FE29A22AE300373768 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B47FD29A22AE300373768 /* WatchViewController.swift */; };
+		044B480029A2422900373768 /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B47FF29A2422900373768 /* WatchViewModel.swift */; };
 		044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */; };
 		044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25622983B510003F4071 /* CategoryButtonScrollView.swift */; };
 		044D25672983BCFD003F4071 /* ReviewerVideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */; };
@@ -252,6 +253,7 @@
 		0447E35829A1390D005F0CC9 /* SeeSo.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SeeSo.xcframework; sourceTree = "<group>"; };
 		0447E35D29A13B21005F0CC9 /* SeeSo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSo.swift; sourceTree = "<group>"; };
 		044B47FD29A22AE300373768 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
+		044B47FF29A2422900373768 /* WatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewModel.swift; sourceTree = "<group>"; };
 		044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonStackView.swift; sourceTree = "<group>"; };
 		044D25622983B510003F4071 /* CategoryButtonScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonScrollView.swift; sourceTree = "<group>"; };
 		044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailViewController.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				044D256C2983D58B003F4071 /* VideoThumbnailButton.swift */,
 				044D25732983F969003F4071 /* VideoDetailView.xib */,
 				044D25752983F97B003F4071 /* VideoDetailView.swift */,
+				0412EEFB29705C5900256579 /* CircularProgressBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1021,6 +1024,7 @@
 		0447E35029A0CBAE005F0CC9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				044B47FF29A2422900373768 /* WatchViewModel.swift */,
 				0447E35629A0DB7A005F0CC9 /* VideoPlayerViewModel.swift */,
 			);
 			path = ViewModel;
@@ -1187,7 +1191,6 @@
 				04E8B78E2970524E000F0859 /* SceneListView.swift */,
 				04E8B793297053B5000F0859 /* SceneListTableViewCell.xib */,
 				04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */,
-				0412EEFB29705C5900256579 /* CircularProgressBar.swift */,
 				040E3CBB2971AF290057B25E /* ListStyleResultView.xib */,
 				040E3CBD2971B0130057B25E /* ListStyleResultView.swift */,
 			);
@@ -1764,6 +1767,7 @@
 				049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */,
 				047B8799299FAC6F00F4AA42 /* WithdrawalResultDTO.swift in Sources */,
 				0490DAB529953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift in Sources */,
+				044B480029A2422900373768 /* WatchViewModel.swift in Sources */,
 				044B47FE29A22AE300373768 /* WatchViewController.swift in Sources */,
 				046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */,
 				048A4AFF299CD56300719AD0 /* FetchVideoDetailUseCase.swift in Sources */,

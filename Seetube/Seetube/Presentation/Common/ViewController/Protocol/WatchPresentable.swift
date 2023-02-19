@@ -14,9 +14,9 @@ protocol WatchPresentable: ViewControllerPresentable {
 extension WatchPresentable {
     func presentWatch(with url: String) {
         self.present(
-            viewControllerType: VideoPlayerViewController.self
+            viewControllerType: WatchViewController.self
         ) { viewController in
-            let viewModel = VideoPlayerViewModel(url: url)
+            let viewModel = WatchViewModel(url: url)
             viewController.viewModel = viewModel
         }
     }
