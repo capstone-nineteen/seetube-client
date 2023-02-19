@@ -33,12 +33,13 @@
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
 		043636DB29938AB300EF6458 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043636DA29938AB300EF6458 /* NetworkService.swift */; };
 		043636E129938B0700EF6458 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 043636E029938B0700EF6458 /* RxAlamofire */; };
-		0447E35329A0CBC5005F0CC9 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35229A0CBC5005F0CC9 /* WatchViewController.swift */; };
+		0447E35329A0CBC5005F0CC9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */; };
 		0447E35529A0CFC2005F0CC9 /* WatchPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */; };
-		0447E35729A0DB7A005F0CC9 /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35629A0DB7A005F0CC9 /* WatchViewModel.swift */; };
+		0447E35729A0DB7A005F0CC9 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35629A0DB7A005F0CC9 /* VideoPlayerViewModel.swift */; };
 		0447E35A29A1393E005F0CC9 /* SeeSo.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447E35829A1390D005F0CC9 /* SeeSo.xcframework */; };
 		0447E35B29A1393E005F0CC9 /* SeeSo.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0447E35829A1390D005F0CC9 /* SeeSo.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0447E35E29A13B21005F0CC9 /* SeeSo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35D29A13B21005F0CC9 /* SeeSo.swift */; };
+		044B47FE29A22AE300373768 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B47FD29A22AE300373768 /* WatchViewController.swift */; };
 		044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */; };
 		044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25622983B510003F4071 /* CategoryButtonScrollView.swift */; };
 		044D25672983BCFD003F4071 /* ReviewerVideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */; };
@@ -245,11 +246,12 @@
 		041ECBCC296EF2FB0053AC9C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		043636DA29938AB300EF6458 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		0447E35229A0CBC5005F0CC9 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
+		0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPresentable.swift; sourceTree = "<group>"; };
-		0447E35629A0DB7A005F0CC9 /* WatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewModel.swift; sourceTree = "<group>"; };
+		0447E35629A0DB7A005F0CC9 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
 		0447E35829A1390D005F0CC9 /* SeeSo.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SeeSo.xcframework; sourceTree = "<group>"; };
 		0447E35D29A13B21005F0CC9 /* SeeSo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSo.swift; sourceTree = "<group>"; };
+		044B47FD29A22AE300373768 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		044D25602983AEFF003F4071 /* CategoryButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonStackView.swift; sourceTree = "<group>"; };
 		044D25622983B510003F4071 /* CategoryButtonScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonScrollView.swift; sourceTree = "<group>"; };
 		044D25662983BCFD003F4071 /* ReviewerVideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailViewController.swift; sourceTree = "<group>"; };
@@ -1010,7 +1012,8 @@
 		0447E34F29A0CBA5005F0CC9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0447E35229A0CBC5005F0CC9 /* WatchViewController.swift */,
+				044B47FD29A22AE300373768 /* WatchViewController.swift */,
+				0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1018,7 +1021,7 @@
 		0447E35029A0CBAE005F0CC9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0447E35629A0DB7A005F0CC9 /* WatchViewModel.swift */,
+				0447E35629A0DB7A005F0CC9 /* VideoPlayerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1638,7 +1641,7 @@
 				04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */,
 				0490DA7729950B9D000BBF73 /* EmotionResult.swift in Sources */,
 				0470C9C42990EA9800D4743B /* VideoListDTO.swift in Sources */,
-				0447E35729A0DB7A005F0CC9 /* WatchViewModel.swift in Sources */,
+				0447E35729A0DB7A005F0CC9 /* VideoPlayerViewModel.swift in Sources */,
 				04A6789F299648A9006E29C1 /* ReviewerHomeViewModel.swift in Sources */,
 				047B879F299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift in Sources */,
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
@@ -1663,7 +1666,7 @@
 				0490DA7329950B89000BBF73 /* YoutuberHome.swift in Sources */,
 				0470C9D62990F76600D4743B /* EmotionResultDTO.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
-				0447E35329A0CBC5005F0CC9 /* WatchViewController.swift in Sources */,
+				0447E35329A0CBC5005F0CC9 /* VideoPlayerViewController.swift in Sources */,
 				04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */,
 				044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */,
 				0490DABE299573FC000BBF73 /* CoinHistoryItemViewModel.swift in Sources */,
@@ -1761,6 +1764,7 @@
 				049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */,
 				047B8799299FAC6F00F4AA42 /* WithdrawalResultDTO.swift in Sources */,
 				0490DAB529953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift in Sources */,
+				044B47FE29A22AE300373768 /* WatchViewController.swift in Sources */,
 				046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */,
 				048A4AFF299CD56300719AD0 /* FetchVideoDetailUseCase.swift in Sources */,
 				0490DA7B29950BB0000BBF73 /* ShortsResult.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class CircularProgressBar: UIView {
     var lineWidth: CGFloat = 8
     

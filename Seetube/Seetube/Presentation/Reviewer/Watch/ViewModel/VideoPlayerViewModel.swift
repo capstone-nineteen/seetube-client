@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WatchViewModel: ViewModelType {
+class VideoPlayerViewModel: ViewModelType {
     let url: String
     
     init(url: String) {
@@ -20,7 +20,7 @@ class WatchViewModel: ViewModelType {
     }
 }
 
-extension WatchViewModel {
+extension VideoPlayerViewModel {
     struct Input {
     }
     
