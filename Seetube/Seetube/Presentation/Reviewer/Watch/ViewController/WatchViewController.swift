@@ -14,17 +14,18 @@ import RxSwift
 
 class WatchViewController: UIViewController {
     @IBOutlet weak var caliPointView: CircularProgressBar!
-
+    @IBOutlet weak var caliTutorialView: CalibrationTutorialView!
+    
+    // Eye-tracking
     private var gazeTracker: GazeTracker?
     
+    // View Model
     var viewModel: WatchViewModel?
     private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.global().async { [weak self] in
-            self?.startEyeTracking()
-        }
+        self.configureUI()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -37,9 +38,32 @@ class WatchViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if let videoPlayerViewController = segue.description as? VideoPlayerViewController {
+        if let videoPlayerViewController = segue.destination as? VideoPlayerViewController,
+           let viewModel = self.viewModel {
             // TODO: Watch ViewModel 주입
+            let videoPlayerViewModel = VideoPlayerViewModel(url: viewModel.url)
+            videoPlayerViewController.viewModel = videoPlayerViewModel
         }
+    }
+}
+
+// MARK: - Configuration
+
+extension WatchViewController {
+    private func configureUI() {
+        self.configureCaliTutorialView()
+    }
+    
+    private func configureCaliTutorialView() {
+        self.caliTutorialView.rx.startButtonTap
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.caliTutorialView.isHidden = true
+                DispatchQueue.global().async {
+                    obj.startEyeTracking()
+                }
+            }
+            .disposed(by: self.disposeBag)
     }
 }
 
@@ -129,6 +153,9 @@ extension WatchViewController : CalibrationDelegate {
     
     func onCalibrationNextPoint(x: Double, y: Double) {
         DispatchQueue.main.async {
+            if self.caliPointView.isHidden {
+                self.caliPointView.isHidden = false
+            }
             self.caliPointView.center = CGPoint(x: x, y: y)
         }
         

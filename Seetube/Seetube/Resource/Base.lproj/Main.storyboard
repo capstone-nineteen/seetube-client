@@ -235,7 +235,7 @@
         <!--Video Player View Controller-->
         <scene sceneID="mmF-dp-xzX">
             <objects>
-                <viewController storyboardIdentifier="WatchViewController" id="Ang-Cu-2LZ" customClass="VideoPlayerViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoPlayerViewController" id="Ang-Cu-2LZ" customClass="VideoPlayerViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XQQ-yO-HMf">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,30 +251,46 @@
         <!--Watch View Controller-->
         <scene sceneID="Iqv-n2-A2P">
             <objects>
-                <viewController storyboardIdentifier="CalibraiontViewController" id="SSx-ba-hQE" customClass="WatchViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WatchViewController" id="SSx-ba-hQE" customClass="WatchViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xKB-cG-GAp">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rmp-Hi-dBA">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rmp-Hi-dBA">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Ang-Cu-2LZ" kind="embed" id="AvT-Ym-duq"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Smp-46-q6A" customClass="CircularProgressBar" customModule="Seetube" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Smp-46-q6A" customClass="CircularProgressBar" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="311" y="165" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5k-Y6-kVc" customClass="CalibrationTutorialView" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="133.5" y="62.5" width="400" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="OAM-WE-WuW"/>
+                                    <constraint firstAttribute="width" constant="400" id="oCl-3q-GC2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eBp-b4-AD5"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eBp-b4-AD5" firstAttribute="bottom" secondItem="Rmp-Hi-dBA" secondAttribute="bottom" id="B3f-IA-pkv"/>
+                            <constraint firstItem="Rmp-Hi-dBA" firstAttribute="leading" secondItem="eBp-b4-AD5" secondAttribute="leading" id="HVJ-6G-Wwd"/>
+                            <constraint firstItem="eBp-b4-AD5" firstAttribute="trailing" secondItem="Rmp-Hi-dBA" secondAttribute="trailing" id="TK6-Nw-UiT"/>
+                            <constraint firstItem="t5k-Y6-kVc" firstAttribute="centerX" secondItem="eBp-b4-AD5" secondAttribute="centerX" id="TQk-Ib-4Ui"/>
+                            <constraint firstItem="Rmp-Hi-dBA" firstAttribute="top" secondItem="eBp-b4-AD5" secondAttribute="top" id="b02-AC-TN8"/>
+                            <constraint firstItem="t5k-Y6-kVc" firstAttribute="centerY" secondItem="eBp-b4-AD5" secondAttribute="centerY" id="iKy-vN-t5B"/>
+                        </constraints>
                     </view>
                     <size key="freeformSize" width="667" height="375"/>
                     <connections>
                         <outlet property="caliPointView" destination="Smp-46-q6A" id="Awf-fv-8TA"/>
+                        <outlet property="caliTutorialView" destination="t5k-Y6-kVc" id="gLe-yP-WBG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4s9-52-dXI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1482,16 +1498,16 @@
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="6sF-QO-ZI6">
-            <size key="intrinsicContentSize" width="117" height="18.5"/>
+            <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="AjX-df-afO">
-            <size key="intrinsicContentSize" width="174" height="18.5"/>
+            <size key="intrinsicContentSize" width="191" height="20"/>
         </designable>
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="Iqx-xv-HFK">
-            <size key="intrinsicContentSize" width="117" height="18.5"/>
+            <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
         <designable name="MIt-RP-vXU">
             <size key="intrinsicContentSize" width="30" height="34"/>

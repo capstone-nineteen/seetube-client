@@ -8,6 +8,13 @@
 import Foundation
 
 class VideoPlayerViewModel: ViewModelType {
+    let url: String
+    
+    init(url: String) {
+        // TODO: S3 권한 요청 후 Info.plist NSAppTransportSecurity 삭제
+        self.url = url
+    }
+    
     func transform(input: Input) -> Output {
         return Output()
     }
