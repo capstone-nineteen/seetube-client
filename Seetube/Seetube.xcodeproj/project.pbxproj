@@ -193,6 +193,8 @@
 		04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */; };
 		04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */; };
 		04B608C729A4E53700B811B9 /* WatchingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B608C629A4E53700B811B9 /* WatchingState.swift */; };
+		04B608CA29A4FF3300B811B9 /* FaceExpressionPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B608C929A4FF3300B811B9 /* FaceExpressionPredictor.swift */; };
+		04B608CC29A4FF5D00B811B9 /* MiniXception.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 04B608CB29A4FF5D00B811B9 /* MiniXception.mlmodel */; };
 		04B8AF09299BBB4E0024C897 /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AF08299BBB4E0024C897 /* SearchResultViewModel.swift */; };
 		04B8AF0B299BBB8A0024C897 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AF0A299BBB8A0024C897 /* SearchUseCase.swift */; };
 		04B8AF0D299BBBDA0024C897 /* DefaultSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */; };
@@ -406,6 +408,8 @@
 		04AF39B22979806100BF058B /* FinishedReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedReviewsTableViewController.swift; sourceTree = "<group>"; };
 		04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsInProgressTableViewController.swift; sourceTree = "<group>"; };
 		04B608C629A4E53700B811B9 /* WatchingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingState.swift; sourceTree = "<group>"; };
+		04B608C929A4FF3300B811B9 /* FaceExpressionPredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceExpressionPredictor.swift; sourceTree = "<group>"; };
+		04B608CB29A4FF5D00B811B9 /* MiniXception.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MiniXception.mlmodel; sourceTree = "<group>"; };
 		04B8AF08299BBB4E0024C897 /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
 		04B8AF0A299BBB8A0024C897 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
 		04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSearchUseCase.swift; sourceTree = "<group>"; };
@@ -1014,6 +1018,7 @@
 		0447E34E29A0CB99005F0CC9 /* Watch */ = {
 			isa = PBXGroup;
 			children = (
+				04B608C829A4FF2300B811B9 /* Util */,
 				0447E35129A0CBB4005F0CC9 /* View */,
 				0447E34F29A0CBA5005F0CC9 /* ViewController */,
 				0447E35029A0CBAE005F0CC9 /* ViewModel */,
@@ -1495,6 +1500,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		04B608C829A4FF2300B811B9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				04B608CB29A4FF5D00B811B9 /* MiniXception.mlmodel */,
+				04B608C929A4FF3300B811B9 /* FaceExpressionPredictor.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		04E6FC5D298939F60052496A /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -1709,6 +1723,7 @@
 				048A4B09299CEA8C00719AD0 /* VideoDetailDTO.swift in Sources */,
 				0470727B2979ACD9008D6CC0 /* VideoInfoCardTableViewCell.swift in Sources */,
 				04AF39AC29795ACF00BF058B /* YoutuberHomeViewController.swift in Sources */,
+				04B608CA29A4FF3300B811B9 /* FaceExpressionPredictor.swift in Sources */,
 				0490DAB029953B39000BBF73 /* MyPageViewModel.swift in Sources */,
 				04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */,
 				04A94F0B2978318B00BF5F4B /* CoinHistoryTableViewCell.swift in Sources */,
@@ -1765,6 +1780,7 @@
 				0490DAA8299539FA000BBF73 /* DefaultEmotionResultRepository.swift in Sources */,
 				044D257E2984243A003F4071 /* ReviewerHomeViewController.swift in Sources */,
 				0490DA6D29950A3A000BBF73 /* VideoList.swift in Sources */,
+				04B608CC29A4FF5D00B811B9 /* MiniXception.mlmodel in Sources */,
 				044D256D2983D58B003F4071 /* VideoThumbnailButton.swift in Sources */,
 				045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */,
 				0490DAB229953B8B000BBF73 /* FetchMyPageUseCase.swift in Sources */,
