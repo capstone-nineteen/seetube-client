@@ -15,6 +15,7 @@ import RxSwift
 class WatchViewController: UIViewController {
     @IBOutlet weak var caliPointView: CircularProgressBar!
     @IBOutlet weak var caliTutorialView: CalibrationTutorialView!
+    @IBOutlet weak var xButton: UIButton!
     
     // Eye-tracking
     private var gazeTracker: GazeTracker?
@@ -23,9 +24,13 @@ class WatchViewController: UIViewController {
     var viewModel: WatchViewModel?
     private var disposeBag = DisposeBag()
     
+    // TODO: RxSeeSo
+    let watchingState = BehaviorRelay<WatchingState>(value: .calibrationPending)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureUI()
+        self.bindViewModel()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -40,9 +45,7 @@ class WatchViewController: UIViewController {
         super.prepare(for: segue, sender: sender)
         if let videoPlayerViewController = segue.destination as? VideoPlayerViewController,
            let viewModel = self.viewModel {
-            // TODO: Watch ViewModel 주입
-            let videoPlayerViewModel = VideoPlayerViewModel(url: viewModel.url)
-            videoPlayerViewController.viewModel = videoPlayerViewModel
+            videoPlayerViewController.viewModel = viewModel.videoPlayerViewModel
         }
     }
 }
@@ -52,25 +55,73 @@ class WatchViewController: UIViewController {
 extension WatchViewController {
     private func configureUI() {
         self.configureCaliTutorialView()
+        self.configureXButton()
+        self.configureGazeTracker()
     }
     
     private func configureCaliTutorialView() {
         self.caliTutorialView.rx.startButtonTap
             .asDriver()
             .drive(with: self) { obj, _ in
+                obj.xButton.isHidden = true
                 obj.caliTutorialView.isHidden = true
-                DispatchQueue.global().async {
-                    obj.startEyeTracking()
+
+                DispatchQueue.global().async { [weak self] in
+                    self?.gazeTracker?.startTracking()
                 }
             }
             .disposed(by: self.disposeBag)
+    }
+    
+    private func configureXButton() {
+        self.xButton.rx.tap
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.dismiss(animated: true)
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func configureGazeTracker() {
+        self.rx.viewDidAppear
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.authorizeAVCaptureDevice()
+            }
+            .disposed(by: self.disposeBag)
+        
+        self.rx.viewDidDisappear
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.gazeTracker?.stopTracking()
+            }
+            .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: - ViewModel Binding
+
+extension WatchViewController {
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        let watchingState = self.watchingStateProperty()
+        
+        let input = WatchViewModel.Input(watchingState: watchingState)
+        let output = viewModel.transform(input: input)
+    }
+    
+    // MARK: Input Event Creation
+    
+    private func watchingStateProperty() -> Driver<WatchingState> {
+        return self.watchingState.asDriver()
     }
 }
 
 // MARK: - Eye Tracking
 
 extension WatchViewController {
-    private func startEyeTracking() {
+    private func authorizeAVCaptureDevice() {
         if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
             self.initializeGazeTracker()
         } else {
@@ -92,17 +143,16 @@ extension WatchViewController {
 
 extension WatchViewController: InitializationDelegate {
     func onInitialized(tracker: GazeTracker?, error: InitializationError) {
-        if (tracker != nil) {
+        if let tracker = tracker {
+            self.watchingState.accept(.trackerInitializationSucceeded)
+            
+            tracker.setDelegates(statusDelegate: self,
+                                 gazeDelegate: self,
+                                 calibrationDelegate: self,
+                                 imageDelegate: self)
             self.gazeTracker = tracker
-            self.gazeTracker?.setDelegates(statusDelegate: self,
-                                           gazeDelegate: self,
-                                           calibrationDelegate: self,
-                                           imageDelegate: self)
-            DispatchQueue.global().async { [weak self] in
-                self?.gazeTracker?.startTracking()
-            }
         } else {
-            print("ERROR: failed to initialize gaze tracker \(error.description)")
+            self.watchingState.accept(.trackerInitializationFailed)
         }
     }
 }
@@ -111,66 +161,63 @@ extension WatchViewController: InitializationDelegate {
 
 extension WatchViewController: StatusDelegate {
     func onStarted() {
-        print("DEBUG: Tracker starts tracking")
+        self.watchingState.accept(.trackingStarted)
         self.startCalibration()
     }
     
     func onStopped(error: StatusError) {
-        print("ERROR: Tracking is stopped - \(error.description)")
+        self.watchingState.accept(.trackingStoppped)
     }
 }
 
+// MARK: CalibrationDelegate
 
-// MARK: Calibration
-
-extension WatchViewController {
+extension WatchViewController : CalibrationDelegate {
     private func startCalibration() {
-        let result = self.gazeTracker?.startCalibration(mode: .FIVE_POINT, criteria: .HIGH)
-        if let isStart = result,
-           !isStart {
-            print("ERROR: Calibration start failed")
+        let result = self.gazeTracker?.startCalibration(mode: .FIVE_POINT,
+                                                        criteria: .HIGH)
+        if let didStart = result,
+           !didStart {
+            self.watchingState.accept(.calibrationStartFailed)
         } else {
-            print("DEBUG: Calibration start success")
+            self.watchingState.accept(.calibrationStartSucceeded)
         }
     }
     
     private func stopCalibration(){
         self.gazeTracker?.stopCalibration()
-        self.caliPointView.isHidden = true
+        self.watchingState.accept(.calibrationFinished)
+        DispatchQueue.main.async {
+            self.caliPointView.isHidden = true
+            self.xButton.isHidden = true
+        }
     }
-}
-
-
-
-// MARK: CalibrationDelegate
-
-extension WatchViewController : CalibrationDelegate {
+    
     func onCalibrationProgress(progress: Double) {
-        caliPointView.setProgress(value: progress,
-                                  text: "",
-                                  color: Colors.seetubePink)
+        DispatchQueue.main.async {
+            self.caliPointView.setProgress(value: progress,
+                                      text: "",
+                                      color: Colors.seetubePink)
+        }
     }
     
     func onCalibrationNextPoint(x: Double, y: Double) {
         DispatchQueue.main.async {
-            if self.caliPointView.isHidden {
-                self.caliPointView.isHidden = false
-            }
+            self.caliPointView.isHidden = false
             self.caliPointView.center = CGPoint(x: x, y: y)
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             if let result = self.gazeTracker?.startCollectSamples() {
-                print("DEBUG: startCollectSamples : \(result)")
+            } else {
+                self.watchingState.accept(.calibrationFailed)
             }
         })
     }
     
     func onCalibrationFinished(calibrationData : [Double]) {
-        print("DEBUG: Calibration finished")
-        self.gazeTracker?.stopCalibration()
-        self.caliPointView.isHidden = true
-        // TODO: 비디오 플레이
+        self.watchingState.accept(.calibrationFinished)
+        self.stopCalibration()
     }
 }
 
@@ -181,8 +228,6 @@ extension WatchViewController: GazeDelegate {
         guard let isCalibrating = self.gazeTracker?.isCalibrating(),
               !isCalibrating else { return }
         // TODO: Gaze Info 업데이트
-        self.caliPointView.isHidden = false
-        self.caliPointView.center = CGPoint(x: gazeInfo.x, y: gazeInfo.y)
     }
 }
 
@@ -191,11 +236,11 @@ extension WatchViewController: GazeDelegate {
 extension WatchViewController: ImageDelegate {
     func onImage(timestamp: Double, image: CMSampleBuffer) {
         DispatchQueue.global().async {
-            guard let frame = CMSampleBufferGetImageBuffer(image) else {
-                print("ERROR: unable to get image from sample buffer")
-                return
+            if let frame = CMSampleBufferGetImageBuffer(image) {
+                // TODO: face detection
+            } else {
+                self.watchingState.accept(.failedToGetImage)
             }
-            // TODO: face detection
         }
     }
 }

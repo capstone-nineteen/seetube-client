@@ -6,17 +6,23 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class VideoPlayerViewModel: ViewModelType {
     let url: String
+    let shouldPlay: PublishRelay<Void>
     
     init(url: String) {
-        // TODO: S3 권한 요청 후 Info.plist NSAppTransportSecurity 삭제
         self.url = url
+        self.shouldPlay = PublishRelay()
     }
     
     func transform(input: Input) -> Output {
-        return Output()
+        let shouldPlay = self.shouldPlay
+            .asDriverIgnoringError()
+        
+        return Output(shouldPlay: shouldPlay)
     }
 }
 
@@ -25,5 +31,6 @@ extension VideoPlayerViewModel {
     }
     
     struct Output {
+        let shouldPlay: Driver<Void>
     }
 }

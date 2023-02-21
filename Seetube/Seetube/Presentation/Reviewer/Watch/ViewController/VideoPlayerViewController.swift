@@ -23,6 +23,8 @@ class VideoPlayerViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.createPlayer()
+        self.bindViewModel()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -34,39 +36,28 @@ class VideoPlayerViewController: UIViewController,
     }
 }
 
-// MARK: - Player
+// MARK: - ViewModel Binding
 
 extension VideoPlayerViewController {
-    private func configurePlayer() {
-        self.createPlayer()
-        self.configurePlayAndStop()
-        self.addBoundaryTimeObserver()
-        self.addVideoEndObserver()
+    func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        let input = VideoPlayerViewModel.Input()
+        let output = viewModel.transform(input: input)
+        
+        self.bindShouldPlay(output.shouldPlay)
     }
     
-    private func createPlayer() {
-        guard let urlString = self.viewModel?.url,
-              let url = URL(string: urlString) else { return }
-
-        // AVPlayer
-        player = AVPlayer(url: url)
-        
-        // AVPlayerLayer
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer?.frame = self.view.bounds
-        view.layer.addSublayer(playerLayer!)
-        
-        self.rx.viewWillLayoutSubviews
-            .asDriver()
-            .drive(with: self) { obj, _ in
-                obj.playerLayer?.frame = self.view.bounds
-            }
-            .disposed(by: self.disposeBag)
+    // MARK: Input Event Creation
+    
+    private func viewDidLoadEvent() -> Driver<Void> {
+        return self.rx.viewDidLoad.asDriver()
     }
     
-    private func configurePlayAndStop() {
-        self.rx.viewDidAppear
-            .asDriver()
+    // MARK: Output Binding
+    
+    private func bindShouldPlay(_ shouldPlay: Driver<Void>) {
+        shouldPlay
             .drive(with: self) { obj, _ in
                 obj.player?.play()
                 // 종료 테스트를 위한 시작 구간 스킵
@@ -76,7 +67,42 @@ extension VideoPlayerViewController {
                                  toleranceAfter: .zero)
             }
             .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: - Player
+
+extension VideoPlayerViewController {
+    private func createPlayer() {
+        guard let urlString = self.viewModel?.url,
+              let url = URL(string: urlString) else { return }
+
+        // AVPlayer
+        print(urlString)
+        self.player = AVPlayer(url: url)
+        self.player?.preventsDisplaySleepDuringVideoPlayback = true
         
+        // AVPlayerLayer
+        self.playerLayer = AVPlayerLayer(player: self.player)
+        self.playerLayer?.frame = self.view.bounds
+        self.view.layer.addSublayer(self.playerLayer!)
+        
+        self.configureLayout()
+        self.configureStop()
+        self.addBoundaryTimeObserver()
+        self.addVideoEndObserver()
+    }
+    
+    private func configureLayout() {
+        self.rx.viewWillLayoutSubviews
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.playerLayer?.frame = self.view.bounds
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func configureStop() {
         self.rx.viewWillDisappear
             .asDriver()
             .drive(with: self) { obj, _ in

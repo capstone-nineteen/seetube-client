@@ -15,11 +15,6 @@
 	</array>
 	<key>GIDClientID</key>
 	<string>$(GOOGLE_IOS_CLIENT_ID)</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>SEESO_LICENSE_KEY</key>
 	<string>$(SEESO_LICENSE_KEY)</string>
 	<key>UIApplicationSceneManifest</key>
