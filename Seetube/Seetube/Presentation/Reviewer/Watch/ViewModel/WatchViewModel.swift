@@ -8,10 +8,12 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import SeeSo
 
 class WatchViewModel: ViewModelType {
     let url: String
     let videoPlayerViewModel: VideoPlayerViewModel
+    
     private var disposeBag: DisposeBag
     
     init(url: String) {
@@ -22,6 +24,12 @@ class WatchViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
+        input.reviewData
+            .drive(onNext: {
+                print($0)
+            })
+            .disposed(by: self.disposeBag)
+        
         let shouldPlay = input.watchingState
             .asObservable()
             .filter { $0 == .calibrationFinished }
@@ -31,15 +39,25 @@ class WatchViewModel: ViewModelType {
             .bind(to: self.videoPlayerViewModel.shouldPlay)
             .disposed(by: self.disposeBag)
         
-        return Output()
+        let playTime = self.videoPlayerViewModel.playTime
+            .asDriverIgnoringError()
+        
+        let didPlayToEndTime = self.videoPlayerViewModel.didPlayToEndTime
+            .asDriverIgnoringError()
+        
+        return Output(playTime: playTime,
+                      didPlayToEndTime: didPlayToEndTime)
     }
 }
 
 extension WatchViewModel {
     struct Input {
         let watchingState: Driver<WatchingState>
+        let reviewData: Driver<ReviewData>
     }
     
     struct Output {
+        let playTime: Driver<Int>
+        let didPlayToEndTime: Driver<Void>
     }
 }

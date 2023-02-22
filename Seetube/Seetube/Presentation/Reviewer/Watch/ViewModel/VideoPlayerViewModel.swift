@@ -12,13 +12,30 @@ import RxCocoa
 class VideoPlayerViewModel: ViewModelType {
     let url: String
     let shouldPlay: PublishRelay<Void>
+    let playTime: PublishRelay<Int>
+    let didPlayToEndTime: PublishRelay<Void>
+    
+    private var disposeBag: DisposeBag
     
     init(url: String) {
         self.url = url
         self.shouldPlay = PublishRelay()
+        self.playTime = PublishRelay()
+        self.didPlayToEndTime = PublishRelay()
+        self.disposeBag = DisposeBag()
     }
     
     func transform(input: Input) -> Output {
+        input.playTime
+            .asObservable()
+            .bind(to: self.playTime)
+            .disposed(by: self.disposeBag)
+        
+        input.didPlayToEndTime
+            .asObservable()
+            .bind(to: self.didPlayToEndTime)
+            .disposed(by: self.disposeBag)
+        
         let shouldPlay = self.shouldPlay
             .asDriverIgnoringError()
         
@@ -28,6 +45,8 @@ class VideoPlayerViewModel: ViewModelType {
 
 extension VideoPlayerViewModel {
     struct Input {
+        let playTime: Driver<Int>
+        let didPlayToEndTime: Driver<Void>
     }
     
     struct Output {

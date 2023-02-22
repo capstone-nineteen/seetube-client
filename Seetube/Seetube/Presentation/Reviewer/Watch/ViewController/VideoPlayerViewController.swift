@@ -16,6 +16,8 @@ class VideoPlayerViewController: UIViewController,
     // Video Player
     private var player: AVPlayer?
     private var playerLayer: AVPlayerLayer?
+    private let playTime = PublishRelay<Int>()
+    private let didPlayToEndTime = PublishRelay<Void>()
     
     // View Model
     var viewModel: VideoPlayerViewModel?
@@ -42,16 +44,24 @@ extension VideoPlayerViewController {
     func bindViewModel() {
         guard let viewModel = self.viewModel else { return }
         
-        let input = VideoPlayerViewModel.Input()
+        let playTime = self.playTimeProperty()
+        let didPlayToEndTime = self.didPlayToEndTimeEvent()
+        
+        let input = VideoPlayerViewModel.Input(playTime: playTime,
+                                               didPlayToEndTime: didPlayToEndTime)
         let output = viewModel.transform(input: input)
         
         self.bindShouldPlay(output.shouldPlay)
     }
     
     // MARK: Input Event Creation
+
+    private func playTimeProperty() -> Driver<Int> {
+        return self.playTime.asDriverIgnoringError()
+    }
     
-    private func viewDidLoadEvent() -> Driver<Void> {
-        return self.rx.viewDidLoad.asDriver()
+    private func didPlayToEndTimeEvent() -> Driver<Void> {
+        return self.didPlayToEndTime.asDriverIgnoringError()
     }
     
     // MARK: Output Binding
@@ -60,11 +70,11 @@ extension VideoPlayerViewController {
         shouldPlay
             .drive(with: self) { obj, _ in
                 obj.player?.play()
-                // 종료 테스트를 위한 시작 구간 스킵
-                obj.player?.seek(to: CMTime(value: 650,
-                                            timescale: 1),
-                                 toleranceBefore: .zero,
-                                 toleranceAfter: .zero)
+//                // 종료 테스트를 위한 시작 구간 스킵
+//                obj.player?.seek(to: CMTime(value: 630,
+//                                            timescale: 1),
+//                                 toleranceBefore: .zero,
+//                                 toleranceAfter: .zero)
             }
             .disposed(by: self.disposeBag)
     }
@@ -78,7 +88,6 @@ extension VideoPlayerViewController {
               let url = URL(string: urlString) else { return }
 
         // AVPlayer
-        print(urlString)
         self.player = AVPlayer(url: url)
         self.player?.preventsDisplaySleepDuringVideoPlayback = true
         
@@ -103,7 +112,7 @@ extension VideoPlayerViewController {
     }
     
     private func configureStop() {
-        self.rx.viewWillDisappear
+        self.rx.viewDidDisappear
             .asDriver()
             .drive(with: self) { obj, _ in
                 obj.player?.pause()
@@ -128,8 +137,8 @@ extension VideoPlayerViewController {
             forTimes: times,
             queue: nil
         ) { [weak self] in
-            print("DEBUG: \(player.currentTime().seconds)")
-            // TODO: 1초마다 시선 + 감정 데이터 저장
+            let playTime = Int(player.currentTime().seconds)
+            self?.playTime.accept(playTime)
         }
     }
     
@@ -141,18 +150,8 @@ extension VideoPlayerViewController {
             .asDriver(onErrorJustReturn: nil)
             .compactMap { $0 }
             .drive(with: self) { obj, _ in
-                // TODO: 데이터 서버로 전송 -> 보상 지급 + 얼럿
-                obj.finishWatching()
+                obj.didPlayToEndTime.accept(())
             }
             .disposed(by: self.disposeBag)
-    }
-    
-    private func finishWatching() {
-        self.displayOKAlert(
-            title: "시청 완료",
-            message: "리뷰에 참여해주셔서 감사합니다. 보상이 지급되었습니다."
-        ) { [weak self] _ in
-            self?.dismiss(animated: true)
-        }
     }
 }
