@@ -39,13 +39,13 @@ class ReviewerVideoDetailViewModel: ViewModelType {
                 )
             }
         
-        let url = input.startButtonTouched
+        let videoInfo = input.startButtonTouched
             .withLatestFrom(
-                video.map { $0.videoPath }
+                video.map { (url: $0.videoPath, id: $0.videoId) }
             ) { $1 }
         
         return Output(video: videoViewModels,
-                      shouldMoveToWatch: url)
+                      shouldMoveToWatch: videoInfo)
     }
 }
 
@@ -57,6 +57,6 @@ extension ReviewerVideoDetailViewModel {
     
     struct Output {
         let video: Driver<VideoDetailViewModel>
-        let shouldMoveToWatch: Driver<String>
+        let shouldMoveToWatch: Driver<(url: String, id: Int)>
     }
 }

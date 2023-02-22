@@ -8,15 +8,16 @@
 import Foundation
 
 protocol WatchPresentable: ViewControllerPresentable {
-    func presentWatch(with url: String)
+    func presentWatch(url: String, videoId: Int)
 }
 
 extension WatchPresentable {
-    func presentWatch(with url: String) {
+    func presentWatch(url: String, videoId: Int) {
         self.present(
             viewControllerType: WatchViewController.self
         ) { viewController in
-            let viewModel = WatchViewModel(url: url)
+            let viewModel = WatchViewModel(url: url,
+            videoId: videoId)
             viewController.viewModel = viewModel
         }
     }

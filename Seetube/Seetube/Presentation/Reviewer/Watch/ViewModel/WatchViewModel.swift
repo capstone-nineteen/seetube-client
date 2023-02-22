@@ -12,13 +12,18 @@ import SeeSo
 
 class WatchViewModel: ViewModelType {
     let url: String
+    let videoId: Int
     let videoPlayerViewModel: VideoPlayerViewModel
     
     private var disposeBag: DisposeBag
     
-    init(url: String) {
+    init(
+        url: String,
+        videoId: Int
+    ) {
         // TODO: S3 권한 요청 후 Info.plist NSAppTransportSecurity 삭제
         self.url = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+        self.videoId = videoId
         self.videoPlayerViewModel = VideoPlayerViewModel(url: self.url)
         self.disposeBag = DisposeBag()
     }
@@ -44,6 +49,7 @@ class WatchViewModel: ViewModelType {
             .asObservable()
             .flatMap { reviewDataCollection -> Observable<Bool> in
                 // TODO: post review data
+                print("DEBUG: \(reviewDataCollection)")
                 return .just(false)
             }
             .asDriver(onErrorJustReturn: false)

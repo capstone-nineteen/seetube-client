@@ -81,10 +81,10 @@ extension ReviewerVideoDetailViewController {
             .disposed(by: self.disposeBag)
     }
     
-    private func bindShouldMoveToWatch(_ shouldMoveToWatch: Driver<String>) {
+    private func bindShouldMoveToWatch(_ shouldMoveToWatch: Driver<(url: String, id: Int)>) {
         shouldMoveToWatch
-            .drive(with: self) { obj, url in
-                obj.presentWatch(with: url)
+            .drive(with: self) { obj, urlAndVideoId in
+                obj.presentWatch(url: urlAndVideoId.url, videoId: urlAndVideoId.id)
             }
             .disposed(by: self.disposeBag)
     }
