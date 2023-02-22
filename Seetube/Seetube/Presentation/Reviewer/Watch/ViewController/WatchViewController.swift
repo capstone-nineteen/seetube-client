@@ -29,7 +29,7 @@ class WatchViewController: UIViewController,
     private let faceExpressionPredictor = FaceExpressionPredictor()
     private let frontCameraCapture = PublishRelay<CVImageBuffer>()
 
-    private let reviewData = PublishRelay<ReviewData>()
+    private let reviewData = PublishSubject<ReviewData>()
     
     // View Model
     var viewModel: WatchViewModel?
@@ -98,14 +98,6 @@ extension WatchViewController {
                 obj.authorizeAVCaptureDevice()
             }
             .disposed(by: self.disposeBag)
-        
-        self.rx.viewDidDisappear
-            .asDriver()
-            .drive(with: self) { obj, _ in
-                obj.gazeTracker?.stopTracking()
-                obj.gazeTracker = nil
-            }
-            .disposed(by: self.disposeBag)
     }
 }
 
@@ -124,6 +116,7 @@ extension WatchViewController {
         
         self.bindPlayTime(output.playTime)
         self.bindDidPlayToEndTime(output.didPlayToEndTime)
+        self.bindReviewSubmissionResult(output.reviewSubmissionResult)
     }
     
     // MARK: Input Event Creation
@@ -132,8 +125,8 @@ extension WatchViewController {
         return self.watchingState.asDriver()
     }
     
-    private func reviewDataProperty() -> Driver<ReviewData> {
-        return self.reviewData.asDriverIgnoringError()
+    private func reviewDataProperty() -> Observable<ReviewData> {
+        return self.reviewData.asObservable()
     }
     
     // MARK: Output Binding
@@ -157,7 +150,7 @@ extension WatchViewController {
                 }
                 return predictor
                     .makePredictions(for: rawData.capture)
-                    .map { $0 as FaceExpressionPredictor.Prediction? }  // TODO: Emotion에 Unknown 추가, 옵셔널 제거
+                    .map { $0 as FaceExpressionPredictor.Prediction? }
                     .catchAndReturn(nil)
                     .map {
                         ReviewData(playTime: rawData.playTime,
@@ -173,7 +166,21 @@ extension WatchViewController {
     private func bindDidPlayToEndTime(_ didPlayToEndTime: Driver<Void>) {
         didPlayToEndTime
             .drive(with: self) { obj, _ in
-                obj.finishWatching()
+                obj.gazeTracker?.stopTracking()
+                obj.gazeTracker = nil
+                obj.reviewData.onCompleted()
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindReviewSubmissionResult(_ reviewSubmissionResult: Driver<Bool>) {
+        reviewSubmissionResult
+            .drive(with: self) { obj, isSuccess in
+                if isSuccess {
+                    obj.displayReviewSubmissionSuccess()
+                } else {
+                    obj.displayReviewSubmissionFailure()
+                }
             }
             .disposed(by: self.disposeBag)
     }
@@ -275,7 +282,7 @@ extension WatchViewController : CalibrationDelegate {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-            if let result = self.gazeTracker?.startCollectSamples() {
+            if let _ = self.gazeTracker?.startCollectSamples() {
             } else {
                 self.watchingState.accept(.calibrationFailed)
             }
@@ -320,10 +327,18 @@ extension WatchViewController: ImageDelegate {
 // MARK: - Alerts
 
 extension WatchViewController {
-    private func finishWatching() {
+    private func displayReviewSubmissionSuccess() {
         self.displayOKAlert(
             title: "시청 완료",
             message: "리뷰에 참여해주셔서 감사합니다. 보상이 지급되었습니다."
+        ) { [weak self] _ in
+            self?.dismiss(animated: true)
+        }
+    }
+    
+    private func displayReviewSubmissionFailure() {
+        self.displayFailureAlert(
+            message: "죄송합니다. 문제가 발생하여 리뷰 제출에 실패하였습니다. 다시 시도해 주세요."
         ) { [weak self] _ in
             self?.dismiss(animated: true)
         }

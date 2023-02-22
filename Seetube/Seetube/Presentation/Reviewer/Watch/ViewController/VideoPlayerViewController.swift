@@ -70,11 +70,11 @@ extension VideoPlayerViewController {
         shouldPlay
             .drive(with: self) { obj, _ in
                 obj.player?.play()
-//                // 종료 테스트를 위한 시작 구간 스킵
-//                obj.player?.seek(to: CMTime(value: 630,
-//                                            timescale: 1),
-//                                 toleranceBefore: .zero,
-//                                 toleranceAfter: .zero)
+                // 종료 테스트를 위한 시작 구간 스킵
+                obj.player?.seek(to: CMTime(value: 650,
+                                            timescale: 1),
+                                 toleranceBefore: .zero,
+                                 toleranceAfter: .zero)
             }
             .disposed(by: self.disposeBag)
     }

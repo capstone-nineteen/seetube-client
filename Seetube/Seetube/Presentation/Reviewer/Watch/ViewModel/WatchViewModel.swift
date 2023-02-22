@@ -24,12 +24,6 @@ class WatchViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        input.reviewData
-            .drive(onNext: {
-                print($0)
-            })
-            .disposed(by: self.disposeBag)
-        
         let shouldPlay = input.watchingState
             .asObservable()
             .filter { $0 == .calibrationFinished }
@@ -45,19 +39,30 @@ class WatchViewModel: ViewModelType {
         let didPlayToEndTime = self.videoPlayerViewModel.didPlayToEndTime
             .asDriverIgnoringError()
         
+        let reviewSubmissionResult = input.reviewData
+            .toArray()
+            .asObservable()
+            .flatMap { reviewDataCollection -> Observable<Bool> in
+                // TODO: post review data
+                return .just(false)
+            }
+            .asDriver(onErrorJustReturn: false)
+        
         return Output(playTime: playTime,
-                      didPlayToEndTime: didPlayToEndTime)
+                      didPlayToEndTime: didPlayToEndTime,
+                      reviewSubmissionResult: reviewSubmissionResult)
     }
 }
 
 extension WatchViewModel {
     struct Input {
         let watchingState: Driver<WatchingState>
-        let reviewData: Driver<ReviewData>
+        let reviewData: Observable<ReviewData>
     }
     
     struct Output {
         let playTime: Driver<Int>
         let didPlayToEndTime: Driver<Void>
+        let reviewSubmissionResult: Driver<Bool>
     }
 }
