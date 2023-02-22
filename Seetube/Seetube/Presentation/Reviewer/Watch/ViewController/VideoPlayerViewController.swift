@@ -46,9 +46,10 @@ extension VideoPlayerViewController {
         
         let playTime = self.playTimeProperty()
         let didPlayToEndTime = self.didPlayToEndTimeEvent()
+        let videoRect = self.videoRectProperty()
         
         let input = VideoPlayerViewModel.Input(playTime: playTime,
-                                               didPlayToEndTime: didPlayToEndTime)
+                                               didPlayToEndTime: didPlayToEndTime, videoRect: videoRect)
         let output = viewModel.transform(input: input)
         
         self.bindShouldPlay(output.shouldPlay)
@@ -64,6 +65,22 @@ extension VideoPlayerViewController {
         return self.didPlayToEndTime.asDriverIgnoringError()
     }
     
+    private func videoRectProperty() -> Driver<VideoRect> {
+        return self.playTime
+            .withUnretained(self)
+            .map { obj, _ -> CGRect? in
+                return obj.playerLayer?.videoRect
+            }
+            .compactMap { $0 }
+            .map { cgRect -> VideoRect in
+                return VideoRect(x: Double(cgRect.origin.x),
+                                 y: Double(cgRect.origin.y),
+                                 width: Double(cgRect.width),
+                                 height: Double(cgRect.height))
+            }
+            .asDriverIgnoringError()
+    }
+    
     // MARK: Output Binding
     
     private func bindShouldPlay(_ shouldPlay: Driver<Void>) {
@@ -71,8 +88,7 @@ extension VideoPlayerViewController {
             .drive(with: self) { obj, _ in
                 obj.player?.play()
                 // 종료 테스트를 위한 시작 구간 스킵
-                obj.player?.seek(to: CMTime(value: 650,
-                                            timescale: 1),
+                obj.player?.seek(to: CMTime(value: 650, timescale: 1),
                                  toleranceBefore: .zero,
                                  toleranceAfter: .zero)
             }
@@ -143,6 +159,7 @@ extension VideoPlayerViewController {
     }
     
     private func addVideoEndObserver() {
+        // TODO: Subject 제거
         NotificationCenter.default.rx
             .notification(.AVPlayerItemDidPlayToEndTime,
                           object: self.player?.currentItem)

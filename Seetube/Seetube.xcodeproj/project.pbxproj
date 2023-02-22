@@ -105,6 +105,7 @@
 		047B879F299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B879E299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift */; };
 		047B87A1299FB0CB00F4AA42 /* WithdrawalInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B87A0299FB0CB00F4AA42 /* WithdrawalInformationViewModel.swift */; };
 		047B87A3299FF5F000F4AA42 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B87A2299FF5F000F4AA42 /* String+Extension.swift */; };
+		04822FCB29A74B540039A06F /* WatchingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04822FCA29A74B540039A06F /* WatchingInfo.swift */; };
 		048A4AFF299CD56300719AD0 /* FetchVideoDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4AFE299CD56300719AD0 /* FetchVideoDetailUseCase.swift */; };
 		048A4B01299CD59100719AD0 /* DefaultFetchVideoDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B00299CD59100719AD0 /* DefaultFetchVideoDetailUseCase.swift */; };
 		048A4B03299CD77B00719AD0 /* ReviewerVideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B02299CD77B00719AD0 /* ReviewerVideoDetailViewModel.swift */; };
@@ -201,6 +202,7 @@
 		04B8AF0D299BBBDA0024C897 /* DefaultSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */; };
 		04C3DB5C29A3CA2B00D1E3BA /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3DB5B29A3CA2B00D1E3BA /* ObservableType+Extension.swift */; };
 		04DAB1B329A658CF006CF9F6 /* ReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB1B229A658CF006CF9F6 /* ReviewData.swift */; };
+		04DAB1B529A68E42006CF9F6 /* VideoRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB1B429A68E42006CF9F6 /* VideoRect.swift */; };
 		04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 04E6FC542988EE7C0052496A /* GoogleSignIn */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
@@ -326,6 +328,7 @@
 		047B879E299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRegisterWithdrawalUseCase.swift; sourceTree = "<group>"; };
 		047B87A0299FB0CB00F4AA42 /* WithdrawalInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewModel.swift; sourceTree = "<group>"; };
 		047B87A2299FF5F000F4AA42 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		04822FCA29A74B540039A06F /* WatchingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingInfo.swift; sourceTree = "<group>"; };
 		048A4AFE299CD56300719AD0 /* FetchVideoDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVideoDetailUseCase.swift; sourceTree = "<group>"; };
 		048A4B00299CD59100719AD0 /* DefaultFetchVideoDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchVideoDetailUseCase.swift; sourceTree = "<group>"; };
 		048A4B02299CD77B00719AD0 /* ReviewerVideoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailViewModel.swift; sourceTree = "<group>"; };
@@ -418,6 +421,7 @@
 		04B8AF0C299BBBD90024C897 /* DefaultSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSearchUseCase.swift; sourceTree = "<group>"; };
 		04C3DB5B29A3CA2B00D1E3BA /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		04DAB1B229A658CF006CF9F6 /* ReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewData.swift; sourceTree = "<group>"; };
+		04DAB1B429A68E42006CF9F6 /* VideoRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRect.swift; sourceTree = "<group>"; };
 		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		04E6FC5E29893A400052496A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		04E6FC6029895C400052496A /* ViewControllerPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPushable.swift; sourceTree = "<group>"; };
@@ -1317,6 +1321,8 @@
 				0490DA4D29940B7E000BBF73 /* MyPage.swift */,
 				04B608C629A4E53700B811B9 /* WatchingState.swift */,
 				04DAB1B229A658CF006CF9F6 /* ReviewData.swift */,
+				04DAB1B429A68E42006CF9F6 /* VideoRect.swift */,
+				04822FCA29A74B540039A06F /* WatchingInfo.swift */,
 			);
 			path = Reviewer;
 			sourceTree = "<group>";
@@ -1653,6 +1659,7 @@
 				047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */,
 				0490DAA6299539BF000BBF73 /* DefaultConcentrationResultRepository.swift in Sources */,
 				040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */,
+				04822FCB29A74B540039A06F /* WatchingInfo.swift in Sources */,
 				041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */,
 				04B8AF0D299BBBDA0024C897 /* DefaultSearchUseCase.swift in Sources */,
 				04B608C729A4E53700B811B9 /* WatchingState.swift in Sources */,
@@ -1746,6 +1753,7 @@
 				044D258C29878BD0003F4071 /* Category.swift in Sources */,
 				047B879D299FAF4000F4AA42 /* RegisterWithdrawalUseCase.swift in Sources */,
 				049960F92982BA57000EE539 /* SeetubeSearchBarView.swift in Sources */,
+				04DAB1B529A68E42006CF9F6 /* VideoRect.swift in Sources */,
 				047B8791299F7D1300F4AA42 /* WithdrawalInformationPushable.swift in Sources */,
 				044D25792983FFBE003F4071 /* ReviewerVideoDetailView.swift in Sources */,
 				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,

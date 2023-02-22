@@ -41,6 +41,9 @@ class WatchViewModel: ViewModelType {
         let playTime = self.videoPlayerViewModel.playTime
             .asDriverIgnoringError()
         
+        let videoRect = self.videoPlayerViewModel.videoRect
+            .asDriverIgnoringError()
+        
         let didPlayToEndTime = self.videoPlayerViewModel.didPlayToEndTime
             .asDriverIgnoringError()
         
@@ -50,11 +53,13 @@ class WatchViewModel: ViewModelType {
             .flatMap { reviewDataCollection -> Observable<Bool> in
                 // TODO: post review data
                 print("DEBUG: \(reviewDataCollection)")
+                // TODO: videoPlayerViewModel.videoRect 사용하여 좌표 normalize
                 return .just(false)
             }
             .asDriver(onErrorJustReturn: false)
         
         return Output(playTime: playTime,
+                      videoRect: videoRect,
                       didPlayToEndTime: didPlayToEndTime,
                       reviewSubmissionResult: reviewSubmissionResult)
     }
@@ -68,6 +73,7 @@ extension WatchViewModel {
     
     struct Output {
         let playTime: Driver<Int>
+        let videoRect: Driver<VideoRect>
         let didPlayToEndTime: Driver<Void>
         let reviewSubmissionResult: Driver<Bool>
     }

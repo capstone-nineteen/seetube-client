@@ -1,5 +1,5 @@
 //
-//  CalibraiontViewController.swift
+//  WatchViewController.swift
 //  Seetube
 //
 //  Created by 최수정 on 2023/02/19.
@@ -112,7 +112,8 @@ extension WatchViewController {
                                          reviewData: reviewData)
         let output = viewModel.transform(input: input)
         
-        self.bindPlayTime(output.playTime)
+        self.bindPlayTimeAndVideoRect(playTime: output.playTime,
+                                      videoRect: output.videoRect)
         self.bindDidPlayToEndTime(output.didPlayToEndTime)
         self.bindReviewSubmissionResult(output.reviewSubmissionResult)
     }
@@ -129,19 +130,23 @@ extension WatchViewController {
     
     // MARK: Output Binding
     
-    private func bindPlayTime(_ playTime: Driver<Int>) {
+    private func bindPlayTimeAndVideoRect(playTime: Driver<Int>, videoRect: Driver<VideoRect>) {
         let gazeAndCapture = Observable
             .combineLatest(
                 self.gazeInfo,
-                self.frontCameraCapture
-            ) { ($0, $1) }
+                self.frontCameraCapture,
+                videoRect.asObservable()
+            ) { ($0, $1, $2) }
         
         playTime
             .asObservable()
-            .withLatestFrom(gazeAndCapture) { (playTime: $0, gaze: $1.0, capture: $1.1) }
+            .withLatestFrom(gazeAndCapture) {
+                (playTime: $0, gaze: $1.0, capture: $1.1, videoRect: $1.2)
+            }
             .flatMap { [weak self] rawData -> Observable<ReviewData> in
                 guard let predictor = self?.faceExpressionPredictor else {
                     let gazeAndEmotion = ReviewData(playTime: rawData.playTime,
+                                                    videoRect: rawData.videoRect,
                                                     gaze: rawData.gaze,
                                                     prediction: nil)
                     return .just(gazeAndEmotion)
@@ -152,6 +157,7 @@ extension WatchViewController {
                     .catchAndReturn(nil)
                     .map {
                         ReviewData(playTime: rawData.playTime,
+                                   videoRect: rawData.videoRect,
                                    gaze: rawData.gaze,
                                    prediction: $0)
                     }

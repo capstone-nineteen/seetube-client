@@ -10,6 +10,7 @@ import SeeSo
 
 struct ReviewData {
     let playTime: Int
+    let videoRect: VideoRect
     let gaze: GazeInfo
     let prediction: FaceExpressionPredictor.Prediction?
 }

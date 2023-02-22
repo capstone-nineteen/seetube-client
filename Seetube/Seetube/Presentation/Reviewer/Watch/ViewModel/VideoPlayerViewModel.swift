@@ -14,6 +14,7 @@ class VideoPlayerViewModel: ViewModelType {
     let shouldPlay: PublishRelay<Void>
     let playTime: PublishRelay<Int>
     let didPlayToEndTime: PublishRelay<Void>
+    let videoRect: PublishRelay<VideoRect>
     
     private var disposeBag: DisposeBag
     
@@ -22,6 +23,7 @@ class VideoPlayerViewModel: ViewModelType {
         self.shouldPlay = PublishRelay()
         self.playTime = PublishRelay()
         self.didPlayToEndTime = PublishRelay()
+        self.videoRect = PublishRelay()
         self.disposeBag = DisposeBag()
     }
     
@@ -36,6 +38,11 @@ class VideoPlayerViewModel: ViewModelType {
             .bind(to: self.didPlayToEndTime)
             .disposed(by: self.disposeBag)
         
+        input.videoRect
+            .asObservable()
+            .bind(to: self.videoRect)
+            .disposed(by: self.disposeBag)
+        
         let shouldPlay = self.shouldPlay
             .asDriverIgnoringError()
         
@@ -47,6 +54,7 @@ extension VideoPlayerViewModel {
     struct Input {
         let playTime: Driver<Int>
         let didPlayToEndTime: Driver<Void>
+        let videoRect: Driver<VideoRect>
     }
     
     struct Output {

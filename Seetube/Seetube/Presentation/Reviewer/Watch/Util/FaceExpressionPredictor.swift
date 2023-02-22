@@ -35,7 +35,7 @@ class FaceExpressionPredictor {
     
     struct Prediction: Encodable {
         let classification: Emotion
-        let confidencePercentage: Int
+        let confidencePercentage: Double
     }
     
     // MARK: - Instance
@@ -151,7 +151,7 @@ class FaceExpressionPredictor {
             }
             
             let prediction = Prediction(classification: Emotion(rawValue: observation.identifier) ?? .neutral,
-                                        confidencePercentage: Int(observation.confidence * 100))
+                                        confidencePercentage: Double(observation.confidence) * 100)
             predictionHandler(.success(prediction))
         }
         
