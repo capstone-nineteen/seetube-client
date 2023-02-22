@@ -11,15 +11,30 @@ import RxCocoa
 
 class CalibrationTutorialView: UIView, NibLoadable {
     @IBOutlet fileprivate weak var startButton: UIButton!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.loadFromNib(owner: self)
+        self.showLoader()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.loadFromNib(owner: self)
+        self.showLoader()
+    }
+    
+    private func showLoader() {
+        activityIndicatorView.startAnimating()
+        startButton.isHidden = true
+        activityIndicatorView.isHidden = false
+    }
+
+    func hideLoader() {
+        activityIndicatorView.stopAnimating()
+        startButton.isHidden = false
+        activityIndicatorView.isHidden = true
     }
 }
 

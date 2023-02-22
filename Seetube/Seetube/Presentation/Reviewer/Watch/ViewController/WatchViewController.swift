@@ -23,7 +23,6 @@ class WatchViewController: UIViewController,
     private var gazeTracker: GazeTracker?
     private let watchingState = BehaviorRelay<WatchingState>(value: .calibrationPending)    // TODO: RxSeeSo
     private let gazeInfo = PublishRelay<GazeInfo>()
-    // TODO: SeeSo Framework gitignore
     
     // Facial Emotion Recognition
     private let faceExpressionPredictor = FaceExpressionPredictor()
@@ -68,7 +67,6 @@ extension WatchViewController {
     }
     
     private func configureCaliTutorialView() {
-        // FIXME: initialization 성공 후에 보여줘야 함
         self.caliTutorialView.rx.startButtonTap
             .asDriver()
             .drive(with: self) { obj, _ in
@@ -223,6 +221,10 @@ extension WatchViewController: InitializationDelegate {
                                  calibrationDelegate: self,
                                  imageDelegate: self)
             self.gazeTracker = tracker
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.caliTutorialView.hideLoader()
+            }
         } else {
             self.watchingState.accept(.trackerInitializationFailed)
         }
