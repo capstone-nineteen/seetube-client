@@ -141,5 +141,11 @@ iOSInjectionProject/
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,macos,cocoapods
 
+### SeeSo ###
+/SeeSo.framework
+SeeSo.framework
+/SeeSo.framework/
+SeeSo.framework/
+
 ### API Key ###
 APIKeys.xcconfig
