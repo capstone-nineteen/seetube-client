@@ -11,16 +11,20 @@ import RxCocoa
 import SeeSo
 
 class WatchViewModel: ViewModelType {
-    let url: String
-    let videoId: Int
-    let videoPlayerViewModel: VideoPlayerViewModel
+    private let submitReviewUseCase: SubmitReviewUseCase
     
+    private let url: String
+    private let videoId: Int
+    
+    let videoPlayerViewModel: VideoPlayerViewModel
     private var disposeBag: DisposeBag
     
     init(
+        submitReviewUseCase: SubmitReviewUseCase,
         url: String,
         videoId: Int
     ) {
+        self.submitReviewUseCase = submitReviewUseCase
         // TODO: S3 권한 요청 후 Info.plist NSAppTransportSecurity 삭제
         self.url = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
         self.videoId = videoId
@@ -50,11 +54,13 @@ class WatchViewModel: ViewModelType {
         let reviewSubmissionResult = input.rawReview
             .toArray()
             .asObservable()
-            .flatMap { reviewDataCollection -> Observable<Bool> in
-                // TODO: post review data
-                print("DEBUG: \(reviewDataCollection)")
-                // TODO: videoPlayerViewModel.videoRect 사용하여 좌표 normalize
-                return .just(false)
+            .flatMap { [weak self] rawReviews -> Observable<Bool> in
+                guard let self = self else { return .just(false) }
+                let reviews = Reviews(videoId: self.videoId,
+                                      reviews: rawReviews.map { Review(rawReview: $0) })
+                print(reviews)
+                return self.submitReviewUseCase
+                    .execute(reviews: reviews)
             }
             .asDriver(onErrorJustReturn: false)
         

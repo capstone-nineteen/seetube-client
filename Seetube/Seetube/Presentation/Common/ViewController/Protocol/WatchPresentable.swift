@@ -16,8 +16,11 @@ extension WatchPresentable {
         self.present(
             viewControllerType: WatchViewController.self
         ) { viewController in
-            let viewModel = WatchViewModel(url: url,
-            videoId: videoId)
+            let repository = DefaultReviewRepository()
+            let submitReviewUseCase = DefaultSubmitReviewUseCase(repository: repository)
+            let viewModel = WatchViewModel(submitReviewUseCase: submitReviewUseCase,
+                                           url: url,
+                                           videoId: videoId)
             viewController.viewModel = viewModel
         }
     }
