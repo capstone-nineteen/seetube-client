@@ -106,6 +106,8 @@
 		047B87A1299FB0CB00F4AA42 /* WithdrawalInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B87A0299FB0CB00F4AA42 /* WithdrawalInformationViewModel.swift */; };
 		047B87A3299FF5F000F4AA42 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B87A2299FF5F000F4AA42 /* String+Extension.swift */; };
 		04822FCB29A74B540039A06F /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04822FCA29A74B540039A06F /* Review.swift */; };
+		04867F0C29A79CD100FD9670 /* SubmitReviewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04867F0B29A79CD100FD9670 /* SubmitReviewUseCase.swift */; };
+		04867F0E29A79D0400FD9670 /* DefaultSubmitReviewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04867F0D29A79D0400FD9670 /* DefaultSubmitReviewUseCase.swift */; };
 		048A4AFF299CD56300719AD0 /* FetchVideoDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4AFE299CD56300719AD0 /* FetchVideoDetailUseCase.swift */; };
 		048A4B01299CD59100719AD0 /* DefaultFetchVideoDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B00299CD59100719AD0 /* DefaultFetchVideoDetailUseCase.swift */; };
 		048A4B03299CD77B00719AD0 /* ReviewerVideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A4B02299CD77B00719AD0 /* ReviewerVideoDetailViewModel.swift */; };
@@ -329,6 +331,8 @@
 		047B87A0299FB0CB00F4AA42 /* WithdrawalInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewModel.swift; sourceTree = "<group>"; };
 		047B87A2299FF5F000F4AA42 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		04822FCA29A74B540039A06F /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		04867F0B29A79CD100FD9670 /* SubmitReviewUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitReviewUseCase.swift; sourceTree = "<group>"; };
+		04867F0D29A79D0400FD9670 /* DefaultSubmitReviewUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSubmitReviewUseCase.swift; sourceTree = "<group>"; };
 		048A4AFE299CD56300719AD0 /* FetchVideoDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVideoDetailUseCase.swift; sourceTree = "<group>"; };
 		048A4B00299CD59100719AD0 /* DefaultFetchVideoDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchVideoDetailUseCase.swift; sourceTree = "<group>"; };
 		048A4B02299CD77B00719AD0 /* ReviewerVideoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerVideoDetailViewModel.swift; sourceTree = "<group>"; };
@@ -687,6 +691,7 @@
 				048A4B17299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift */,
 				040F5322299E92C500828C00 /* DefaultFetchTotalCoinAmountUseCase.swift */,
 				047B879E299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift */,
+				04867F0D29A79D0400FD9670 /* DefaultSubmitReviewUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1414,6 +1419,7 @@
 				048A4B15299D3C7300719AD0 /* FetchVideosByCategoryUseCase.swift */,
 				040F5320299E928600828C00 /* FetchTotalCoinAmountUseCase.swift */,
 				047B879C299FAF4000F4AA42 /* RegisterWithdrawalUseCase.swift */,
+				04867F0B29A79CD100FD9670 /* SubmitReviewUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1663,6 +1669,7 @@
 				041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */,
 				04B8AF0D299BBBDA0024C897 /* DefaultSearchUseCase.swift in Sources */,
 				04B608C729A4E53700B811B9 /* WatchingState.swift in Sources */,
+				04867F0E29A79D0400FD9670 /* DefaultSubmitReviewUseCase.swift in Sources */,
 				045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */,
 				047B8793299FA51200F4AA42 /* Encodable+Extension.swift in Sources */,
 				046AD0FC2972A53C00602F89 /* ShortsResultViewController.swift in Sources */,
@@ -1709,6 +1716,7 @@
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,
 				0490DA572994C2A1000BBF73 /* MyPageRepository.swift in Sources */,
 				044D257C298401AE003F4071 /* YoutuberVideoDetailView.swift in Sources */,
+				04867F0C29A79CD100FD9670 /* SubmitReviewUseCase.swift in Sources */,
 				0490DA7329950B89000BBF73 /* YoutuberHome.swift in Sources */,
 				0470C9D62990F76600D4743B /* EmotionResultDTO.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
