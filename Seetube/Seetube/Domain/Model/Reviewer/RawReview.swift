@@ -8,7 +8,7 @@
 import Foundation
 import SeeSo
 
-struct ReviewData {
+struct RawReview {
     let playTime: Int
     let videoRect: VideoRect
     let gaze: GazeInfo

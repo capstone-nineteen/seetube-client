@@ -28,7 +28,8 @@ class WatchViewController: UIViewController,
     private let faceExpressionPredictor = FaceExpressionPredictor()
     private let frontCameraCapture = PublishRelay<CVImageBuffer>()
 
-    private let reviewData = PublishSubject<ReviewData>()
+    // Raw Review Data
+    private let rawReview = PublishSubject<RawReview>()
     
     // View Model
     var viewModel: WatchViewModel?
@@ -106,10 +107,10 @@ extension WatchViewController {
         guard let viewModel = self.viewModel else { return }
         
         let watchingState = self.watchingStateProperty()
-        let reviewData = self.reviewDataProperty()
+        let reviewData = self.rawReviewProperty()
         
         let input = WatchViewModel.Input(watchingState: watchingState,
-                                         reviewData: reviewData)
+                                         rawReview: reviewData)
         let output = viewModel.transform(input: input)
         
         self.bindPlayTimeAndVideoRect(playTime: output.playTime,
@@ -124,8 +125,8 @@ extension WatchViewController {
         return self.watchingState.asDriver()
     }
     
-    private func reviewDataProperty() -> Observable<ReviewData> {
-        return self.reviewData.asObservable()
+    private func rawReviewProperty() -> Observable<RawReview> {
+        return self.rawReview.asObservable()
     }
     
     // MARK: Output Binding
@@ -143,9 +144,9 @@ extension WatchViewController {
             .withLatestFrom(gazeAndCapture) {
                 (playTime: $0, gaze: $1.0, capture: $1.1, videoRect: $1.2)
             }
-            .flatMap { [weak self] rawData -> Observable<ReviewData> in
+            .flatMap { [weak self] rawData -> Observable<RawReview> in
                 guard let predictor = self?.faceExpressionPredictor else {
-                    let gazeAndEmotion = ReviewData(playTime: rawData.playTime,
+                    let gazeAndEmotion = RawReview(playTime: rawData.playTime,
                                                     videoRect: rawData.videoRect,
                                                     gaze: rawData.gaze,
                                                     prediction: nil)
@@ -156,14 +157,14 @@ extension WatchViewController {
                     .map { $0 as FaceExpressionPredictor.Prediction? }
                     .catchAndReturn(nil)
                     .map {
-                        ReviewData(playTime: rawData.playTime,
+                        RawReview(playTime: rawData.playTime,
                                    videoRect: rawData.videoRect,
                                    gaze: rawData.gaze,
                                    prediction: $0)
                     }
             }
             .observe(on: ConcurrentDispatchQueueScheduler(qos: .background))
-            .bind(to: self.reviewData)
+            .bind(to: self.rawReview)
             .disposed(by: self.disposeBag)
     }
     
@@ -172,7 +173,7 @@ extension WatchViewController {
             .drive(with: self) { obj, _ in
                 obj.gazeTracker?.stopTracking()
                 obj.gazeTracker = nil
-                obj.reviewData.onCompleted()
+                obj.rawReview.onCompleted()
             }
             .disposed(by: self.disposeBag)
     }

@@ -47,7 +47,7 @@ class WatchViewModel: ViewModelType {
         let didPlayToEndTime = self.videoPlayerViewModel.didPlayToEndTime
             .asDriverIgnoringError()
         
-        let reviewSubmissionResult = input.reviewData
+        let reviewSubmissionResult = input.rawReview
             .toArray()
             .asObservable()
             .flatMap { reviewDataCollection -> Observable<Bool> in
@@ -68,7 +68,7 @@ class WatchViewModel: ViewModelType {
 extension WatchViewModel {
     struct Input {
         let watchingState: Driver<WatchingState>
-        let reviewData: Observable<ReviewData>
+        let rawReview: Observable<RawReview>
     }
     
     struct Output {

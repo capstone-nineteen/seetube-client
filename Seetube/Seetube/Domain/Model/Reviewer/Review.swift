@@ -1,5 +1,5 @@
 //
-//  WatchingInfo.swift
+//  Review.swift
 //  Seetube
 //
 //  Created by 최수정 on 2023/02/23.
@@ -8,7 +8,7 @@
 import Foundation
 import SeeSo
 
-struct NormalizedGazeInfo {
+struct GazeData {
     let x: Double
     let y: Double
     let trackingState: TrackingState
@@ -29,7 +29,7 @@ struct NormalizedGazeInfo {
     }
 }
 
-struct EmotionInfo {
+struct EmotionData {
     enum EmotionPredictionState: String {
         case success
         case failure
@@ -46,15 +46,15 @@ struct EmotionInfo {
     }
 }
 
-struct WatchingInfo {
+struct Review {
     let playTime: Int
-    let gazeInfo: NormalizedGazeInfo
-    let emotionInfo: EmotionInfo
+    let gazeInfo: GazeData
+    let emotionInfo: EmotionData
     
-    init(reviewData: ReviewData) {
+    init(reviewData: RawReview) {
         self.playTime = reviewData.playTime
-        self.gazeInfo = NormalizedGazeInfo(gazeInfo: reviewData.gaze,
-                                           videoRect: reviewData.videoRect)
-        self.emotionInfo = EmotionInfo(prediction: reviewData.prediction)
+        self.gazeInfo = GazeData(gazeInfo: reviewData.gaze,
+                                 videoRect: reviewData.videoRect)
+        self.emotionInfo = EmotionData(prediction: reviewData.prediction)
     }
 }
