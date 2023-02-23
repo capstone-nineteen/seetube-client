@@ -256,7 +256,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rmp-Hi-dBA">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rmp-Hi-dBA">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <connections>
                                     <segue destination="Ang-Cu-2LZ" kind="embed" id="AvT-Ym-duq"/>
@@ -268,39 +268,28 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5k-Y6-kVc" customClass="CalibrationTutorialView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="133.5" y="62.5" width="400" height="250"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="OAM-WE-WuW"/>
-                                    <constraint firstAttribute="width" constant="400" id="oCl-3q-GC2"/>
-                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9id-sX-lPe">
-                                <rect key="frame" x="0.0" y="0.0" width="37.5" height="42"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="xmark" catalog="system"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eBp-b4-AD5"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eBp-b4-AD5" firstAttribute="bottom" secondItem="Rmp-Hi-dBA" secondAttribute="bottom" id="B3f-IA-pkv"/>
-                            <constraint firstItem="Rmp-Hi-dBA" firstAttribute="leading" secondItem="eBp-b4-AD5" secondAttribute="leading" id="HVJ-6G-Wwd"/>
-                            <constraint firstItem="eBp-b4-AD5" firstAttribute="trailing" secondItem="Rmp-Hi-dBA" secondAttribute="trailing" id="TK6-Nw-UiT"/>
-                            <constraint firstItem="t5k-Y6-kVc" firstAttribute="centerX" secondItem="eBp-b4-AD5" secondAttribute="centerX" id="TQk-Ib-4Ui"/>
-                            <constraint firstItem="Rmp-Hi-dBA" firstAttribute="top" secondItem="eBp-b4-AD5" secondAttribute="top" id="b02-AC-TN8"/>
-                            <constraint firstItem="t5k-Y6-kVc" firstAttribute="centerY" secondItem="eBp-b4-AD5" secondAttribute="centerY" id="iKy-vN-t5B"/>
-                            <constraint firstItem="9id-sX-lPe" firstAttribute="top" secondItem="eBp-b4-AD5" secondAttribute="top" id="rOE-9K-3mk"/>
-                            <constraint firstItem="9id-sX-lPe" firstAttribute="leading" secondItem="eBp-b4-AD5" secondAttribute="leading" id="uEE-3d-N9O"/>
+                            <constraint firstItem="t5k-Y6-kVc" firstAttribute="top" secondItem="xKB-cG-GAp" secondAttribute="top" id="Az3-hL-DJ8"/>
+                            <constraint firstAttribute="bottom" secondItem="Rmp-Hi-dBA" secondAttribute="bottom" id="B3f-IA-pkv"/>
+                            <constraint firstItem="Rmp-Hi-dBA" firstAttribute="leading" secondItem="xKB-cG-GAp" secondAttribute="leading" id="HVJ-6G-Wwd"/>
+                            <constraint firstAttribute="bottom" secondItem="t5k-Y6-kVc" secondAttribute="bottom" id="Qas-Tx-Jmd"/>
+                            <constraint firstAttribute="trailing" secondItem="Rmp-Hi-dBA" secondAttribute="trailing" id="TK6-Nw-UiT"/>
+                            <constraint firstItem="t5k-Y6-kVc" firstAttribute="leading" secondItem="eBp-b4-AD5" secondAttribute="leading" id="UF2-DG-D0b"/>
+                            <constraint firstItem="Rmp-Hi-dBA" firstAttribute="top" secondItem="xKB-cG-GAp" secondAttribute="top" id="b02-AC-TN8"/>
+                            <constraint firstItem="eBp-b4-AD5" firstAttribute="trailing" secondItem="t5k-Y6-kVc" secondAttribute="trailing" id="wvt-VQ-Gt5"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="667" height="375"/>
                     <connections>
                         <outlet property="caliPointView" destination="Smp-46-q6A" id="Awf-fv-8TA"/>
                         <outlet property="caliTutorialView" destination="t5k-Y6-kVc" id="gLe-yP-WBG"/>
-                        <outlet property="xButton" destination="9id-sX-lPe" id="Gal-PD-wEl"/>
+                        <outlet property="videoPlayerView" destination="Rmp-Hi-dBA" id="kVo-OK-5o2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4s9-52-dXI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1554,7 +1543,6 @@
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="play.square.stack" catalog="system" width="112" height="128"/>
         <image name="wonsign.circle" catalog="system" width="128" height="123"/>
-        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.94499999284744263" green="0.23899999260902405" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

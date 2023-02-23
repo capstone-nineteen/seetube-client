@@ -17,7 +17,7 @@ class WatchViewController: UIViewController,
 {
     @IBOutlet weak var caliPointView: CircularProgressBar!
     @IBOutlet weak var caliTutorialView: CalibrationTutorialView!
-    @IBOutlet weak var xButton: UIButton!
+    @IBOutlet weak var videoPlayerView: UIView!
     
     // Eye-tracking
     private var gazeTracker: GazeTracker?
@@ -71,7 +71,6 @@ extension WatchViewController {
         self.caliTutorialView.rx.startButtonTap
             .asDriver()
             .drive(with: self) { obj, _ in
-                obj.xButton.isHidden = true
                 obj.caliTutorialView.isHidden = true
 
                 DispatchQueue.global().async { [weak self] in
@@ -82,7 +81,7 @@ extension WatchViewController {
     }
     
     private func configureXButton() {
-        self.xButton.rx.tap
+        self.caliTutorialView.rx.xButtonTap
             .asDriver()
             .drive(with: self) { obj, _ in
                 obj.dismiss(animated: true)
@@ -269,10 +268,9 @@ extension WatchViewController : CalibrationDelegate {
     
     private func stopCalibration(){
         self.gazeTracker?.stopCalibration()
-        self.watchingState.accept(.calibrationFinished)
         DispatchQueue.main.async {
             self.caliPointView.isHidden = true
-            self.xButton.isHidden = true
+            self.videoPlayerView.isHidden = false
         }
     }
     

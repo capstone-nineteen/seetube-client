@@ -12,6 +12,7 @@ import RxCocoa
 class CalibrationTutorialView: UIView, NibLoadable {
     @IBOutlet fileprivate weak var startButton: UIButton!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var xButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,5 +44,9 @@ class CalibrationTutorialView: UIView, NibLoadable {
 extension Reactive where Base: CalibrationTutorialView {
     var startButtonTap: ControlEvent<Void> {
         return base.startButton.rx.tap
+    }
+    
+    var xButtonTap: ControlEvent<Void> {
+        return base.xButton.rx.tap
     }
 }
