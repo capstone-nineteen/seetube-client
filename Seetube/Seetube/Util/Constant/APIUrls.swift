@@ -17,5 +17,6 @@ enum APIUrls {
     static let category = reviewerBase + "/videos/category"
     static let shop = reviewerBase + "/coin"
     static let withdraw = reviewerBase + "/withdraw"
+    static let submitReview = reviewerBase + "/watchingInfo"
     static let myPage = reviewerBase + "/mypage"
 }

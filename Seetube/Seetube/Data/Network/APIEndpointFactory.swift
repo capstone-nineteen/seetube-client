@@ -16,6 +16,7 @@ class APIEndpointFactory {
         case getVideosByCategory(category: String)
         case getShop
         case registerWithdrawal(info: WithDrawalInformationDTO)
+        case submitReview(videoId: Int)
         case getMyPage
         case getYoutuberHome
         case getConcentrationResult
@@ -37,6 +38,8 @@ class APIEndpointFactory {
             case .getShop:
                 return .get
             case .registerWithdrawal:
+                return .post
+            case .submitReview:
                 return .post
             case .getMyPage:
                 return .get
@@ -69,6 +72,8 @@ class APIEndpointFactory {
                 return APIUrls.shop
             case .registerWithdrawal:
                 return APIUrls.withdraw
+            case .submitReview:
+                return APIUrls.submitReview
             case .getMyPage:
                 return APIUrls.myPage
             case .getYoutuberHome:
@@ -100,6 +105,8 @@ class APIEndpointFactory {
                 return nil
             case .registerWithdrawal(let info):
                 return info.dictionary
+            case .submitReview(let videoId):
+                return ["videoId": videoId]
             case .getMyPage:
                 return nil
             case .getYoutuberHome:
