@@ -9,7 +9,14 @@ import Foundation
 import RxSwift
 
 class DefaultSubmitReviewUseCase: SubmitReviewUseCase {
-    func execute(review: Review) -> Observable<Bool> {
-        return .just(true)
+    private let repository: ReviewRepository
+    
+    init(repository: ReviewRepository) {
+        self.repository = repository
+    }
+    
+    func execute(reviews: Reviews) -> Observable<Bool> {
+        return self.repository.submitReview(reviews: reviews)
+            .map { $0?.status == 200 }
     }
 }
