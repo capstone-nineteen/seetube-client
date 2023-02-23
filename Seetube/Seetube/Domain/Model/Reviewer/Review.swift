@@ -8,7 +8,7 @@
 import Foundation
 import SeeSo
 
-struct GazeData {
+struct GazeData: DTOConvertible {
     let x: Double
     let y: Double
     let trackingState: TrackingState
@@ -27,12 +27,20 @@ struct GazeData {
         self.eyeMovementState = gazeInfo.eyeMovementState
         self.screenState = gazeInfo.screenState
     }
+    
+    func toDTO() -> GazeDataDTO {
+        GazeDataDTO(x: self.x,
+                    y: self.y,
+                    trackingState: self.trackingState.description,
+                    eyeMovementState: self.eyeMovementState.description,
+                    screenState: self.screenState.description)
+    }
 }
 
-struct EmotionData {
+struct EmotionData: DTOConvertible {
     enum EmotionPredictionState: String {
-        case success
-        case failure
+        case success = "SUCCESS"
+        case failure = "FAILURE"
     }
     
     let emotionPredictionState: EmotionPredictionState
@@ -44,17 +52,38 @@ struct EmotionData {
         self.classification = prediction?.classification
         self.confidence = prediction?.confidencePercentage
     }
+    
+    func toDTO() -> EmotionDataDTO {
+        EmotionDataDTO(emotionPredictionState: self.emotionPredictionState.rawValue,
+                       classification: self.classification?.rawValue ?? "NAN",
+                       confidencePercentage: self.confidence ?? 0)
+    }
 }
 
-struct Review {
+struct Review: DTOConvertible {
     let playTime: Int
-    let gazeInfo: GazeData
-    let emotionInfo: EmotionData
+    let gazeData: GazeData
+    let emotionData: EmotionData
     
-    init(reviewData: RawReview) {
-        self.playTime = reviewData.playTime
-        self.gazeInfo = GazeData(gazeInfo: reviewData.gaze,
-                                 videoRect: reviewData.videoRect)
-        self.emotionInfo = EmotionData(prediction: reviewData.prediction)
+    init(rawReview: RawReview) {
+        self.playTime = rawReview.playTime
+        self.gazeData = GazeData(gazeInfo: rawReview.gaze,
+                                 videoRect: rawReview.videoRect)
+        self.emotionData = EmotionData(prediction: rawReview.prediction)
+    }
+    
+    func toDTO() -> ReviewDTO {
+        return ReviewDTO(playTime: self.playTime,
+                               gazeInfo: self.gazeData.toDTO(),
+                               emotionInfo: self.emotionData.toDTO())
+    }
+}
+
+struct Reviews: DTOConvertible {
+    let videoId: Int
+    let reviews: [Review]
+    
+    func toDTO() -> ReviewsDTO {
+        ReviewsDTO(watchingInfos: self.reviews.map { $0.toDTO() })
     }
 }
