@@ -25,8 +25,7 @@ class WatchViewModel: ViewModelType {
         videoId: Int
     ) {
         self.submitReviewUseCase = submitReviewUseCase
-        // TODO: S3 권한 요청 후 Info.plist NSAppTransportSecurity 삭제
-        self.url = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+        self.url = url
         self.videoId = videoId
         self.videoPlayerViewModel = VideoPlayerViewModel(url: self.url)
         self.disposeBag = DisposeBag()
