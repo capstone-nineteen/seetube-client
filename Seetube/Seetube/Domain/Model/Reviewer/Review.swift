@@ -24,8 +24,8 @@ struct GazeData: DTOConvertible {
         let isXValid = validRange ~= normalizedX
         let isYValied = validRange ~= normalizedY
         
-        self.x = normalizedX
-        self.y = normalizedY
+        self.x = normalizedX.isNaN ? -1 : normalizedX
+        self.y = normalizedY.isNaN ? -1 : normalizedY
         self.trackingState = gazeInfo.trackingState
         self.eyeMovementState = gazeInfo.eyeMovementState
         // TODO: 좌표 노말라이즈하면 불필요한 값. 논의 필요
@@ -59,7 +59,7 @@ struct EmotionData: DTOConvertible {
     
     func toDTO() -> EmotionDataDTO {
         EmotionDataDTO(emotionPredictionState: self.emotionPredictionState.rawValue,
-                       classification: self.classification?.rawValue ?? "NAN",
+                       classification: self.classification?.rawValue ?? "",
                        confidencePercentage: self.confidence ?? 0)
     }
 }
