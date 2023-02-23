@@ -58,7 +58,6 @@ class WatchViewModel: ViewModelType {
                 guard let self = self else { return .just(false) }
                 let reviews = Reviews(videoId: self.videoId,
                                       reviews: rawReviews.map { Review(rawReview: $0) })
-                print(reviews)
                 return self.submitReviewUseCase
                     .execute(reviews: reviews)
             }
