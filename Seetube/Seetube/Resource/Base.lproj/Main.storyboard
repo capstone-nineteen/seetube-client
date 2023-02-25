@@ -61,26 +61,6 @@
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quT-LC-Tcc">
-                                <rect key="frame" x="48" y="483.5" width="279" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="quT-LC-Tcc" secondAttribute="height" multiplier="352:63" id="E3H-D7-20F"/>
-                                    <constraint firstAttribute="height" constant="50" id="p0z-Pl-egb"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" backgroundImage="GoogleSignIn"/>
-                                <connections>
-                                    <action selector="googleSignInButtonTouched:" destination="nrl-LI-RRj" eventType="touchUpInside" id="scG-EU-noY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4z1-1v-gcM">
-                                <rect key="frame" x="48" y="541.5" width="279" height="50"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" backgroundImage="AppleSignIn"/>
-                                <connections>
-                                    <action selector="appleSignInButtonTouched:" destination="nrl-LI-RRj" eventType="touchUpInside" id="Hg1-PZ-br0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lag-I3-LYf"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -90,16 +70,9 @@
                             <constraint firstItem="XCQ-rt-twn" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="CZa-GU-LDV"/>
                             <constraint firstItem="XCQ-rt-twn" firstAttribute="top" secondItem="Lag-I3-LYf" secondAttribute="top" constant="55" id="EYk-vZ-Och"/>
                             <constraint firstItem="i2J-Bd-mRl" firstAttribute="top" secondItem="XCQ-rt-twn" secondAttribute="bottom" constant="15" id="Jk8-3g-gEo"/>
-                            <constraint firstItem="4z1-1v-gcM" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="KMh-e7-AJX"/>
-                            <constraint firstItem="quT-LC-Tcc" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="PJf-7T-db3"/>
-                            <constraint firstItem="quT-LC-Tcc" firstAttribute="top" secondItem="L25-aS-26h" secondAttribute="bottom" priority="250" constant="98.5" id="WIE-Hu-rOh"/>
                             <constraint firstItem="i2J-Bd-mRl" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="YuY-NZ-Obd"/>
-                            <constraint firstItem="4z1-1v-gcM" firstAttribute="height" secondItem="quT-LC-Tcc" secondAttribute="height" id="ZJw-DN-3Jd"/>
                             <constraint firstItem="L25-aS-26h" firstAttribute="top" secondItem="i2J-Bd-mRl" secondAttribute="bottom" constant="25" id="bFg-cU-AUL"/>
-                            <constraint firstItem="Lag-I3-LYf" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="quT-LC-Tcc" secondAttribute="bottom" priority="750" constant="120" id="etg-mn-lgC"/>
-                            <constraint firstItem="4z1-1v-gcM" firstAttribute="top" secondItem="quT-LC-Tcc" secondAttribute="bottom" constant="8" id="f8B-qk-0gI"/>
                             <constraint firstItem="i2J-Bd-mRl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lag-I3-LYf" secondAttribute="leading" constant="25" id="fzN-JH-3C0"/>
-                            <constraint firstItem="4z1-1v-gcM" firstAttribute="width" secondItem="quT-LC-Tcc" secondAttribute="width" id="hT7-QC-3Gt"/>
                             <constraint firstItem="L25-aS-26h" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="ywQ-Xx-dei"/>
                         </constraints>
                     </view>
@@ -1535,8 +1508,6 @@
     </designables>
     <color key="tintColor" red="0.94509803921568625" green="0.23921568627450979" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
-        <image name="AppleSignIn" width="351.5" height="62.5"/>
-        <image name="GoogleSignIn" width="351.5" height="62.5"/>
         <image name="centsign.circle.fill" catalog="system" width="128" height="123"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>

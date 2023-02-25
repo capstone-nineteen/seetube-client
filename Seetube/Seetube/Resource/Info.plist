@@ -8,13 +8,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>$(GOOGLE_REVERSED_IOS_CLIENT_ID)</string>
-			</array>
+			<array/>
 		</dict>
+		<dict/>
 	</array>
-	<key>GIDClientID</key>
-	<string>$(GOOGLE_IOS_CLIENT_ID)</string>
 	<key>SEESO_LICENSE_KEY</key>
 	<string>$(SEESO_LICENSE_KEY)</string>
 	<key>UIApplicationSceneManifest</key>

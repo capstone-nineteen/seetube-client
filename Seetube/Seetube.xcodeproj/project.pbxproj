@@ -211,7 +211,6 @@
 		04C3DB5C29A3CA2B00D1E3BA /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3DB5B29A3CA2B00D1E3BA /* ObservableType+Extension.swift */; };
 		04DAB1B329A658CF006CF9F6 /* RawReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB1B229A658CF006CF9F6 /* RawReview.swift */; };
 		04DAB1B529A68E42006CF9F6 /* VideoRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB1B429A68E42006CF9F6 /* VideoRect.swift */; };
-		04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 04E6FC542988EE7C0052496A /* GoogleSignIn */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
 		04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */; };
@@ -461,7 +460,6 @@
 				0490DA4129938C50000BBF73 /* RxSwift in Frameworks */,
 				0490DABC29954B46000BBF73 /* RxViewController in Frameworks */,
 				0447E35A29A1393E005F0CC9 /* SeeSo.xcframework in Frameworks */,
-				04E6FC552988EE7C0052496A /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1583,7 +1581,6 @@
 			);
 			name = Seetube;
 			packageProductDependencies = (
-				04E6FC542988EE7C0052496A /* GoogleSignIn */,
 				043636E029938B0700EF6458 /* RxAlamofire */,
 				0490DA3E29938C50000BBF73 /* RxCocoa */,
 				0490DA4029938C50000BBF73 /* RxSwift */,
@@ -1619,7 +1616,6 @@
 			);
 			mainGroup = 041ECBA2296ED84C0053AC9C;
 			packageReferences = (
-				04E6FC532988EE7C0052496A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				043636DF29938B0700EF6458 /* XCRemoteSwiftPackageReference "RxAlamofire" */,
 				0490DA3D29938C50000BBF73 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				0490DABA29954B46000BBF73 /* XCRemoteSwiftPackageReference "RxViewController" */,
@@ -2116,14 +2112,6 @@
 				kind = branch;
 			};
 		};
-		04E6FC532988EE7C0052496A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2151,11 +2139,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04924C0F299AC268001E2045 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		04E6FC542988EE7C0052496A /* GoogleSignIn */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 04E6FC532988EE7C0052496A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
-			productName = GoogleSignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

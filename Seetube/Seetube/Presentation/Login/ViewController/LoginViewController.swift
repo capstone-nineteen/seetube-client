@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import GoogleSignIn
 
 class LoginViewController: UIViewController, ViewControllerPresentable {
     @IBOutlet weak var guidanceLabel: UILabel!
@@ -15,29 +14,6 @@ class LoginViewController: UIViewController, ViewControllerPresentable {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.changeToReviewerMode()
-    }
-
-    @IBAction func googleSignInButtonTouched(_ sender: UIButton) {
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
-            guard error == nil else { return }
-            guard let signInResult = signInResult else { return }
-            
-            signInResult.user.refreshTokensIfNeeded { user, error in
-                guard error == nil else { return }
-                guard let user = user else { return }
-
-                let idToken = user.idToken
-                // TODO: HTTPS로 서버에 idToken 전달
-            }
-            
-            self.start()
-        }
-    }
-    
-    @IBAction func appleSignInButtonTouched(_ sender: UIButton) {
-        // 애플 로그인
-        print("DEBUG: apple sign in button touched")
-        self.start()
     }
     
     @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
