@@ -8,6 +8,11 @@
 import UIKit
 
 class LoginViewController: UIViewController, ViewControllerPresentable {
+    @IBOutlet weak var idTextField: UnderLineTextField!
+    @IBOutlet weak var pwTextField: UnderLineTextField!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginButton: BottomButton!
+    
     var viewModel: LoginViewModel?
     
     override func viewDidLoad() {
