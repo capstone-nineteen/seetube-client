@@ -34,6 +34,7 @@
 		042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B622A29AA47BA004178CD /* UserTypeButton.swift */; };
 		042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042B622E29AA47E0004178CD /* UserTypeButton.xib */; };
 		042B623129AA485C004178CD /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623029AA485C004178CD /* UserType.swift */; };
+		042B623829AA5B66004178CD /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623729AA5B66004178CD /* StartViewController.swift */; };
 		043636DB29938AB300EF6458 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043636DA29938AB300EF6458 /* NetworkService.swift */; };
 		043636E129938B0700EF6458 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 043636E029938B0700EF6458 /* RxAlamofire */; };
 		0447E35329A0CBC5005F0CC9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */; };
@@ -267,6 +268,7 @@
 		042B622A29AA47BA004178CD /* UserTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeButton.swift; sourceTree = "<group>"; };
 		042B622E29AA47E0004178CD /* UserTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeButton.xib; sourceTree = "<group>"; };
 		042B623029AA485C004178CD /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		042B623729AA5B66004178CD /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		043636DA29938AB300EF6458 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPresentable.swift; sourceTree = "<group>"; };
@@ -622,6 +624,49 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		042B623229AA5ADD004178CD /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				042B623329AA5B1C004178CD /* Start */,
+				046AD1022972E51200602F89 /* Login */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		042B623329AA5B1C004178CD /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				042B623629AA5B51004178CD /* View */,
+				042B623529AA5B4A004178CD /* ViewController */,
+				042B623429AA5B42004178CD /* ViewModel */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		042B623429AA5B42004178CD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		042B623529AA5B4A004178CD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				042B623729AA5B66004178CD /* StartViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		042B623629AA5B51004178CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				042B622E29AA47E0004178CD /* UserTypeButton.xib */,
+				042B622A29AA47BA004178CD /* UserTypeButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		043636A42993869500EF6458 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,7 +689,7 @@
 			isa = PBXGroup;
 			children = (
 				043636B1299387D800EF6458 /* Common */,
-				046AD1022972E51200602F89 /* Login */,
+				042B623229AA5ADD004178CD /* Authentication */,
 				04159926296F3DB100EEB699 /* Reviewer */,
 				04159925296F3DA800EEB699 /* Youtuber */,
 			);
@@ -1165,8 +1210,6 @@
 		046AD1052972FB3C00602F89 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				042B622A29AA47BA004178CD /* UserTypeButton.swift */,
-				042B622E29AA47E0004178CD /* UserTypeButton.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1696,6 +1739,7 @@
 				0470C9C02990E8FC00D4743B /* ShopDTO.swift in Sources */,
 				040F5327299E93BE00828C00 /* ShopViewModel.swift in Sources */,
 				04DAB1B329A658CF006CF9F6 /* RawReview.swift in Sources */,
+				042B623829AA5B66004178CD /* StartViewController.swift in Sources */,
 				048A4B10299D15C100719AD0 /* SearchResultPushable.swift in Sources */,
 				047072782979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift in Sources */,
 				0470C9E12990FAE000D4743B /* HighlightResultDTO.swift in Sources */,

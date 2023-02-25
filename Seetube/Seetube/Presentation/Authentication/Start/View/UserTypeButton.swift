@@ -48,6 +48,9 @@ class UserTypeButton: UIButton, NibLoadable {
         }
     }
     
+    override var isHighlighted: Bool {
+        didSet { self.alpha = isHighlighted ? 0.7 : 1.0 }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

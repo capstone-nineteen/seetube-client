@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="LgZ-PD-b6w">
             <objects>
-                <viewController id="QRa-VQ-80z" sceneMemberID="viewController">
+                <viewController id="QRa-VQ-80z" customClass="StartViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hda-qd-Xpg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,6 +108,10 @@
                             <constraint firstItem="esw-za-S6b" firstAttribute="top" secondItem="P5y-oX-5F9" secondAttribute="bottom" id="vOU-KX-RBU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="reviewerButton" destination="fOj-Qb-oel" id="xOj-Kg-9iT"/>
+                        <outlet property="youtuberButton" destination="Jes-rP-dqy" id="Z5v-U9-6ve"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GyJ-vo-3TY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1614,6 +1618,9 @@
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="k9L-Rb-zAs">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="mso-Po-Ybx">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="u9A-c5-fHa">
