@@ -9,7 +9,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController,
+                           LoginPushable
+{
     @IBOutlet weak var reviewerButton: UserTypeButton!
     @IBOutlet weak var youtuberButton: UserTypeButton!
     
@@ -25,25 +27,42 @@ class StartViewController: UIViewController {
 
 extension StartViewController {
     private func configureUI() {
+        self.configureNavigationBar()
         self.configureReviewerButton()
         self.configureYoutuberButton()
+    }
+    
+    private func configureNavigationBar() {
+        self.rx.viewWillAppear
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.navigationController?.isNavigationBarHidden = true
+            }
+            .disposed(by: self.disposeBag)
+        
+        self.rx.viewWillDisappear
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.navigationController?.isNavigationBarHidden = false
+            }
+            .disposed(by: self.disposeBag)
     }
     
     private func configureReviewerButton() {
         self.reviewerButton.rx.tap
             .asDriver()
-            .drive(onNext: {
-                print("reviwerButtonTap")
-            })
+            .drive(with: self) { obj, _ in
+                obj.pushLogin(userType: .reviewer)
+            }
             .disposed(by: self.disposeBag)
     }
     
     private func configureYoutuberButton() {
         self.youtuberButton.rx.tap
             .asDriver()
-            .drive(onNext: {
-                print("youtuberButtonTap")
-            })
+            .drive(with: self) { obj, _ in
+                obj.pushLogin(userType: .youtuber)
+            }
             .disposed(by: self.disposeBag)
     }
 }

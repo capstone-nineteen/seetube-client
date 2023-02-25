@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QRa-VQ-80z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rwr-uE-KMF">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -108,6 +108,7 @@
                             <constraint firstItem="esw-za-S6b" firstAttribute="top" secondItem="P5y-oX-5F9" secondAttribute="bottom" id="vOU-KX-RBU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="yFo-bo-g0J"/>
                     <connections>
                         <outlet property="reviewerButton" destination="fOj-Qb-oel" id="xOj-Kg-9iT"/>
                         <outlet property="youtuberButton" destination="Jes-rP-dqy" id="Z5v-U9-6ve"/>
@@ -115,12 +116,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GyJ-vo-3TY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3472.8000000000002" y="-1272.4137931034484"/>
+            <point key="canvasLocation" x="4412" y="-1272.4137931034484"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ako-uc-OBY">
             <objects>
-                <viewController id="nrl-LI-RRj" customClass="LoginViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="nrl-LI-RRj" customClass="LoginViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YjO-5F-4MT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWA-Ag-C1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4200.8000000000002" y="-1272.4137931034484"/>
+            <point key="canvasLocation" x="5140" y="-1272.4137931034484"/>
         </scene>
         <!--Videos By Category View Controller-->
         <scene sceneID="3TP-4u-6a1">
@@ -1566,6 +1567,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3o-l7-1PM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5696.8000000000002" y="267.61619190404798"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sYq-8w-7b4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rwr-uE-KMF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fcc-fC-qkf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QRa-VQ-80z" kind="relationship" relationship="rootViewController" id="rvl-QD-buS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7s-BD-YdY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3732" y="-1272"/>
         </scene>
     </scenes>
     <designables>

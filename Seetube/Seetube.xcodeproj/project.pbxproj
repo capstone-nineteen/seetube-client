@@ -35,6 +35,8 @@
 		042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042B622E29AA47E0004178CD /* UserTypeButton.xib */; };
 		042B623129AA485C004178CD /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623029AA485C004178CD /* UserType.swift */; };
 		042B623829AA5B66004178CD /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623729AA5B66004178CD /* StartViewController.swift */; };
+		042B623A29AA5EC0004178CD /* LoginPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623929AA5EC0004178CD /* LoginPushable.swift */; };
+		042B623C29AA5F10004178CD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623B29AA5F10004178CD /* LoginViewModel.swift */; };
 		043636DB29938AB300EF6458 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043636DA29938AB300EF6458 /* NetworkService.swift */; };
 		043636E129938B0700EF6458 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 043636E029938B0700EF6458 /* RxAlamofire */; };
 		0447E35329A0CBC5005F0CC9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */; };
@@ -269,6 +271,8 @@
 		042B622E29AA47E0004178CD /* UserTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeButton.xib; sourceTree = "<group>"; };
 		042B623029AA485C004178CD /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		042B623729AA5B66004178CD /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		042B623929AA5EC0004178CD /* LoginPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPushable.swift; sourceTree = "<group>"; };
+		042B623B29AA5F10004178CD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		043636DA29938AB300EF6458 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPresentable.swift; sourceTree = "<group>"; };
@@ -475,6 +479,7 @@
 			children = (
 				046AD1002972D7A900602F89 /* AlertDisplaying.swift */,
 				04E6FC6029895C400052496A /* ViewControllerPushable.swift */,
+				042B623929AA5EC0004178CD /* LoginPushable.swift */,
 				048A4B0D299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift */,
 				048A4B0F299D15C100719AD0 /* SearchResultPushable.swift */,
 				047B8790299F7D1300F4AA42 /* WithdrawalInformationPushable.swift */,
@@ -810,6 +815,7 @@
 		043636B6299388CA00EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				042B623B29AA5F10004178CD /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1743,6 +1749,7 @@
 				048A4B10299D15C100719AD0 /* SearchResultPushable.swift in Sources */,
 				047072782979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift in Sources */,
 				0470C9E12990FAE000D4743B /* HighlightResultDTO.swift in Sources */,
+				042B623A29AA5EC0004178CD /* LoginPushable.swift in Sources */,
 				0490DA8E299512F4000BBF73 /* EmotionResultRepository.swift in Sources */,
 				045E564E2977068400E47C77 /* NotPastableUnderLineTextField.swift in Sources */,
 				0490DA7529950B96000BBF73 /* ConcentrationResult.swift in Sources */,
@@ -1773,6 +1780,7 @@
 				0490DA8829951268000BBF73 /* VideosByCategoryRepository.swift in Sources */,
 				040F5321299E928600828C00 /* FetchTotalCoinAmountUseCase.swift in Sources */,
 				0490DA9A2995143B000BBF73 /* DefaultVideoDetailRepository.swift in Sources */,
+				042B623C29AA5F10004178CD /* LoginViewModel.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
 				043636DB29938AB300EF6458 /* NetworkService.swift in Sources */,
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,
