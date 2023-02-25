@@ -39,6 +39,7 @@
 		0447E35A29A1393E005F0CC9 /* SeeSo.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447E35829A1390D005F0CC9 /* SeeSo.xcframework */; };
 		0447E35B29A1393E005F0CC9 /* SeeSo.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0447E35829A1390D005F0CC9 /* SeeSo.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0447E35E29A13B21005F0CC9 /* SeeSo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35D29A13B21005F0CC9 /* SeeSo.swift */; };
+		0449D1AF29A9FF19006B9BB6 /* UserTypeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449D1AE29A9FF19006B9BB6 /* UserTypeSegmentedControl.swift */; };
 		044B47FE29A22AE300373768 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B47FD29A22AE300373768 /* WatchViewController.swift */; };
 		044B480029A2422900373768 /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B47FF29A2422900373768 /* WatchViewModel.swift */; };
 		044B480429A2476D00373768 /* CalibrationTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B480329A2476D00373768 /* CalibrationTutorialView.swift */; };
@@ -269,6 +270,7 @@
 		0447E35629A0DB7A005F0CC9 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
 		0447E35829A1390D005F0CC9 /* SeeSo.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SeeSo.xcframework; sourceTree = "<group>"; };
 		0447E35D29A13B21005F0CC9 /* SeeSo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSo.swift; sourceTree = "<group>"; };
+		0449D1AE29A9FF19006B9BB6 /* UserTypeSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeSegmentedControl.swift; sourceTree = "<group>"; };
 		044B47FD29A22AE300373768 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		044B47FF29A2422900373768 /* WatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewModel.swift; sourceTree = "<group>"; };
 		044B480329A2476D00373768 /* CalibrationTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationTutorialView.swift; sourceTree = "<group>"; };
@@ -1164,6 +1166,7 @@
 			isa = PBXGroup;
 			children = (
 				046AD1082972FCC200602F89 /* SigninButton.swift */,
+				0449D1AE29A9FF19006B9BB6 /* UserTypeSegmentedControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1747,6 +1750,7 @@
 				044B480429A2476D00373768 /* CalibrationTutorialView.swift in Sources */,
 				0490DA9C29952D98000BBF73 /* DefaultReviewerHomeRepository.swift in Sources */,
 				044D25692983C6F0003F4071 /* ReviewProgressView.swift in Sources */,
+				0449D1AF29A9FF19006B9BB6 /* UserTypeSegmentedControl.swift in Sources */,
 				04A678A729964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift in Sources */,
 				0447E35529A0CFC2005F0CC9 /* WatchPresentable.swift in Sources */,
 				0490DA922995132F000BBF73 /* ShortsResultRepository.swift in Sources */,
