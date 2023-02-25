@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nrl-LI-RRj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QRa-VQ-80z">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -11,6 +11,108 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="LgZ-PD-b6w">
+            <objects>
+                <viewController id="QRa-VQ-80z" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hda-qd-Xpg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeetubeLogo-transparent" translatesAutoresizingMaskIntoConstraints="NO" id="GEE-ZR-ZFm">
+                                <rect key="frame" x="23" y="100" width="187.5" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GEE-ZR-ZFm" secondAttribute="height" multiplier="19:7" id="Eb4-gC-tSC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요. SEETUBE 입니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5y-oX-5F9" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="23" y="186" width="178.5" height="69"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시선 추적과 표정 분석 기술을 사용한  영상 리뷰 플랫폼이에요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esw-za-S6b" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="23" y="255" width="212" height="41.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신은 누구인가요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDq-Gd-Kb4">
+                                <rect key="frame" x="23" y="369" width="123" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b0e-If-42n">
+                                <rect key="frame" x="23" y="398.5" width="329" height="235"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOj-Qb-oel" customClass="UserTypeButton" customModule="Seetube" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="159.5" height="235"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="person.fill.checkmark.rtl" catalog="system"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" name="AccentColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                <color key="value" name="AccentColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="userDescription" value="컨텐츠를 시청하고 리워드를 얻고싶은"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="userType" value="리뷰어"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jes-rP-dqy" customClass="UserTypeButton" customModule="Seetube" customModuleProvider="target">
+                                        <rect key="frame" x="169.5" y="0.0" width="159.5" height="235"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="userDescription" value="내 컨텐츠에 대한 반응을 알고 싶은"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="userType" value="유튜버"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                <color key="value" name="AccentColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" name="AccentColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b0e-If-42n" secondAttribute="height" multiplier="7:5" id="lgQ-nB-y1Y"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tRG-OS-scS"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="esw-za-S6b" firstAttribute="height" secondItem="P5y-oX-5F9" secondAttribute="height" multiplier="0.6" id="1YC-nD-yBN"/>
+                            <constraint firstItem="b0e-If-42n" firstAttribute="leading" secondItem="esw-za-S6b" secondAttribute="leading" id="27N-yi-lZ0"/>
+                            <constraint firstItem="GEE-ZR-ZFm" firstAttribute="width" secondItem="tRG-OS-scS" secondAttribute="width" multiplier="0.5" id="2iU-QZ-hQ0"/>
+                            <constraint firstItem="b0e-If-42n" firstAttribute="centerX" secondItem="tRG-OS-scS" secondAttribute="centerX" id="80n-pE-eA7"/>
+                            <constraint firstItem="P5y-oX-5F9" firstAttribute="top" secondItem="GEE-ZR-ZFm" secondAttribute="bottom" multiplier="1.1" id="O1u-k9-4xK"/>
+                            <constraint firstItem="P5y-oX-5F9" firstAttribute="height" secondItem="GEE-ZR-ZFm" secondAttribute="height" id="Pxe-ef-WlG"/>
+                            <constraint firstItem="b0e-If-42n" firstAttribute="top" secondItem="cDq-Gd-Kb4" secondAttribute="bottom" constant="10" id="T4h-65-Y1m"/>
+                            <constraint firstItem="GEE-ZR-ZFm" firstAttribute="leading" secondItem="tRG-OS-scS" secondAttribute="trailing" multiplier="0.04" constant="8" symbolic="YES" id="W1K-tn-wU9"/>
+                            <constraint firstItem="GEE-ZR-ZFm" firstAttribute="top" secondItem="tRG-OS-scS" secondAttribute="bottom" multiplier="0.15" id="cfd-g9-1fK"/>
+                            <constraint firstItem="P5y-oX-5F9" firstAttribute="leading" secondItem="GEE-ZR-ZFm" secondAttribute="leading" id="dw5-Cv-cS7"/>
+                            <constraint firstItem="esw-za-S6b" firstAttribute="leading" secondItem="P5y-oX-5F9" secondAttribute="leading" id="frO-J9-bbQ"/>
+                            <constraint firstItem="b0e-If-42n" firstAttribute="bottom" secondItem="tRG-OS-scS" secondAttribute="bottom" multiplier="0.95" id="jQz-NF-Xox"/>
+                            <constraint firstItem="cDq-Gd-Kb4" firstAttribute="leading" secondItem="b0e-If-42n" secondAttribute="leading" id="pop-Y7-gV9"/>
+                            <constraint firstItem="esw-za-S6b" firstAttribute="top" secondItem="P5y-oX-5F9" secondAttribute="bottom" id="vOU-KX-RBU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GyJ-vo-3TY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3472.8000000000002" y="-1272.4137931034484"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="ako-uc-OBY">
             <objects>
@@ -19,71 +121,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i2J-Bd-mRl" customClass="UserTypeSegmentedControl" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="98" width="300" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" priority="750" constant="300" id="i1o-X0-9Ja"/>
-                                    <constraint firstAttribute="height" constant="42" id="pxn-e1-LjH"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="리뷰어"/>
-                                    <segment title="유튜버"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
-                                        <color key="value" name="AccentColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="segmentedValueChanged:" destination="nrl-LI-RRj" eventType="valueChanged" id="YdQ-7T-ag2"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCQ-rt-twn">
-                                <rect key="frame" x="152.5" y="55" width="70" height="28"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <nil key="textColor"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-Ia-zoD" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="27" y="318" width="332" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDb-xF-FEM" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="27" y="363" width="332" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SeetubeLogo-transparent" translatesAutoresizingMaskIntoConstraints="NO" id="S64-BU-2UC">
+                                <rect key="frame" x="27" y="100" width="205" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="회원 서비스 이용을 위해 로그인 해주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzt-KO-Efe">
+                                <rect key="frame" x="27" y="200" width="245" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L25-aS-26h">
-                                <rect key="frame" x="77.5" y="165" width="220" height="220"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="L25-aS-26h" secondAttribute="height" multiplier="1:1" id="CGO-Xz-Haf"/>
-                                    <constraint firstAttribute="height" constant="220" id="vJl-0a-R16"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원하는 컨텐츠를 시청하고 리워드를 적립해보세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4a-lA-LJb">
-                                <rect key="frame" x="117.5" y="400" width="140.5" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seetube가 처음이세요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-6c-U8g">
+                                <rect key="frame" x="146" y="415" width="138" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4h-of-vVL">
+                                <rect key="frame" x="285" y="410" width="66" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="회원가입">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="AppleSDGothicNeo-Regular"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mso-Po-Ybx" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="27" y="488" width="332" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="로그인"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lag-I3-LYf"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="I4a-lA-LJb" firstAttribute="centerX" secondItem="L25-aS-26h" secondAttribute="centerX" id="4Mh-3i-OlV"/>
-                            <constraint firstItem="I4a-lA-LJb" firstAttribute="top" secondItem="L25-aS-26h" secondAttribute="bottom" constant="15" id="7A0-gf-3ca"/>
-                            <constraint firstItem="XCQ-rt-twn" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="CZa-GU-LDV"/>
-                            <constraint firstItem="XCQ-rt-twn" firstAttribute="top" secondItem="Lag-I3-LYf" secondAttribute="top" constant="55" id="EYk-vZ-Och"/>
-                            <constraint firstItem="i2J-Bd-mRl" firstAttribute="top" secondItem="XCQ-rt-twn" secondAttribute="bottom" constant="15" id="Jk8-3g-gEo"/>
-                            <constraint firstItem="i2J-Bd-mRl" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="YuY-NZ-Obd"/>
-                            <constraint firstItem="L25-aS-26h" firstAttribute="top" secondItem="i2J-Bd-mRl" secondAttribute="bottom" constant="25" id="bFg-cU-AUL"/>
-                            <constraint firstItem="i2J-Bd-mRl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lag-I3-LYf" secondAttribute="leading" constant="25" id="fzN-JH-3C0"/>
-                            <constraint firstItem="L25-aS-26h" firstAttribute="centerX" secondItem="Lag-I3-LYf" secondAttribute="centerX" id="ywQ-Xx-dei"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="guidanceLabel" destination="I4a-lA-LJb" id="xzj-t5-jq4"/>
-                        <outlet property="segmentedControl" destination="i2J-Bd-mRl" id="G9W-E9-lu0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWA-Ag-C1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4201" y="-1272"/>
+            <point key="canvasLocation" x="4200.8000000000002" y="-1272.4137931034484"/>
         </scene>
         <!--Videos By Category View Controller-->
         <scene sceneID="3TP-4u-6a1">
@@ -1478,11 +1577,23 @@
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
+        <designable name="Djo-Ia-zoD">
+            <size key="intrinsicContentSize" width="45.5" height="22.5"/>
+        </designable>
         <designable name="Iqx-xv-HFK">
             <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
+        <designable name="Jes-rP-dqy">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
         <designable name="MIt-RP-vXU">
             <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="P5y-oX-5F9">
+            <size key="intrinsicContentSize" width="178.5" height="58"/>
+        </designable>
+        <designable name="RDb-xF-FEM">
+            <size key="intrinsicContentSize" width="61" height="22.5"/>
         </designable>
         <designable name="Vtb-6Z-wbj">
             <size key="intrinsicContentSize" width="30" height="34"/>
@@ -1493,11 +1604,14 @@
         <designable name="d8h-i8-69e">
             <size key="intrinsicContentSize" width="209" height="31"/>
         </designable>
-        <designable name="gmX-Da-P0M">
+        <designable name="esw-za-S6b">
+            <size key="intrinsicContentSize" width="212" height="35"/>
+        </designable>
+        <designable name="fOj-Qb-oel">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
-        <designable name="i2J-Bd-mRl">
-            <size key="intrinsicContentSize" width="105" height="31"/>
+        <designable name="gmX-Da-P0M">
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="k9L-Rb-zAs">
             <size key="intrinsicContentSize" width="30" height="34"/>
@@ -1508,10 +1622,12 @@
     </designables>
     <color key="tintColor" red="0.94509803921568625" green="0.23921568627450979" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
+        <image name="SeetubeLogo-transparent" width="247.5" height="91.5"/>
         <image name="centsign.circle.fill" catalog="system" width="128" height="123"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="person" catalog="system" width="128" height="121"/>
+        <image name="person.fill.checkmark.rtl" catalog="system" width="128" height="89"/>
         <image name="play.square.stack" catalog="system" width="112" height="128"/>
         <image name="wonsign.circle" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">

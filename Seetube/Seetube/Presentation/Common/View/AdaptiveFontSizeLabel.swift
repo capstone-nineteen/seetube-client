@@ -11,6 +11,7 @@ import UIKit
 class AdaptiveFontSizeLabel: UILabel {
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.font = self.font.withSize(self.bounds.height * 0.7)
+        let lines = self.numberOfLines == 0 ? 1 : self.numberOfLines
+        self.font = self.font.withSize(self.bounds.height * 0.7 / CGFloat(lines))
     }
 }

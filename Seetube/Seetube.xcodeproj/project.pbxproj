@@ -31,6 +31,9 @@
 		041ECBCB296EF0C80053AC9C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCA296EF0C80053AC9C /* UIView+Extension.swift */; };
 		041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCC296EF2FB0053AC9C /* CircleView.swift */; };
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
+		042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B622A29AA47BA004178CD /* UserTypeButton.swift */; };
+		042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042B622E29AA47E0004178CD /* UserTypeButton.xib */; };
+		042B623129AA485C004178CD /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623029AA485C004178CD /* UserType.swift */; };
 		043636DB29938AB300EF6458 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043636DA29938AB300EF6458 /* NetworkService.swift */; };
 		043636E129938B0700EF6458 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 043636E029938B0700EF6458 /* RxAlamofire */; };
 		0447E35329A0CBC5005F0CC9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */; };
@@ -39,7 +42,6 @@
 		0447E35A29A1393E005F0CC9 /* SeeSo.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447E35829A1390D005F0CC9 /* SeeSo.xcframework */; };
 		0447E35B29A1393E005F0CC9 /* SeeSo.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0447E35829A1390D005F0CC9 /* SeeSo.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0447E35E29A13B21005F0CC9 /* SeeSo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35D29A13B21005F0CC9 /* SeeSo.swift */; };
-		0449D1AF29A9FF19006B9BB6 /* UserTypeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449D1AE29A9FF19006B9BB6 /* UserTypeSegmentedControl.swift */; };
 		044B47FE29A22AE300373768 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B47FD29A22AE300373768 /* WatchViewController.swift */; };
 		044B480029A2422900373768 /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B47FF29A2422900373768 /* WatchViewModel.swift */; };
 		044B480429A2476D00373768 /* CalibrationTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B480329A2476D00373768 /* CalibrationTutorialView.swift */; };
@@ -71,7 +73,6 @@
 		046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD0FE2972D1B000602F89 /* ShortsCollectionViewCell.swift */; };
 		046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD1002972D7A900602F89 /* AlertDisplaying.swift */; };
 		046AD1042972E54F00602F89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD1032972E54F00602F89 /* LoginViewController.swift */; };
-		046AD1092972FCC200602F89 /* SigninButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AD1082972FCC200602F89 /* SigninButton.swift */; };
 		0470726C29798F96008D6CC0 /* VideoInfoCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0470726B29798F96008D6CC0 /* VideoInfoCardView.xib */; };
 		0470726E29798FAB008D6CC0 /* VideoInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470726D29798FAB008D6CC0 /* VideoInfoCardView.swift */; };
 		047072782979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047072772979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift */; };
@@ -263,13 +264,15 @@
 		041ECBCA296EF0C80053AC9C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		041ECBCC296EF2FB0053AC9C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		042B622A29AA47BA004178CD /* UserTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeButton.swift; sourceTree = "<group>"; };
+		042B622E29AA47E0004178CD /* UserTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeButton.xib; sourceTree = "<group>"; };
+		042B623029AA485C004178CD /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		043636DA29938AB300EF6458 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPresentable.swift; sourceTree = "<group>"; };
 		0447E35629A0DB7A005F0CC9 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
 		0447E35829A1390D005F0CC9 /* SeeSo.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SeeSo.xcframework; sourceTree = "<group>"; };
 		0447E35D29A13B21005F0CC9 /* SeeSo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSo.swift; sourceTree = "<group>"; };
-		0449D1AE29A9FF19006B9BB6 /* UserTypeSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeSegmentedControl.swift; sourceTree = "<group>"; };
 		044B47FD29A22AE300373768 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		044B47FF29A2422900373768 /* WatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewModel.swift; sourceTree = "<group>"; };
 		044B480329A2476D00373768 /* CalibrationTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationTutorialView.swift; sourceTree = "<group>"; };
@@ -301,7 +304,6 @@
 		046AD0FE2972D1B000602F89 /* ShortsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsCollectionViewCell.swift; sourceTree = "<group>"; };
 		046AD1002972D7A900602F89 /* AlertDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplaying.swift; sourceTree = "<group>"; };
 		046AD1032972E54F00602F89 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		046AD1082972FCC200602F89 /* SigninButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninButton.swift; sourceTree = "<group>"; };
 		0470726B29798F96008D6CC0 /* VideoInfoCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoInfoCardView.xib; sourceTree = "<group>"; };
 		0470726D29798FAB008D6CC0 /* VideoInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoCardView.swift; sourceTree = "<group>"; };
 		047072772979A9F1008D6CC0 /* FinishedReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedReviewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 				044D25732983F969003F4071 /* VideoDetailView.xib */,
 				044D25752983F97B003F4071 /* VideoDetailView.swift */,
 				0412EEFB29705C5900256579 /* CircularProgressBar.swift */,
+				045E56452976B54400E47C77 /* UnderLineTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1124,7 +1127,6 @@
 		045E56442976B52000E47C77 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				045E56452976B54400E47C77 /* UnderLineTextField.swift */,
 				045E564D2977068400E47C77 /* NotPastableUnderLineTextField.swift */,
 				04A94F122978495700BF5F4B /* ReceiptView.xib */,
 				049F584C29784FFD002EC2F7 /* ReceiptView.swift */,
@@ -1163,8 +1165,8 @@
 		046AD1052972FB3C00602F89 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				046AD1082972FCC200602F89 /* SigninButton.swift */,
-				0449D1AE29A9FF19006B9BB6 /* UserTypeSegmentedControl.swift */,
+				042B622A29AA47BA004178CD /* UserTypeButton.swift */,
+				042B622E29AA47E0004178CD /* UserTypeButton.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1324,6 +1326,7 @@
 				044D258B29878BD0003F4071 /* Category.swift */,
 				0470C9D72990F7D400D4743B /* Emotion.swift */,
 				0490DA6629950958000BBF73 /* VideoInfo.swift */,
+				042B623029AA485C004178CD /* UserType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1643,6 +1646,7 @@
 				04E8B795297053B5000F0859 /* SceneListTableViewCell.xib in Resources */,
 				044D256F2983D59A003F4071 /* VideoThumbnailButton.xib in Resources */,
 				041ECBB8296ED84E0053AC9C /* Assets.xcassets in Resources */,
+				042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */,
 				049961072982DFFC000EE539 /* CategoryButton.xib in Resources */,
 				041ECBB6296ED84C0053AC9C /* Main.storyboard in Resources */,
 				04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */,
@@ -1699,7 +1703,6 @@
 				045E564E2977068400E47C77 /* NotPastableUnderLineTextField.swift in Sources */,
 				0490DA7529950B96000BBF73 /* ConcentrationResult.swift in Sources */,
 				047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */,
-				046AD1092972FCC200602F89 /* SigninButton.swift in Sources */,
 				04924C0E299ABBFB001E2045 /* ReviewerVideoCardItemViewModel.swift in Sources */,
 				04C3DB5C29A3CA2B00D1E3BA /* ObservableType+Extension.swift in Sources */,
 				0470C9DD2990F96D00D4743B /* SceneStealerResultDTO.swift in Sources */,
@@ -1746,7 +1749,6 @@
 				044B480429A2476D00373768 /* CalibrationTutorialView.swift in Sources */,
 				0490DA9C29952D98000BBF73 /* DefaultReviewerHomeRepository.swift in Sources */,
 				044D25692983C6F0003F4071 /* ReviewProgressView.swift in Sources */,
-				0449D1AF29A9FF19006B9BB6 /* UserTypeSegmentedControl.swift in Sources */,
 				04A678A729964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift in Sources */,
 				0447E35529A0CFC2005F0CC9 /* WatchPresentable.swift in Sources */,
 				0490DA922995132F000BBF73 /* ShortsResultRepository.swift in Sources */,
@@ -1813,6 +1815,7 @@
 				0490DAA429953945000BBF73 /* DefaultYoutuberHomeRepository.swift in Sources */,
 				044D25762983F97B003F4071 /* VideoDetailView.swift in Sources */,
 				0490DAAC29953A7B000BBF73 /* DefaultShortsResultRepository.swift in Sources */,
+				042B623129AA485C004178CD /* UserType.swift in Sources */,
 				0490DA7929950BA8000BBF73 /* SceneStealerResult.swift in Sources */,
 				04A94F062978129200BF5F4B /* MyPageViewController.swift in Sources */,
 				0490DAA029952E18000BBF73 /* DefaultShopRepository.swift in Sources */,
@@ -1840,6 +1843,7 @@
 				0490DA8C299512D0000BBF73 /* ConcentrationResultRepository.swift in Sources */,
 				049960FC2982DC83000EE539 /* VideosByCategoryViewController.swift in Sources */,
 				04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */,
+				042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */,
 				049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */,
 				047B8799299FAC6F00F4AA42 /* WithdrawalResultDTO.swift in Sources */,
 				0490DAB529953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift in Sources */,

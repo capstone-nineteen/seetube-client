@@ -47,6 +47,8 @@ class UnderLineTextField: UITextField {
         
         self.addTarget(self, action: #selector(changeColorToActive), for: .editingDidBegin)
         self.addTarget(self, action: #selector(changeColorToInactive), for: .editingDidEnd)
+        
+        self.borderStyle = .none
     }
     
     private func configureFontSize() {
