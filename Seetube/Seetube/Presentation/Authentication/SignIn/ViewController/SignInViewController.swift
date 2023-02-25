@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  SignInViewController.swift
 //  Seetube
 //
 //  Created by 최수정 on 2023/01/14.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, ViewControllerPresentable {
+class SignInViewController: UIViewController, ViewControllerPresentable {
     @IBOutlet weak var idTextField: UnderLineTextField!
     @IBOutlet weak var pwTextField: UnderLineTextField!
     @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var loginButton: BottomButton!
+    @IBOutlet weak var signInButton: BottomButton!
     
-    var viewModel: LoginViewModel?
+    var viewModel: SignInViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

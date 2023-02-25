@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 class StartViewController: UIViewController,
-                           LoginPushable
+                           SignInPushable
 {
     @IBOutlet weak var reviewerButton: UserTypeButton!
     @IBOutlet weak var youtuberButton: UserTypeButton!
@@ -52,7 +52,7 @@ extension StartViewController {
         self.reviewerButton.rx.tap
             .asDriver()
             .drive(with: self) { obj, _ in
-                obj.pushLogin(userType: .reviewer)
+                obj.pushSignIn(userType: .reviewer)
             }
             .disposed(by: self.disposeBag)
     }
@@ -61,7 +61,7 @@ extension StartViewController {
         self.youtuberButton.rx.tap
             .asDriver()
             .drive(with: self) { obj, _ in
-                obj.pushLogin(userType: .youtuber)
+                obj.pushSignIn(userType: .youtuber)
             }
             .disposed(by: self.disposeBag)
     }

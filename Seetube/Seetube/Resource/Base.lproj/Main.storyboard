@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="4412" y="-1272.4137931034484"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="ako-uc-OBY">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="nrl-LI-RRj" customClass="LoginViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="nrl-LI-RRj" customClass="SignInViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YjO-5F-4MT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,14 +213,29 @@
                     </view>
                     <connections>
                         <outlet property="idTextField" destination="Djo-Ia-zoD" id="vB9-7F-eou"/>
-                        <outlet property="loginButton" destination="mso-Po-Ybx" id="33J-2H-msz"/>
                         <outlet property="pwTextField" destination="RDb-xF-FEM" id="8Ax-Jf-Qkb"/>
+                        <outlet property="signInButton" destination="mso-Po-Ybx" id="33J-2H-msz"/>
                         <outlet property="signUpButton" destination="R4h-of-vVL" id="8xJ-Ed-hvu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWA-Ag-C1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5140" y="-1272.4137931034484"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="k8X-3G-9HO">
+            <objects>
+                <viewController id="mDA-pp-4Se" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YOK-oF-1sB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hC2-XQ-lI2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nTX-ak-dhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5788" y="-1272"/>
         </scene>
         <!--Videos By Category View Controller-->
         <scene sceneID="3TP-4u-6a1">
