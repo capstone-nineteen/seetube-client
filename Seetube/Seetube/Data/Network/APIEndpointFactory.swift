@@ -30,7 +30,7 @@ class APIEndpointFactory {
         var method: HttpMethod {
             switch self {
             case .requestVerificationCode:
-                return .post
+                return .put
             case .signUp:
                 return .post
             case .getVideoInfo:
@@ -152,7 +152,7 @@ class APIEndpointFactory {
             switch self.method {
             case .get:
                 return URLEncoding.default
-            case .post:
+            case .post, .put:
                 return JSONEncoding.default
             }
         }
