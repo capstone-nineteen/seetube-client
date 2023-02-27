@@ -11,15 +11,18 @@ class SignUpViewModel: ViewModelType {
     private var userType: UserType
     private let requestVerificationCodeUseCase: RequestVerificationCodeUseCase
     private let signUpUseCase: SignUpUseCase
+    private let validateUseCase: ValidateSignUpInfoUseCase
     
     init(
          userType: UserType,
          requestVerificationCodeUseCase: RequestVerificationCodeUseCase,
-         signUpUseCase: SignUpUseCase
+         signUpUseCase: SignUpUseCase,
+         validateUseCase: ValidateSignUpInfoUseCase
     ) {
         self.userType = userType
         self.requestVerificationCodeUseCase = requestVerificationCodeUseCase
         self.signUpUseCase = signUpUseCase
+        self.validateUseCase = validateUseCase
     }
     
     func transform(input: Input) -> Output {
