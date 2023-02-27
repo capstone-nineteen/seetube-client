@@ -8,6 +8,6 @@
 import Foundation
 
 struct VerificationCodeRequestResult {
-    let verificationCode: String?
+    let verificationCode: Int?
     let message: String?
 }

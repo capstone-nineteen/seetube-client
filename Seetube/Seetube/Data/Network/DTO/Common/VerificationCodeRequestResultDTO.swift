@@ -8,7 +8,7 @@
 import Foundation
 
 struct VerificationCodeRequestResultDTO: Decodable, DomainConvertible {
-    let authNumber: String?
+    let authNumber: Int?
     let message: String?
     let status: Int?
     

@@ -41,6 +41,8 @@
 		042B3C0429AD16A100FC3881 /* SignUpResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0329AD16A100FC3881 /* SignUpResultDTO.swift */; };
 		042B3C0629AD188900FC3881 /* VerificationCodeRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0529AD188900FC3881 /* VerificationCodeRequestResult.swift */; };
 		042B3C0829AD193200FC3881 /* VerificationCodeRequestResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0729AD193200FC3881 /* VerificationCodeRequestResultDTO.swift */; };
+		042B3C0A29AD19C900FC3881 /* RequestVerificationCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0929AD19C900FC3881 /* RequestVerificationCodeUseCase.swift */; };
+		042B3C0C29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0B29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift */; };
 		042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B622A29AA47BA004178CD /* UserTypeButton.swift */; };
 		042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042B622E29AA47E0004178CD /* UserTypeButton.xib */; };
 		042B623129AA485C004178CD /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623029AA485C004178CD /* UserType.swift */; };
@@ -289,6 +291,8 @@
 		042B3C0329AD16A100FC3881 /* SignUpResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResultDTO.swift; sourceTree = "<group>"; };
 		042B3C0529AD188900FC3881 /* VerificationCodeRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeRequestResult.swift; sourceTree = "<group>"; };
 		042B3C0729AD193200FC3881 /* VerificationCodeRequestResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeRequestResultDTO.swift; sourceTree = "<group>"; };
+		042B3C0929AD19C900FC3881 /* RequestVerificationCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestVerificationCodeUseCase.swift; sourceTree = "<group>"; };
+		042B3C0B29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRequestVerificationCodeUseCase.swift; sourceTree = "<group>"; };
 		042B622A29AA47BA004178CD /* UserTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeButton.swift; sourceTree = "<group>"; };
 		042B622E29AA47E0004178CD /* UserTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeButton.xib; sourceTree = "<group>"; };
 		042B623029AA485C004178CD /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
@@ -720,6 +724,7 @@
 			isa = PBXGroup;
 			children = (
 				043636AD299387A500EF6458 /* Model */,
+				043636AC2993879D00EF6458 /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -789,6 +794,7 @@
 				040F5322299E92C500828C00 /* DefaultFetchTotalCoinAmountUseCase.swift */,
 				047B879E299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift */,
 				04867F0D29A79D0400FD9670 /* DefaultSubmitReviewUseCase.swift */,
+				042B3C0B29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1519,7 +1525,6 @@
 				0490DA9F29952E18000BBF73 /* DefaultShopRepository.swift */,
 				0490DA532994C26A000BBF73 /* DefaultMyPageRepository.swift */,
 				04867F1329A7A08600FD9670 /* DefaultReviewRepository.swift */,
-				043636AC2993879D00EF6458 /* UseCase */,
 			);
 			path = Reviewer;
 			sourceTree = "<group>";
@@ -1548,6 +1553,7 @@
 				040F5320299E928600828C00 /* FetchTotalCoinAmountUseCase.swift */,
 				047B879C299FAF4000F4AA42 /* RegisterWithdrawalUseCase.swift */,
 				04867F0B29A79CD100FD9670 /* SubmitReviewUseCase.swift */,
+				042B3C0929AD19C900FC3881 /* RequestVerificationCodeUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1903,6 +1909,7 @@
 				047B8791299F7D1300F4AA42 /* WithdrawalInformationPushable.swift in Sources */,
 				044D25792983FFBE003F4071 /* ReviewerVideoDetailView.swift in Sources */,
 				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,
+				042B3C0C29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift in Sources */,
 				0490DA9E29952DDF000BBF73 /* DefaultVideosByCategoryRepository.swift in Sources */,
 				0490DA9429951347000BBF73 /* HighlightResultRepository.swift in Sources */,
 				047B879B299FADFA00F4AA42 /* WithdrawalResult.swift in Sources */,
@@ -1945,6 +1952,7 @@
 				0490DAA8299539FA000BBF73 /* DefaultEmotionResultRepository.swift in Sources */,
 				044D257E2984243A003F4071 /* ReviewerHomeViewController.swift in Sources */,
 				0490DA6D29950A3A000BBF73 /* VideoList.swift in Sources */,
+				042B3C0A29AD19C900FC3881 /* RequestVerificationCodeUseCase.swift in Sources */,
 				04B608CC29A4FF5D00B811B9 /* MiniXception.mlmodel in Sources */,
 				044D256D2983D58B003F4071 /* VideoThumbnailButton.swift in Sources */,
 				045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */,
