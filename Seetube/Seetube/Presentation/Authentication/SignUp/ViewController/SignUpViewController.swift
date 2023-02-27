@@ -28,7 +28,7 @@ class SignUpViewController: UIViewController,
     
     var coverView = UIView()
     
-    // TODO: 뷰모델
+    var viewModel: SignUpViewModel?
     private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {

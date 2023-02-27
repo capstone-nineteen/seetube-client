@@ -32,6 +32,7 @@
 		041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCC296EF2FB0053AC9C /* CircleView.swift */; };
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
 		042B3BF529AD0D2700FC3881 /* TextFieldJoinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3BF429AD0D2700FC3881 /* TextFieldJoinable.swift */; };
+		042B3BF829AD11F700FC3881 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3BF729AD11F700FC3881 /* SignUpViewModel.swift */; };
 		042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B622A29AA47BA004178CD /* UserTypeButton.swift */; };
 		042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042B622E29AA47E0004178CD /* UserTypeButton.xib */; };
 		042B623129AA485C004178CD /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623029AA485C004178CD /* UserType.swift */; };
@@ -271,6 +272,7 @@
 		041ECBCC296EF2FB0053AC9C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		042B3BF429AD0D2700FC3881 /* TextFieldJoinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldJoinable.swift; sourceTree = "<group>"; };
+		042B3BF729AD11F700FC3881 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		042B622A29AA47BA004178CD /* UserTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeButton.swift; sourceTree = "<group>"; };
 		042B622E29AA47E0004178CD /* UserTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeButton.xib; sourceTree = "<group>"; };
 		042B623029AA485C004178CD /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
@@ -635,6 +637,14 @@
 				04B608CD29A5013D00B811B9 /* CGImage+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		042B3BF629AD11EC00FC3881 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				042B3BF729AD11F700FC3881 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		042B623229AA5ADD004178CD /* Authentication */ = {
@@ -1187,6 +1197,7 @@
 		044DF33E29ACBF7A0013BCF9 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				042B3BF629AD11EC00FC3881 /* ViewModel */,
 				044DF33F29ACBF870013BCF9 /* ViewController */,
 			);
 			path = SignUp;
@@ -1886,6 +1897,7 @@
 				0470C9BE2990E78E00D4743B /* MyPageDTO.swift in Sources */,
 				04B8AF0B299BBB8A0024C897 /* SearchUseCase.swift in Sources */,
 				0470C9C22990EA0B00D4743B /* WithdrawInformationDTO.swift in Sources */,
+				042B3BF829AD11F700FC3881 /* SignUpViewModel.swift in Sources */,
 				0490DA652994FF1E000BBF73 /* NetworkRequestable.swift in Sources */,
 				04E6FC66298971F30052496A /* KeyboardDismissible.swift in Sources */,
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
