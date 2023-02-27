@@ -11,7 +11,8 @@ import RxSwift
 
 class WithdrawalInformationViewController: UIViewController,
                                            AlertDisplaying,
-                                           KeyboardDismissible
+                                           KeyboardDismissible,
+                                           TextFieldJoinable
 {
     @IBOutlet weak var bankNameTextField: UnderLineTextField!
     @IBOutlet weak var accountHolderTextField: UnderLineTextField!
@@ -43,22 +44,7 @@ extension WithdrawalInformationViewController {
         let textFields = [self.bankNameTextField,
                           self.accountHolderTextField,
                           self.accountNumberTextField]
-        let finishedTextFieldTag = textFields
-            .compactMap { $0 }
-            .map { textField in
-                textField.rx
-                    .controlEvent(.editingDidEndOnExit)
-                    .asDriver()
-                    .map { textField.tag }
-            }
-        
-        Driver
-            .merge(finishedTextFieldTag)
-            .drive(with: self) { obj, tag in
-                guard let nextTextField = obj.view.viewWithTag(tag + 1)
-                        as? UITextField else { return }
-                nextTextField.becomeFirstResponder()
-            }
+        self.joinTextFields(textFields)
             .disposed(by: self.disposeBag)
         
         self.accountNumberTextField.rx.text.orEmpty

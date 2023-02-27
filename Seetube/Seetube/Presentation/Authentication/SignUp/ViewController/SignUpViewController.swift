@@ -10,7 +10,8 @@ import RxSwift
 import RxCocoa
 
 class SignUpViewController: UIViewController,
-                            KeyboardDismissible
+                            KeyboardDismissible,
+                            TextFieldJoinable
 {
     @IBOutlet weak var nicknameTextField: UnderLineTextField!
     @IBOutlet weak var emailTextField: UnderLineTextField!
@@ -50,22 +51,7 @@ extension SignUpViewController {
                           self.verificationCodeTextField,
                           self.passwordTextField,
                           self.passwordConfirmTextField]
-        let finishedTextFieldTag = textFields
-            .compactMap { $0 }
-            .map { textField in
-                textField.rx
-                    .controlEvent(.editingDidEndOnExit)
-                    .asDriver()
-                    .map { textField.tag }
-            }
-        
-        Driver
-            .merge(finishedTextFieldTag)
-            .drive(with: self) { obj, tag in
-                guard let nextTextField = obj.view.viewWithTag(tag + 1)
-                        as? UITextField else { return }
-                nextTextField.becomeFirstResponder()
-            }
+        self.joinTextFields(textFields)
             .disposed(by: self.disposeBag)
     }
 }
