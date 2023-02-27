@@ -66,6 +66,7 @@
 		044D258C29878BD0003F4071 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D258B29878BD0003F4071 /* Category.swift */; };
 		044D259429879F6A003F4071 /* ReviewerHomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D259329879F6A003F4071 /* ReviewerHomeSectionView.swift */; };
 		044D259629879F77003F4071 /* ReviewerHomeSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D259529879F77003F4071 /* ReviewerHomeSectionView.xib */; };
+		044DF34129ACBF920013BCF9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DF34029ACBF920013BCF9 /* SignUpViewController.swift */; };
 		045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56452976B54400E47C77 /* UnderLineTextField.swift */; };
 		045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56472976E70700E47C77 /* UIFont+Extension.swift */; };
 		045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */; };
@@ -300,6 +301,7 @@
 		044D258B29878BD0003F4071 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		044D259329879F6A003F4071 /* ReviewerHomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeSectionView.swift; sourceTree = "<group>"; };
 		044D259529879F77003F4071 /* ReviewerHomeSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewerHomeSectionView.xib; sourceTree = "<group>"; };
+		044DF34029ACBF920013BCF9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		045E56452976B54400E47C77 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		045E56472976E70700E47C77 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewController.swift; sourceTree = "<group>"; };
@@ -634,6 +636,7 @@
 			children = (
 				042B623329AA5B1C004178CD /* Start */,
 				046AD1022972E51200602F89 /* SignIn */,
+				044DF33E29ACBF7A0013BCF9 /* SignUp */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -1173,6 +1176,22 @@
 				049960EA298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		044DF33E29ACBF7A0013BCF9 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				044DF33F29ACBF870013BCF9 /* ViewController */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		044DF33F29ACBF870013BCF9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				044DF34029ACBF920013BCF9 /* SignUpViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		045E56442976B52000E47C77 /* View */ = {
@@ -1782,6 +1801,7 @@
 				0490DA9A2995143B000BBF73 /* DefaultVideoDetailRepository.swift in Sources */,
 				042B623C29AA5F10004178CD /* SignInViewModel.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
+				044DF34129ACBF920013BCF9 /* SignUpViewController.swift in Sources */,
 				043636DB29938AB300EF6458 /* NetworkService.swift in Sources */,
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,
 				0490DA572994C2A1000BBF73 /* MyPageRepository.swift in Sources */,
