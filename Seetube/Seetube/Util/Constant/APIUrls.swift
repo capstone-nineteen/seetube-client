@@ -10,7 +10,9 @@ import Foundation
 enum APIUrls {
     private static let base = "http://3.39.99.10:8001"
     private static let reviewerBase = base + "/reviewer"
+    private static let youtuberBase = base + "/youtuber"
     
+    static let reviewerSignUp = reviewerBase + "/signup"
     static let videoInfo = reviewerBase + "/video"
     static let reviewerHome = reviewerBase + "/home"
     static let search = reviewerBase + "/videos/search"
@@ -19,4 +21,6 @@ enum APIUrls {
     static let withdraw = reviewerBase + "/withdraw"
     static let submitReview = reviewerBase + "/watchingInfo"
     static let myPage = reviewerBase + "/mypage"
+    
+    static let youtuberSignUp = youtuberBase + "/signup"
 }

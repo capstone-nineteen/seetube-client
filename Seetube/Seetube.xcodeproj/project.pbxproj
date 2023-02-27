@@ -33,6 +33,12 @@
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
 		042B3BF529AD0D2700FC3881 /* TextFieldJoinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3BF429AD0D2700FC3881 /* TextFieldJoinable.swift */; };
 		042B3BF829AD11F700FC3881 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3BF729AD11F700FC3881 /* SignUpViewModel.swift */; };
+		042B3BFA29AD140E00FC3881 /* SignUpInformationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3BF929AD140E00FC3881 /* SignUpInformationDTO.swift */; };
+		042B3BFC29AD153000FC3881 /* SignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3BFB29AD153000FC3881 /* SignUpRepository.swift */; };
+		042B3BFE29AD156200FC3881 /* SignUpInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3BFD29AD156200FC3881 /* SignUpInformation.swift */; };
+		042B3C0029AD15B900FC3881 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3BFF29AD15B900FC3881 /* SignUpResult.swift */; };
+		042B3C0229AD160000FC3881 /* DefaultSignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0129AD160000FC3881 /* DefaultSignUpRepository.swift */; };
+		042B3C0429AD16A100FC3881 /* SignUpResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0329AD16A100FC3881 /* SignUpResultDTO.swift */; };
 		042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B622A29AA47BA004178CD /* UserTypeButton.swift */; };
 		042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042B622E29AA47E0004178CD /* UserTypeButton.xib */; };
 		042B623129AA485C004178CD /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623029AA485C004178CD /* UserType.swift */; };
@@ -273,6 +279,12 @@
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		042B3BF429AD0D2700FC3881 /* TextFieldJoinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldJoinable.swift; sourceTree = "<group>"; };
 		042B3BF729AD11F700FC3881 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		042B3BF929AD140E00FC3881 /* SignUpInformationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInformationDTO.swift; sourceTree = "<group>"; };
+		042B3BFB29AD153000FC3881 /* SignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepository.swift; sourceTree = "<group>"; };
+		042B3BFD29AD156200FC3881 /* SignUpInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInformation.swift; sourceTree = "<group>"; };
+		042B3BFF29AD15B900FC3881 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
+		042B3C0129AD160000FC3881 /* DefaultSignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignUpRepository.swift; sourceTree = "<group>"; };
+		042B3C0329AD16A100FC3881 /* SignUpResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResultDTO.swift; sourceTree = "<group>"; };
 		042B622A29AA47BA004178CD /* UserTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeButton.swift; sourceTree = "<group>"; };
 		042B622E29AA47E0004178CD /* UserTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeButton.xib; sourceTree = "<group>"; };
 		042B623029AA485C004178CD /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
@@ -703,7 +715,6 @@
 		043636A52993869C00EF6458 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				043636AC2993879D00EF6458 /* UseCase */,
 				043636AD299387A500EF6458 /* Model */,
 			);
 			path = Domain;
@@ -1300,6 +1311,8 @@
 				047B8794299FA84700F4AA42 /* Protocol */,
 				0470C9C72990ED3900D4743B /* VideoInfoDTO.swift */,
 				048A4B08299CEA8C00719AD0 /* VideoDetailDTO.swift */,
+				042B3BF929AD140E00FC3881 /* SignUpInformationDTO.swift */,
+				042B3C0329AD16A100FC3881 /* SignUpResultDTO.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1412,6 +1425,8 @@
 				0470C9D72990F7D400D4743B /* Emotion.swift */,
 				0490DA6629950958000BBF73 /* VideoInfo.swift */,
 				042B623029AA485C004178CD /* UserType.swift */,
+				042B3BFD29AD156200FC3881 /* SignUpInformation.swift */,
+				042B3BFF29AD15B900FC3881 /* SignUpResult.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1451,6 +1466,7 @@
 			isa = PBXGroup;
 			children = (
 				0490DA8029951199000BBF73 /* VideoDetailRepository.swift */,
+				042B3BFB29AD153000FC3881 /* SignUpRepository.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1484,6 +1500,7 @@
 			isa = PBXGroup;
 			children = (
 				0490DA992995143B000BBF73 /* DefaultVideoDetailRepository.swift */,
+				042B3C0129AD160000FC3881 /* DefaultSignUpRepository.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1496,6 +1513,7 @@
 				0490DA9F29952E18000BBF73 /* DefaultShopRepository.swift */,
 				0490DA532994C26A000BBF73 /* DefaultMyPageRepository.swift */,
 				04867F1329A7A08600FD9670 /* DefaultReviewRepository.swift */,
+				043636AC2993879D00EF6458 /* UseCase */,
 			);
 			path = Reviewer;
 			sourceTree = "<group>";
@@ -1770,6 +1788,7 @@
 				044DF34329ACC1B20013BCF9 /* SignUpPushable.swift in Sources */,
 				0490DAA6299539BF000BBF73 /* DefaultConcentrationResultRepository.swift in Sources */,
 				040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */,
+				042B3BFC29AD153000FC3881 /* SignUpRepository.swift in Sources */,
 				04822FCB29A74B540039A06F /* Review.swift in Sources */,
 				041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */,
 				04B8AF0D299BBBDA0024C897 /* DefaultSearchUseCase.swift in Sources */,
@@ -1799,10 +1818,12 @@
 				0490DA4E29940B7E000BBF73 /* MyPage.swift in Sources */,
 				04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */,
 				0490DA7729950B9D000BBF73 /* EmotionResult.swift in Sources */,
+				042B3BFE29AD156200FC3881 /* SignUpInformation.swift in Sources */,
 				0470C9C42990EA9800D4743B /* VideoListDTO.swift in Sources */,
 				0447E35729A0DB7A005F0CC9 /* VideoPlayerViewModel.swift in Sources */,
 				04A6789F299648A9006E29C1 /* ReviewerHomeViewModel.swift in Sources */,
 				047B879F299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift in Sources */,
+				042B3C0229AD160000FC3881 /* DefaultSignUpRepository.swift in Sources */,
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
 				048A4B18299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift in Sources */,
 				049961002982DDCF000EE539 /* ReviewerVideoInfoTableViewController.swift in Sources */,
@@ -1907,6 +1928,7 @@
 				0490DAA429953945000BBF73 /* DefaultYoutuberHomeRepository.swift in Sources */,
 				044D25762983F97B003F4071 /* VideoDetailView.swift in Sources */,
 				0490DAAC29953A7B000BBF73 /* DefaultShortsResultRepository.swift in Sources */,
+				042B3C0429AD16A100FC3881 /* SignUpResultDTO.swift in Sources */,
 				042B623129AA485C004178CD /* UserType.swift in Sources */,
 				0490DA7929950BA8000BBF73 /* SceneStealerResult.swift in Sources */,
 				04A94F062978129200BF5F4B /* MyPageViewController.swift in Sources */,
@@ -1925,6 +1947,7 @@
 				04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */,
 				044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */,
 				048A4B0E299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift in Sources */,
+				042B3BFA29AD140E00FC3881 /* SignUpInformationDTO.swift in Sources */,
 				0490DA8129951199000BBF73 /* VideoDetailRepository.swift in Sources */,
 				04867F1829A7A5B800FD9670 /* ReviewSubmissionResultDTO.swift in Sources */,
 				048A4B1A299D3D3000719AD0 /* VideosByCategoryViewModel.swift in Sources */,
@@ -1939,6 +1962,7 @@
 				049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */,
 				047B8799299FAC6F00F4AA42 /* WithdrawalResultDTO.swift in Sources */,
 				0490DAB529953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift in Sources */,
+				042B3C0029AD15B900FC3881 /* SignUpResult.swift in Sources */,
 				044B480029A2422900373768 /* WatchViewModel.swift in Sources */,
 				044B47FE29A22AE300373768 /* WatchViewController.swift in Sources */,
 				046AD1042972E54F00602F89 /* SignInViewController.swift in Sources */,
