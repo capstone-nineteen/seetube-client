@@ -31,6 +31,7 @@
 		041ECBCB296EF0C80053AC9C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCA296EF0C80053AC9C /* UIView+Extension.swift */; };
 		041ECBCD296EF2FC0053AC9C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCC296EF2FB0053AC9C /* CircleView.swift */; };
 		041ECBCF296EFEF40053AC9C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041ECBCE296EFEF40053AC9C /* GradientView.swift */; };
+		042B3BF529AD0D2700FC3881 /* TextFieldJoinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3BF429AD0D2700FC3881 /* TextFieldJoinable.swift */; };
 		042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B622A29AA47BA004178CD /* UserTypeButton.swift */; };
 		042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042B622E29AA47E0004178CD /* UserTypeButton.xib */; };
 		042B623129AA485C004178CD /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623029AA485C004178CD /* UserType.swift */; };
@@ -269,6 +270,7 @@
 		041ECBCA296EF0C80053AC9C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		041ECBCC296EF2FB0053AC9C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		041ECBCE296EFEF40053AC9C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		042B3BF429AD0D2700FC3881 /* TextFieldJoinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldJoinable.swift; sourceTree = "<group>"; };
 		042B622A29AA47BA004178CD /* UserTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeButton.swift; sourceTree = "<group>"; };
 		042B622E29AA47E0004178CD /* UserTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeButton.xib; sourceTree = "<group>"; };
 		042B623029AA485C004178CD /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */,
 				048A4B11299D167200719AD0 /* CategoryTabMovable.swift */,
 				04E6FC65298971F30052496A /* KeyboardDismissible.swift */,
+				042B3BF429AD0D2700FC3881 /* TextFieldJoinable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1829,6 +1832,7 @@
 				0447E35529A0CFC2005F0CC9 /* WatchPresentable.swift in Sources */,
 				0490DA922995132F000BBF73 /* ShortsResultRepository.swift in Sources */,
 				0470C9CF2990F1D400D4743B /* YoutuberHomeDTO.swift in Sources */,
+				042B3BF529AD0D2700FC3881 /* TextFieldJoinable.swift in Sources */,
 				048A4B01299CD59100719AD0 /* DefaultFetchVideoDetailUseCase.swift in Sources */,
 				04B8AF09299BBB4E0024C897 /* SearchResultViewModel.swift in Sources */,
 				0470C9C82990ED3900D4743B /* VideoInfoDTO.swift in Sources */,
