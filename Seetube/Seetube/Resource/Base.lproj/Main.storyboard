@@ -132,7 +132,7 @@
                                     <constraint firstAttribute="height" constant="25" id="jSg-Zk-m0N"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDb-xF-FEM" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="30" y="378.5" width="315" height="25"/>
