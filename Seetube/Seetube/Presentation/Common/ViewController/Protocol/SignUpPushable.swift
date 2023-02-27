@@ -16,7 +16,13 @@ extension SignUpPushable {
         self.push(
             viewControllerType: SignUpViewController.self
         ) { viewController in
-            // TODO: userType 전달
+            let repository = DefaultSignUpRepository()
+            let requestVerificationCodeUseCase = DefaultRequestVerificationCodeUseCase(repository: repository)
+            let signUpUseCase = DefaultSignUpUseCase(repository: repository)
+            let viewModel = SignUpViewModel(userType: userType,
+                                            requestVerificationCodeUseCase: requestVerificationCodeUseCase,
+                                            signUpUseCase: signUpUseCase)
+            viewController.viewModel = viewModel
         }
     }
 }

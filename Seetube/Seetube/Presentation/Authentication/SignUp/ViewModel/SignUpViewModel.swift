@@ -9,9 +9,17 @@ import Foundation
 
 class SignUpViewModel: ViewModelType {
     private var userType: UserType
+    private let requestVerificationCodeUseCase: RequestVerificationCodeUseCase
+    private let signUpUseCase: SignUpUseCase
     
-    init(userType: UserType) {
+    init(
+         userType: UserType,
+         requestVerificationCodeUseCase: RequestVerificationCodeUseCase,
+         signUpUseCase: SignUpUseCase
+    ) {
         self.userType = userType
+        self.requestVerificationCodeUseCase = requestVerificationCodeUseCase
+        self.signUpUseCase = signUpUseCase
     }
     
     func transform(input: Input) -> Output {
