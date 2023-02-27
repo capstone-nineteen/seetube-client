@@ -12,6 +12,7 @@ enum APIUrls {
     private static let reviewerBase = base + "/reviewer"
     private static let youtuberBase = base + "/youtuber"
     
+    static let reviewerVerificationCode = reviewerBase + "/email"
     static let reviewerSignUp = reviewerBase + "/signup"
     static let videoInfo = reviewerBase + "/video"
     static let reviewerHome = reviewerBase + "/home"
@@ -22,5 +23,6 @@ enum APIUrls {
     static let submitReview = reviewerBase + "/watchingInfo"
     static let myPage = reviewerBase + "/mypage"
     
+    static let youtuberVerificationCode = youtuberBase + "/email"
     static let youtuberSignUp = youtuberBase + "/signup"
 }

@@ -10,6 +10,7 @@ import Alamofire
 
 class APIEndpointFactory {
     enum EndpointType {
+        case requestVerificationCode(userType: UserType, email: String)
         case signUp(userType: UserType, info: SignUpInformationDTO)
         case getVideoInfo(id: Int)
         case getReviewerHome
@@ -28,6 +29,8 @@ class APIEndpointFactory {
         
         var method: HttpMethod {
             switch self {
+            case .requestVerificationCode:
+                return .post
             case .signUp:
                 return .post
             case .getVideoInfo:
@@ -63,6 +66,13 @@ class APIEndpointFactory {
         
         var url: String {
             switch self {
+            case .requestVerificationCode(let userType, _):
+                switch userType {
+                case .youtuber:
+                    return APIUrls.youtuberVerificationCode
+                case .reviewer:
+                    return APIUrls.reviewerVerificationCode
+                }
             case .signUp(let userType, _):
                 switch userType {
                 case .youtuber:
@@ -103,6 +113,8 @@ class APIEndpointFactory {
         
         var parameters: [String:Any]? {
             switch self {
+            case .requestVerificationCode(_, let email):
+                return ["email": email]
             case .signUp(_, let info):
                 return info.dictionary
             case .getVideoInfo:
