@@ -7,7 +7,9 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController,
+                            KeyboardDismissible
+{
     @IBOutlet weak var nicknameTextField: UnderLineTextField!
     @IBOutlet weak var emailTextField: UnderLineTextField!
     @IBOutlet weak var verificationCodeTextField: UnderLineTextField!
@@ -23,7 +25,18 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var verificationCodeRequestButton: UIButton!
     @IBOutlet weak var signUpButton: BottomButton!
     
+    var coverView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureUI()
+    }
+}
+
+// MARK: - Configuration
+
+extension SignUpViewController {
+    private func configureUI() {
+        self.enableKeyboardDismissing()
     }
 }
