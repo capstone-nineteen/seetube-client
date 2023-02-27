@@ -39,6 +39,8 @@
 		042B3C0029AD15B900FC3881 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3BFF29AD15B900FC3881 /* SignUpResult.swift */; };
 		042B3C0229AD160000FC3881 /* DefaultSignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0129AD160000FC3881 /* DefaultSignUpRepository.swift */; };
 		042B3C0429AD16A100FC3881 /* SignUpResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0329AD16A100FC3881 /* SignUpResultDTO.swift */; };
+		042B3C0629AD188900FC3881 /* VerificationCodeRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0529AD188900FC3881 /* VerificationCodeRequestResult.swift */; };
+		042B3C0829AD193200FC3881 /* VerificationCodeRequestResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0729AD193200FC3881 /* VerificationCodeRequestResultDTO.swift */; };
 		042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B622A29AA47BA004178CD /* UserTypeButton.swift */; };
 		042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042B622E29AA47E0004178CD /* UserTypeButton.xib */; };
 		042B623129AA485C004178CD /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623029AA485C004178CD /* UserType.swift */; };
@@ -285,6 +287,8 @@
 		042B3BFF29AD15B900FC3881 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
 		042B3C0129AD160000FC3881 /* DefaultSignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignUpRepository.swift; sourceTree = "<group>"; };
 		042B3C0329AD16A100FC3881 /* SignUpResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResultDTO.swift; sourceTree = "<group>"; };
+		042B3C0529AD188900FC3881 /* VerificationCodeRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeRequestResult.swift; sourceTree = "<group>"; };
+		042B3C0729AD193200FC3881 /* VerificationCodeRequestResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeRequestResultDTO.swift; sourceTree = "<group>"; };
 		042B622A29AA47BA004178CD /* UserTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeButton.swift; sourceTree = "<group>"; };
 		042B622E29AA47E0004178CD /* UserTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeButton.xib; sourceTree = "<group>"; };
 		042B623029AA485C004178CD /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
@@ -1313,6 +1317,7 @@
 				048A4B08299CEA8C00719AD0 /* VideoDetailDTO.swift */,
 				042B3BF929AD140E00FC3881 /* SignUpInformationDTO.swift */,
 				042B3C0329AD16A100FC3881 /* SignUpResultDTO.swift */,
+				042B3C0729AD193200FC3881 /* VerificationCodeRequestResultDTO.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1427,6 +1432,7 @@
 				042B623029AA485C004178CD /* UserType.swift */,
 				042B3BFD29AD156200FC3881 /* SignUpInformation.swift */,
 				042B3BFF29AD15B900FC3881 /* SignUpResult.swift */,
+				042B3C0529AD188900FC3881 /* VerificationCodeRequestResult.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1856,6 +1862,7 @@
 				0490DA5229940CC9000BBF73 /* APIUrls.swift in Sources */,
 				04A678A1299648EA006E29C1 /* ViewModelType.swift in Sources */,
 				049960F52982A068000EE539 /* SeetubeSearchBar.swift in Sources */,
+				042B3C0629AD188900FC3881 /* VerificationCodeRequestResult.swift in Sources */,
 				046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */,
 				044B480429A2476D00373768 /* CalibrationTutorialView.swift in Sources */,
 				0490DA9C29952D98000BBF73 /* DefaultReviewerHomeRepository.swift in Sources */,
@@ -1887,6 +1894,7 @@
 				0490DAB729953F2B000BBF73 /* Int+Extension.swift in Sources */,
 				0470726E29798FAB008D6CC0 /* VideoInfoCardView.swift in Sources */,
 				049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */,
+				042B3C0829AD193200FC3881 /* VerificationCodeRequestResultDTO.swift in Sources */,
 				0490DA9029951317000BBF73 /* SceneStealerResultRepository.swift in Sources */,
 				044D258C29878BD0003F4071 /* Category.swift in Sources */,
 				047B879D299FAF4000F4AA42 /* RegisterWithdrawalUseCase.swift in Sources */,
