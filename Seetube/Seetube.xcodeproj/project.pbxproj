@@ -67,6 +67,7 @@
 		044D259429879F6A003F4071 /* ReviewerHomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D259329879F6A003F4071 /* ReviewerHomeSectionView.swift */; };
 		044D259629879F77003F4071 /* ReviewerHomeSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D259529879F77003F4071 /* ReviewerHomeSectionView.xib */; };
 		044DF34129ACBF920013BCF9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DF34029ACBF920013BCF9 /* SignUpViewController.swift */; };
+		044DF34329ACC1B20013BCF9 /* SignUpPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DF34229ACC1B20013BCF9 /* SignUpPushable.swift */; };
 		045E56462976B54400E47C77 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56452976B54400E47C77 /* UnderLineTextField.swift */; };
 		045E56482976E70700E47C77 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56472976E70700E47C77 /* UIFont+Extension.swift */; };
 		045E564A2976F42700E47C77 /* WithdrawalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */; };
@@ -302,6 +303,7 @@
 		044D259329879F6A003F4071 /* ReviewerHomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerHomeSectionView.swift; sourceTree = "<group>"; };
 		044D259529879F77003F4071 /* ReviewerHomeSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewerHomeSectionView.xib; sourceTree = "<group>"; };
 		044DF34029ACBF920013BCF9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		044DF34229ACC1B20013BCF9 /* SignUpPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPushable.swift; sourceTree = "<group>"; };
 		045E56452976B54400E47C77 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		045E56472976E70700E47C77 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		045E56492976F42700E47C77 /* WithdrawalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalInformationViewController.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 				046AD1002972D7A900602F89 /* AlertDisplaying.swift */,
 				04E6FC6029895C400052496A /* ViewControllerPushable.swift */,
 				042B623929AA5EC0004178CD /* SignInPushable.swift */,
+				044DF34229ACC1B20013BCF9 /* SignUpPushable.swift */,
 				048A4B0D299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift */,
 				048A4B0F299D15C100719AD0 /* SearchResultPushable.swift */,
 				047B8790299F7D1300F4AA42 /* WithdrawalInformationPushable.swift */,
@@ -1750,6 +1753,7 @@
 				044D258229843403003F4071 /* ReviewerHomeCollectionViewCell.swift in Sources */,
 				047072802979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift in Sources */,
 				047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */,
+				044DF34329ACC1B20013BCF9 /* SignUpPushable.swift in Sources */,
 				0490DAA6299539BF000BBF73 /* DefaultConcentrationResultRepository.swift in Sources */,
 				040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */,
 				04822FCB29A74B540039A06F /* Review.swift in Sources */,
