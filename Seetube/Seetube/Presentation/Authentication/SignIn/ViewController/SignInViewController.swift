@@ -10,7 +10,8 @@ import RxSwift
 import RxCocoa
 
 class SignInViewController: UIViewController,
-                            SignUpPushable
+                            SignUpPushable,
+                            TextFieldJoinable
 {
     @IBOutlet weak var idTextField: UnderLineTextField!
     @IBOutlet weak var pwTextField: UnderLineTextField!
@@ -31,6 +32,7 @@ class SignInViewController: UIViewController,
 extension SignInViewController {
     private func configureUI() {
         self.configureSignUpButton()
+        self.configureTextFields()
     }
     
     private func configureSignUpButton() {
@@ -40,6 +42,12 @@ extension SignInViewController {
                 // TODO: userType 전달
                 obj.pushSignUp(userType: .youtuber)
             }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func configureTextFields() {
+        let textFields = [self.idTextField, self.pwTextField]
+        self.joinTextFields(textFields)
             .disposed(by: self.disposeBag)
     }
 }
