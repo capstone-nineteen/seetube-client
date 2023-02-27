@@ -43,6 +43,8 @@
 		042B3C0829AD193200FC3881 /* VerificationCodeRequestResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0729AD193200FC3881 /* VerificationCodeRequestResultDTO.swift */; };
 		042B3C0A29AD19C900FC3881 /* RequestVerificationCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0929AD19C900FC3881 /* RequestVerificationCodeUseCase.swift */; };
 		042B3C0C29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0B29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift */; };
+		042B3C0E29AD1B4B00FC3881 /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0D29AD1B4B00FC3881 /* SignUpUseCase.swift */; };
+		042B3C1029AD1B7200FC3881 /* DefaultSignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0F29AD1B7200FC3881 /* DefaultSignUpUseCase.swift */; };
 		042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B622A29AA47BA004178CD /* UserTypeButton.swift */; };
 		042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042B622E29AA47E0004178CD /* UserTypeButton.xib */; };
 		042B623129AA485C004178CD /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623029AA485C004178CD /* UserType.swift */; };
@@ -293,6 +295,8 @@
 		042B3C0729AD193200FC3881 /* VerificationCodeRequestResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeRequestResultDTO.swift; sourceTree = "<group>"; };
 		042B3C0929AD19C900FC3881 /* RequestVerificationCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestVerificationCodeUseCase.swift; sourceTree = "<group>"; };
 		042B3C0B29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRequestVerificationCodeUseCase.swift; sourceTree = "<group>"; };
+		042B3C0D29AD1B4B00FC3881 /* SignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
+		042B3C0F29AD1B7200FC3881 /* DefaultSignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignUpUseCase.swift; sourceTree = "<group>"; };
 		042B622A29AA47BA004178CD /* UserTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeButton.swift; sourceTree = "<group>"; };
 		042B622E29AA47E0004178CD /* UserTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeButton.xib; sourceTree = "<group>"; };
 		042B623029AA485C004178CD /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
@@ -795,6 +799,7 @@
 				047B879E299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift */,
 				04867F0D29A79D0400FD9670 /* DefaultSubmitReviewUseCase.swift */,
 				042B3C0B29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift */,
+				042B3C0F29AD1B7200FC3881 /* DefaultSignUpUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1554,6 +1559,7 @@
 				047B879C299FAF4000F4AA42 /* RegisterWithdrawalUseCase.swift */,
 				04867F0B29A79CD100FD9670 /* SubmitReviewUseCase.swift */,
 				042B3C0929AD19C900FC3881 /* RequestVerificationCodeUseCase.swift */,
+				042B3C0D29AD1B4B00FC3881 /* SignUpUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1837,6 +1843,7 @@
 				047B879F299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift in Sources */,
 				042B3C0229AD160000FC3881 /* DefaultSignUpRepository.swift in Sources */,
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
+				042B3C0E29AD1B4B00FC3881 /* SignUpUseCase.swift in Sources */,
 				048A4B18299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift in Sources */,
 				049961002982DDCF000EE539 /* ReviewerVideoInfoTableViewController.swift in Sources */,
 				0470C9CC2990EE8D00D4743B /* ReviewerHomeDTO.swift in Sources */,
@@ -1927,6 +1934,7 @@
 				0490DA69299509CD000BBF73 /* Shop.swift in Sources */,
 				04B608CE29A5013D00B811B9 /* CGImage+Extension.swift in Sources */,
 				0490DAB9299543B8000BBF73 /* Date+Extension.swift in Sources */,
+				042B3C1029AD1B7200FC3881 /* DefaultSignUpUseCase.swift in Sources */,
 				0490DA6729950958000BBF73 /* VideoInfo.swift in Sources */,
 				049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */,
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
