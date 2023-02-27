@@ -126,18 +126,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-Ia-zoD" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-Ia-zoD" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="30" y="333.5" width="315" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="jSg-Zk-m0N"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDb-xF-FEM" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="30" y="378.5" width="315" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeetubeLogo-transparent" translatesAutoresizingMaskIntoConstraints="NO" id="S64-BU-2UC">
                                 <rect key="frame" x="30" y="133.5" width="247.5" height="92"/>
@@ -229,13 +229,179 @@
                     <view key="view" contentMode="scaleToFill" id="YOK-oF-1sB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNu-02-Ky6">
+                                <rect key="frame" x="20" y="30" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="씨튜브" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ej-WY-gth" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="20" y="61" width="200" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="OeA-yR-eII"/>
+                                    <constraint firstAttribute="height" constant="25" id="olT-O7-AeD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next" textContentType="nickname"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 닉네임입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCY-b8-Q7v">
+                                <rect key="frame" x="20" y="96" width="135" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRx-5H-gFy">
+                                <rect key="frame" x="20" y="147" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="seetube@zzang.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iu1-px-9Bj" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="20" y="178" width="229" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="DUc-Wu-7uY"/>
+                                    <constraint firstAttribute="width" priority="750" constant="250" id="FhE-L6-Wal"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 닉네임입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKP-Ho-ZXJ">
+                                <rect key="frame" x="20" y="213" width="135" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="인증번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aki-GP-gN7" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="20" y="244" width="150" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="4hz-WN-4K4"/>
+                                    <constraint firstAttribute="width" constant="150" id="6qg-eV-j1r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="one-time-code"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 닉네임입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BL4-b1-BKy">
+                                <rect key="frame" x="20" y="279" width="135" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhC-Q5-c22">
+                                <rect key="frame" x="264" y="174.5" width="91" height="32"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="8" maxX="10" maxY="8"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="인증번호 받기"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw4-HH-JjH">
+                                <rect key="frame" x="20" y="330" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="영문 + 특수글자 10자 이상" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGu-Jk-HYu" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="20" y="361" width="300" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Pg3-1p-b1q"/>
+                                    <constraint firstAttribute="width" constant="300" id="xgg-h0-9E5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 닉네임입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8B-0W-c3d">
+                                <rect key="frame" x="20" y="396" width="135" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0X-MO-s0i" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="20" y="427" width="300" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Lsq-I5-7XV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 닉네임입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnJ-Mm-qaJ">
+                                <rect key="frame" x="20" y="462" width="135" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoo-nF-AlB" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="20" y="602" width="335" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="2Lt-8c-Ahy"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="가입하기"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hC2-XQ-lI2"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rw4-HH-JjH" firstAttribute="top" secondItem="BL4-b1-BKy" secondAttribute="bottom" constant="35" id="1F6-72-bFX"/>
+                            <constraint firstItem="BL4-b1-BKy" firstAttribute="top" secondItem="aki-GP-gN7" secondAttribute="bottom" constant="10" id="3G8-bh-1PU"/>
+                            <constraint firstItem="YNu-02-Ky6" firstAttribute="leading" secondItem="hC2-XQ-lI2" secondAttribute="leading" constant="20" id="3fb-to-kb2"/>
+                            <constraint firstItem="U0X-MO-s0i" firstAttribute="leading" secondItem="rw4-HH-JjH" secondAttribute="leading" id="4a7-KP-nrw"/>
+                            <constraint firstItem="eoo-nF-AlB" firstAttribute="leading" secondItem="YNu-02-Ky6" secondAttribute="leading" id="9m5-sW-tRn"/>
+                            <constraint firstItem="dCY-b8-Q7v" firstAttribute="top" secondItem="1Ej-WY-gth" secondAttribute="bottom" constant="10" id="B88-45-toa"/>
+                            <constraint firstItem="1Ej-WY-gth" firstAttribute="leading" secondItem="YNu-02-Ky6" secondAttribute="leading" id="D6H-R4-992"/>
+                            <constraint firstItem="U0X-MO-s0i" firstAttribute="width" secondItem="hGu-Jk-HYu" secondAttribute="width" id="Dva-Q4-XbZ"/>
+                            <constraint firstItem="BL4-b1-BKy" firstAttribute="leading" secondItem="aki-GP-gN7" secondAttribute="leading" id="K8h-Aa-cbk"/>
+                            <constraint firstItem="YNu-02-Ky6" firstAttribute="top" secondItem="hC2-XQ-lI2" secondAttribute="top" constant="30" id="MAU-xA-cxQ"/>
+                            <constraint firstItem="aki-GP-gN7" firstAttribute="top" secondItem="zKP-Ho-ZXJ" secondAttribute="bottom" constant="15" id="NEv-tD-pGQ"/>
+                            <constraint firstItem="Iu1-px-9Bj" firstAttribute="leading" secondItem="GRx-5H-gFy" secondAttribute="leading" id="O5L-YG-k9X"/>
+                            <constraint firstItem="hGu-Jk-HYu" firstAttribute="leading" secondItem="rw4-HH-JjH" secondAttribute="leading" id="Odg-QB-H00"/>
+                            <constraint firstItem="bhC-Q5-c22" firstAttribute="centerY" secondItem="Iu1-px-9Bj" secondAttribute="centerY" id="Ojz-hr-mwo"/>
+                            <constraint firstItem="U0X-MO-s0i" firstAttribute="top" secondItem="a8B-0W-c3d" secondAttribute="bottom" constant="15" id="SFo-90-Qun"/>
+                            <constraint firstItem="zKP-Ho-ZXJ" firstAttribute="leading" secondItem="Iu1-px-9Bj" secondAttribute="leading" id="Sff-3U-ibl"/>
+                            <constraint firstItem="a8B-0W-c3d" firstAttribute="top" secondItem="hGu-Jk-HYu" secondAttribute="bottom" constant="10" id="VPs-yJ-KCk"/>
+                            <constraint firstItem="aki-GP-gN7" firstAttribute="leading" secondItem="GRx-5H-gFy" secondAttribute="leading" id="Vb8-z8-ScN"/>
+                            <constraint firstItem="Iu1-px-9Bj" firstAttribute="top" secondItem="GRx-5H-gFy" secondAttribute="bottom" constant="10" id="b9r-Ag-Tq7"/>
+                            <constraint firstItem="a8B-0W-c3d" firstAttribute="leading" secondItem="hGu-Jk-HYu" secondAttribute="leading" id="geq-xz-WWE"/>
+                            <constraint firstItem="rw4-HH-JjH" firstAttribute="leading" secondItem="BL4-b1-BKy" secondAttribute="leading" id="hwx-yk-J57"/>
+                            <constraint firstItem="bhC-Q5-c22" firstAttribute="leading" secondItem="Iu1-px-9Bj" secondAttribute="trailing" constant="15" id="kBV-4D-W6H"/>
+                            <constraint firstItem="eoo-nF-AlB" firstAttribute="centerX" secondItem="hC2-XQ-lI2" secondAttribute="centerX" id="kkm-7R-DAc"/>
+                            <constraint firstItem="AnJ-Mm-qaJ" firstAttribute="leading" secondItem="U0X-MO-s0i" secondAttribute="leading" id="lrx-fa-7xQ"/>
+                            <constraint firstItem="1Ej-WY-gth" firstAttribute="top" secondItem="YNu-02-Ky6" secondAttribute="bottom" constant="10" id="mhh-j9-MgD"/>
+                            <constraint firstItem="zKP-Ho-ZXJ" firstAttribute="top" secondItem="Iu1-px-9Bj" secondAttribute="bottom" constant="10" id="mkd-SB-okC"/>
+                            <constraint firstItem="dCY-b8-Q7v" firstAttribute="leading" secondItem="1Ej-WY-gth" secondAttribute="leading" id="s9U-5h-xSa"/>
+                            <constraint firstItem="hC2-XQ-lI2" firstAttribute="bottom" secondItem="eoo-nF-AlB" secondAttribute="bottom" constant="20" id="tX8-rX-11S"/>
+                            <constraint firstItem="GRx-5H-gFy" firstAttribute="leading" secondItem="YNu-02-Ky6" secondAttribute="leading" id="ues-qK-QI3"/>
+                            <constraint firstItem="hGu-Jk-HYu" firstAttribute="top" secondItem="rw4-HH-JjH" secondAttribute="bottom" constant="10" id="vRp-62-BOx"/>
+                            <constraint firstItem="hC2-XQ-lI2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bhC-Q5-c22" secondAttribute="trailing" constant="20" id="w0m-Sd-XCm"/>
+                            <constraint firstItem="GRx-5H-gFy" firstAttribute="top" secondItem="dCY-b8-Q7v" secondAttribute="bottom" constant="35" id="zRz-P0-vYh"/>
+                            <constraint firstItem="AnJ-Mm-qaJ" firstAttribute="top" secondItem="U0X-MO-s0i" secondAttribute="bottom" constant="10" id="zuY-nE-T9f"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Iu1-px-9Bj" id="DUd-s4-MsU"/>
+                        <outlet property="emailValidationLabel" destination="zKP-Ho-ZXJ" id="Ci2-X1-zV7"/>
+                        <outlet property="nicknameTextField" destination="1Ej-WY-gth" id="zMb-cB-z18"/>
+                        <outlet property="nicknameValidationLabel" destination="dCY-b8-Q7v" id="Gdr-IQ-rLt"/>
+                        <outlet property="passwordConfirmTextField" destination="U0X-MO-s0i" id="mds-d3-Pvr"/>
+                        <outlet property="passwordConfirmValidationLabel" destination="AnJ-Mm-qaJ" id="NcX-jt-ykm"/>
+                        <outlet property="passwordTextField" destination="hGu-Jk-HYu" id="qYH-9e-IK7"/>
+                        <outlet property="passwordValidationLabel" destination="a8B-0W-c3d" id="6y1-0z-5iy"/>
+                        <outlet property="signUpButton" destination="eoo-nF-AlB" id="goi-Wx-z3n"/>
+                        <outlet property="verificationCodeRequestButton" destination="bhC-Q5-c22" id="zUD-zb-REB"/>
+                        <outlet property="verificationCodeTextField" destination="aki-GP-gN7" id="dh8-pe-9jG"/>
+                        <outlet property="verificationCodeValidationLabel" destination="BL4-b1-BKy" id="khq-8H-Bsm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nTX-ak-dhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5788" y="-1272"/>
+            <point key="canvasLocation" x="5788" y="-1272.4137931034484"/>
         </scene>
         <!--Videos By Category View Controller-->
         <scene sceneID="3TP-4u-6a1">
@@ -1654,6 +1820,9 @@
         <designable name="Iqx-xv-HFK">
             <size key="intrinsicContentSize" width="128.5" height="20"/>
         </designable>
+        <designable name="Iu1-px-9Bj">
+            <size key="intrinsicContentSize" width="164.5" height="22.5"/>
+        </designable>
         <designable name="Jes-rP-dqy">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
@@ -1667,10 +1836,16 @@
             <size key="intrinsicContentSize" width="178.5" height="58"/>
         </designable>
         <designable name="RDb-xF-FEM">
-            <size key="intrinsicContentSize" width="61" height="22.5"/>
+            <size key="intrinsicContentSize" width="61" height="21"/>
+        </designable>
+        <designable name="U0X-MO-s0i">
+            <size key="intrinsicContentSize" width="95.5" height="21"/>
         </designable>
         <designable name="Vtb-6Z-wbj">
             <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="aki-GP-gN7">
+            <size key="intrinsicContentSize" width="95.5" height="22.5"/>
         </designable>
         <designable name="bc5-i8-hgR">
             <size key="intrinsicContentSize" width="30" height="34"/>
@@ -1686,6 +1861,9 @@
         </designable>
         <designable name="gmX-Da-P0M">
             <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="hGu-Jk-HYu">
+            <size key="intrinsicContentSize" width="183" height="21"/>
         </designable>
         <designable name="k9L-Rb-zAs">
             <size key="intrinsicContentSize" width="30" height="34"/>
