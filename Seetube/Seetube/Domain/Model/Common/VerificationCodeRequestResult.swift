@@ -8,6 +8,11 @@
 import Foundation
 
 struct VerificationCodeRequestResult {
+    enum VerificationCodeRequestError: Error {
+        case alreadyExist
+        case invalidFormat
+    }
+    
     let verificationCode: Int?
-    let message: String?
+    let error: VerificationCodeRequestError?
 }

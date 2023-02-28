@@ -13,7 +13,15 @@ struct VerificationCodeRequestResultDTO: Decodable, DomainConvertible {
     let status: Int?
     
     func toDomain() -> VerificationCodeRequestResult {
-        VerificationCodeRequestResult(verificationCode: self.authNumber,
-                                      message: self.message)
+        var error: VerificationCodeRequestResult.VerificationCodeRequestError? = nil
+        
+        if message == "A user with this email already exists." {
+            error = .alreadyExist
+        } else if message == "Please enter a valid email." {
+            error = .invalidFormat
+        }
+        
+        return VerificationCodeRequestResult(verificationCode: self.authNumber,
+                                             error: error)
     }
 }

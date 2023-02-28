@@ -47,6 +47,7 @@
 		042B3C1029AD1B7200FC3881 /* DefaultSignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C0F29AD1B7200FC3881 /* DefaultSignUpUseCase.swift */; };
 		042B3C1229AD303A00FC3881 /* ValidateSignUpInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C1129AD303A00FC3881 /* ValidateSignUpInfoUseCase.swift */; };
 		042B3C1429AD316500FC3881 /* DefaultValidateSignUpInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C1329AD316500FC3881 /* DefaultValidateSignUpInfoUseCase.swift */; };
+		042B3C1829ADDACC00FC3881 /* SignUpValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C1729ADDACC00FC3881 /* SignUpValidationResult.swift */; };
 		042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B622A29AA47BA004178CD /* UserTypeButton.swift */; };
 		042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042B622E29AA47E0004178CD /* UserTypeButton.xib */; };
 		042B623129AA485C004178CD /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623029AA485C004178CD /* UserType.swift */; };
@@ -301,6 +302,7 @@
 		042B3C0F29AD1B7200FC3881 /* DefaultSignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignUpUseCase.swift; sourceTree = "<group>"; };
 		042B3C1129AD303A00FC3881 /* ValidateSignUpInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateSignUpInfoUseCase.swift; sourceTree = "<group>"; };
 		042B3C1329AD316500FC3881 /* DefaultValidateSignUpInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValidateSignUpInfoUseCase.swift; sourceTree = "<group>"; };
+		042B3C1729ADDACC00FC3881 /* SignUpValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidationResult.swift; sourceTree = "<group>"; };
 		042B622A29AA47BA004178CD /* UserTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeButton.swift; sourceTree = "<group>"; };
 		042B622E29AA47E0004178CD /* UserTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeButton.xib; sourceTree = "<group>"; };
 		042B623029AA485C004178CD /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
@@ -1449,6 +1451,7 @@
 				042B3BFD29AD156200FC3881 /* SignUpInformation.swift */,
 				042B3BFF29AD15B900FC3881 /* SignUpResult.swift */,
 				042B3C0529AD188900FC3881 /* VerificationCodeRequestResult.swift */,
+				042B3C1729ADDACC00FC3881 /* SignUpValidationResult.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1995,6 +1998,7 @@
 				047B8799299FAC6F00F4AA42 /* WithdrawalResultDTO.swift in Sources */,
 				0490DAB529953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift in Sources */,
 				042B3C0029AD15B900FC3881 /* SignUpResult.swift in Sources */,
+				042B3C1829ADDACC00FC3881 /* SignUpValidationResult.swift in Sources */,
 				044B480029A2422900373768 /* WatchViewModel.swift in Sources */,
 				044B47FE29A22AE300373768 /* WatchViewController.swift in Sources */,
 				046AD1042972E54F00602F89 /* SignInViewController.swift in Sources */,
