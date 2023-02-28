@@ -12,6 +12,7 @@ enum SignUpValidationError: Error {
     case containsCharactersThatAreNotAllowed
     case incorrectFormat
     case mismatch
+    case empty
 }
 
 struct SignUpValidationResult {

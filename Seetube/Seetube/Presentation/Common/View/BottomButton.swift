@@ -24,7 +24,7 @@ class BottomButton: UIButton, NibLoadable {
     override var isEnabled: Bool {
         didSet {
             let enabledColor = Colors.seetubePink
-            let disabledColor = UIColor.systemGray3
+            let disabledColor = UIColor.systemGray2
             self.contentView.backgroundColor = self.isEnabled ? enabledColor : disabledColor
         }
     }
