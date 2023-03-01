@@ -245,6 +245,9 @@
 		04E1463B29AF5CDD00DD4204 /* DefaultSignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463A29AF5CDD00DD4204 /* DefaultSignInRepository.swift */; };
 		04E1463D29AF5D6200DD4204 /* SignInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463C29AF5D6200DD4204 /* SignInUseCase.swift */; };
 		04E1463F29AF5D9000DD4204 /* DefaultSignInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463E29AF5D9000DD4204 /* DefaultSignInUseCase.swift */; };
+		04E1464529AF709400DD4204 /* ReviewerStartable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1464429AF709400DD4204 /* ReviewerStartable.swift */; };
+		04E1464729AF71F000DD4204 /* YoutuberStartable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1464629AF71F000DD4204 /* YoutuberStartable.swift */; };
+		04E1464929AF735E00DD4204 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1464829AF735E00DD4204 /* UIApplication+Extension.swift */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
 		04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */; };
@@ -506,6 +509,9 @@
 		04E1463A29AF5CDD00DD4204 /* DefaultSignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignInRepository.swift; sourceTree = "<group>"; };
 		04E1463C29AF5D6200DD4204 /* SignInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUseCase.swift; sourceTree = "<group>"; };
 		04E1463E29AF5D9000DD4204 /* DefaultSignInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignInUseCase.swift; sourceTree = "<group>"; };
+		04E1464429AF709400DD4204 /* ReviewerStartable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerStartable.swift; sourceTree = "<group>"; };
+		04E1464629AF71F000DD4204 /* YoutuberStartable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberStartable.swift; sourceTree = "<group>"; };
+		04E1464829AF735E00DD4204 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		04E6FC5E29893A400052496A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		04E6FC6029895C400052496A /* ViewControllerPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPushable.swift; sourceTree = "<group>"; };
@@ -545,11 +551,13 @@
 				048A4B0D299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift */,
 				048A4B0F299D15C100719AD0 /* SearchResultPushable.swift */,
 				047B8790299F7D1300F4AA42 /* WithdrawalInformationPushable.swift */,
-				0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */,
 				04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */,
+				0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */,
 				048A4B11299D167200719AD0 /* CategoryTabMovable.swift */,
 				04E6FC65298971F30052496A /* KeyboardDismissible.swift */,
 				042B3BF429AD0D2700FC3881 /* TextFieldJoinable.swift */,
+				04E1464429AF709400DD4204 /* ReviewerStartable.swift */,
+				04E1464629AF71F000DD4204 /* YoutuberStartable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -692,6 +700,7 @@
 				04E1463229AF1FC200DD4204 /* Driver+Extension.swift */,
 				04B608CD29A5013D00B811B9 /* CGImage+Extension.swift */,
 				042B3C1929ADFDB300FC3881 /* SignUpValidationResult+Extension.swift */,
+				04E1464829AF735E00DD4204 /* UIApplication+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1835,6 +1844,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04867F1429A7A08600FD9670 /* DefaultReviewRepository.swift in Sources */,
+				04E1464529AF709400DD4204 /* ReviewerStartable.swift in Sources */,
+				04E1464729AF71F000DD4204 /* YoutuberStartable.swift in Sources */,
 				04E6FC5F29893A400052496A /* Colors.swift in Sources */,
 				04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */,
 				0470C9D82990F7D400D4743B /* Emotion.swift in Sources */,
@@ -1872,6 +1883,7 @@
 				0490DA8E299512F4000BBF73 /* EmotionResultRepository.swift in Sources */,
 				045E564E2977068400E47C77 /* NotPastableUnderLineTextField.swift in Sources */,
 				0490DA7529950B96000BBF73 /* ConcentrationResult.swift in Sources */,
+				04E1464929AF735E00DD4204 /* UIApplication+Extension.swift in Sources */,
 				047A5F4A29707D2B007CDBC4 /* HighlightResultViewController.swift in Sources */,
 				04924C0E299ABBFB001E2045 /* ReviewerVideoCardItemViewModel.swift in Sources */,
 				04C3DB5C29A3CA2B00D1E3BA /* ObservableType+Extension.swift in Sources */,
