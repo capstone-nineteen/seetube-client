@@ -16,7 +16,10 @@ extension SignInPushable {
         self.push(
             viewControllerType: SignInViewController.self
         ) { viewController in
-            let viewModel = SignInViewModel(userType: userType)
+            let repository = DefaultSignInRepository()
+            let signInUseCase = DefaultSignInUseCase(repository: repository)
+            let viewModel = SignInViewModel(userType: userType,
+                                            signInUseCase: signInUseCase)
             viewController.viewModel = viewModel
         }
     }

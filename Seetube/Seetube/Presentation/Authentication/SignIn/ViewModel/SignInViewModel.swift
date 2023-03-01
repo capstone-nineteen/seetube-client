@@ -11,9 +11,14 @@ import RxCocoa
 
 class SignInViewModel: ViewModelType {
     private let userType: UserType
+    private let signInUseCase: SignInUseCase
     
-    init(userType: UserType) {
+    init(
+        userType: UserType,
+        signInUseCase: SignInUseCase
+    ) {
         self.userType = userType
+        self.signInUseCase = signInUseCase
     }
     
     func transform(input: Input) -> Output {

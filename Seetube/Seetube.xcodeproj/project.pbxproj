@@ -243,6 +243,8 @@
 		04E1463729AF5C9B00DD4204 /* SignInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463629AF5C9B00DD4204 /* SignInResult.swift */; };
 		04E1463929AF5CB000DD4204 /* SignInResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463829AF5CB000DD4204 /* SignInResultDTO.swift */; };
 		04E1463B29AF5CDD00DD4204 /* DefaultSignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463A29AF5CDD00DD4204 /* DefaultSignInRepository.swift */; };
+		04E1463D29AF5D6200DD4204 /* SignInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463C29AF5D6200DD4204 /* SignInUseCase.swift */; };
+		04E1463F29AF5D9000DD4204 /* DefaultSignInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463E29AF5D9000DD4204 /* DefaultSignInUseCase.swift */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
 		04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */; };
@@ -502,6 +504,8 @@
 		04E1463629AF5C9B00DD4204 /* SignInResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResult.swift; sourceTree = "<group>"; };
 		04E1463829AF5CB000DD4204 /* SignInResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResultDTO.swift; sourceTree = "<group>"; };
 		04E1463A29AF5CDD00DD4204 /* DefaultSignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignInRepository.swift; sourceTree = "<group>"; };
+		04E1463C29AF5D6200DD4204 /* SignInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUseCase.swift; sourceTree = "<group>"; };
+		04E1463E29AF5D9000DD4204 /* DefaultSignInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignInUseCase.swift; sourceTree = "<group>"; };
 		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		04E6FC5E29893A400052496A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		04E6FC6029895C400052496A /* ViewControllerPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPushable.swift; sourceTree = "<group>"; };
@@ -831,6 +835,7 @@
 				042B3C0F29AD1B7200FC3881 /* DefaultSignUpUseCase.swift */,
 				042B3C1329AD316500FC3881 /* DefaultValidateSignUpInfoUseCase.swift */,
 				042B3C2029AE341700FC3881 /* DefaultCountDownUseCase.swift */,
+				04E1463E29AF5D9000DD4204 /* DefaultSignInUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1598,6 +1603,7 @@
 				042B3C0D29AD1B4B00FC3881 /* SignUpUseCase.swift */,
 				042B3C1129AD303A00FC3881 /* ValidateSignUpInfoUseCase.swift */,
 				042B3C1E29AE33D700FC3881 /* CountDownUseCase.swift */,
+				04E1463C29AF5D6200DD4204 /* SignInUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1925,6 +1931,7 @@
 				044D25692983C6F0003F4071 /* ReviewProgressView.swift in Sources */,
 				04A678A729964B71006E29C1 /* DefaultFetchReviewerHomeUseCase.swift in Sources */,
 				0447E35529A0CFC2005F0CC9 /* WatchPresentable.swift in Sources */,
+				04E1463F29AF5D9000DD4204 /* DefaultSignInUseCase.swift in Sources */,
 				0490DA922995132F000BBF73 /* ShortsResultRepository.swift in Sources */,
 				0470C9CF2990F1D400D4743B /* YoutuberHomeDTO.swift in Sources */,
 				042B3BF529AD0D2700FC3881 /* TextFieldJoinable.swift in Sources */,
@@ -1981,6 +1988,7 @@
 				04B608CE29A5013D00B811B9 /* CGImage+Extension.swift in Sources */,
 				0490DAB9299543B8000BBF73 /* Date+Extension.swift in Sources */,
 				042B3C1029AD1B7200FC3881 /* DefaultSignUpUseCase.swift in Sources */,
+				04E1463D29AF5D6200DD4204 /* SignInUseCase.swift in Sources */,
 				0490DA6729950958000BBF73 /* VideoInfo.swift in Sources */,
 				049F584D29784FFD002EC2F7 /* ReceiptView.swift in Sources */,
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
