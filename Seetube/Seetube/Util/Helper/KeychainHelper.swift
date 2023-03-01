@@ -29,4 +29,9 @@ final class KeychainHelper {
     private func saveItem(value: String?, _ item: Items) {
         self.keychain[item.rawValue] = value
     }
+    
+    func removeAllItems() {
+        self.keychain.allKeys()
+            .forEach { try? self.keychain.remove($0) }
+    }
 }

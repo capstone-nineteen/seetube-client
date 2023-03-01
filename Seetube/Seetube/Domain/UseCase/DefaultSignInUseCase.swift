@@ -28,6 +28,7 @@ class DefaultSignInUseCase: SignInUseCase {
             .do(onNext: {
                 guard let token = $0?.token else { return }
                 KeychainHelper.standard.accessToken = token
+                UserDefaultHelper.shared.userType = userType
             })
             .map { $0 != nil }
     }
