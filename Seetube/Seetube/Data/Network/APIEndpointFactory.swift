@@ -12,6 +12,7 @@ class APIEndpointFactory {
     enum EndpointType {
         case requestVerificationCode(userType: UserType, email: String)
         case signUp(userType: UserType, info: SignUpInformationDTO)
+        case signIn(userType: UserType, email: String, password: String)
         case getVideoInfo(id: Int)
         case getReviewerHome
         case getVideosBySearchKeyword(keyword: String)
@@ -32,6 +33,8 @@ class APIEndpointFactory {
             case .requestVerificationCode:
                 return .put
             case .signUp:
+                return .post
+            case .signIn:
                 return .post
             case .getVideoInfo:
                 return .get
@@ -80,6 +83,13 @@ class APIEndpointFactory {
                 case .reviewer:
                     return APIUrls.reviewerSignUp
                 }
+            case .signIn(let userType, _, _):
+                switch userType {
+                case .youtuber:
+                    return APIUrls.youtuberSignIn
+                case .reviewer:
+                    return APIUrls.reviewerSignIn
+                }
             case .getVideoInfo(let id):
                 return APIUrls.videoInfo + "/\(id)"
             case .getReviewerHome:
@@ -117,6 +127,8 @@ class APIEndpointFactory {
                 return ["email": email]
             case .signUp(_, let info):
                 return info.dictionary
+            case .signIn(_, let email, let password):
+                return ["email": email, "password": password]
             case .getVideoInfo:
                 return nil
             case .getReviewerHome:
