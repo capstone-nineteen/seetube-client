@@ -51,7 +51,7 @@ class DefaultValidateSignUpInfoUseCase: ValidateSignUpInfoUseCase {
             return .empty
         }
         
-        let passwordRegex = "^[a-zA-Z!@#$%^&*()_+\\-={}|\\[\\]\\;:'\",.<>/?`~\\\\]+$"
+        let passwordRegex = "^[a-zA-Z0-9!@#$%^&*()_+\\-={}|\\[\\]\\;:'\",.<>/?`~\\\\]+$"
         let passwordPredicate = NSPredicate(format:"SELF MATCHES %@", passwordRegex)
         if !passwordPredicate.evaluate(with: password) {
             return .containsCharactersThatAreNotAllowed

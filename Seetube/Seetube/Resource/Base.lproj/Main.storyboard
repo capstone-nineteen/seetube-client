@@ -315,7 +315,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="영문 + 특수글자 10자 이상" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGu-Jk-HYu" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
+                            <textField opaque="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="영문 + 숫자 + 특수문자 10자 이상" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGu-Jk-HYu" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="20" y="361" width="300" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Pg3-1p-b1q"/>
@@ -360,12 +360,25 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="name" value="가입하기"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk7-tN-1nR">
-                                <rect key="frame" x="185" y="246.5" width="45" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk7-tN-1nR">
+                                <rect key="frame" x="243" y="256.5" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3O-lR-AGR" customClass="AlphaButton" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="185" y="240.5" width="43" height="32"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="8" maxX="10" maxY="8"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="인증"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hC2-XQ-lI2"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -374,6 +387,7 @@
                             <constraint firstItem="BL4-b1-BKy" firstAttribute="top" secondItem="aki-GP-gN7" secondAttribute="bottom" constant="10" id="3G8-bh-1PU"/>
                             <constraint firstItem="YNu-02-Ky6" firstAttribute="leading" secondItem="hC2-XQ-lI2" secondAttribute="leading" constant="20" id="3fb-to-kb2"/>
                             <constraint firstItem="U0X-MO-s0i" firstAttribute="leading" secondItem="rw4-HH-JjH" secondAttribute="leading" id="4a7-KP-nrw"/>
+                            <constraint firstItem="g3O-lR-AGR" firstAttribute="leading" secondItem="aki-GP-gN7" secondAttribute="trailing" constant="15" id="7fY-yu-oIG"/>
                             <constraint firstItem="eoo-nF-AlB" firstAttribute="leading" secondItem="YNu-02-Ky6" secondAttribute="leading" id="9m5-sW-tRn"/>
                             <constraint firstItem="dCY-b8-Q7v" firstAttribute="top" secondItem="1Ej-WY-gth" secondAttribute="bottom" constant="10" id="B88-45-toa"/>
                             <constraint firstItem="1Ej-WY-gth" firstAttribute="leading" secondItem="YNu-02-Ky6" secondAttribute="leading" id="D6H-R4-992"/>
@@ -384,6 +398,7 @@
                             <constraint firstItem="Iu1-px-9Bj" firstAttribute="leading" secondItem="GRx-5H-gFy" secondAttribute="leading" id="O5L-YG-k9X"/>
                             <constraint firstItem="hGu-Jk-HYu" firstAttribute="leading" secondItem="rw4-HH-JjH" secondAttribute="leading" id="Odg-QB-H00"/>
                             <constraint firstItem="bhC-Q5-c22" firstAttribute="centerY" secondItem="Iu1-px-9Bj" secondAttribute="centerY" id="Ojz-hr-mwo"/>
+                            <constraint firstItem="g3O-lR-AGR" firstAttribute="centerY" secondItem="aki-GP-gN7" secondAttribute="centerY" id="Rtn-qX-h8c"/>
                             <constraint firstItem="U0X-MO-s0i" firstAttribute="top" secondItem="a8B-0W-c3d" secondAttribute="bottom" constant="15" id="SFo-90-Qun"/>
                             <constraint firstItem="zKP-Ho-ZXJ" firstAttribute="leading" secondItem="Iu1-px-9Bj" secondAttribute="leading" id="Sff-3U-ibl"/>
                             <constraint firstItem="a8B-0W-c3d" firstAttribute="top" secondItem="hGu-Jk-HYu" secondAttribute="bottom" constant="10" id="VPs-yJ-KCk"/>
@@ -397,7 +412,7 @@
                             <constraint firstItem="AnJ-Mm-qaJ" firstAttribute="leading" secondItem="U0X-MO-s0i" secondAttribute="leading" id="lrx-fa-7xQ"/>
                             <constraint firstItem="1Ej-WY-gth" firstAttribute="top" secondItem="YNu-02-Ky6" secondAttribute="bottom" constant="10" id="mhh-j9-MgD"/>
                             <constraint firstItem="zKP-Ho-ZXJ" firstAttribute="top" secondItem="Iu1-px-9Bj" secondAttribute="bottom" constant="10" id="mkd-SB-okC"/>
-                            <constraint firstItem="hk7-tN-1nR" firstAttribute="leading" secondItem="aki-GP-gN7" secondAttribute="trailing" constant="15" id="ov8-3v-sLq"/>
+                            <constraint firstItem="hk7-tN-1nR" firstAttribute="leading" secondItem="g3O-lR-AGR" secondAttribute="trailing" constant="15" id="ov8-3v-sLq"/>
                             <constraint firstItem="dCY-b8-Q7v" firstAttribute="leading" secondItem="1Ej-WY-gth" secondAttribute="leading" id="s9U-5h-xSa"/>
                             <constraint firstItem="hC2-XQ-lI2" firstAttribute="bottom" secondItem="eoo-nF-AlB" secondAttribute="bottom" constant="20" id="tX8-rX-11S"/>
                             <constraint firstItem="GRx-5H-gFy" firstAttribute="leading" secondItem="YNu-02-Ky6" secondAttribute="leading" id="ues-qK-QI3"/>
@@ -418,6 +433,7 @@
                         <outlet property="passwordValidationLabel" destination="a8B-0W-c3d" id="6y1-0z-5iy"/>
                         <outlet property="remainingTimeLabel" destination="hk7-tN-1nR" id="tFw-Ue-dA0"/>
                         <outlet property="signUpButton" destination="eoo-nF-AlB" id="goi-Wx-z3n"/>
+                        <outlet property="verificationButton" destination="g3O-lR-AGR" id="k79-QO-31y"/>
                         <outlet property="verificationCodeRequestButton" destination="bhC-Q5-c22" id="zUD-zb-REB"/>
                         <outlet property="verificationCodeTextField" destination="aki-GP-gN7" id="dh8-pe-9jG"/>
                         <outlet property="verificationCodeValidationLabel" destination="BL4-b1-BKy" id="khq-8H-Bsm"/>
@@ -1892,11 +1908,14 @@
         <designable name="fOj-Qb-oel">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
+        <designable name="g3O-lR-AGR">
+            <size key="intrinsicContentSize" width="43" height="32"/>
+        </designable>
         <designable name="gmX-Da-P0M">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="hGu-Jk-HYu">
-            <size key="intrinsicContentSize" width="183" height="21"/>
+            <size key="intrinsicContentSize" width="233" height="21"/>
         </designable>
         <designable name="k9L-Rb-zAs">
             <size key="intrinsicContentSize" width="30" height="34"/>

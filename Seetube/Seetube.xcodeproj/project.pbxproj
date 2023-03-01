@@ -50,6 +50,8 @@
 		042B3C1829ADDACC00FC3881 /* SignUpValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C1729ADDACC00FC3881 /* SignUpValidationResult.swift */; };
 		042B3C1A29ADFDB300FC3881 /* SignUpValidationResult+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C1929ADFDB300FC3881 /* SignUpValidationResult+Extension.swift */; };
 		042B3C1C29AE148700FC3881 /* AlphaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C1B29AE148700FC3881 /* AlphaButton.swift */; };
+		042B3C1F29AE33D700FC3881 /* CountDownUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C1E29AE33D700FC3881 /* CountDownUseCase.swift */; };
+		042B3C2129AE341700FC3881 /* DefaultCountDownUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B3C2029AE341700FC3881 /* DefaultCountDownUseCase.swift */; };
 		042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B622A29AA47BA004178CD /* UserTypeButton.swift */; };
 		042B622F29AA47E0004178CD /* UserTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042B622E29AA47E0004178CD /* UserTypeButton.xib */; };
 		042B623129AA485C004178CD /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623029AA485C004178CD /* UserType.swift */; };
@@ -236,6 +238,7 @@
 		04C3DB5C29A3CA2B00D1E3BA /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3DB5B29A3CA2B00D1E3BA /* ObservableType+Extension.swift */; };
 		04DAB1B329A658CF006CF9F6 /* RawReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB1B229A658CF006CF9F6 /* RawReview.swift */; };
 		04DAB1B529A68E42006CF9F6 /* VideoRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB1B429A68E42006CF9F6 /* VideoRect.swift */; };
+		04E1463329AF1FC200DD4204 /* Driver+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463229AF1FC200DD4204 /* Driver+Extension.swift */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
 		04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */; };
@@ -308,6 +311,8 @@
 		042B3C1929ADFDB300FC3881 /* SignUpValidationResult+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpValidationResult+Extension.swift"; sourceTree = "<group>"; };
 		042B3C1B29AE148700FC3881 /* AlphaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaButton.swift; sourceTree = "<group>"; };
 		042B3C1D29AE162700FC3881 /* Seetube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Seetube.entitlements; sourceTree = "<group>"; };
+		042B3C1E29AE33D700FC3881 /* CountDownUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownUseCase.swift; sourceTree = "<group>"; };
+		042B3C2029AE341700FC3881 /* DefaultCountDownUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCountDownUseCase.swift; sourceTree = "<group>"; };
 		042B622A29AA47BA004178CD /* UserTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeButton.swift; sourceTree = "<group>"; };
 		042B622E29AA47E0004178CD /* UserTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeButton.xib; sourceTree = "<group>"; };
 		042B623029AA485C004178CD /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
@@ -488,6 +493,7 @@
 		04C3DB5B29A3CA2B00D1E3BA /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		04DAB1B229A658CF006CF9F6 /* RawReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawReview.swift; sourceTree = "<group>"; };
 		04DAB1B429A68E42006CF9F6 /* VideoRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRect.swift; sourceTree = "<group>"; };
+		04E1463229AF1FC200DD4204 /* Driver+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Driver+Extension.swift"; sourceTree = "<group>"; };
 		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		04E6FC5E29893A400052496A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		04E6FC6029895C400052496A /* ViewControllerPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPushable.swift; sourceTree = "<group>"; };
@@ -671,6 +677,7 @@
 				047B8792299FA51200F4AA42 /* Encodable+Extension.swift */,
 				047B87A2299FF5F000F4AA42 /* String+Extension.swift */,
 				04C3DB5B29A3CA2B00D1E3BA /* ObservableType+Extension.swift */,
+				04E1463229AF1FC200DD4204 /* Driver+Extension.swift */,
 				04B608CD29A5013D00B811B9 /* CGImage+Extension.swift */,
 				042B3C1929ADFDB300FC3881 /* SignUpValidationResult+Extension.swift */,
 			);
@@ -815,6 +822,7 @@
 				042B3C0B29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift */,
 				042B3C0F29AD1B7200FC3881 /* DefaultSignUpUseCase.swift */,
 				042B3C1329AD316500FC3881 /* DefaultValidateSignUpInfoUseCase.swift */,
+				042B3C2029AE341700FC3881 /* DefaultCountDownUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1577,6 +1585,7 @@
 				042B3C0929AD19C900FC3881 /* RequestVerificationCodeUseCase.swift */,
 				042B3C0D29AD1B4B00FC3881 /* SignUpUseCase.swift */,
 				042B3C1129AD303A00FC3881 /* ValidateSignUpInfoUseCase.swift */,
+				042B3C1E29AE33D700FC3881 /* CountDownUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1819,6 +1828,7 @@
 				040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */,
 				044D258229843403003F4071 /* ReviewerHomeCollectionViewCell.swift in Sources */,
 				047072802979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift in Sources */,
+				04E1463329AF1FC200DD4204 /* Driver+Extension.swift in Sources */,
 				047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */,
 				044DF34329ACC1B20013BCF9 /* SignUpPushable.swift in Sources */,
 				0490DAA6299539BF000BBF73 /* DefaultConcentrationResultRepository.swift in Sources */,
@@ -1884,6 +1894,7 @@
 				0490DA572994C2A1000BBF73 /* MyPageRepository.swift in Sources */,
 				044D257C298401AE003F4071 /* YoutuberVideoDetailView.swift in Sources */,
 				04867F0C29A79CD100FD9670 /* SubmitReviewUseCase.swift in Sources */,
+				042B3C1F29AE33D700FC3881 /* CountDownUseCase.swift in Sources */,
 				0490DA7329950B89000BBF73 /* YoutuberHome.swift in Sources */,
 				0470C9D62990F76600D4743B /* EmotionResultDTO.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
@@ -1961,6 +1972,7 @@
 				0470C9BE2990E78E00D4743B /* MyPageDTO.swift in Sources */,
 				04B8AF0B299BBB8A0024C897 /* SearchUseCase.swift in Sources */,
 				0470C9C22990EA0B00D4743B /* WithdrawInformationDTO.swift in Sources */,
+				042B3C2129AE341700FC3881 /* DefaultCountDownUseCase.swift in Sources */,
 				042B3BF829AD11F700FC3881 /* SignUpViewModel.swift in Sources */,
 				0490DA652994FF1E000BBF73 /* NetworkRequestable.swift in Sources */,
 				04E6FC66298971F30052496A /* KeyboardDismissible.swift in Sources */,

@@ -11,7 +11,8 @@ import RxCocoa
 
 class SignUpViewController: UIViewController,
                             KeyboardDismissible,
-                            TextFieldJoinable
+                            TextFieldJoinable,
+                            AlertDisplaying
 {
     @IBOutlet weak var nicknameTextField: UnderLineTextField!
     @IBOutlet weak var emailTextField: UnderLineTextField!
@@ -24,6 +25,7 @@ class SignUpViewController: UIViewController,
     @IBOutlet weak var passwordValidationLabel: UILabel!
     @IBOutlet weak var passwordConfirmValidationLabel: UILabel!
     @IBOutlet weak var verificationCodeRequestButton: UIButton!
+    @IBOutlet weak var verificationButton: AlphaButton!
     @IBOutlet weak var remainingTimeLabel: UILabel!
     @IBOutlet weak var signUpButton: BottomButton!
     
@@ -65,13 +67,13 @@ extension SignUpViewController {
         guard let viewModel = self.viewModel else { return }
         
         let nickname = self.nicknameProperty()
-            .debug("vc nickname")
         let email = self.emailProperty()
         let verificationCode = self.verificationCodeProperty()
         let password = self.passwordProperty()
         let passwordConfirm = self.passwordConfirmProperty()
         let requestButtonTouched = self.requestButtonTouchedEvent()
         let signUpButtonTouched = self.signUpButtonTouchedEvent()
+        let verificaionButtonTouched = self.verificationButtonTouchedEvent()
         
         let input = SignUpViewModel.Input(nickname: nickname,
                                           email: email,
@@ -79,16 +81,21 @@ extension SignUpViewController {
                                           password: password,
                                           passwordConfirm: passwordConfirm,
                                           requestButtonTouched: requestButtonTouched,
-                                          signUpButtonTouched: signUpButtonTouched)
+                                          signUpButtonTouched: signUpButtonTouched,
+                                          verificationButtonTouched: verificaionButtonTouched)
         let output = viewModel.transform(input: input)
         
         self.bindNicknameValidationResult(output.nicknameValidationResult)
         self.bindEmailValidationResult(output.emailValidationResult)
         self.bindVerificationCodeRequestResult(output.verificationCodeRequestResult)
         self.bindVerificationCodeValidationResult(output.verificationCodeValidationResult)
+        self.bindRemainingVerificationTime(output.remainingVerificationTime)
+        self.bindCanRequestVerificationCode(output.canRequestVerificationCode)
+        self.bindCanVerify(output.canVerify)
         self.bindPasswordValidationResult(output.passwordValidationResult)
         self.bindPasswordConfirmValidationResult(output.passwordConfirmValidationResult)
         self.bindFinalValidationResult(output.finalValidationResult)
+        self.bindSignUpResult(output.signUpResult)
     }
     
     // MARK: Input Event Creation
@@ -119,6 +126,10 @@ extension SignUpViewController {
     
     private func signUpButtonTouchedEvent() -> Driver<Void> {
         return self.signUpButton.rx.tap.asDriver()
+    }
+    
+    private func verificationButtonTouchedEvent() -> Driver<Void> {
+        return self.verificationButton.rx.tap.asDriver()
     }
     
     // MARK: Output Binding
@@ -166,13 +177,42 @@ extension SignUpViewController {
     
     private func bindVerificationCodeValidationResult(_ result: Driver<SignUpValidationResult>) {
         result
-            .mapToColor()
-            .drive(self.verificationCodeValidationLabel.rx.textColor)
-            .disposed(by: self.disposeBag)
-        
-        result
             .map { $0.message }
             .drive(self.verificationCodeValidationLabel.rx.text)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindCanRequestVerificationCode(_ canRequest: Driver<Bool>) {
+        canRequest
+            .drive(self.verificationCodeRequestButton.rx.isEnabled)
+            .disposed(by: self.disposeBag)
+        
+        canRequest
+            .drive(self.emailTextField.rx.isEnabled)
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindCanVerify(_ canVerify: Driver<Bool>) {
+        canVerify
+            .drive(self.verificationButton.rx.isEnabled)
+            .disposed(by: self.disposeBag)
+        
+        canVerify
+            .drive(self.verificationCodeTextField.rx.isEnabled)
+            .disposed(by: self.disposeBag)
+        
+        canVerify
+            .filter { $0 }
+            .drive(with: self) { obj, _ in
+                obj.verificationCodeTextField.text = nil
+                obj.verificationCodeValidationLabel.text = nil
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindRemainingVerificationTime(_ time: Driver<String?>) {
+        time
+            .drive(self.remainingTimeLabel.rx.text)
             .disposed(by: self.disposeBag)
     }
     
@@ -202,8 +242,38 @@ extension SignUpViewController {
     
     private func bindFinalValidationResult(_ result: Driver<Bool>) {
         result
-            .debug("final result")
             .drive(self.signUpButton.rx.isEnabled)
             .disposed(by: self.disposeBag)
+    }
+    
+    private func bindSignUpResult(_ result: Driver<Bool>) {
+        result
+            .drive(with: self) { obj, success in
+                if success {
+                    obj.displaySignUpSucceedAlert()
+                } else {
+                    obj.displaySignUpFailedAlert()
+                }
+            }
+            .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: - Alerts
+
+extension SignUpViewController {
+    private func displaySignUpSucceedAlert() {
+        self.displayAlertWithAction(
+            title: "회원가입 완료",
+            message: "회원가입이 완료되었습니다."
+        ) { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    private func displaySignUpFailedAlert() {
+        self.displayFailureAlert(
+            message: "회원가입에 실패했습니다.\n잠시후 다시 시도해주세요."
+        )
     }
 }

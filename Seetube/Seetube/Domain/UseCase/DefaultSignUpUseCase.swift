@@ -18,7 +18,7 @@ class DefaultSignUpUseCase: SignUpUseCase {
     func execute(
         userType: UserType,
         info: SignUpInformation
-    ) -> Observable<Bool?> {
+    ) -> Observable<Bool> {
         return self.repository.signUp(userType: userType, info: info)
             .map { $0?.status == 200 }
     }

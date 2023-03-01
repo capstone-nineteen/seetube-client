@@ -14,21 +14,25 @@ class SignUpViewModel: ViewModelType {
     private let requestVerificationCodeUseCase: RequestVerificationCodeUseCase
     private let signUpUseCase: SignUpUseCase
     private let validateUseCase: ValidateSignUpInfoUseCase
-    // TODO: 타이머 유즈케이스
+    private let countDownUseCase: CountDownUseCase
     
     init(
          userType: UserType,
          requestVerificationCodeUseCase: RequestVerificationCodeUseCase,
          signUpUseCase: SignUpUseCase,
-         validateUseCase: ValidateSignUpInfoUseCase
+         validateUseCase: ValidateSignUpInfoUseCase,
+         countDownUseCase: CountDownUseCase
     ) {
         self.userType = userType
         self.requestVerificationCodeUseCase = requestVerificationCodeUseCase
         self.signUpUseCase = signUpUseCase
         self.validateUseCase = validateUseCase
+        self.countDownUseCase = countDownUseCase
     }
     
     func transform(input: Input) -> Output {
+        // nickname
+        
         let nicknameValidationResult = input.nickname
             .distinctUntilChanged()
             .map { [weak self] nickname in
@@ -55,7 +59,8 @@ class SignUpViewModel: ViewModelType {
                 
                 return SignUpValidationResult(isValid: isValid, message: message)
             }
-            .debug("nickname")
+        
+        // email
         
         let emailValidationResult = input.email
             .distinctUntilChanged()
@@ -83,19 +88,17 @@ class SignUpViewModel: ViewModelType {
                 
                 return SignUpValidationResult(isValid: isValid, message: message)
             }
-            .debug("email")
+        
+        // verificaion code
         
         let verificationCodeRequest = input.requestButtonTouched
-            .debug("touched!!!!")
             .withLatestFrom(input.email) { $1 }
-            .debug("with latest from!!")
             .flatMap { [weak self] email -> Driver<VerificationCodeRequestResult?> in
                 guard let self = self else { return .just(nil) }
                 return self.requestVerificationCodeUseCase
                     .execute(userType: self.userType, email: email)
                     .asDriver(onErrorJustReturn: nil)
             }
-            .debug("verificationCodeRequest")
         
         let verificationCodeRequestResult = verificationCodeRequest
             .map {
@@ -124,19 +127,40 @@ class SignUpViewModel: ViewModelType {
                 return SignUpValidationResult(isValid: isValid,
                                               message: message)
             }
-            .debug("verificationcodeRequestReulst")
         
-        let verificationCode = verificationCodeRequest
-            .compactMap { $0?.verificationCode }
-            .debug("verificationCode")
+        let remainingTime = verificationCodeRequest
+            .filter { $0?.verificationCode != nil }
+            .flatMap { [weak self] _ -> Driver<Int> in
+                guard let self = self else { return .just(0) }
+                return self.countDownUseCase
+                    .execute(time: 30)
+                    .asDriver(onErrorJustReturn: 0)
+            }
         
-        let verificationCodeValidationResult = input.verificationCode
+        let verificationCodeExpired = remainingTime
+            .map { $0 == 0 ? true : false }
+            .startWith(true)
+            .distinctUntilChanged()
+        
+        let verificationCode = Driver
+            .combineLatest(
+                verificationCodeRequest.map { $0?.verificationCode },
+                verificationCodeExpired
+            ) { $1 ? nil : $0 }
+            .startWith(nil)
+        
+        let isVerificationCodeActive = verificationCode
+            .map { $0 != nil }
+        
+        let verificationCodeValidationResult = input.verificationButtonTouched
+            .withLatestFrom(input.verificationCode) { $1 }
             .distinctUntilChanged()
             .asObservable()
-            .withLatestFrom(verificationCode) { ($0, $1) }
-            .map { [weak self] in
-                self?.validateUseCase.execute(userEnteredVerificationCode: $0.0,
-                                              actualVerificationCode: $0.1)
+            .withLatestFrom(verificationCode) { (user: $0, actual: $1) }
+            .map { [weak self] verificationCodes -> SignUpValidationError? in
+                guard let actualVerificaitonCode = verificationCodes.actual else { return .empty }
+                return self?.validateUseCase.execute(userEnteredVerificationCode: verificationCodes.user,
+                                                     actualVerificationCode: actualVerificaitonCode)
             }
             .map { error -> SignUpValidationResult in
                 let isValid: Bool
@@ -146,22 +170,81 @@ class SignUpViewModel: ViewModelType {
                     isValid = false
                     switch error {
                     case .mismatch:
-                        message = "인증번호가 일치하지 않습니다."
+                        message = "인증번호 불일치"
                     case .empty:
                         message = nil
                     default:
-                        message = "인증에 실패하였습니다"
+                        message = "인증 실패"
                     }
                 } else {
                     isValid = true
-                    message = "인증되었습니다."
+                    message = "인증 완료"
                 }
                 
                 return SignUpValidationResult(isValid: isValid, message: message)
             }
             .asDriver(onErrorJustReturn: SignUpValidationResult(isValid: false, message: nil))
-            .debug("verificationCode validation")
+        
+        // request verification code button
+        
+        let shouldEnableRequestButton = Driver
+            .combineLatest(
+                emailValidationResult,
+                verificationCodeRequestResult,
+                verificationCodeValidationResult,
+                isVerificationCodeActive
+            ) { ($0, $1, $2, $3) }
+            .filter { $0.0.isValid && !$0.2.isValid && (!$0.3 || !$0.1.isValid) }
+        
+        let shouldDisableRequestButton = Driver
+            .merge(
+                input.requestButtonTouched,
+                isVerificationCodeActive
+                    .filter { $0 }
+                    .mapToVoid(),
+                verificationCodeValidationResult
+                    .map { $0.isValid }
+                    .filter { $0 }
+                    .mapToVoid()
+            )
+        
+        let canRequest = Driver
+            .merge(
+                shouldEnableRequestButton.map { _ in true },
+                shouldDisableRequestButton.map { _ in false }
+            )
+        
+        // verify button
+        
+        let shouldEnableVerifyButton = isVerificationCodeActive
+            .filter { $0 }
+            .mapToVoid()
+        
+        let shouldDisableVerifyButton = Driver
+            .merge(
+                isVerificationCodeActive.filter { !$0 },
+                verificationCodeValidationResult.map { $0.isValid }.filter { $0 }
+            )
+            .mapToVoid()
+        
+        let canVerify = Driver
+            .merge(
+                shouldEnableVerifyButton.map { _ in true },
+                shouldDisableVerifyButton.map { _ in false }
+            )
+        
+        // remaining time label
+        
+        let remainingTimeString = remainingTime
+            .map { sec -> String? in
+                let minute = String(format: "%02d", sec / 60)
+                let seconds = String(format: "%02d", sec % 60)
+                return "\(minute):\(seconds)"
+            }
+            .withLatestFrom(canVerify) { ($0, $1) }
+            .map { $0.1 ? $0.0 : nil }
 
+        // password
         
         let passwordValidationResult = input.password
             .distinctUntilChanged()
@@ -178,7 +261,7 @@ class SignUpViewModel: ViewModelType {
                     case .tooShort:
                         message = "10자 이상이어야 합니다."
                     case .containsCharactersThatAreNotAllowed:
-                        message = "영문과 특수문자만 사용 가능합니다."
+                        message = "영문과 숫자 및 특수문자만 사용 가능합니다."
                     case .empty:
                         message = nil
                     default:
@@ -191,7 +274,8 @@ class SignUpViewModel: ViewModelType {
                 
                 return SignUpValidationResult(isValid: isValid, message: message)
             }
-            .debug("passwordvalidation")
+        
+        // password confirm
         
         let passwordConfirmValidationResult = Driver
             .combineLatest(
@@ -223,7 +307,8 @@ class SignUpViewModel: ViewModelType {
                 
                 return SignUpValidationResult(isValid: isValid, message: message)
             }
-            .debug("password confirm")
+        
+        // final validation result
         
         let finalValidationResult = Driver
             .combineLatest(
@@ -237,13 +322,38 @@ class SignUpViewModel: ViewModelType {
             }
             .startWith(false)
         
+        let signUpInfo = Driver
+            .combineLatest(
+                input.nickname,
+                input.email,
+                input.password
+            ) { ($0, $1, $2) }
+            .map {
+                SignUpInformation(nickname: $0.0,
+                                  email: $0.1,
+                                  password: $0.2)
+            }
+        
+        let signUpResult = input.signUpButtonTouched
+            .withLatestFrom(signUpInfo) { $1 }
+            .flatMap { [weak self] info -> Driver<Bool> in
+                guard let self = self else { return .just(false) }
+                return self.signUpUseCase
+                    .execute(userType: self.userType, info: info)
+                    .asDriver(onErrorJustReturn: false)
+            }
+        
         return Output(nicknameValidationResult: nicknameValidationResult,
                       emailValidationResult: emailValidationResult,
                       verificationCodeRequestResult: verificationCodeRequestResult,
                       verificationCodeValidationResult: verificationCodeValidationResult,
+                      remainingVerificationTime: remainingTimeString,
+                      canRequestVerificationCode: canRequest,
+                      canVerify: canVerify,
                       passwordValidationResult: passwordValidationResult,
                       passwordConfirmValidationResult: passwordConfirmValidationResult,
-                      finalValidationResult: finalValidationResult)
+                      finalValidationResult: finalValidationResult,
+                      signUpResult: signUpResult)
     }
 }
 
@@ -256,6 +366,7 @@ extension SignUpViewModel {
         let passwordConfirm: Driver<String>
         let requestButtonTouched: Driver<Void>
         let signUpButtonTouched: Driver<Void>
+        let verificationButtonTouched: Driver<Void>
     }
     
     struct Output {
@@ -263,9 +374,12 @@ extension SignUpViewModel {
         let emailValidationResult: Driver<SignUpValidationResult>
         let verificationCodeRequestResult: Driver<SignUpValidationResult>
         let verificationCodeValidationResult: Driver<SignUpValidationResult>
+        let remainingVerificationTime: Driver<String?>
+        let canRequestVerificationCode: Driver<Bool>
+        let canVerify: Driver<Bool>
         let passwordValidationResult: Driver<SignUpValidationResult>
         let passwordConfirmValidationResult: Driver<SignUpValidationResult>
         let finalValidationResult: Driver<Bool>
-        // TODO: SignUpResult
+        let signUpResult: Driver<Bool>
     }
 }
