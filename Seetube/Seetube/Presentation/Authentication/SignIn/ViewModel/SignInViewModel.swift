@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class SignInViewModel: ViewModelType {
     private let userType: UserType
@@ -15,16 +17,22 @@ class SignInViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        return Output()
+        let shouldMoveToSignUp = input.signUpButtonTouched
+            .map { [weak self] _ in
+                return self?.userType
+            }
+            .compactMap { $0 }
+        
+        return Output(shouldMoveToSignUp: shouldMoveToSignUp)
     }
 }
 
 extension SignInViewModel {
     struct Input {
-        
+        let signUpButtonTouched: Driver<Void>
     }
     
     struct Output {
-        
+        let shouldMoveToSignUp: Driver<UserType>
     }
 }

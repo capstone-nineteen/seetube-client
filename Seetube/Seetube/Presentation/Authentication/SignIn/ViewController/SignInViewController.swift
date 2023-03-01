@@ -24,6 +24,7 @@ class SignInViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureUI()
+        self.bindViewModel()
     }
 }
 
@@ -31,23 +32,43 @@ class SignInViewController: UIViewController,
 
 extension SignInViewController {
     private func configureUI() {
-        self.configureSignUpButton()
         self.configureTextFields()
-    }
-    
-    private func configureSignUpButton() {
-        self.signUpButton.rx.tap
-            .asDriver()
-            .drive(with: self) { obj, _ in
-                // TODO: userType 전달
-                obj.pushSignUp(userType: .youtuber)
-            }
-            .disposed(by: self.disposeBag)
     }
     
     private func configureTextFields() {
         let textFields = [self.idTextField, self.pwTextField]
         self.joinTextFields(textFields)
+            .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: - ViewModel Binding
+
+extension SignInViewController {
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        let signUpButtonTouched = self.signUpButtonTouchedEvent()
+        
+        let input = SignInViewModel.Input(signUpButtonTouched: signUpButtonTouched)
+        let output = viewModel.transform(input: input)
+        
+        self.bindShoudlMoveToSignUp(output.shouldMoveToSignUp)
+    }
+    
+    // MARK: Input Event Creation
+    
+    private func signUpButtonTouchedEvent() -> Driver<Void> {
+        return self.signUpButton.rx.tap.asDriver()
+    }
+    
+    // MARK: Output Binding
+    
+    private func bindShoudlMoveToSignUp(_ userType: Driver<UserType>) {
+        userType
+            .drive(with: self) { obj, userType in
+                obj.pushSignUp(userType: userType)
+            }
             .disposed(by: self.disposeBag)
     }
 }
