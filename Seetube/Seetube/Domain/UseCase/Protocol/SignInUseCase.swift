@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol SignInUseCase {
-    func execute(userType: UserType, email: String, password: String) -> Observable<Bool>
+    func execute(userType: UserType, email: String, password: String) -> Observable<SignInResult?>
 }

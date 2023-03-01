@@ -19,11 +19,10 @@ class DefaultSignInUseCase: SignInUseCase {
         userType: UserType,
         email: String,
         password: String
-    ) -> Observable<Bool> {
+    ) -> Observable<SignInResult?> {
         return self.repository
             .signIn(userType: userType,
                     email: email,
                     password: password)
-            .map { $0?.status == 200 }
     }
 }

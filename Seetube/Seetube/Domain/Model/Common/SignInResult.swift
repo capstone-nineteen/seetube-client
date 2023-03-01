@@ -8,6 +8,5 @@
 import Foundation
 
 struct SignInResult {
-    let message: String
-    let status: Int
+    let token: String
 }

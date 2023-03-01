@@ -8,11 +8,9 @@
 import Foundation
 
 struct SignInResultDTO: Decodable, DomainConvertible {
-    let message: String
-    let status: Int
+    let token: String
     
     func toDomain() -> SignInResult {
-        SignInResult(message: self.message,
-                     status: self.status)
+        SignInResult(token: self.token)
     }
 }
