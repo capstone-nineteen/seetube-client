@@ -239,6 +239,10 @@
 		04DAB1B329A658CF006CF9F6 /* RawReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB1B229A658CF006CF9F6 /* RawReview.swift */; };
 		04DAB1B529A68E42006CF9F6 /* VideoRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB1B429A68E42006CF9F6 /* VideoRect.swift */; };
 		04E1463329AF1FC200DD4204 /* Driver+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463229AF1FC200DD4204 /* Driver+Extension.swift */; };
+		04E1463529AF5C5700DD4204 /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463429AF5C5700DD4204 /* SignInRepository.swift */; };
+		04E1463729AF5C9B00DD4204 /* SignInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463629AF5C9B00DD4204 /* SignInResult.swift */; };
+		04E1463929AF5CB000DD4204 /* SignInResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463829AF5CB000DD4204 /* SignInResultDTO.swift */; };
+		04E1463B29AF5CDD00DD4204 /* DefaultSignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463A29AF5CDD00DD4204 /* DefaultSignInRepository.swift */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
 		04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */; };
@@ -494,6 +498,10 @@
 		04DAB1B229A658CF006CF9F6 /* RawReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawReview.swift; sourceTree = "<group>"; };
 		04DAB1B429A68E42006CF9F6 /* VideoRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRect.swift; sourceTree = "<group>"; };
 		04E1463229AF1FC200DD4204 /* Driver+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Driver+Extension.swift"; sourceTree = "<group>"; };
+		04E1463429AF5C5700DD4204 /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
+		04E1463629AF5C9B00DD4204 /* SignInResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResult.swift; sourceTree = "<group>"; };
+		04E1463829AF5CB000DD4204 /* SignInResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResultDTO.swift; sourceTree = "<group>"; };
+		04E1463A29AF5CDD00DD4204 /* DefaultSignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignInRepository.swift; sourceTree = "<group>"; };
 		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		04E6FC5E29893A400052496A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		04E6FC6029895C400052496A /* ViewControllerPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPushable.swift; sourceTree = "<group>"; };
@@ -1352,6 +1360,7 @@
 				042B3BF929AD140E00FC3881 /* SignUpInformationDTO.swift */,
 				042B3C0329AD16A100FC3881 /* SignUpResultDTO.swift */,
 				042B3C0729AD193200FC3881 /* VerificationCodeRequestResultDTO.swift */,
+				04E1463829AF5CB000DD4204 /* SignInResultDTO.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1468,6 +1477,7 @@
 				042B3BFF29AD15B900FC3881 /* SignUpResult.swift */,
 				042B3C0529AD188900FC3881 /* VerificationCodeRequestResult.swift */,
 				042B3C1729ADDACC00FC3881 /* SignUpValidationResult.swift */,
+				04E1463629AF5C9B00DD4204 /* SignInResult.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1508,6 +1518,7 @@
 			children = (
 				0490DA8029951199000BBF73 /* VideoDetailRepository.swift */,
 				042B3BFB29AD153000FC3881 /* SignUpRepository.swift */,
+				04E1463429AF5C5700DD4204 /* SignInRepository.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1542,6 +1553,7 @@
 			children = (
 				0490DA992995143B000BBF73 /* DefaultVideoDetailRepository.swift */,
 				042B3C0129AD160000FC3881 /* DefaultSignUpRepository.swift */,
+				04E1463A29AF5CDD00DD4204 /* DefaultSignInRepository.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1863,6 +1875,7 @@
 				0490DA4E29940B7E000BBF73 /* MyPage.swift in Sources */,
 				04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */,
 				0490DA7729950B9D000BBF73 /* EmotionResult.swift in Sources */,
+				04E1463729AF5C9B00DD4204 /* SignInResult.swift in Sources */,
 				042B3C1C29AE148700FC3881 /* AlphaButton.swift in Sources */,
 				042B3BFE29AD156200FC3881 /* SignUpInformation.swift in Sources */,
 				0470C9C42990EA9800D4743B /* VideoListDTO.swift in Sources */,
@@ -1946,9 +1959,11 @@
 				047B8791299F7D1300F4AA42 /* WithdrawalInformationPushable.swift in Sources */,
 				044D25792983FFBE003F4071 /* ReviewerVideoDetailView.swift in Sources */,
 				042B3C1229AD303A00FC3881 /* ValidateSignUpInfoUseCase.swift in Sources */,
+				04E1463B29AF5CDD00DD4204 /* DefaultSignInRepository.swift in Sources */,
 				040E3CCD2971C8C20057B25E /* LargeListStyleResultView.swift in Sources */,
 				042B3C0C29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift in Sources */,
 				0490DA9E29952DDF000BBF73 /* DefaultVideosByCategoryRepository.swift in Sources */,
+				04E1463929AF5CB000DD4204 /* SignInResultDTO.swift in Sources */,
 				0490DA9429951347000BBF73 /* HighlightResultRepository.swift in Sources */,
 				047B879B299FADFA00F4AA42 /* WithdrawalResult.swift in Sources */,
 				0447E35E29A13B21005F0CC9 /* SeeSo.swift in Sources */,
@@ -2007,6 +2022,7 @@
 				0490DA8129951199000BBF73 /* VideoDetailRepository.swift in Sources */,
 				04867F1829A7A5B800FD9670 /* ReviewSubmissionResultDTO.swift in Sources */,
 				048A4B1A299D3D3000719AD0 /* VideosByCategoryViewModel.swift in Sources */,
+				04E1463529AF5C5700DD4204 /* SignInRepository.swift in Sources */,
 				048A4B07299CE02400719AD0 /* ReviewProgressViewModel.swift in Sources */,
 				04867F1629A7A22E00FD9670 /* ReviewsDTO.swift in Sources */,
 				04867F1229A79FDA00FD9670 /* ReviewSubmissionResult.swift in Sources */,
