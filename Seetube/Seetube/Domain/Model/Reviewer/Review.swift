@@ -28,7 +28,6 @@ struct GazeData: DTOConvertible {
         self.y = normalizedY.isNaN ? -1 : normalizedY
         self.trackingState = gazeInfo.trackingState
         self.eyeMovementState = gazeInfo.eyeMovementState
-        // TODO: 좌표 노말라이즈하면 불필요한 값. 논의 필요
         self.screenState = (isXValid && isYValied) ? .INSIDE_OF_SCREEN : .OUTSIDE_OF_SCREEN
     }
     

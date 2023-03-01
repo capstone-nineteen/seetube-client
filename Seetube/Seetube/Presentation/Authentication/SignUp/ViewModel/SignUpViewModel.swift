@@ -183,6 +183,7 @@ class SignUpViewModel: ViewModelType {
                 
                 return SignUpValidationResult(isValid: isValid, message: message)
             }
+            .startWith(SignUpValidationResult(isValid: false, message: nil))
             .asDriver(onErrorJustReturn: SignUpValidationResult(isValid: false, message: nil))
         
         // request verification code button
@@ -207,6 +208,7 @@ class SignUpViewModel: ViewModelType {
                     .filter { $0 }
                     .mapToVoid()
             )
+            .debug("disable")
         
         let canRequest = Driver
             .merge(
