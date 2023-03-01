@@ -250,6 +250,7 @@
 		04E1464929AF735E00DD4204 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1464829AF735E00DD4204 /* UIApplication+Extension.swift */; };
 		04E1464F29AF98D900DD4204 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 04E1464E29AF98D900DD4204 /* KeychainAccess */; };
 		04E1465229AF9C4500DD4204 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1465129AF9C4500DD4204 /* KeychainHelper.swift */; };
+		04E1465429AFA72D00DD4204 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1465329AFA72D00DD4204 /* UserDefaultHelper.swift */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
 		04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */; };
@@ -515,6 +516,7 @@
 		04E1464629AF71F000DD4204 /* YoutuberStartable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberStartable.swift; sourceTree = "<group>"; };
 		04E1464829AF735E00DD4204 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		04E1465129AF9C4500DD4204 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		04E1465329AFA72D00DD4204 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		04E6FC5E29893A400052496A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		04E6FC6029895C400052496A /* ViewControllerPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPushable.swift; sourceTree = "<group>"; };
@@ -1729,6 +1731,7 @@
 			isa = PBXGroup;
 			children = (
 				04E1465129AF9C4500DD4204 /* KeychainHelper.swift */,
+				04E1465329AFA72D00DD4204 /* UserDefaultHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1944,6 +1947,7 @@
 				042B3C1F29AE33D700FC3881 /* CountDownUseCase.swift in Sources */,
 				0490DA7329950B89000BBF73 /* YoutuberHome.swift in Sources */,
 				0470C9D62990F76600D4743B /* EmotionResultDTO.swift in Sources */,
+				04E1465429AFA72D00DD4204 /* UserDefaultHelper.swift in Sources */,
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
 				0447E35329A0CBC5005F0CC9 /* VideoPlayerViewController.swift in Sources */,
 				04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */,

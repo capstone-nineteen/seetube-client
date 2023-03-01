@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum UserType {
-    case reviewer
+enum UserType: Int{
+    case reviewer = 0
     case youtuber
 }
