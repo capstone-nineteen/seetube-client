@@ -57,8 +57,7 @@ struct EmotionData: DTOConvertible {
     }
     
     func toDTO() -> EmotionDataDTO {
-        EmotionDataDTO(emotionPredictionState: self.emotionPredictionState.rawValue,
-                       classification: self.classification?.rawValue ?? "",
+        EmotionDataDTO(classification: self.classification?.rawValue ?? "none",
                        confidencePercentage: self.confidence ?? 0)
     }
 }

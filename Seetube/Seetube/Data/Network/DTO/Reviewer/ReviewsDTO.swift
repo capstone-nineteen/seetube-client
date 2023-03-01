@@ -16,7 +16,6 @@ struct GazeDataDTO: Encodable {
 }
 
 struct EmotionDataDTO: Encodable {
-    let emotionPredictionState: String
     let classification: String
     let confidencePercentage: Double
 }
