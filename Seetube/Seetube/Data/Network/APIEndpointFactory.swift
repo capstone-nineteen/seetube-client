@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import KeychainAccess
 
 class APIEndpointFactory {
     enum EndpointType {
@@ -171,8 +172,14 @@ class APIEndpointFactory {
     }
     
     static func makeEndpoint(for type: EndpointType) -> APIEndpoint {
+        var headers: HTTPHeaders? = nil
+        if let token = KeychainHelper.standard.accessToken {
+            headers = ["Authorization": "Bearer \(token)"]
+        }
+        
         return APIEndpoint(method: type.method,
                            url: type.url,
+                           headers: headers,
                            parameters: type.parameters,
                            encoding: type.encoding)
     }

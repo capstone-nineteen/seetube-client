@@ -248,6 +248,8 @@
 		04E1464529AF709400DD4204 /* ReviewerStartable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1464429AF709400DD4204 /* ReviewerStartable.swift */; };
 		04E1464729AF71F000DD4204 /* YoutuberStartable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1464629AF71F000DD4204 /* YoutuberStartable.swift */; };
 		04E1464929AF735E00DD4204 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1464829AF735E00DD4204 /* UIApplication+Extension.swift */; };
+		04E1464F29AF98D900DD4204 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 04E1464E29AF98D900DD4204 /* KeychainAccess */; };
+		04E1465229AF9C4500DD4204 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1465129AF9C4500DD4204 /* KeychainHelper.swift */; };
 		04E6FC5F29893A400052496A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC5E29893A400052496A /* Colors.swift */; };
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
 		04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */; };
@@ -512,6 +514,7 @@
 		04E1464429AF709400DD4204 /* ReviewerStartable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerStartable.swift; sourceTree = "<group>"; };
 		04E1464629AF71F000DD4204 /* YoutuberStartable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberStartable.swift; sourceTree = "<group>"; };
 		04E1464829AF735E00DD4204 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		04E1465129AF9C4500DD4204 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		04E6FC5C2988FE690052496A /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		04E6FC5E29893A400052496A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		04E6FC6029895C400052496A /* ViewControllerPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPushable.swift; sourceTree = "<group>"; };
@@ -531,6 +534,7 @@
 			files = (
 				04924C11299AC268001E2045 /* Kingfisher in Frameworks */,
 				0490DA3F29938C50000BBF73 /* RxCocoa in Frameworks */,
+				04E1464F29AF98D900DD4204 /* KeychainAccess in Frameworks */,
 				043636E129938B0700EF6458 /* RxAlamofire in Frameworks */,
 				0490DA4129938C50000BBF73 /* RxSwift in Frameworks */,
 				0490DABC29954B46000BBF73 /* RxViewController in Frameworks */,
@@ -841,10 +845,10 @@
 				047B879E299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift */,
 				04867F0D29A79D0400FD9670 /* DefaultSubmitReviewUseCase.swift */,
 				042B3C0B29AD1A0700FC3881 /* DefaultRequestVerificationCodeUseCase.swift */,
+				04E1463E29AF5D9000DD4204 /* DefaultSignInUseCase.swift */,
 				042B3C0F29AD1B7200FC3881 /* DefaultSignUpUseCase.swift */,
 				042B3C1329AD316500FC3881 /* DefaultValidateSignUpInfoUseCase.swift */,
 				042B3C2029AE341700FC3881 /* DefaultCountDownUseCase.swift */,
-				04E1463E29AF5D9000DD4204 /* DefaultSignInUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -896,6 +900,7 @@
 		043636B52993888C00EF6458 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				04E1465029AF9C3700DD4204 /* Helper */,
 				04E6FC5D298939F60052496A /* Constant */,
 				041ECBC9296EF0B80053AC9C /* Extension */,
 			);
@@ -1609,10 +1614,10 @@
 				047B879C299FAF4000F4AA42 /* RegisterWithdrawalUseCase.swift */,
 				04867F0B29A79CD100FD9670 /* SubmitReviewUseCase.swift */,
 				042B3C0929AD19C900FC3881 /* RequestVerificationCodeUseCase.swift */,
+				04E1463C29AF5D6200DD4204 /* SignInUseCase.swift */,
 				042B3C0D29AD1B4B00FC3881 /* SignUpUseCase.swift */,
 				042B3C1129AD303A00FC3881 /* ValidateSignUpInfoUseCase.swift */,
 				042B3C1E29AE33D700FC3881 /* CountDownUseCase.swift */,
-				04E1463C29AF5D6200DD4204 /* SignInUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1720,6 +1725,14 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		04E1465029AF9C3700DD4204 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				04E1465129AF9C4500DD4204 /* KeychainHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		04E6FC5D298939F60052496A /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -1763,6 +1776,7 @@
 				0490DA4029938C50000BBF73 /* RxSwift */,
 				0490DABB29954B46000BBF73 /* RxViewController */,
 				04924C10299AC268001E2045 /* Kingfisher */,
+				04E1464E29AF98D900DD4204 /* KeychainAccess */,
 			);
 			productName = Seetube;
 			productReference = 041ECBAB296ED84C0053AC9C /* Seetube.app */;
@@ -1797,6 +1811,7 @@
 				0490DA3D29938C50000BBF73 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				0490DABA29954B46000BBF73 /* XCRemoteSwiftPackageReference "RxViewController" */,
 				04924C0F299AC268001E2045 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				04E1464D29AF98D900DD4204 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 041ECBAC296ED84C0053AC9C /* Products */;
 			projectDirPath = "";
@@ -1918,6 +1933,7 @@
 				040F5321299E928600828C00 /* FetchTotalCoinAmountUseCase.swift in Sources */,
 				0490DA9A2995143B000BBF73 /* DefaultVideoDetailRepository.swift in Sources */,
 				042B623C29AA5F10004178CD /* SignInViewModel.swift in Sources */,
+				04E1465229AF9C4500DD4204 /* KeychainHelper.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
 				044DF34129ACBF920013BCF9 /* SignUpViewController.swift in Sources */,
 				043636DB29938AB300EF6458 /* NetworkService.swift in Sources */,
@@ -2328,6 +2344,14 @@
 				kind = branch;
 			};
 		};
+		04E1464D29AF98D900DD4204 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2355,6 +2379,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04924C0F299AC268001E2045 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		04E1464E29AF98D900DD4204 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04E1464D29AF98D900DD4204 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

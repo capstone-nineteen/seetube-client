@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import KeychainAccess
 
 class DefaultSignInUseCase: SignInUseCase {
     private let repository: SignInRepository
@@ -19,10 +20,15 @@ class DefaultSignInUseCase: SignInUseCase {
         userType: UserType,
         email: String,
         password: String
-    ) -> Observable<SignInResult?> {
+    ) -> Observable<Bool> {
         return self.repository
             .signIn(userType: userType,
                     email: email,
                     password: password)
+            .do(onNext: {
+                guard let token = $0?.token else { return }
+                KeychainHelper.standard.accessToken = token
+            })
+            .map { $0 != nil }
     }
 }

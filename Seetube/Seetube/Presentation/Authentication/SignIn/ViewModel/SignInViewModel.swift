@@ -36,23 +36,22 @@ class SignInViewModel: ViewModelType {
         
         let signInResult = input.signInButtonTouched
             .withLatestFrom(emailAndPassword) { $1 }
-            .flatMap { [weak self] (email: String, password: String) -> Driver<SignInResult?> in
-                guard let self = self else { return .just(nil) }
+            .flatMap { [weak self] (email: String, password: String) -> Driver<Bool> in
+                guard let self = self else { return .just(false) }
                 return self.signInUseCase
                     .execute(userType: self.userType,
                              email: email,
                              password: password)
-                    .asDriver(onErrorJustReturn: nil)
+                    .asDriver(onErrorJustReturn: false)
             }
-        // TODO: 토큰 키체인 저장
         
         let signInSucceed = signInResult
-            .compactMap { $0 }
+            .filter { $0 }
             .map { [weak self] _ in self?.userType }
             .compactMap { $0 }
         
         let signInFailed = signInResult
-            .filter { $0 == nil }
+            .filter { !$0 }
             .mapToVoid()
         
         return Output(shouldMoveToSignUp: shouldMoveToSignUp,

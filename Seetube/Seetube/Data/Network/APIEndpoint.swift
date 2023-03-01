@@ -17,6 +17,7 @@ enum HttpMethod: String {
 struct APIEndpoint {
     var method: HttpMethod
     var url: String
+    var headers: HTTPHeaders? = nil
     var parameters: [String: Any]? = nil
     var encoding: ParameterEncoding
 }

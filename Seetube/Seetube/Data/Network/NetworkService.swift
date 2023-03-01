@@ -20,7 +20,8 @@ class NetworkService {
             .requestData(HTTPMethod(rawValue: endpoint.method.rawValue),
                          endpoint.url,
                          parameters: endpoint.parameters,
-                         encoding: endpoint.encoding)
+                         encoding: endpoint.encoding,
+                         headers: endpoint.headers)
             .map { (response, data) in
                 switch response.statusCode {
                 case 200..<300:
