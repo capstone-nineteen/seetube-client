@@ -44,6 +44,7 @@ class SignInViewModel: ViewModelType {
                              password: password)
                     .asDriver(onErrorJustReturn: nil)
             }
+        // TODO: 토큰 키체인 저장
         
         let signInSucceed = signInResult
             .compactMap { $0 }
