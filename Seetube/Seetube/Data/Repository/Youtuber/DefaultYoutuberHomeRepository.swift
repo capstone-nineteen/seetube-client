@@ -9,9 +9,9 @@ import Foundation
 import RxSwift
 
 class DefaultYoutuberHomeRepository: YoutuberHomeRepository, NetworkRequestable {
-    func getYoutuberHome() -> Observable<MyPage?> {
+    func getYoutuberHome() -> Observable<YoutuberHome?> {
         let endpoint = APIEndpointFactory.makeEndpoint(for: .getYoutuberHome)
         return self.getResource(endpoint: endpoint,
-                                decodingType: MyPageDTO.self)
+                                decodingType: YoutuberHomeDTO.self)
     }
 }
