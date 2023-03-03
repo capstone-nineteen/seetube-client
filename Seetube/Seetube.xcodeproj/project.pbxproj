@@ -118,6 +118,8 @@
 		0470C9DD2990F96D00D4743B /* SceneStealerResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9DC2990F96D00D4743B /* SceneStealerResultDTO.swift */; };
 		0470C9DF2990FA4E00D4743B /* ShortsResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9DE2990FA4E00D4743B /* ShortsResultDTO.swift */; };
 		0470C9E12990FAE000D4743B /* HighlightResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470C9E02990FAE000D4743B /* HighlightResultDTO.swift */; };
+		0478A3BD29B1BCCA00CB7B91 /* FetchYoutuberHomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A3BC29B1BCCA00CB7B91 /* FetchYoutuberHomeUseCase.swift */; };
+		0478A3BF29B1BD1200CB7B91 /* DefaultYoutuberHomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A3BE29B1BD1200CB7B91 /* DefaultYoutuberHomeUseCase.swift */; };
 		047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */; };
 		047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */; };
 		047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */; };
@@ -389,6 +391,8 @@
 		0470C9DC2990F96D00D4743B /* SceneStealerResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultDTO.swift; sourceTree = "<group>"; };
 		0470C9DE2990FA4E00D4743B /* ShortsResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsResultDTO.swift; sourceTree = "<group>"; };
 		0470C9E02990FAE000D4743B /* HighlightResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightResultDTO.swift; sourceTree = "<group>"; };
+		0478A3BC29B1BCCA00CB7B91 /* FetchYoutuberHomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchYoutuberHomeUseCase.swift; sourceTree = "<group>"; };
+		0478A3BE29B1BD1200CB7B91 /* DefaultYoutuberHomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultYoutuberHomeUseCase.swift; sourceTree = "<group>"; };
 		047A5F3A297075D6007CDBC4 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
 		047A5F3D29707739007CDBC4 /* SceneStealerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStealerResultViewController.swift; sourceTree = "<group>"; };
 		047A5F4729707CBE007CDBC4 /* SceneListLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListLargeView.swift; sourceTree = "<group>"; };
@@ -851,6 +855,7 @@
 				042B3C0F29AD1B7200FC3881 /* DefaultSignUpUseCase.swift */,
 				042B3C1329AD316500FC3881 /* DefaultValidateSignUpInfoUseCase.swift */,
 				042B3C2029AE341700FC3881 /* DefaultCountDownUseCase.swift */,
+				0478A3BE29B1BD1200CB7B91 /* DefaultYoutuberHomeUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1620,6 +1625,7 @@
 				042B3C0D29AD1B4B00FC3881 /* SignUpUseCase.swift */,
 				042B3C1129AD303A00FC3881 /* ValidateSignUpInfoUseCase.swift */,
 				042B3C1E29AE33D700FC3881 /* CountDownUseCase.swift */,
+				0478A3BC29B1BCCA00CB7B91 /* FetchYoutuberHomeUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1865,6 +1871,7 @@
 				04E1464529AF709400DD4204 /* ReviewerStartable.swift in Sources */,
 				04E1464729AF71F000DD4204 /* YoutuberStartable.swift in Sources */,
 				04E6FC5F29893A400052496A /* Colors.swift in Sources */,
+				0478A3BF29B1BD1200CB7B91 /* DefaultYoutuberHomeUseCase.swift in Sources */,
 				04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */,
 				0470C9D82990F7D400D4743B /* Emotion.swift in Sources */,
 				048A4B16299D3C7300719AD0 /* FetchVideosByCategoryUseCase.swift in Sources */,
@@ -1958,6 +1965,7 @@
 				049960F52982A068000EE539 /* SeetubeSearchBar.swift in Sources */,
 				042B3C0629AD188900FC3881 /* VerificationCodeRequestResult.swift in Sources */,
 				046AD0FF2972D1B000602F89 /* ShortsCollectionViewCell.swift in Sources */,
+				0478A3BD29B1BCCA00CB7B91 /* FetchYoutuberHomeUseCase.swift in Sources */,
 				044B480429A2476D00373768 /* CalibrationTutorialView.swift in Sources */,
 				0490DA9C29952D98000BBF73 /* DefaultReviewerHomeRepository.swift in Sources */,
 				044D25692983C6F0003F4071 /* ReviewProgressView.swift in Sources */,
