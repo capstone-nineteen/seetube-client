@@ -15,6 +15,8 @@ struct YoutuberHomeDTO: Decodable {
 
 extension YoutuberHomeDTO: DomainConvertible {
     func toDomain() -> YoutuberHome {
-        return YoutuberHome()
+        return YoutuberHome(userName: self.userName,
+                            finishedReviews: self.finishedReviews.map { $0.toDomain() },
+                            reviewsInProgress: self.reviewsInProgress.map { $0.toDomain() })
     }
 }

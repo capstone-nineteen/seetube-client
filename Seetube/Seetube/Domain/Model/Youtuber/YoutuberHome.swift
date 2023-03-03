@@ -8,5 +8,7 @@
 import Foundation
 
 struct YoutuberHome {
-    
+    let userName: String
+    let finishedReviews: [VideoInfo]
+    let reviewsInProgress: [VideoInfo]
 }
