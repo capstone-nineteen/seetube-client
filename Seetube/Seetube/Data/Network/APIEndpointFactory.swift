@@ -108,7 +108,7 @@ class APIEndpointFactory {
             case .getMyPage:
                 return APIUrls.myPage
             case .getYoutuberHome:
-                return ""
+                return APIUrls.youtuberHome
             case .getConcentrationResult:
                 return ""
             case .getEmotionResult:

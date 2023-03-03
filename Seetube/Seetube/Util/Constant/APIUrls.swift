@@ -27,4 +27,5 @@ enum APIUrls {
     static let youtuberVerificationCode = youtuberBase + "/email"
     static let youtuberSignUp = youtuberBase + "/signup"
     static let youtuberSignIn = youtuberBase + "/login"
+    static let youtuberHome = youtuberBase + "/home"
 }
