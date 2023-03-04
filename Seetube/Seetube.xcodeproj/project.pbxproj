@@ -11,6 +11,7 @@
 		0402BA622971D53C00B79935 /* BottomButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0402BA612971D53C00B79935 /* BottomButton.xib */; };
 		040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */; };
 		040B16C329B3A81900843911 /* VideoCardItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B16C229B3A81900843911 /* VideoCardItemViewModel.swift */; };
+		040B16C529B3A8C700843911 /* YoutuberInProgressVideoCardItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B16C429B3A8C700843911 /* YoutuberInProgressVideoCardItemViewModel.swift */; };
 		040E3CBC2971AF290057B25E /* ListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CBB2971AF290057B25E /* ListStyleResultView.xib */; };
 		040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CBD2971B0130057B25E /* ListStyleResultView.swift */; };
 		040E3CCB2971C8AC0057B25E /* LargeListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */; };
@@ -284,6 +285,7 @@
 		0402BA612971D53C00B79935 /* BottomButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomButton.xib; sourceTree = "<group>"; };
 		040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveFontSizeLabel.swift; sourceTree = "<group>"; };
 		040B16C229B3A81900843911 /* VideoCardItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCardItemViewModel.swift; sourceTree = "<group>"; };
+		040B16C429B3A8C700843911 /* YoutuberInProgressVideoCardItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberInProgressVideoCardItemViewModel.swift; sourceTree = "<group>"; };
 		040E3CBB2971AF290057B25E /* ListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStyleResultView.xib; sourceTree = "<group>"; };
 		040E3CBD2971B0130057B25E /* ListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyleResultView.swift; sourceTree = "<group>"; };
 		040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeListStyleResultView.xib; sourceTree = "<group>"; };
@@ -1387,6 +1389,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		0478A3C229B1BF2200CB7B91 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				040B16C429B3A8C700843911 /* YoutuberVideoCardItemViewModel.swift */,
+				040B16C429B3A8C700843911 /* YoutuberInProgressVideoCardItemViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		047A5F372970755E007CDBC4 /* EmotionResult */ = {
 			isa = PBXGroup;
 			children = (
@@ -1705,7 +1716,7 @@
 			children = (
 				04AF39AD29795BE800BF058B /* View */,
 				043636C7299389C500EF6458 /* ViewController */,
-				043636C8299389D300EF6458 /* ViewModel */,
+				0478A3C229B1BF2200CB7B91 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1877,6 +1888,7 @@
 				0470727E2979B23B008D6CC0 /* VideoInfoCardTableViewController.swift in Sources */,
 				040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */,
 				044D258229843403003F4071 /* ReviewerHomeCollectionViewCell.swift in Sources */,
+				040B16C529B3A8C700843911 /* YoutuberInProgressVideoCardItemViewModel.swift in Sources */,
 				047072802979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift in Sources */,
 				04E1463329AF1FC200DD4204 /* Driver+Extension.swift in Sources */,
 				047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */,
