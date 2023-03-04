@@ -87,8 +87,7 @@ extension VideosByCategoryViewController {
     // MARK: Output Binding
     
     private func bindVideos(_ videos: Driver<[ReviewerVideoCardItemViewModel]>) {
-        guard let tableViewController = self.children.first
-                as? ReviewerVideoInfoTableViewController else { return }
+        guard let tableViewController = self.tableViewController else { return }
         
         videos
             .drive(tableViewController.rx.viewModels)
