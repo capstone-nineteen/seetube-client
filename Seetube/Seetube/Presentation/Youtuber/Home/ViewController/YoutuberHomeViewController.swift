@@ -20,22 +20,13 @@ class YoutuberHomeViewController: UIViewController {
         super.viewDidLoad()
         self.configureUI()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
-    }
 }
 
 // MARK: - Configuration
 
 extension YoutuberHomeViewController {
     private func configureUI() {
+        self.configureNavigationBar()
         self.configureSegmentedControl()
     }
     
@@ -53,6 +44,22 @@ extension YoutuberHomeViewController {
                 default:
                     return
                 }
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func configureNavigationBar() {
+        self.rx.viewWillAppear
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.navigationController?.isNavigationBarHidden = true
+            }
+            .disposed(by: self.disposeBag)
+        
+        self.rx.viewWillDisappear
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.navigationController?.isNavigationBarHidden = false
             }
             .disposed(by: self.disposeBag)
     }
