@@ -26,7 +26,7 @@ class ReviewsInProgressTableViewController: VideoInfoCardTableViewController, Vi
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewsInProgressTableViewCell.cellReuseIdentifier, for: indexPath) as? ReviewsInProgressTableViewCell else { return UITableViewCell() }
-        // TODO: cell.bind(self.viewModels[indexPath.row])
+        cell.bind(self.viewModels[indexPath.row])
         return cell
     }
     
