@@ -40,24 +40,12 @@ class YoutuberHomeViewModel: ViewModelType {
         let reviewsInProgressViewModel = reviewsInProgress
             .map { $0.map { YoutuberInProgressVideoCardItemViewModel(with: $0) }}
         
-        let selected = Driver
-            .combineLatest(
-                input.itemSelected,
-                input.selectedTab
-            ) { (index: $0, tab: $1) }
-        
-        let selectedFinishedReviewId = selected
-            .filter { $0.tab == 0 }
-            .withLatestFrom(finishedReviews) {
-                $1[$0.index.row].videoId
-            }
+        let selectedFinishedReviewId = input.selectedFinishedReviewItem
+            .withLatestFrom(finishedReviews) { $1[$0.row].videoId }
         
         
-        let selectedInProgressReviewId = selected
-            .filter { $0.tab == 1 }
-            .withLatestFrom(reviewsInProgress) {
-                $1[$0.index.row].videoId
-            }
+        let selectedInProgressReviewId = input.selectedReviewInProgressItem
+            .withLatestFrom(reviewsInProgress) { $1[$0.row].videoId }
         
         return Output(name: name,
                       finishedReviews: finishedReviewsViewModel,
@@ -70,8 +58,8 @@ class YoutuberHomeViewModel: ViewModelType {
 extension YoutuberHomeViewModel {
     struct Input {
         let viewWillAppear: Driver<Bool>
-        let selectedTab: Driver<Int>
-        let itemSelected: Driver<IndexPath>
+        let selectedFinishedReviewItem: Driver<IndexPath>
+        let selectedReviewInProgressItem: Driver<IndexPath>
     }
     
     struct Output {
