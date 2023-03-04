@@ -29,17 +29,6 @@ class FinishedReviewsTableViewController: VideoInfoCardTableViewController, View
         cell.bind(self.viewModels[indexPath.row])
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: 부모 뷰컨트롤러로 전달
-        self.moveToResultMenu()
-    }
-}
-
-extension FinishedReviewsTableViewController {
-    private func moveToResultMenu() {
-        self.push(viewControllerType: ResultMenuViewController.self)
-    }
 }
 
 // MARK: - Reactive Extension

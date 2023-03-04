@@ -29,17 +29,6 @@ class ReviewsInProgressTableViewController: VideoInfoCardTableViewController, Vi
         cell.bind(self.viewModels[indexPath.row])
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: 부모 뷰컨트롤러로 전달
-        self.moveToVideoDetail()
-    }
-}
-
-extension ReviewsInProgressTableViewController {
-    private func moveToVideoDetail() {
-        self.push(viewControllerType: YoutuberVideoDetailViewController.self)
-    }
 }
 
 // MARK: - Reactive Extension
