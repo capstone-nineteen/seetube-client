@@ -27,11 +27,7 @@ class ReviewerVideoInfoTableViewCell: VideoInfoCardTableViewCell {
     }
     
     func bind(_ viewModel: ReviewerVideoCardItemViewModel) {
-        self.videoInfoCardView.bind(videoTitle: viewModel.title,
-                                    youtuberName: viewModel.youtuberName,
-                                    date: viewModel.remainingPeriod,
-                                    personnel: viewModel.progress,
-                                    thumbnailUrl: viewModel.thumbnailUrl)
+        self.videoInfoCardView.bind(viewModel)
         self.priceAccessoryView.bind(price: viewModel.rewardAmount)
     }
 }
