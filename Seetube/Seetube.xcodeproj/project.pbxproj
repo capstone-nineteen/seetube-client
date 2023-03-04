@@ -10,6 +10,7 @@
 		0402BA602971D39500B79935 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402BA5F2971D39500B79935 /* BottomButton.swift */; };
 		0402BA622971D53C00B79935 /* BottomButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0402BA612971D53C00B79935 /* BottomButton.xib */; };
 		040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */; };
+		040B16C329B3A81900843911 /* VideoCardItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B16C229B3A81900843911 /* VideoCardItemViewModel.swift */; };
 		040E3CBC2971AF290057B25E /* ListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CBB2971AF290057B25E /* ListStyleResultView.xib */; };
 		040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CBD2971B0130057B25E /* ListStyleResultView.swift */; };
 		040E3CCB2971C8AC0057B25E /* LargeListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */; };
@@ -282,6 +283,7 @@
 		0402BA5F2971D39500B79935 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		0402BA612971D53C00B79935 /* BottomButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomButton.xib; sourceTree = "<group>"; };
 		040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveFontSizeLabel.swift; sourceTree = "<group>"; };
+		040B16C229B3A81900843911 /* VideoCardItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCardItemViewModel.swift; sourceTree = "<group>"; };
 		040E3CBB2971AF290057B25E /* ListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStyleResultView.xib; sourceTree = "<group>"; };
 		040E3CBD2971B0130057B25E /* ListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyleResultView.swift; sourceTree = "<group>"; };
 		040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeListStyleResultView.xib; sourceTree = "<group>"; };
@@ -874,6 +876,7 @@
 			isa = PBXGroup;
 			children = (
 				048A4B0C299D0F7600719AD0 /* Protocol */,
+				040B16C229B3A81900843911 /* VideoCardItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1060,13 +1063,6 @@
 				04AF39B4297982B500BF058B /* ReviewsInProgressTableViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		043636C8299389D300EF6458 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		043636C9299389F700EF6458 /* ViewModel */ = {
@@ -1886,6 +1882,7 @@
 				047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */,
 				044DF34329ACC1B20013BCF9 /* SignUpPushable.swift in Sources */,
 				0490DAA6299539BF000BBF73 /* DefaultConcentrationResultRepository.swift in Sources */,
+				040B16C329B3A81900843911 /* VideoCardItemViewModel.swift in Sources */,
 				040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */,
 				042B3BFC29AD153000FC3881 /* SignUpRepository.swift in Sources */,
 				04822FCB29A74B540039A06F /* Review.swift in Sources */,

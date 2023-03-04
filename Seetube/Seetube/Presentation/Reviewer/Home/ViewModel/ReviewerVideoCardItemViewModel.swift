@@ -7,20 +7,13 @@
 
 import Foundation
 
-class ReviewerVideoCardItemViewModel {
-    let title: String
-    let youtuberName: String
-    let remainingPeriod: String
-    let progress: String
+class ReviewerVideoCardItemViewModel: VideoCardItemViewModel {
     let rewardAmount: String
     let thumbnailUrl: String
     
-    init(with videoInfo: VideoInfo) {
-        self.title = videoInfo.title
-        self.youtuberName = videoInfo.youtuberName
-        self.remainingPeriod = "🕔 남은 기간 \(videoInfo.reviewEndDate.dday())일"
-        self.progress = "👤 \(videoInfo.currentNumberOfReviewers)/\(videoInfo.targetNumberOfReviewers)명"
+    override init(with videoInfo: VideoInfo) {
         self.rewardAmount = "\(videoInfo.rewardAmount)"
         self.thumbnailUrl = videoInfo.imagePath
+        super.init(with: videoInfo)
     }
 }
