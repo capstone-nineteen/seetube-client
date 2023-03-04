@@ -29,7 +29,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 viewController = storyboard.instantiateViewController(withIdentifier: "ReviewerTabBarController")
             case .youtuber:
                 viewController = storyboard.instantiateViewController(withIdentifier: "YoutuberNavigationController")
-                // TODO: 의존성 주입
             }
             
             self.window = window

@@ -17,6 +17,7 @@ class ReviewerTabBarController: UITabBarController {
 }
 
 // MARK: - Configuration
+
 extension ReviewerTabBarController {
     private func configureTabBar() {
         self.tabBar.layer.borderWidth = 0.2

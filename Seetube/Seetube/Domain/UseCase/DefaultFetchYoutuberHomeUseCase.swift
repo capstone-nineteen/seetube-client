@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class DefaultYoutuberHomeUseCase: FetchYoutuberHomeUseCase {
+class DefaultFetchYoutuberHomeUseCase: FetchYoutuberHomeUseCase {
     private let repository: YoutuberHomeRepository
     
     init(repository: YoutuberHomeRepository) {
