@@ -12,6 +12,7 @@
 		040A34372975C53A000B0099 /* AdaptiveFontSizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */; };
 		040B16C329B3A81900843911 /* VideoCardItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B16C229B3A81900843911 /* VideoCardItemViewModel.swift */; };
 		040B16C529B3A8C700843911 /* YoutuberInProgressVideoCardItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B16C429B3A8C700843911 /* YoutuberInProgressVideoCardItemViewModel.swift */; };
+		040B16C729B3A98600843911 /* YoutuberFinishedVideoCardItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B16C629B3A98600843911 /* YoutuberFinishedVideoCardItemViewModel.swift */; };
 		040E3CBC2971AF290057B25E /* ListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CBB2971AF290057B25E /* ListStyleResultView.xib */; };
 		040E3CBE2971B0130057B25E /* ListStyleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E3CBD2971B0130057B25E /* ListStyleResultView.swift */; };
 		040E3CCB2971C8AC0057B25E /* LargeListStyleResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */; };
@@ -286,6 +287,7 @@
 		040A34362975C53A000B0099 /* AdaptiveFontSizeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveFontSizeLabel.swift; sourceTree = "<group>"; };
 		040B16C229B3A81900843911 /* VideoCardItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCardItemViewModel.swift; sourceTree = "<group>"; };
 		040B16C429B3A8C700843911 /* YoutuberInProgressVideoCardItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberInProgressVideoCardItemViewModel.swift; sourceTree = "<group>"; };
+		040B16C629B3A98600843911 /* YoutuberFinishedVideoCardItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberFinishedVideoCardItemViewModel.swift; sourceTree = "<group>"; };
 		040E3CBB2971AF290057B25E /* ListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStyleResultView.xib; sourceTree = "<group>"; };
 		040E3CBD2971B0130057B25E /* ListStyleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyleResultView.swift; sourceTree = "<group>"; };
 		040E3CCA2971C8AC0057B25E /* LargeListStyleResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeListStyleResultView.xib; sourceTree = "<group>"; };
@@ -1394,6 +1396,7 @@
 			children = (
 				040B16C429B3A8C700843911 /* YoutuberVideoCardItemViewModel.swift */,
 				040B16C429B3A8C700843911 /* YoutuberInProgressVideoCardItemViewModel.swift */,
+				040B16C629B3A98600843911 /* YoutuberFinishedVideoCardItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2101,6 +2104,7 @@
 				0490DA7B29950BB0000BBF73 /* ShortsResult.swift in Sources */,
 				0470C9DF2990FA4E00D4743B /* ShortsResultDTO.swift in Sources */,
 				046AD1012972D7A900602F89 /* AlertDisplaying.swift in Sources */,
+				040B16C729B3A98600843911 /* YoutuberFinishedVideoCardItemViewModel.swift in Sources */,
 				0490DA5B2994C9AF000BBF73 /* APIEndpointFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
