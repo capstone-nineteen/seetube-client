@@ -9,11 +9,9 @@ import Foundation
 
 class ReviewerVideoCardItemViewModel: VideoCardItemViewModel {
     let rewardAmount: String
-    let thumbnailUrl: String
     
     override init(with videoInfo: VideoInfo) {
         self.rewardAmount = "\(videoInfo.rewardAmount)"
-        self.thumbnailUrl = videoInfo.imagePath
         super.init(with: videoInfo)
     }
 }
