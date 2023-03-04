@@ -38,32 +38,30 @@ class VideoInfoCardView: UIView, NibLoadable {
         ])
     }
     
-    func bind(
-        videoTitle: String,
-        youtuberName: String,
-        date: String,
-        personnel: String,
-        thumbnailUrl: String? = nil
-    ) {
-        self.videoTitleLabel.text = videoTitle
-        self.youtuberNameTitle.text = youtuberName
-        self.dateLabel.text = date
-        self.personnelLabel.text = personnel
+    func bind(_ viewModel: VideoCardItemViewModel) {
+        self.videoTitleLabel.text = viewModel.title
+        self.youtuberNameTitle.text = viewModel.youtuberName
+        self.dateLabel.text = viewModel.remainingPeriod
+        self.personnelLabel.text = viewModel.progress
         
-        if let thumbnailUrl = thumbnailUrl {
-            let processor = DownsamplingImageProcessor(size: self.thumbnailImageView.bounds.size)
-            self.thumbnailImageView.kf.indicatorType = .activity
-            self.thumbnailImageView.kf.setImage(
-                with: URL(string: thumbnailUrl),
-                options: [
-                    .processor(processor),
-                    .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(0.7)),
-                    .cacheOriginalImage
-                ]
-            )
-        } else {
-            self.thumbnailImageView.kf.cancelDownloadTask()
-        }
+        let processor = DownsamplingImageProcessor(size: self.thumbnailImageView.bounds.size)
+        self.thumbnailImageView.kf.indicatorType = .activity
+        self.thumbnailImageView.kf.setImage(
+            with: URL(string: viewModel.thumbnailUrl),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(0.7)),
+                .cacheOriginalImage
+            ]
+        )
+    }
+    
+    func clear() {
+        self.videoTitleLabel.text = nil
+        self.youtuberNameTitle.text = nil
+        self.dateLabel.text = nil
+        self.personnelLabel.text = nil
+        self.thumbnailImageView.kf.cancelDownloadTask()
     }
 }

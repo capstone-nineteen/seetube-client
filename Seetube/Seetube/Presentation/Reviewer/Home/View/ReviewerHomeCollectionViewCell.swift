@@ -27,10 +27,7 @@ class ReviewerHomeCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.videoInfoCardView.bind(videoTitle: "",
-                                    youtuberName: "",
-                                    date: "",
-                                    personnel: "")
+        self.videoInfoCardView.clear()
         self.priceAccessoryView.bind(price: "")
     }
     
@@ -50,11 +47,7 @@ class ReviewerHomeCollectionViewCell: UICollectionViewCell {
     }
     
     func bind(_ viewModel: ReviewerVideoCardItemViewModel) {
-        self.videoInfoCardView.bind(videoTitle: viewModel.title,
-                                    youtuberName: viewModel.youtuberName,
-                                    date: viewModel.remainingPeriod,
-                                    personnel: viewModel.progress,
-                                    thumbnailUrl: viewModel.thumbnailUrl)
+        self.videoInfoCardView.bind(viewModel)
         self.priceAccessoryView.bind(price: viewModel.rewardAmount)
     }
 }
