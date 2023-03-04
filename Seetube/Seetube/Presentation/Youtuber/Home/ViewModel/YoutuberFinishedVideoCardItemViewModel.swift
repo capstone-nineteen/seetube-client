@@ -12,11 +12,13 @@ class YoutuberFinishedVideoCardItemViewModel {
     let youtuberName: String
     let period: String
     let numberOfReviewers: String
+    let thumbnailUrl: String
     
     init(with videoInfo: VideoInfo) {
         self.title = videoInfo.title
         self.youtuberName = videoInfo.youtuberName
         self.period = "🕔 \(videoInfo.reviewStartDate.toyyMMddStyleWithDot())-\(videoInfo.reviewEndDate.toyyMMddStyleWithDot())"
         self.numberOfReviewers = "👤 \(videoInfo.targetNumberOfReviewers)명"
+        self.thumbnailUrl = videoInfo.imagePath
     }
 }

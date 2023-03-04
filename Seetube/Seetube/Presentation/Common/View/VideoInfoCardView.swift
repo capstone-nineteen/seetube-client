@@ -38,16 +38,11 @@ class VideoInfoCardView: UIView, NibLoadable {
         ])
     }
     
-    func bind(_ viewModel: VideoCardItemViewModel) {
-        self.videoTitleLabel.text = viewModel.title
-        self.youtuberNameTitle.text = viewModel.youtuberName
-        self.dateLabel.text = viewModel.remainingPeriod
-        self.personnelLabel.text = viewModel.progress
-        
+    private func bindImage(url: String) {
         let processor = DownsamplingImageProcessor(size: self.thumbnailImageView.bounds.size)
         self.thumbnailImageView.kf.indicatorType = .activity
         self.thumbnailImageView.kf.setImage(
-            with: URL(string: viewModel.thumbnailUrl),
+            with: URL(string: url),
             options: [
                 .processor(processor),
                 .scaleFactor(UIScreen.main.scale),
@@ -55,6 +50,28 @@ class VideoInfoCardView: UIView, NibLoadable {
                 .cacheOriginalImage
             ]
         )
+    }
+    
+    func bind(_ viewModel: VideoCardItemViewModel) {
+        self.videoTitleLabel.text = viewModel.title
+        self.youtuberNameTitle.text = viewModel.youtuberName
+        self.dateLabel.text = viewModel.remainingPeriod
+        self.personnelLabel.text = viewModel.progress
+        self.bindImage(url: viewModel.thumbnailUrl)
+    }
+    
+    func bind(
+        title: String,
+        youtuberName: String,
+        date: String,
+        personnel: String,
+        thumbnailUrl: String
+    ) {
+        self.videoTitleLabel.text = title
+        self.youtuberNameTitle.text = youtuberName
+        self.dateLabel.text = date
+        self.personnelLabel.text = personnel
+        self.bindImage(url: thumbnailUrl)
     }
     
     func clear() {

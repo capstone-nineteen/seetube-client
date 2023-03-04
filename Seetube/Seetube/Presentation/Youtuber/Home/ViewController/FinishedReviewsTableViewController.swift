@@ -26,7 +26,7 @@ class FinishedReviewsTableViewController: VideoInfoCardTableViewController, View
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FinishedReviewsTableViewCell.cellReuseIdentifier, for: indexPath) as? FinishedReviewsTableViewCell else { return UITableViewCell() }
-        // TODO: cell.bind(self.viewModels[indexPath.row])
+        cell.bind(self.viewModels[indexPath.row])
         return cell
     }
     
