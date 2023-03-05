@@ -110,7 +110,7 @@ class APIEndpointFactory {
             case .getYoutuberHome:
                 return APIUrls.youtuberHome
             case .getConcentrationResult:
-                return ""
+                return APIUrls.concentrationResult
             case .getEmotionResult:
                 return ""
             case .getSceneStealerResult:
