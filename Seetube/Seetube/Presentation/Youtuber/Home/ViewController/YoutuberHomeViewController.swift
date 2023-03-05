@@ -9,7 +9,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class YoutuberHomeViewController: UIViewController {
+class YoutuberHomeViewController: UIViewController,
+                                  YoutuberVideoDetailPushable
+{
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var segmentedControl: UnderlineSegmentedControl!
     @IBOutlet weak var finishedReviewsView: UIView!
@@ -152,7 +154,7 @@ extension YoutuberHomeViewController {
     private func bindSelectedInProgressReviewId(_ id: Driver<Int>) {
         id
             .drive(with: self) { obj, id in
-                // TODO: 상세 화면 이동
+                obj.pushYoutuberVideoDetail(videoId: id)
             }
             .disposed(by: self.disposeBag)
     }

@@ -262,6 +262,7 @@
 		04E6FC6129895C400052496A /* ViewControllerPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6029895C400052496A /* ViewControllerPushable.swift */; };
 		04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */; };
 		04E6FC66298971F30052496A /* KeyboardDismissible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC65298971F30052496A /* KeyboardDismissible.swift */; };
+		04E80A7229B4A48900DE526B /* YoutuberVideoDetailPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7129B4A48900DE526B /* YoutuberVideoDetailPushable.swift */; };
 		04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B78C2970514B000F0859 /* SceneListView.xib */; };
 		04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B78E2970524E000F0859 /* SceneListView.swift */; };
 		04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */; };
@@ -536,6 +537,7 @@
 		04E6FC6029895C400052496A /* ViewControllerPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPushable.swift; sourceTree = "<group>"; };
 		04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresentable.swift; sourceTree = "<group>"; };
 		04E6FC65298971F30052496A /* KeyboardDismissible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissible.swift; sourceTree = "<group>"; };
+		04E80A7129B4A48900DE526B /* YoutuberVideoDetailPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberVideoDetailPushable.swift; sourceTree = "<group>"; };
 		04E8B78C2970514B000F0859 /* SceneListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListView.xib; sourceTree = "<group>"; };
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
 		04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListTableViewCell.swift; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				042B3BF429AD0D2700FC3881 /* TextFieldJoinable.swift */,
 				04E1464429AF709400DD4204 /* ReviewerStartable.swift */,
 				04E1464629AF71F000DD4204 /* YoutuberStartable.swift */,
+				04E80A7129B4A48900DE526B /* YoutuberVideoDetailPushable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2101,6 +2104,7 @@
 				042B3C1429AD316500FC3881 /* DefaultValidateSignUpInfoUseCase.swift in Sources */,
 				049960EB298288F0000EE539 /* ReviewerVideoInfoTableViewCell.swift in Sources */,
 				047B8799299FAC6F00F4AA42 /* WithdrawalResultDTO.swift in Sources */,
+				04E80A7229B4A48900DE526B /* YoutuberVideoDetailPushable.swift in Sources */,
 				0490DAB529953BD1000BBF73 /* DefaultFetchMyPageUseCase.swift in Sources */,
 				042B3C0029AD15B900FC3881 /* SignUpResult.swift in Sources */,
 				042B3C1829ADDACC00FC3881 /* SignUpValidationResult.swift in Sources */,
