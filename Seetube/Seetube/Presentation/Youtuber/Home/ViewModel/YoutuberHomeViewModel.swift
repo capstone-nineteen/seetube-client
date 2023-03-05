@@ -26,7 +26,7 @@ class YoutuberHomeViewModel: ViewModelType {
             }
             .compactMap { $0 }
         
-        let name = youtuberHome.map { $0.userName }
+        let name = youtuberHome.map { "안녕하세요, \($0.userName)님" }
         
         let finishedReviews = youtuberHome
             .map { $0.finishedReviews }
