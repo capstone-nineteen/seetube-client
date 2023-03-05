@@ -7,6 +7,15 @@
 
 import Foundation
 
+struct ConcentrationScene: Decodable {
+    let thumbnailImageURL: String
+    let startTime: Int
+    let endTime: Int
+    let totalNumberOfReviewers: Int
+    let numberOfReviewersConcentrated: Int
+}
+
 struct ConcentrationResult {
-    
+    let originalVideoURL: String
+    let scenes: [ConcentrationScene]
 }
