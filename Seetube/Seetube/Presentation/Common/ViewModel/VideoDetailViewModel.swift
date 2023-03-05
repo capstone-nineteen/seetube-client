@@ -21,7 +21,8 @@ class VideoDetailViewModel {
     
     init(
         with videoInfo: VideoInfo,
-        buttonTitle: String
+        buttonTitle: String,
+        shouldEnableBottomButton: Bool? = nil
     ) {
         self.thumbnailImageUrl = videoInfo.imagePath
         self.title = videoInfo.title
@@ -36,7 +37,7 @@ class VideoDetailViewModel {
         self.reviewPeriod = "\(start) - \(end)"
         self.videoDescription = videoInfo.videoDescription
         self.hashtags = "#\(videoInfo.category.rawValue)"
-        self.shouldEnableBottomButton = !videoInfo.didReviewed
+        self.shouldEnableBottomButton = shouldEnableBottomButton ?? !videoInfo.didReviewed
         self.buttonTitle = buttonTitle
     }
 }

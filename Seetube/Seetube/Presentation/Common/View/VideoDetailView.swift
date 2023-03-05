@@ -20,7 +20,7 @@ class VideoDetailView: UIView, NibLoadable {
     @IBOutlet private weak var reviewPeriodLabel: UILabel!
     @IBOutlet private weak var videoDescriptionLabel: UILabel!
     @IBOutlet private weak var hashtagLabel: UILabel!
-    @IBOutlet fileprivate weak var bottomButton: BottomButton!
+    @IBOutlet weak var bottomButton: BottomButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,7 +34,6 @@ class VideoDetailView: UIView, NibLoadable {
         self.configureRewardPriceStackView()
     }
     
-    func configureBottomButtonName() { }
     func configureRewardPriceStackView() { }
     
     func bind(with viewModel: Driver<VideoDetailViewModel>) -> Cancelable {
