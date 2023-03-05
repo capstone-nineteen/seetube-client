@@ -1465,6 +1465,9 @@
                             <constraint firstItem="MZu-Zh-cgh" firstAttribute="trailing" secondItem="mu2-sl-AbI" secondAttribute="trailing" id="j7Z-zQ-LgR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="videoDetailView" destination="mu2-sl-AbI" id="iBn-OI-0x2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F81-S2-dsk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

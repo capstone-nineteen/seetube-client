@@ -16,7 +16,11 @@ extension YoutuberVideoDetailPushable {
         self.push(
             viewControllerType: YoutuberVideoDetailViewController.self
         ) { viewController in
-            // TODO: 의존성 주입
+            let repository = DefaultVideoDetailRepository()
+            let fetchVideoDetailUseCase = DefaultFetchVideoDetailUseCase(repository: repository)
+            let viewModel = YoutuberVideoDetailViewModel(fetchVideoInfoUseCase: fetchVideoDetailUseCase,
+                                                         videoId: videoId)
+            viewController.viewModel = viewModel
         }
     }
 }

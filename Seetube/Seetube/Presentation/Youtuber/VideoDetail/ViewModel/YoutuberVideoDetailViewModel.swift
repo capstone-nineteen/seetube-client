@@ -44,7 +44,7 @@ class YoutuberVideoDetailViewModel: ViewModelType {
 
 extension YoutuberVideoDetailViewModel {
     struct Input {
-        let viewWillAppear: Driver<Void>
+        let viewWillAppear: Driver<Bool>
     }
     
     struct Output {
