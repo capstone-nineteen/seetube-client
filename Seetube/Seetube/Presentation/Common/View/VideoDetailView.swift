@@ -11,7 +11,7 @@ import RxCocoa
 
 @IBDesignable
 class VideoDetailView: UIView, NibLoadable {
-    @IBOutlet private weak var thumbnailButton: VideoThumbnailButton!
+    @IBOutlet fileprivate weak var thumbnailButton: VideoThumbnailButton!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var youtuberNameLabel: UILabel!
     @IBOutlet private weak var rewardLabel: UILabel!
@@ -66,7 +66,9 @@ class VideoDetailView: UIView, NibLoadable {
             viewModel
                 .map { $0.shouldEnableBottomButton }
                 .drive(self.rx.isBottomButtonEnabled),
-            // TODO: thumbnail button도 활성/비활성화
+            viewModel
+                .map { $0.shouldEnableBottomButton }
+                .drive(self.thumbnailButton.rx.isEnabled),
             viewModel
                 .map { $0.buttonTitle }
                 .drive(self.bottomButton.rx.text)
@@ -83,5 +85,9 @@ extension Reactive where Base: VideoDetailView {
     
     var bottomButtonTap: ControlEvent<Void> {
         return base.bottomButton.rx.tap
+    }
+    
+    var thumbnailButtonTap: ControlEvent<Void> {
+        return base.thumbnailButton.rx.tap
     }
 }

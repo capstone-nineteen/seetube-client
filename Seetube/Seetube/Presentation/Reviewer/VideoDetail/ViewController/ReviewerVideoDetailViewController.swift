@@ -69,8 +69,11 @@ extension ReviewerVideoDetailViewController {
     }
     
     private func startButtonTouchedEvent() -> Driver<Void> {
-        return self.videoDetailView.rx.bottomButtonTap
-            .asDriver()
+        return Driver
+            .merge(
+                self.videoDetailView.rx.bottomButtonTap.asDriver(),
+                self.videoDetailView.rx.thumbnailButtonTap.asDriver()
+            )
     }
     
     // MARK: Output Binding
