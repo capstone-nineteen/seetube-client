@@ -13,7 +13,7 @@ class YoutuberInProgressVideoCardItemViewModel: VideoCardItemViewModel {
     override init(with videoInfo: VideoInfo) {
         let current = Double(videoInfo.currentNumberOfReviewers)
         let target = Double(videoInfo.targetNumberOfReviewers)
-        let percentage = current / target * 100.0
+        let percentage = Int(current / target * 100.0)
         self.progressPercentage = "\(percentage)%"
         super.init(with: videoInfo)
     }
