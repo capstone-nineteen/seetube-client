@@ -239,9 +239,7 @@ class SignUpViewModel: ViewModelType {
         
         let remainingTimeString = remainingTime
             .map { sec -> String? in
-                let minute = String(format: "%02d", sec / 60)
-                let seconds = String(format: "%02d", sec % 60)
-                return "\(minute):\(seconds)"
+                return StringFormattingHelper.toTimeFormatString(seconds: sec)
             }
             .withLatestFrom(canVerify) { ($0, $1) }
             .map { $0.1 ? $0.0 : nil }
