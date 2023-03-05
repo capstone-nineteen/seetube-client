@@ -263,6 +263,7 @@
 		04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */; };
 		04E6FC66298971F30052496A /* KeyboardDismissible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FC65298971F30052496A /* KeyboardDismissible.swift */; };
 		04E80A7229B4A48900DE526B /* YoutuberVideoDetailPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7129B4A48900DE526B /* YoutuberVideoDetailPushable.swift */; };
+		04E80A7429B4A55500DE526B /* ResultMenuPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7329B4A55500DE526B /* ResultMenuPushable.swift */; };
 		04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B78C2970514B000F0859 /* SceneListView.xib */; };
 		04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B78E2970524E000F0859 /* SceneListView.swift */; };
 		04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */; };
@@ -538,6 +539,7 @@
 		04E6FC6229895FEE0052496A /* ViewControllerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresentable.swift; sourceTree = "<group>"; };
 		04E6FC65298971F30052496A /* KeyboardDismissible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissible.swift; sourceTree = "<group>"; };
 		04E80A7129B4A48900DE526B /* YoutuberVideoDetailPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberVideoDetailPushable.swift; sourceTree = "<group>"; };
+		04E80A7329B4A55500DE526B /* ResultMenuPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMenuPushable.swift; sourceTree = "<group>"; };
 		04E8B78C2970514B000F0859 /* SceneListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListView.xib; sourceTree = "<group>"; };
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
 		04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListTableViewCell.swift; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 				04E1464429AF709400DD4204 /* ReviewerStartable.swift */,
 				04E1464629AF71F000DD4204 /* YoutuberStartable.swift */,
 				04E80A7129B4A48900DE526B /* YoutuberVideoDetailPushable.swift */,
+				04E80A7329B4A55500DE526B /* ResultMenuPushable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1968,6 +1971,7 @@
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
 				044DF34129ACBF920013BCF9 /* SignUpViewController.swift in Sources */,
 				043636DB29938AB300EF6458 /* NetworkService.swift in Sources */,
+				04E80A7429B4A55500DE526B /* ResultMenuPushable.swift in Sources */,
 				049F585029786546002EC2F7 /* CoinHistoryTableViewHeaderCell.swift in Sources */,
 				0490DA572994C2A1000BBF73 /* MyPageRepository.swift in Sources */,
 				044D257C298401AE003F4071 /* YoutuberVideoDetailView.swift in Sources */,

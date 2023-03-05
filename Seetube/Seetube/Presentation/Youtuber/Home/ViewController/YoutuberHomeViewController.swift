@@ -10,7 +10,8 @@ import RxCocoa
 import RxSwift
 
 class YoutuberHomeViewController: UIViewController,
-                                  YoutuberVideoDetailPushable
+                                  YoutuberVideoDetailPushable,
+                                  ResultMenuPushable
 {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var segmentedControl: UnderlineSegmentedControl!
@@ -146,7 +147,7 @@ extension YoutuberHomeViewController {
     private func bindSelectedFinishedReviewId(_ id: Driver<Int>) {
         id
             .drive(with: self) { obj, id in
-                // TODO: 결과 화면 이동
+                obj.pushResultMenu(videoId: id)
             }
             .disposed(by: self.disposeBag)
     }
