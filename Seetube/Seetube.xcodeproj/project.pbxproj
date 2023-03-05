@@ -1113,7 +1113,6 @@
 		043636CD29938A1F00EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0415992B296F42C100EEB699 /* ConcentrationResultViewController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1121,6 +1120,7 @@
 		043636CE29938A2800EF6458 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0415992B296F42C100EEB699 /* ConcentrationResultViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

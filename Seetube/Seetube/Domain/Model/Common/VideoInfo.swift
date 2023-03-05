@@ -21,7 +21,7 @@ struct VideoInfo {
     let videoPath: String
     var didReviewed: Bool
     let category: Category
-    
+
     init(
         videoId: Int = 0,
         title: String = "",

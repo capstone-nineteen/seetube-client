@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21507"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,12 +27,12 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="15"/>
+                            <real key="value" value="20"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK7-AZ-G48" customClass="SceneListView" customModule="Seetube" customModuleProvider="target">
-                    <rect key="frame" x="5" y="257.66666666666669" width="433" height="594.33333333333326"/>
+                    <rect key="frame" x="17" y="257.66666666666669" width="405" height="594.33333333333326"/>
                     <color key="backgroundColor" name="BackgroundColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="집중도가 높은 장면"/>
@@ -40,9 +41,9 @@
             </subviews>
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="GK7-AZ-G48" secondAttribute="trailing" constant="1" id="5Uq-MJ-gPC"/>
+                <constraint firstAttribute="trailing" secondItem="GK7-AZ-G48" secondAttribute="trailing" constant="17" id="5Uq-MJ-gPC"/>
                 <constraint firstAttribute="trailing" secondItem="zeZ-5u-n8G" secondAttribute="trailing" constant="17" id="8a4-WY-kGE"/>
-                <constraint firstItem="GK7-AZ-G48" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="C7u-Us-Gzo"/>
+                <constraint firstItem="GK7-AZ-G48" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="17" id="C7u-Us-Gzo"/>
                 <constraint firstItem="zeZ-5u-n8G" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="17" id="JV3-11-b1z"/>
                 <constraint firstItem="GK7-AZ-G48" firstAttribute="top" secondItem="zeZ-5u-n8G" secondAttribute="bottom" constant="13" id="olR-jI-EJ6"/>
                 <constraint firstItem="zeZ-5u-n8G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="17" id="tJn-Lt-tv9"/>
@@ -54,7 +55,7 @@
     </objects>
     <resources>
         <namedColor name="BackgroundColor">
-            <color red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

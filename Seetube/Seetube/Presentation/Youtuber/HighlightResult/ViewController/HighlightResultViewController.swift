@@ -24,7 +24,7 @@ class HighlightResultViewController: UIViewController, AlertDisplaying {
 
 extension HighlightResultViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SceneListLargeTableViewCell.cellHeight + SceneListLargeTableViewCell.cellSpacing
+        return SceneListLargeTableViewCell.cellHeight
     }
 }
 

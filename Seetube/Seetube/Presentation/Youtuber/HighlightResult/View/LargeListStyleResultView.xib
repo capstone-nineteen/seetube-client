@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21507"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -31,8 +32,13 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWH-6s-qgl" customClass="SceneListLargeView" customModule="Seetube" customModuleProvider="target">
-                    <rect key="frame" x="5" y="232" width="387" height="620"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="frame" x="17" y="232" width="359" height="620"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" name="BackgroundColor"/>
@@ -40,24 +46,21 @@
                 <constraint firstItem="qWr-hd-ZUr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="17" id="APg-sP-WfK"/>
                 <constraint firstAttribute="trailing" secondItem="qWr-hd-ZUr" secondAttribute="trailing" constant="17" id="BtV-SS-V3b"/>
                 <constraint firstItem="qWr-hd-ZUr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="17" id="Efp-ZM-Dt2"/>
-                <constraint firstItem="YWH-6s-qgl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="JZn-1R-WmM"/>
-                <constraint firstAttribute="trailing" secondItem="YWH-6s-qgl" secondAttribute="trailing" constant="1" id="jDV-XY-y2G"/>
+                <constraint firstItem="YWH-6s-qgl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="17" id="JZn-1R-WmM"/>
+                <constraint firstAttribute="trailing" secondItem="YWH-6s-qgl" secondAttribute="trailing" constant="17" id="jDV-XY-y2G"/>
                 <constraint firstItem="YWH-6s-qgl" firstAttribute="top" secondItem="qWr-hd-ZUr" secondAttribute="bottom" constant="13" id="mgN-fy-spY"/>
                 <constraint firstAttribute="bottom" secondItem="YWH-6s-qgl" secondAttribute="bottom" id="vKY-DA-Gag"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="131" y="-11"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>
         <namedColor name="BackgroundColor">
-            <color red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

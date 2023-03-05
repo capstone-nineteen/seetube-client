@@ -18,7 +18,7 @@ class SceneStealerResultViewController: UIViewController {
 
 extension SceneStealerResultViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SceneListTableViewCell.cellHeight + SceneListTableViewCell.cellSpacing
+        return SceneListTableViewCell.cellHeight
     }
 }
 
