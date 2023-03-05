@@ -265,6 +265,8 @@
 		04E80A7229B4A48900DE526B /* YoutuberVideoDetailPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7129B4A48900DE526B /* YoutuberVideoDetailPushable.swift */; };
 		04E80A7429B4A55500DE526B /* ResultMenuPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7329B4A55500DE526B /* ResultMenuPushable.swift */; };
 		04E80A7629B4B5C000DE526B /* YoutuberVideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7529B4B5C000DE526B /* YoutuberVideoDetailViewModel.swift */; };
+		04E80A7829B4F23F00DE526B /* FetchConcentrationResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7729B4F23F00DE526B /* FetchConcentrationResultUseCase.swift */; };
+		04E80A7A29B4F8B700DE526B /* DefaultFetchConcentrationResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7929B4F8B700DE526B /* DefaultFetchConcentrationResultUseCase.swift */; };
 		04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B78C2970514B000F0859 /* SceneListView.xib */; };
 		04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B78E2970524E000F0859 /* SceneListView.swift */; };
 		04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */; };
@@ -542,6 +544,8 @@
 		04E80A7129B4A48900DE526B /* YoutuberVideoDetailPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberVideoDetailPushable.swift; sourceTree = "<group>"; };
 		04E80A7329B4A55500DE526B /* ResultMenuPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMenuPushable.swift; sourceTree = "<group>"; };
 		04E80A7529B4B5C000DE526B /* YoutuberVideoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberVideoDetailViewModel.swift; sourceTree = "<group>"; };
+		04E80A7729B4F23F00DE526B /* FetchConcentrationResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchConcentrationResultUseCase.swift; sourceTree = "<group>"; };
+		04E80A7929B4F8B700DE526B /* DefaultFetchConcentrationResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchConcentrationResultUseCase.swift; sourceTree = "<group>"; };
 		04E8B78C2970514B000F0859 /* SceneListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListView.xib; sourceTree = "<group>"; };
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
 		04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListTableViewCell.swift; sourceTree = "<group>"; };
@@ -874,6 +878,7 @@
 				042B3C1329AD316500FC3881 /* DefaultValidateSignUpInfoUseCase.swift */,
 				042B3C2029AE341700FC3881 /* DefaultCountDownUseCase.swift */,
 				0478A3BE29B1BD1200CB7B91 /* DefaultFetchYoutuberHomeUseCase.swift */,
+				04E80A7929B4F8B700DE526B /* DefaultFetchConcentrationResultUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1650,6 +1655,7 @@
 				042B3C1129AD303A00FC3881 /* ValidateSignUpInfoUseCase.swift */,
 				042B3C1E29AE33D700FC3881 /* CountDownUseCase.swift */,
 				0478A3BC29B1BCCA00CB7B91 /* FetchYoutuberHomeUseCase.swift */,
+				04E80A7729B4F23F00DE526B /* FetchConcentrationResultUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2024,7 +2030,9 @@
 				047B87A1299FB0CB00F4AA42 /* WithdrawalInformationViewModel.swift in Sources */,
 				047A5F4829707CBE007CDBC4 /* SceneListLargeView.swift in Sources */,
 				0490DAB729953F2B000BBF73 /* Int+Extension.swift in Sources */,
+				04E80A7A29B4F8B700DE526B /* DefaultFetchConcentrationResultUseCase.swift in Sources */,
 				0470726E29798FAB008D6CC0 /* VideoInfoCardView.swift in Sources */,
+				04E80A7829B4F23F00DE526B /* FetchConcentrationResultUseCase.swift in Sources */,
 				049960EF298289D6000EE539 /* PriceAccessoryView.swift in Sources */,
 				042B3C0829AD193200FC3881 /* VerificationCodeRequestResultDTO.swift in Sources */,
 				0490DA9029951317000BBF73 /* SceneStealerResultRepository.swift in Sources */,
