@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 @IBDesignable
 class SceneListView: UIView, NibLoadable {
@@ -13,6 +15,7 @@ class SceneListView: UIView, NibLoadable {
     @IBOutlet weak var tableView: UITableView!
     
     var title: String? { return self.titleLabel.text }
+    private var disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,17 +30,39 @@ class SceneListView: UIView, NibLoadable {
     }
     
     func configureTableView() {
-        let sceneListTableViewCellNib = UINib.init(nibName: SceneListTableViewCell.cellReuseIdentifier, bundle: nil)
-        self.tableView.register(sceneListTableViewCellNib, forCellReuseIdentifier: SceneListTableViewCell.cellReuseIdentifier)
+        let sceneListTableViewCellNib = UINib.init(nibName: SceneListTableViewCell.cellReuseIdentifier,
+                                                   bundle: nil)
+        self.tableView.register(sceneListTableViewCellNib,
+                                forCellReuseIdentifier: SceneListTableViewCell.cellReuseIdentifier)
+        
         self.tableView.layoutMargins = .zero
-    }
-    
-    func configureDelegate(_ delegate: UITableViewDelegate & UITableViewDataSource) {
-        self.tableView.delegate = delegate
-        self.tableView.dataSource = delegate
+        
+        Driver<CGFloat>.just(SceneListTableViewCell.cellHeight)
+            .drive(self.tableView.rx.rowHeight)
+            .disposed(by: self.disposeBag)
     }
     
     func updateTitle(with title: String?) {
         self.titleLabel.text = title
+    }
+    
+    func bind(with viewModels: Driver<[SceneItemViewModel]>) -> Disposable {
+        return viewModels
+            .drive(
+                self.tableView.rx.items(
+                    cellIdentifier: SceneListTableViewCell.cellReuseIdentifier,
+                    cellType: SceneListTableViewCell.self
+                )
+            ) { row, viewModel, cell in
+                cell.bind(viewModel)
+            }
+    }
+}
+
+// MARK: - Reactive Extension
+
+extension Reactive where Base: SceneListView {
+    var tableViewItemSelected: ControlEvent<IndexPath> {
+        return base.tableView.rx.itemSelected
     }
 }
