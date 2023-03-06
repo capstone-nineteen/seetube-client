@@ -26,6 +26,6 @@ class LargeListStyleResultView: UIView, NibLoadable {
     }
 
     func configureDelegate(_ delegate: UITableViewDelegate & UITableViewDataSource) {
-        self.sceneListView.configureDelegate(delegate)
+//        self.sceneListView.configureDelegate(delegate)
     }
 }

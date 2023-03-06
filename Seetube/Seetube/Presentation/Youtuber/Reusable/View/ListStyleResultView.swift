@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ListStyleResultView: UIView, NibLoadable {
-    @IBOutlet weak var sceneListView: SceneListView!
+    @IBOutlet fileprivate weak var sceneListView: SceneListView!
     
     @IBInspectable var title: String? {
         set { self.sceneListView.updateTitle(with: newValue) }
@@ -24,8 +26,16 @@ class ListStyleResultView: UIView, NibLoadable {
         super.init(coder: aDecoder)
         self.loadFromNib(owner: self)
     }
+    
+    func bind(with viewModels: Driver<[SceneItemViewModel]>) -> Disposable {
+        return self.sceneListView.bind(with: viewModels)
+    }
+}
 
-    func configureDelegate(_ delegate: UITableViewDelegate & UITableViewDataSource) {
-        self.sceneListView.configureDelegate(delegate)
+// MARK: - Reactive Extension
+
+extension Reactive where Base: ListStyleResultView {
+    var tableViewItemSelected: ControlEvent<IndexPath> {
+        return base.sceneListView.rx.tableViewItemSelected
     }
 }
