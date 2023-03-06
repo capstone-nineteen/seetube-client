@@ -8,8 +8,10 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import AVFoundation
 
 class ListStyleResultView: UIView, NibLoadable {
+    @IBOutlet weak var videoView: UIView!
     @IBOutlet fileprivate weak var sceneListView: SceneListView!
     
     @IBInspectable var title: String? {
@@ -27,8 +29,21 @@ class ListStyleResultView: UIView, NibLoadable {
         self.loadFromNib(owner: self)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.videoView.layer.sublayers?.forEach { [weak self] in
+            guard let self = self else { return }
+            $0.frame = self.videoView.bounds
+        }
+    }
+    
     func bind(with viewModels: Driver<[SceneItemViewModel]>) -> Disposable {
         return self.sceneListView.bind(with: viewModels)
+    }
+    
+    func addAVPlayerLayer(_ playerLayer: AVPlayerLayer) {
+        playerLayer.frame = self.videoView.bounds
+        self.videoView.layer.addSublayer(playerLayer)
     }
 }
 

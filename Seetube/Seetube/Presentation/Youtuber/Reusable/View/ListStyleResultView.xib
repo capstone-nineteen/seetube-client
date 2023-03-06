@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21507"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListStyleResultView" customModule="Seetube" customModuleProvider="target">
             <connections>
                 <outlet property="sceneListView" destination="GK7-AZ-G48" id="CUp-az-PJ9"/>
+                <outlet property="videoView" destination="zeZ-5u-n8G" id="Agl-ya-Up0"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,11 +20,21 @@
             <rect key="frame" x="0.0" y="0.0" width="439" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeZ-5u-n8G">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeZ-5u-n8G">
                     <rect key="frame" x="17" y="16.999999999999986" width="405" height="227.66666666666663"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원하는 장면을 선택하여 재생해보세요!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzr-An-mwE">
+                            <rect key="frame" x="98.000000000000014" y="105.33333333333333" width="209.33333333333337" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" systemColor="labelColor"/>
                     <constraints>
+                        <constraint firstItem="Gzr-An-mwE" firstAttribute="centerX" secondItem="zeZ-5u-n8G" secondAttribute="centerX" id="0t5-qi-Hhn"/>
                         <constraint firstAttribute="width" secondItem="zeZ-5u-n8G" secondAttribute="height" multiplier="16:9" id="1ab-YW-03g"/>
+                        <constraint firstItem="Gzr-An-mwE" firstAttribute="centerY" secondItem="zeZ-5u-n8G" secondAttribute="centerY" id="nOO-Gz-EuE"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

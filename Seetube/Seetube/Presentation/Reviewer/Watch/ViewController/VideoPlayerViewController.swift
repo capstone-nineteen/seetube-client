@@ -96,7 +96,7 @@ extension VideoPlayerViewController {
 
 extension VideoPlayerViewController {
     private func createPlayer() {
-        guard let urlString = self.viewModel?.url,
+        guard let urlString = self.viewModel?.url,  // FIXME: ViewModel에서 url Output화
               let url = URL(string: urlString) else { return }
 
         // AVPlayer
