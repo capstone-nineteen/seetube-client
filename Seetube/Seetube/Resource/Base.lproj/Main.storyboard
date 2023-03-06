@@ -1337,9 +1337,6 @@
                                         <color key="value" red="0.94509803921568625" green="0.23921568627450979" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="Nz8-60-9D4" kind="show" id="VSS-KL-p2k"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vh-OX-17S" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="17" y="120" width="341" height="90"/>
@@ -1438,6 +1435,9 @@
                     <navigationItem key="navigationItem" title="분석 결과" largeTitleDisplayMode="always" id="jsI-Pb-OcR">
                         <barButtonItem key="backBarButtonItem" title="back" id="4bL-RR-cou"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="concentrationButton" destination="Vtb-6Z-wbj" id="Aqv-J3-GzI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -1478,11 +1478,11 @@
             <objects>
                 <viewController storyboardIdentifier="ConcentrationResultViewController" id="Nz8-60-9D4" customClass="ConcentrationResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BmP-4Q-D2C">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKS-b8-qHx" customClass="ListStyleResultView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="집중도가 높은 장면"/>
