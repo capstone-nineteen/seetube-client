@@ -38,18 +38,26 @@ class ConcentrationResultViewModel: ViewModelType {
             .map { $0.scenes }
             .map { $0.map { SceneItemViewModel(with: $0) } }
         
+        let playingInterval = input.itemSelected
+            .debug()
+            .withLatestFrom(result) { $1.scenes[$0.row] }
+            .map { (start: $0.startTime, end: $0.endTime) }
+        
         return Output(videoUrl: videoUrl,
-                      scenes: scenes)
+                      scenes: scenes,
+                      playingInterval: playingInterval)
     }
 }
 
 extension ConcentrationResultViewModel {
     struct Input {
         let viewWillAppear: Driver<Bool>
+        let itemSelected: Driver<IndexPath>
     }
     
     struct Output {
         let videoUrl: Driver<String>
         let scenes: Driver<[SceneItemViewModel]>
+        let playingInterval: Driver<(start: Int, end: Int)>
     }
 }
