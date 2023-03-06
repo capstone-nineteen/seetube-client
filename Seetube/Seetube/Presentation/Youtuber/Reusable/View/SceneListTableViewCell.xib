@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="KGk-i7-Jjw" customClass="SceneListTableViewCell" customModule="Seetube" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="KGk-i7-Jjw" customClass="SceneListTableViewCell" customModule="Seetube" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="345" height="72"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iGZ-6j-6Ff">
-                        <rect key="frame" x="0.0" y="7" width="92" height="58"/>
+                        <rect key="frame" x="3" y="7" width="92" height="58"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="58" id="Buq-5L-RF1"/>
@@ -32,25 +32,25 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🕔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiC-JE-Y2n">
-                        <rect key="frame" x="102" y="10" width="17" height="15"/>
+                        <rect key="frame" x="105" y="10" width="17" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 100명 중에 82명이 집중했습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32K-Ze-YwK">
-                        <rect key="frame" x="105" y="26.666666666666671" width="113.33333333333331" height="31.333333333333329"/>
+                        <rect key="frame" x="108" y="26.666666666666671" width="113.33333333333331" height="31.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:03 - 00:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRi-4S-AUh">
-                        <rect key="frame" x="124" y="10" width="80" height="15"/>
+                        <rect key="frame" x="127" y="10" width="80" height="15"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GvZ-kR-r7H" customClass="CircularProgressBar" customModule="Seetube" customModuleProvider="target">
-                        <rect key="frame" x="280" y="3.6666666666666643" width="65" height="65"/>
+                        <rect key="frame" x="277" y="3.6666666666666643" width="65" height="65"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="65" id="GJH-VI-PXc"/>
@@ -62,11 +62,11 @@
                 <constraints>
                     <constraint firstItem="32K-Ze-YwK" firstAttribute="leading" secondItem="RiC-JE-Y2n" secondAttribute="leading" constant="3" id="25f-bl-zcs"/>
                     <constraint firstItem="RiC-JE-Y2n" firstAttribute="top" secondItem="iGZ-6j-6Ff" secondAttribute="top" constant="3" id="FJ1-H1-zEn"/>
-                    <constraint firstItem="iGZ-6j-6Ff" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Tkw-Ei-ygo"/>
+                    <constraint firstItem="iGZ-6j-6Ff" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="Tkw-Ei-ygo"/>
                     <constraint firstItem="NRi-4S-AUh" firstAttribute="leading" secondItem="RiC-JE-Y2n" secondAttribute="trailing" constant="5" id="Vbc-E5-wEL"/>
                     <constraint firstItem="iGZ-6j-6Ff" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="c1D-4b-jac"/>
                     <constraint firstAttribute="bottom" secondItem="32K-Ze-YwK" secondAttribute="bottom" constant="14" id="h8x-Fg-lz3"/>
-                    <constraint firstAttribute="trailing" secondItem="GvZ-kR-r7H" secondAttribute="trailing" id="kXx-Fg-qkp"/>
+                    <constraint firstAttribute="trailing" secondItem="GvZ-kR-r7H" secondAttribute="trailing" constant="3" id="kXx-Fg-qkp"/>
                     <constraint firstItem="RiC-JE-Y2n" firstAttribute="leading" secondItem="iGZ-6j-6Ff" secondAttribute="trailing" constant="10" id="kw6-F6-lWQ"/>
                     <constraint firstItem="GvZ-kR-r7H" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qb5-fi-k6O"/>
                     <constraint firstItem="NRi-4S-AUh" firstAttribute="centerY" secondItem="RiC-JE-Y2n" secondAttribute="centerY" id="wTj-cD-BOw"/>

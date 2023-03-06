@@ -40,6 +40,13 @@ class SceneListView: UIView, NibLoadable {
         Driver<CGFloat>.just(SceneListTableViewCell.cellHeight)
             .drive(self.tableView.rx.rowHeight)
             .disposed(by: self.disposeBag)
+        
+        self.tableView.rx.itemSelected
+            .asDriver()
+            .drive(with: self) { obj, indexPath in
+                obj.tableView.deselectRow(at: indexPath, animated: true)
+            }
+            .disposed(by: self.disposeBag)
     }
     
     func updateTitle(with title: String?) {
