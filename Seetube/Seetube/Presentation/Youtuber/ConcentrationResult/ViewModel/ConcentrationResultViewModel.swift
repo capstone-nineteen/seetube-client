@@ -24,6 +24,16 @@ class ConcentrationResultViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let result = input.viewWillAppear
             .flatMap { [weak self] _ -> Driver<ConcentrationResult?> in
+                // 더미데이터
+                let scene = ConcentrationScene(thumbnailImageURL: "https://avatars.githubusercontent.com/u/70833900?s=80&u=7b4aff238820c6e6d3968848b78e8d8bf1b1507e&v=4",
+                                               startTime: 43,
+                                               endTime: 62,
+                                               totalNumberOfReviewers: 200,
+                                               numberOfReviewersConcentrated: 162)
+                let temp = ConcentrationResult(originalVideoURL: "",
+                                               scenes: [scene, scene, scene, scene])
+                return .just(temp)
+                
                 guard let self = self else { return .just(nil) }
                 return self.fetchConcentrationResultUseCase
                     .execute(videoId: self.videoId)
