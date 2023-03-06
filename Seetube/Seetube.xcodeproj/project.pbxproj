@@ -64,6 +64,7 @@
 		042B623C29AA5F10004178CD /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B623B29AA5F10004178CD /* SignInViewModel.swift */; };
 		043636DB29938AB300EF6458 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043636DA29938AB300EF6458 /* NetworkService.swift */; };
 		043636E129938B0700EF6458 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 043636E029938B0700EF6458 /* RxAlamofire */; };
+		0438148229B5CB65000D070E /* SceneItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438148129B5CB65000D070E /* SceneItemViewModel.swift */; };
 		0447E35329A0CBC5005F0CC9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */; };
 		0447E35529A0CFC2005F0CC9 /* WatchPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */; };
 		0447E35729A0DB7A005F0CC9 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35629A0DB7A005F0CC9 /* VideoPlayerViewModel.swift */; };
@@ -268,7 +269,6 @@
 		04E80A7829B4F23F00DE526B /* FetchConcentrationResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7729B4F23F00DE526B /* FetchConcentrationResultUseCase.swift */; };
 		04E80A7A29B4F8B700DE526B /* DefaultFetchConcentrationResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7929B4F8B700DE526B /* DefaultFetchConcentrationResultUseCase.swift */; };
 		04E80A7C29B4F9FC00DE526B /* ConcentrationResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7B29B4F9FC00DE526B /* ConcentrationResultViewModel.swift */; };
-		04E80A7E29B4FAA000DE526B /* ConcentrationSceneItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7D29B4FAA000DE526B /* ConcentrationSceneItemViewModel.swift */; };
 		04E80A8029B4FCD300DE526B /* StringFormattingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E80A7F29B4FCD300DE526B /* StringFormattingHelper.swift */; };
 		04E8B78D2970514B000F0859 /* SceneListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B78C2970514B000F0859 /* SceneListView.xib */; };
 		04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B78E2970524E000F0859 /* SceneListView.swift */; };
@@ -351,6 +351,7 @@
 		042B623929AA5EC0004178CD /* SignInPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPushable.swift; sourceTree = "<group>"; };
 		042B623B29AA5F10004178CD /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		043636DA29938AB300EF6458 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0438148129B5CB65000D070E /* SceneItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneItemViewModel.swift; sourceTree = "<group>"; };
 		0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPresentable.swift; sourceTree = "<group>"; };
 		0447E35629A0DB7A005F0CC9 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
@@ -550,7 +551,6 @@
 		04E80A7729B4F23F00DE526B /* FetchConcentrationResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchConcentrationResultUseCase.swift; sourceTree = "<group>"; };
 		04E80A7929B4F8B700DE526B /* DefaultFetchConcentrationResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchConcentrationResultUseCase.swift; sourceTree = "<group>"; };
 		04E80A7B29B4F9FC00DE526B /* ConcentrationResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationResultViewModel.swift; sourceTree = "<group>"; };
-		04E80A7D29B4FAA000DE526B /* ConcentrationSceneItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationSceneItemViewModel.swift; sourceTree = "<group>"; };
 		04E80A7F29B4FCD300DE526B /* StringFormattingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormattingHelper.swift; sourceTree = "<group>"; };
 		04E8B78C2970514B000F0859 /* SceneListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListView.xib; sourceTree = "<group>"; };
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
@@ -1071,6 +1071,7 @@
 		043636C4299389A500EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0438148129B5CB65000D070E /* SceneItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1128,7 +1129,6 @@
 			isa = PBXGroup;
 			children = (
 				04E80A7B29B4F9FC00DE526B /* ConcentrationResultViewModel.swift */,
-				04E80A7D29B4FAA000DE526B /* ConcentrationSceneItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1958,6 +1958,7 @@
 				0470C9DD2990F96D00D4743B /* SceneStealerResultDTO.swift in Sources */,
 				048A4B05299CE00200719AD0 /* VideoDetailViewModel.swift in Sources */,
 				0490DA8A2995129A000BBF73 /* YoutuberHomeRepository.swift in Sources */,
+				0438148229B5CB65000D070E /* SceneItemViewModel.swift in Sources */,
 				0490DA4E29940B7E000BBF73 /* MyPage.swift in Sources */,
 				04E6FC6329895FEE0052496A /* ViewControllerPresentable.swift in Sources */,
 				0490DA7729950B9D000BBF73 /* EmotionResult.swift in Sources */,
@@ -2085,7 +2086,6 @@
 				042B3C2129AE341700FC3881 /* DefaultCountDownUseCase.swift in Sources */,
 				042B3BF829AD11F700FC3881 /* SignUpViewModel.swift in Sources */,
 				0490DA652994FF1E000BBF73 /* NetworkRequestable.swift in Sources */,
-				04E80A7E29B4FAA000DE526B /* ConcentrationSceneItemViewModel.swift in Sources */,
 				04E6FC66298971F30052496A /* KeyboardDismissible.swift in Sources */,
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
 				0490DA632994FCE7000BBF73 /* DomainConvertible.swift in Sources */,

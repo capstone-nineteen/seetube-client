@@ -36,7 +36,7 @@ class ConcentrationResultViewModel: ViewModelType {
         
         let scenes = result
             .map { $0.scenes }
-            .map { $0.map { ConcentrationSceneItemViewModel(with: $0) } }
+            .map { $0.map { SceneItemViewModel(with: $0) } }
         
         return Output(videoUrl: videoUrl,
                       scenes: scenes)
@@ -50,6 +50,6 @@ extension ConcentrationResultViewModel {
     
     struct Output {
         let videoUrl: Driver<String>
-        let scenes: Driver<[ConcentrationSceneItemViewModel]>
+        let scenes: Driver<[SceneItemViewModel]>
     }
 }
