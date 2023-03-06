@@ -65,6 +65,7 @@
 		043636DB29938AB300EF6458 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043636DA29938AB300EF6458 /* NetworkService.swift */; };
 		043636E129938B0700EF6458 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 043636E029938B0700EF6458 /* RxAlamofire */; };
 		0438148229B5CB65000D070E /* SceneItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438148129B5CB65000D070E /* SceneItemViewModel.swift */; };
+		0438148429B5F318000D070E /* ConcentrationResultPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438148329B5F318000D070E /* ConcentrationResultPushable.swift */; };
 		0447E35329A0CBC5005F0CC9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */; };
 		0447E35529A0CFC2005F0CC9 /* WatchPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */; };
 		0447E35729A0DB7A005F0CC9 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447E35629A0DB7A005F0CC9 /* VideoPlayerViewModel.swift */; };
@@ -352,6 +353,7 @@
 		042B623B29AA5F10004178CD /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		043636DA29938AB300EF6458 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0438148129B5CB65000D070E /* SceneItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneItemViewModel.swift; sourceTree = "<group>"; };
+		0438148329B5F318000D070E /* ConcentrationResultPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationResultPushable.swift; sourceTree = "<group>"; };
 		0447E35229A0CBC5005F0CC9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		0447E35429A0CFC2005F0CC9 /* WatchPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPresentable.swift; sourceTree = "<group>"; };
 		0447E35629A0DB7A005F0CC9 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 				04E1464629AF71F000DD4204 /* YoutuberStartable.swift */,
 				04E80A7129B4A48900DE526B /* YoutuberVideoDetailPushable.swift */,
 				04E80A7329B4A55500DE526B /* ResultMenuPushable.swift */,
+				0438148329B5F318000D070E /* ConcentrationResultPushable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2116,6 +2119,7 @@
 				044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */,
 				048A4B0E299D14BF00719AD0 /* ReviewerVideoDetailPushable.swift in Sources */,
 				042B3BFA29AD140E00FC3881 /* SignUpInformationDTO.swift in Sources */,
+				0438148429B5F318000D070E /* ConcentrationResultPushable.swift in Sources */,
 				0490DA8129951199000BBF73 /* VideoDetailRepository.swift in Sources */,
 				0478A3C129B1BDB800CB7B91 /* YoutuberHomeViewModel.swift in Sources */,
 				04867F1829A7A5B800FD9670 /* ReviewSubmissionResultDTO.swift in Sources */,
