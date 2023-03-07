@@ -7,22 +7,30 @@
 
 import Foundation
 
-struct EmotionSceneDTO: Decodable {
+struct EmotionSceneDTO: Decodable, DomainConvertible {
     let thumbnailImageURL: String
     let startTime: Int
     let endTime: Int
     let totalNumberOfReviewers: Int
     let numberOfReviewersFelt: Int
     let emotionType: Emotion
+    
+    func toDomain() -> EmotionScene {
+        return EmotionScene(thumbnailImageURL: self.thumbnailImageURL,
+                            startTime: self.startTime,
+                            endTime: self.endTime,
+                            totalNumberOfReviewers: self.totalNumberOfReviewers,
+                            numberOfReviewersFelt: self.numberOfReviewersFelt,
+                            emotionType: self.emotionType)
+    }
 }
 
-struct EmotionResultDTO: Decodable {
+struct EmotionResultDTO: Decodable, DomainConvertible {
     let originalVideoURL: String
     let scenes: [EmotionSceneDTO]
-}
- 
-extension EmotionResultDTO: DomainConvertible {
+    
     func toDomain() -> EmotionResult {
-        return EmotionResult()
+        return EmotionResult(originalVideoUrl: self.originalVideoURL,
+                             scenes: self.scenes.map { $0.toDomain() })
     }
 }
