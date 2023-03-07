@@ -31,6 +31,5 @@ extension NetworkRequestable {
                 return try decoder.decode(T.self, from: $0)
             }
             .map { $0.toDomain() }
-            .catchAndReturn(nil)
     }
 }

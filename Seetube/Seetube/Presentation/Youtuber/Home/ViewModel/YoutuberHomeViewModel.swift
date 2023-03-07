@@ -19,13 +19,6 @@ class YoutuberHomeViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let youtuberHome = input.viewWillAppear
             .flatMap { [weak self] _ -> Driver<YoutuberHome?> in
-                // 더미데이터
-                let videoInfo = VideoInfo(targetNumberOfReviewers: 10)
-                let home = YoutuberHome(userName: "이름",
-                                        finishedReviews: [videoInfo],
-                                        reviewsInProgress: [videoInfo])
-                return .just(home)
-                
                 guard let self = self else { return .just(nil) }
                 return self.fetchYoutuberHomeUseCase
                     .execute()
