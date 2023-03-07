@@ -40,7 +40,11 @@ class ListStyleResultView: UIView, NibLoadable {
     func bind(with viewModels: Driver<[SceneItemViewModel]>) -> Disposable {
         return self.sceneListView.bind(with: viewModels)
     }
-    
+}
+
+// MARK: - AVPlayerLayerAddable
+
+extension ListStyleResultView: AVPlayerLayerAddable {
     func addAVPlayerLayer(_ playerLayer: AVPlayerLayer) {
         playerLayer.frame = self.videoView.bounds
         self.videoView.layer.addSublayer(playerLayer)
