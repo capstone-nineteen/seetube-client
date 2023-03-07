@@ -35,9 +35,22 @@ class SceneListTableViewCell: UITableViewCell {
         self.bindImage(url: viewModel.thumbnailUrl)
         self.timeIntervalLabel.text = viewModel.interval
         self.contentLabel.text = viewModel.description
+        
+        var color: UIColor? {
+            guard let color = viewModel.color else { return Colors.seetubePink }
+            switch color {
+            case .red: return .red
+            case .black: return .black
+            case .indigo: return .systemIndigo
+            case .yellow: return .yellow
+            case .blue: return .blue
+            case .orange: return .orange
+            case .gray: return .darkGray
+            }
+        }
         self.progressBar.setProgress(value: viewModel.progress,
                                      text: viewModel.progressDescription,
-                                     color: Colors.seetubePink)
+                                     color: color)
         // TODO: 프로그레스바 색상 변경
     }
     

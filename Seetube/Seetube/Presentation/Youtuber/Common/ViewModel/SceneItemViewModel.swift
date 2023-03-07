@@ -8,24 +8,37 @@
 import Foundation
 
 class SceneItemViewModel {
+    enum ProgressBarColors {
+        case red
+        case black
+        case indigo
+        case yellow
+        case blue
+        case orange
+        case gray
+    }
+    
     let thumbnailUrl: String
     let interval: String
     let description: String
     let progress: Double
     let progressDescription: String
+    let color: ProgressBarColors?
     
     init(
         thumbnailUrl: String,
         interval: String,
         description: String,
         progress: Double,
-        progressDescription: String
+        progressDescription: String,
+        color: ProgressBarColors? = nil
     ) {
         self.thumbnailUrl = thumbnailUrl
         self.interval = interval
         self.description = description
         self.progress = progress
         self.progressDescription = progressDescription
+        self.color = color
     }
     
     convenience init(with scene: ConcentrationScene) {
@@ -59,10 +72,23 @@ class SceneItemViewModel {
         let progress = felt / total
         let progressDescription = "\(Int(progress * 100))%"
         
+        var color: ProgressBarColors {
+            switch scene.emotionType {
+            case .angry: return .red
+            case .disgust: return .black
+            case .fear: return .indigo
+            case .happy: return .yellow
+            case .sad: return .blue
+            case .surprise: return .orange
+            case .neutral: return .gray
+            }
+        }
+        
         self.init(thumbnailUrl: scene.thumbnailImageURL,
                   interval: interval,
                   description: description,
                   progress: progress,
-                  progressDescription: progressDescription)
+                  progressDescription: progressDescription,
+                  color: color)
     }
 }
