@@ -9,7 +9,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-class EmotionResultViewModel: ViewModelType {
+class EmotionResultViewModel: SceneResultViewModel {
     private let videoId: Int
     private let fetchEmotionResultUseCase: FetchEmotionResultUseCase
     
@@ -21,7 +21,7 @@ class EmotionResultViewModel: ViewModelType {
         self.fetchEmotionResultUseCase = fetchEmotionResultUseCase
     }
     
-    func transform(input: Input) -> Output {
+    override func transform(input: Input) -> Output {
         let result = input.viewWillAppear
             .flatMap { [weak self] _ -> Driver<EmotionResult?> in
                 // 더미데이터
@@ -59,18 +59,5 @@ class EmotionResultViewModel: ViewModelType {
         return Output(videoUrl: videoUrl,
                       scenes: scenes,
                       playingInterval: playingInterval)
-    }
-}
-
-extension EmotionResultViewModel {
-    struct Input {
-        let viewWillAppear: Driver<Bool>
-        let itemSelected: Driver<IndexPath>
-    }
-    
-    struct Output {
-        let videoUrl: Driver<String>
-        let scenes: Driver<[SceneItemViewModel]>
-        let playingInterval: Driver<(start: Int, end: Int)>
     }
 }
