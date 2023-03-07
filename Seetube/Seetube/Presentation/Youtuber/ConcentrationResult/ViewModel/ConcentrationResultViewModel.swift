@@ -9,7 +9,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-class ConcentrationResultViewModel: ViewModelType {
+class ConcentrationResultViewModel: SceneResultViewModel {
     private let videoId: Int
     private let fetchConcentrationResultUseCase: FetchConcentrationResultUseCase
     
@@ -21,7 +21,7 @@ class ConcentrationResultViewModel: ViewModelType {
         self.fetchConcentrationResultUseCase = fetchConcentrationResultUseCase
     }
     
-    func transform(input: Input) -> Output {
+    override func transform(input: Input) -> Output {
         let result = input.viewWillAppear
             .flatMap { [weak self] _ -> Driver<ConcentrationResult?> in
                 // 더미데이터
@@ -57,18 +57,5 @@ class ConcentrationResultViewModel: ViewModelType {
         return Output(videoUrl: videoUrl,
                       scenes: scenes,
                       playingInterval: playingInterval)
-    }
-}
-
-extension ConcentrationResultViewModel {
-    struct Input {
-        let viewWillAppear: Driver<Bool>
-        let itemSelected: Driver<IndexPath>
-    }
-    
-    struct Output {
-        let videoUrl: Driver<String>
-        let scenes: Driver<[SceneItemViewModel]>
-        let playingInterval: Driver<(start: Int, end: Int)>
     }
 }
