@@ -46,4 +46,23 @@ class SceneItemViewModel {
                   progress: progress,
                   progressDescription: progressDescription)
     }
+    
+    convenience init(with scene: EmotionScene) {
+        let startTimeString = StringFormattingHelper.toTimeFormatString(seconds: scene.startTime)
+        let endTimeString = StringFormattingHelper.toTimeFormatString(seconds: scene.endTime)
+        let interval = startTimeString + " - " + endTimeString
+        
+        let description = "총 \(scene.totalNumberOfReviewers)명 중에\n\(scene.numberOfReviewersFelt)명이 \(scene.emotionType.korDescription)을(를) 느꼈습니다."
+        
+        let total = Double(scene.totalNumberOfReviewers)
+        let felt = Double(scene.numberOfReviewersFelt)
+        let progress = felt / total
+        let progressDescription = "\(Int(progress * 100))%"
+        
+        self.init(thumbnailUrl: scene.thumbnailImageURL,
+                  interval: interval,
+                  description: description,
+                  progress: progress,
+                  progressDescription: progressDescription)
+    }
 }

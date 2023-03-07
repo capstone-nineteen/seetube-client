@@ -277,6 +277,7 @@
 		04E8B795297053B5000F0859 /* SceneListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B793297053B5000F0859 /* SceneListTableViewCell.xib */; };
 		04ED866829B7639400D86952 /* FetchEmotionResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866729B7639400D86952 /* FetchEmotionResultUseCase.swift */; };
 		04ED866A29B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866929B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift */; };
+		04ED866C29B76BAC00D86952 /* EmotionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866B29B76BAC00D86952 /* EmotionResultViewModel.swift */; };
 		04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA5D62297466D30015D91B /* ShopViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -562,6 +563,7 @@
 		04E8B793297053B5000F0859 /* SceneListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListTableViewCell.xib; sourceTree = "<group>"; };
 		04ED866729B7639400D86952 /* FetchEmotionResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchEmotionResultUseCase.swift; sourceTree = "<group>"; };
 		04ED866929B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchEmotionResultUseCase.swift; sourceTree = "<group>"; };
+		04ED866B29B76BAC00D86952 /* EmotionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewModel.swift; sourceTree = "<group>"; };
 		04FA5D62297466D30015D91B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1167,6 +1169,7 @@
 		043636D129938A3C00EF6458 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				04ED866B29B76BAC00D86952 /* EmotionResultViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2138,6 +2141,7 @@
 				04867F1229A79FDA00FD9670 /* ReviewSubmissionResult.swift in Sources */,
 				0490DA592994C2E5000BBF73 /* APIEndpoint.swift in Sources */,
 				0490DA8C299512D0000BBF73 /* ConcentrationResultRepository.swift in Sources */,
+				04ED866C29B76BAC00D86952 /* EmotionResultViewModel.swift in Sources */,
 				049960FC2982DC83000EE539 /* VideosByCategoryViewController.swift in Sources */,
 				04AF39AF29795C1100BF058B /* UnderlineSegmentedControl.swift in Sources */,
 				042B622B29AA47BA004178CD /* UserTypeButton.swift in Sources */,

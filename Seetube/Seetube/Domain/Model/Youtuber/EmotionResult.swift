@@ -17,6 +17,6 @@ struct EmotionScene {
 }
 
 struct EmotionResult {
-    let originalVideoUrl: String
+    let originalVideoURL: String
     let scenes: [EmotionScene]
 }
