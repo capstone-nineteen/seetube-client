@@ -281,6 +281,7 @@
 		04ED866E29B7763300D86952 /* ScenePlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866D29B7763300D86952 /* ScenePlaying.swift */; };
 		04ED867129B7840700D86952 /* SceneResultViewModelBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED867029B7840700D86952 /* SceneResultViewModelBindable.swift */; };
 		04ED867329B78A7500D86952 /* SceneResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED867229B78A7500D86952 /* SceneResultViewModel.swift */; };
+		04ED867529B7935900D86952 /* EmotionResultPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED867429B7935900D86952 /* EmotionResultPushable.swift */; };
 		04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA5D62297466D30015D91B /* ShopViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -570,6 +571,7 @@
 		04ED866D29B7763300D86952 /* ScenePlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePlaying.swift; sourceTree = "<group>"; };
 		04ED867029B7840700D86952 /* SceneResultViewModelBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneResultViewModelBindable.swift; sourceTree = "<group>"; };
 		04ED867229B78A7500D86952 /* SceneResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneResultViewModel.swift; sourceTree = "<group>"; };
+		04ED867429B7935900D86952 /* EmotionResultPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultPushable.swift; sourceTree = "<group>"; };
 		04FA5D62297466D30015D91B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -611,6 +613,7 @@
 				04E80A7129B4A48900DE526B /* YoutuberVideoDetailPushable.swift */,
 				04E80A7329B4A55500DE526B /* ResultMenuPushable.swift */,
 				0438148329B5F318000D070E /* ConcentrationResultPushable.swift */,
+				04ED867429B7935900D86952 /* EmotionResultPushable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2123,6 +2126,7 @@
 				041ECBB1296ED84C0053AC9C /* SceneDelegate.swift in Sources */,
 				0490DA632994FCE7000BBF73 /* DomainConvertible.swift in Sources */,
 				0412EEFC29705C5900256579 /* CircularProgressBar.swift in Sources */,
+				04ED867529B7935900D86952 /* EmotionResultPushable.swift in Sources */,
 				0490DA6B299509FA000BBF73 /* WithdrawalInformation.swift in Sources */,
 				0490DAA429953945000BBF73 /* DefaultYoutuberHomeRepository.swift in Sources */,
 				044D25762983F97B003F4071 /* VideoDetailView.swift in Sources */,
