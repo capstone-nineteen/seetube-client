@@ -279,6 +279,8 @@
 		04ED866A29B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866929B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift */; };
 		04ED866C29B76BAC00D86952 /* EmotionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866B29B76BAC00D86952 /* EmotionResultViewModel.swift */; };
 		04ED866E29B7763300D86952 /* ScenePlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866D29B7763300D86952 /* ScenePlaying.swift */; };
+		04ED867129B7840700D86952 /* SceneResultViewModelBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED867029B7840700D86952 /* SceneResultViewModelBindable.swift */; };
+		04ED867329B78A7500D86952 /* SceneResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED867229B78A7500D86952 /* SceneResultViewModel.swift */; };
 		04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA5D62297466D30015D91B /* ShopViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -566,6 +568,8 @@
 		04ED866929B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchEmotionResultUseCase.swift; sourceTree = "<group>"; };
 		04ED866B29B76BAC00D86952 /* EmotionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewModel.swift; sourceTree = "<group>"; };
 		04ED866D29B7763300D86952 /* ScenePlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePlaying.swift; sourceTree = "<group>"; };
+		04ED867029B7840700D86952 /* SceneResultViewModelBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneResultViewModelBindable.swift; sourceTree = "<group>"; };
+		04ED867229B78A7500D86952 /* SceneResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneResultViewModel.swift; sourceTree = "<group>"; };
 		04FA5D62297466D30015D91B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1084,6 +1088,7 @@
 			isa = PBXGroup;
 			children = (
 				0438148129B5CB65000D070E /* SceneItemViewModel.swift */,
+				04ED867229B78A7500D86952 /* SceneResultViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1810,6 +1815,7 @@
 			isa = PBXGroup;
 			children = (
 				04ED866D29B7763300D86952 /* ScenePlaying.swift */,
+				04ED867029B7840700D86952 /* SceneResultViewModelBindable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1945,6 +1951,7 @@
 				044D258229843403003F4071 /* ReviewerHomeCollectionViewCell.swift in Sources */,
 				040B16C529B3A8C700843911 /* YoutuberInProgressVideoCardItemViewModel.swift in Sources */,
 				047072802979B636008D6CC0 /* ReviewsInProgressTableViewCell.swift in Sources */,
+				04ED867329B78A7500D86952 /* SceneResultViewModel.swift in Sources */,
 				04E1463329AF1FC200DD4204 /* Driver+Extension.swift in Sources */,
 				047A5F3B297075D6007CDBC4 /* EmotionResultViewController.swift in Sources */,
 				044DF34329ACC1B20013BCF9 /* SignUpPushable.swift in Sources */,
@@ -2137,6 +2144,7 @@
 				0490DAB229953B8B000BBF73 /* FetchMyPageUseCase.swift in Sources */,
 				0490DA7F2995116C000BBF73 /* ShopRepository.swift in Sources */,
 				04867F1029A79F7F00FD9670 /* ReviewRepository.swift in Sources */,
+				04ED867129B7840700D86952 /* SceneResultViewModelBindable.swift in Sources */,
 				0470C9D42990F57200D4743B /* ConcentrationResultDTO.swift in Sources */,
 				04AF39B5297982B500BF058B /* ReviewsInProgressTableViewController.swift in Sources */,
 				044D25632983B510003F4071 /* CategoryButtonScrollView.swift in Sources */,
