@@ -130,16 +130,16 @@ extension ConcentrationResultViewController {
     }
     
     private func pause() {
-        DispatchQueue.main.async {
-            self.playerLayer?.isHidden = true
-            self.player?.pause()
+        DispatchQueue.main.async { [weak self] in
+            self?.playerLayer?.isHidden = true
+            self?.player?.pause()
         }
     }
     
     private func play() {
-        DispatchQueue.main.async {
-            self.player?.play()
-            self.playerLayer?.isHidden = false
+        DispatchQueue.main.async { [weak self] in
+            self?.player?.play()
+            self?.playerLayer?.isHidden = false
         }
     }
     
