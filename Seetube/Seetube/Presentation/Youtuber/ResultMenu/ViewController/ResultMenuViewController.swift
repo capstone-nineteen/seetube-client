@@ -10,9 +10,11 @@ import RxCocoa
 import RxSwift
 
 class ResultMenuViewController: UIViewController,
-                                ConcentrationResultPushable
+                                ConcentrationResultPushable,
+                                EmotionResultPushable
 {
     @IBOutlet weak var concentrationButton: ResultMenuButton!
+    @IBOutlet weak var emotionButton: ResultMenuButton!
     
     private var disposeBag = DisposeBag()
     
@@ -27,6 +29,7 @@ class ResultMenuViewController: UIViewController,
 extension ResultMenuViewController {
     private func configureUI() {
         self.configureConcentrationButton()
+        self.configureEmotionButton()
     }
     
     private func configureConcentrationButton() {
@@ -35,6 +38,16 @@ extension ResultMenuViewController {
             .drive(with: self) { obj, _ in
                 // TODO: videoId 주입
                 obj.pushConcentrationResult(videoId: 0)
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func configureEmotionButton() {
+        self.emotionButton.rx.tap
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                // TODO: videoId 주입
+                obj.pushEmotionResult(videoId: 0)
             }
             .disposed(by: self.disposeBag)
     }
