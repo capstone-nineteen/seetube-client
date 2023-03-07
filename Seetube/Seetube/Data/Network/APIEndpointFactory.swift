@@ -112,7 +112,7 @@ class APIEndpointFactory {
             case .getConcentrationResult:
                 return APIUrls.concentrationResult
             case .getEmotionResult:
-                return ""
+                return APIUrls.emotionResult
             case .getSceneStealerResult:
                 return ""
             case .getShortsResult:

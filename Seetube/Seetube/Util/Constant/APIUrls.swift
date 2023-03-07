@@ -29,4 +29,5 @@ enum APIUrls {
     static let youtuberSignIn = youtuberBase + "/login"
     static let youtuberHome = youtuberBase + "/home"
     static let concentrationResult = ""
+    static let emotionResult = ""
 }
