@@ -65,7 +65,7 @@ class SceneItemViewModel {
         let endTimeString = StringFormattingHelper.toTimeFormatString(seconds: scene.endTime)
         let interval = startTimeString + " - " + endTimeString
         
-        let description = "총 \(scene.totalNumberOfReviewers)명 중에\n\(scene.numberOfReviewersFelt)명이 \(scene.emotionType.korDescription)을(를) 느꼈습니다."
+        let description = "총 \(scene.totalNumberOfReviewers)명 중에 \(scene.numberOfReviewersFelt)명이\n\(scene.emotionType.korDescription)을(를) 느꼈습니다."
         
         let total = Double(scene.totalNumberOfReviewers)
         let felt = Double(scene.numberOfReviewersFelt)

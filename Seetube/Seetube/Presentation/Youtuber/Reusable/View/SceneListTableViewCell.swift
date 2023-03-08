@@ -39,12 +39,12 @@ class SceneListTableViewCell: UITableViewCell {
         var color: UIColor? {
             guard let color = viewModel.color else { return Colors.seetubePink }
             switch color {
-            case .red: return .red
+            case .red: return .systemRed
             case .black: return .black
             case .indigo: return .systemIndigo
-            case .yellow: return .yellow
-            case .blue: return .blue
-            case .orange: return .orange
+            case .yellow: return .systemYellow
+            case .blue: return .systemBlue
+            case .orange: return .systemOrange
             case .gray: return .darkGray
             }
         }
