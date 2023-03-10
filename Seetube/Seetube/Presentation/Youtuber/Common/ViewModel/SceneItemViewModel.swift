@@ -67,10 +67,21 @@ class SceneItemViewModel {
         
         let description = "총 \(scene.totalNumberOfReviewers)명 중에 \(scene.numberOfReviewersFelt)명이\n\(scene.emotionType.korDescription)을(를) 느꼈습니다."
         
+        var emoticon: String {
+            switch scene.emotionType {
+            case .angry: return "😡"
+            case .disgust: return "🤮"
+            case .fear: return "😱"
+            case .happy: return "😊"
+            case .sad: return "😢"
+            case .surprise: return "😲"
+            case .neutral: return "😐"
+            }
+        }
         let total = Double(scene.totalNumberOfReviewers)
         let felt = Double(scene.numberOfReviewersFelt)
         let progress = felt / total
-        let progressDescription = "\(Int(progress * 100))%"
+        let progressDescription = emoticon + "\n\(Int(progress * 100))%"
         
         var color: ProgressBarColors {
             switch scene.emotionType {
