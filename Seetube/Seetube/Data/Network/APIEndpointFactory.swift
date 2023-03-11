@@ -114,7 +114,7 @@ class APIEndpointFactory {
             case .getEmotionResult:
                 return APIUrls.emotionResult
             case .getSceneStealerResult:
-                return ""
+                return APIUrls.sceneStealerResult
             case .getShortsResult:
                 return ""
             case .getHighlightResult:
