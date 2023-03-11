@@ -12,6 +12,7 @@ import AVFoundation
 
 class ListStyleResultView: UIView, NibLoadable {
     @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var guidanceLabel: UILabel!
     @IBOutlet fileprivate weak var sceneListView: SceneListView!
     
     @IBInspectable var title: String? {
@@ -22,11 +23,13 @@ class ListStyleResultView: UIView, NibLoadable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.loadFromNib(owner: self)
+        self.configureGuidanceLabel()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.loadFromNib(owner: self)
+        self.configureGuidanceLabel()
     }
     
     override func layoutSubviews() {
@@ -35,6 +38,10 @@ class ListStyleResultView: UIView, NibLoadable {
             guard let self = self else { return }
             $0.frame = self.videoView.bounds
         }
+    }
+    
+    func configureGuidanceLabel() {
+        self.guidanceLabel.text = "원하는 장면을 선택하여 재생해보세요!"
     }
     
     func bind(with viewModels: Driver<[SceneItemViewModel]>) -> Disposable {

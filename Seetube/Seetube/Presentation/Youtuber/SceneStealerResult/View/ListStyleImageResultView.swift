@@ -12,7 +12,11 @@ import Kingfisher
 
 @IBDesignable
 class ListStyleImageResultView: ListStyleResultView {
-    fileprivate lazy var imageView = UIImageView()
+    fileprivate lazy var imageView: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,6 +26,10 @@ class ListStyleImageResultView: ListStyleResultView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.configureImageView()
+    }
+    
+    override func configureGuidanceLabel() {
+        self.guidanceLabel.text = "원하는 씬스틸러를 선택하여 확인해보세요!"
     }
     
     private func configureImageView() {
@@ -43,9 +51,11 @@ extension Reactive where Base: ListStyleImageResultView {
         Binder(base) { obj, url in
             guard let url = url else {
                 obj.imageView.kf.cancelDownloadTask()
+                obj.guidanceLabel.isHidden = false
                 return
             }
             
+            obj.guidanceLabel.isHidden = true
             let processor = DownsamplingImageProcessor(size: obj.imageView.bounds.size)
             obj.imageView.kf.indicatorType = .activity
             obj.imageView.kf.setImage(

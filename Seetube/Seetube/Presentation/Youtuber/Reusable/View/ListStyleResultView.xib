@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListStyleResultView" customModule="Seetube" customModuleProvider="target">
             <connections>
+                <outlet property="guidanceLabel" destination="Gzr-An-mwE" id="nAT-Uj-qot"/>
                 <outlet property="sceneListView" destination="GK7-AZ-G48" id="CUp-az-PJ9"/>
                 <outlet property="videoView" destination="zeZ-5u-n8G" id="Agl-ya-Up0"/>
             </connections>
