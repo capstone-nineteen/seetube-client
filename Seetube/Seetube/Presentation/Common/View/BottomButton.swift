@@ -50,7 +50,7 @@ class BottomButton: UIButton, NibLoadable {
 extension Reactive where Base: BottomButton {
     var text: Binder<String?> {
         Binder(base) { obj, text in
-            base.name = text
+            obj.name = text
         }
     }
 }
