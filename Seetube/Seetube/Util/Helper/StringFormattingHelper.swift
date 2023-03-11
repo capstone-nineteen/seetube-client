@@ -13,4 +13,12 @@ class StringFormattingHelper {
         let sec = seconds % 60
         return String(format: "%02d", min) + ":" + String(format: "%02d", sec)
     }
+    
+    static func toTimeIntervalFormatString(startSecond: Int, endSecond: Int) -> String {
+        let startTimeString = Self.toTimeFormatString(seconds: startSecond)
+        let endTimeString = Self.toTimeFormatString(seconds: endSecond)
+        let interval = startTimeString + " - " + endTimeString
+        
+        return interval
+    }
 }

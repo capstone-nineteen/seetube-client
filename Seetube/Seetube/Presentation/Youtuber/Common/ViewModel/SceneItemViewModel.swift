@@ -42,9 +42,8 @@ class SceneItemViewModel {
     }
     
     convenience init(with scene: ConcentrationScene) {
-        let startTimeString = StringFormattingHelper.toTimeFormatString(seconds: scene.startTime)
-        let endTimeString = StringFormattingHelper.toTimeFormatString(seconds: scene.endTime)
-        let interval = startTimeString + " - " + endTimeString
+        let interval = StringFormattingHelper.toTimeIntervalFormatString(startSecond: scene.startTime,
+                                                                         endSecond: scene.endTime)
         
         let description = "총 \(scene.totalNumberOfReviewers)명 중에\n\(scene.numberOfReviewersConcentrated)명이 집중했습니다."
         
@@ -61,9 +60,8 @@ class SceneItemViewModel {
     }
     
     convenience init(with scene: EmotionScene) {
-        let startTimeString = StringFormattingHelper.toTimeFormatString(seconds: scene.startTime)
-        let endTimeString = StringFormattingHelper.toTimeFormatString(seconds: scene.endTime)
-        let interval = startTimeString + " - " + endTimeString
+        let interval = StringFormattingHelper.toTimeIntervalFormatString(startSecond: scene.startTime,
+                                                                         endSecond: scene.endTime)
         
         let description = "총 \(scene.totalNumberOfReviewers)명 중에 \(scene.numberOfReviewersFelt)명이\n\(scene.emotionType.korDescription)을(를) 느꼈습니다."
         
@@ -101,5 +99,18 @@ class SceneItemViewModel {
                   progress: progress,
                   progressDescription: progressDescription,
                   color: color)
+    }
+    
+    convenience init(with scene: SceneStealerScene) {
+        let interval = StringFormattingHelper.toTimeIntervalFormatString(startSecond: scene.startTime,
+                                                                         endSecond: scene.endTime)
+        let description = "해당 장면에서 집중도가\n\(scene.percentageOfConcentration)%로 가장 높았습니다."
+        let progressDescription = "\(scene.percentageOfConcentration)%"
+        
+        self.init(thumbnailUrl: scene.imageURL,
+                  interval: interval,
+                  description: description,
+                  progress: Double(scene.percentageOfConcentration),
+                  progressDescription: progressDescription)
     }
 }
