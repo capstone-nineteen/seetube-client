@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct SceneStealerScene {
+    let imageURL: String
+    let startTime: Int
+    let endTime: Int
+    let percentageOfConcentration: Int
+}
+
 struct SceneStealerResult {
-    
+    let scenes: [SceneStealerScene]
 }

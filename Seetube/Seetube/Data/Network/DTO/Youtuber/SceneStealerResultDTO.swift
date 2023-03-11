@@ -7,20 +7,24 @@
 
 import Foundation
 
-struct SceneStealerSceneDTO: Decodable {
+struct SceneStealerSceneDTO: Decodable, DomainConvertible {
     let thumbnailImageURL: String
     let startTime: Int
     let endTime: Int
     let percentageOfConcentration: Int
+    
+    func toDomain() -> SceneStealerScene {
+        return SceneStealerScene(imageURL: self.thumbnailImageURL,
+                                 startTime: self.startTime,
+                                 endTime: self.endTime,
+                                 percentageOfConcentration: self.percentageOfConcentration)
+    }
 }
 
-struct SceneStealerResultDTO: Decodable {
-    let originalVideoURL: String
+struct SceneStealerResultDTO: Decodable, DomainConvertible {
     let scenes: [SceneStealerSceneDTO]
-}
- 
-extension SceneStealerResultDTO: DomainConvertible {
+    
     func toDomain() -> SceneStealerResult {
-        return SceneStealerResult()
+        return SceneStealerResult(scenes: self.scenes.map { $0.toDomain() })
     }
 }
