@@ -1265,7 +1265,7 @@
             <objects>
                 <tableViewController id="D55-m3-f4R" customClass="ReviewsInProgressTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XYT-Jz-xqS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="474.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1293,7 +1293,7 @@
             <objects>
                 <tableViewController id="s4d-ot-Q8n" customClass="FinishedReviewsTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="sOO-gh-TOs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="474.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1365,9 +1365,6 @@
                                         <color key="value" red="1" green="0.41176470588235292" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="1ya-ib-F2j" kind="show" id="SDU-pa-n1b"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9L-Rb-zAs" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="17" y="330" width="341" height="90"/>
@@ -1435,6 +1432,7 @@
                     <connections>
                         <outlet property="concentrationButton" destination="Vtb-6Z-wbj" id="Aqv-J3-GzI"/>
                         <outlet property="emotionButton" destination="1vh-OX-17S" id="9fB-wU-e2j"/>
+                        <outlet property="sceneStealerButton" destination="bc5-i8-hgR" id="4eI-zJ-pxt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1516,11 +1514,11 @@
             <objects>
                 <viewController id="1ya-ib-F2j" customClass="SceneStealerResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fpJ-tn-dns">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H97-xV-dlU" customClass="ListStyleImageResultView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="씬스틸러"/>
