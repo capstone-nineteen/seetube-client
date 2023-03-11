@@ -6,32 +6,61 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class SceneStealerResultViewController: UIViewController {
-    @IBOutlet weak var resultView: ListStyleResultView!
+    @IBOutlet weak var resultView: ListStyleImageResultView!
+    
+    var viewModel: SceneStealerResultViewModel?
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.resultView.configureDelegate(self)
+        self.bindViewModel()
     }
 }
 
-//extension SceneStealerResultViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return SceneListTableViewCell.cellHeight
-//    }
-//}
-//
-//extension SceneStealerResultViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 5
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: SceneListTableViewCell.cellReuseIdentifier, for: indexPath) as? SceneListTableViewCell else { return UITableViewCell() }
-//        cell.setProgress(value: Double((indexPath.row+1))*0.1,
-//                         text: "\((indexPath.row+1)*10)%",
-//                         color: Colors.seetubePink)
-//        return cell
-//    }
-//}
+// MARK: - ViewModel Binding
+
+extension SceneStealerResultViewController {
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        let viewWillAppear = self.viewWillAppearEvent().debug()
+        let itemSelected = self.itemSelectedEvent().debug()
+        
+        let input = SceneStealerResultViewModel.Input(
+            viewWillAppear: viewWillAppear,
+            itemSelected: itemSelected
+        )
+        let output = viewModel.transform(input: input)
+        
+        self.bindImageUrl(output.imageUrl)
+        self.bindScenes(output.scenes)
+    }
+    
+    // MARK: Input Event Creation
+    
+    func viewWillAppearEvent() -> Driver<Bool> {
+        return self.rx.viewWillAppear.asDriver()
+    }
+    
+    func itemSelectedEvent() -> Driver<IndexPath> {
+        return self.resultView.rx.tableViewItemSelected.asDriver()
+    }
+    
+    // MARK: Output Binding
+    
+    func bindImageUrl(_ url: Driver<String>) {
+        url
+            .drive(self.resultView.rx.selectedThumbnailUrl)
+            .disposed(by: self.disposeBag)
+    }
+    
+    func bindScenes(_ scenes: Driver<[SceneItemViewModel]>) {
+        self.resultView
+            .bind(with: scenes)
+            .disposed(by: self.disposeBag)
+    }
+}
