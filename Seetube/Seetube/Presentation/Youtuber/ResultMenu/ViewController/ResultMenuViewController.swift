@@ -18,6 +18,7 @@ class ResultMenuViewController: UIViewController,
     @IBOutlet weak var emotionButton: ResultMenuButton!
     @IBOutlet weak var sceneStealerButton: ResultMenuButton!
     
+    var videoId: Int?
     private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -39,8 +40,8 @@ extension ResultMenuViewController {
         self.concentrationButton.rx.tap
             .asDriver()
             .drive(with: self) { obj, _ in
-                // TODO: videoId 주입
-                obj.pushConcentrationResult(videoId: 0)
+                guard let videoId = obj.videoId else { return }
+                obj.pushConcentrationResult(videoId: videoId)
             }
             .disposed(by: self.disposeBag)
     }
@@ -49,8 +50,8 @@ extension ResultMenuViewController {
         self.emotionButton.rx.tap
             .asDriver()
             .drive(with: self) { obj, _ in
-                // TODO: videoId 주입
-                obj.pushEmotionResult(videoId: 0)
+                guard let videoId = obj.videoId else { return }
+                obj.pushEmotionResult(videoId: videoId)
             }
             .disposed(by: self.disposeBag)
     }
@@ -59,8 +60,8 @@ extension ResultMenuViewController {
         self.sceneStealerButton.rx.tap
             .asDriver()
             .drive(with: self) { obj, _ in
-                // TODO: videoId 주입
-                obj.pushSceneStealerResult(videoId: 0)
+                guard let videoId = obj.videoId else { return }
+                obj.pushSceneStealerResult(videoId: videoId)
             }
             .disposed(by: self.disposeBag)
     }

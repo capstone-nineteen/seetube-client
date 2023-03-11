@@ -16,7 +16,7 @@ extension ResultMenuPushable {
         self.push(
             viewControllerType: ResultMenuViewController.self
         ) { viewController in
-            // TODO: 의존성 주입
+            viewController.videoId = videoId
         }
     }
 }
