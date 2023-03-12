@@ -25,7 +25,7 @@ class SceneLargeItemViewModel {
     convenience init(with scene: HighlightScene) {
         let interval = StringFormattingHelper.toTimeIntervalFormatString(startSecond: scene.startTimeInOriginalVideo,
                                                                          endSecond: scene.endTimeInOriginalVideo)
-        let description = "총 \(scene.totalNumberOfReviewers)명 중에\n\(scene.numberOfReviewersConcentrated)이 집중했고,\n\(scene.numberOfReviewersFelt)이 \(scene.emotionType.korDescription)을(를) 느꼈습니다."
+        let description = "총 \(scene.totalNumberOfReviewers)명 중에\n\(scene.numberOfReviewersConcentrated)명이 집중했고,\n\(scene.numberOfReviewersFelt)명이 \(scene.emotionType.korDescription)을(를) 느꼈습니다."
         
         self.init(thumbnailUrl: scene.thumbnailImageURL,
                   interval: interval,
