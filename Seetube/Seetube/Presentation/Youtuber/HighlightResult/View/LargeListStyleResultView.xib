@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LargeListStyleResultView" customModule="Seetube" customModuleProvider="target">
             <connections>
                 <outlet property="sceneListView" destination="YWH-6s-qgl" id="lmA-HS-m2F"/>
+                <outlet property="videoView" destination="qWr-hd-ZUr" id="ccp-8W-vPj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -17,6 +17,10 @@ class SceneListTableViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var progressBar: CircularProgressBar!
     
+    override func prepareForReuse() {
+        self.clear()
+    }
+    
     private func bindImage(url: String) {
         let processor = DownsamplingImageProcessor(size: self.thumbnailImageView.bounds.size)
         self.thumbnailImageView.kf.indicatorType = .activity
@@ -51,7 +55,6 @@ class SceneListTableViewCell: UITableViewCell {
         self.progressBar.setProgress(value: viewModel.progress,
                                      text: viewModel.progressDescription,
                                      color: color)
-        // TODO: 프로그레스바 색상 변경
     }
     
     func clear() {

@@ -69,6 +69,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="contentLabel" destination="Xzd-la-pj7" id="Buh-oI-K9N"/>
+                <outlet property="thumbnailImageView" destination="yvv-cF-OW7" id="lKg-Dr-sdh"/>
+                <outlet property="timeIntervalLabel" destination="FJg-Gn-nbp" id="uw4-yQ-fR4"/>
+            </connections>
             <point key="canvasLocation" x="23.664122137404579" y="-31.338028169014088"/>
         </tableViewCell>
     </objects>

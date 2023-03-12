@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import AVFoundation
 
 class LargeListStyleResultView: UIView, NibLoadable {
+    @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var sceneListView: SceneListLargeView!
     
     @IBInspectable var title: String? {
@@ -24,8 +28,25 @@ class LargeListStyleResultView: UIView, NibLoadable {
         super.init(coder: aDecoder)
         self.loadFromNib(owner: self)
     }
+    
+    func bind(with viewModels: Driver<[SceneLargeItemViewModel]>) -> Disposable {
+        return self.sceneListView.bind(with: viewModels)
+    }
+}
 
-    func configureDelegate(_ delegate: UITableViewDelegate & UITableViewDataSource) {
-//        self.sceneListView.configureDelegate(delegate)
+// MARK: - AVPlayerLayerAddable
+
+extension LargeListStyleResultView: AVPlayerLayerAddable {
+    func addAVPlayerLayer(_ playerLayer: AVPlayerLayer) {
+        playerLayer.frame = self.videoView.bounds
+        self.videoView.layer.addSublayer(playerLayer)
+    }
+}
+
+// MARK: - Reactive Extension
+
+extension Reactive where Base: LargeListStyleResultView {
+    var tableViewItemSelected: ControlEvent<IndexPath> {
+        return base.sceneListView.rx.tableViewItemSelected
     }
 }
