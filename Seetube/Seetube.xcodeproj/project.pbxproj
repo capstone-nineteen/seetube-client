@@ -292,6 +292,7 @@
 		04FFC45129BDDCBC00F6AE60 /* DefaultFetchHighlightResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFC45029BDDCBC00F6AE60 /* DefaultFetchHighlightResultUseCase.swift */; };
 		04FFC45329BDDD1600F6AE60 /* HighlightResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFC45229BDDD1600F6AE60 /* HighlightResultViewModel.swift */; };
 		04FFC45529BDDE3600F6AE60 /* SceneLargeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFC45429BDDE3600F6AE60 /* SceneLargeItemViewModel.swift */; };
+		04FFC45B29BE2DAE00F6AE60 /* HighlightResultPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFC45A29BE2DAE00F6AE60 /* HighlightResultPushable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -591,6 +592,7 @@
 		04FFC45029BDDCBC00F6AE60 /* DefaultFetchHighlightResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchHighlightResultUseCase.swift; sourceTree = "<group>"; };
 		04FFC45229BDDD1600F6AE60 /* HighlightResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightResultViewModel.swift; sourceTree = "<group>"; };
 		04FFC45429BDDE3600F6AE60 /* SceneLargeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLargeItemViewModel.swift; sourceTree = "<group>"; };
+		04FFC45A29BE2DAE00F6AE60 /* HighlightResultPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightResultPushable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -633,6 +635,7 @@
 				0438148329B5F318000D070E /* ConcentrationResultPushable.swift */,
 				04ED867429B7935900D86952 /* EmotionResultPushable.swift */,
 				042BDA7729BCF585000ACE7C /* SceneStealerResultPushable.swift */,
+				04FFC45A29BE2DAE00F6AE60 /* HighlightResultPushable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1966,6 +1969,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04867F1429A7A08600FD9670 /* DefaultReviewRepository.swift in Sources */,
+				04FFC45B29BE2DAE00F6AE60 /* HighlightResultPushable.swift in Sources */,
 				04E1464529AF709400DD4204 /* ReviewerStartable.swift in Sources */,
 				04E1464729AF71F000DD4204 /* YoutuberStartable.swift in Sources */,
 				04E6FC5F29893A400052496A /* Colors.swift in Sources */,
