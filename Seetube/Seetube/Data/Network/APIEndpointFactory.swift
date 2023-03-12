@@ -118,7 +118,7 @@ class APIEndpointFactory {
             case .getShortsResult:
                 return ""
             case .getHighlightResult:
-                return ""
+                return APIUrls.highlightResult
             }
         }
         

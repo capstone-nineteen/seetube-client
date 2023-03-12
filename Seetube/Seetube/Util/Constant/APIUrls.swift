@@ -31,4 +31,5 @@ enum APIUrls {
     static let concentrationResult = ""
     static let emotionResult = ""
     static let sceneStealerResult = ""
+    static let highlightResult = ""
 }
