@@ -9,7 +9,10 @@ import Foundation
 
 struct HighlightSceneDTO: Decodable {
     let thumbnailImageURL: String
-    let startTime: Int
+    let startTimeInOriginalVideo: Int
+    let endTimeInOriginalVideo: Int
+    let startTimeInHighlight: Int
+    let endTimeInHighlight: Int
     let endTime: Int
     let totalNumberOfReviewers: Int
     let numberOfReviewersConcentrated: Int
@@ -17,11 +20,10 @@ struct HighlightSceneDTO: Decodable {
     let emotionType: Emotion
 }
 
-struct HighlightResultDTO: Decodable {
+struct HighlightResultDTO: Decodable, DomainConvertible {
+    let highlightVideoURL: String
     let scenes: [HighlightSceneDTO]
-}
- 
-extension HighlightResultDTO: DomainConvertible {
+    
     func toDomain() -> HighlightResult {
         return HighlightResult()
     }
