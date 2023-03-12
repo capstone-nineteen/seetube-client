@@ -24,7 +24,7 @@ extension SceneResultViewModelBindable {
         let viewWillAppear = self.viewWillAppearEvent().debug()
         let itemSelected = self.itemSelectedEvent().debug()
         
-        let input = ConcentrationResultViewModel.Input(
+        let input = SceneResultViewModel.Input(
             viewWillAppear: viewWillAppear,
             itemSelected: itemSelected
         )
