@@ -288,6 +288,8 @@
 		04ED867329B78A7500D86952 /* SceneResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED867229B78A7500D86952 /* SceneResultViewModel.swift */; };
 		04ED867529B7935900D86952 /* EmotionResultPushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED867429B7935900D86952 /* EmotionResultPushable.swift */; };
 		04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA5D62297466D30015D91B /* ShopViewController.swift */; };
+		04FFC44F29BDDC9300F6AE60 /* FetchHighlightResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFC44E29BDDC9300F6AE60 /* FetchHighlightResultUseCase.swift */; };
+		04FFC45129BDDCBC00F6AE60 /* DefaultFetchHighlightResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFC45029BDDCBC00F6AE60 /* DefaultFetchHighlightResultUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -583,6 +585,8 @@
 		04ED867229B78A7500D86952 /* SceneResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneResultViewModel.swift; sourceTree = "<group>"; };
 		04ED867429B7935900D86952 /* EmotionResultPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultPushable.swift; sourceTree = "<group>"; };
 		04FA5D62297466D30015D91B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		04FFC44E29BDDC9300F6AE60 /* FetchHighlightResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHighlightResultUseCase.swift; sourceTree = "<group>"; };
+		04FFC45029BDDCBC00F6AE60 /* DefaultFetchHighlightResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchHighlightResultUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -916,6 +920,7 @@
 				04E80A7929B4F8B700DE526B /* DefaultFetchConcentrationResultUseCase.swift */,
 				04ED866929B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift */,
 				042BDA7329BCB67C000ACE7C /* DefaultFetchSceneStealerResultUseCase.swift */,
+				04FFC45029BDDCBC00F6AE60 /* DefaultFetchHighlightResultUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1702,6 +1707,7 @@
 				04E80A7729B4F23F00DE526B /* FetchConcentrationResultUseCase.swift */,
 				04ED866729B7639400D86952 /* FetchEmotionResultUseCase.swift */,
 				042BDA7129BCB633000ACE7C /* FetchSceneStealerResultUseCase.swift */,
+				04FFC44E29BDDC9300F6AE60 /* FetchHighlightResultUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2021,6 +2027,7 @@
 				047B879F299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift in Sources */,
 				042B3C0229AD160000FC3881 /* DefaultSignUpRepository.swift in Sources */,
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
+				04FFC44F29BDDC9300F6AE60 /* FetchHighlightResultUseCase.swift in Sources */,
 				042B3C0E29AD1B4B00FC3881 /* SignUpUseCase.swift in Sources */,
 				048A4B18299D3CAC00719AD0 /* DefaultFetchVideosByCategoryUseCase.swift in Sources */,
 				049961002982DDCF000EE539 /* ReviewerVideoInfoTableViewController.swift in Sources */,
@@ -2054,6 +2061,7 @@
 				047A5F3E29707739007CDBC4 /* SceneStealerResultViewController.swift in Sources */,
 				0447E35329A0CBC5005F0CC9 /* VideoPlayerViewController.swift in Sources */,
 				04FA5D63297466D30015D91B /* ShopViewController.swift in Sources */,
+				04FFC45129BDDCBC00F6AE60 /* DefaultFetchHighlightResultUseCase.swift in Sources */,
 				044D25612983AEFF003F4071 /* CategoryButtonStackView.swift in Sources */,
 				0490DABE299573FC000BBF73 /* CoinHistoryItemViewModel.swift in Sources */,
 				04ED866E29B7763300D86952 /* ScenePlaying.swift in Sources */,
