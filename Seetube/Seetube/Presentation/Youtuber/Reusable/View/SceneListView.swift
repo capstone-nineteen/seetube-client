@@ -15,7 +15,7 @@ class SceneListView: UIView, NibLoadable {
     @IBOutlet weak var tableView: UITableView!
     
     var title: String? { return self.titleLabel.text }
-    private var disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,17 +30,26 @@ class SceneListView: UIView, NibLoadable {
     }
     
     func configureTableView() {
+        self.tableView.layoutMargins = .zero
+        self.registerTableViewCell()
+        self.configureTableViewCellHeight()
+        self.configureTableViewSelectionStyle()
+    }
+    
+    func configureTableViewCellHeight() {
+        Driver<CGFloat>.just(SceneListTableViewCell.cellHeight)
+            .drive(self.tableView.rx.rowHeight)
+            .disposed(by: self.disposeBag)
+    }
+    
+    func registerTableViewCell() {
         let sceneListTableViewCellNib = UINib.init(nibName: SceneListTableViewCell.cellReuseIdentifier,
                                                    bundle: nil)
         self.tableView.register(sceneListTableViewCellNib,
                                 forCellReuseIdentifier: SceneListTableViewCell.cellReuseIdentifier)
-        
-        self.tableView.layoutMargins = .zero
-        
-        Driver<CGFloat>.just(SceneListTableViewCell.cellHeight)
-            .drive(self.tableView.rx.rowHeight)
-            .disposed(by: self.disposeBag)
-        
+    }
+    
+    func configureTableViewSelectionStyle() {
         self.tableView.rx.itemSelected
             .asDriver()
             .drive(with: self) { obj, indexPath in

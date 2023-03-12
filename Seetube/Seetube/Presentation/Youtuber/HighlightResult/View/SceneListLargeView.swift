@@ -10,9 +10,15 @@ import RxCocoa
 import RxSwift
 
 class SceneListLargeView: SceneListView {
-    override func configureTableView() {
+    override func registerTableViewCell() {
         let sceneListLargeTableViewCellNib = UINib.init(nibName: SceneListLargeTableViewCell.cellReuseIdentifier, bundle: nil)
         self.tableView.register(sceneListLargeTableViewCellNib, forCellReuseIdentifier: SceneListLargeTableViewCell.cellReuseIdentifier)
+    }
+    
+    override func configureTableViewCellHeight() {
+        Driver<CGFloat>.just(SceneListLargeTableViewCell.cellHeight)
+            .drive(self.tableView.rx.rowHeight)
+            .disposed(by: self.disposeBag)
     }
     
     func bind(with viewModels: Driver<[SceneLargeItemViewModel]>) -> Disposable {
