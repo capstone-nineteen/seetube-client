@@ -12,11 +12,13 @@ import RxSwift
 class ResultMenuViewController: UIViewController,
                                 ConcentrationResultPushable,
                                 EmotionResultPushable,
-                                SceneStealerResultPushable
+                                SceneStealerResultPushable,
+                                HighlightResultPushable
 {
     @IBOutlet weak var concentrationButton: ResultMenuButton!
     @IBOutlet weak var emotionButton: ResultMenuButton!
     @IBOutlet weak var sceneStealerButton: ResultMenuButton!
+    @IBOutlet weak var highlightButton: ResultMenuButton!
     
     var videoId: Int?
     private var disposeBag = DisposeBag()
@@ -34,6 +36,7 @@ extension ResultMenuViewController {
         self.configureConcentrationButton()
         self.configureEmotionButton()
         self.configureSceneStealerButton()
+        self.configureHighlightButton()
     }
     
     private func configureConcentrationButton() {
@@ -62,6 +65,16 @@ extension ResultMenuViewController {
             .drive(with: self) { obj, _ in
                 guard let videoId = obj.videoId else { return }
                 obj.pushSceneStealerResult(videoId: videoId)
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func configureHighlightButton() {
+        self.highlightButton.rx.tap
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                guard let videoId = obj.videoId else { return }
+                obj.pushHighlightResult(videoId: videoId)
             }
             .disposed(by: self.disposeBag)
     }
