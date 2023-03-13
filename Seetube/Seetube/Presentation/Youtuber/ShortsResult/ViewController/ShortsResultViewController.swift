@@ -26,12 +26,6 @@ class ShortsResultViewController: UIViewController, AlertDisplaying {
         super.viewDidLoad()
         self.configureUI()
     }
-    
-    @IBAction func saveButtonTouched(_ sender: Any) {
-        self.displayOKAlert(title: "저장 완료",
-                            message: "쇼츠를 저장했습니다.",
-                            action: { [weak self] _ in self?.changeToNormalMode() })
-    }
 }
 
 // MARK: - Configuration
@@ -68,22 +62,94 @@ extension ShortsResultViewController {
     }
 }
 
-extension ShortsResultViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // 셀 선택
+// MARK: - ViewModel Binding
+
+extension ShortsResultViewController {
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        let viewWillAppear = self.viewWillAppearEvent()
+        let itemSelected = self.itemSelectedEvent()
+        let selectedButtonTouched = self.selectedButtonTouched()
+        let saveButtonTouched = self.saveButtonTouched()
+        
+        let input = ShortsResultViewModel.Input(
+            viewWillAppear: viewWillAppear,
+            itemSelected: itemSelected,
+            selectedButtonTouched: selectedButtonTouched,
+            saveButtonTouched: saveButtonTouched
+        )
+        let output = viewModel.transform(input: input)
+        
+        self.bindShorts(output.shorts)
+        self.bindShouldPlay(output.shouldPlay)
+        self.bindSaveResult(output.saveResult)
+    }
+    
+    // MARK: Input Event Creation
+    
+    private func viewWillAppearEvent() -> Driver<Bool> {
+        return self.rx.viewWillAppear.asDriver()
+    }
+    
+    private func itemSelectedEvent() -> Driver<IndexPath> {
+        return self.collectionView.rx.itemSelected.asDriver()
+    }
+    
+    private func selectedButtonTouched() -> Driver<Void> {
+        return self.rightBarButtonItem.rx.tap.asDriver()
+    }
+    
+    private func saveButtonTouched() -> Driver<Void> {
+        return self.saveButton.rx.tap.asDriver()
+    }
+    
+    // MARK: Output Binding
+    
+    private func bindShorts(_ shorts: Driver<[ShortsItemViewModel]>) {
+        shorts
+            .drive(
+                self.collectionView.rx.items(
+                    cellIdentifier: ShortsCollectionViewCell.cellReuseIdentifier,
+                    cellType: ShortsCollectionViewCell.self)
+            ) { row, viewModel, cell in
+                cell.bind(viewModel)
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindShouldPlay(_ shouldPlay: Driver<IndexPath?>) {
+        // TODO: 영상 재생
+    }
+    
+    private func bindSaveResult(_ saveResult: Driver<Bool>) {
+        saveResult
+            .drive(with: self) { obj, isSucceed in
+                if isSucceed {
+                    obj.displaySaveSucceedAlert()
+                } else {
+                    obj.displaySaveFailedAlert()
+                }
+            }
+            .disposed(by: self.disposeBag)
     }
 }
 
-extension ShortsResultViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+// MARK: - Alerts
+
+extension ShortsResultViewController {
+    private func displaySaveSucceedAlert() {
+        self.displayOKAlert(title: "저장 완료",
+                            message: "쇼츠를 저장했습니다.",
+                            action: { [weak self] _ in self?.changeToNormalMode() })
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShortsCollectionViewCell", for: indexPath) as? ShortsCollectionViewCell else { return UICollectionViewCell() }
-        return cell
+    private func displaySaveFailedAlert() {
+        self.displayFailureAlert(message: "저장에 실패했습니다. 다시 시도해주세요.")
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension ShortsResultViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

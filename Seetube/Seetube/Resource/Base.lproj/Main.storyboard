@@ -1566,6 +1566,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="152" height="264"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bqN-0S-Vmr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="264"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="집중도 70% 행복 65%" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZw-ER-mhg">
                                                     <rect key="frame" x="12" y="220.5" width="65.5" height="31.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
@@ -1588,12 +1591,16 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="WZw-ER-mhg" firstAttribute="top" secondItem="JK2-es-D03" secondAttribute="bottom" constant="4" id="G8n-sQ-Ngt"/>
+                                                <constraint firstItem="bqN-0S-Vmr" firstAttribute="leading" secondItem="4lH-gZ-nC4" secondAttribute="leading" id="GsR-iJ-YQQ"/>
                                                 <constraint firstItem="JK2-es-D03" firstAttribute="leading" secondItem="WZw-ER-mhg" secondAttribute="leading" constant="-2" id="I6f-r5-aQo"/>
+                                                <constraint firstItem="bqN-0S-Vmr" firstAttribute="top" secondItem="4lH-gZ-nC4" secondAttribute="top" id="L83-Bx-4Vh"/>
+                                                <constraint firstAttribute="bottom" secondItem="bqN-0S-Vmr" secondAttribute="bottom" id="OrU-Yv-gcO"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WZw-ER-mhg" secondAttribute="trailing" constant="12" id="be9-Z0-7FI"/>
                                                 <constraint firstAttribute="bottom" secondItem="WZw-ER-mhg" secondAttribute="bottom" constant="12" id="dGY-jS-9ID"/>
                                                 <constraint firstItem="WZw-ER-mhg" firstAttribute="leading" secondItem="4lH-gZ-nC4" secondAttribute="leading" constant="12" id="dXP-Qs-c9E"/>
                                                 <constraint firstItem="oXa-v2-GJh" firstAttribute="leading" secondItem="4lH-gZ-nC4" secondAttribute="leading" constant="8" id="fho-Np-nb9"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JK2-es-D03" secondAttribute="trailing" constant="12" id="pml-16-yVX"/>
+                                                <constraint firstAttribute="trailing" secondItem="bqN-0S-Vmr" secondAttribute="trailing" id="yO4-a9-ECv"/>
                                                 <constraint firstItem="oXa-v2-GJh" firstAttribute="top" secondItem="4lH-gZ-nC4" secondAttribute="top" constant="8" id="yeF-La-fSi"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -1607,12 +1614,12 @@
                                         <connections>
                                             <outlet property="checkIconImageView" destination="oXa-v2-GJh" id="L7i-yn-2lt"/>
                                             <outlet property="contentLabel" destination="WZw-ER-mhg" id="tb3-W8-k28"/>
+                                            <outlet property="thumbnailView" destination="bqN-0S-Vmr" id="xyc-BV-Rc7"/>
                                             <outlet property="timeIntervalLabel" destination="JK2-es-D03" id="PCG-qd-1n8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="pOq-Pj-3lr" id="Tr0-Hl-A2y"/>
                                     <outlet property="delegate" destination="pOq-Pj-3lr" id="5Ws-Az-cQh"/>
                                 </connections>
                             </collectionView>
@@ -1625,10 +1632,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="name" value="총 3개의 쇼츠 저장하기"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="saveButtonTouched:" destination="9aP-so-7zN" eventType="touchUpInside" id="Lt6-Na-nbV"/>
-                                    <action selector="saveButtonTouched:" destination="pOq-Pj-3lr" eventType="touchUpInside" id="cyW-F6-k33"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="epK-d2-2el"/>
