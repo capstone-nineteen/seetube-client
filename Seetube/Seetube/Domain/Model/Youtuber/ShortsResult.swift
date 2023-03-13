@@ -8,6 +8,7 @@
 import Foundation
 
 struct ShortsScene {
+    let thumbnailURL: String
     let videoURL: String
     let startTime: Int
     let endTime: Int

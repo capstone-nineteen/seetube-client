@@ -8,6 +8,7 @@
 import Foundation
 
 struct ShortsSceneDTO: Decodable, DomainConvertible {
+    let thumbnailURL: String
     let videoURL: String
     let startTime: Int
     let endTime: Int
@@ -16,7 +17,8 @@ struct ShortsSceneDTO: Decodable, DomainConvertible {
     let emotionPerentage: Int
     
     func toDomain() -> ShortsScene {
-        return ShortsScene(videoURL: self.videoURL,
+        return ShortsScene(thumbnailURL: self.thumbnailURL,
+                           videoURL: self.videoURL,
                            startTime: self.startTime,
                            endTime: self.endTime,
                            concentrationPercentage: self.concentrationPercentage,
