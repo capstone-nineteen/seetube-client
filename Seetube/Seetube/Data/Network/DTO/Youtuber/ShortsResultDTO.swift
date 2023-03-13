@@ -7,21 +7,28 @@
 
 import Foundation
 
-struct ShortsSceneDTO: Decodable {
+struct ShortsSceneDTO: Decodable, DomainConvertible {
     let videoURL: String
     let startTime: Int
     let endTime: Int
     let concentrationPercentage: Int
     let emotionType: Emotion
     let emotionPerentage: Int
+    
+    func toDomain() -> ShortsScene {
+        return ShortsScene(videoURL: self.videoURL,
+                           startTime: self.startTime,
+                           endTime: self.endTime,
+                           concentrationPercentage: self.concentrationPercentage,
+                           emotionType: self.emotionType,
+                           emotionPerentage: self.emotionPerentage)
+    }
 }
 
-struct ShortsResultDTO: Decodable {
+struct ShortsResultDTO: Decodable, DomainConvertible {
     let scenes: [ShortsSceneDTO]
-}
-
-extension ShortsResultDTO: DomainConvertible {
+    
     func toDomain() -> ShortsResult {
-        return ShortsResult()
+        return ShortsResult(scenes: self.scenes.map { $0.toDomain() })
     }
 }

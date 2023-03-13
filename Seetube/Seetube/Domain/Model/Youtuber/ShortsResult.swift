@@ -7,6 +7,15 @@
 
 import Foundation
 
+struct ShortsScene {
+    let videoURL: String
+    let startTime: Int
+    let endTime: Int
+    let concentrationPercentage: Int
+    let emotionType: Emotion
+    let emotionPerentage: Int
+}
+
 struct ShortsResult {
-    
+    let scenes: [ShortsScene]
 }
