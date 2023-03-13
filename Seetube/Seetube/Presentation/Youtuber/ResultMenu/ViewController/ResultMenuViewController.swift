@@ -13,11 +13,13 @@ class ResultMenuViewController: UIViewController,
                                 ConcentrationResultPushable,
                                 EmotionResultPushable,
                                 SceneStealerResultPushable,
-                                HighlightResultPushable
+                                HighlightResultPushable,
+                                ShortsResultPushable
 {
     @IBOutlet weak var concentrationButton: ResultMenuButton!
     @IBOutlet weak var emotionButton: ResultMenuButton!
     @IBOutlet weak var sceneStealerButton: ResultMenuButton!
+    @IBOutlet weak var shortsButton: ResultMenuButton!
     @IBOutlet weak var highlightButton: ResultMenuButton!
     
     var videoId: Int?
@@ -37,6 +39,7 @@ extension ResultMenuViewController {
         self.configureEmotionButton()
         self.configureSceneStealerButton()
         self.configureHighlightButton()
+        self.configureShortsButton()
     }
     
     private func configureConcentrationButton() {
@@ -65,6 +68,16 @@ extension ResultMenuViewController {
             .drive(with: self) { obj, _ in
                 guard let videoId = obj.videoId else { return }
                 obj.pushSceneStealerResult(videoId: videoId)
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func configureShortsButton() {
+        self.shortsButton.rx.tap
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                guard let videoId = obj.videoId else { return }
+                obj.pushShortsResult(videoId: videoId)
             }
             .disposed(by: self.disposeBag)
     }
