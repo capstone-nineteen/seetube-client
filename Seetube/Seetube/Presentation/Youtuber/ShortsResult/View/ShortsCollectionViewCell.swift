@@ -16,9 +16,15 @@ class ShortsCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var contentLabel: UILabel!
     @IBOutlet private weak var checkIconImageView: UIImageView!
     
+    var shouldDisplayCheckIcon: Bool = false
+    
     override var isSelected: Bool {
         didSet {
-            self.checkIconImageView.isHidden = !isSelected
+            if shouldDisplayCheckIcon {
+                self.checkIconImageView.isHidden = !isSelected
+            } else {
+                self.checkIconImageView.isHidden = true
+            }
         }
     }
     
@@ -37,6 +43,7 @@ class ShortsCollectionViewCell: UICollectionViewCell {
     }
     
     func bind(_ viewModel: ShortsItemViewModel) {
+        self.shouldDisplayCheckIcon = viewModel.shouldDisplayCheckIcon
         self.bindImage(url: viewModel.thumbnailURL)
         self.timeIntervalLabel.text = viewModel.interval
         self.contentLabel.text = viewModel.description

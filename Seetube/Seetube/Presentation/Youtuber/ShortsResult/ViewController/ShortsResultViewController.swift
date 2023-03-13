@@ -25,6 +25,7 @@ class ShortsResultViewController: UIViewController, AlertDisplaying {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureUI()
+        self.bindViewModel()
     }
 }
 
@@ -37,6 +38,7 @@ extension ShortsResultViewController {
     
     private func configureRightBarButtonItem() {
         self.changeToNormalMode()
+        self.collectionView.allowsSelection = true
         
         self.rightBarButtonItem.rx.tap
             .asDriver()
@@ -49,16 +51,17 @@ extension ShortsResultViewController {
     private func changeToSelectionMode() {
         self.navigationItem.setRightBarButton(nil, animated: false)
         self.saveButton.isHidden = false
-        self.collectionView.allowsSelection = true
         self.collectionView.allowsMultipleSelection = true
         self.collectionViewBottomConstraint.constant = 50 + 7 + 5
+        self.collectionView.reloadData()
     }
     
     private func changeToNormalMode() {
         self.navigationItem.setRightBarButton(self.rightBarButtonItem, animated: false)
         self.saveButton.isHidden = true
-        self.collectionView.allowsSelection = false
+        self.collectionView.allowsMultipleSelection = false
         self.collectionViewBottomConstraint.constant = 0
+        self.collectionView.reloadData()
     }
 }
 
@@ -119,7 +122,11 @@ extension ShortsResultViewController {
     }
     
     private func bindShouldPlay(_ shouldPlay: Driver<IndexPath?>) {
-        // TODO: 영상 재생
+        shouldPlay
+            .drive(with: self) { _ in
+                // TODO: 영상 재생
+            }
+            .disposed(by: self.disposeBag)
     }
     
     private func bindSaveResult(_ saveResult: Driver<Bool>) {
