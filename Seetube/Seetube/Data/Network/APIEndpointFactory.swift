@@ -116,7 +116,7 @@ class APIEndpointFactory {
             case .getSceneStealerResult:
                 return APIUrls.sceneStealerResult
             case .getShortsResult:
-                return ""
+                return APIUrls.shortsResult
             case .getHighlightResult:
                 return APIUrls.highlightResult
             }
