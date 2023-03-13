@@ -1379,9 +1379,6 @@
                                         <color key="value" red="1" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="pOq-Pj-3lr" kind="show" id="NtK-ux-J0Y"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9A-c5-fHa" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="17" y="435" width="341" height="90"/>
@@ -1431,6 +1428,7 @@
                         <outlet property="emotionButton" destination="1vh-OX-17S" id="9fB-wU-e2j"/>
                         <outlet property="highlightButton" destination="u9A-c5-fHa" id="Va9-Gw-Zat"/>
                         <outlet property="sceneStealerButton" destination="bc5-i8-hgR" id="4eI-zJ-pxt"/>
+                        <outlet property="shortsButton" destination="k9L-Rb-zAs" id="jwP-im-zZP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1544,13 +1542,13 @@
         <!--쇼츠 추천 결과-->
         <scene sceneID="c7G-Rv-Mp6">
             <objects>
-                <viewController id="pOq-Pj-3lr" customClass="ShortsResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShortsResultViewController" id="pOq-Pj-3lr" customClass="ShortsResultViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZbO-fC-n9h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-EA-ae5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wk5-gc-oEN">
                                     <size key="itemSize" width="152" height="264"/>
@@ -1624,7 +1622,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIt-RP-vXU" customClass="BottomButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="590" width="341" height="50"/>
+                                <rect key="frame" x="17" y="610" width="341" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9Cg-11-dcm"/>
                                 </constraints>
