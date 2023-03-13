@@ -26,12 +26,12 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요. SEETUBE 입니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5y-oX-5F9" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="23" y="186" width="178.5" height="69"/>
+                                <rect key="frame" x="23" y="186" width="185" height="69"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시선 추적과 표정 분석 기술을 사용한  영상 리뷰 플랫폼이에요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esw-za-S6b" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="23" y="255" width="212" height="41.5"/>
+                                <rect key="frame" x="23" y="255" width="190.5" height="41.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -146,7 +146,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 서비스 이용을 위해 로그인 해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzt-KO-Efe" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="30" y="240.5" width="212.5" height="18.5"/>
+                                <rect key="frame" x="30" y="240.5" width="245" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -457,7 +457,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN" customClass="CategoryButtonScrollView" customModule="Seetube" customModuleProvider="target">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN" customClass="CategoryButtonScrollView" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="19" y="68" width="337.5" height="27"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -506,7 +506,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-JJ-YQe" customClass="ReceiptView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="40.5" y="25.5" width="294" height="567"/>
+                                <rect key="frame" x="28" y="25.5" width="319" height="567"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="9999" id="HgX-Bc-Sbg"/>
@@ -950,24 +950,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2k-Xx-VOf" customClass="SeetubeSearchBarView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="19" y="105.5" width="337.5" height="40"/>
+                                <rect key="frame" x="19" y="102" width="337.5" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Tv9-aW-IiF"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요, OOO님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rP-DK-C5g">
-                                <rect key="frame" x="19" y="64" width="152" height="26.5"/>
+                                <rect key="frame" x="19" y="64" width="152" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UES-HQ-UGd" customClass="PriceAccessoryView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="181" y="64" width="175.5" height="26.5"/>
+                                <rect key="frame" x="181" y="64" width="175.5" height="23"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MN6-Ke-7gz">
-                                <rect key="frame" x="0.0" y="160.5" width="375" height="457.5"/>
+                                <rect key="frame" x="0.0" y="157" width="375" height="461"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NES-sd-Dio">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="835"/>
@@ -1644,11 +1644,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="쇼츠 추천 결과" largeTitleDisplayMode="never" id="Pqr-Fp-wTd">
-                        <barButtonItem key="rightBarButtonItem" title="선택" id="1zx-Yz-CXH">
-                            <connections>
-                                <action selector="rightBarButtonItemTouched:" destination="pOq-Pj-3lr" id="jsh-jM-dpT"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="선택" id="1zx-Yz-CXH"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="KbU-EA-ae5" id="hY2-wH-Ztb"/>
@@ -1839,52 +1835,52 @@
     </scenes>
     <designables>
         <designable name="1Ej-WY-gth">
-            <size key="intrinsicContentSize" width="45.5" height="22.5"/>
+            <size key="intrinsicContentSize" width="36.5" height="18.5"/>
         </designable>
         <designable name="1vh-OX-17S">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="6sF-QO-ZI6">
-            <size key="intrinsicContentSize" width="128.5" height="20"/>
+            <size key="intrinsicContentSize" width="117" height="18.5"/>
         </designable>
         <designable name="AjX-df-afO">
-            <size key="intrinsicContentSize" width="191" height="20"/>
+            <size key="intrinsicContentSize" width="174" height="18.5"/>
         </designable>
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="Djo-Ia-zoD">
-            <size key="intrinsicContentSize" width="45.5" height="22.5"/>
+            <size key="intrinsicContentSize" width="36.5" height="18.5"/>
         </designable>
         <designable name="Iqx-xv-HFK">
-            <size key="intrinsicContentSize" width="128.5" height="20"/>
+            <size key="intrinsicContentSize" width="117" height="18.5"/>
         </designable>
         <designable name="Iu1-px-9Bj">
-            <size key="intrinsicContentSize" width="164.5" height="22.5"/>
+            <size key="intrinsicContentSize" width="135.5" height="18.5"/>
         </designable>
         <designable name="Jes-rP-dqy">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="Lzt-KO-Efe">
-            <size key="intrinsicContentSize" width="212.5" height="15.5"/>
+            <size key="intrinsicContentSize" width="245" height="18"/>
         </designable>
         <designable name="MIt-RP-vXU">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="P5y-oX-5F9">
-            <size key="intrinsicContentSize" width="178.5" height="58"/>
+            <size key="intrinsicContentSize" width="185" height="60"/>
         </designable>
         <designable name="RDb-xF-FEM">
-            <size key="intrinsicContentSize" width="61" height="21"/>
+            <size key="intrinsicContentSize" width="48.5" height="17"/>
         </designable>
         <designable name="U0X-MO-s0i">
-            <size key="intrinsicContentSize" width="95.5" height="21"/>
+            <size key="intrinsicContentSize" width="76.5" height="17"/>
         </designable>
         <designable name="Vtb-6Z-wbj">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="aki-GP-gN7">
-            <size key="intrinsicContentSize" width="95.5" height="22.5"/>
+            <size key="intrinsicContentSize" width="76.5" height="18.5"/>
         </designable>
         <designable name="bc5-i8-hgR">
             <size key="intrinsicContentSize" width="30" height="34"/>
@@ -1899,7 +1895,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="esw-za-S6b">
-            <size key="intrinsicContentSize" width="212" height="35"/>
+            <size key="intrinsicContentSize" width="190.5" height="31.5"/>
         </designable>
         <designable name="fOj-Qb-oel">
             <size key="intrinsicContentSize" width="30" height="34"/>
@@ -1911,7 +1907,7 @@
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="hGu-Jk-HYu">
-            <size key="intrinsicContentSize" width="233" height="21"/>
+            <size key="intrinsicContentSize" width="188.5" height="17"/>
         </designable>
         <designable name="k9L-Rb-zAs">
             <size key="intrinsicContentSize" width="30" height="34"/>
@@ -1930,7 +1926,7 @@
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="person" catalog="system" width="128" height="121"/>
-        <image name="person.fill.checkmark.rtl" catalog="system" width="32" height="32"/>
+        <image name="person.fill.checkmark.rtl" catalog="system" width="128" height="89"/>
         <image name="play.square.stack" catalog="system" width="112" height="128"/>
         <image name="wonsign.circle" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">

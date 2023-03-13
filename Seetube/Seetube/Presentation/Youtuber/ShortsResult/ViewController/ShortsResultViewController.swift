@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class ShortsResultViewController: UIViewController, AlertDisplaying {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -17,9 +19,12 @@ class ShortsResultViewController: UIViewController, AlertDisplaying {
     private let collectionViewHorizontalInset: CGFloat = 17
     private let collectionViewVerticalInset: CGFloat = 5
     
+    var viewModel: ShortsResultViewModel?
+    private var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.changeToNormalMode()
+        self.configureUI()
     }
     
     @IBAction func saveButtonTouched(_ sender: Any) {
@@ -27,13 +32,26 @@ class ShortsResultViewController: UIViewController, AlertDisplaying {
                             message: "쇼츠를 저장했습니다.",
                             action: { [weak self] _ in self?.changeToNormalMode() })
     }
-    
-    @IBAction func rightBarButtonItemTouched(_ sender: UIBarButtonItem) {
-        self.changeToSelectionMode()
-    }
 }
 
+// MARK: - Configuration
+
 extension ShortsResultViewController {
+    private func configureUI() {
+        self.configureRightBarButtonItem()
+    }
+    
+    private func configureRightBarButtonItem() {
+        self.changeToNormalMode()
+        
+        self.rightBarButtonItem.rx.tap
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.changeToSelectionMode()
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
     private func changeToSelectionMode() {
         self.navigationItem.setRightBarButton(nil, animated: false)
         self.saveButton.isHidden = false
