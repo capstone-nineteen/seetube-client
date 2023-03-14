@@ -63,11 +63,13 @@ extension ShortsCollectionViewCell {
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.bounds
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        self.layer.addSublayer(playerLayer)
+        self.layer.insertSublayer(playerLayer, at: 0)
+        self.thumbnailView.isHidden = true
         self.playerLayer = playerLayer
     }
     
     func removePlayerLayer() {
+        self.thumbnailView.isHidden = false
         self.playerLayer?.removeFromSuperlayer()
         self.playerLayer = nil
     }
