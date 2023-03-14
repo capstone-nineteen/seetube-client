@@ -25,7 +25,7 @@ class ShortsResultViewModel: ViewModelType {
         let result = input.viewWillAppear
             .flatMap { [weak self] _ -> Driver<ShortsResult?> in
                 // 더미 데이터
-                let scene = ShortsScene(thumbnailURL: "https://avatars.githubusercontent.com/u/70833900?s=80&u=7b4aff238820c6e6d3968848b78e8d8bf1b1507e&v=4", videoURL: "", startTime: 0, endTime: 3, concentrationPercentage: 20, emotionType: .angry, emotionPerentage: 24)
+                let scene = ShortsScene(thumbnailURL: "https://avatars.githubusercontent.com/u/70833900?s=80&u=7b4aff238820c6e6d3968848b78e8d8bf1b1507e&v=4", videoURL: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", startTime: 0, endTime: 3, concentrationPercentage: 20, emotionType: .angry, emotionPerentage: 24)
                 let temp = ShortsResult(scenes: [scene, scene, scene, scene, scene, scene, scene])
                 return .just(temp)
                 
@@ -45,15 +45,42 @@ class ShortsResultViewModel: ViewModelType {
             )
             .startWith(false)
         
+        let playingIndex = input.itemSelected
+            .withLatestFrom(isSelectionMode) {
+                (itemSelected: $0, isSelectionMode: $1)
+            }
+            .filter { !$0.1 }
+            .scan(nil) { previous, element -> Int? in
+                let current = element.itemSelected.row
+                return (previous == current) ? nil : current
+            }
+            .startWith(nil)
+            .debug()
+        
         let shorts = Driver
             .combineLatest(
                 result.map { $0.scenes },
-                isSelectionMode
-            ) { ($0, $1) }
-            .map { (scenes, isSelectionMode) in
-                scenes.map {
-                    ShortsItemViewModel(with: $0,
-                                        shouldDisplayCheckIcon: isSelectionMode)
+                isSelectionMode,
+                playingIndex
+            ) { ($0, $1, $2) }
+            .map { (scenes, isSelectionMode, shouldPlay) in
+                scenes
+                    .enumerated()
+                    .map { (index, scene) in
+                        ShortsItemViewModel(with: scene,
+                                            shouldDisplayCheckIcon: isSelectionMode,
+                                            isPlaying: index == shouldPlay)
+                    }
+            }
+        
+        let shouldPlay = playingIndex
+            .withLatestFrom(
+                result.map { $0.scenes }
+            ) { (index, scenes) in
+                if let index = index {
+                    return URL(string: scenes[index].videoURL)
+                } else {
+                    return nil
                 }
             }
         
@@ -66,17 +93,6 @@ class ShortsResultViewModel: ViewModelType {
             .scan([], accumulator: { acc, element in
                 element.isSelectionMode ? [] : acc + [element.itemSelected]
             })
-        
-        let shouldPlay = input.itemSelected
-            .withLatestFrom(isSelectionMode) {
-                (itemSelected: $0, isSelectionMode: $1)
-            }
-            .filter { !$0.1 }
-            .scan(nil) { previous, element -> IndexPath? in
-                let current = element.itemSelected
-                return (previous == current) ? nil : current
-            }
-            .debug("should play output")
         
         return Output(shorts: shorts,
                       shouldPlay: shouldPlay,
@@ -94,7 +110,7 @@ extension ShortsResultViewModel {
     
     struct Output {
         let shorts: Driver<[ShortsItemViewModel]>
-        let shouldPlay: Driver<IndexPath?>
+        let shouldPlay: Driver<URL?>
         let saveResult: Driver<Bool>
     }
 }

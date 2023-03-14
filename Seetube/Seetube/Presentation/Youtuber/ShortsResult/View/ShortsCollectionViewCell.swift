@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import AVFoundation
 
 class ShortsCollectionViewCell: UICollectionViewCell {
     static let cellReuseIdentifier = "ShortsCollectionViewCell"
@@ -15,6 +16,7 @@ class ShortsCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var timeIntervalLabel: UILabel!
     @IBOutlet private weak var contentLabel: UILabel!
     @IBOutlet private weak var checkIconImageView: UIImageView!
+    private var playerLayer: AVPlayerLayer?
     
     var shouldDisplayCheckIcon: Bool = false
     
@@ -26,6 +28,10 @@ class ShortsCollectionViewCell: UICollectionViewCell {
                 self.checkIconImageView.isHidden = true
             }
         }
+    }
+    
+    override func prepareForReuse() {
+        self.removePlayerLayer()
     }
     
     private func bindImage(url: String) {
@@ -47,5 +53,21 @@ class ShortsCollectionViewCell: UICollectionViewCell {
         self.bindImage(url: viewModel.thumbnailURL)
         self.timeIntervalLabel.text = viewModel.interval
         self.contentLabel.text = viewModel.description
+    }
+}
+
+// MARK: - Video Playing
+
+extension ShortsCollectionViewCell {
+    func addPlayerLayer(player: AVPlayer) {
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.bounds
+        self.layer.addSublayer(playerLayer)
+        self.playerLayer = playerLayer
+    }
+    
+    func removePlayerLayer() {
+        self.playerLayer?.removeFromSuperlayer()
+        self.playerLayer = nil
     }
 }

@@ -8,8 +8,11 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import AVFoundation
 
-class ShortsResultViewController: UIViewController, AlertDisplaying {
+class ShortsResultViewController: UIViewController,
+                                  AlertDisplaying
+{
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var saveButton: BottomButton!
     @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
@@ -19,6 +22,10 @@ class ShortsResultViewController: UIViewController, AlertDisplaying {
     private let collectionViewHorizontalInset: CGFloat = 17
     private let collectionViewVerticalInset: CGFloat = 5
     
+    // Video Player
+    private var player: AVPlayer?
+    
+    // ViewModel
     var viewModel: ShortsResultViewModel?
     private var disposeBag = DisposeBag()
     
@@ -117,14 +124,25 @@ extension ShortsResultViewController {
                     cellType: ShortsCollectionViewCell.self)
             ) { row, viewModel, cell in
                 cell.bind(viewModel)
+                
+                if viewModel.isPlaying {
+                    guard let player = self.player else { return }
+                    cell.addPlayerLayer(player: player)
+                } else {
+                    cell.removePlayerLayer()
+                }
             }
             .disposed(by: self.disposeBag)
     }
     
-    private func bindShouldPlay(_ shouldPlay: Driver<IndexPath?>) {
+    private func bindShouldPlay(_ shouldPlay: Driver<URL?>) {
         shouldPlay
-            .drive(with: self) { _ in
-                // TODO: 영상 재생
+            .drive(with: self) { obj, url in
+                if let url = url {
+                    obj.playVideo(url: url)
+                } else {
+                    obj.pauseVideo()
+                }
             }
             .disposed(by: self.disposeBag)
     }
@@ -139,6 +157,27 @@ extension ShortsResultViewController {
                 }
             }
             .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: - Video Playing
+
+extension ShortsResultViewController {
+    private func playVideo(url: URL) {
+        if self.player == nil {
+            self.player = AVPlayer(url: url)
+        } else {
+            let playerItem = AVPlayerItem(url: url)
+            self.player?.replaceCurrentItem(with: playerItem)
+        }
+        
+        self.collectionView.reloadData()
+        self.player?.play()
+    }
+    
+    private func pauseVideo() {
+        self.player?.pause()
+        self.collectionView.reloadData()
     }
 }
 

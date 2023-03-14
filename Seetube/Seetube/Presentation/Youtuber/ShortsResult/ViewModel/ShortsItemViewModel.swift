@@ -9,12 +9,18 @@ import Foundation
 
 class ShortsItemViewModel {
     let shouldDisplayCheckIcon: Bool
+    let isPlaying: Bool
     let thumbnailURL: String
     let interval: String
     let description: String
     
-    init(with scene: ShortsScene, shouldDisplayCheckIcon: Bool) {
+    init(
+        with scene: ShortsScene,
+        shouldDisplayCheckIcon: Bool,
+        isPlaying: Bool
+    ) {
         self.shouldDisplayCheckIcon = shouldDisplayCheckIcon
+        self.isPlaying = isPlaying
         self.thumbnailURL = scene.thumbnailURL
         self.interval = "🕔 " + StringFormattingHelper.toTimeIntervalFormatString(startSecond: scene.startTime,
                                                                                   endSecond: scene.endTime)
