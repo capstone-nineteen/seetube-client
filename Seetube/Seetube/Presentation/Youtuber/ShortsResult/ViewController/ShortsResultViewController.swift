@@ -93,6 +93,7 @@ extension ShortsResultViewController {
         
         self.bindShorts(output.shorts)
         self.bindShouldPlay(output.shouldPlay)
+        self.bindShouldPause(output.shouldPause)
         self.bindSaveResult(output.saveResult)
     }
     
@@ -135,14 +136,19 @@ extension ShortsResultViewController {
             .disposed(by: self.disposeBag)
     }
     
-    private func bindShouldPlay(_ shouldPlay: Driver<URL?>) {
+    private func bindShouldPlay(_ shouldPlay: Driver<(url: URL?, indexPath: IndexPath)>) {
         shouldPlay
-            .drive(with: self) { obj, url in
-                if let url = url {
-                    obj.playVideo(url: url)
-                } else {
-                    obj.pauseVideo()
-                }
+            .drive(with: self) { obj, shouldPlay in
+                obj.playVideo(url: shouldPlay.url,
+                              at: shouldPlay.indexPath)
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindShouldPause(_ shouldPause: Driver<IndexPath>) {
+        shouldPause
+            .drive(with: self) { obj, indexPath in
+                obj.pauseVideo(at: indexPath)
             }
             .disposed(by: self.disposeBag)
     }
@@ -163,7 +169,9 @@ extension ShortsResultViewController {
 // MARK: - Video Playing
 
 extension ShortsResultViewController {
-    private func playVideo(url: URL) {
+    private func playVideo(url: URL?, at indexPath: IndexPath) {
+        guard let url = url else { return }
+        
         if self.player == nil {
             self.player = AVPlayer(url: url)
         } else {
@@ -171,13 +179,13 @@ extension ShortsResultViewController {
             self.player?.replaceCurrentItem(with: playerItem)
         }
         
-        self.collectionView.reloadData()
+        self.collectionView.reloadItems(at: [indexPath])
         self.player?.play()
     }
     
-    private func pauseVideo() {
+    private func pauseVideo(at indexPath: IndexPath) {
         self.player?.pause()
-        self.collectionView.reloadData()
+        self.collectionView.reloadItems(at: [indexPath])
     }
 }
 

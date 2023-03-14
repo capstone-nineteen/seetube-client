@@ -50,8 +50,8 @@ class ShortsResultViewModel: ViewModelType {
                 (itemSelected: $0, isSelectionMode: $1)
             }
             .filter { !$0.1 }
-            .scan(nil) { previous, element -> Int? in
-                let current = element.itemSelected.row
+            .scan(nil) { previous, element -> IndexPath? in
+                let current = element.itemSelected
                 return (previous == current) ? nil : current
             }
             .startWith(nil)
@@ -63,26 +63,28 @@ class ShortsResultViewModel: ViewModelType {
                 isSelectionMode,
                 playingIndex
             ) { ($0, $1, $2) }
-            .map { (scenes, isSelectionMode, shouldPlay) in
+            .map { (scenes, isSelectionMode, playingIndex) in
                 scenes
                     .enumerated()
                     .map { (index, scene) in
                         ShortsItemViewModel(with: scene,
                                             shouldDisplayCheckIcon: isSelectionMode,
-                                            isPlaying: index == shouldPlay)
+                                            isPlaying: index == playingIndex?.row)
                     }
             }
         
         let shouldPlay = playingIndex
+            .compactMap { $0 }
             .withLatestFrom(
                 result.map { $0.scenes }
-            ) { (index, scenes) in
-                if let index = index {
-                    return URL(string: scenes[index].videoURL)
-                } else {
-                    return nil
-                }
+            ) { (indexPath, scenes) in
+                let url = URL(string: scenes[indexPath.row].videoURL)
+                return (url: url, indexPath: indexPath)
             }
+        
+        let shouldPause = playingIndex
+            .filter { $0 == nil }
+            .withLatestFrom(shouldPlay) { $1.indexPath }
         
         // TODO: 선택된 쇼츠들 다운로드
         let selectedShorts = Driver
@@ -96,6 +98,7 @@ class ShortsResultViewModel: ViewModelType {
         
         return Output(shorts: shorts,
                       shouldPlay: shouldPlay,
+                      shouldPause: shouldPause,
                       saveResult: .just(false))
     }
 }
@@ -110,7 +113,8 @@ extension ShortsResultViewModel {
     
     struct Output {
         let shorts: Driver<[ShortsItemViewModel]>
-        let shouldPlay: Driver<URL?>
+        let shouldPlay: Driver<(url: URL?, indexPath: IndexPath)>
+        let shouldPause: Driver<IndexPath>
         let saveResult: Driver<Bool>
     }
 }
