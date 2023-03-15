@@ -10,4 +10,5 @@ import Foundation
 enum PhotoAlbumError: Error {
     case photoLibraryAccessNotAuthorized
     case saveFailed
+    case invalidURL
 }
