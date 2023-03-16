@@ -16,10 +16,17 @@ extension HighlightResultPushable {
         self.push(
             viewControllerType: HighlightResultViewController.self
         ) { viewController in
-            let repository = DefaultHighlightResultRepository()
-            let fetchHighlightResultUseCase = DefaultFetchHighlightResultUseCase(repository: repository)
+            let highlightResultRepository = DefaultHighlightResultRepository()
+            let photoAlbumRepository = DefaultPhotoAlbumRepository()
+            
+            let fetchHighlightResultUseCase = DefaultFetchHighlightResultUseCase(repository: highlightResultRepository)
+            let saveVideoUseCase = DefaultSaveVideoUseCase(repository: photoAlbumRepository)
+            let downloadVideoUseCase = DefaultDownloadVideoUseCase()
+            
             let viewModel = HighlightResultViewModel(videoId: videoId,
-                                                     fetchHighlightResultUseCase: fetchHighlightResultUseCase)
+                                                     fetchHighlightResultUseCase: fetchHighlightResultUseCase,
+                                                     downloadVideoUseCase: downloadVideoUseCase,
+                                                     saveVideoUseCase: saveVideoUseCase)
             viewController.viewModel = viewModel
         }
     }

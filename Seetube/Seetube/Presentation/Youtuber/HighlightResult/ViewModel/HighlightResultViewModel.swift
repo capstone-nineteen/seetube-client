@@ -12,13 +12,19 @@ import RxSwift
 class HighlightResultViewModel: ViewModelType {
     private let videoId: Int
     private let fetchHighlightResultUseCase: FetchHighlightResultUseCase
+    private let downloadVideoUseCase: DownloadVideoUseCase
+    private let saveVideoUseCase: SaveVideoUseCase
     
     init(
         videoId: Int,
-        fetchHighlightResultUseCase: FetchHighlightResultUseCase
+        fetchHighlightResultUseCase: FetchHighlightResultUseCase,
+        downloadVideoUseCase: DownloadVideoUseCase,
+        saveVideoUseCase: SaveVideoUseCase
     ) {
         self.videoId = videoId
         self.fetchHighlightResultUseCase = fetchHighlightResultUseCase
+        self.downloadVideoUseCase = downloadVideoUseCase
+        self.saveVideoUseCase = saveVideoUseCase
     }
     
     func transform(input: Input) -> Output {
@@ -50,9 +56,54 @@ class HighlightResultViewModel: ViewModelType {
             .withLatestFrom(result) { $1.scenes[$0.row] }
             .map { (start: $0.startTimeInHighlight, end: $0.endTimeInHighlight) }
         
+        let videoFileURL = input.saveButtonTouched
+            .asObservable()
+            .withLatestFrom(videoUrl) { $1 }
+            .flatMap { [weak self] url -> Observable<URL?> in
+                guard let self = self else { return .just(nil) }
+                return self.downloadVideoUseCase.execute(url: url)
+            }
+        
+        let videoSaveResult = videoFileURL
+            .compactMap { $0 }
+            .flatMap { [weak self] fileURL -> Observable<Void> in
+                guard let self = self else {
+                    return .error(NSError(domain: "nil self", code: -1))
+                }
+                return self.saveVideoUseCase
+                    .execute(at: fileURL)
+                    .andThen(Observable.just(()))
+            }
+            .share()
+
+        let saveSuccess = videoSaveResult
+            .map { _ in true }
+            .catch { error in
+                if let photoAlbumError = error as? PhotoAlbumError,
+                   photoAlbumError == .photoLibraryAccessNotAuthorized {
+                    return .never()
+                } else {
+                    throw error
+                }
+            }
+            .asDriver(onErrorJustReturn: false)
+
+        let shouldRequestAuthorization = videoSaveResult
+            .catch { error in
+                if let photoAlbumError = error as? PhotoAlbumError,
+                   photoAlbumError == .photoLibraryAccessNotAuthorized {
+                    throw error
+                } else {
+                    return .never()
+                }
+            }
+            .asDriver(onErrorJustReturn: ())
+        
         return Output(videoUrl: videoUrl,
                       scenes: scenes,
-                      playingInterval: playingInterval)
+                      playingInterval: playingInterval,
+                      videoSaveResult: saveSuccess,
+                      shouldRequestAuthorization: shouldRequestAuthorization)
     }
 }
 
@@ -60,11 +111,14 @@ extension HighlightResultViewModel {
     struct Input {
         let viewWillAppear: Driver<Bool>
         let itemSelected: Driver<IndexPath>
+        let saveButtonTouched: Driver<Void>
     }
     
     struct Output {
         let videoUrl: Driver<String>
         let scenes: Driver<[SceneLargeItemViewModel]>
         let playingInterval: Driver<(start: Int, end: Int)>
+        let videoSaveResult: Driver<Bool>
+        let shouldRequestAuthorization: Driver<Void>
     }
 }
