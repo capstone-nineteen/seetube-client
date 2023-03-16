@@ -55,10 +55,12 @@ class UserTypeButton: UIButton, NibLoadable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.loadFromNib(owner: self)
+        self.configureShadow()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.loadFromNib(owner: self)
+        self.configureShadow()
     }
 }
