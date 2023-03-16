@@ -72,6 +72,8 @@
 		042E8D4F29C1E9E000E8048F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E8D4E29C1E9E000E8048F /* Errors.swift */; };
 		042E8D5129C1EE0900E8048F /* SaveVideoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E8D5029C1EE0900E8048F /* SaveVideoUseCase.swift */; };
 		042E8D5329C1EE3400E8048F /* DefaultSaveVideoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E8D5229C1EE3400E8048F /* DefaultSaveVideoUseCase.swift */; };
+		042E8D5529C1F41B00E8048F /* DownloadVideoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E8D5429C1F41B00E8048F /* DownloadVideoUseCase.swift */; };
+		042E8D5729C1F43E00E8048F /* DefaultDownloadVideoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E8D5629C1F43E00E8048F /* DefaultDownloadVideoUseCase.swift */; };
 		043636DB29938AB300EF6458 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043636DA29938AB300EF6458 /* NetworkService.swift */; };
 		043636E129938B0700EF6458 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 043636E029938B0700EF6458 /* RxAlamofire */; };
 		0438148229B5CB65000D070E /* SceneItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438148129B5CB65000D070E /* SceneItemViewModel.swift */; };
@@ -388,6 +390,8 @@
 		042E8D4E29C1E9E000E8048F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		042E8D5029C1EE0900E8048F /* SaveVideoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveVideoUseCase.swift; sourceTree = "<group>"; };
 		042E8D5229C1EE3400E8048F /* DefaultSaveVideoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSaveVideoUseCase.swift; sourceTree = "<group>"; };
+		042E8D5429C1F41B00E8048F /* DownloadVideoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadVideoUseCase.swift; sourceTree = "<group>"; };
+		042E8D5629C1F43E00E8048F /* DefaultDownloadVideoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDownloadVideoUseCase.swift; sourceTree = "<group>"; };
 		043636DA29938AB300EF6458 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0438148129B5CB65000D070E /* SceneItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneItemViewModel.swift; sourceTree = "<group>"; };
 		0438148329B5F318000D070E /* ConcentrationResultPushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationResultPushable.swift; sourceTree = "<group>"; };
@@ -951,6 +955,7 @@
 				04FFC45029BDDCBC00F6AE60 /* DefaultFetchHighlightResultUseCase.swift */,
 				04403B2829BF45760058E31E /* DefaultFetchShortsResultUseCase.swift */,
 				042E8D5229C1EE3400E8048F /* DefaultSaveVideoUseCase.swift */,
+				042E8D5629C1F43E00E8048F /* DefaultDownloadVideoUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1746,6 +1751,7 @@
 				04FFC44E29BDDC9300F6AE60 /* FetchHighlightResultUseCase.swift */,
 				04403B2629BF45530058E31E /* FetchShortsResultUseCase.swift */,
 				042E8D5029C1EE0900E8048F /* SaveVideoUseCase.swift */,
+				042E8D5429C1F41B00E8048F /* DownloadVideoUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2090,6 +2096,7 @@
 				04E1465229AF9C4500DD4204 /* KeychainHelper.swift in Sources */,
 				041ECBAF296ED84C0053AC9C /* AppDelegate.swift in Sources */,
 				04ED866829B7639400D86952 /* FetchEmotionResultUseCase.swift in Sources */,
+				042E8D5729C1F43E00E8048F /* DefaultDownloadVideoUseCase.swift in Sources */,
 				044DF34129ACBF920013BCF9 /* SignUpViewController.swift in Sources */,
 				043636DB29938AB300EF6458 /* NetworkService.swift in Sources */,
 				04E80A7429B4A55500DE526B /* ResultMenuPushable.swift in Sources */,
@@ -2139,6 +2146,7 @@
 				04403B2B29BF45C80058E31E /* ShortsResultViewModel.swift in Sources */,
 				04AF39AC29795ACF00BF058B /* YoutuberHomeViewController.swift in Sources */,
 				04E80A7629B4B5C000DE526B /* YoutuberVideoDetailViewModel.swift in Sources */,
+				042E8D5529C1F41B00E8048F /* DownloadVideoUseCase.swift in Sources */,
 				04B608CA29A4FF3300B811B9 /* FaceExpressionPredictor.swift in Sources */,
 				0490DAB029953B39000BBF73 /* MyPageViewModel.swift in Sources */,
 				04AF39B32979806100BF058B /* FinishedReviewsTableViewController.swift in Sources */,
@@ -2417,6 +2425,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Seetube/Resource/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "시선 추적과 표정 분석을 위해 카메라 권한 허용이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "쇼츠와 하이라이트 영상 저장을 위해 사진앱 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2451,6 +2460,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Seetube/Resource/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "시선 추적과 표정 분석을 위해 카메라 권한 허용이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "쇼츠와 하이라이트 영상 저장을 위해 사진앱 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
