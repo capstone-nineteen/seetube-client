@@ -55,7 +55,6 @@ class ShortsResultViewModel: ViewModelType {
                 return (previous == current) ? nil : current
             }
             .startWith(nil)
-            .debug()
         
         let shorts = Driver
             .combineLatest(

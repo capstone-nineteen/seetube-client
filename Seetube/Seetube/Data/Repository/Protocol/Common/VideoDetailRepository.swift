@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 
+// TODO: 리턴 타입 Single로 교체
 protocol VideoDetailRepository {
     func getVideoInfo(id: Int) -> Observable<VideoInfo?>
 }
