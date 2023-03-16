@@ -16,6 +16,7 @@ class HighlightResultViewController: UIViewController,
 {
     @IBOutlet weak var resultView: LargeListStyleResultView!
     @IBOutlet weak var saveButton: BottomButton!
+    @IBOutlet weak var loadingView: CustomAlertLoadingView!
     
     // Video Player
     var player: AVPlayer?
@@ -44,7 +45,7 @@ extension HighlightResultViewController {
         self.saveButton.rx.tap
             .asDriver()
             .drive(with: self) { obj, _ in
-                // TODO: Activity Indicator 보여주기
+                obj.loadingView.isHidden = false
             }
             .disposed(by: self.disposeBag)
     }
@@ -117,7 +118,8 @@ extension HighlightResultViewController {
     func bindVideoSaveResult(_ result: Driver<Bool>) {
         result
             .drive(with: self) { obj, success in
-                // TODO: Activity Indicator 제거
+                obj.loadingView.isHidden = true
+                
                 if success {
                     obj.displayOKAlert(title: "저장 완료", message: "하이라이트 영상을 사진앱에 저장했습니다.")
                 } else {

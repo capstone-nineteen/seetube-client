@@ -1683,21 +1683,33 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="name" value="저장하기"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFh-Ch-Mzg" customClass="CustomAlertLoadingView" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="다운로드 중"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fx0-A3-7A3"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="IFh-Ch-Mzg" firstAttribute="top" secondItem="nhu-JM-thM" secondAttribute="top" id="9zr-dd-luH"/>
+                            <constraint firstAttribute="bottom" secondItem="IFh-Ch-Mzg" secondAttribute="bottom" id="BIa-oA-YYf"/>
                             <constraint firstItem="Fx0-A3-7A3" firstAttribute="trailing" secondItem="B6y-IO-SE1" secondAttribute="trailing" constant="17" id="KHD-44-71w"/>
                             <constraint firstItem="Lfp-Eb-NHl" firstAttribute="top" secondItem="Fx0-A3-7A3" secondAttribute="top" id="OfM-0b-uC4"/>
                             <constraint firstItem="B6y-IO-SE1" firstAttribute="leading" secondItem="Fx0-A3-7A3" secondAttribute="leading" constant="17" id="ZUj-PY-kNC"/>
+                            <constraint firstAttribute="trailing" secondItem="IFh-Ch-Mzg" secondAttribute="trailing" id="dCA-XF-G80"/>
                             <constraint firstItem="B6y-IO-SE1" firstAttribute="top" secondItem="Lfp-Eb-NHl" secondAttribute="bottom" constant="7" id="gOD-Q9-4V7"/>
                             <constraint firstItem="Fx0-A3-7A3" firstAttribute="trailing" secondItem="Lfp-Eb-NHl" secondAttribute="trailing" id="rcE-qt-utO"/>
+                            <constraint firstItem="IFh-Ch-Mzg" firstAttribute="leading" secondItem="nhu-JM-thM" secondAttribute="leading" id="roI-qh-iXM"/>
                             <constraint firstItem="Fx0-A3-7A3" firstAttribute="bottom" secondItem="B6y-IO-SE1" secondAttribute="bottom" id="ufG-BP-719"/>
                             <constraint firstItem="Lfp-Eb-NHl" firstAttribute="leading" secondItem="Fx0-A3-7A3" secondAttribute="leading" id="zt6-v3-7hl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="하이라이트 생성 결과" largeTitleDisplayMode="never" id="uQe-gO-WA9"/>
                     <connections>
+                        <outlet property="loadingView" destination="IFh-Ch-Mzg" id="nR9-g1-tRl"/>
                         <outlet property="resultView" destination="Lfp-Eb-NHl" id="zmb-4A-VPC"/>
                         <outlet property="saveButton" destination="B6y-IO-SE1" id="9US-gV-S1b"/>
                     </connections>
