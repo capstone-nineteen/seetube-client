@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol SaveVideoUseCase {
-    func execute(at fileURL: String) -> Completable
+    func execute(at fileURL: URL) -> Completable
 }

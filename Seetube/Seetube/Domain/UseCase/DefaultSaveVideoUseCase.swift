@@ -15,8 +15,7 @@ class DefaultSaveVideoUseCase: SaveVideoUseCase {
         self.repository = repository
     }
     
-    func execute(at fileURL: String) -> Completable {
-        guard let fileURL = URL(string: fileURL) else { return .error(PhotoAlbumError.invalidURL) }
+    func execute(at fileURL: URL) -> Completable {
         return self.repository.saveVideo(at: fileURL)
     }
 }
