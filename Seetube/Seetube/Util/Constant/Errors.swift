@@ -12,3 +12,8 @@ enum PhotoAlbumError: Error {
     case saveFailed
     case invalidURL
 }
+
+enum DownloadError: Error {
+    case invalidURL
+    case noFileURL
+}

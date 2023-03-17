@@ -12,8 +12,8 @@ import RxSwift
 import UIKit
 
 class DefaultDownloadVideoUseCase: DownloadVideoUseCase {
-    func execute(url: String) -> Observable<URL?> {
-        guard let url = URL(string: url) else { return .just(nil) }
+    func execute(url: String) -> Observable<URL> {
+        guard let url = URL(string: url) else { return .error(DownloadError.invalidURL) }
 
         let destination: DownloadRequest.Destination = { _, _ in
             let documentsURL = FileManager.default.urls(for: .documentDirectory,
@@ -22,10 +22,14 @@ class DefaultDownloadVideoUseCase: DownloadVideoUseCase {
             return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
         }
 
-        return Observable<URL?>.create { observable in
+        return Observable<URL>.create { observable in
             AF.download(url, to: destination)
                 .response { response in
-                    observable.onNext(response.fileURL)
+                    if let fileURL = response.fileURL {
+                        observable.onNext(fileURL)
+                    } else {
+                        observable.onError(DownloadError.noFileURL)
+                    }
                     observable.onCompleted()
                 }
             

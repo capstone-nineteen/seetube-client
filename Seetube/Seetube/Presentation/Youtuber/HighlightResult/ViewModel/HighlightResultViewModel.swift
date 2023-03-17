@@ -59,15 +59,17 @@ class HighlightResultViewModel: ViewModelType {
         let videoFileURL = input.saveButtonTouched
             .asObservable()
             .withLatestFrom(videoUrl) { $1 }
-            .flatMap { [weak self] url -> Observable<URL?> in
-                guard let self = self else { return .just(nil) }
+            .flatMap { [weak self] url -> Observable<URL> in
+                guard let self = self else {
+                    return .error(NSError(domain: "nil self", code: -1))
+                }
                 return self.downloadVideoUseCase.execute(url: url)
             }
         
         let videoSaveResult = videoFileURL
-            .compactMap { $0 }
             .flatMap { [weak self] fileURL -> Observable<Void> in
                 guard let self = self else {
+                    // TODO: nil self 에러 상수화
                     return .error(NSError(domain: "nil self", code: -1))
                 }
                 return self.saveVideoUseCase
