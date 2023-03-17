@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 
+// TODO: 이름 변경, SaveVideoToPhotoLibrary
 protocol SaveVideoUseCase {
     func execute(at fileURL: URL) -> Completable
 }

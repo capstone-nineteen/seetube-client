@@ -12,13 +12,19 @@ import RxSwift
 class ShortsResultViewModel: ViewModelType {
     private let videoId: Int
     private let fetchShortsResultUseCase: FetchShortsResultUseCase
+    private let downloadVideoUseCase: DownloadVideoUseCase
+    private let saveVideoUseCase: SaveVideoUseCase
     
     init(
         videoId: Int,
-        fetchShortsResultUseCase: FetchShortsResultUseCase
+        fetchShortsResultUseCase: FetchShortsResultUseCase,
+        downloadVideoUseCase: DownloadVideoUseCase,
+        saveVideoUseCase: SaveVideoUseCase
     ) {
         self.videoId = videoId
         self.fetchShortsResultUseCase = fetchShortsResultUseCase
+        self.downloadVideoUseCase = downloadVideoUseCase
+        self.saveVideoUseCase = saveVideoUseCase
     }
     
     func transform(input: Input) -> Output {

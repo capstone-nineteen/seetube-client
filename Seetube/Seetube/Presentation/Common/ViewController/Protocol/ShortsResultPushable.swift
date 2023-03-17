@@ -16,10 +16,17 @@ extension ShortsResultPushable {
         self.push(
             viewControllerType: ShortsResultViewController.self
         ) { viewController in
-            let repository = DefaultShortsResultRepository()
-            let fetchShortsResultUseCase = DefaultFetchShortsResultUseCase(repository: repository)
+            let shortsResultRepository = DefaultShortsResultRepository()
+            let photoAlbumRepository = DefaultPhotoAlbumRepository()
+            
+            let fetchShortsResultUseCase = DefaultFetchShortsResultUseCase(repository: shortsResultRepository)
+            let downloadVideoUseCase = DefaultDownloadVideoUseCase()
+            let saveVideoUseCase = DefaultSaveVideoUseCase(repository: photoAlbumRepository)
+            
             let viewModel = ShortsResultViewModel(videoId: videoId,
-                                                  fetchShortsResultUseCase: fetchShortsResultUseCase)
+                                                  fetchShortsResultUseCase: fetchShortsResultUseCase,
+                                                  downloadVideoUseCase: downloadVideoUseCase,
+                                                  saveVideoUseCase: saveVideoUseCase)
             viewController.viewModel = viewModel
         }
     }
