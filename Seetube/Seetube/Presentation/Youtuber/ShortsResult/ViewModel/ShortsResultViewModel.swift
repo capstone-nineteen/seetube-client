@@ -91,8 +91,7 @@ class ShortsResultViewModel: ViewModelType {
             .filter { $0 == nil }
             .withLatestFrom(shouldPlay) { $1.indexPath }
         
-        // TODO: 선택된 쇼츠들 다운로드
-        let selectedShorts = Driver
+        let selectedShortsURL = Driver
             .combineLatest(
                 input.itemSelected,
                 isSelectionMode
@@ -100,11 +99,66 @@ class ShortsResultViewModel: ViewModelType {
             .scan([], accumulator: { acc, element in
                 element.isSelectionMode ? [] : acc + [element.itemSelected]
             })
+            .withLatestFrom(
+                result.map { $0.scenes }
+            ) { selectedShorts, scenes in
+                selectedShorts.map { scenes[$0.row].videoURL }
+            }
+        
+        let videoFileURLs = input.saveButtonTouched
+            .asObservable()
+            .withLatestFrom(selectedShortsURL) { $1 }
+            .flatMap { [weak self] urls -> Observable<[URL]> in
+                guard let self = self else {
+                    return .error(NSError(domain: "nil self", code: -1))
+                }
+                
+                let downloads = urls.map { self.downloadVideoUseCase.execute(url: $0) }
+                return Observable.combineLatest(downloads)
+            }
+        
+        let videoSaveResult = videoFileURLs
+            .flatMap { [weak self] fileURLs -> Observable<[Void]> in
+                guard let self = self else {
+                    return .error(NSError(domain: "nil self", code: -1))
+                }
+                let saves = fileURLs.map {
+                    self.saveVideoUseCase
+                        .execute(at: $0)
+                        .andThen(Observable.just(()))
+                }
+                return Observable.combineLatest(saves)
+            }
+        
+        let saveSuccess = videoSaveResult
+            .map { _ in true }
+            .catch { error in
+                if let photoAlbumError = error as? PhotoAlbumError,
+                   photoAlbumError == .photoLibraryAccessNotAuthorized {
+                    return .never()
+                } else {
+                    throw error
+                }
+            }
+            .asDriver(onErrorJustReturn: false)
+        
+        let shouldRequestAuthorization = videoSaveResult
+            .catch { error in
+                if let photoAlbumError = error as? PhotoAlbumError,
+                   photoAlbumError == .photoLibraryAccessNotAuthorized {
+                    throw error
+                } else {
+                    return .never()
+                }
+            }
+            .map { _ in () }
+            .asDriver(onErrorJustReturn: ())
         
         return Output(shorts: shorts,
                       shouldPlay: shouldPlay,
                       shouldPause: shouldPause,
-                      saveResult: .just(false))
+                      saveResult: saveSuccess,
+                      shouldRequestAuthorization: shouldRequestAuthorization)
     }
 }
 
@@ -121,5 +175,6 @@ extension ShortsResultViewModel {
         let shouldPlay: Driver<(url: URL?, indexPath: IndexPath)>
         let shouldPause: Driver<IndexPath>
         let saveResult: Driver<Bool>
+        let shouldRequestAuthorization: Driver<Void>
     }
 }
