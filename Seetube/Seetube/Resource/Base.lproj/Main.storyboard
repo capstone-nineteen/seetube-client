@@ -457,7 +457,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN" customClass="CategoryButtonScrollView" customModule="Seetube" customModuleProvider="target">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN" customClass="CategoryButtonScrollView" customModule="Seetube" customModuleProvider="target">
                                 <rect key="frame" x="19" y="68" width="337.5" height="27"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -506,7 +506,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-JJ-YQe" customClass="ReceiptView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="28" y="25.5" width="319" height="567"/>
+                                <rect key="frame" x="40.5" y="25.5" width="294" height="567"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="9999" id="HgX-Bc-Sbg"/>
@@ -950,24 +950,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2k-Xx-VOf" customClass="SeetubeSearchBarView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="19" y="102" width="337.5" height="40"/>
+                                <rect key="frame" x="19" y="105.5" width="337.5" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Tv9-aW-IiF"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요, OOO님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rP-DK-C5g">
-                                <rect key="frame" x="19" y="64" width="152" height="23"/>
+                                <rect key="frame" x="19" y="64" width="152" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UES-HQ-UGd" customClass="PriceAccessoryView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="181" y="64" width="175.5" height="23"/>
+                                <rect key="frame" x="181" y="64" width="175.5" height="26.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MN6-Ke-7gz">
-                                <rect key="frame" x="0.0" y="157" width="375" height="461"/>
+                                <rect key="frame" x="0.0" y="160.5" width="375" height="457.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NES-sd-Dio">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="835"/>
@@ -1631,6 +1631,13 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="name" value="총 3개의 쇼츠 저장하기"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ue2-lM-MQb" customClass="CustomAlertLoadingView" customModule="Seetube" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="다운로드 중"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="epK-d2-2el"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -1638,9 +1645,13 @@
                             <constraint firstItem="epK-d2-2el" firstAttribute="bottom" secondItem="KbU-EA-ae5" secondAttribute="bottom" id="3lg-nt-Xow"/>
                             <constraint firstItem="MIt-RP-vXU" firstAttribute="leading" secondItem="epK-d2-2el" secondAttribute="leading" constant="17" id="6z6-hl-oPi"/>
                             <constraint firstItem="epK-d2-2el" firstAttribute="trailing" secondItem="MIt-RP-vXU" secondAttribute="trailing" constant="17" id="9wm-iD-8WZ"/>
+                            <constraint firstAttribute="leading" secondItem="ue2-lM-MQb" secondAttribute="leading" id="BGF-KA-1GU"/>
+                            <constraint firstItem="ue2-lM-MQb" firstAttribute="bottom" secondItem="ZbO-fC-n9h" secondAttribute="bottom" id="C8a-a7-U6k"/>
+                            <constraint firstAttribute="trailing" secondItem="ue2-lM-MQb" secondAttribute="trailing" id="DbR-fh-RpE"/>
                             <constraint firstItem="KbU-EA-ae5" firstAttribute="top" secondItem="epK-d2-2el" secondAttribute="top" id="Gml-Lm-po6"/>
                             <constraint firstItem="epK-d2-2el" firstAttribute="trailing" secondItem="KbU-EA-ae5" secondAttribute="trailing" id="Qlf-Qf-h6N"/>
                             <constraint firstItem="KbU-EA-ae5" firstAttribute="leading" secondItem="epK-d2-2el" secondAttribute="leading" id="Zv6-y0-5Uw"/>
+                            <constraint firstItem="ue2-lM-MQb" firstAttribute="top" secondItem="ZbO-fC-n9h" secondAttribute="top" id="l1y-cL-Eyj"/>
                             <constraint firstItem="epK-d2-2el" firstAttribute="bottom" secondItem="MIt-RP-vXU" secondAttribute="bottom" constant="7" id="s8I-A2-ydj"/>
                         </constraints>
                     </view>
@@ -1650,6 +1661,7 @@
                     <connections>
                         <outlet property="collectionView" destination="KbU-EA-ae5" id="hY2-wH-Ztb"/>
                         <outlet property="collectionViewBottomConstraint" destination="3lg-nt-Xow" id="zNG-KY-9JE"/>
+                        <outlet property="loadingView" destination="ue2-lM-MQb" id="WDE-Lu-lhx"/>
                         <outlet property="rightBarButtonItem" destination="1zx-Yz-CXH" id="v7o-3F-kYa"/>
                         <outlet property="saveButton" destination="MIt-RP-vXU" id="H0t-aG-PEs"/>
                     </connections>

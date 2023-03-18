@@ -17,6 +17,7 @@ class ShortsResultViewController: UIViewController,
     @IBOutlet weak var saveButton: BottomButton!
     @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var loadingView: UIView!
     
     private let collectionViewItemSpacing: CGFloat = 5
     private let collectionViewHorizontalInset: CGFloat = 17
@@ -41,6 +42,7 @@ class ShortsResultViewController: UIViewController,
 extension ShortsResultViewController {
     private func configureUI() {
         self.configureRightBarButtonItem()
+        self.configureSaveButton()
     }
     
     private func configureRightBarButtonItem() {
@@ -69,6 +71,15 @@ extension ShortsResultViewController {
         self.collectionView.allowsMultipleSelection = false
         self.collectionViewBottomConstraint.constant = 0
         self.collectionView.reloadData()
+    }
+    
+    private func configureSaveButton() {
+        self.saveButton.rx.tap
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.loadingView.isHidden = false
+            }
+            .disposed(by: self.disposeBag)
     }
 }
 
@@ -163,7 +174,8 @@ extension ShortsResultViewController {
     private func bindSaveResult(_ saveResult: Driver<Bool>) {
         saveResult
             .drive(with: self) { obj, isSucceed in
-                // TODO: 액티비티 얼럿 제거
+                obj.loadingView.isHidden = true
+                
                 if isSucceed {
                     obj.displaySaveSucceedAlert()
                 } else {
