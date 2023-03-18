@@ -99,7 +99,7 @@ class ShortsResultViewModel: ViewModelType {
                     .map { (isSelected: false, value: $0) }
             )
         
-        let selectedItems = Driver
+        let downloadList = Driver
             .combineLatest(
                 selectedOrDeselected,
                 isSelectionMode
@@ -118,7 +118,7 @@ class ShortsResultViewModel: ViewModelType {
             }
             .startWith([])
             
-        let downloadURLList = selectedItems
+        let downloadURLList = downloadList
             .withLatestFrom(
                 result.map { $0.scenes }
             ) { selectedItems, scenes in
@@ -139,7 +139,7 @@ class ShortsResultViewModel: ViewModelType {
                 return Observable.combineLatest(downloads)
             }
         
-        let numberOfSelectedShorts = selectedItems
+        let numberOfSelectedShorts = downloadList
             .map { $0.count }
         
         let videoSaveResult = videoFileURLs
