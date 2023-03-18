@@ -17,3 +17,7 @@ enum DownloadError: Error {
     case invalidURL
     case noFileURL
 }
+
+enum OptionalError: Error {
+    case nilSelf
+}

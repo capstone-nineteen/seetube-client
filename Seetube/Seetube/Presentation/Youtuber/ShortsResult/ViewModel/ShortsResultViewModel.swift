@@ -132,7 +132,7 @@ class ShortsResultViewModel: ViewModelType {
             .asObservable()
             .flatMap { [weak self] urls -> Observable<[URL]> in
                 guard let self = self else {
-                    return .error(NSError(domain: "nil self", code: -1))
+                    return .error(OptionalError.nilSelf)
                 }
                 
                 let downloads = urls.map { self.downloadVideoUseCase.execute(url: $0) }
@@ -145,7 +145,7 @@ class ShortsResultViewModel: ViewModelType {
         let videoSaveResult = videoFileURLs
             .flatMap { [weak self] fileURLs -> Observable<[Void]> in
                 guard let self = self else {
-                    return .error(NSError(domain: "nil self", code: -1))
+                    return .error(OptionalError.nilSelf)
                 }
                 let saves = fileURLs.map {
                     self.saveVideoUseCase

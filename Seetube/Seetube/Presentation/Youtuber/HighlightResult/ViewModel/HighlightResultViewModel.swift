@@ -61,7 +61,7 @@ class HighlightResultViewModel: ViewModelType {
             .withLatestFrom(videoUrl) { $1 }
             .flatMap { [weak self] url -> Observable<URL> in
                 guard let self = self else {
-                    return .error(NSError(domain: "nil self", code: -1))
+                    return .error(OptionalError.nilSelf)
                 }
                 return self.downloadVideoUseCase.execute(url: url)
             }
@@ -69,8 +69,7 @@ class HighlightResultViewModel: ViewModelType {
         let videoSaveResult = videoFileURL
             .flatMap { [weak self] fileURL -> Observable<Void> in
                 guard let self = self else {
-                    // TODO: nil self 에러 상수화
-                    return .error(NSError(domain: "nil self", code: -1))
+                    return .error(OptionalError.nilSelf)
                 }
                 return self.saveVideoUseCase
                     .execute(at: fileURL)
