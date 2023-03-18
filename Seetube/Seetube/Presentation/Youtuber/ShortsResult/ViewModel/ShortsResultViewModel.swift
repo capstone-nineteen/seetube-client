@@ -90,35 +90,8 @@ class ShortsResultViewModel: ViewModelType {
         let shouldPause = playingIndex
             .filter { $0 == nil }
             .withLatestFrom(shouldPlay) { $1.indexPath }
-        
-        let selectedOrDeselected = Driver
-            .merge(
-                input.itemSelected
-                    .map { (isSelected: true, value: $0) },
-                input.itemDeselected
-                    .map { (isSelected: false, value: $0) }
-            )
-        
-        let downloadList = Driver
-            .combineLatest(
-                selectedOrDeselected,
-                isSelectionMode
-            ) { (item: $0, isSelectionMode: $1) }
-            .scan([IndexPath]()) { acc, element in
-                guard element.isSelectionMode else { return [] }
-                
-                let isSelected = element.item.isSelected
-                let value = element.item.value
-    
-                if isSelected {
-                    return acc + [value]
-                } else {
-                    return acc.filter { $0 != value }
-                }
-            }
-            .startWith([])
             
-        let downloadURLList = downloadList
+        let downloadURLList = input.indexPathsForSelectedItems
             .withLatestFrom(
                 result.map { $0.scenes }
             ) { selectedItems, scenes in
@@ -139,7 +112,7 @@ class ShortsResultViewModel: ViewModelType {
                 return Observable.combineLatest(downloads)
             }
         
-        let numberOfSelectedShorts = downloadList
+        let numberOfSelectedShorts = input.indexPathsForSelectedItems
             .map { $0.count }
         
         let videoSaveResult = videoFileURLs
@@ -192,7 +165,7 @@ extension ShortsResultViewModel {
     struct Input {
         let viewWillAppear: Driver<Bool>
         let itemSelected: Driver<IndexPath>
-        let itemDeselected: Driver<IndexPath>
+        let indexPathsForSelectedItems: Driver<[IndexPath]>
         let selectedButtonTouched: Driver<Void>
         let saveButtonTouched: Driver<Void>
     }

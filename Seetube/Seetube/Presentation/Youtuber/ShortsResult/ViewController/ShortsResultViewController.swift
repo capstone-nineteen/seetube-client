@@ -75,14 +75,14 @@ extension ShortsResultViewController {
         
         let viewWillAppear = self.viewWillAppearEvent()
         let itemSelected = self.itemSelectedEvent()
-        let itemDeselected = self.itemDeselectedEvent()
+        let indexPathsForSelectedItems = self.indexPathsForSelectedItems()
         let selectedButtonTouched = self.selectedButtonTouched()
         let saveButtonTouched = self.saveButtonTouched()
         
         let input = ShortsResultViewModel.Input(
             viewWillAppear: viewWillAppear,
             itemSelected: itemSelected,
-            itemDeselected: itemDeselected,
+            indexPathsForSelectedItems: indexPathsForSelectedItems,
             selectedButtonTouched: selectedButtonTouched,
             saveButtonTouched: saveButtonTouched
         )
@@ -106,8 +106,17 @@ extension ShortsResultViewController {
         return self.collectionView.rx.itemSelected.asDriver()
     }
     
-    private func itemDeselectedEvent() -> Driver<IndexPath> {
-        return self.collectionView.rx.itemDeselected.asDriver()
+    private func indexPathsForSelectedItems() -> Driver<[IndexPath]> {
+        return Driver
+            .merge(
+                self.collectionView.rx.itemSelected.asDriver(),
+                self.collectionView.rx.itemDeselected.asDriver()
+            )
+            .map { [weak self] _ in
+                guard let self = self else { return nil }
+                return self.collectionView.indexPathsForSelectedItems
+            }
+            .map { $0 ?? [] }
     }
     
     private func selectedButtonTouched() -> Driver<Void> {
@@ -159,7 +168,6 @@ extension ShortsResultViewController {
     private func bindNumberOfSelectedShorts(_ numberOfSelectedShorts: Driver<Int>) {
         numberOfSelectedShorts
             .map { "\($0)개의 쇼츠 저장하기"}
-            .debug("bind numberof")
             .drive(self.saveButton.rx.text)
             .disposed(by: self.disposeBag)
         
