@@ -13,7 +13,10 @@ import RxSwift
 class BottomButton: UIButton, NibLoadable {
     @IBOutlet private var contentView: UIView!
     @IBOutlet fileprivate weak var nameLabel: AdaptiveFontSizeLabel!
-    @IBInspectable var name: String?
+    @IBInspectable var name: String? {
+        get { self.nameLabel.text }
+        set { self.nameLabel.text = newValue }
+    }
     private var disposeBag = DisposeBag()
     
     override var isHighlighted: Bool {
@@ -39,11 +42,6 @@ class BottomButton: UIButton, NibLoadable {
         super.init(coder: aDecoder)
         self.loadFromNib(owner: self)
         self.configureShadow()
-    }
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        self.nameLabel.text = self.name
     }
 }
 

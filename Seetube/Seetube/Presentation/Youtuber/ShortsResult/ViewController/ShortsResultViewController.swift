@@ -57,22 +57,6 @@ extension ShortsResultViewController {
             .disposed(by: self.disposeBag)
     }
     
-    private func changeToSelectionMode() {
-        self.navigationItem.setRightBarButton(nil, animated: false)
-        self.saveButton.isHidden = false
-        self.collectionView.allowsMultipleSelection = true
-        self.collectionViewBottomConstraint.constant = 50 + 7 + 5
-        self.collectionView.reloadData()
-    }
-    
-    private func changeToNormalMode() {
-        self.navigationItem.setRightBarButton(self.rightBarButtonItem, animated: false)
-        self.saveButton.isHidden = true
-        self.collectionView.allowsMultipleSelection = false
-        self.collectionViewBottomConstraint.constant = 0
-        self.collectionView.reloadData()
-    }
-    
     private func configureSaveButton() {
         self.saveButton.rx.tap
             .asDriver()
@@ -107,6 +91,7 @@ extension ShortsResultViewController {
         self.bindShorts(output.shorts)
         self.bindShouldPlay(output.shouldPlay)
         self.bindShouldPause(output.shouldPause)
+        self.bindNumberOfSelectedShorts(output.numberOfSelectedShorts)
         self.bindSaveResult(output.saveResult)
         self.bindShouldRequestAuthorization(output.shouldRequestAuthorization)
     }
@@ -171,6 +156,19 @@ extension ShortsResultViewController {
             .disposed(by: self.disposeBag)
     }
     
+    private func bindNumberOfSelectedShorts(_ numberOfSelectedShorts: Driver<Int>) {
+        numberOfSelectedShorts
+            .map { "\($0)개의 쇼츠 저장하기"}
+            .debug("bind numberof")
+            .drive(self.saveButton.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        numberOfSelectedShorts
+            .map { $0 > 0 }
+            .drive(self.saveButton.rx.isEnabled)
+            .disposed(by: self.disposeBag)
+    }
+    
     private func bindSaveResult(_ saveResult: Driver<Bool>) {
         saveResult
             .drive(with: self) { obj, isSucceed in
@@ -203,8 +201,6 @@ extension ShortsResultViewController {
             }
             .disposed(by: self.disposeBag)
     }
-    
-    // TODO: 선택한 영상 개수 바인딩
 }
 
 // MARK: - Video Playing
@@ -227,6 +223,26 @@ extension ShortsResultViewController {
     private func pauseVideo(at indexPath: IndexPath) {
         self.player?.pause()
         self.collectionView.reloadItems(at: [indexPath])
+    }
+}
+
+// MARK: - Modes
+
+extension ShortsResultViewController {
+    private func changeToSelectionMode() {
+        self.navigationItem.setRightBarButton(nil, animated: false)
+        self.saveButton.isHidden = false
+        self.collectionView.allowsMultipleSelection = true
+        self.collectionViewBottomConstraint.constant = 50 + 7 + 5
+        self.collectionView.reloadData()
+    }
+    
+    private func changeToNormalMode() {
+        self.navigationItem.setRightBarButton(self.rightBarButtonItem, animated: false)
+        self.saveButton.isHidden = true
+        self.collectionView.allowsMultipleSelection = false
+        self.collectionViewBottomConstraint.constant = 0
+        self.collectionView.reloadData()
     }
 }
 
@@ -266,19 +282,5 @@ extension ShortsResultViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return self.collectionViewItemSpacing
-    }
-}
-
-extension Reactive where Base: UICollectionView {
-    var selectedIndexPaths: ControlEvent<[IndexPath]?> {
-        let observable = Observable
-            .combineLatest(
-                base.rx.itemSelected,
-                base.rx.itemDeselected
-            ) { _, _ in
-                return base.indexPathsForSelectedItems
-            }
-        
-        return ControlEvent(events: observable)
     }
 }

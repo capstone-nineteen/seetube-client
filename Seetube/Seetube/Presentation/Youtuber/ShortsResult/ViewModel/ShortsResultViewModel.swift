@@ -116,6 +116,7 @@ class ShortsResultViewModel: ViewModelType {
                     return acc.filter { $0 != value }
                 }
             }
+            .startWith([])
             
         let downloadURLList = selectedItems
             .withLatestFrom(
@@ -137,6 +138,9 @@ class ShortsResultViewModel: ViewModelType {
                 let downloads = urls.map { self.downloadVideoUseCase.execute(url: $0) }
                 return Observable.combineLatest(downloads)
             }
+        
+        let numberOfSelectedShorts = selectedItems
+            .map { $0.count }
         
         let videoSaveResult = videoFileURLs
             .flatMap { [weak self] fileURLs -> Observable<[Void]> in
@@ -178,7 +182,7 @@ class ShortsResultViewModel: ViewModelType {
         
         return Output(shorts: shorts,
                       shouldPlay: shouldPlay,
-                      shouldPause: shouldPause,
+                      shouldPause: shouldPause, numberOfSelectedShorts: numberOfSelectedShorts,
                       saveResult: saveSuccess,
                       shouldRequestAuthorization: shouldRequestAuthorization)
     }
@@ -197,6 +201,7 @@ extension ShortsResultViewModel {
         let shorts: Driver<[ShortsItemViewModel]>
         let shouldPlay: Driver<(url: URL?, indexPath: IndexPath)>
         let shouldPause: Driver<IndexPath>
+        let numberOfSelectedShorts: Driver<Int>
         let saveResult: Driver<Bool>
         let shouldRequestAuthorization: Driver<Void>
     }
