@@ -186,20 +186,34 @@ extension ShortsResultViewController {
     private func bindShouldRequestAuthorization(_ shouldRequestAuthorization: Driver<Void>) {
         shouldRequestAuthorization
             .drive(with: self) { obj, _ in
-                // TODO: 프로토콜 익스텐션 displayOpenSettingsAlert
-                let settingsAction: AlertAction = { _ in
-                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
-
-                    if UIApplication.shared.canOpenURL(settingsUrl) {
-                        UIApplication.shared.open(settingsUrl, completionHandler: nil)
-                    }
-                }
-                
-                obj.displayAlertWithAction(title: "접근 권한 필요",
-                                           message: "영상을 저장하려면 사진앱에 대한 접근 권한이 필요합니다. 권한을 허용해주세요.",
-                                           action: settingsAction)
+                obj.displayAuthorizationNeededAlert()
             }
             .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension ShortsResultViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = (collectionView.bounds.width - 2*self.collectionViewHorizontalInset - self.collectionViewItemSpacing) / 2
+        let height: CGFloat = width / 9 * 16
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: self.collectionViewVerticalInset,
+                            left: self.collectionViewHorizontalInset,
+                            bottom: self.collectionViewVerticalInset,
+                            right: self.collectionViewHorizontalInset)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return self.collectionViewItemSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return self.collectionViewItemSpacing
     }
 }
 
@@ -258,29 +272,9 @@ extension ShortsResultViewController {
     private func displaySaveFailedAlert() {
         self.displayFailureAlert(message: "저장에 실패했습니다. 다시 시도해주세요.")
     }
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout
-
-extension ShortsResultViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = (collectionView.bounds.width - 2*self.collectionViewHorizontalInset - self.collectionViewItemSpacing) / 2
-        let height: CGFloat = width / 9 * 16
-        return CGSize(width: width, height: height)
-    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: self.collectionViewVerticalInset,
-                            left: self.collectionViewHorizontalInset,
-                            bottom: self.collectionViewVerticalInset,
-                            right: self.collectionViewHorizontalInset)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return self.collectionViewItemSpacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return self.collectionViewItemSpacing
+    private func displayAuthorizationNeededAlert() {
+        self.displayOpenSettingsAlert(title: "권한 필요",
+                                      message: "사진앱에 저장하기 위해서는 접근 권한이 필요합니다.")
     }
 }

@@ -12,6 +12,7 @@ typealias AlertAction = (UIAlertAction) -> Void
 protocol AlertDisplaying: UIViewController {
     func displayOKAlert(title: String?, message: String?, action: AlertAction?)
     func displayFailureAlert(message: String?, action: AlertAction?)
+    func displayOpenSettingsAlert(title: String?, message: String?)
     func displayAlertWithAction(title: String?, message: String?, action: AlertAction?)
 }
 
@@ -33,6 +34,23 @@ extension AlertDisplaying {
         displayAlert(title: "에러",
                      message: message,
                      actions: [UIAlertAction(title: "취소", style: .destructive, handler: action)])
+    }
+    
+    func displayOpenSettingsAlert(
+        title: String?,
+        message: String?
+    ) {
+        let settingsAction: AlertAction = { _ in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: nil)
+            }
+        }
+        
+        displayAlertWithAction(title: title,
+                               message: message,
+                               action: settingsAction)
     }
     
     func displayAlertWithAction(

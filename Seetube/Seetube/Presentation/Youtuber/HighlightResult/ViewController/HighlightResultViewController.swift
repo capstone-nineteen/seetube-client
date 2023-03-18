@@ -121,9 +121,9 @@ extension HighlightResultViewController {
                 obj.loadingView.isHidden = true
                 
                 if success {
-                    obj.displayOKAlert(title: "저장 완료", message: "하이라이트 영상을 사진앱에 저장했습니다.")
+                    obj.displaySaveSucceedAlert()
                 } else {
-                    obj.displayFailureAlert(message: "저장에 실패하였습니다. 다시 시도해주세요.")
+                    obj.displaySaveFailedAlert()
                 }
             }
             .disposed(by: self.disposeBag)
@@ -132,18 +132,26 @@ extension HighlightResultViewController {
     func bindShouldRequestAuthorization(_ shouldRequestAuthorization: Driver<Void>) {
         shouldRequestAuthorization
             .drive(with: self) { obj, _ in
-                let settingsAction: AlertAction = { _ in
-                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
-
-                    if UIApplication.shared.canOpenURL(settingsUrl) {
-                        UIApplication.shared.open(settingsUrl, completionHandler: nil)
-                    }
-                }
-                
-                obj.displayAlertWithAction(title: "접근 권한 필요",
-                                           message: "영상을 저장하려면 사진앱에 대한 접근 권한이 필요합니다. 권한을 허용해주세요.",
-                                           action: settingsAction)
+                obj.displayAuthorizationNeededAlert()
             }
             .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: - Alerts
+
+extension HighlightResultViewController {
+    private func displaySaveSucceedAlert() {
+        self.displayOKAlert(title: "저장 완료",
+                            message: "하이라이트를 저장했습니다.")
+    }
+    
+    private func displaySaveFailedAlert() {
+        self.displayFailureAlert(message: "저장에 실패했습니다. 다시 시도해주세요.")
+    }
+    
+    private func displayAuthorizationNeededAlert() {
+        self.displayOpenSettingsAlert(title: "권한 필요",
+                                      message: "사진앱에 저장하기 위해서는 접근 권한이 필요합니다.")
     }
 }
