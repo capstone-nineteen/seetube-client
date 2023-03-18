@@ -80,12 +80,14 @@ extension ShortsResultViewController {
         
         let viewWillAppear = self.viewWillAppearEvent()
         let itemSelected = self.itemSelectedEvent()
+        let itemDeselected = self.itemDeselectedEvent()
         let selectedButtonTouched = self.selectedButtonTouched()
         let saveButtonTouched = self.saveButtonTouched()
         
         let input = ShortsResultViewModel.Input(
             viewWillAppear: viewWillAppear,
             itemSelected: itemSelected,
+            itemDeselected: itemDeselected,
             selectedButtonTouched: selectedButtonTouched,
             saveButtonTouched: saveButtonTouched
         )
@@ -95,6 +97,7 @@ extension ShortsResultViewController {
         self.bindShouldPlay(output.shouldPlay)
         self.bindShouldPause(output.shouldPause)
         self.bindSaveResult(output.saveResult)
+        self.bindShouldRequestAuthorization(output.shouldRequestAuthorization)
     }
     
     // MARK: Input Event Creation
@@ -105,6 +108,10 @@ extension ShortsResultViewController {
     
     private func itemSelectedEvent() -> Driver<IndexPath> {
         return self.collectionView.rx.itemSelected.asDriver()
+    }
+    
+    private func itemDeselectedEvent() -> Driver<IndexPath> {
+        return self.collectionView.rx.itemDeselected.asDriver()
     }
     
     private func selectedButtonTouched() -> Driver<Void> {
@@ -156,6 +163,7 @@ extension ShortsResultViewController {
     private func bindSaveResult(_ saveResult: Driver<Bool>) {
         saveResult
             .drive(with: self) { obj, isSucceed in
+                // TODO: 액티비티 얼럿 제거
                 if isSucceed {
                     obj.displaySaveSucceedAlert()
                 } else {
@@ -164,6 +172,27 @@ extension ShortsResultViewController {
             }
             .disposed(by: self.disposeBag)
     }
+    
+    private func bindShouldRequestAuthorization(_ shouldRequestAuthorization: Driver<Void>) {
+        shouldRequestAuthorization
+            .drive(with: self) { obj, _ in
+                // TODO: 프로토콜 익스텐션 displayOpenSettingsAlert
+                let settingsAction: AlertAction = { _ in
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+
+                    if UIApplication.shared.canOpenURL(settingsUrl) {
+                        UIApplication.shared.open(settingsUrl, completionHandler: nil)
+                    }
+                }
+                
+                obj.displayAlertWithAction(title: "접근 권한 필요",
+                                           message: "영상을 저장하려면 사진앱에 대한 접근 권한이 필요합니다. 권한을 허용해주세요.",
+                                           action: settingsAction)
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    // TODO: 선택한 영상 개수 바인딩
 }
 
 // MARK: - Video Playing
@@ -225,5 +254,19 @@ extension ShortsResultViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return self.collectionViewItemSpacing
+    }
+}
+
+extension Reactive where Base: UICollectionView {
+    var selectedIndexPaths: ControlEvent<[IndexPath]?> {
+        let observable = Observable
+            .combineLatest(
+                base.rx.itemSelected,
+                base.rx.itemDeselected
+            ) { _, _ in
+                return base.indexPathsForSelectedItems
+            }
+        
+        return ControlEvent(events: observable)
     }
 }

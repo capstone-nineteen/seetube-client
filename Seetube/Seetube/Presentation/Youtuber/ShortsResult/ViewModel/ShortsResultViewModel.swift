@@ -91,23 +91,44 @@ class ShortsResultViewModel: ViewModelType {
             .filter { $0 == nil }
             .withLatestFrom(shouldPlay) { $1.indexPath }
         
-        let selectedShortsURL = Driver
+        let selectedOrDeselected = Driver
+            .merge(
+                input.itemSelected
+                    .map { (isSelected: true, value: $0) },
+                input.itemDeselected
+                    .map { (isSelected: false, value: $0) }
+            )
+        
+        let selectedItems = Driver
             .combineLatest(
-                input.itemSelected,
+                selectedOrDeselected,
                 isSelectionMode
-            ) { (itemSelected: $0, isSelectionMode: $1) }
-            .scan([], accumulator: { acc, element in
-                element.isSelectionMode ? [] : acc + [element.itemSelected]
-            })
+            ) { (item: $0, isSelectionMode: $1) }
+            .scan([IndexPath]()) { acc, element in
+                guard element.isSelectionMode else { return [] }
+                
+                let isSelected = element.item.isSelected
+                let value = element.item.value
+    
+                if isSelected {
+                    return acc + [value]
+                } else {
+                    return acc.filter { $0 != value }
+                }
+            }
+            
+        let downloadURLList = selectedItems
             .withLatestFrom(
                 result.map { $0.scenes }
-            ) { selectedShorts, scenes in
-                selectedShorts.map { scenes[$0.row].videoURL }
+            ) { selectedItems, scenes in
+                selectedItems.map { scenes[$0.row].videoURL }
             }
         
         let videoFileURLs = input.saveButtonTouched
+            .withLatestFrom(
+                downloadURLList.filter { !$0.isEmpty }
+            ) { $1 }
             .asObservable()
-            .withLatestFrom(selectedShortsURL) { $1 }
             .flatMap { [weak self] urls -> Observable<[URL]> in
                 guard let self = self else {
                     return .error(NSError(domain: "nil self", code: -1))
@@ -129,6 +150,7 @@ class ShortsResultViewModel: ViewModelType {
                 }
                 return Observable.combineLatest(saves)
             }
+            .share()
         
         let saveSuccess = videoSaveResult
             .map { _ in true }
@@ -166,6 +188,7 @@ extension ShortsResultViewModel {
     struct Input {
         let viewWillAppear: Driver<Bool>
         let itemSelected: Driver<IndexPath>
+        let itemDeselected: Driver<IndexPath>
         let selectedButtonTouched: Driver<Void>
         let saveButtonTouched: Driver<Void>
     }
