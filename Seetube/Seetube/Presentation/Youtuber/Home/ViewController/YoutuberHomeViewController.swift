@@ -17,6 +17,7 @@ class YoutuberHomeViewController: UIViewController,
     @IBOutlet weak var segmentedControl: UnderlineSegmentedControl!
     @IBOutlet weak var finishedReviewsView: UIView!
     @IBOutlet weak var reviewsInProgressView: UIView!
+    @IBOutlet weak var signOutButton: UIButton!
     
     private var finishedReviewsTableViewController: FinishedReviewsTableViewController? {
         self.children[1] as? FinishedReviewsTableViewController

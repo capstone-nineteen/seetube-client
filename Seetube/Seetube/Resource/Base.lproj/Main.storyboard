@@ -1228,6 +1228,14 @@
                                     <segue destination="s4d-ot-Q8n" kind="embed" id="oKh-Qf-Rtm"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXW-5L-qrV">
+                                <rect key="frame" x="314" y="113" width="45" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="로그아웃">
+                                    <color key="titleColor" name="AccentColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1JB-pn-N5C"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -1239,11 +1247,13 @@
                             <constraint firstItem="d8h-i8-69e" firstAttribute="leading" secondItem="1JB-pn-N5C" secondAttribute="leading" id="LOL-iZ-aHj"/>
                             <constraint firstItem="IiA-FR-9gK" firstAttribute="leading" secondItem="1JB-pn-N5C" secondAttribute="leading" constant="20" id="MBA-xq-odt"/>
                             <constraint firstItem="1JB-pn-N5C" firstAttribute="trailing" secondItem="GZt-qH-NNk" secondAttribute="trailing" id="QFH-2J-2kE"/>
+                            <constraint firstItem="yXW-5L-qrV" firstAttribute="centerY" secondItem="IiA-FR-9gK" secondAttribute="centerY" id="T6p-s8-eK1"/>
                             <constraint firstItem="fid-hr-cMw" firstAttribute="top" secondItem="GZt-qH-NNk" secondAttribute="top" id="THC-6J-4gA"/>
                             <constraint firstItem="fid-hr-cMw" firstAttribute="leading" secondItem="GZt-qH-NNk" secondAttribute="leading" id="Unh-VG-7IK"/>
                             <constraint firstItem="1JB-pn-N5C" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IiA-FR-9gK" secondAttribute="trailing" constant="17" id="bRU-YA-6kZ"/>
                             <constraint firstItem="fid-hr-cMw" firstAttribute="trailing" secondItem="GZt-qH-NNk" secondAttribute="trailing" id="jWh-9b-4ha"/>
                             <constraint firstItem="fid-hr-cMw" firstAttribute="bottom" secondItem="GZt-qH-NNk" secondAttribute="bottom" id="slP-3t-D0m"/>
+                            <constraint firstItem="1JB-pn-N5C" firstAttribute="trailing" secondItem="yXW-5L-qrV" secondAttribute="trailing" constant="16" id="sqY-jV-LXz"/>
                             <constraint firstItem="IiA-FR-9gK" firstAttribute="top" secondItem="1JB-pn-N5C" secondAttribute="top" constant="20" id="zDc-eI-ADG"/>
                             <constraint firstItem="GZt-qH-NNk" firstAttribute="top" secondItem="d8h-i8-69e" secondAttribute="bottom" id="zJE-dc-EzT"/>
                         </constraints>
@@ -1254,11 +1264,12 @@
                         <outlet property="nameLabel" destination="IiA-FR-9gK" id="2Y8-1A-Z5O"/>
                         <outlet property="reviewsInProgressView" destination="GZt-qH-NNk" id="Z7a-yH-6iA"/>
                         <outlet property="segmentedControl" destination="d8h-i8-69e" id="Y7S-cR-k8T"/>
+                        <outlet property="signOutButton" destination="yXW-5L-qrV" id="8H4-WH-w2z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnN-vD-0iN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="-506"/>
+            <point key="canvasLocation" x="2573.5999999999999" y="-506.89655172413796"/>
         </scene>
         <!--Reviews In Progress Table View Controller-->
         <scene sceneID="vBO-GZ-wfK">
