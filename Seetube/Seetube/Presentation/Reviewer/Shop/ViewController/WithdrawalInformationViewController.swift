@@ -159,6 +159,7 @@ extension WithdrawalInformationViewController {
             title: "환급 신청",
             message: "입력하신 정보가 올바른지 확인하십시오.\n해당 정보로 환급을 신청하시겠습니까?"
         ) { _ in
+            // FIXME: weak self
             self.confirmButtonTouched.accept(())
         }
     }

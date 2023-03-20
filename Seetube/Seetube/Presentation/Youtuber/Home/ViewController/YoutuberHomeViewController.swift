@@ -11,7 +11,9 @@ import RxSwift
 
 class YoutuberHomeViewController: UIViewController,
                                   YoutuberVideoDetailPushable,
-                                  ResultMenuPushable
+                                  ResultMenuPushable,
+                                  StartScreenReturnable,
+                                  AlertDisplaying
 {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var segmentedControl: UnderlineSegmentedControl!
@@ -28,6 +30,7 @@ class YoutuberHomeViewController: UIViewController,
     
     var viewModel: YoutuberHomeViewModel?
     private var disposeBag = DisposeBag()
+    private var signOutConfirmButtonTouched = PublishRelay<Void>()    // confirm alert의 OK 버튼과 연결된 Relay
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +45,7 @@ extension YoutuberHomeViewController {
     private func configureUI() {
         self.configureNavigationBar()
         self.configureSegmentedControl()
+        self.configureSignOutButton()
     }
     
     private func configureSegmentedControl() {
@@ -77,6 +81,15 @@ extension YoutuberHomeViewController {
             }
             .disposed(by: self.disposeBag)
     }
+    
+    private func configureSignOutButton() {
+        self.signOutButton.rx.tap
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.displayConfirmSignOutAlert()
+            }
+            .disposed(by: self.disposeBag)
+    }
 }
 
 // MARK: - ViewModel Binding
@@ -88,11 +101,13 @@ extension YoutuberHomeViewController {
         let viewWillAppear = self.viewWillAppearEvent()
         let selectedFinishedReviewItem = self.selectedFinishedReviewItem()
         let selectedReviewInProgressItem = self.selectedReviewInProgressItem()
+        let signOutButtonTouched = self.signOutButtonTouched()
         
         let input = YoutuberHomeViewModel.Input(
             viewWillAppear: viewWillAppear,
             selectedFinishedReviewItem: selectedFinishedReviewItem,
-            selectedReviewInProgressItem: selectedReviewInProgressItem
+            selectedReviewInProgressItem: selectedReviewInProgressItem,
+            signOutButtonTouched: signOutButtonTouched
         )
         let output = viewModel.transform(input: input)
         
@@ -101,6 +116,7 @@ extension YoutuberHomeViewController {
         self.bindReviewsInProgress(output.reviewsInProgress)
         self.bindSelectedFinishedReviewId(output.selectedFinishedReviewId)
         self.bindSelectedInProgressReviewId(output.selectedInProgressReviewId)
+        self.bindDidSignOut(output.didSignOut)
     }
     
     // MARK: Input Event Creation
@@ -119,6 +135,10 @@ extension YoutuberHomeViewController {
         guard let reviewsInProgressTableViewController = self.reviewsInProgressTableViewController else { return .never() }
         return reviewsInProgressTableViewController.rx.itemSelected
             .asDriver()
+    }
+    
+    private func signOutButtonTouched() -> Driver<Void> {
+        return self.signOutConfirmButtonTouched.asDriverIgnoringError()
     }
     
     // MARK: Output Binding
@@ -159,5 +179,24 @@ extension YoutuberHomeViewController {
                 obj.pushYoutuberVideoDetail(videoId: id)
             }
             .disposed(by: self.disposeBag)
+    }
+    
+    private func bindDidSignOut(_ didSignOut: Driver<Void>) {
+        didSignOut
+            .drive(with: self) { obj, _ in
+                obj.returnToStartScreen()
+            }
+            .disposed(by: self.disposeBag)
+    }
+}
+
+// MARK: - Alerts
+
+extension YoutuberHomeViewController {
+    private func displayConfirmSignOutAlert() {
+        self.displayAlertWithAction(title: "로그아웃",
+                                    message: "로그아웃 하시겠습니까?") { [weak self] _ in
+            self?.signOutConfirmButtonTouched.accept(())
+        }
     }
 }

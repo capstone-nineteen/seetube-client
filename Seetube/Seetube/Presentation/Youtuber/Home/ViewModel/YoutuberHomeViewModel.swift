@@ -11,9 +11,14 @@ import RxCocoa
 
 class YoutuberHomeViewModel: ViewModelType {
     private let fetchYoutuberHomeUseCase: FetchYoutuberHomeUseCase
+    private let signOutUseCase: SignOutUseCase
     
-    init(fetchYoutuberHomeUseCase: FetchYoutuberHomeUseCase) {
+    init(
+        fetchYoutuberHomeUseCase: FetchYoutuberHomeUseCase,
+        signOutUseCase: SignOutUseCase
+    ) {
         self.fetchYoutuberHomeUseCase = fetchYoutuberHomeUseCase
+        self.signOutUseCase = signOutUseCase
     }
     
     func transform(input: Input) -> Output {
@@ -47,11 +52,24 @@ class YoutuberHomeViewModel: ViewModelType {
         let selectedInProgressReviewId = input.selectedReviewInProgressItem
             .withLatestFrom(reviewsInProgress) { $1[$0.row].videoId }
         
+        let didSignOut = input.signOutButtonTouched
+            .asObservable()
+            .flatMap { [weak self] _ -> Observable<Void> in
+                guard let self = self else {
+                    return .error(OptionalError.nilSelf)
+                }
+                return self.signOutUseCase
+                    .execute()
+                    .andThen(.just(()))
+            }
+            .asDriverIgnoringError()
+        
         return Output(name: name,
                       finishedReviews: finishedReviewsViewModel,
                       reviewsInProgress: reviewsInProgressViewModel,
                       selectedFinishedReviewId: selectedFinishedReviewId,
-                      selectedInProgressReviewId: selectedInProgressReviewId)
+                      selectedInProgressReviewId: selectedInProgressReviewId,
+                      didSignOut: didSignOut)
     }
 }
 
@@ -60,6 +78,7 @@ extension YoutuberHomeViewModel {
         let viewWillAppear: Driver<Bool>
         let selectedFinishedReviewItem: Driver<IndexPath>
         let selectedReviewInProgressItem: Driver<IndexPath>
+        let signOutButtonTouched: Driver<Void>
     }
     
     struct Output {
@@ -68,5 +87,6 @@ extension YoutuberHomeViewModel {
         let reviewsInProgress: Driver<[YoutuberInProgressVideoCardItemViewModel]>
         let selectedFinishedReviewId: Driver<Int>
         let selectedInProgressReviewId: Driver<Int>
+        let didSignOut: Driver<Void>
     }
 }

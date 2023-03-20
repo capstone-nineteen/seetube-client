@@ -20,9 +20,14 @@ extension YoutuberNavigationController {
     private func configureViewController() {
         guard let youtuberHomeViewController = self.viewControllers.first as? YoutuberHomeViewController else { return }
         
-        let repository = DefaultYoutuberHomeRepository()
-        let fetchYoutuberHomeUseCase = DefaultFetchYoutuberHomeUseCase(repository: repository)
-        let viewModel = YoutuberHomeViewModel(fetchYoutuberHomeUseCase: fetchYoutuberHomeUseCase)
+        let youtuberHomeRepository = DefaultYoutuberHomeRepository()
+        let signOutRepository = DefaultSignOutRepository()
+        
+        let fetchYoutuberHomeUseCase = DefaultFetchYoutuberHomeUseCase(repository: youtuberHomeRepository)
+        let signOutUseCase = DefaultSignOutUseCase(repository: signOutRepository)
+        
+        let viewModel = YoutuberHomeViewModel(fetchYoutuberHomeUseCase: fetchYoutuberHomeUseCase,
+                                              signOutUseCase: signOutUseCase)
         youtuberHomeViewController.viewModel = viewModel
     }
 }
