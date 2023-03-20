@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum NetworkServiceError: Error {
+    case invalidResponse
+}
+
 enum PhotoAlbumError: Error {
     case photoLibraryAccessNotAuthorized
     case saveFailed

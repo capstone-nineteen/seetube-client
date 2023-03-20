@@ -15,7 +15,7 @@ class DefaultFetchReviewerHomeUseCase: FetchReviewerHomeUseCase {
         self.repository = repository
     }
     
-    func execute() -> Observable<ReviewerHome?> {
+    func execute() -> Single<ReviewerHome> {
         return self.repository.getReviewerHome()
     }
 }

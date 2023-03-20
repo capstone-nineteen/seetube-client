@@ -23,8 +23,11 @@ class MyPageViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let myPage = input.viewWillAppear
-            .flatMap { _ in
-                self.fetchMyPageUseCase.execute()
+            .flatMap { [weak self] _ -> Driver<MyPage?> in
+                guard let self = self else { return .just(nil) }
+                return self.fetchMyPageUseCase
+                    .execute()
+                    .map { $0 as MyPage? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }

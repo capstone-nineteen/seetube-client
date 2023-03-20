@@ -9,13 +9,13 @@ import Foundation
 import RxSwift
 
 class DefaultShopRepository: ShopRepository, NetworkRequestable {
-    func getShop() -> Observable<Shop?> {
+    func getShop() -> Single<Shop> {
         let endpoint = APIEndpointFactory.makeEndpoint(for: .getShop)
         return self.getResource(endpoint: endpoint,
                                 decodingType: ShopDTO.self)
     }
     
-    func registerWithdrawal(info: WithdrawalInformation) -> Observable<WithdrawalResult?> {
+    func registerWithdrawal(info: WithdrawalInformation) -> Single<WithdrawalResult> {
         let infoDTO = info.toDTO()
         let endpoint = APIEndpointFactory.makeEndpoint(
             for: .registerWithdrawal(info: infoDTO)

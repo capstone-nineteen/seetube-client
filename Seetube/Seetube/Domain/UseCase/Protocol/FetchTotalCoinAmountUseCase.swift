@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FetchTotalCoinAmountUseCase {
-    func execute() -> Observable<Shop?>
+    func execute() -> Single<Shop>
 }

@@ -25,6 +25,7 @@ class VideosByCategoryViewModel: ViewModelType {
                 guard let self = self else { return .just(nil) }
                 return self.fetchVideosByCategoryUseCase
                     .execute(category: category)
+                    .map { $0 as VideoList? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .map { $0?.videos ?? [] }

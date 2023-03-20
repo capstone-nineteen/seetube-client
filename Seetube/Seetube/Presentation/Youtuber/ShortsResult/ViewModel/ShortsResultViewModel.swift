@@ -38,6 +38,7 @@ class ShortsResultViewModel: ViewModelType {
                 guard let self = self else { return .just(nil) }
                 return self.fetchShortsResultUseCase
                     .execute(videoId: self.videoId)
+                    .map { $0 as ShortsResult? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }
@@ -108,7 +109,11 @@ class ShortsResultViewModel: ViewModelType {
                     return .error(OptionalError.nilSelf)
                 }
                 
-                let downloads = urls.map { self.downloadVideoUseCase.execute(url: $0) }
+                let downloads = urls.map {
+                    self.downloadVideoUseCase
+                        .execute(url: $0)
+                        .asObservable()
+                }
                 return Observable.combineLatest(downloads)
             }
         
@@ -131,7 +136,7 @@ class ShortsResultViewModel: ViewModelType {
         
         let saveSuccess = videoSaveResult
             .map { _ in true }
-            .catch { error in
+            .catch { error -> Observable<Bool> in
                 if let photoAlbumError = error as? PhotoAlbumError,
                    photoAlbumError == .photoLibraryAccessNotAuthorized {
                     return .never()

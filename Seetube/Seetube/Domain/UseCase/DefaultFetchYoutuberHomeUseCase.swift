@@ -15,7 +15,7 @@ class DefaultFetchYoutuberHomeUseCase: FetchYoutuberHomeUseCase {
         self.repository = repository
     }
     
-    func execute() -> Observable<YoutuberHome?> {
+    func execute() -> Single<YoutuberHome> {
         return self.repository.getYoutuberHome()
     }
 }

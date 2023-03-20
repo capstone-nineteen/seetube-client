@@ -38,6 +38,7 @@ class SearchResultViewModel: ViewModelType {
                 guard let self = self else { return .just(nil) }
                 return self.searchUseCase
                     .execute(searchKeyword: keyword)
+                    .map { $0 as VideoList? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }

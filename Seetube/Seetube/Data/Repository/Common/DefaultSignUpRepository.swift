@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 class DefaultSignUpRepository: SignUpRepository, NetworkRequestable {
-    func requestVerificationCode(userType: UserType, email: String) -> Observable<VerificationCodeRequestResult?> {
+    func requestVerificationCode(userType: UserType, email: String) -> Single<VerificationCodeRequestResult> {
         let endpoint = APIEndpointFactory.makeEndpoint(
             for: .requestVerificationCode(userType: userType, email: email)
         )
@@ -17,7 +17,7 @@ class DefaultSignUpRepository: SignUpRepository, NetworkRequestable {
                                 decodingType: VerificationCodeRequestResultDTO.self)
     }
     
-    func signUp(userType: UserType, info: SignUpInformation) -> Observable<SignUpResult?> {
+    func signUp(userType: UserType, info: SignUpInformation) -> Single<SignUpResult> {
         let infoDTO = info.toDTO()
         let endpoint = APIEndpointFactory.makeEndpoint(
             for: .signUp(userType: userType, info: infoDTO)

@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol DownloadVideoUseCase {
-    func execute(url: String) -> Observable<URL>
+    func execute(url: String) -> Single<URL>
 }

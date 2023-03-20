@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FetchVideosByCategoryUseCase{
-    func execute(category: Category) -> Observable<VideoList?>
+    func execute(category: Category) -> Single<VideoList>
 }

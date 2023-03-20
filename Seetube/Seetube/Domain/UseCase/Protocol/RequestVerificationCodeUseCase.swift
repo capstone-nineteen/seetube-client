@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol RequestVerificationCodeUseCase {
-    func execute(userType: UserType, email: String) -> Observable<VerificationCodeRequestResult?>
+    func execute(userType: UserType, email: String) -> Single<VerificationCodeRequestResult>
 }

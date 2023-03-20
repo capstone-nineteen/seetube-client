@@ -15,7 +15,7 @@ class DefaultFetchShortsResultUseCase: FetchShortsResultUseCase {
         self.repository = repository
     }
     
-    func execute(videoId: Int) -> Observable<ShortsResult?> {
+    func execute(videoId: Int) -> Single<ShortsResult> {
         return self.repository.getShortsResult()
     }
 }

@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FetchYoutuberHomeUseCase {
-    func execute() -> Observable<YoutuberHome?>
+    func execute() -> Single<YoutuberHome>
 }

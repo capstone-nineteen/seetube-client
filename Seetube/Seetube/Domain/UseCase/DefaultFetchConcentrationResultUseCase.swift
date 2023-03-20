@@ -15,7 +15,7 @@ class DefaultFetchConcentrationResultUseCase: FetchConcentrationResultUseCase {
         self.repository = repository
     }
     
-    func execute(videoId: Int) -> Observable<ConcentrationResult?> {
+    func execute(videoId: Int) -> Single<ConcentrationResult> {
         return self.repository.getConcentrationResult()
     }
 }

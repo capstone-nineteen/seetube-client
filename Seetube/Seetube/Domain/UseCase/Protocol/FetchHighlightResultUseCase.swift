@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FetchHighlightResultUseCase {
-    func execute(videoId: Int) -> Observable<HighlightResult?>
+    func execute(videoId: Int) -> Single<HighlightResult>
 }

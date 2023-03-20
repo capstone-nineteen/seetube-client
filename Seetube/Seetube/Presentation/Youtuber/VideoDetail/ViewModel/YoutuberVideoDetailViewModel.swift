@@ -27,6 +27,7 @@ class YoutuberVideoDetailViewModel: ViewModelType {
                 guard let self = self else { return .just(nil) }
                 return self.fetchVideoInfoUseCase
                     .execute(id: self.videoId)
+                    .map { $0 as VideoInfo? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }

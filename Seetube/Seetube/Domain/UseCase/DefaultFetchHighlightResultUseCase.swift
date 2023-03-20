@@ -15,7 +15,7 @@ class DefaultFetchHighlightResultUseCase: FetchHighlightResultUseCase {
         self.repository = repository
     }
     
-    func execute(videoId: Int) -> Observable<HighlightResult?> {
+    func execute(videoId: Int) -> Single<HighlightResult> {
         return self.repository.getHighlightResult()
     }
 }

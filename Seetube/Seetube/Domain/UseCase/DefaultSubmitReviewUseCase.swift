@@ -16,7 +16,9 @@ class DefaultSubmitReviewUseCase: SubmitReviewUseCase {
     }
     
     func execute(reviews: Reviews) -> Observable<Bool> {
+        // TODO: Completable & Error 처리로 리팩토링
         return self.repository.submitReview(reviews: reviews)
-            .map { $0?.status == 200 }
+            .asObservable()
+            .map { $0.status == 200 }
     }
 }

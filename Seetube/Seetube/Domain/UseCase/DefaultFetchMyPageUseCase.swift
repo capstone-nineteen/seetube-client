@@ -15,7 +15,7 @@ class DefaultFetchMyCaseUseCase: FetchMyPageUseCase {
         self.repository = repository
     }
     
-    func execute() -> Observable<MyPage?> {
+    func execute() -> Single<MyPage> {
         return self.repository.getMyPage()
     }
 }

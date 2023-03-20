@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol ShortsResultRepository {
-    func getShortsResult() -> Observable<ShortsResult?>
+    func getShortsResult() -> Single<ShortsResult>
 }

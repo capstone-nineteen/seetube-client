@@ -15,7 +15,7 @@ class DefaultRequestVerificationCodeUseCase: RequestVerificationCodeUseCase {
         self.repository = repository
     }
     
-    func execute(userType: UserType, email: String) -> Observable<VerificationCodeRequestResult?> {
+    func execute(userType: UserType, email: String) -> Single<VerificationCodeRequestResult> {
         return self.repository.requestVerificationCode(userType: userType,
                                                        email: email)
     }

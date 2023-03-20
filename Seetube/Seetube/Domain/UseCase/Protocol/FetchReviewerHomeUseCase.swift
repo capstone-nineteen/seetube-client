@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FetchReviewerHomeUseCase {
-    func execute() -> Observable<ReviewerHome?>
+    func execute() -> Single<ReviewerHome>
 }

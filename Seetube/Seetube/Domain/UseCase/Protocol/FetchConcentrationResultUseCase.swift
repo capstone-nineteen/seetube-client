@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FetchConcentrationResultUseCase {
-    func execute(videoId: Int) -> Observable<ConcentrationResult?>
+    func execute(videoId: Int) -> Single<ConcentrationResult>
 }

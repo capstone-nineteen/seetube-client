@@ -16,7 +16,9 @@ class DefaultRegisterWithdrawalUseCase: RegisterWithdrawalUseCase {
     }
     
     func execute(info: WithdrawalInformation) -> Observable<Bool> {
+        // TODO: Completable & Error 처리로 리팩토링
         return self.repository.registerWithdrawal(info: info)
-            .map { $0?.status == 201 }
+            .asObservable()
+            .map { $0.status == 201 }
     }
 }

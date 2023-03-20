@@ -41,6 +41,7 @@ class EmotionResultViewModel: SceneResultViewModel {
                 guard let self = self else { return .just(nil) }
                 return self.fetchEmotionResultUseCase
                     .execute(videoId: self.videoId)
+                    .map { $0 as EmotionResult? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }

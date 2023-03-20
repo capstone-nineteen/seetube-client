@@ -9,6 +9,6 @@ import Foundation
 import RxSwift
 
 protocol ShopRepository {
-    func getShop() -> Observable<Shop?>
-    func registerWithdrawal(info: WithdrawalInformation) -> Observable<WithdrawalResult?>
+    func getShop() -> Single<Shop>
+    func registerWithdrawal(info: WithdrawalInformation) -> Single<WithdrawalResult>
 }

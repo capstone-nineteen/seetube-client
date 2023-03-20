@@ -20,6 +20,7 @@ class DefaultSignUpUseCase: SignUpUseCase {
         info: SignUpInformation
     ) -> Observable<Bool> {
         return self.repository.signUp(userType: userType, info: info)
-            .map { $0?.status == 200 }
+            .asObservable()
+            .map { $0.status == 200 }
     }
 }

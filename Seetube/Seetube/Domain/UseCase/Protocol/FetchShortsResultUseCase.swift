@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FetchShortsResultUseCase {
-    func execute(videoId: Int) -> Observable<ShortsResult?>
+    func execute(videoId: Int) -> Single<ShortsResult>
 }

@@ -9,6 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FetchSceneStealerResultUseCase {
-    // TODO: 모든 UseCase 리턴 타입에 옵셔널 제거
-    func execute(videoId: Int) -> Observable<SceneStealerResult?>
+    func execute(videoId: Int) -> Single<SceneStealerResult>
 }

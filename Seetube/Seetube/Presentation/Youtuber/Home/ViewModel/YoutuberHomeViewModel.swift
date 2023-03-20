@@ -27,6 +27,7 @@ class YoutuberHomeViewModel: ViewModelType {
                 guard let self = self else { return .just(nil) }
                 return self.fetchYoutuberHomeUseCase
                     .execute()
+                    .map { $0 as YoutuberHome? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }

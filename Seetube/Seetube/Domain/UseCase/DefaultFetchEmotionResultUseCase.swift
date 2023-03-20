@@ -15,7 +15,7 @@ class DefaultFetchEmotionResultUseCase: FetchEmotionResultUseCase {
         self.repository = repository
     }
     
-    func execute(videoId: Int) -> Observable<EmotionResult?> {
+    func execute(videoId: Int) -> Single<EmotionResult> {
         return self.repository.getEmotionResult()
     }
 }

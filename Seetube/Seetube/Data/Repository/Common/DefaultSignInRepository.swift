@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 class DefaultSignInRepository: SignInRepository, NetworkRequestable {
-    func signIn(userType: UserType, email: String, password: String) -> Observable<SignInResult?> {
+    func signIn(userType: UserType, email: String, password: String) -> Single<SignInResult> {
         let endpoint = APIEndpointFactory.makeEndpoint(
             for: .signIn(userType: userType, email: email, password: password)
         )

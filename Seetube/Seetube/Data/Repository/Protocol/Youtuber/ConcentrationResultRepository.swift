@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol ConcentrationResultRepository {
-    func getConcentrationResult() -> Observable<ConcentrationResult?>
+    func getConcentrationResult() -> Single<ConcentrationResult>
 }

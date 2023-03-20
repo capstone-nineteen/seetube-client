@@ -21,6 +21,7 @@ class ReviewerHomeViewModel: ViewModelType {
                 guard let self = self else { return .just(nil) }
                 return self.fetchReviewerHomeUseCase
                     .execute()
+                    .map { $0 as ReviewerHome? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }

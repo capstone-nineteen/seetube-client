@@ -15,7 +15,7 @@ class DefaultFetchTotalCoinAmountUseCase: FetchTotalCoinAmountUseCase {
         self.repository = repository
     }
     
-    func execute() -> Observable<Shop?> {
+    func execute() -> Single<Shop> {
         return self.repository.getShop()
     }
 }

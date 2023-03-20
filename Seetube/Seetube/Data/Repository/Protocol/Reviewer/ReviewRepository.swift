@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol ReviewRepository {
-    func submitReview(reviews: Reviews) -> Observable<ReviewSubmissionResult?>
+    func submitReview(reviews: Reviews) -> Single<ReviewSubmissionResult>
 }

@@ -22,6 +22,7 @@ class ShopViewModel: ViewModelType {
                 guard let self = self else { return .just(nil) }
                 return self.fetchTotalCoinAmountUseCase
                     .execute()
+                    .map { $0 as Shop? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }

@@ -15,7 +15,7 @@ class DefaultFetchSceneStealerResultUseCase: FetchSceneStealerResultUseCase {
         self.repository = repository
     }
     
-    func execute(videoId: Int) -> Observable<SceneStealerResult?> {
+    func execute(videoId: Int) -> Single<SceneStealerResult> {
         return self.repository.getSceneStealerResult()
     }
 }

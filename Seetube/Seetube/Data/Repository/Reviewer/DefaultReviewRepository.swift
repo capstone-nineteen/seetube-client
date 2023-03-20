@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 class DefaultReviewRepository: ReviewRepository, NetworkRequestable {
-    func submitReview(reviews: Reviews) -> Observable<ReviewSubmissionResult?> {
+    func submitReview(reviews: Reviews) -> Single<ReviewSubmissionResult> {
         let reviewsDTO = reviews.toDTO()
         let endpoint = APIEndpointFactory.makeEndpoint(
             for: .submitReview(videoId: reviews.videoId,

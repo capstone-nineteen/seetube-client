@@ -41,6 +41,7 @@ class HighlightResultViewModel: ViewModelType {
                 guard let self = self else { return .just(nil) }
                 return self.fetchHighlightResultUseCase
                     .execute(videoId: self.videoId)
+                    .map { $0 as HighlightResult? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }
@@ -63,7 +64,9 @@ class HighlightResultViewModel: ViewModelType {
                 guard let self = self else {
                     return .error(OptionalError.nilSelf)
                 }
-                return self.downloadVideoUseCase.execute(url: url)
+                return self.downloadVideoUseCase
+                    .execute(url: url)
+                    .asObservable()
             }
         
         let videoSaveResult = videoFileURL

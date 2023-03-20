@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 class DefaultSceneStealerResultRepository: SceneStealerResultRepository, NetworkRequestable {
-    func getSceneStealerResult() -> Observable<SceneStealerResult?> {
+    func getSceneStealerResult() -> Single<SceneStealerResult> {
         let endpoint = APIEndpointFactory.makeEndpoint(for: .getSceneStealerResult)
         return self.getResource(endpoint: endpoint,
                                 decodingType: SceneStealerResultDTO.self)

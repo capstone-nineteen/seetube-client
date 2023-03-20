@@ -37,6 +37,7 @@ class SceneStealerResultViewModel: ViewModelType {
                 guard let self = self else { return .just(nil) }
                 return self.fetchSceneStealerResultUseCase
                     .execute(videoId: self.videoId)
+                    .map { $0 as SceneStealerResult? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }

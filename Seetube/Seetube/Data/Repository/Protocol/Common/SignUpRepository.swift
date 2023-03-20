@@ -9,6 +9,6 @@ import Foundation
 import RxSwift
 
 protocol SignUpRepository {
-    func requestVerificationCode(userType: UserType, email: String) -> Observable<VerificationCodeRequestResult?>
-    func signUp(userType: UserType, info: SignUpInformation) -> Observable<SignUpResult?>
+    func requestVerificationCode(userType: UserType, email: String) -> Single<VerificationCodeRequestResult>
+    func signUp(userType: UserType, info: SignUpInformation) -> Single<SignUpResult>
 }

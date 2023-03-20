@@ -13,8 +13,12 @@ extension ObservableType {
         return self.map { _ in }
     }
     
+    func mapToOptional() -> Observable<Element?> {
+        return self.map { $0 as Element? }
+    }
+    
     func asDriverIgnoringError() -> Driver<Element> {
-        self.map { $0 as Element? }
+        return self.mapToOptional()
             .asDriver(onErrorJustReturn: nil)
             .compactMap { $0 }
     }

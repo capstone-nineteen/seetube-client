@@ -12,7 +12,7 @@ import RxSwift
 import UIKit
 
 class DefaultDownloadVideoUseCase: DownloadVideoUseCase {
-    func execute(url: String) -> Observable<URL> {
+    func execute(url: String) -> Single<URL> {
         guard let url = URL(string: url) else { return .error(DownloadError.invalidURL) }
 
         let destination: DownloadRequest.Destination = { _, _ in
@@ -22,15 +22,14 @@ class DefaultDownloadVideoUseCase: DownloadVideoUseCase {
             return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
         }
 
-        return Observable<URL>.create { observable in
+        return Single<URL>.create { single in
             AF.download(url, to: destination)
                 .response { response in
                     if let fileURL = response.fileURL {
-                        observable.onNext(fileURL)
+                        single(.success(fileURL))
                     } else {
-                        observable.onError(DownloadError.noFileURL)
+                        single(.failure(DownloadError.noFileURL))
                     }
-                    observable.onCompleted()
                 }
             
             return Disposables.create()

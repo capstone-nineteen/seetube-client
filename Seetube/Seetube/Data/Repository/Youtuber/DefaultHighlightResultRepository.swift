@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 class DefaultHighlightResultRepository: HighlightResultRepository, NetworkRequestable {
-    func getHighlightResult() -> Observable<HighlightResult?> {
+    func getHighlightResult() -> Single<HighlightResult> {
         let endpoint = APIEndpointFactory.makeEndpoint(for: .getHighlightResult)
         return self.getResource(endpoint: endpoint,
                                 decodingType: HighlightResultDTO.self)

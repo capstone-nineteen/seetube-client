@@ -97,6 +97,7 @@ class SignUpViewModel: ViewModelType {
                 guard let self = self else { return .just(nil) }
                 return self.requestVerificationCodeUseCase
                     .execute(userType: self.userType, email: email)
+                    .map { $0 as VerificationCodeRequestResult? }
                     .asDriver(onErrorJustReturn: nil)
             }
         

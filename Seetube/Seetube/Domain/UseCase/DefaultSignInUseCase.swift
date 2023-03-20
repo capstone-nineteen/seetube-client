@@ -25,14 +25,10 @@ class DefaultSignInUseCase: SignInUseCase {
             .signIn(userType: userType,
                     email: email,
                     password: password)
+            .asObservable()
             .flatMap { [weak self] signInResult -> Observable<Bool> in
                 guard let self = self else { return .error(OptionalError.nilSelf) }
-                
-                if let token = signInResult?.token {
-                    return self.repository.saveToken(token: token, userType: userType)
-                } else {
-                    return .just(false)
-                }
+                return self.repository.saveToken(token: signInResult.token, userType: userType)
             }
     }
 }

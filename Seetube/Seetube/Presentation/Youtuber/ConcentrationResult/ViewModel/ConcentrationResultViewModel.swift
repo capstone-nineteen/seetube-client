@@ -39,6 +39,7 @@ class ConcentrationResultViewModel: SceneResultViewModel {
                 guard let self = self else { return .just(nil) }
                 return self.fetchConcentrationResultUseCase
                     .execute(videoId: self.videoId)
+                    .map { $0 as ConcentrationResult? }
                     .asDriver(onErrorJustReturn: nil)
             }
             .compactMap { $0 }

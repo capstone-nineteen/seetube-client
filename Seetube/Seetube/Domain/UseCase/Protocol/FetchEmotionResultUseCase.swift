@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FetchEmotionResultUseCase {
-    func execute(videoId: Int) -> Observable<EmotionResult?>
+    func execute(videoId: Int) -> Single<EmotionResult>
 }

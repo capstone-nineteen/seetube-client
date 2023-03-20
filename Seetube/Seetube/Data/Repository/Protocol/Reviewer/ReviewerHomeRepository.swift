@@ -9,6 +9,6 @@ import Foundation
 import RxSwift
 
 protocol ReviewerHomeRepository {
-    func getReviewerHome() -> Observable<ReviewerHome?>
-    func getVideos(searchKeyword: String) -> Observable<VideoList?>
+    func getReviewerHome() -> Single<ReviewerHome>
+    func getVideos(searchKeyword: String) -> Single<VideoList>
 }
