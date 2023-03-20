@@ -25,12 +25,14 @@ class DefaultSignInUseCase: SignInUseCase {
             .signIn(userType: userType,
                     email: email,
                     password: password)
-            .do(onNext: {
-                // TODO: repository에 saveToken 메소드로 분리
-                guard let token = $0?.token else { return }
-                KeychainHelper.standard.accessToken = token
-                UserDefaultHelper.shared.userType = userType
-            })
-            .map { $0 != nil }
+            .flatMap { [weak self] signInResult -> Observable<Bool> in
+                guard let self = self else { return .error(OptionalError.nilSelf) }
+                
+                if let token = signInResult?.token {
+                    return self.repository.saveToken(token: token, userType: userType)
+                } else {
+                    return .just(false)
+                }
+            }
     }
 }

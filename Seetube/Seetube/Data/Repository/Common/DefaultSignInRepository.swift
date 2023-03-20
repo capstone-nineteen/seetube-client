@@ -16,4 +16,16 @@ class DefaultSignInRepository: SignInRepository, NetworkRequestable {
         return self.getResource(endpoint: endpoint,
                                 decodingType: SignInResultDTO.self)
     }
+    
+    func saveToken(token: String, userType: UserType) -> Observable<Bool> {
+        return Observable.create { observable in
+            KeychainHelper.standard.accessToken = token
+            UserDefaultHelper.shared.userType = userType
+            
+            observable.onNext(true)
+            observable.onCompleted()
+            
+            return Disposables.create()
+        }
+    }
 }
