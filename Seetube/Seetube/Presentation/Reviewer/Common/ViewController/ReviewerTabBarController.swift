@@ -61,9 +61,12 @@ extension ReviewerTabBarController {
                 let viewModel = ShopViewModel(fetchTotalCoinAmountUseCase: fetchTotalCoinAmountUseCase)
                 shopViewController.viewModel = viewModel
             case let myPageViewController as MyPageViewController:
-                let repository = DefaultMyPageRepository()
-                let fetchMyPageUseCase = DefaultFetchMyCaseUseCase(repository: repository)
-                let viewModel = MyPageViewModel(fetchMyPageUseCase: fetchMyPageUseCase)
+                let myPageRepository = DefaultMyPageRepository()
+                let signOutRepository = DefaultSignOutRepository()
+                let fetchMyPageUseCase = DefaultFetchMyCaseUseCase(repository: myPageRepository)
+                let signOutUseCase = DefaultSignOutUseCase(repository: signOutRepository)
+                let viewModel = MyPageViewModel(fetchMyPageUseCase: fetchMyPageUseCase,
+                                                signOutUseCase: signOutUseCase)
                 myPageViewController.viewModel = viewModel
             default:
                 break

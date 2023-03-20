@@ -11,9 +11,14 @@ import RxCocoa
 
 class MyPageViewModel: ViewModelType {
     private let fetchMyPageUseCase: FetchMyPageUseCase
+    private let signOutUseCase: SignOutUseCase
     
-    init(fetchMyPageUseCase: FetchMyPageUseCase) {
+    init(
+        fetchMyPageUseCase: FetchMyPageUseCase,
+        signOutUseCase: SignOutUseCase
+    ) {
         self.fetchMyPageUseCase = fetchMyPageUseCase
+        self.signOutUseCase = signOutUseCase
     }
     
     func transform(input: Input) -> Output {
@@ -37,20 +42,35 @@ class MyPageViewModel: ViewModelType {
                 }
             }
         
+        let didSignOut = input.signOutButtonTouched
+            .asObservable()
+            .flatMap { [weak self] _ -> Observable<Void> in
+                guard let self = self else {
+                    return .error(OptionalError.nilSelf)
+                }
+                return self.signOutUseCase
+                    .execute()
+                    .andThen(.just(()))
+            }
+            .asDriverIgnoringError()
+        
         return Output(name: name,
                       coin: coin,
-                      coinHistories: coinHistories)
+                      coinHistories: coinHistories,
+                      didSignOut: didSignOut)
     }
 }
 
 extension MyPageViewModel {
     struct Input {
         let viewWillAppear: Driver<Bool>
+        let signOutButtonTouched: Driver<Void>
     }
     
     struct Output {
         let name: Driver<String>
         let coin: Driver<String>
         let coinHistories: Driver<[CoinHistoryItemViewModel]>
+        let didSignOut: Driver<Void>
     }
 }

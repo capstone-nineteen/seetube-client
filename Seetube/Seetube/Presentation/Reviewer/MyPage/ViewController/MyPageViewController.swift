@@ -10,7 +10,9 @@ import RxSwift
 import RxViewController
 import RxCocoa
 
-class MyPageViewController: UIViewController {
+class MyPageViewController: UIViewController,
+                            StartScreenReturnable
+{
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var coinLabel: UILabel!
@@ -74,19 +76,26 @@ extension MyPageViewController {
         guard let viewModel = self.viewModel else { return }
         
         let viewWillAppear = self.viewWillAppearEvent()
+        let signOutButtonTouched = self.signOutConfirmButtonTouchedEvent()
         
-        let input = MyPageViewModel.Input(viewWillAppear: viewWillAppear)
+        let input = MyPageViewModel.Input(viewWillAppear: viewWillAppear,
+                                          signOutButtonTouched: signOutButtonTouched)
         let output = viewModel.transform(input: input)
         
         self.bindName(output.name)
         self.bindCoin(output.coin)
         self.bindCoinHistories(output.coinHistories)
+        self.bindDidSignOut(output.didSignOut)
     }
     
     // MARK: Input Creation
     
     private func viewWillAppearEvent() -> Driver<Bool> {
         return self.rx.viewWillAppear.asDriver()
+    }
+    
+    private func signOutConfirmButtonTouchedEvent() -> Driver<Void> {
+        return self.signOutConfirmButtonTouched.asDriverIgnoringError()
     }
     
     // MARK: Output Binding
@@ -112,6 +121,14 @@ extension MyPageViewController {
                 )
             ) { row, viewModel, cell in
                 cell.bind(viewModel)
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindDidSignOut(_ didSignOut: Driver<Void>) {
+        didSignOut
+            .drive(with: self) { obj, _ in
+                obj.returnToStartScreen()
             }
             .disposed(by: self.disposeBag)
     }
