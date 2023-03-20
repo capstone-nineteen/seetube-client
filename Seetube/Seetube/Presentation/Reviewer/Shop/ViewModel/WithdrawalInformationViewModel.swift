@@ -42,6 +42,7 @@ class WithdrawalInformationViewModel: ViewModelType {
                 guard let self = self else { return .just(false) }
                 return self.registerWithdrawalUseCase
                     .execute(info: info)
+                    .andThen(Single.just(true))
                     .asDriver(onErrorJustReturn: false)
             }
         

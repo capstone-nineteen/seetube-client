@@ -15,10 +15,15 @@ class DefaultSubmitReviewUseCase: SubmitReviewUseCase {
         self.repository = repository
     }
     
-    func execute(reviews: Reviews) -> Observable<Bool> {
-        // TODO: Completable & Error 처리로 리팩토링
+    func execute(reviews: Reviews) -> Completable {
         return self.repository.submitReview(reviews: reviews)
-            .asObservable()
-            .map { $0.status == 200 }
+            .map {
+                if $0.status != 201 {
+                    throw NetworkServiceError.requestFailed
+                } else {
+                    return $0
+                }
+            }
+            .asCompletable()
     }
 }

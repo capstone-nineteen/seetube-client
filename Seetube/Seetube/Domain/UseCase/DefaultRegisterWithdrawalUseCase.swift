@@ -15,10 +15,15 @@ class DefaultRegisterWithdrawalUseCase: RegisterWithdrawalUseCase {
         self.repository = repository
     }
     
-    func execute(info: WithdrawalInformation) -> Observable<Bool> {
-        // TODO: Completable & Error 처리로 리팩토링
+    func execute(info: WithdrawalInformation) -> Completable {
         return self.repository.registerWithdrawal(info: info)
-            .asObservable()
-            .map { $0.status == 201 }
+            .map {
+                if $0.status != 201 {
+                    throw NetworkServiceError.requestFailed
+                } else {
+                    return $0
+                }
+            }
+            .asCompletable()
     }
 }

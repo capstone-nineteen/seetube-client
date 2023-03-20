@@ -341,6 +341,7 @@ class SignUpViewModel: ViewModelType {
                 guard let self = self else { return .just(false) }
                 return self.signUpUseCase
                     .execute(userType: self.userType, info: info)
+                    .andThen(Single.just(true))
                     .asDriver(onErrorJustReturn: false)
             }
         

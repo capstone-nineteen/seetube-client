@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol RegisterWithdrawalUseCase {
-    func execute(info: WithdrawalInformation) -> Observable<Bool>
+    func execute(info: WithdrawalInformation) -> Completable
 }

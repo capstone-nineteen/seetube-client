@@ -54,11 +54,13 @@ class WatchViewModel: ViewModelType {
             .toArray()
             .asObservable()
             .flatMap { [weak self] rawReviews -> Observable<Bool> in
-                guard let self = self else { return .just(false) }
+                guard let self = self else { return .error(OptionalError.nilSelf) }
+                
                 let reviews = Reviews(videoId: self.videoId,
                                       reviews: rawReviews.map { Review(rawReview: $0) })
                 return self.submitReviewUseCase
                     .execute(reviews: reviews)
+                    .andThen(.just(true))
             }
             .asDriver(onErrorJustReturn: false)
         

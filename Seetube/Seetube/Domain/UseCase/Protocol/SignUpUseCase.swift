@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol SignUpUseCase {
-    func execute(userType: UserType, info: SignUpInformation) -> Observable<Bool>
+    func execute(userType: UserType, info: SignUpInformation) -> Completable
 }

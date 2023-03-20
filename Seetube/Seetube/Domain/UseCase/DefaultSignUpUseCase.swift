@@ -18,9 +18,15 @@ class DefaultSignUpUseCase: SignUpUseCase {
     func execute(
         userType: UserType,
         info: SignUpInformation
-    ) -> Observable<Bool> {
+    ) -> Completable {
         return self.repository.signUp(userType: userType, info: info)
-            .asObservable()
-            .map { $0.status == 200 }
+            .map {
+                if $0.status != 200 {
+                    throw NetworkServiceError.requestFailed
+                } else {
+                    return $0
+                }
+            }
+            .asCompletable()
     }
 }

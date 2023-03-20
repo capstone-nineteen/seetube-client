@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol SubmitReviewUseCase {
-    func execute(reviews: Reviews) -> Observable<Bool>
+    func execute(reviews: Reviews) -> Completable
 }

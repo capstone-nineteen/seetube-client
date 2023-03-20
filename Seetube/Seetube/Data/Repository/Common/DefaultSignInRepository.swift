@@ -17,13 +17,11 @@ class DefaultSignInRepository: SignInRepository, NetworkRequestable {
                                 decodingType: SignInResultDTO.self)
     }
     
-    func saveToken(token: String, userType: UserType) -> Observable<Bool> {
-        return Observable.create { observable in
+    func saveToken(token: String, userType: UserType) -> Completable {
+        return Completable.create { completable in
             KeychainHelper.standard.accessToken = token
             UserDefaultHelper.shared.userType = userType
-            
-            observable.onNext(true)
-            observable.onCompleted()
+            completable(.completed)
             
             return Disposables.create()
         }

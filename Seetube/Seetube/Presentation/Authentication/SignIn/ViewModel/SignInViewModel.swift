@@ -42,6 +42,7 @@ class SignInViewModel: ViewModelType {
                     .execute(userType: self.userType,
                              email: email,
                              password: password)
+                    .andThen(Single.just(true))
                     .asDriver(onErrorJustReturn: false)
             }
         

@@ -10,7 +10,5 @@ import RxSwift
 
 protocol SignInRepository {
     func signIn(userType: UserType, email: String, password: String) -> Single<SignInResult>
-    
-    // TODO: Completable로 변경
-    func saveToken(token: String, userType: UserType) -> Observable<Bool>
+    func saveToken(token: String, userType: UserType) -> Completable
 }

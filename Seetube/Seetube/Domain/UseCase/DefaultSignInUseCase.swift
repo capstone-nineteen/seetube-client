@@ -20,15 +20,18 @@ class DefaultSignInUseCase: SignInUseCase {
         userType: UserType,
         email: String,
         password: String
-    ) -> Observable<Bool> {
+    ) -> Completable {
         return self.repository
             .signIn(userType: userType,
                     email: email,
                     password: password)
             .asObservable()
-            .flatMap { [weak self] signInResult -> Observable<Bool> in
+            .flatMap { [weak self] result -> Observable<Never> in
                 guard let self = self else { return .error(OptionalError.nilSelf) }
-                return self.repository.saveToken(token: signInResult.token, userType: userType)
+                return self.repository
+                    .saveToken(token: result.token, userType: userType)
+                    .asObservable()
             }
+            .asCompletable()
     }
 }
