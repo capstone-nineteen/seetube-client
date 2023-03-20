@@ -192,6 +192,7 @@ extension YoutuberHomeViewController {
 
 // MARK: - Alerts
 
+// TODO: AlertDisplaying 채택 코드 여기로 이동
 extension YoutuberHomeViewController {
     private func displayConfirmSignOutAlert() {
         self.displayAlertWithAction(title: "로그아웃",

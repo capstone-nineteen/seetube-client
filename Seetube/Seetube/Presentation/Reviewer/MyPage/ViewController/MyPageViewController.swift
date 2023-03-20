@@ -15,9 +15,11 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var coinLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var signOutButton: UIButton!
     
     var viewModel: MyPageViewModel?
     private var disposeBag = DisposeBag()
+    private var signOutConfirmButtonTouched = PublishRelay<Void>()    // confirm alert의 OK 버튼과 연결된 Relay
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,7 @@ extension MyPageViewController {
     private func configureUI() {
         self.configureBackgroundView()
         self.configureTableView()
+        self.configureSignOutButton()
     }
     
     private func configureBackgroundView() {
@@ -52,6 +55,15 @@ extension MyPageViewController {
             UINib(nibName: CoinHistoryTableViewHeaderCell.headerReuseIdentifier, bundle: nil),
             forHeaderFooterViewReuseIdentifier: CoinHistoryTableViewHeaderCell.headerReuseIdentifier
         )
+    }
+    
+    private func configureSignOutButton() {
+        self.signOutButton.rx.tap
+            .asDriver()
+            .drive(with: self) { obj, _ in
+                obj.displayConfirmSignOutAlert()
+            }
+            .disposed(by: self.disposeBag)
     }
 }
 
@@ -119,5 +131,16 @@ extension MyPageViewController: UITableViewDelegate {
             return UITableViewHeaderFooterView()
         }
         return header
+    }
+}
+
+// MARK: - Alerts
+
+extension MyPageViewController: AlertDisplaying {
+    private func displayConfirmSignOutAlert() {
+        self.displayAlertWithAction(title: "로그아웃",
+                                    message: "로그아웃 하시겠습니까?") { [weak self] _ in
+            self?.signOutConfirmButtonTouched.accept(())
+        }
     }
 }
