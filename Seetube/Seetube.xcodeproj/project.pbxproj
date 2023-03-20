@@ -268,6 +268,8 @@
 		04DAB1B529A68E42006CF9F6 /* VideoRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB1B429A68E42006CF9F6 /* VideoRect.swift */; };
 		04DBCB0229C82A16000A7F0D /* SignOutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBCB0129C82A16000A7F0D /* SignOutRepository.swift */; };
 		04DBCB0429C82A8D000A7F0D /* DefaultSignOutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBCB0329C82A8D000A7F0D /* DefaultSignOutRepository.swift */; };
+		04DBCB0629C83091000A7F0D /* SignOutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBCB0529C83091000A7F0D /* SignOutUseCase.swift */; };
+		04DBCB0829C83D6C000A7F0D /* DefaultSignOutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBCB0729C83D6C000A7F0D /* DefaultSignOutUseCase.swift */; };
 		04E1463329AF1FC200DD4204 /* Driver+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463229AF1FC200DD4204 /* Driver+Extension.swift */; };
 		04E1463529AF5C5700DD4204 /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463429AF5C5700DD4204 /* SignInRepository.swift */; };
 		04E1463729AF5C9B00DD4204 /* SignInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463629AF5C9B00DD4204 /* SignInResult.swift */; };
@@ -584,6 +586,8 @@
 		04DAB1B429A68E42006CF9F6 /* VideoRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRect.swift; sourceTree = "<group>"; };
 		04DBCB0129C82A16000A7F0D /* SignOutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutRepository.swift; sourceTree = "<group>"; };
 		04DBCB0329C82A8D000A7F0D /* DefaultSignOutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignOutRepository.swift; sourceTree = "<group>"; };
+		04DBCB0529C83091000A7F0D /* SignOutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutUseCase.swift; sourceTree = "<group>"; };
+		04DBCB0729C83D6C000A7F0D /* DefaultSignOutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignOutUseCase.swift; sourceTree = "<group>"; };
 		04E1463229AF1FC200DD4204 /* Driver+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Driver+Extension.swift"; sourceTree = "<group>"; };
 		04E1463429AF5C5700DD4204 /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
 		04E1463629AF5C9B00DD4204 /* SignInResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResult.swift; sourceTree = "<group>"; };
@@ -964,6 +968,7 @@
 				04403B2829BF45760058E31E /* DefaultFetchShortsResultUseCase.swift */,
 				042E8D5229C1EE3400E8048F /* DefaultSaveVideoUseCase.swift */,
 				042E8D5629C1F43E00E8048F /* DefaultDownloadVideoUseCase.swift */,
+				04DBCB0729C83D6C000A7F0D /* DefaultSignOutUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1754,6 +1759,7 @@
 				042B3C0929AD19C900FC3881 /* RequestVerificationCodeUseCase.swift */,
 				04E1463C29AF5D6200DD4204 /* SignInUseCase.swift */,
 				042B3C0D29AD1B4B00FC3881 /* SignUpUseCase.swift */,
+				04DBCB0529C83091000A7F0D /* SignOutUseCase.swift */,
 				042B3C1129AD303A00FC3881 /* ValidateSignUpInfoUseCase.swift */,
 				042B3C1E29AE33D700FC3881 /* CountDownUseCase.swift */,
 				0478A3BC29B1BCCA00CB7B91 /* FetchYoutuberHomeUseCase.swift */,
@@ -2084,6 +2090,7 @@
 				0447E35729A0DB7A005F0CC9 /* VideoPlayerViewModel.swift in Sources */,
 				04FFC45329BDDD1600F6AE60 /* HighlightResultViewModel.swift in Sources */,
 				04A6789F299648A9006E29C1 /* ReviewerHomeViewModel.swift in Sources */,
+				04DBCB0629C83091000A7F0D /* SignOutUseCase.swift in Sources */,
 				047B879F299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift in Sources */,
 				042B3C0229AD160000FC3881 /* DefaultSignUpRepository.swift in Sources */,
 				041ECBC8296EE3E20053AC9C /* ResultMenuButton.swift in Sources */,
@@ -2181,6 +2188,7 @@
 				047B879D299FAF4000F4AA42 /* RegisterWithdrawalUseCase.swift in Sources */,
 				049960F92982BA57000EE539 /* SeetubeSearchBarView.swift in Sources */,
 				04DAB1B529A68E42006CF9F6 /* VideoRect.swift in Sources */,
+				04DBCB0829C83D6C000A7F0D /* DefaultSignOutUseCase.swift in Sources */,
 				047B8791299F7D1300F4AA42 /* WithdrawalInformationPushable.swift in Sources */,
 				044D25792983FFBE003F4071 /* ReviewerVideoDetailView.swift in Sources */,
 				042B3C1229AD303A00FC3881 /* ValidateSignUpInfoUseCase.swift in Sources */,
