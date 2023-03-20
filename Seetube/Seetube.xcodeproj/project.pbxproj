@@ -270,6 +270,7 @@
 		04DBCB0429C82A8D000A7F0D /* DefaultSignOutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBCB0329C82A8D000A7F0D /* DefaultSignOutRepository.swift */; };
 		04DBCB0629C83091000A7F0D /* SignOutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBCB0529C83091000A7F0D /* SignOutUseCase.swift */; };
 		04DBCB0829C83D6C000A7F0D /* DefaultSignOutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBCB0729C83D6C000A7F0D /* DefaultSignOutUseCase.swift */; };
+		04DBCB0A29C83FA6000A7F0D /* StartScreenReturnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBCB0929C83FA6000A7F0D /* StartScreenReturnable.swift */; };
 		04E1463329AF1FC200DD4204 /* Driver+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463229AF1FC200DD4204 /* Driver+Extension.swift */; };
 		04E1463529AF5C5700DD4204 /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463429AF5C5700DD4204 /* SignInRepository.swift */; };
 		04E1463729AF5C9B00DD4204 /* SignInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1463629AF5C9B00DD4204 /* SignInResult.swift */; };
@@ -588,6 +589,7 @@
 		04DBCB0329C82A8D000A7F0D /* DefaultSignOutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignOutRepository.swift; sourceTree = "<group>"; };
 		04DBCB0529C83091000A7F0D /* SignOutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutUseCase.swift; sourceTree = "<group>"; };
 		04DBCB0729C83D6C000A7F0D /* DefaultSignOutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignOutUseCase.swift; sourceTree = "<group>"; };
+		04DBCB0929C83FA6000A7F0D /* StartScreenReturnable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenReturnable.swift; sourceTree = "<group>"; };
 		04E1463229AF1FC200DD4204 /* Driver+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Driver+Extension.swift"; sourceTree = "<group>"; };
 		04E1463429AF5C5700DD4204 /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
 		04E1463629AF5C9B00DD4204 /* SignInResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResult.swift; sourceTree = "<group>"; };
@@ -673,6 +675,7 @@
 				042BDA7729BCF585000ACE7C /* SceneStealerResultPushable.swift */,
 				04FFC45A29BE2DAE00F6AE60 /* HighlightResultPushable.swift */,
 				04403B2C29BF71B30058E31E /* ShortsResultPushable.swift */,
+				04DBCB0929C83FA6000A7F0D /* StartScreenReturnable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2266,6 +2269,7 @@
 				04867F1829A7A5B800FD9670 /* ReviewSubmissionResultDTO.swift in Sources */,
 				048A4B1A299D3D3000719AD0 /* VideosByCategoryViewModel.swift in Sources */,
 				04E1463529AF5C5700DD4204 /* SignInRepository.swift in Sources */,
+				04DBCB0A29C83FA6000A7F0D /* StartScreenReturnable.swift in Sources */,
 				042E8D4F29C1E9E000E8048F /* Errors.swift in Sources */,
 				048A4B07299CE02400719AD0 /* ReviewProgressViewModel.swift in Sources */,
 				04867F1629A7A22E00FD9670 /* ReviewsDTO.swift in Sources */,
