@@ -26,6 +26,7 @@ class DefaultSignInUseCase: SignInUseCase {
                     email: email,
                     password: password)
             .do(onNext: {
+                // TODO: repository에 saveToken 메소드로 분리
                 guard let token = $0?.token else { return }
                 KeychainHelper.standard.accessToken = token
                 UserDefaultHelper.shared.userType = userType

@@ -22,7 +22,13 @@ final class UserDefaultHelper {
             guard let userTypeRawValue: Int = self.retrieveItem(.userType) else { return nil }
             return UserType(rawValue: userTypeRawValue)
         }
-        set { self.saveItem(value: newValue?.rawValue, .userType) }
+        set {
+            if let userType = newValue?.rawValue {
+                self.saveItem(value: userType, .userType)
+            } else {
+                self.removeItem(.userType)
+            }
+        }
     }
     
     var isInitialExecution: Bool {
