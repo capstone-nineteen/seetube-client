@@ -58,51 +58,64 @@ class HighlightResultViewModel: ViewModelType {
             .map { (start: $0.startTimeInHighlight, end: $0.endTimeInHighlight) }
         
         let videoFileURL = input.saveButtonTouched
-            .asObservable()
             .withLatestFrom(videoUrl) { $1 }
-            .flatMap { [weak self] url -> Observable<URL> in
-                guard let self = self else {
-                    return .error(OptionalError.nilSelf)
-                }
+            .flatMap { [weak self] url -> Driver<Result<URL, DownloadError>> in
+                guard let self = self else { return .just(.failure(.unknown)) }
                 return self.downloadVideoUseCase
                     .execute(url: url)
-                    .asObservable()
+                    .map { .success($0) }
+                    .asDriver { error in
+                        guard let downloadError = error as? DownloadError else {
+                            return .just(.failure(.unknown))
+                        }
+                        return .just(.failure(downloadError))
+                    }
             }
         
         let videoSaveResult = videoFileURL
-            .flatMap { [weak self] fileURL -> Observable<Void> in
-                guard let self = self else {
-                    return .error(OptionalError.nilSelf)
+            .compactMap { videoFileURL -> URL? in
+                if case let .success(fileURL) = videoFileURL {
+                    return fileURL
+                } else {
+                    return nil
                 }
+            }
+            .flatMap { [weak self] fileURL -> Driver<Result<Void, PhotoAlbumError>> in
+                guard let self = self else { return .just(.failure(.unknown)) }
                 return self.saveVideoUseCase
                     .execute(at: fileURL)
-                    .andThen(Observable.just(()))
+                    .andThen(Observable.just(.success(Void())))
+                    .asDriver { error in
+                        guard let photoAlbumError = error as? PhotoAlbumError else {
+                            return .just(.failure(.unknown))
+                        }
+                        return .just(.failure(photoAlbumError))
+                    }
             }
-            .share()
 
         let saveSuccess = videoSaveResult
-            .map { _ in true }
-            .catch { error in
-                if let photoAlbumError = error as? PhotoAlbumError,
-                   photoAlbumError == .photoLibraryAccessNotAuthorized {
-                    return .never()
-                } else {
-                    // TODO: throw 제거
-                    throw error
+            .compactMap { result -> Bool? in
+                switch result {
+                case .success:
+                    return true
+                case .failure(let error):
+                    if error == .photoLibraryAccessNotAuthorized {
+                        return nil
+                    } else {
+                        return false
+                    }
                 }
             }
-            .asDriver(onErrorJustReturn: false)
 
         let shouldRequestAuthorization = videoSaveResult
-            .catch { error in
-                if let photoAlbumError = error as? PhotoAlbumError,
-                   photoAlbumError == .photoLibraryAccessNotAuthorized {
-                    throw error
+            .compactMap { result -> Void? in
+                if case let .failure(error) = result,
+                   error == .photoLibraryAccessNotAuthorized {
+                    return ()
                 } else {
-                    return .never()
+                    return nil
                 }
             }
-            .asDriver(onErrorJustReturn: ())
         
         return Output(videoUrl: videoUrl,
                       scenes: scenes,

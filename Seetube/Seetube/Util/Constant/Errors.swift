@@ -16,11 +16,13 @@ enum PhotoAlbumError: Error {
     case photoLibraryAccessNotAuthorized
     case saveFailed
     case invalidURL
+    case unknown
 }
 
 enum DownloadError: Error {
     case invalidURL
     case noFileURL
+    case unknown
 }
 
 enum OptionalError: Error {
