@@ -87,6 +87,7 @@ class HighlightResultViewModel: ViewModelType {
                    photoAlbumError == .photoLibraryAccessNotAuthorized {
                     return .never()
                 } else {
+                    // TODO: throw 제거
                     throw error
                 }
             }

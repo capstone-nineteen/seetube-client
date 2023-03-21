@@ -35,9 +35,8 @@ class SignUpViewModel: ViewModelType {
         
         let nicknameValidationResult = input.nickname
             .distinctUntilChanged()
-            .asObservable()
             .map { [weak self] nickname -> Result<Void, SignUpValidationError> in
-                guard let self = self else { throw OptionalError.nilSelf }
+                guard let self = self else { return .failure(.unknown) }
                 return self.validateUseCase.execute(nickname: nickname)
             }
             .map { validation -> SignUpValidationResult in
@@ -63,17 +62,13 @@ class SignUpViewModel: ViewModelType {
                 
                 return SignUpValidationResult(isValid: isValid, message: message)
             }
-            .asDriver(onErrorJustReturn: SignUpValidationResult(isValid: false,
-                                                                message: "사용할 수 없는 닉네임입니다."))
         
         // email
         
         let emailValidationResult = input.email
-            .asObservable()
             .distinctUntilChanged()
             .map { [weak self] email -> Result<Void, SignUpValidationError> in
-                // FIXME: 에러 throw 제거
-                guard let self = self else { throw OptionalError.nilSelf }
+                guard let self = self else { return .failure(.unknown) }
                 return self.validateUseCase.execute(email: email)
             }
             .map { validation -> SignUpValidationResult in
@@ -98,8 +93,6 @@ class SignUpViewModel: ViewModelType {
                 
                 return SignUpValidationResult(isValid: isValid, message: message)
             }
-            .asDriver(onErrorJustReturn: SignUpValidationResult(isValid: false,
-                                                                message: "사용할 수 없는 이메일입니다."))
         
         // verificaion code
         
@@ -172,10 +165,9 @@ class SignUpViewModel: ViewModelType {
         let verificationCodeValidationResult = input.verificationButtonTouched
             .withLatestFrom(input.verificationCode) { $1 }
             .distinctUntilChanged()
-            .asObservable()
             .withLatestFrom(currentVerificationCode) { (user: $0, actual: $1) }
             .map { [weak self] verificationCodes -> Result<Void, SignUpValidationError> in
-                guard let self = self else { throw OptionalError.nilSelf }
+                guard let self = self else { return .failure(.unknown) }
                 guard let actualVerificaitonCode = verificationCodes.actual else { return .failure(.empty) }
                 return self.validateUseCase
                     .execute(userEnteredVerificationCode: verificationCodes.user,
@@ -204,7 +196,6 @@ class SignUpViewModel: ViewModelType {
                 return SignUpValidationResult(isValid: isValid, message: message)
             }
             .startWith(SignUpValidationResult(isValid: false, message: nil))
-            .asDriver(onErrorJustReturn: SignUpValidationResult(isValid: false, message: nil))
         
         // request verification code button
         
@@ -267,9 +258,8 @@ class SignUpViewModel: ViewModelType {
         
         let passwordValidationResult = input.password
             .distinctUntilChanged()
-            .asObservable()
             .map { [weak self] password -> Result<Void, SignUpValidationError> in
-                guard let self = self else { throw OptionalError.nilSelf }
+                guard let self = self else { return .failure(.unknown) }
                 return self.validateUseCase.execute(password: password)
             }
             .map { validation -> SignUpValidationResult in
@@ -296,8 +286,6 @@ class SignUpViewModel: ViewModelType {
                 
                 return SignUpValidationResult(isValid: isValid, message: message)
             }
-            .asDriver(onErrorJustReturn: SignUpValidationResult(isValid: false,
-                                                                message: "사용할 수 없는 비밀번호입니다."))
         
         // password confirm
         
@@ -306,9 +294,8 @@ class SignUpViewModel: ViewModelType {
                 input.passwordConfirm.distinctUntilChanged(),
                 input.password
             ) { ($0, $1) }
-            .asObservable()
             .map { [weak self] passwords -> Result<Void, SignUpValidationError> in
-                guard let self = self else { throw OptionalError.nilSelf }
+                guard let self = self else { return .failure(.unknown) }
                 return self.validateUseCase.execute(passwordConfirm: passwords.0, password: passwords.1)
             }
             .map { validation -> SignUpValidationResult in
@@ -333,8 +320,6 @@ class SignUpViewModel: ViewModelType {
                 
                 return SignUpValidationResult(isValid: isValid, message: message)
             }
-            .asDriver(onErrorJustReturn: SignUpValidationResult(isValid: false,
-                                                                message: "입력한 비밀번호와 일치하지 않습니다."))
         
         // final validation result
         

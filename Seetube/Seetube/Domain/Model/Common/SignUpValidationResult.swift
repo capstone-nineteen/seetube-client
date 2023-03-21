@@ -13,6 +13,7 @@ enum SignUpValidationError: Error {
     case incorrectFormat
     case mismatch
     case empty
+    case unknown
 }
 
 struct SignUpValidationResult {
