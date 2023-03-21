@@ -103,60 +103,76 @@ class ShortsResultViewModel: ViewModelType {
             .withLatestFrom(
                 downloadURLList.filter { !$0.isEmpty }
             ) { $1 }
-            .asObservable()
-            .flatMap { [weak self] urls -> Observable<[URL]> in
-                guard let self = self else {
-                    return .error(OptionalError.nilSelf)
-                }
+            .flatMap { [weak self] urls -> Driver<Result<[URL], DownloadError>> in
+                guard let self = self else { return .just(.failure(.unknown)) }
                 
                 let downloads = urls.map {
                     self.downloadVideoUseCase
                         .execute(url: $0)
                         .asObservable()
                 }
+                
                 return Observable.combineLatest(downloads)
+                    .map { .success($0) }
+                    .asDriver { error in
+                        guard let downloadError = error as? DownloadError else { return .just(.failure(.unknown)) }
+                        return .just(.failure(downloadError))
+                    }
             }
         
         let numberOfSelectedShorts = input.indexPathsForSelectedItems
             .map { $0.count }
         
         let videoSaveResult = videoFileURLs
-            .flatMap { [weak self] fileURLs -> Observable<[Void]> in
-                guard let self = self else {
-                    return .error(OptionalError.nilSelf)
+            .compactMap { videoFileURLs -> [URL]? in
+                if case let .success(fileURLs) = videoFileURLs {
+                    return fileURLs
+                } else {
+                    return nil
                 }
+            }
+            .flatMap { [weak self] fileURLs -> Driver<Result<[Void], PhotoAlbumError>> in
+                guard let self = self else { return .just(.failure(.unknown)) }
+                
                 let saves = fileURLs.map {
                     self.saveVideoUseCase
                         .execute(at: $0)
                         .andThen(Observable.just(()))
                 }
+                
                 return Observable.combineLatest(saves)
+                    .map { .success($0) }
+                    .asDriver { error in
+                        guard let photoAlbumError = error as? PhotoAlbumError else {
+                            return .just(.failure(.unknown))
+                        }
+                        return .just(.failure(photoAlbumError))
+                    }
             }
-            .share()
         
         let saveSuccess = videoSaveResult
-            .map { _ in true }
-            .catch { error -> Observable<Bool> in
-                if let photoAlbumError = error as? PhotoAlbumError,
-                   photoAlbumError == .photoLibraryAccessNotAuthorized {
-                    return .never()
-                } else {
-                    throw error
+            .compactMap { result -> Bool? in
+                switch result {
+                case .success:
+                    return true
+                case .failure(let error):
+                    if error == .photoLibraryAccessNotAuthorized {
+                        return nil
+                    } else {
+                        return false
+                    }
                 }
             }
-            .asDriver(onErrorJustReturn: false)
         
         let shouldRequestAuthorization = videoSaveResult
-            .catch { error in
-                if let photoAlbumError = error as? PhotoAlbumError,
-                   photoAlbumError == .photoLibraryAccessNotAuthorized {
-                    throw error
+            .compactMap { result -> Void? in
+                if case let .failure(error) = result,
+                   error == .photoLibraryAccessNotAuthorized {
+                    return ()
                 } else {
-                    return .never()
+                    return nil
                 }
             }
-            .map { _ in () }
-            .asDriver(onErrorJustReturn: ())
         
         return Output(shorts: shorts,
                       shouldPlay: shouldPlay,
