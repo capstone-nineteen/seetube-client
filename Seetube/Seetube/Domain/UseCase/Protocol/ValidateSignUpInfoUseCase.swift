@@ -8,9 +8,9 @@
 import Foundation
 
 protocol ValidateSignUpInfoUseCase {
-    func execute(nickname: String) -> SignUpValidationError?
-    func execute(email: String) -> SignUpValidationError?
-    func execute(userEnteredVerificationCode: String, actualVerificationCode: Int) -> SignUpValidationError?
-    func execute(password: String) -> SignUpValidationError?
-    func execute(passwordConfirm: String, password: String) -> SignUpValidationError?
+    func execute(nickname: String) -> Result<Void, SignUpValidationError>
+    func execute(email: String) -> Result<Void, SignUpValidationError>
+    func execute(userEnteredVerificationCode: String, actualVerificationCode: Int) -> Result<Void, SignUpValidationError>
+    func execute(password: String) -> Result<Void, SignUpValidationError>
+    func execute(passwordConfirm: String, password: String) -> Result<Void, SignUpValidationError>
 }
