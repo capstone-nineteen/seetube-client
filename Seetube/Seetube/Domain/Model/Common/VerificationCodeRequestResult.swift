@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct VerificationCodeRequestResult {
+enum VerificationCodeRequestResult {
     enum VerificationCodeRequestError: Error {
         case alreadyExist
         case invalidFormat
+        case unknown
     }
     
-    let verificationCode: Int?
-    let error: VerificationCodeRequestError?
+    case success(Int)
+    case failure(VerificationCodeRequestError)
 }

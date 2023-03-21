@@ -16,7 +16,7 @@ class DefaultRequestVerificationCodeUseCase: RequestVerificationCodeUseCase {
     }
     
     func execute(userType: UserType, email: String) -> Single<VerificationCodeRequestResult> {
-        return self.repository.requestVerificationCode(userType: userType,
-                                                       email: email)
+        return self.repository
+            .requestVerificationCode(userType: userType, email: email)
     }
 }

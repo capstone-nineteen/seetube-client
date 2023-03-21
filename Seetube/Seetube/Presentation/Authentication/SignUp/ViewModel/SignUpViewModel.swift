@@ -72,6 +72,7 @@ class SignUpViewModel: ViewModelType {
             .asObservable()
             .distinctUntilChanged()
             .map { [weak self] email -> Result<Void, SignUpValidationError> in
+                // FIXME: 에러 throw 제거
                 guard let self = self else { throw OptionalError.nilSelf }
                 return self.validateUseCase.execute(email: email)
             }
@@ -104,13 +105,11 @@ class SignUpViewModel: ViewModelType {
         
         let verificationCodeRequest = input.requestButtonTouched
             .withLatestFrom(input.email) { $1 }
-            .asObservable()
-            .flatMap { [weak self] email -> Observable<VerificationCodeRequestResult> in
-                guard let self = self else { throw OptionalError.nilSelf }
+            .flatMap { [weak self] email -> Driver<VerificationCodeRequestResult> in
+                guard let self = self else { return .just(.failure(.unknown)) }
                 return self.requestVerificationCodeUseCase
                     .execute(userType: self.userType, email: email)
-                    .asObservable()
-                // TODO: VerificationCodeRequestResult를 Single<Int> 타입으로(?) 리팩토링. 뭐가 됐든 리팩토링
+                    .asDriver(onErrorJustReturn: .failure(.unknown))
             }
         
         let verificationCodeRequestResult = verificationCodeRequest
@@ -118,7 +117,11 @@ class SignUpViewModel: ViewModelType {
                 let isValid: Bool
                 let message: String?
                 
-                if let error = result.error {
+                switch result {
+                case .success:
+                    isValid = true
+                    message = nil
+                case .failure(let error):
                     switch error {
                     case .alreadyExist:
                         isValid = false
@@ -126,48 +129,51 @@ class SignUpViewModel: ViewModelType {
                     case .invalidFormat:
                         isValid = false
                         message = "이메일 형식이 올바르지 않습니다."
+                    case .unknown:
+                        isValid = false
+                        message = "인증번호 발송 실패. 다시 시도해주세요."
                     }
-                } else {
-                    isValid = true
-                    message = nil
                 }
                 
-                return SignUpValidationResult(isValid: isValid,
-                                              message: message)
+                return SignUpValidationResult(isValid: isValid, message: message)
             }
             .asDriver(onErrorJustReturn: SignUpValidationResult(isValid: false,
                                                                 message: "인증번호 발송 실패. 다시 시도해주세요."))
         
         let remainingTime = verificationCodeRequest
-            .filter { $0.verificationCode != nil }
-            .flatMap { [weak self] _ -> Observable<Int> in
-                guard let self = self else { throw OptionalError.nilSelf }
+            .flatMap { [weak self] _ -> Driver<Int> in
+                guard let self = self else { return .just(0) }
                 return self.countDownUseCase
                     .execute(time: 30)
+                    .asDriver(onErrorJustReturn: 0)
             }
-            .asDriver(onErrorJustReturn: 0)
         
         let verificationCodeExpired = remainingTime
             .map { $0 == 0 ? true : false }
             .startWith(true)
             .distinctUntilChanged()
         
-        let verificationCode = Observable
+        let latestReceivedVerificationCode = verificationCodeRequest
+            .compactMap { request -> Int? in
+                guard case let .success(code) = request else { return nil }
+                return code
+            }
+        
+        let currentVerificationCode = Driver
             .combineLatest(
-                verificationCodeRequest.map { $0.verificationCode },
-                verificationCodeExpired.asObservable()
+                latestReceivedVerificationCode,
+                verificationCodeExpired
             ) { $1 ? nil : $0 }
-            .asDriver(onErrorJustReturn: nil)
             .startWith(nil)
         
-        let isVerificationCodeActive = verificationCode
+        let isVerificationCodeActive = currentVerificationCode
             .map { $0 != nil }
         
         let verificationCodeValidationResult = input.verificationButtonTouched
             .withLatestFrom(input.verificationCode) { $1 }
             .distinctUntilChanged()
             .asObservable()
-            .withLatestFrom(verificationCode) { (user: $0, actual: $1) }
+            .withLatestFrom(currentVerificationCode) { (user: $0, actual: $1) }
             .map { [weak self] verificationCodes -> Result<Void, SignUpValidationError> in
                 guard let self = self else { throw OptionalError.nilSelf }
                 guard let actualVerificaitonCode = verificationCodes.actual else { return .failure(.empty) }
@@ -222,7 +228,6 @@ class SignUpViewModel: ViewModelType {
                     .filter { $0 }
                     .mapToVoid()
             )
-            .debug("disable")
         
         let canRequest = Driver
             .merge(
