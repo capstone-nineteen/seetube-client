@@ -9,8 +9,8 @@ import Foundation
 import RxSwift
 
 class DefaultConcentrationResultRepository: ConcentrationResultRepository, NetworkRequestable {
-    func getConcentrationResult() -> Single<ConcentrationResult> {
-        let endpoint = APIEndpointFactory.makeEndpoint(for: .getConcentrationResult)
+    func getConcentrationResult(videoId: Int) -> Single<ConcentrationResult> {
+        let endpoint = APIEndpointFactory.makeEndpoint(for: .getConcentrationResult(videoId: videoId))
         return self.getResource(endpoint: endpoint,
                                 decodingType: ConcentrationResultDTO.self)
     }

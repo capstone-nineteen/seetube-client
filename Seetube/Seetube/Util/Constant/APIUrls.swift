@@ -23,12 +23,12 @@ enum APIUrls {
     static let withdraw = reviewerBase + "/withdraw"
     static let submitReview = reviewerBase + "/watchingInfo"
     static let myPage = reviewerBase + "/mypage"
-    
+
     static let youtuberVerificationCode = youtuberBase + "/email"
     static let youtuberSignUp = youtuberBase + "/signup"
     static let youtuberSignIn = youtuberBase + "/login"
     static let youtuberHome = youtuberBase + "/home"
-    static let concentrationResult = ""
+    static let concentrationResult = youtuberBase + "/focus"
     static let emotionResult = ""
     static let sceneStealerResult = ""
     static let highlightResult = ""

@@ -16,6 +16,6 @@ class DefaultFetchConcentrationResultUseCase: FetchConcentrationResultUseCase {
     }
     
     func execute(videoId: Int) -> Single<ConcentrationResult> {
-        return self.repository.getConcentrationResult()
+        return self.repository.getConcentrationResult(videoId: videoId)
     }
 }

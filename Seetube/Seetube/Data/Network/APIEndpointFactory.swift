@@ -23,7 +23,7 @@ class APIEndpointFactory {
         case submitReview(videoId: Int, reviews: ReviewsDTO)
         case getMyPage
         case getYoutuberHome
-        case getConcentrationResult
+        case getConcentrationResult(videoId: Int)
         case getEmotionResult
         case getSceneStealerResult
         case getShortsResult
@@ -109,8 +109,8 @@ class APIEndpointFactory {
                 return APIUrls.myPage
             case .getYoutuberHome:
                 return APIUrls.youtuberHome
-            case .getConcentrationResult:
-                return APIUrls.concentrationResult
+            case .getConcentrationResult(let videoId):
+                return APIUrls.concentrationResult + "/\(videoId)"
             case .getEmotionResult:
                 return APIUrls.emotionResult
             case .getSceneStealerResult:

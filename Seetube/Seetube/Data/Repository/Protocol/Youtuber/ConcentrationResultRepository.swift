@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol ConcentrationResultRepository {
-    func getConcentrationResult() -> Single<ConcentrationResult>
+    func getConcentrationResult(videoId: Int) -> Single<ConcentrationResult>
 }

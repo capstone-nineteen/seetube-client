@@ -8,16 +8,16 @@
 import Foundation
 
 struct ConcentrationSceneDTO: Decodable, DomainConvertible {
-    let thumbnailImageURL: String
-    let startTime: Int
-    let endTime: Int
+    let thumbnailImageURL: String?  // FIXME: 백엔드 확인 후 옵셔널 제거
+    let focusStartTime: Int
+    let focusEndTime: Int
     let totalNumberOfReviewers: Int
     let numberOfReviewersConcentrated: Int
     
     func toDomain() -> ConcentrationScene {
-        return ConcentrationScene(thumbnailImageURL: self.thumbnailImageURL,
-                                  startTime: self.startTime,
-                                  endTime: self.endTime,
+        return ConcentrationScene(thumbnailImageURL: self.thumbnailImageURL ?? "",
+                                  startTime: self.focusStartTime,
+                                  endTime: self.focusEndTime,
                                   totalNumberOfReviewers: self.totalNumberOfReviewers,
                                   numberOfReviewersConcentrated: self.numberOfReviewersConcentrated)
     }

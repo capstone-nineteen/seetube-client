@@ -64,6 +64,7 @@ extension ScenePlaying {
             }
         }
         
+        // FIXME: 장면 변경 시 중복 hidden 처리되어 영상이 보이지 않는 버그 있음
         self.play()
     }
     
