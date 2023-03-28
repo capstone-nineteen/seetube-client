@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol EmotionResultRepository {
-    func getEmotionResult() -> Single<EmotionResult>
+    func getEmotionResult(videoId: Int) -> Single<EmotionResult>
 }

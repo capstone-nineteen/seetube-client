@@ -16,6 +16,6 @@ class DefaultFetchEmotionResultUseCase: FetchEmotionResultUseCase {
     }
     
     func execute(videoId: Int) -> Single<EmotionResult> {
-        return self.repository.getEmotionResult()
+        return self.repository.getEmotionResult(videoId: videoId)
     }
 }

@@ -8,20 +8,20 @@
 import Foundation
 
 struct EmotionSceneDTO: Decodable, DomainConvertible {
-    let thumbnailImageURL: String
-    let startTime: Int
-    let endTime: Int
+    let thumbnailURL: String
+    let emotionStartTime: Int
+    let emotionEndTime: Int
     let totalNumberOfReviewers: Int
     let numberOfReviewersFelt: Int
-    let emotionType: Emotion
+    let emotion: Emotion
     
     func toDomain() -> EmotionScene {
-        return EmotionScene(thumbnailImageURL: self.thumbnailImageURL,
-                            startTime: self.startTime,
-                            endTime: self.endTime,
+        return EmotionScene(thumbnailImageURL: self.thumbnailURL,
+                            startTime: self.emotionStartTime,
+                            endTime: self.emotionEndTime,
                             totalNumberOfReviewers: self.totalNumberOfReviewers,
                             numberOfReviewersFelt: self.numberOfReviewersFelt,
-                            emotionType: self.emotionType)
+                            emotionType: self.emotion)
     }
 }
 
