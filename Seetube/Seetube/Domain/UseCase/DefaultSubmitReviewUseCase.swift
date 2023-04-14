@@ -18,7 +18,7 @@ class DefaultSubmitReviewUseCase: SubmitReviewUseCase {
     func execute(reviews: Reviews) -> Completable {
         return self.repository.submitReview(reviews: reviews)
             .map {
-                if $0.status != 201 {
+                if $0.status != 200 {
                     throw NetworkServiceError.requestFailed
                 } else {
                     return $0
