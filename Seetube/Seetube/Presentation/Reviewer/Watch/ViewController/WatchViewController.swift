@@ -115,6 +115,7 @@ extension WatchViewController {
         self.bindPlayTimeAndVideoRect(playTime: output.playTime,
                                       videoRect: output.videoRect)
         self.bindDidPlayToEndTime(output.didPlayToEndTime)
+        self.bindIsAbusingDetected(output.isAbusingDetected)
         self.bindReviewSubmissionResult(output.reviewSubmissionResult)
     }
     
@@ -173,6 +174,14 @@ extension WatchViewController {
                 obj.gazeTracker?.stopTracking()
                 obj.gazeTracker = nil
                 obj.rawReview.onCompleted()
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindIsAbusingDetected(_ isAbusingDetected: Driver<Void>) {
+        isAbusingDetected
+            .drive(with: self) { obj, _ in
+                obj.displayAbusingDetected()
             }
             .disposed(by: self.disposeBag)
     }
@@ -255,7 +264,7 @@ extension WatchViewController: StatusDelegate {
 extension WatchViewController : CalibrationDelegate {
     private func startCalibration() {
         DispatchQueue.global().async {
-            let result = self.gazeTracker?.startCalibration(mode: .FIVE_POINT,
+            let result = self.gazeTracker?.startCalibration(mode: .ONE_POINT,
                                                             criteria: .HIGH)
             if let didStart = result,
                !didStart {
@@ -346,6 +355,14 @@ extension WatchViewController {
     private func displayReviewSubmissionFailure() {
         self.displayFailureAlert(
             message: "죄송합니다. 문제가 발생하여 리뷰 제출에 실패하였습니다. 다시 시도해 주세요."
+        ) { [weak self] _ in
+            self?.dismiss(animated: true)
+        }
+    }
+    
+    private func displayAbusingDetected() {
+        self.displayFailureAlert(
+            message: "영상의 10% 이상에서 얼굴 이탈/화면 밖 응시가 감지되었습니다. 어뷰징으로 판단하여 리뷰를 강제 종료합니다."
         ) { [weak self] _ in
             self?.dismiss(animated: true)
         }

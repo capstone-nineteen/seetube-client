@@ -33,7 +33,7 @@ extension AlertDisplaying {
     ) {
         displayAlert(title: "에러",
                      message: message,
-                     actions: [UIAlertAction(title: "취소", style: .destructive, handler: action)])
+                     actions: [UIAlertAction(title: "확인", style: .destructive, handler: action)])
     }
     
     func displayOpenSettingsAlert(
