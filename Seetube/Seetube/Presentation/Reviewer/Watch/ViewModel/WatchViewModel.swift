@@ -12,6 +12,7 @@ import SeeSo
 
 class WatchViewModel: ViewModelType {
     private let submitReviewUseCase: SubmitReviewUseCase
+    private let checkAbusingUseCase: CheckAbusingUseCase
     
     private let url: String
     private let videoId: Int
@@ -21,10 +22,12 @@ class WatchViewModel: ViewModelType {
     
     init(
         submitReviewUseCase: SubmitReviewUseCase,
+        checkAbusingUseCase: CheckAbusingUseCase,
         url: String,
         videoId: Int
     ) {
         self.submitReviewUseCase = submitReviewUseCase
+        self.checkAbusingUseCase = checkAbusingUseCase
         self.url = url
         self.videoId = videoId
         self.videoPlayerViewModel = VideoPlayerViewModel(url: self.url)
@@ -36,7 +39,7 @@ class WatchViewModel: ViewModelType {
             .asObservable()
             .filter { $0 == .calibrationFinished }
             .map { _ -> Void in () }
-        
+
         shouldPlay
             .bind(to: self.videoPlayerViewModel.shouldPlay)
             .disposed(by: self.disposeBag)
@@ -50,23 +53,41 @@ class WatchViewModel: ViewModelType {
         let didPlayToEndTime = self.videoPlayerViewModel.didPlayToEndTime
             .asDriverIgnoringError()
         
-        let reviewSubmissionResult = input.rawReview
+        let review = input.rawReview
+            .map { Review(rawReview: $0) }
+        
+        let reviewSubmissionResult = review
             .toArray()
             .asObservable()
-            .flatMap { [weak self] rawReviews -> Observable<Bool> in
+            .flatMap { [weak self] reviews -> Observable<Bool> in
                 guard let self = self else { return .error(OptionalError.nilSelf) }
                 
                 let reviews = Reviews(videoId: self.videoId,
-                                      reviews: rawReviews.map { Review(rawReview: $0) })
+                                      reviews: reviews)
                 return self.submitReviewUseCase
                     .execute(reviews: reviews)
                     .andThen(.just(true))
             }
             .asDriver(onErrorJustReturn: false)
         
+        let videoDuration = VideoHelper.shared.getVideoDuration(videoURL: self.url) ?? INTPTR_MAX
+        let isAbusingDetected = review
+            .map { [weak self] review -> Bool in
+                guard let self = self else { return false }
+                return self.checkAbusingUseCase
+                    .execute(review: review)
+            }
+            .scan(0) { $1 ? $0+1 : $0 }
+            .map { Double($0) / Double(videoDuration) > 0.1 }
+            .distinctUntilChanged()
+            .filter { $0 }
+            .mapToVoid()
+            .asDriverIgnoringError()
+        
         return Output(playTime: playTime,
                       videoRect: videoRect,
                       didPlayToEndTime: didPlayToEndTime,
+                      isAbusingDetected: isAbusingDetected,
                       reviewSubmissionResult: reviewSubmissionResult)
     }
 }
@@ -81,6 +102,7 @@ extension WatchViewModel {
         let playTime: Driver<Int>
         let videoRect: Driver<VideoRect>
         let didPlayToEndTime: Driver<Void>
+        let isAbusingDetected: Driver<Void>
         let reviewSubmissionResult: Driver<Bool>
     }
 }

@@ -18,7 +18,9 @@ extension WatchPresentable {
         ) { viewController in
             let repository = DefaultReviewRepository()
             let submitReviewUseCase = DefaultSubmitReviewUseCase(repository: repository)
+            let checkAbusingUseCase = DefaultCheckAbusingUseCase()
             let viewModel = WatchViewModel(submitReviewUseCase: submitReviewUseCase,
+                                           checkAbusingUseCase: checkAbusingUseCase,
                                            url: url,
                                            videoId: videoId)
             viewController.viewModel = viewModel
