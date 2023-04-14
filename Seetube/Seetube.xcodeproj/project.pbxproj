@@ -299,6 +299,8 @@
 		04E8B78F2970524E000F0859 /* SceneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B78E2970524E000F0859 /* SceneListView.swift */; };
 		04E8B794297053B5000F0859 /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */; };
 		04E8B795297053B5000F0859 /* SceneListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B793297053B5000F0859 /* SceneListTableViewCell.xib */; };
+		04EBE54429E9B1270041B04C /* CheckAbusingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBE54329E9B1270041B04C /* CheckAbusingUseCase.swift */; };
+		04EBE54629E9B1A70041B04C /* DefaultCheckAbusingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBE54529E9B1A70041B04C /* DefaultCheckAbusingUseCase.swift */; };
 		04ED866829B7639400D86952 /* FetchEmotionResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866729B7639400D86952 /* FetchEmotionResultUseCase.swift */; };
 		04ED866A29B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866929B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift */; };
 		04ED866C29B76BAC00D86952 /* EmotionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866B29B76BAC00D86952 /* EmotionResultViewModel.swift */; };
@@ -618,6 +620,8 @@
 		04E8B78E2970524E000F0859 /* SceneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListView.swift; sourceTree = "<group>"; };
 		04E8B792297053B5000F0859 /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListTableViewCell.swift; sourceTree = "<group>"; };
 		04E8B793297053B5000F0859 /* SceneListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListTableViewCell.xib; sourceTree = "<group>"; };
+		04EBE54329E9B1270041B04C /* CheckAbusingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAbusingUseCase.swift; sourceTree = "<group>"; };
+		04EBE54529E9B1A70041B04C /* DefaultCheckAbusingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCheckAbusingUseCase.swift; sourceTree = "<group>"; };
 		04ED866729B7639400D86952 /* FetchEmotionResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchEmotionResultUseCase.swift; sourceTree = "<group>"; };
 		04ED866929B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchEmotionResultUseCase.swift; sourceTree = "<group>"; };
 		04ED866B29B76BAC00D86952 /* EmotionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewModel.swift; sourceTree = "<group>"; };
@@ -972,6 +976,7 @@
 				042E8D5229C1EE3400E8048F /* DefaultSaveVideoUseCase.swift */,
 				042E8D5629C1F43E00E8048F /* DefaultDownloadVideoUseCase.swift */,
 				04DBCB0729C83D6C000A7F0D /* DefaultSignOutUseCase.swift */,
+				04EBE54529E9B1A70041B04C /* DefaultCheckAbusingUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1773,6 +1778,7 @@
 				04403B2629BF45530058E31E /* FetchShortsResultUseCase.swift */,
 				042E8D5029C1EE0900E8048F /* SaveVideoUseCase.swift */,
 				042E8D5429C1F41B00E8048F /* DownloadVideoUseCase.swift */,
+				04EBE54329E9B1270041B04C /* CheckAbusingUseCase.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -2093,6 +2099,7 @@
 				0447E35729A0DB7A005F0CC9 /* VideoPlayerViewModel.swift in Sources */,
 				04FFC45329BDDD1600F6AE60 /* HighlightResultViewModel.swift in Sources */,
 				04A6789F299648A9006E29C1 /* ReviewerHomeViewModel.swift in Sources */,
+				04EBE54629E9B1A70041B04C /* DefaultCheckAbusingUseCase.swift in Sources */,
 				04DBCB0629C83091000A7F0D /* SignOutUseCase.swift in Sources */,
 				047B879F299FAFA700F4AA42 /* DefaultRegisterWithdrawalUseCase.swift in Sources */,
 				042B3C0229AD160000FC3881 /* DefaultSignUpRepository.swift in Sources */,
@@ -2274,6 +2281,7 @@
 				048A4B07299CE02400719AD0 /* ReviewProgressViewModel.swift in Sources */,
 				04867F1629A7A22E00FD9670 /* ReviewsDTO.swift in Sources */,
 				04867F1229A79FDA00FD9670 /* ReviewSubmissionResult.swift in Sources */,
+				04EBE54429E9B1270041B04C /* CheckAbusingUseCase.swift in Sources */,
 				0490DA592994C2E5000BBF73 /* APIEndpoint.swift in Sources */,
 				042E8D5329C1EE3400E8048F /* DefaultSaveVideoUseCase.swift in Sources */,
 				0490DA8C299512D0000BBF73 /* ConcentrationResultRepository.swift in Sources */,
