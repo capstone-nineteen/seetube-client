@@ -12,6 +12,7 @@ import RxCocoa
 class VideoPlayerViewModel: ViewModelType {
     let url: String
     let shouldPlay: PublishRelay<Void>
+    let shouldStop: PublishRelay<Void>
     let playTime: PublishRelay<Int>
     let didPlayToEndTime: PublishRelay<Void>
     let videoRect: PublishRelay<VideoRect>
@@ -21,6 +22,7 @@ class VideoPlayerViewModel: ViewModelType {
     init(url: String) {
         self.url = url
         self.shouldPlay = PublishRelay()
+        self.shouldStop = PublishRelay()
         self.playTime = PublishRelay()
         self.didPlayToEndTime = PublishRelay()
         self.videoRect = PublishRelay()
@@ -46,7 +48,11 @@ class VideoPlayerViewModel: ViewModelType {
         let shouldPlay = self.shouldPlay
             .asDriverIgnoringError()
         
-        return Output(shouldPlay: shouldPlay)
+        let shouldStop = self.shouldStop
+            .asDriverIgnoringError()
+        
+        return Output(shouldPlay: shouldPlay,
+                      shouldStop: shouldStop)
     }
 }
 
@@ -59,5 +65,6 @@ extension VideoPlayerViewModel {
     
     struct Output {
         let shouldPlay: Driver<Void>
+        let shouldStop: Driver<Void>
     }
 }

@@ -35,15 +35,6 @@ class WatchViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        let shouldPlay = input.watchingState
-            .asObservable()
-            .filter { $0 == .calibrationFinished }
-            .map { _ -> Void in () }
-
-        shouldPlay
-            .bind(to: self.videoPlayerViewModel.shouldPlay)
-            .disposed(by: self.disposeBag)
-        
         let playTime = self.videoPlayerViewModel.playTime
             .asDriverIgnoringError()
         
@@ -84,11 +75,34 @@ class WatchViewModel: ViewModelType {
             .mapToVoid()
             .asDriverIgnoringError()
         
+        // VideoPlayerViewModel Binding
+        
+        let shouldPlay = input.watchingState
+            .asObservable()
+            .filter { $0 == .calibrationFinished }
+            .map { _ -> Void in () }
+    
+        let shouldStop = isAbusingDetected
+            .asObservable()
+        
+        self.bindToVideoPlayerViewModel(shouldPlay: shouldPlay,
+                                        shouldStop: shouldStop)
+        
         return Output(playTime: playTime,
                       videoRect: videoRect,
                       didPlayToEndTime: didPlayToEndTime,
                       isAbusingDetected: isAbusingDetected,
                       reviewSubmissionResult: reviewSubmissionResult)
+    }
+    
+    private func bindToVideoPlayerViewModel(shouldPlay: Observable<Void>, shouldStop: Observable<Void>) {
+        shouldPlay
+            .bind(to: self.videoPlayerViewModel.shouldPlay)
+            .disposed(by: self.disposeBag)
+        
+        shouldStop
+            .bind(to: self.videoPlayerViewModel.shouldStop)
+            .disposed(by: self.disposeBag)
     }
 }
 

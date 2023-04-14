@@ -53,6 +53,7 @@ extension VideoPlayerViewController {
         let output = viewModel.transform(input: input)
         
         self.bindShouldPlay(output.shouldPlay)
+        self.bindShouldStop(output.shouldStop)
     }
     
     // MARK: Input Event Creation
@@ -87,6 +88,14 @@ extension VideoPlayerViewController {
         shouldPlay
             .drive(with: self) { obj, _ in
                 obj.player?.play()
+            }
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func bindShouldStop(_ shouldStop: Driver<Void>) {
+        shouldStop
+            .drive(with: self) { obj, _ in
+                obj.player?.pause()
             }
             .disposed(by: self.disposeBag)
     }
