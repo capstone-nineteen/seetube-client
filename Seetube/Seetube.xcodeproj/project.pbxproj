@@ -301,6 +301,7 @@
 		04E8B795297053B5000F0859 /* SceneListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B793297053B5000F0859 /* SceneListTableViewCell.xib */; };
 		04EBE54429E9B1270041B04C /* CheckAbusingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBE54329E9B1270041B04C /* CheckAbusingUseCase.swift */; };
 		04EBE54629E9B1A70041B04C /* DefaultCheckAbusingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBE54529E9B1A70041B04C /* DefaultCheckAbusingUseCase.swift */; };
+		04EBE54829E9B9C50041B04C /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBE54729E9B9C50041B04C /* VideoHelper.swift */; };
 		04ED866829B7639400D86952 /* FetchEmotionResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866729B7639400D86952 /* FetchEmotionResultUseCase.swift */; };
 		04ED866A29B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866929B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift */; };
 		04ED866C29B76BAC00D86952 /* EmotionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED866B29B76BAC00D86952 /* EmotionResultViewModel.swift */; };
@@ -622,6 +623,7 @@
 		04E8B793297053B5000F0859 /* SceneListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneListTableViewCell.xib; sourceTree = "<group>"; };
 		04EBE54329E9B1270041B04C /* CheckAbusingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAbusingUseCase.swift; sourceTree = "<group>"; };
 		04EBE54529E9B1A70041B04C /* DefaultCheckAbusingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCheckAbusingUseCase.swift; sourceTree = "<group>"; };
+		04EBE54729E9B9C50041B04C /* VideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
 		04ED866729B7639400D86952 /* FetchEmotionResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchEmotionResultUseCase.swift; sourceTree = "<group>"; };
 		04ED866929B763BA00D86952 /* DefaultFetchEmotionResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchEmotionResultUseCase.swift; sourceTree = "<group>"; };
 		04ED866B29B76BAC00D86952 /* EmotionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewModel.swift; sourceTree = "<group>"; };
@@ -1892,6 +1894,7 @@
 				04E1465129AF9C4500DD4204 /* KeychainHelper.swift */,
 				04E1465329AFA72D00DD4204 /* UserDefaultHelper.swift */,
 				04E80A7F29B4FCD300DE526B /* StringFormattingHelper.swift */,
+				04EBE54729E9B9C50041B04C /* VideoHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -2233,6 +2236,7 @@
 				046560502975591300C4CACD /* CALayer+Extension.swift in Sources */,
 				0470C9BE2990E78E00D4743B /* MyPageDTO.swift in Sources */,
 				04B8AF0B299BBB8A0024C897 /* SearchUseCase.swift in Sources */,
+				04EBE54829E9B9C50041B04C /* VideoHelper.swift in Sources */,
 				0470C9C22990EA0B00D4743B /* WithdrawInformationDTO.swift in Sources */,
 				042B3C2129AE341700FC3881 /* DefaultCountDownUseCase.swift in Sources */,
 				042B3BF829AD11F700FC3881 /* SignUpViewModel.swift in Sources */,
