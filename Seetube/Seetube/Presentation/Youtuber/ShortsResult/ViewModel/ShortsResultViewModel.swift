@@ -122,6 +122,7 @@ class ShortsResultViewModel: ViewModelType {
         
         let numberOfSelectedShorts = input.indexPathsForSelectedItems
             .map { $0.count }
+            .startWith(0)
         
         let videoSaveResult = videoFileURLs
             .compactMap { videoFileURLs -> [URL]? in
