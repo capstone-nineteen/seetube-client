@@ -30,11 +30,6 @@ class ShortsResultViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let result = input.viewWillAppear
             .flatMap { [weak self] _ -> Driver<ShortsResult?> in
-                // 더미 데이터
-                let scene = ShortsScene(thumbnailURL: "https://avatars.githubusercontent.com/u/70833900?s=80&u=7b4aff238820c6e6d3968848b78e8d8bf1b1507e&v=4", videoURL: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", startTime: 0, endTime: 3, concentrationPercentage: 20)
-                let temp = ShortsResult(scenes: [scene, scene, scene, scene, scene, scene, scene])
-                return .just(temp)
-                
                 guard let self = self else { return .just(nil) }
                 return self.fetchShortsResultUseCase
                     .execute(videoId: self.videoId)
