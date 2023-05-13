@@ -8,7 +8,7 @@
 import Foundation
 
 struct HighlightsDTO: Decodable, DomainConvertible {
-    let thumbnailURL: String
+    let videoURL: String
     let numOfTotalReviewers: Int
     
     let firstSceneStartTimeInOriginalVideo: Float
@@ -18,6 +18,7 @@ struct HighlightsDTO: Decodable, DomainConvertible {
     let numberOfReviewersConcentratedInFirstScene: Int
     let numberOfReviewersFeltInFirstScene: Int
     let emotionTypeInFirstScene: String
+    let thumbnailURLInFirstScene: String
     
     let secondSceneStartTimeInOriginalVideo: Float?
     let secondSceneEndTimeInOriginalVideo: Float?
@@ -26,6 +27,7 @@ struct HighlightsDTO: Decodable, DomainConvertible {
     let numberOfReviewersConcentratedInSecondScene: Int?
     let numberOfReviewersFeltInSecondScene: Int?
     let emotionTypeInSecondScene: String?
+    let thumbnailURLInSecondScene: String?
     
     let thirdSceneStartTimeInOriginalVideo: Float?
     let thirdSceneEndTimeInOriginalVideo: Float?
@@ -34,6 +36,7 @@ struct HighlightsDTO: Decodable, DomainConvertible {
     let numberOfReviewersConcentratedInThirdScene: Int?
     let numberOfReviewersFeltInThirdScene:Int?
     let emotionTypeInThirdScene: String?
+    let thumbnailURLInThirdScene: String?
     
     let fourthSceneStartTimeInOriginalVideo:Float?
     let fourthSceneEndTimeInOriginalVideo: Float?
@@ -42,6 +45,7 @@ struct HighlightsDTO: Decodable, DomainConvertible {
     let numberOfReviewersConcentratedInFourthScene: Int?
     let numberOfReviewersFeltInFourthScene: Int?
     let emotionTypeInFourthScene: String?
+    let thumbnailURLInFourthScene: String?
     
     let fifthSceneStartTimeInOriginalVideo: Float?
     let fifthSceneEndTimeInOriginalVideo: Float?
@@ -50,9 +54,10 @@ struct HighlightsDTO: Decodable, DomainConvertible {
     let numberOfReviewersConcentratedInFifthScene: Int?
     let numberOfReviewersFeltInFifthScene: Int?
     let emotionTypeInFifthScene: String?
+    let thumbnailURLInFifthScene: String?
     
     enum CodingKeys: String, CodingKey {
-        case thumbnailURL
+        case videoURL
         case numOfTotalReviewers
         
         case firstSceneStartTimeInOriginalVideo = "FirstSceneStartTimeInOriginalVideo"
@@ -62,6 +67,7 @@ struct HighlightsDTO: Decodable, DomainConvertible {
         case numberOfReviewersConcentratedInFirstScene
         case numberOfReviewersFeltInFirstScene
         case emotionTypeInFirstScene
+        case thumbnailURLInFirstScene
         
         case secondSceneStartTimeInOriginalVideo = "SecondSceneStartTimeInOriginalVideo"
         case secondSceneEndTimeInOriginalVideo = "SecondSceneEndTimeInOriginalVideo"
@@ -70,6 +76,7 @@ struct HighlightsDTO: Decodable, DomainConvertible {
         case numberOfReviewersConcentratedInSecondScene
         case numberOfReviewersFeltInSecondScene
         case emotionTypeInSecondScene
+        case thumbnailURLInSecondScene
         
         case thirdSceneStartTimeInOriginalVideo = "ThirdSceneStartTimeInOriginalVideo"
         case thirdSceneEndTimeInOriginalVideo = "ThirdSceneEndTimeInOriginalVideo"
@@ -78,6 +85,7 @@ struct HighlightsDTO: Decodable, DomainConvertible {
         case numberOfReviewersConcentratedInThirdScene
         case numberOfReviewersFeltInThirdScene
         case emotionTypeInThirdScene
+        case thumbnailURLInThirdScene
         
         case fourthSceneStartTimeInOriginalVideo = "FourthSceneStartTimeInOriginalVideo"
         case fourthSceneEndTimeInOriginalVideo = "FourthSceneEndTimeInOriginalVideo"
@@ -86,6 +94,7 @@ struct HighlightsDTO: Decodable, DomainConvertible {
         case numberOfReviewersConcentratedInFourthScene
         case numberOfReviewersFeltInFourthScene
         case emotionTypeInFourthScene
+        case thumbnailURLInFourthScene
         
         case fifthSceneStartTimeInOriginalVideo = "FifthSceneStartTimeInOriginalVideo"
         case fifthSceneEndTimeInOriginalVideo = "FifthSceneEndTimeInOriginalVideo"
@@ -94,13 +103,17 @@ struct HighlightsDTO: Decodable, DomainConvertible {
         case numberOfReviewersConcentratedInFifthScene
         case numberOfReviewersFeltInFifthScene
         case emotionTypeInFifthScene
+        case thumbnailURLInFifthScene
     }
     
-    func toDomain() -> [HighlightScene] {
+    func toDomain() -> HighlightResult {
         let maxNumberOfScenes = 5
         
-        // FIXME: API에 썸네일 추가 후 수정
-        let thumbnailImageURLs: [String?] = ["", "", "", "", ""]
+        let thumbnailImageURLs = [thumbnailURLInFirstScene,
+                                  thumbnailURLInSecondScene,
+                                  thumbnailURLInThirdScene,
+                                  thumbnailURLInFourthScene,
+                                  thumbnailURLInFifthScene]
         let startTimesInOriginalVideo = [firstSceneStartTimeInOriginalVideo,
                                          secondSceneStartTimeInOriginalVideo,
                                          thirdSceneStartTimeInOriginalVideo,
@@ -137,37 +150,35 @@ struct HighlightsDTO: Decodable, DomainConvertible {
                             emotionTypeInFourthScene,
                             emotionTypeInFifthScene]
         
-        return (0..<maxNumberOfScenes)
-            .map { index -> HighlightScene? in
-                guard let thumbnailImageURL = thumbnailImageURLs[index],
-                      let startTimeInOriginalVideo = startTimesInOriginalVideo[index],
-                      let endTimeInOriginalVideo = endTimesInOriginalVideo[index],
-                      let startTimeInHighlight = startTimesInHighlight[index],
-                      let endTimeInHighlight = endTimesInHighlight[index],
-                      let numberOfReviewersConcentrated = numbersOfReviewersConcentrated[index],
-                      let numberOfReviewersFelt = numbersOfReviewersFelt[index],
-                      let emotionType = emotionTypes[index] else { return nil }
+        let scenes = (0..<maxNumberOfScenes).map { index -> HighlightScene? in
+            guard let thumbnailImageURL = thumbnailImageURLs[index],
+                  let startTimeInOriginalVideo = startTimesInOriginalVideo[index],
+                  let endTimeInOriginalVideo = endTimesInOriginalVideo[index],
+                  let startTimeInHighlight = startTimesInHighlight[index],
+                  let endTimeInHighlight = endTimesInHighlight[index],
+                  let numberOfReviewersConcentrated = numbersOfReviewersConcentrated[index],
+                  let numberOfReviewersFelt = numbersOfReviewersFelt[index],
+                  let emotionType = emotionTypes[index] else { return nil }
                 
-                return HighlightScene(thumbnailImageURL: thumbnailImageURL,
-                                      startTimeInOriginalVideo: startTimeInOriginalVideo,
-                                      endTimeInOriginalVideo: endTimeInOriginalVideo,
-                                      startTimeInHighlight: startTimeInHighlight,
-                                      endTimeInHighlight: endTimeInHighlight,
-                                      totalNumberOfReviewers: self.numOfTotalReviewers,
-                                      numberOfReviewersConcentrated: numberOfReviewersConcentrated,
-                                      numberOfReviewersFelt: numberOfReviewersFelt,
-                                      emotionType: Emotion(rawValue: emotionType) ?? .neutral)
-            }
-            .compactMap{ $0 }
+            return HighlightScene(thumbnailImageURL: thumbnailImageURL,
+                                  startTimeInOriginalVideo: startTimeInOriginalVideo,
+                                  endTimeInOriginalVideo: endTimeInOriginalVideo,
+                                  startTimeInHighlight: startTimeInHighlight,
+                                  endTimeInHighlight: endTimeInHighlight,
+                                  totalNumberOfReviewers: self.numOfTotalReviewers,
+                                  numberOfReviewersConcentrated: numberOfReviewersConcentrated,
+                                  numberOfReviewersFelt: numberOfReviewersFelt,
+                                  emotionType: Emotion(rawValue: emotionType) ?? .neutral)
+            }.compactMap{ $0 }
+        
+        return HighlightResult(highlightVideoURL: self.videoURL, scenes: scenes)
     }
 }
 
 struct HighlightResultDTO: Decodable, DomainConvertible {
-    let originalVideoURL: String
     let highlight: HighlightsDTO
     
     func toDomain() -> HighlightResult {
-        return HighlightResult(highlightVideoURL: self.originalVideoURL,
-                               scenes: self.highlight.toDomain())
+        return highlight.toDomain()
     }
 }
