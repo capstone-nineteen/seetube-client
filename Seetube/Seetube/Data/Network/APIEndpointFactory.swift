@@ -27,7 +27,7 @@ class APIEndpointFactory {
         case getEmotionResult(videoId: Int)
         case getSceneStealerResult(videoId: Int)
         case getShortsResult(videoId: Int)
-        case getHighlightResult
+        case getHighlightResult(videoId: Int)
         
         var method: HttpMethod {
             switch self {
@@ -117,8 +117,8 @@ class APIEndpointFactory {
                 return APIUrls.sceneStealerResult + "/\(videoId)"
             case .getShortsResult(let videoId):
                 return APIUrls.shortsResult + "/\(videoId)"
-            case .getHighlightResult:
-                return APIUrls.highlightResult
+            case .getHighlightResult(let videoId):
+                return APIUrls.highlightResult + "/\(videoId)"
             }
         }
         

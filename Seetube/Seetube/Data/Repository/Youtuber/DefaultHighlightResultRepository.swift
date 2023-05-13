@@ -9,8 +9,8 @@ import Foundation
 import RxSwift
 
 class DefaultHighlightResultRepository: HighlightResultRepository, NetworkRequestable {
-    func getHighlightResult() -> Single<HighlightResult> {
-        let endpoint = APIEndpointFactory.makeEndpoint(for: .getHighlightResult)
+    func getHighlightResult(videoId: Int) -> Single<HighlightResult> {
+        let endpoint = APIEndpointFactory.makeEndpoint(for: .getHighlightResult(videoId: videoId))
         return self.getResource(endpoint: endpoint,
                                 decodingType: HighlightResultDTO.self)
     }

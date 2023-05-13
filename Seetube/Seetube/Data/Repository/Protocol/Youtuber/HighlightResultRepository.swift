@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol HighlightResultRepository {
-    func getHighlightResult() -> Single<HighlightResult>
+    func getHighlightResult(videoId: Int) -> Single<HighlightResult>
 }

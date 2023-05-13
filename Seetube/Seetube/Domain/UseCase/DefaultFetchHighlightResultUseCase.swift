@@ -16,6 +16,6 @@ class DefaultFetchHighlightResultUseCase: FetchHighlightResultUseCase {
     }
     
     func execute(videoId: Int) -> Single<HighlightResult> {
-        return self.repository.getHighlightResult()
+        return self.repository.getHighlightResult(videoId: videoId)
     }
 }
