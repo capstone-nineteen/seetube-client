@@ -24,6 +24,6 @@ class ShortsItemViewModel {
         self.thumbnailURL = scene.thumbnailURL
         self.interval = "🕔 " + StringFormattingHelper.toTimeIntervalFormatString(startSecond: scene.startTime,
                                                                                   endSecond: scene.endTime)
-        self.description = "집중도 \(scene.concentrationPercentage)%\n\(scene.emotionType.korDescription) \(scene.emotionPerentage)%"
+        self.description = "집중도 \(scene.concentrationPercentage)%"
     }
 }

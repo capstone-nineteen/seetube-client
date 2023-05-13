@@ -13,8 +13,6 @@ struct ShortsScene {
     let startTime: Int
     let endTime: Int
     let concentrationPercentage: Int
-    let emotionType: Emotion
-    let emotionPerentage: Int
 }
 
 struct ShortsResult {

@@ -12,25 +12,21 @@ struct ShortsSceneDTO: Decodable, DomainConvertible {
     let videoURL: String
     let startTime: Int
     let endTime: Int
-    let concentrationPercentage: Int
-    let emotionType: Emotion
-    let emotionPerentage: Int
+    let percentageOfConcentration: Int
     
     func toDomain() -> ShortsScene {
         return ShortsScene(thumbnailURL: self.thumbnailURL,
                            videoURL: self.videoURL,
                            startTime: self.startTime,
                            endTime: self.endTime,
-                           concentrationPercentage: self.concentrationPercentage,
-                           emotionType: self.emotionType,
-                           emotionPerentage: self.emotionPerentage)
+                           concentrationPercentage: self.percentageOfConcentration)
     }
 }
 
 struct ShortsResultDTO: Decodable, DomainConvertible {
-    let scenes: [ShortsSceneDTO]
+    let shorts: [ShortsSceneDTO]
     
     func toDomain() -> ShortsResult {
-        return ShortsResult(scenes: self.scenes.map { $0.toDomain() })
+        return ShortsResult(scenes: self.shorts.map { $0.toDomain() })
     }
 }
