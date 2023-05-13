@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol SceneStealerResultRepository {
-    func getSceneStealerResult() -> Single<SceneStealerResult>
+    func getSceneStealerResult(videoId: Int) -> Single<SceneStealerResult>
 }

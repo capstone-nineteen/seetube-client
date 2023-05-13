@@ -16,6 +16,6 @@ class DefaultFetchSceneStealerResultUseCase: FetchSceneStealerResultUseCase {
     }
     
     func execute(videoId: Int) -> Single<SceneStealerResult> {
-        return self.repository.getSceneStealerResult()
+        return self.repository.getSceneStealerResult(videoId: videoId)
     }
 }
