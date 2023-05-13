@@ -8,13 +8,13 @@
 import Foundation
 
 struct SceneStealerSceneDTO: Decodable, DomainConvertible {
-    let thumbnailImageURL: String
+    let thumbnailURL: String
     let startTime: Int
     let endTime: Int
     let percentageOfConcentration: Int
     
     func toDomain() -> SceneStealerScene {
-        return SceneStealerScene(imageURL: self.thumbnailImageURL,
+        return SceneStealerScene(imageURL: self.thumbnailURL,
                                  startTime: self.startTime,
                                  endTime: self.endTime,
                                  percentageOfConcentration: self.percentageOfConcentration)
@@ -22,9 +22,9 @@ struct SceneStealerSceneDTO: Decodable, DomainConvertible {
 }
 
 struct SceneStealerResultDTO: Decodable, DomainConvertible {
-    let scenes: [SceneStealerSceneDTO]
+    let sceneStealer: [SceneStealerSceneDTO]
     
     func toDomain() -> SceneStealerResult {
-        return SceneStealerResult(scenes: self.scenes.map { $0.toDomain() })
+        return SceneStealerResult(scenes: self.sceneStealer.map { $0.toDomain() })
     }
 }
