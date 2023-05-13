@@ -9,8 +9,8 @@ import Foundation
 
 struct ConcentrationSceneDTO: Decodable, DomainConvertible {
     let thumbnailImageURL: String?  // FIXME: 백엔드 확인 후 옵셔널 제거
-    let focusStartTime: Int
-    let focusEndTime: Int
+    let focusStartTime: Float
+    let focusEndTime: Float
     let totalNumberOfReviewers: Int
     let numberOfReviewersConcentrated: Int
     

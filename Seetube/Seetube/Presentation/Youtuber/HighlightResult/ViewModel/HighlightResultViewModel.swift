@@ -127,7 +127,7 @@ extension HighlightResultViewModel {
     struct Output {
         let videoUrl: Driver<String>
         let scenes: Driver<[SceneLargeItemViewModel]>
-        let playingInterval: Driver<(start: Int, end: Int)>
+        let playingInterval: Driver<(start: Float, end: Float)>
         let videoSaveResult: Driver<Bool>
         let shouldRequestAuthorization: Driver<Void>
     }

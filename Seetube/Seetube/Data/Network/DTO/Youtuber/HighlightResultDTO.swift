@@ -11,42 +11,42 @@ struct HighlightsDTO: Decodable, DomainConvertible {
     let thumbnailURL: String
     let numOfTotalReviewers: Int
     
-    let firstSceneStartTimeInOriginalVideo: Int
-    let firstSceneEndTimeInOriginalVideo: Int
-    let firstSceneStartTimeInHighlight: Int
-    let firstSceneEndTimeInHighlight: Int
+    let firstSceneStartTimeInOriginalVideo: Float
+    let firstSceneEndTimeInOriginalVideo: Float
+    let firstSceneStartTimeInHighlight: Float
+    let firstSceneEndTimeInHighlight: Float
     let numberOfReviewersConcentratedInFirstScene: Int
     let numberOfReviewersFeltInFirstScene: Int
     let emotionTypeInFirstScene: String
     
-    let secondSceneStartTimeInOriginalVideo: Int?
-    let secondSceneEndTimeInOriginalVideo: Int?
-    let secondSceneStartTimeInHighlight: Int?
-    let secondSceneEndTimeInHighlight: Int?
+    let secondSceneStartTimeInOriginalVideo: Float?
+    let secondSceneEndTimeInOriginalVideo: Float?
+    let secondSceneStartTimeInHighlight: Float?
+    let secondSceneEndTimeInHighlight: Float?
     let numberOfReviewersConcentratedInSecondScene: Int?
     let numberOfReviewersFeltInSecondScene: Int?
     let emotionTypeInSecondScene: String?
     
-    let thirdSceneStartTimeInOriginalVideo: Int?
-    let thirdSceneEndTimeInOriginalVideo: Int?
-    let thirdSceneStartTimeInHighlight: Int?
-    let thirdSceneEndTimeInHighlight: Int?
+    let thirdSceneStartTimeInOriginalVideo: Float?
+    let thirdSceneEndTimeInOriginalVideo: Float?
+    let thirdSceneStartTimeInHighlight: Float?
+    let thirdSceneEndTimeInHighlight: Float?
     let numberOfReviewersConcentratedInThirdScene: Int?
     let numberOfReviewersFeltInThirdScene:Int?
     let emotionTypeInThirdScene: String?
     
-    let fourthSceneStartTimeInOriginalVideo:Int?
-    let fourthSceneEndTimeInOriginalVideo: Int?
-    let fourthSceneStartTimeInHighlight: Int?
-    let fourthSceneEndTimeInHighlight: Int?
+    let fourthSceneStartTimeInOriginalVideo:Float?
+    let fourthSceneEndTimeInOriginalVideo: Float?
+    let fourthSceneStartTimeInHighlight: Float?
+    let fourthSceneEndTimeInHighlight: Float?
     let numberOfReviewersConcentratedInFourthScene: Int?
     let numberOfReviewersFeltInFourthScene: Int?
     let emotionTypeInFourthScene: String?
     
-    let fifthSceneStartTimeInOriginalVideo: Int?
-    let fifthSceneEndTimeInOriginalVideo: Int?
-    let fifthSceneStartTimeInHighlight: Int?
-    let fifthSceneEndTimeInHighlight: Int?
+    let fifthSceneStartTimeInOriginalVideo: Float?
+    let fifthSceneEndTimeInOriginalVideo: Float?
+    let fifthSceneStartTimeInHighlight: Float?
+    let fifthSceneEndTimeInHighlight: Float?
     let numberOfReviewersConcentratedInFifthScene: Int?
     let numberOfReviewersFeltInFifthScene: Int?
     let emotionTypeInFifthScene: String?

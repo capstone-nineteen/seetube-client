@@ -9,10 +9,10 @@ import Foundation
 
 struct HighlightScene {
     let thumbnailImageURL: String
-    let startTimeInOriginalVideo: Int
-    let endTimeInOriginalVideo: Int
-    let startTimeInHighlight: Int
-    let endTimeInHighlight: Int
+    let startTimeInOriginalVideo: Float
+    let endTimeInOriginalVideo: Float
+    let startTimeInHighlight: Float
+    let endTimeInHighlight: Float
     let totalNumberOfReviewers: Int
     let numberOfReviewersConcentrated: Int
     let numberOfReviewersFelt: Int

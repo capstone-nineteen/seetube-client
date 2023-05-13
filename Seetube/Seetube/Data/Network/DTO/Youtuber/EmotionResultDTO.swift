@@ -9,8 +9,8 @@ import Foundation
 
 struct EmotionSceneDTO: Decodable, DomainConvertible {
     let thumbnailURL: String
-    let emotionStartTime: Int
-    let emotionEndTime: Int
+    let emotionStartTime: Float
+    let emotionEndTime: Float
     let totalNumberOfReviewers: Int
     let numberOfReviewersFelt: Int
     let emotion: Emotion

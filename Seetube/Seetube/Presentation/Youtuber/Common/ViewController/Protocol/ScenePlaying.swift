@@ -18,7 +18,7 @@ protocol ScenePlaying: UIViewController {
     var timeObserver: Any? { get set }
     
     func createPlayer(url: String, at view: AVPlayerLayerAddable)
-    func playInterval(start: Int, end: Int)
+    func playInterval(start: Float, end: Float)
     func pause()
     func play()
     func removeTimeObserver()
@@ -41,13 +41,13 @@ extension ScenePlaying {
         playerLayer.isHidden = true
     }
     
-    func playInterval(start: Int, end: Int) {
+    func playInterval(start: Float, end: Float) {
         self.pause()
         
         let startTime = CMTime(seconds: Double(start),
-                               preferredTimescale: 1)
+                               preferredTimescale: 600)
         let endTime = CMTime(seconds: Double(end),
-                             preferredTimescale: 1)
+                             preferredTimescale: 600)
         
         // 시작 시각으로 이동
         self.player?.seek(to: startTime)

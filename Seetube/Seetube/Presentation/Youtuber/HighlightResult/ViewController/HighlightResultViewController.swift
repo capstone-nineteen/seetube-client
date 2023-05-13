@@ -106,7 +106,7 @@ extension HighlightResultViewController {
             .disposed(by: self.disposeBag)
     }
     
-    func bindPlayingInterval(_ interval: Driver<(start: Int, end: Int)>) {
+    func bindPlayingInterval(_ interval: Driver<(start: Float, end: Float)>) {
         interval
             .drive(with: self) { obj, interval in
                 obj.playInterval(start: interval.start,

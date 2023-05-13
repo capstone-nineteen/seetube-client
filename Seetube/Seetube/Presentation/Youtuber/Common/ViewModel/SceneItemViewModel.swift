@@ -42,8 +42,8 @@ class SceneItemViewModel {
     }
     
     convenience init(with scene: ConcentrationScene) {
-        let interval = StringFormattingHelper.toTimeIntervalFormatString(startSecond: scene.startTime,
-                                                                         endSecond: scene.endTime)
+        let interval = StringFormattingHelper.toTimeIntervalFormatString(startSecond: Int(scene.startTime),
+                                                                         endSecond: Int(scene.endTime))
         
         let description = "총 \(scene.totalNumberOfReviewers)명 중에\n\(scene.numberOfReviewersConcentrated)명이 집중했습니다."
         
@@ -60,8 +60,8 @@ class SceneItemViewModel {
     }
     
     convenience init(with scene: EmotionScene) {
-        let interval = StringFormattingHelper.toTimeIntervalFormatString(startSecond: scene.startTime,
-                                                                         endSecond: scene.endTime)
+        let interval = StringFormattingHelper.toTimeIntervalFormatString(startSecond: Int(scene.startTime),
+                                                                         endSecond: Int(scene.endTime))
         
         let description = "총 \(scene.totalNumberOfReviewers)명 중에 \(scene.numberOfReviewersFelt)명이\n\(scene.emotionType.korDescription)을(를) 느꼈습니다."
         

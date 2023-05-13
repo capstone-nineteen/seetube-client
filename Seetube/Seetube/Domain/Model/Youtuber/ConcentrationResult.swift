@@ -9,8 +9,8 @@ import Foundation
 
 struct ConcentrationScene: Decodable {
     let thumbnailImageURL: String
-    let startTime: Int
-    let endTime: Int
+    let startTime: Float
+    let endTime: Float
     let totalNumberOfReviewers: Int
     let numberOfReviewersConcentrated: Int
 }

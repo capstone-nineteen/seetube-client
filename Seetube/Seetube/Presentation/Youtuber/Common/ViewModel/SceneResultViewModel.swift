@@ -18,7 +18,7 @@ class SceneResultViewModel: ViewModelType {
     struct Output {
         let videoUrl: Driver<String>
         let scenes: Driver<[SceneItemViewModel]>
-        let playingInterval: Driver<(start: Int, end: Int)>
+        let playingInterval: Driver<(start: Float, end: Float)>
     }
     
     func transform(input: Input) -> Output {
