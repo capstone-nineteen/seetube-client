@@ -25,7 +25,7 @@ class APIEndpointFactory {
         case getYoutuberHome
         case getConcentrationResult(videoId: Int)
         case getEmotionResult(videoId: Int)
-        case getSceneStealerResult
+        case getSceneStealerResult(videoId: Int)
         case getShortsResult
         case getHighlightResult
         
@@ -113,8 +113,8 @@ class APIEndpointFactory {
                 return APIUrls.concentrationResult + "/\(videoId)"
             case .getEmotionResult(let videoId):
                 return APIUrls.emotionResult + "/\(videoId)"
-            case .getSceneStealerResult:
-                return APIUrls.sceneStealerResult
+            case .getSceneStealerResult(let videoId):
+                return APIUrls.sceneStealerResult + "/\(videoId)"
             case .getShortsResult:
                 return APIUrls.shortsResult
             case .getHighlightResult:
