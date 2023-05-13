@@ -30,14 +30,6 @@ class HighlightResultViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let result = input.viewWillAppear
             .flatMap { [weak self] _ -> Driver<HighlightResult?> in
-                // 더미 데이터
-                let scenes = (0..<5).map {
-                    HighlightScene(thumbnailImageURL: "https://avatars.githubusercontent.com/u/70833900?s=80&u=7b4aff238820c6e6d3968848b78e8d8bf1b1507e&v=4", startTimeInOriginalVideo: 12+$0*5, endTimeInOriginalVideo: 12+($0+1)*5, startTimeInHighlight: $0*5, endTimeInHighlight: ($0+1)*5, totalNumberOfReviewers: 140, numberOfReviewersConcentrated: 78, numberOfReviewersFelt: 100, emotionType: .angry)
-                }
-                let temp = HighlightResult(highlightVideoURL: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-                                               scenes: scenes)
-                return .just(temp)
-                
                 guard let self = self else { return .just(nil) }
                 return self.fetchHighlightResultUseCase
                     .execute(videoId: self.videoId)
