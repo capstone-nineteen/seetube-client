@@ -16,6 +16,6 @@ class DefaultFetchShortsResultUseCase: FetchShortsResultUseCase {
     }
     
     func execute(videoId: Int) -> Single<ShortsResult> {
-        return self.repository.getShortsResult()
+        return self.repository.getShortsResult(videoId: videoId)
     }
 }

@@ -9,8 +9,8 @@ import Foundation
 import RxSwift
 
 class DefaultShortsResultRepository: ShortsResultRepository, NetworkRequestable {
-    func getShortsResult() -> Single<ShortsResult> {
-        let endpoint = APIEndpointFactory.makeEndpoint(for: .getShortsResult)
+    func getShortsResult(videoId: Int) -> Single<ShortsResult> {
+        let endpoint = APIEndpointFactory.makeEndpoint(for: .getShortsResult(videoId: videoId))
         return self.getResource(endpoint: endpoint,
                                 decodingType: ShortsResultDTO.self)
     }

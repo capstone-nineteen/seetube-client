@@ -26,7 +26,7 @@ class APIEndpointFactory {
         case getConcentrationResult(videoId: Int)
         case getEmotionResult(videoId: Int)
         case getSceneStealerResult(videoId: Int)
-        case getShortsResult
+        case getShortsResult(videoId: Int)
         case getHighlightResult
         
         var method: HttpMethod {
@@ -115,8 +115,8 @@ class APIEndpointFactory {
                 return APIUrls.emotionResult + "/\(videoId)"
             case .getSceneStealerResult(let videoId):
                 return APIUrls.sceneStealerResult + "/\(videoId)"
-            case .getShortsResult:
-                return APIUrls.shortsResult
+            case .getShortsResult(let videoId):
+                return APIUrls.shortsResult + "/\(videoId)"
             case .getHighlightResult:
                 return APIUrls.highlightResult
             }

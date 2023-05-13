@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol ShortsResultRepository {
-    func getShortsResult() -> Single<ShortsResult>
+    func getShortsResult(videoId: Int) -> Single<ShortsResult>
 }
