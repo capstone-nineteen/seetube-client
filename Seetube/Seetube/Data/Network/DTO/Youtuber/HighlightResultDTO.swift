@@ -51,10 +51,56 @@ struct HighlightsDTO: Decodable, DomainConvertible {
     let numberOfReviewersFeltInFifthScene: Int?
     let emotionTypeInFifthScene: String?
     
+    enum CodingKeys: String, CodingKey {
+        case thumbnailURL
+        case numOfTotalReviewers
+        
+        case firstSceneStartTimeInOriginalVideo = "FirstSceneStartTimeInOriginalVideo"
+        case firstSceneEndTimeInOriginalVideo = "FirstSceneEndTimeInOriginalVideo"
+        case firstSceneStartTimeInHighlight = "FirstSceneStartTimeInHighlight"
+        case firstSceneEndTimeInHighlight = "FirstSceneEndTimeInHighlight"
+        case numberOfReviewersConcentratedInFirstScene
+        case numberOfReviewersFeltInFirstScene
+        case emotionTypeInFirstScene
+        
+        case secondSceneStartTimeInOriginalVideo = "SecondSceneStartTimeInOriginalVideo"
+        case secondSceneEndTimeInOriginalVideo = "SecondSceneEndTimeInOriginalVideo"
+        case secondSceneStartTimeInHighlight = "SecondSceneStartTimeInHighlight"
+        case secondSceneEndTimeInHighlight = "SecondSceneEndTimeInHighlight"
+        case numberOfReviewersConcentratedInSecondScene
+        case numberOfReviewersFeltInSecondScene
+        case emotionTypeInSecondScene
+        
+        case thirdSceneStartTimeInOriginalVideo = "ThirdSceneStartTimeInOriginalVideo"
+        case thirdSceneEndTimeInOriginalVideo = "ThirdSceneEndTimeInOriginalVideo"
+        case thirdSceneStartTimeInHighlight = "ThirdSceneStartTimeInHighlight"
+        case thirdSceneEndTimeInHighlight = "ThirdSceneEndTimeInHighlight"
+        case numberOfReviewersConcentratedInThirdScene
+        case numberOfReviewersFeltInThirdScene
+        case emotionTypeInThirdScene
+        
+        case fourthSceneStartTimeInOriginalVideo = "FourthSceneStartTimeInOriginalVideo"
+        case fourthSceneEndTimeInOriginalVideo = "FourthSceneEndTimeInOriginalVideo"
+        case fourthSceneStartTimeInHighlight = "FourthSceneStartTimeInHighlight"
+        case fourthSceneEndTimeInHighlight = "FourthSceneEndTimeInHighlight'"
+        case numberOfReviewersConcentratedInFourthScene
+        case numberOfReviewersFeltInFourthScene
+        case emotionTypeInFourthScene
+        
+        case fifthSceneStartTimeInOriginalVideo = "FifthSceneStartTimeInOriginalVideo"
+        case fifthSceneEndTimeInOriginalVideo = "FifthSceneEndTimeInOriginalVideo"
+        case fifthSceneStartTimeInHighlight = "FifthSceneStartTimeInHighlight"
+        case fifthSceneEndTimeInHighlight = "FifthSceneEndTimeInHighlight"
+        case numberOfReviewersConcentratedInFifthScene
+        case numberOfReviewersFeltInFifthScene
+        case emotionTypeInFifthScene
+    }
+    
     func toDomain() -> [HighlightScene] {
         let maxNumberOfScenes = 5
         
-        let thumbnailImageURLs: [String?] = []
+        // FIXME: API에 썸네일 추가 후 수정
+        let thumbnailImageURLs: [String?] = ["", "", "", "", ""]
         let startTimesInOriginalVideo = [firstSceneStartTimeInOriginalVideo,
                                          secondSceneStartTimeInOriginalVideo,
                                          thirdSceneStartTimeInOriginalVideo,
