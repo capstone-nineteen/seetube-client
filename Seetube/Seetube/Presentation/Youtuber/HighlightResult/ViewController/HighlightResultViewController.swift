@@ -32,6 +32,11 @@ class HighlightResultViewController: UIViewController,
         self.configureUI()
         self.bindViewModel()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.removePlayer()
+    }
 }
 
 // MARK: - Configuration

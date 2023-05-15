@@ -18,6 +18,7 @@ protocol ScenePlaying: UIViewController {
     var timeObserver: Any? { get set }
     
     func createPlayer(url: String, at view: AVPlayerLayerAddable)
+    func removePlayer()
     func playInterval(start: Float, end: Float)
     func pause()
     func play()
@@ -39,6 +40,13 @@ extension ScenePlaying {
         guard let playerLayer = self.playerLayer else { return }
         view.addAVPlayerLayer(playerLayer)
         playerLayer.isHidden = true
+    }
+    
+    func removePlayer() {
+        self.pause()
+        self.removeTimeObserver()
+        self.playerLayer = nil
+        self.player = nil
     }
     
     func playInterval(start: Float, end: Float) {
@@ -69,17 +77,13 @@ extension ScenePlaying {
     }
     
     func pause() {
-        DispatchQueue.main.async {
-            self.playerLayer?.isHidden = true
-            self.player?.pause()
-        }
+        self.playerLayer?.isHidden = true
+        self.player?.pause()
     }
     
     func play() {
-        DispatchQueue.main.async {
-            self.player?.play()
-            self.playerLayer?.isHidden = false
-        }
+        self.player?.play()
+        self.playerLayer?.isHidden = false
     }
     
     func removeTimeObserver() {

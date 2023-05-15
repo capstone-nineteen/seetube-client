@@ -28,4 +28,9 @@ class EmotionResultViewController: UIViewController,
         super.viewDidLoad()
         self.bindViewModel()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.removePlayer()
+    }
 }
