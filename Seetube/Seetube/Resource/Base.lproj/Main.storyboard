@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rwr-uE-KMF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rwr-uE-KMF">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -146,7 +146,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 서비스 이용을 위해 로그인 해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzt-KO-Efe" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="30" y="240.5" width="212.5" height="18.5"/>
+                                <rect key="frame" x="30" y="240.5" width="245" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -231,13 +231,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNu-02-Ky6">
-                                <rect key="frame" x="20" y="30" width="45" height="21"/>
+                                <rect key="frame" x="20" y="50" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="씨튜브" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ej-WY-gth" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="20" y="61" width="200" height="25"/>
+                                <rect key="frame" x="20" y="81" width="200" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="OeA-yR-eII"/>
                                     <constraint firstAttribute="height" constant="25" id="olT-O7-AeD"/>
@@ -246,7 +246,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next" textContentType="nickname"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCY-b8-Q7v">
-                                <rect key="frame" x="20" y="96" width="0.0" height="16"/>
+                                <rect key="frame" x="20" y="116" width="0.0" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="rKA-9v-I1b"/>
                                 </constraints>
@@ -255,13 +255,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRx-5H-gFy">
-                                <rect key="frame" x="20" y="147" width="45" height="21"/>
+                                <rect key="frame" x="20" y="167" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="seetube@zzang.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iu1-px-9Bj" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="20" y="178" width="229" height="25"/>
+                                <rect key="frame" x="20" y="198" width="229" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="DUc-Wu-7uY"/>
                                     <constraint firstAttribute="width" priority="750" constant="250" id="FhE-L6-Wal"/>
@@ -270,7 +270,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKP-Ho-ZXJ">
-                                <rect key="frame" x="20" y="213" width="0.0" height="16"/>
+                                <rect key="frame" x="20" y="233" width="0.0" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="Ns8-3u-h0l"/>
                                 </constraints>
@@ -279,7 +279,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="인증번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aki-GP-gN7" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="20" y="244" width="150" height="25"/>
+                                <rect key="frame" x="20" y="264" width="150" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="4hz-WN-4K4"/>
                                     <constraint firstAttribute="width" constant="150" id="6qg-eV-j1r"/>
@@ -288,7 +288,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="one-time-code"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BL4-b1-BKy">
-                                <rect key="frame" x="20" y="279" width="0.0" height="16"/>
+                                <rect key="frame" x="20" y="299" width="0.0" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="ePu-Jo-8Gi"/>
                                 </constraints>
@@ -297,7 +297,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhC-Q5-c22" customClass="AlphaButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="264" y="174.5" width="91" height="32"/>
+                                <rect key="frame" x="264" y="194.5" width="91" height="32"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="8" maxX="10" maxY="8"/>
@@ -310,13 +310,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw4-HH-JjH">
-                                <rect key="frame" x="20" y="330" width="59" height="21"/>
+                                <rect key="frame" x="20" y="350" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="영문 + 숫자 + 특수문자 10자 이상" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGu-Jk-HYu" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="20" y="361" width="300" height="25"/>
+                                <rect key="frame" x="20" y="381" width="300" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Pg3-1p-b1q"/>
                                     <constraint firstAttribute="width" constant="300" id="xgg-h0-9E5"/>
@@ -325,7 +325,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8B-0W-c3d">
-                                <rect key="frame" x="20" y="396" width="0.0" height="16"/>
+                                <rect key="frame" x="20" y="416" width="0.0" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="3AN-ZF-fQH"/>
                                 </constraints>
@@ -334,7 +334,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" tag="14" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0X-MO-s0i" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="20" y="427" width="300" height="25"/>
+                                <rect key="frame" x="20" y="447" width="300" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Lsq-I5-7XV"/>
                                 </constraints>
@@ -342,7 +342,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnJ-Mm-qaJ">
-                                <rect key="frame" x="20" y="462" width="0.0" height="16"/>
+                                <rect key="frame" x="20" y="482" width="0.0" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="tzU-dK-OnL"/>
                                 </constraints>
@@ -361,13 +361,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk7-tN-1nR">
-                                <rect key="frame" x="243" y="256.5" width="0.0" height="0.0"/>
+                                <rect key="frame" x="243" y="276.5" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3O-lR-AGR" customClass="AlphaButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="185" y="240.5" width="43" height="32"/>
+                                <rect key="frame" x="185" y="260.5" width="43" height="32"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="8" maxX="10" maxY="8"/>
@@ -452,13 +452,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvf-3c-w7I">
-                                <rect key="frame" x="19" y="20" width="93.5" height="32.5"/>
+                                <rect key="frame" x="19" y="40" width="93.5" height="32.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-8O-ehN" customClass="CategoryButtonScrollView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="19" y="68" width="337.5" height="27"/>
+                                <rect key="frame" x="19" y="88" width="337.5" height="27"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="SUW-4c-p8J"/>
@@ -467,7 +467,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="jDn-dd-U6f"/>
                             </scrollView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyC-n0-43X">
-                                <rect key="frame" x="0.0" y="105" width="375" height="513"/>
+                                <rect key="frame" x="0.0" y="125" width="375" height="493"/>
                                 <connections>
                                     <segue destination="TWd-3r-3Jq" kind="embed" id="gqL-lX-UoI"/>
                                 </connections>
@@ -506,7 +506,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-JJ-YQe" customClass="ReceiptView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="40.5" y="25.5" width="294" height="567"/>
+                                <rect key="frame" x="40.5" y="35.5" width="294" height="567"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="9999" id="HgX-Bc-Sbg"/>
@@ -542,7 +542,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1A-99-DZR" customClass="ReviewerVideoDetailView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -652,13 +652,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌 정보 입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfL-T6-Jhn">
-                                <rect key="frame" x="25" y="50" width="113" height="24"/>
+                                <rect key="frame" x="25" y="70" width="113" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="은행명을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iqx-xv-HFK" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="26" y="121" width="150" height="22"/>
+                                <rect key="frame" x="26" y="141" width="150" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="150" id="4oj-DA-6GL"/>
                                     <constraint firstAttribute="height" constant="22" id="KKa-gB-PL6"/>
@@ -667,13 +667,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="은행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00u-3D-mgO">
-                                <rect key="frame" x="26" y="99" width="24.5" height="17"/>
+                                <rect key="frame" x="26" y="119" width="24.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예금주를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6sF-QO-ZI6" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="26" y="190" width="150" height="22"/>
+                                <rect key="frame" x="26" y="210" width="150" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="150" id="Faz-ov-90c"/>
                                     <constraint firstAttribute="height" constant="22" id="cor-Ow-Ocz"/>
@@ -682,13 +682,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예금주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77p-tc-O2S">
-                                <rect key="frame" x="26" y="168" width="36.5" height="17"/>
+                                <rect key="frame" x="26" y="188" width="36.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="계좌번호를 입력하세요. (-제외)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AjX-df-afO" customClass="UnderLineTextField" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="26" y="259" width="250" height="22"/>
+                                <rect key="frame" x="26" y="279" width="250" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="PbT-uZ-Lkx"/>
                                     <constraint firstAttribute="width" priority="750" constant="250" id="h4w-Wi-wTp"/>
@@ -697,7 +697,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjE-IJ-STd">
-                                <rect key="frame" x="26" y="237" width="49" height="17"/>
+                                <rect key="frame" x="26" y="257" width="49" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -756,32 +756,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7Z-7T-qni">
-                                <rect key="frame" x="26" y="28" width="74.5" height="20"/>
+                                <rect key="frame" x="26" y="48" width="74.5" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OOO 님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sl-zb-JOx">
-                                <rect key="frame" x="26" y="49" width="54.5" height="19.5"/>
+                                <rect key="frame" x="26" y="69" width="54.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49j-35-gfq">
-                                <rect key="frame" x="17" y="78.5" width="341" height="1"/>
+                                <rect key="frame" x="17" y="98.5" width="341" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="4A9-IS-Fa7"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유한 코인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lab-Hf-DqG">
-                                <rect key="frame" x="26" y="104" width="64.5" height="17"/>
+                                <rect key="frame" x="26" y="124" width="64.5" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNr-RB-bUM">
-                                <rect key="frame" x="108" y="133.5" width="159" height="35"/>
+                                <rect key="frame" x="108" y="153.5" width="159" height="35"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="centsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rYb-dp-s3M">
                                         <rect key="frame" x="0.0" y="0.5" width="35" height="34"/>
@@ -809,7 +809,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2u-JD-Ah0">
-                                <rect key="frame" x="0.0" y="218.5" width="375" height="448.5"/>
+                                <rect key="frame" x="0.0" y="238.5" width="375" height="428.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjs-he-OZX">
                                         <rect key="frame" x="26" y="27" width="31.5" height="21"/>
@@ -818,7 +818,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="47" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h7g-jr-5ZQ">
-                                        <rect key="frame" x="26" y="58" width="323" height="341.5"/>
+                                        <rect key="frame" x="26" y="58" width="323" height="321.5"/>
                                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-5" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinHistoryTableViewCell" id="tKe-rQ-Xha" customClass="CoinHistoryTableViewCell" customModule="Seetube" customModuleProvider="target">
@@ -906,7 +906,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8O3-yg-0DQ">
-                                <rect key="frame" x="281" y="33" width="69" height="28.5"/>
+                                <rect key="frame" x="281" y="53" width="69" height="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="로그아웃"/>
@@ -914,7 +914,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="로그아웃">
                                             <attributes>
-                                                <font key="NSFont" size="13" name=".AppleSDGothicNeoI-Regular"/>
+                                                <font key="NSFont" metaFont="system"/>
                                                 <font key="NSOriginalFont" metaFont="system"/>
                                             </attributes>
                                         </fragment>
@@ -969,24 +969,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2k-Xx-VOf" customClass="SeetubeSearchBarView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="19" y="105.5" width="337.5" height="40"/>
+                                <rect key="frame" x="19" y="125.5" width="337.5" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Tv9-aW-IiF"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요, OOO님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rP-DK-C5g">
-                                <rect key="frame" x="19" y="64" width="152" height="26.5"/>
+                                <rect key="frame" x="19" y="84" width="152" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UES-HQ-UGd" customClass="PriceAccessoryView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="181" y="64" width="175.5" height="26.5"/>
+                                <rect key="frame" x="181" y="84" width="175.5" height="26.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MN6-Ke-7gz">
-                                <rect key="frame" x="0.0" y="160.5" width="375" height="457.5"/>
+                                <rect key="frame" x="0.0" y="180.5" width="375" height="437.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NES-sd-Dio">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="835"/>
@@ -1082,7 +1082,7 @@
             <objects>
                 <tableViewController id="TWd-3r-3Jq" customClass="ReviewerVideoInfoTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Zmx-rL-bwN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="493"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -1114,13 +1114,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYo-Kk-LeD">
-                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <connections>
                                     <segue destination="p9f-ul-AyB" kind="embed" id="Tuv-xF-s9D"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTt-R7-D1F" customClass="SeetubeSearchBarView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="19" y="10" width="337.5" height="40"/>
+                                <rect key="frame" x="19" y="30" width="337.5" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zNU-1g-9lP"/>
@@ -1152,7 +1152,7 @@
             <objects>
                 <tableViewController id="p9f-ul-AyB" customClass="ReviewerVideoInfoTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dIe-lv-tJW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -1212,7 +1212,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d8h-i8-69e" customClass="UnderlineSegmentedControl" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="147.5" width="375" height="46"/>
+                                <rect key="frame" x="0.0" y="167.5" width="375" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="qhQ-aa-JA7"/>
                                 </constraints>
@@ -1230,25 +1230,25 @@
                                 </userDefinedRuntimeAttributes>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요, OOO님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiA-FR-9gK">
-                                <rect key="frame" x="20" y="116" width="143.5" height="21.5"/>
+                                <rect key="frame" x="20" y="136" width="143.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZt-qH-NNk">
-                                <rect key="frame" x="0.0" y="192.5" width="375" height="474.5"/>
+                                <rect key="frame" x="0.0" y="212.5" width="375" height="454.5"/>
                                 <connections>
                                     <segue destination="D55-m3-f4R" kind="embed" id="SZO-yw-N94"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fid-hr-cMw">
-                                <rect key="frame" x="0.0" y="192.5" width="375" height="474.5"/>
+                                <rect key="frame" x="0.0" y="212.5" width="375" height="454.5"/>
                                 <connections>
                                     <segue destination="s4d-ot-Q8n" kind="embed" id="oKh-Qf-Rtm"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXW-5L-qrV">
-                                <rect key="frame" x="314" y="113" width="45" height="28"/>
+                                <rect key="frame" x="314" y="133" width="45" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="로그아웃">
@@ -1295,7 +1295,7 @@
             <objects>
                 <tableViewController id="D55-m3-f4R" customClass="ReviewsInProgressTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XYT-Jz-xqS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="474.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="454.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1323,7 +1323,7 @@
             <objects>
                 <tableViewController id="s4d-ot-Q8n" customClass="FinishedReviewsTableViewController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="sOO-gh-TOs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="474.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="454.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1355,7 +1355,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtb-6Z-wbj" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="15" width="341" height="90"/>
+                                <rect key="frame" x="17" y="35" width="341" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="LlZ-Va-co7"/>
                                 </constraints>
@@ -1369,7 +1369,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vh-OX-17S" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="120" width="341" height="90"/>
+                                <rect key="frame" x="17" y="140" width="341" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="zN9-pV-YyE"/>
                                 </constraints>
@@ -1383,7 +1383,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc5-i8-hgR" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="225" width="341" height="90"/>
+                                <rect key="frame" x="17" y="245" width="341" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="U93-9R-cVl"/>
                                 </constraints>
@@ -1397,7 +1397,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9L-Rb-zAs" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="330" width="341" height="90"/>
+                                <rect key="frame" x="17" y="350" width="341" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="wYL-MO-DcT"/>
                                 </constraints>
@@ -1411,7 +1411,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9A-c5-fHa" customClass="ResultMenuButton" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="17" y="435" width="341" height="90"/>
+                                <rect key="frame" x="17" y="455" width="341" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="74E-qe-2ed"/>
                                 </constraints>
@@ -1474,7 +1474,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mu2-sl-AbI" customClass="YoutuberVideoDetailView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -1504,7 +1504,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKS-b8-qHx" customClass="ListStyleResultView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="집중도가 높은 장면"/>
@@ -1544,7 +1544,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H97-xV-dlU" customClass="ListStyleImageResultView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="씬스틸러"/>
@@ -1578,7 +1578,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-EA-ae5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wk5-gc-oEN">
                                     <size key="itemSize" width="152" height="264"/>
@@ -1709,7 +1709,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfp-Eb-NHl" customClass="LargeListStyleResultView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="610"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="590"/>
                                 <color key="backgroundColor" white="1" alpha="0.69635101963746227" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="하이라이트에 사용된 장면"/>
@@ -1769,7 +1769,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z89-4V-KfX" customClass="ListStyleResultView" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="감정이 감지된 장면"/>
@@ -1800,7 +1800,7 @@
                 <navigationController storyboardIdentifier="YoutuberNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Hpm-25-l6h" customClass="YoutuberNavigationController" customModule="Seetube" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SIv-YQ-koT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1837,7 +1837,7 @@
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="eZe-cF-WvV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c1Z-9l-e0P">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1873,7 +1873,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rwr-uE-KMF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fcc-fC-qkf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

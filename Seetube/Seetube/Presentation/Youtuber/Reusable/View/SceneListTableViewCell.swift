@@ -22,10 +22,12 @@ class SceneListTableViewCell: UITableViewCell {
     }
     
     private func bindImage(url: String) {
+        guard let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        
         let processor = DownsamplingImageProcessor(size: self.thumbnailImageView.bounds.size)
         self.thumbnailImageView.kf.indicatorType = .activity
         self.thumbnailImageView.kf.setImage(
-            with: URL(string: url),
+            with: URL(string: encodedUrl),
             options: [
                 .processor(processor),
                 .scaleFactor(UIScreen.main.scale),
