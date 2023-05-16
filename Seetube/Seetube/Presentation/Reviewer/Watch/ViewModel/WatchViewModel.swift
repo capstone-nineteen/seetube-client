@@ -69,7 +69,7 @@ class WatchViewModel: ViewModelType {
                     .execute(review: review)
             }
             .scan(0) { $1 ? $0+1 : $0 }
-            .map { Double($0) / Double(videoDuration) > 0.1 }
+            .map { Double($0) / Double(videoDuration) > 0.2 }
             .distinctUntilChanged()
             .filter { $0 }
             .mapToVoid()

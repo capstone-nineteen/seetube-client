@@ -362,7 +362,7 @@ extension WatchViewController {
     
     private func displayAbusingDetected() {
         self.displayFailureAlert(
-            message: "영상의 10% 이상에서 얼굴 이탈/화면 밖 응시가 감지되었습니다. 어뷰징으로 판단하여 리뷰를 강제 종료합니다."
+            message: "영상의 20% 이상에서 얼굴 이탈/화면 밖 응시가 감지되었습니다. 어뷰징으로 판단하여 리뷰를 강제 종료합니다."
         ) { [weak self] _ in
             self?.dismiss(animated: true)
         }
