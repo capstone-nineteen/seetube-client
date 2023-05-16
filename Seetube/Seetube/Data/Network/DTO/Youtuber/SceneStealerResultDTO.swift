@@ -9,8 +9,8 @@ import Foundation
 
 struct SceneStealerSceneDTO: Decodable, DomainConvertible {
     let thumbnailURL: String
-    let startTime: Int
-    let endTime: Int
+    let startTime: Float
+    let endTime: Float
     let percentageOfConcentration: Int
     
     func toDomain() -> SceneStealerScene {

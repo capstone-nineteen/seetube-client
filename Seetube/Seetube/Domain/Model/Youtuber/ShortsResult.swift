@@ -10,8 +10,8 @@ import Foundation
 struct ShortsScene {
     let thumbnailURL: String
     let videoURL: String
-    let startTime: Int
-    let endTime: Int
+    let startTime: Float
+    let endTime: Float
     let concentrationPercentage: Int
 }
 

@@ -102,8 +102,8 @@ class SceneItemViewModel {
     }
     
     convenience init(with scene: SceneStealerScene) {
-        let interval = StringFormattingHelper.toTimeIntervalFormatString(startSecond: scene.startTime,
-                                                                         endSecond: scene.endTime)
+        let interval = StringFormattingHelper.toTimeIntervalFormatString(startSecond: Int(scene.startTime),
+                                                                         endSecond: Int(scene.endTime))
         let description = "해당 장면에서 집중도가\n\(scene.percentageOfConcentration)%로 가장 높았습니다."
         let progress = Double(scene.percentageOfConcentration) / 100.0
         let progressDescription = "\(scene.percentageOfConcentration)%"

@@ -9,8 +9,8 @@ import Foundation
 
 struct SceneStealerScene {
     let imageURL: String
-    let startTime: Int
-    let endTime: Int
+    let startTime: Float
+    let endTime: Float
     let percentageOfConcentration: Int
 }
 

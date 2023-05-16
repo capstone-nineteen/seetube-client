@@ -22,8 +22,8 @@ class ShortsItemViewModel {
         self.shouldDisplayCheckIcon = shouldDisplayCheckIcon
         self.isPlaying = isPlaying
         self.thumbnailURL = scene.thumbnailURL
-        self.interval = "🕔 " + StringFormattingHelper.toTimeIntervalFormatString(startSecond: scene.startTime,
-                                                                                  endSecond: scene.endTime)
+        self.interval = "🕔 " + StringFormattingHelper.toTimeIntervalFormatString(startSecond: Int(scene.startTime),
+                                                                                  endSecond: Int(scene.endTime))
         self.description = "집중도 \(scene.concentrationPercentage)%"
     }
 }
