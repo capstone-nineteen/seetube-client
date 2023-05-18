@@ -26,12 +26,12 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요. SEETUBE 입니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5y-oX-5F9" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="23" y="186" width="178.5" height="69"/>
+                                <rect key="frame" x="23" y="186" width="185" height="69"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시선 추적과 표정 분석 기술을 사용한  영상 리뷰 플랫폼이에요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esw-za-S6b" customClass="AdaptiveFontSizeLabel" customModule="Seetube" customModuleProvider="target">
-                                <rect key="frame" x="23" y="255" width="212" height="41.5"/>
+                                <rect key="frame" x="23" y="255" width="190.5" height="41.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1888,52 +1888,52 @@
     </scenes>
     <designables>
         <designable name="1Ej-WY-gth">
-            <size key="intrinsicContentSize" width="45.5" height="22.5"/>
+            <size key="intrinsicContentSize" width="36.5" height="18.5"/>
         </designable>
         <designable name="1vh-OX-17S">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="6sF-QO-ZI6">
-            <size key="intrinsicContentSize" width="128.5" height="20"/>
+            <size key="intrinsicContentSize" width="117" height="18.5"/>
         </designable>
         <designable name="AjX-df-afO">
-            <size key="intrinsicContentSize" width="191" height="20"/>
+            <size key="intrinsicContentSize" width="174" height="18.5"/>
         </designable>
         <designable name="B6y-IO-SE1">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="Djo-Ia-zoD">
-            <size key="intrinsicContentSize" width="45.5" height="22.5"/>
+            <size key="intrinsicContentSize" width="36.5" height="18.5"/>
         </designable>
         <designable name="Iqx-xv-HFK">
-            <size key="intrinsicContentSize" width="128.5" height="20"/>
+            <size key="intrinsicContentSize" width="117" height="18.5"/>
         </designable>
         <designable name="Iu1-px-9Bj">
-            <size key="intrinsicContentSize" width="164.5" height="22.5"/>
+            <size key="intrinsicContentSize" width="135.5" height="18.5"/>
         </designable>
         <designable name="Jes-rP-dqy">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="Lzt-KO-Efe">
-            <size key="intrinsicContentSize" width="212.5" height="15.5"/>
+            <size key="intrinsicContentSize" width="245" height="18"/>
         </designable>
         <designable name="MIt-RP-vXU">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="P5y-oX-5F9">
-            <size key="intrinsicContentSize" width="178.5" height="58"/>
+            <size key="intrinsicContentSize" width="185" height="60"/>
         </designable>
         <designable name="RDb-xF-FEM">
-            <size key="intrinsicContentSize" width="61" height="21"/>
+            <size key="intrinsicContentSize" width="48.5" height="17"/>
         </designable>
         <designable name="U0X-MO-s0i">
-            <size key="intrinsicContentSize" width="95.5" height="21"/>
+            <size key="intrinsicContentSize" width="76.5" height="17"/>
         </designable>
         <designable name="Vtb-6Z-wbj">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="aki-GP-gN7">
-            <size key="intrinsicContentSize" width="95.5" height="22.5"/>
+            <size key="intrinsicContentSize" width="76.5" height="18.5"/>
         </designable>
         <designable name="bc5-i8-hgR">
             <size key="intrinsicContentSize" width="30" height="34"/>
@@ -1948,7 +1948,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="esw-za-S6b">
-            <size key="intrinsicContentSize" width="212" height="35"/>
+            <size key="intrinsicContentSize" width="190.5" height="31.5"/>
         </designable>
         <designable name="fOj-Qb-oel">
             <size key="intrinsicContentSize" width="30" height="34"/>
@@ -1960,7 +1960,7 @@
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="hGu-Jk-HYu">
-            <size key="intrinsicContentSize" width="233" height="21"/>
+            <size key="intrinsicContentSize" width="188.5" height="17"/>
         </designable>
         <designable name="k9L-Rb-zAs">
             <size key="intrinsicContentSize" width="30" height="34"/>
