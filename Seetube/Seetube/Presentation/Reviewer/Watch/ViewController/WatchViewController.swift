@@ -264,7 +264,7 @@ extension WatchViewController: StatusDelegate {
 extension WatchViewController : CalibrationDelegate {
     private func startCalibration() {
         DispatchQueue.global().async {
-            let result = self.gazeTracker?.startCalibration(mode: .ONE_POINT,
+            let result = self.gazeTracker?.startCalibration(mode: .FIVE_POINT,
                                                             criteria: .HIGH)
             if let didStart = result,
                !didStart {
