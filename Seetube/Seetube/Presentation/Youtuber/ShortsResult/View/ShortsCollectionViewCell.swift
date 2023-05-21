@@ -35,10 +35,12 @@ class ShortsCollectionViewCell: UICollectionViewCell {
     }
     
     private func bindImage(url: String) {
+        guard let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        
         let processor = DownsamplingImageProcessor(size: self.thumbnailView.bounds.size)
         self.thumbnailView.kf.indicatorType = .activity
         self.thumbnailView.kf.setImage(
-            with: URL(string: url),
+            with: URL(string: encodedUrl),
             options: [
                 .processor(processor),
                 .scaleFactor(UIScreen.main.scale),
