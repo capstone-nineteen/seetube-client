@@ -35,9 +35,10 @@ class ReviewerVideoDetailViewModel: ViewModelType {
         let videoViewModels = video
             .map {
                 let buttonTitle = $0.didReviewed ? "리뷰 완료" : "리뷰 시작하기"
+                let didReviewFinished = $0.currentNumberOfReviewers == $0.targetNumberOfReviewers
                 return VideoDetailViewModel(with: $0,
-                                            buttonTitle: buttonTitle
-                )
+                                            buttonTitle: buttonTitle,
+                                            shouldEnableBottomButton: !didReviewFinished)
             }
         
         let videoInfo = input.startButtonTouched
