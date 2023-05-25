@@ -134,7 +134,7 @@ struct HighlightsDTO: Decodable, DomainConvertible {
                                    thirdSceneEndTimeInHighlight,
                                    fourthSceneEndTimeInHighlight,
                                    fifthSceneEndTimeInHighlight]
-        print("DEBUG!!!!!: \(endTimesInHighlight)")
+        
         let numbersOfReviewersConcentrated = [numberOfReviewersConcentratedInFirstScene,
                                               numberOfReviewersConcentratedInSecondScene,
                                               numberOfReviewersConcentratedInThirdScene,
@@ -152,25 +152,14 @@ struct HighlightsDTO: Decodable, DomainConvertible {
                             emotionTypeInFifthScene]
         
         let scenes = (0..<maxNumberOfScenes).map { index -> HighlightScene? in
-            guard let thumbnailImageURL = thumbnailImageURLs[index] else { print(111); return nil }
-            guard let startTimeInOriginalVideo = startTimesInOriginalVideo[index] else { print(222); return nil }
-            guard let endTimeInOriginalVideo = endTimesInOriginalVideo[index] else {
-                print(333); return nil
-            }
-            guard let startTimeInHighlight = startTimesInHighlight[index] else {
-                print(444); return nil
-            }
-            guard let endTimeInHighlight = endTimesInHighlight[index] else {
-                print(555); return nil
-            }
-            guard let numberOfReviewersConcentrated = numbersOfReviewersConcentrated[index] else {
-                print(666); return nil
-            }
-            guard let numberOfReviewersFelt = numbersOfReviewersFelt[index] else {
-                print(777); return nil
-            }
-            guard let emotionType = emotionTypes[index] else { print(888); return nil }
-            print("DEBUG: \(index)")
+            guard let thumbnailImageURL = thumbnailImageURLs[index],
+                  let startTimeInOriginalVideo = startTimesInOriginalVideo[index],
+                  let endTimeInOriginalVideo = endTimesInOriginalVideo[index],
+                  let startTimeInHighlight = startTimesInHighlight[index],
+                  let endTimeInHighlight = endTimesInHighlight[index],
+                  let numberOfReviewersConcentrated = numbersOfReviewersConcentrated[index],
+                  let numberOfReviewersFelt = numbersOfReviewersFelt[index] else { return nil }
+            guard let emotionType = emotionTypes[index] else { return nil }
                 
             return HighlightScene(thumbnailImageURL: thumbnailImageURL,
                                   startTimeInOriginalVideo: startTimeInOriginalVideo,

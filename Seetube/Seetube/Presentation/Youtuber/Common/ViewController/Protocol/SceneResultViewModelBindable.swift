@@ -21,8 +21,8 @@ extension SceneResultViewModelBindable {
     func bindViewModel() {
         guard let viewModel = self.viewModel else { return }
         
-        let viewWillAppear = self.viewWillAppearEvent().debug()
-        let itemSelected = self.itemSelectedEvent().debug()
+        let viewWillAppear = self.viewWillAppearEvent()
+        let itemSelected = self.itemSelectedEvent()
         
         let input = SceneResultViewModel.Input(
             viewWillAppear: viewWillAppear,
