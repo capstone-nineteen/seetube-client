@@ -35,6 +35,12 @@ class ShortsResultViewController: UIViewController,
         self.configureUI()
         self.bindViewModel()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.player?.pause()
+        self.player = nil
+    }
 }
 
 // MARK: - Configuration
